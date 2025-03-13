@@ -1,0 +1,95 @@
+// Import USWDS styles if needed
+// @use '@uswds/uswds/packages/global' as uswds-global;
+
+// CSS Variables for design tokens
+:root, .light-theme {
+  // Primary colors
+  --portland-color-primary: #0050d8;
+  --portland-color-primary-dark: #1a4480;
+  --portland-color-primary-darker: #162e51;
+  --portland-color-primary-light: #73b3e7;
+  --portland-color-primary-lighter: #d9e8f6;
+  --portland-color-primary-lightest: #e8f5ff;
+  
+  // Secondary colors
+  --portland-color-secondary: #e41d3d;
+  --portland-color-secondary-dark: #b50909;
+  --portland-color-secondary-darker: #8b0a03;
+  --portland-color-secondary-light: #f2938c;
+  --portland-color-secondary-lighter: #f9dede;
+  --portland-color-secondary-lightest: #f8f0f0;
+  
+  // Neutrals
+  --portland-color-neutral-darkest: #1b1b1b;
+  --portland-color-neutral-dark: #3d4551;
+  --portland-color-neutral: #71767a;
+  --portland-color-neutral-light: #a9aeb1;
+  --portland-color-neutral-lighter: #dfe1e2;
+  --portland-color-neutral-lightest: #f0f0f0;
+  
+  // Typography
+  --portland-font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  --portland-font-family-heading: Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --portland-font-family-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --portland-font-size-base: 16px;
+  --portland-line-height: 1.5;
+  
+  // Spacing
+  --portland-spacing-xs: 0.25rem;
+  --portland-spacing-sm: 0.5rem;
+  --portland-spacing-md: 1rem;
+  --portland-spacing-lg: 1.5rem;
+  --portland-spacing-xl: 2rem;
+  
+  // Border radius
+  --portland-border-radius: 4px;
+  
+  // Theme colors
+  --portland-background-color: #ffffff;
+  --portland-text-color: var(--portland-color-neutral-darkest);
+}
+
+// Dark theme
+.dark-theme {
+  // Primary colors - adjusted for dark theme
+  --portland-color-primary: #4d96ff;
+  --portland-color-primary-dark: #73b3e7;
+  --portland-color-primary-darker: #d9e8f6;
+  --portland-color-primary-light: #1a4480;
+  --portland-color-primary-lighter: #162e51;
+  --portland-color-primary-lightest: #0a1c3d;
+  
+  // Secondary colors - adjusted for dark theme
+  --portland-color-secondary: #ff6b7d;
+  --portland-color-secondary-dark: #f2938c;
+  --portland-color-secondary-darker: #f9dede;
+  --portland-color-secondary-light: #b50909;
+  --portland-color-secondary-lighter: #8b0a03;
+  --portland-color-secondary-lightest: #6a0802;
+  
+  // Neutrals - inverted for dark theme
+  --portland-color-neutral-darkest: #f0f0f0;
+  --portland-color-neutral-dark: #dfe1e2;
+  --portland-color-neutral: #a9aeb1;
+  --portland-color-neutral-light: #71767a;
+  --portland-color-neutral-lighter: #3d4551;
+  --portland-color-neutral-lightest: #1b1b1b;
+  
+  // Theme colors
+  --portland-background-color: #1b1b1b;
+  --portland-text-color: #f0f0f0;
+}
+
+// Reset some basic elements
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--portland-font-family);
+  font-size: var(--portland-font-size-base);
+  line-height: var(--portland-line-height);
+  color: var(--portland-text-color);
+  background-color: var(--portland-background-color);
+} 
