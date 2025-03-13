@@ -1,7 +1,19 @@
 import React from 'react';
-import '../styles/index.scss';
+import './Button.css';
 
 export interface ButtonProps {
+  /**
+   * Button variant
+   */
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  /**
+   * Button size
+   */
+  size?: 'small' | 'medium' | 'large';
+  /**
+   * Is the button disabled?
+   */
+  disabled?: boolean;
   /**
    * Button contents
    */
@@ -11,49 +23,33 @@ export interface ButtonProps {
    */
   onClick?: () => void;
   /**
-   * Button variant
+   * Optional additional class names
    */
-  variant?: 'primary' | 'secondary' | 'tertiary';
-  /**
-   * Is the button disabled?
-   */
-  disabled?: boolean;
-  /**
-   * Button size
-   */
-  size?: 'small' | 'medium' | 'large';
+  className?: string;
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = ({
-  children,
+export const Button = ({
   variant = 'primary',
   size = 'medium',
   disabled = false,
+  children,
   onClick,
-}) => {
-  const baseStyles = 'rounded font-medium focus:outline-none transition-colors';
-  
-  const variantStyles = {
-    primary: 'bg-[var(--portland-color-primary)] text-white hover:opacity-90',
-    secondary: 'bg-[var(--portland-color-secondary)] text-white hover:opacity-90',
-    tertiary: 'bg-transparent border border-[var(--portland-color-primary)] text-[var(--portland-color-primary)] hover:bg-[var(--portland-color-primary-lightest)]',
-  };
-  
-  const sizeStyles = {
-    small: 'px-3 py-1 text-sm',
-    medium: 'px-4 py-2',
-    large: 'px-6 py-3 text-lg',
-  };
-  
-  const className = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`;
-  
+  className = '',
+}: ButtonProps) => {
+  const buttonClassName = [
+    'portland-button',
+    `portland-button--${variant}`,
+    `portland-button--${size}`,
+    className,
+  ].join(' ');
+
   return (
     <button
       type="button"
-      className={className}
+      className={buttonClassName}
       disabled={disabled}
       onClick={onClick}
     >

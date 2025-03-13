@@ -1,6 +1,10 @@
 // Import USWDS styles if needed
 // @use '@uswds/uswds/packages/global' as uswds-global;
 
+// Forward theme files instead of importing them
+@forward './themes/pgov.scss';
+@forward './themes/pgov-dark.scss';
+
 // CSS Variables for design tokens
 :root, .light-theme {
   // Primary colors
@@ -80,16 +84,44 @@
   --portland-text-color: #f0f0f0;
 }
 
-// Reset some basic elements
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+// Reset and base styles
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: var(--portland-font-family);
-  font-size: var(--portland-font-size-base);
-  line-height: var(--portland-line-height);
-  color: var(--portland-text-color);
-  background-color: var(--portland-background-color);
+  font-family: var(--portland-font-family, sans-serif);
+  font-size: var(--portland-font-size-base, 16px);
+  line-height: var(--portland-line-height, 1.5);
+  color: var(--portland-text-color, #1b1b1b);
+  background-color: var(--portland-background-color, #ffffff);
+}
+
+// Apply default theme
+:root {
+  @extend .pgov-theme;
+}
+
+// Theme toggle classes
+.pgov-theme-enabled {
+  @extend .pgov-theme;
+}
+
+.pgov-dark-theme-enabled {
+  @extend .pgov-dark-theme;
+}
+
+// Utility classes
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 } 

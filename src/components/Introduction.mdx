@@ -2,6 +2,26 @@ import { Meta } from '@storybook/blocks';
 
 <Meta title="Introduction" />
 
+{/* External Link Icon Component */}
+export const ExternalLinkIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="12" 
+    height="12" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    style={{ display: 'inline-block', marginLeft: '4px', verticalAlign: 'middle' }}
+  >
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+    <polyline points="15 3 21 3 21 9"></polyline>
+    <line x1="10" y1="14" x2="21" y2="3"></line>
+  </svg>
+);
+
 # Portland Component Library
 
 Welcome to the Portland Component Library, a collection of React components using design tokens from Figma.
@@ -12,7 +32,7 @@ Browse components in the sidebar to see examples and documentation.
 
 ## Features
 
-- **Themeable**: All components support both light and dark themes
+- **Themeable**: All components support multiple themes including PGOV, light, and dark
 - **Accessible**: Built with accessibility in mind
 - **Responsive**: Components work across different screen sizes
 - **Customizable**: Components can be customized via props
@@ -23,4 +43,55 @@ Browse components in the sidebar to see examples and documentation.
 
 ## Theme Support
 
-This component library supports both light and dark themes. You can toggle between themes using the theme switcher in the toolbar. 
+This component library supports multiple themes:
+
+- **PGOV**: The default theme based on the Portland.gov design system
+- **PGOV Dark**: Dark variant of the PGOV theme
+- **Light**: A generic light theme
+- **Dark**: A generic dark theme
+
+You can toggle between themes using the theme switcher in the toolbar.
+
+## Design Tokens
+
+The PGOV theme uses design tokens from the following Figma sources:
+
+- [Typography Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=161-4230&t=xJOdl0Cp5dzE6Zt7-1) <ExternalLinkIcon />
+- [Color Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=165-2532&t=xJOdl0Cp5dzE6Zt7-1) <ExternalLinkIcon />
+- [Color Scale Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-2740&m=dev) <ExternalLinkIcon />
+- [Spacing Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=351-581&t=xJOdl0Cp5dzE6Zt7-1) <ExternalLinkIcon />
+
+## Token Synchronization
+
+When design tokens are updated in Figma, follow these steps to update the component library:
+
+1. **Export Tokens from Figma**: Use the [Tokens Studio for Figma](https://tokens.studio/) <ExternalLinkIcon /> plugin or a similar tool to export the updated tokens as JSON.
+
+2. **Update Local Token Files**: 
+   - Update the token values in `src/styles/themes/pgov.scss` for the PGOV theme
+   - Update the token values in `src/styles/themes/pgov-dark.scss` for the PGOV Dark theme
+
+3. **Rebuild the Library**: Run `pnpm run build` to rebuild the component library with the updated tokens.
+
+4. **Test in Storybook**: Run `pnpm run storybook` to verify that the components reflect the updated tokens.
+
+5. **Update Component Documentation**: If necessary, update component documentation to reflect any visual changes resulting from token updates.
+
+For a more automated workflow, consider implementing a token synchronization pipeline using tools like:
+- [Style Dictionary](https://amzn.github.io/style-dictionary/) <ExternalLinkIcon />
+- [Theo](https://github.com/salesforce-ux/theo) <ExternalLinkIcon />
+- [Token Transformer](https://www.npmjs.com/package/token-transformer) <ExternalLinkIcon />
+
+These tools can help automate the process of transforming design tokens from Figma into platform-specific formats.
+
+## Color System
+
+The PGOV theme includes a comprehensive color system with various palettes:
+
+- **Primary Colors**: Blue-based palette for primary actions and branding
+- **Secondary Colors**: Red-based palette for secondary actions
+- **Accent Colors**: Cool and warm accent palettes
+- **Neutral Colors**: Grayscale palette for text, backgrounds, and borders
+- **Color Scales**: Complete color scales for Orange, Red, Gold, Yellow, Green, Mint, Cyan, Blue, Indigo, Violet, Magenta, Black, and White
+
+You can view all color tokens in the [Design Tokens/Colors](/docs/design-tokens-colors--docs) section. 
