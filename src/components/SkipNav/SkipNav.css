@@ -1,0 +1,23 @@
+/* SkipNav Component Styles */
+
+.pgov-skipnav {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: var(--pgov-spacing-xs) var(--pgov-spacing-md);
+  background-color: var(--pgov-color-primary, #0050d8);
+  color: white;
+  text-align: center;
+  font-family: var(--pgov-font-family-sans);
+  font-size: var(--pgov-font-size-xs);
+  font-weight: var(--pgov-font-weight-medium);
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.pgov-skipnav:focus {
+  top: 0;
+  outline: none;
+} 

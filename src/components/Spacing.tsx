@@ -4,10 +4,10 @@ interface SpacingProps {
   name: string;
   variable: string;
   value: string;
-  sizeInPx: string;
+  pixels: string;
 }
 
-const SpacingItem: React.FC<SpacingProps> = ({ name, variable, value, sizeInPx }) => {
+const SpacingDisplay: React.FC<SpacingProps> = ({ name, variable, value, pixels }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -15,25 +15,23 @@ const SpacingItem: React.FC<SpacingProps> = ({ name, variable, value, sizeInPx }
       border: '1px solid #ddd',
       borderRadius: '4px',
       width: '100%',
-      maxWidth: '600px'
+      maxWidth: '600px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between'
     }}>
       <div style={{ 
-        display: 'flex',
-        alignItems: 'center',
-        marginBottom: '16px'
-      }}>
-        <div style={{ 
-          width: value,
-          height: '24px',
-          backgroundColor: '#0050d8',
-          marginRight: '16px'
-        }} />
-        <div style={{ fontSize: '14px' }}>{value} ({sizeInPx})</div>
-      </div>
+        width: value,
+        height: '24px',
+        backgroundColor: '#0050d8',
+        borderRadius: '4px'
+      }} />
       <div style={{ 
         display: 'flex',
         flexDirection: 'column',
-        gap: '4px'
+        gap: '4px',
+        textAlign: 'right',
+        minWidth: '200px'
       }}>
         <div style={{ fontWeight: 'bold' }}>{name}</div>
         <code style={{ 
@@ -42,181 +40,154 @@ const SpacingItem: React.FC<SpacingProps> = ({ name, variable, value, sizeInPx }
           borderRadius: '4px',
           fontSize: '14px'
         }}>{variable}</code>
+        <div style={{ 
+          fontSize: '14px',
+          color: '#666'
+        }}>{value} ({pixels})</div>
       </div>
     </div>
   );
 };
 
-export const SpacingValues: React.FC = () => {
+export const SpacingTokens: React.FC = () => {
   const spacings = [
-    { name: '3XS', variable: '--pgov-spacing-3xs', value: '0.25rem', sizeInPx: '4px' },
-    { name: '2XS', variable: '--pgov-spacing-2xs', value: '0.5rem', sizeInPx: '8px' },
-    { name: 'XS', variable: '--pgov-spacing-xs', value: '0.75rem', sizeInPx: '12px' },
-    { name: 'SM', variable: '--pgov-spacing-sm', value: '1rem', sizeInPx: '16px' },
-    { name: 'MD', variable: '--pgov-spacing-md', value: '1.5rem', sizeInPx: '24px' },
-    { name: 'LG', variable: '--pgov-spacing-lg', value: '2rem', sizeInPx: '32px' },
-    { name: 'XL', variable: '--pgov-spacing-xl', value: '2.5rem', sizeInPx: '40px' },
-    { name: '2XL', variable: '--pgov-spacing-2xl', value: '3rem', sizeInPx: '48px' },
-    { name: '3XL', variable: '--pgov-spacing-3xl', value: '4rem', sizeInPx: '64px' }
+    { name: '3XS', variable: '--pgov-spacing-3xs', value: '0.25rem', pixels: '4px' },
+    { name: '2XS', variable: '--pgov-spacing-2xs', value: '0.5rem', pixels: '8px' },
+    { name: 'XS', variable: '--pgov-spacing-xs', value: '0.75rem', pixels: '12px' },
+    { name: 'SM', variable: '--pgov-spacing-sm', value: '1rem', pixels: '16px' },
+    { name: 'MD', variable: '--pgov-spacing-md', value: '1.5rem', pixels: '24px' },
+    { name: 'LG', variable: '--pgov-spacing-lg', value: '2rem', pixels: '32px' },
+    { name: 'XL', variable: '--pgov-spacing-xl', value: '2.5rem', pixels: '40px' },
+    { name: '2XL', variable: '--pgov-spacing-2xl', value: '3rem', pixels: '48px' },
+    { name: '3XL', variable: '--pgov-spacing-3xl', value: '4rem', pixels: '64px' },
   ];
   
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       {spacings.map((spacing, index) => (
-        <SpacingItem 
+        <SpacingDisplay 
           key={index}
           name={spacing.name}
           variable={spacing.variable}
           value={spacing.value}
-          sizeInPx={spacing.sizeInPx}
+          pixels={spacing.pixels}
         />
       ))}
     </div>
   );
 };
 
-export const BorderRadiusDisplay: React.FC<SpacingProps> = ({ name, variable, value, sizeInPx }) => {
-  return (
-    <div style={{ 
-      margin: '10px', 
-      padding: '20px',
-      border: '1px solid #ddd',
-      borderRadius: '4px',
-      width: '100%',
-      maxWidth: '600px'
-    }}>
-      <div style={{ 
-        display: 'flex',
-        alignItems: 'center',
-        marginBottom: '16px'
-      }}>
-        <div style={{ 
-          width: '100px',
-          height: '100px',
-          backgroundColor: '#0050d8',
-          borderRadius: value,
-          marginRight: '16px'
-        }} />
-        <div style={{ fontSize: '14px' }}>{value} ({sizeInPx})</div>
-      </div>
-      <div style={{ 
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '4px'
-      }}>
-        <div style={{ fontWeight: 'bold' }}>{name}</div>
-        <code style={{ 
-          backgroundColor: '#f5f5f5',
-          padding: '4px 8px',
-          borderRadius: '4px',
-          fontSize: '14px'
-        }}>{variable}</code>
-      </div>
-    </div>
-  );
-};
-
-export const BorderRadiusValues: React.FC = () => {
-  const borderRadii = [
-    { name: 'Small', variable: '--pgov-border-radius-sm', value: '2px', sizeInPx: '2px' },
-    { name: 'Medium', variable: '--pgov-border-radius-md', value: '4px', sizeInPx: '4px' },
-    { name: 'Large', variable: '--pgov-border-radius-lg', value: '8px', sizeInPx: '8px' },
-    { name: 'Pill', variable: '--pgov-border-radius-pill', value: '999px', sizeInPx: '999px' }
-  ];
-  
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-      {borderRadii.map((radius, index) => (
-        <BorderRadiusDisplay 
-          key={index}
-          name={radius.name}
-          variable={radius.variable}
-          value={radius.value}
-          sizeInPx={radius.sizeInPx}
-        />
-      ))}
-    </div>
-  );
-};
-
-// Example usage of spacing in UI components
 export const SpacingExamples: React.FC = () => {
   return (
     <div style={{ 
-      margin: '10px', 
-      padding: '20px',
-      border: '1px solid #ddd',
-      borderRadius: '4px',
-      width: '100%',
-      maxWidth: '600px'
+      display: 'flex', 
+      flexDirection: 'column', 
+      gap: '40px',
+      maxWidth: '800px'
     }}>
-      <h3>Spacing in UI Components</h3>
-      
-      <div style={{ marginBottom: '20px' }}>
-        <h4>Button Padding</h4>
-        <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
-          <button style={{ 
-            padding: 'var(--pgov-spacing-3xs) var(--pgov-spacing-xs)',
-            backgroundColor: '#0050d8',
-            color: 'white',
-            border: 'none',
+      <div>
+        <h3 style={{ marginBottom: '16px' }}>Margin Examples</h3>
+        <div style={{ 
+          border: '1px dashed #ddd',
+          padding: '20px',
+          borderRadius: '4px'
+        }}>
+          <div style={{ 
+            backgroundColor: '#f0f0f0',
+            padding: '16px',
+            marginBottom: 'var(--pgov-spacing-md)',
             borderRadius: '4px'
           }}>
-            Small Button
-          </button>
-          <button style={{ 
-            padding: 'var(--pgov-spacing-2xs) var(--pgov-spacing-sm)',
-            backgroundColor: '#0050d8',
-            color: 'white',
-            border: 'none',
+            Element with margin-bottom: var(--pgov-spacing-md)
+          </div>
+          <div style={{ 
+            backgroundColor: '#f0f0f0',
+            padding: '16px',
             borderRadius: '4px'
           }}>
-            Medium Button
-          </button>
-          <button style={{ 
-            padding: 'var(--pgov-spacing-xs) var(--pgov-spacing-md)',
-            backgroundColor: '#0050d8',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px'
-          }}>
-            Large Button
-          </button>
+            Next element
+          </div>
         </div>
       </div>
-      
+
       <div>
-        <h4>Card Spacing</h4>
+        <h3 style={{ marginBottom: '16px' }}>Padding Examples</h3>
         <div style={{ 
-          padding: 'var(--pgov-spacing-md)',
-          border: '1px solid #ddd',
-          borderRadius: 'var(--pgov-border-radius-md)'
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '20px'
         }}>
-          <h5 style={{ marginTop: 0, marginBottom: 'var(--pgov-spacing-xs)' }}>Card Title</h5>
-          <p style={{ marginBottom: 'var(--pgov-spacing-sm)' }}>
-            This card uses spacing tokens for consistent padding and margins.
-          </p>
-          <button style={{ 
-            padding: 'var(--pgov-spacing-2xs) var(--pgov-spacing-sm)',
-            backgroundColor: '#0050d8',
-            color: 'white',
-            border: 'none',
-            borderRadius: 'var(--pgov-border-radius-md)'
+          <div style={{ 
+            backgroundColor: '#f0f0f0',
+            padding: 'var(--pgov-spacing-xs)',
+            borderRadius: '4px',
+            width: '200px'
           }}>
-            Action
-          </button>
+            Padding: var(--pgov-spacing-xs)
+          </div>
+          <div style={{ 
+            backgroundColor: '#f0f0f0',
+            padding: 'var(--pgov-spacing-md)',
+            borderRadius: '4px',
+            width: '200px'
+          }}>
+            Padding: var(--pgov-spacing-md)
+          </div>
+          <div style={{ 
+            backgroundColor: '#f0f0f0',
+            padding: 'var(--pgov-spacing-xl)',
+            borderRadius: '4px',
+            width: '200px'
+          }}>
+            Padding: var(--pgov-spacing-xl)
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style={{ marginBottom: '16px' }}>Gap Examples</h3>
+        <div style={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px'
+        }}>
+          <div style={{ 
+            display: 'flex',
+            gap: 'var(--pgov-spacing-xs)',
+            backgroundColor: '#f0f0f0',
+            padding: '16px',
+            borderRadius: '4px'
+          }}>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+          </div>
+          <div style={{ 
+            display: 'flex',
+            gap: 'var(--pgov-spacing-md)',
+            backgroundColor: '#f0f0f0',
+            padding: '16px',
+            borderRadius: '4px'
+          }}>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+          </div>
+          <div style={{ 
+            display: 'flex',
+            gap: 'var(--pgov-spacing-xl)',
+            backgroundColor: '#f0f0f0',
+            padding: '16px',
+            borderRadius: '4px'
+          }}>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+            <div style={{ backgroundColor: '#0050d8', color: 'white', padding: '8px', borderRadius: '4px' }}>Item</div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-// Main component that combines all spacing displays
-export const SpacingDocumentation: React.FC = () => {
-  return (
-    <div>
-      <h2>Spacing Tokens</h2>
-      <p>The PGOV design system includes a comprehensive set of spacing tokens for use in the UI.</p>
-    </div>
-  );
-}; 
+export default SpacingDisplay; 

@@ -14,7 +14,6 @@ const preview: Preview = {
       default: 'pgov',
       list: [
         { name: 'pgov', class: 'pgov-theme-enabled', color: '#0050d8' },
-        { name: 'pgov-dark', class: 'pgov-dark-theme-enabled', color: '#1b1b1b' },
         { name: 'light', class: 'light-theme', color: '#ffffff' },
         { name: 'dark', class: 'dark-theme', color: '#1b1b1b' },
       ],
@@ -24,7 +23,6 @@ const preview: Preview = {
     withThemeByClassName({
       themes: {
         pgov: 'pgov-theme-enabled',
-        'pgov-dark': 'pgov-dark-theme-enabled',
         light: 'light-theme',
         dark: 'dark-theme',
       },
