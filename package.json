@@ -79,5 +79,8 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1"
   }
 }
