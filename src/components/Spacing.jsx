@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SpacingDisplay = ({ name, variable, value, pixels }) => {
   return (
@@ -40,6 +41,13 @@ const SpacingDisplay = ({ name, variable, value, pixels }) => {
       </div>
     </div>
   );
+};
+
+SpacingDisplay.propTypes = {
+  name: PropTypes.string.isRequired,
+  variable: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  pixels: PropTypes.string.isRequired
 };
 
 export const SpacingTokens = () => {

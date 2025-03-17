@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './PageTemplate.css';
 import { Banner } from '../Banner';
 import { Header } from '../Header';
@@ -26,6 +27,23 @@ export const PageTemplate = ({
       </main>
     </div>
   );
+};
+
+PageTemplate.propTypes = {
+  /** Props for the Banner component */
+  bannerProps: PropTypes.object,
+  /** Props for the Header component */
+  headerProps: PropTypes.object.isRequired,
+  /** Props for the SkipNav component */
+  skipNavProps: PropTypes.object,
+  /** Content to be rendered in the main section */
+  children: PropTypes.node,
+  /** Whether to include the Banner component */
+  includeBanner: PropTypes.bool,
+  /** Whether to include the SkipNav component */
+  includeSkipNav: PropTypes.bool,
+  /** Additional CSS class for the template */
+  className: PropTypes.string
 };
 
 export default PageTemplate; 

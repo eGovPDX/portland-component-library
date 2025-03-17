@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Logo component for the Header
@@ -33,6 +34,23 @@ export const HeaderLogo = ({
       </a>
     </div>
   );
+};
+
+HeaderLogo.propTypes = {
+  /** Title text for the logo */
+  title: PropTypes.string.isRequired,
+  /** URL for the logo image */
+  logoUrl: PropTypes.string,
+  /** Alt text for the logo image */
+  logoAlt: PropTypes.string,
+  /** Optional tagline displayed below the title */
+  tagline: PropTypes.string,
+  /** URL for the home link */
+  homeUrl: PropTypes.string,
+  /** Title attribute for the home link */
+  homeTitle: PropTypes.string,
+  /** Aria label for the home link */
+  homeAriaLabel: PropTypes.string
 };
 
 export default HeaderLogo; 

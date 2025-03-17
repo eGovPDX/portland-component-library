@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const FontFamilyDisplay = ({ name, variable, value }) => {
   return (
@@ -36,6 +37,12 @@ const FontFamilyDisplay = ({ name, variable, value }) => {
       </div>
     </div>
   );
+};
+
+FontFamilyDisplay.propTypes = {
+  name: PropTypes.string.isRequired,
+  variable: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
 };
 
 const FontSizeDisplay = ({ name, variable, value, sizeInPx }) => {
@@ -79,6 +86,13 @@ const FontSizeDisplay = ({ name, variable, value, sizeInPx }) => {
   );
 };
 
+FontSizeDisplay.propTypes = {
+  name: PropTypes.string.isRequired,
+  variable: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  sizeInPx: PropTypes.string.isRequired
+};
+
 const FontWeightDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
@@ -119,6 +133,12 @@ const FontWeightDisplay = ({ name, variable, value }) => {
       </div>
     </div>
   );
+};
+
+FontWeightDisplay.propTypes = {
+  name: PropTypes.string.isRequired,
+  variable: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
 };
 
 const LineHeightDisplay = ({ name, variable, value }) => {
@@ -165,6 +185,12 @@ const LineHeightDisplay = ({ name, variable, value }) => {
   );
 };
 
+LineHeightDisplay.propTypes = {
+  name: PropTypes.string.isRequired,
+  variable: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
+};
+
 const LetterSpacingDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
@@ -205,6 +231,12 @@ const LetterSpacingDisplay = ({ name, variable, value }) => {
       </div>
     </div>
   );
+};
+
+LetterSpacingDisplay.propTypes = {
+  name: PropTypes.string.isRequired,
+  variable: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired
 };
 
 export const FontFamilies = () => {

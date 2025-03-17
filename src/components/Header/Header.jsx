@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderMobileMenu } from './HeaderMobileMenu';
@@ -50,6 +51,29 @@ export const Header = ({
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  /** Title displayed in the header */
+  title: PropTypes.string.isRequired,
+  /** URL for the logo image */
+  logoUrl: PropTypes.string,
+  /** Alt text for the logo image */
+  logoAlt: PropTypes.string,
+  /** Tagline displayed below the title */
+  tagline: PropTypes.string,
+  /** Array of navigation items */
+  navItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      description: PropTypes.string
+    })
+  ),
+  /** Additional CSS class for the header */
+  className: PropTypes.string,
+  /** Main heading for the navigation group */
+  mainHeading: PropTypes.string
 };
 
 export default Header; 

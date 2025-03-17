@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Button.css';
 
 /**
@@ -29,6 +30,33 @@ export const Button = ({
       {children}
     </button>
   );
+};
+
+Button.propTypes = {
+  /**
+   * Button variant/style
+   */
+  variant: PropTypes.oneOf(['primary', 'secondary', 'tertiary']),
+  /**
+   * Button size
+   */
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  /**
+   * Is the button disabled?
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Button contents
+   */
+  children: PropTypes.node.isRequired,
+  /**
+   * Optional click handler
+   */
+  onClick: PropTypes.func,
+  /**
+   * Additional CSS class names
+   */
+  className: PropTypes.string
 };
 
 export default Button; 

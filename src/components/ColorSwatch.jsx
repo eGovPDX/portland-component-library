@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/index.scss';
 
 // Individual color swatch component
@@ -28,6 +29,12 @@ const ColorSwatchItem = ({ colorVar, name, description }) => (
   </div>
 );
 
+ColorSwatchItem.propTypes = {
+  colorVar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string
+};
+
 /**
  * Component to display a color swatch
  */
@@ -52,6 +59,12 @@ export const ColorSwatch = ({
       </div>
     </div>
   );
+};
+
+ColorSwatch.propTypes = {
+  colorVar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string
 };
 
 /**

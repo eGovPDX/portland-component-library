@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { HeaderMenuItem } from './HeaderMenuItem';
 
 /**
@@ -18,6 +19,19 @@ export const HeaderMenuGroup = ({
       </ul>
     </div>
   );
+};
+
+HeaderMenuGroup.propTypes = {
+  /** Array of menu items to display */
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      description: PropTypes.string
+    })
+  ).isRequired,
+  /** Main heading text for the menu group */
+  mainHeading: PropTypes.string
 };
 
 export default HeaderMenuGroup; 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Mobile menu button component for the Header
@@ -28,6 +29,19 @@ export const HeaderMobileMenu = ({
       </button>
     </div>
   );
+};
+
+HeaderMobileMenu.propTypes = {
+  /** Whether the mobile menu is open */
+  isOpen: PropTypes.bool.isRequired,
+  /** Click handler for the menu button */
+  onClick: PropTypes.func.isRequired,
+  /** Text displayed on the menu button */
+  menuText: PropTypes.string,
+  /** Aria label for the button when menu is closed */
+  openMenuAriaLabel: PropTypes.string,
+  /** Aria label for the button when menu is open */
+  closeMenuAriaLabel: PropTypes.string
 };
 
 export default HeaderMobileMenu; 

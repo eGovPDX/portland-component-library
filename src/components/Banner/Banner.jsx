@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Banner.css';
 
 /**
@@ -89,6 +90,19 @@ export const Banner = ({
       </div>
     </section>
   );
+};
+
+Banner.propTypes = {
+  /** Text describing the domain/owner of the site */
+  domain: PropTypes.string,
+  /** Custom icon element to display in the banner */
+  icon: PropTypes.node,
+  /** Heading text for the banner content */
+  heading: PropTypes.string,
+  /** Description text for the banner content */
+  description: PropTypes.string,
+  /** Additional CSS class for the banner */
+  className: PropTypes.string
 };
 
 export default Banner; 
