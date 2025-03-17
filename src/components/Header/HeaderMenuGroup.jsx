@@ -7,7 +7,7 @@ import { HeaderMenuItem } from './HeaderMenuItem';
  */
 export const HeaderMenuGroup = ({
   items,
-  mainHeading = "General Information",
+  mainHeading,
 }) => {
   return (
     <div className="pgov-header-menu-group">
@@ -32,6 +32,10 @@ HeaderMenuGroup.propTypes = {
   ).isRequired,
   /** Main heading text for the menu group */
   mainHeading: PropTypes.string
+};
+
+HeaderMenuGroup.defaultProps = {
+  mainHeading: "General Information"
 };
 
 export default HeaderMenuGroup; 

@@ -6,11 +6,11 @@ import './Banner.css';
  * Banner component based on USWDS Banner
  */
 export const Banner = ({
-  domain = 'An official website of the City of Portland',
+  domain,
   icon,
-  heading = 'Important Information',
-  description = 'This is a placeholder description that can be changed in the Banner story.',
-  className = '',
+  heading,
+  description,
+  className,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -103,6 +103,14 @@ Banner.propTypes = {
   description: PropTypes.string,
   /** Additional CSS class for the banner */
   className: PropTypes.string
+};
+
+Banner.defaultProps = {
+  domain: 'An official website of the City of Portland',
+  icon: undefined,
+  heading: 'Important Information',
+  description: 'This is a placeholder description that can be changed in the Banner story.',
+  className: ''
 };
 
 export default Banner; 

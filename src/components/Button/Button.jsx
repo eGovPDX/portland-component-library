@@ -6,12 +6,12 @@ import './Button.css';
  * Primary UI component for user interaction
  */
 export const Button = ({
-  variant = 'primary',
-  size = 'medium',
-  disabled = false,
+  variant,
+  size,
+  disabled,
   children,
   onClick,
-  className = '',
+  className,
 }) => {
   const buttonClassName = [
     'portland-button',
@@ -57,6 +57,14 @@ Button.propTypes = {
    * Additional CSS class names
    */
   className: PropTypes.string
+};
+
+Button.defaultProps = {
+  variant: 'primary',
+  size: 'medium',
+  disabled: false,
+  onClick: undefined,
+  className: ''
 };
 
 export default Button; 

@@ -7,9 +7,9 @@ import PropTypes from 'prop-types';
 export const HeaderMobileMenu = ({
   isOpen,
   onClick,
-  menuText = 'Menu',
-  openMenuAriaLabel = 'Open menu',
-  closeMenuAriaLabel = 'Close menu',
+  menuText,
+  openMenuAriaLabel,
+  closeMenuAriaLabel,
 }) => {
   return (
     <div className={`pgov-header-mobile-menu ${isOpen ? 'is-open' : ''}`}>
@@ -42,6 +42,12 @@ HeaderMobileMenu.propTypes = {
   openMenuAriaLabel: PropTypes.string,
   /** Aria label for the button when menu is open */
   closeMenuAriaLabel: PropTypes.string
+};
+
+HeaderMobileMenu.defaultProps = {
+  menuText: 'Menu',
+  openMenuAriaLabel: 'Open menu',
+  closeMenuAriaLabel: 'Close menu'
 };
 
 export default HeaderMobileMenu; 

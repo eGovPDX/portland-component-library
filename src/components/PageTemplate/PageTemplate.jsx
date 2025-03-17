@@ -13,9 +13,9 @@ export const PageTemplate = ({
   headerProps,
   skipNavProps,
   children,
-  includeBanner = true,
-  includeSkipNav = true,
-  className = '',
+  includeBanner,
+  includeSkipNav,
+  className,
 }) => {
   return (
     <div className={`pgov-page-template ${className}`}>
@@ -44,6 +44,15 @@ PageTemplate.propTypes = {
   includeSkipNav: PropTypes.bool,
   /** Additional CSS class for the template */
   className: PropTypes.string
+};
+
+PageTemplate.defaultProps = {
+  bannerProps: {},
+  skipNavProps: {},
+  children: null,
+  includeBanner: true,
+  includeSkipNav: true,
+  className: ''
 };
 
 export default PageTemplate; 

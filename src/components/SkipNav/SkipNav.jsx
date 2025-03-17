@@ -6,9 +6,9 @@ import './SkipNav.css';
  * SkipNav component for accessibility
  */
 export const SkipNav = ({
-  skipToId = 'main-content',
-  label = 'Skip to main content',
-  className = '',
+  skipToId,
+  label,
+  className,
 }) => {
   return (
     <a 
@@ -27,6 +27,12 @@ SkipNav.propTypes = {
   label: PropTypes.string,
   /** Additional CSS class */
   className: PropTypes.string
+};
+
+SkipNav.defaultProps = {
+  skipToId: 'main-content',
+  label: 'Skip to main content',
+  className: ''
 };
 
 export default SkipNav; 

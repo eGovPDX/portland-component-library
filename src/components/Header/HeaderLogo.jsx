@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 export const HeaderLogo = ({
   title,
   logoUrl,
-  logoAlt = 'Logo',
+  logoAlt,
   tagline,
-  homeUrl = '/',
-  homeTitle = 'Home',
-  homeAriaLabel = 'Home',
+  homeUrl,
+  homeTitle,
+  homeAriaLabel,
 }) => {
   return (
     <div className="pgov-header-logo">
@@ -51,6 +51,15 @@ HeaderLogo.propTypes = {
   homeTitle: PropTypes.string,
   /** Aria label for the home link */
   homeAriaLabel: PropTypes.string
+};
+
+HeaderLogo.defaultProps = {
+  logoUrl: undefined,
+  logoAlt: 'Logo',
+  tagline: undefined,
+  homeUrl: '/',
+  homeTitle: 'Home',
+  homeAriaLabel: 'Home'
 };
 
 export default HeaderLogo; 

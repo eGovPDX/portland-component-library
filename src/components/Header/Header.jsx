@@ -13,9 +13,9 @@ export const Header = ({
   logoUrl,
   logoAlt,
   tagline,
-  navItems = [],
-  className = '',
-  mainHeading = 'General Information',
+  navItems,
+  className,
+  mainHeading,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -74,6 +74,15 @@ Header.propTypes = {
   className: PropTypes.string,
   /** Main heading for the navigation group */
   mainHeading: PropTypes.string
+};
+
+Header.defaultProps = {
+  logoUrl: undefined,
+  logoAlt: undefined,
+  tagline: undefined,
+  navItems: [],
+  className: '',
+  mainHeading: 'General Information'
 };
 
 export default Header; 
