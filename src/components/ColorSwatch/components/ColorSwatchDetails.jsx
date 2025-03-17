@@ -13,16 +13,25 @@ const ColorSwatchDetails = ({
   className,
 }) => {
   const combinedClassName = `pgov-color-swatch-details ${className || ''}`;
-
+  const colorInfo = description || hexValue || colorVar;
+  
   return (
-    <div className={combinedClassName}>
+    <div 
+      className={combinedClassName}
+      role="group"
+      aria-label={`Details for ${name} color`}
+    >
       <div className="pgov-color-swatch-name">{name}</div>
-      <div className="pgov-color-swatch-var">{colorVar}</div>
+      <div className="pgov-color-swatch-var" aria-label={`CSS variable: ${colorVar}`}>{colorVar}</div>
       {description && (
-        <div className="pgov-color-swatch-description">{description}</div>
+        <div className="pgov-color-swatch-description" aria-label={`Description: ${description}`}>
+          {description}
+        </div>
       )}
       {hexValue && !description && (
-        <div className="pgov-color-swatch-hex">{hexValue}</div>
+        <div className="pgov-color-swatch-hex" aria-label={`Hex value: ${hexValue}`}>
+          {hexValue}
+        </div>
       )}
     </div>
   );

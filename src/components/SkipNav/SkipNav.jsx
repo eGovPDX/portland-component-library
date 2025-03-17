@@ -4,8 +4,9 @@ import './SkipNav.css';
 
 /**
  * SkipNav component for accessibility
+ * Allows keyboard users to skip directly to main content
  */
-export const SkipNav = ({
+const SkipNav = ({
   skipToId,
   label,
   className,
@@ -14,6 +15,8 @@ export const SkipNav = ({
     <a 
       href={`#${skipToId}`} 
       className={`pgov-skipnav ${className}`}
+      tabIndex="0"
+      aria-label={label}
     >
       {label}
     </a>
