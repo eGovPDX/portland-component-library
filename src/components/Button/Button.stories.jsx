@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
-import '../styles/index.scss';
+import '../../styles/index.scss';
 
 const meta = {
   title: 'Components/Button',

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Typography.css';
 
 const FontFamilyDisplay = ({ name, variable, value }) => {
   return (
@@ -377,4 +378,6 @@ export const TypographyDisplay = () => {
       <p>The PGOV design system includes a comprehensive set of typography tokens for use in the UI.</p>
     </div>
   );
-}; 
+};
+
+export default TypographyDisplay; 

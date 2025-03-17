@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Spacing.css';
 
 const SpacingDisplay = ({ name, variable, value, pixels }) => {
   return (

@@ -7,6 +7,7 @@ import {
   LineHeights,
   LetterSpacings
 } from './Typography';
+import '../../styles/index.scss';
 
 // Create a dedicated component for the documentation
 const TypographyDocumentation = () => {

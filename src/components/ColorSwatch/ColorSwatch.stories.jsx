@@ -10,6 +10,7 @@ import {
   CyanColorSwatches,
   BlueColorSwatches
 } from './ColorSwatch';
+import '../../styles/index.scss';
 
 // Create a dedicated component for the documentation
 const ColorDocumentation = () => {
@@ -76,7 +77,7 @@ const meta = {
     layout: 'padded',
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=115-2&m=dev',
+      url: 'https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=116-87&m=dev',
     },
   },
 };
@@ -94,35 +95,35 @@ export const Docs = {
   },
 };
 
-// Individual color token stories - only visible in the sidebar
-export const Red = {
+// Individual color group stories
+export const RedColors = {
   render: () => <RedColorSwatches />,
 };
 
-export const Orange = {
+export const OrangeColors = {
   render: () => <OrangeColorSwatches />,
 };
 
-export const Gold = {
+export const GoldColors = {
   render: () => <GoldColorSwatches />,
 };
 
-export const Yellow = {
+export const YellowColors = {
   render: () => <YellowColorSwatches />,
 };
 
-export const Green = {
+export const GreenColors = {
   render: () => <GreenColorSwatches />,
 };
 
-export const Mint = {
+export const MintColors = {
   render: () => <MintColorSwatches />,
 };
 
-export const Cyan = {
+export const CyanColors = {
   render: () => <CyanColorSwatches />,
 };
 
-export const Blue = {
+export const BlueColors = {
   render: () => <BlueColorSwatches />,
 }; 

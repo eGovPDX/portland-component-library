@@ -3,6 +3,7 @@ import {
   SpacingTokens,
   SpacingExamples
 } from './Spacing';
+import '../../styles/index.scss';
 
 // Create a dedicated component for the documentation
 const SpacingDocumentation = () => {

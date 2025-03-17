@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ColorSwatch } from '../ColorSwatch';
+import '@testing-library/jest-dom';
+import { ColorSwatch } from './ColorSwatch';
 
 describe('ColorSwatch', () => {
   const defaultProps = {
