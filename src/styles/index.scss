@@ -106,7 +106,109 @@ body {
 
 // Theme toggle classes
 .pgov-theme-enabled {
-  @extend .pgov-theme;
+  // Make sure all pgov theme variables are available
+  --pgov-color-red-5: #f9eeee;
+  --pgov-color-red-10: #f8e1de;
+  --pgov-color-red-20: #f7bbb6;
+  --pgov-color-red-30: #f2938c;
+  --pgov-color-red-40: #e66a64;
+  --pgov-color-red-50: #d83933;
+  --pgov-color-red-60: #b50909;
+  --pgov-color-red-70: #8b0a03;
+  --pgov-color-red-80: #5c1111;
+  --pgov-color-red-90: #2e0c0a;
+  
+  --pgov-color-orange-5: #faf3ec;
+  --pgov-color-orange-10: #f6e1d5;
+  --pgov-color-orange-20: #f2c4a2;
+  --pgov-color-orange-30: #e9a87a;
+  --pgov-color-orange-40: #e18c43;
+  --pgov-color-orange-50: #c56c1f;
+  --pgov-color-orange-60: #a45019;
+  --pgov-color-orange-70: #7e3412;
+  --pgov-color-orange-80: #5f2809;
+  --pgov-color-orange-90: #3d1a06;
+  
+  --pgov-color-gold-5: #fef9e7;
+  --pgov-color-gold-10: #fef2c9;
+  --pgov-color-gold-20: #ffe396;
+  --pgov-color-gold-30: #ffd166;
+  --pgov-color-gold-40: #ffbe2e;
+  --pgov-color-gold-50: #e5a000;
+  --pgov-color-gold-60: #c2850c;
+  --pgov-color-gold-70: #936f38;
+  --pgov-color-gold-80: #7a591a;
+  --pgov-color-gold-90: #5c410a;
+  
+  --pgov-color-yellow-5: #faf8e8;
+  --pgov-color-yellow-10: #f5f0ce;
+  --pgov-color-yellow-20: #f1e986;
+  --pgov-color-yellow-30: #f5e049;
+  --pgov-color-yellow-40: #fee685;
+  --pgov-color-yellow-50: #face00;
+  --pgov-color-yellow-60: #ddaa01;
+  --pgov-color-yellow-70: #a38400;
+  --pgov-color-yellow-80: #776017;
+  --pgov-color-yellow-90: #4d3a00;
+  
+  --pgov-color-green-5: #eaf4e9;
+  --pgov-color-green-10: #dfeadc;
+  --pgov-color-green-20: #b8d8b4;
+  --pgov-color-green-30: #85c281;
+  --pgov-color-green-40: #4da144;
+  --pgov-color-green-50: #00a91c;
+  --pgov-color-green-60: #008817;
+  --pgov-color-green-70: #216e1f;
+  --pgov-color-green-80: #154c21;
+  --pgov-color-green-90: #0d351e;
+  
+  --pgov-color-mint-5: #e0f7f6;
+  --pgov-color-mint-10: #c4eeeb;
+  --pgov-color-mint-20: #9dece3;
+  --pgov-color-mint-30: #6de0db;
+  --pgov-color-mint-40: #40c7c2;
+  --pgov-color-mint-50: #00bab3;
+  --pgov-color-mint-60: #0c9691;
+  --pgov-color-mint-70: #0b7472;
+  --pgov-color-mint-80: #0d5154;
+  --pgov-color-mint-90: #072326;
+  
+  --pgov-color-cyan-5: #e7f6f8;
+  --pgov-color-cyan-10: #ccecf2;
+  --pgov-color-cyan-20: #99deea;
+  --pgov-color-cyan-30: #5dc0d1;
+  --pgov-color-cyan-40: #28a0cb;
+  --pgov-color-cyan-50: #00bde3;
+  --pgov-color-cyan-60: #009ec1;
+  --pgov-color-cyan-70: #0d7ea5;
+  --pgov-color-cyan-80: #07648d;
+  --pgov-color-cyan-90: #074b69;
+  
+  --pgov-color-blue-5: #eff6fb;
+  --pgov-color-blue-10: #d9e8f6;
+  --pgov-color-blue-20: #aacdec;
+  --pgov-color-blue-30: #73b3e7;
+  --pgov-color-blue-40: #4f97d1;
+  --pgov-color-blue-50: #0050d8;
+  --pgov-color-blue-60: #1a4480;
+  --pgov-color-blue-70: #162e51;
+  --pgov-color-blue-80: #0e1f3f;
+  --pgov-color-blue-90: #0b1526;
+  
+  // Add other color variables as needed
+  
+  // Base colors
+  --pgov-color-white: #ffffff;
+  --pgov-color-black: #000000;
+  
+  // Neutral colors
+  --pgov-color-neutral-darkest: #1b1b1b;
+  --pgov-color-neutral-darker: #3d4551;
+  --pgov-color-neutral-dark: #565c65;
+  --pgov-color-neutral: #71767a;
+  --pgov-color-neutral-light: #a9aeb1;
+  --pgov-color-neutral-lighter: #dfe1e2;
+  --pgov-color-neutral-lightest: #f0f0f0;
 }
 
 .pgov-dark-theme-enabled {
