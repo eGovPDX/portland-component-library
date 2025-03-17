@@ -3,6 +3,7 @@ const config = {
     "../src/components/**/*.mdx",
     "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
+
   "addons": [
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
@@ -14,14 +15,19 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-viewport",
     "@storybook/addon-themes",
-    "@storybook/experimental-addon-test"
+    "@storybook/experimental-addon-test",
+    "@storybook/addon-mdx-gfm"
   ],
+
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
   },
-  "docs": {
-    "autodocs": "tag"
+
+  "docs": {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
   }
 };
 export default config; 
