@@ -45,6 +45,7 @@ export const Default = {
     logoUrl: pgovLogo,
     logoAlt: 'Portland.gov Logo',
     navItems: defaultNavItems,
+    mainHeading: 'General Information',
   },
 };
 
@@ -109,6 +110,7 @@ export const WithSpanishMenuText = {
     closeMenuAriaLabel: 'Cerrar menú',
     homeTitle: 'Inicio',
     homeAriaLabel: 'Página de inicio',
+    mainHeading: 'Información General',
   },
   parameters: {
     viewport: {

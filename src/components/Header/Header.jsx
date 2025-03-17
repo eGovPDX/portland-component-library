@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderMobileMenu } from './HeaderMobileMenu';
-import { HeaderMenuItem } from './HeaderMenuItem';
+import { HeaderMenuGroup } from './HeaderMenuGroup';
 
 /**
  * Header component for Portland.gov
@@ -14,6 +14,7 @@ export const Header = ({
   tagline,
   navItems = [],
   className = '',
+  mainHeading = 'General Information',
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -40,11 +41,10 @@ export const Header = ({
       <div className={`pgov-header-mobile-dropdown ${isMobileMenuOpen ? 'is-open' : ''}`}>
         <div className="pgov-header-mobile-menu-content">
           <div className="pgov-header-mobile-nav">
-            <ul className="pgov-header-mobile-nav-list">
-              {navItems.map((item, index) => (
-                <HeaderMenuItem key={index} item={item} />
-              ))}
-            </ul>
+            <HeaderMenuGroup 
+              items={navItems}
+              mainHeading={mainHeading}
+            />
           </div>
         </div>
       </div>

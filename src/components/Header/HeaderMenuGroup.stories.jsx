@@ -44,7 +44,7 @@ const sampleItems = [
 // Default Menu Group
 export const Default = {
   args: {
-    title: 'General Information',
+    mainHeading: 'General Information',
     items: sampleItems,
   },
 };
@@ -52,7 +52,7 @@ export const Default = {
 // Menu Group with Current Item
 export const WithCurrentItem = {
   args: {
-    title: 'Services',
+    mainHeading: 'General Information',
     items: [
       ...sampleItems.slice(0, 1),
       { ...sampleItems[1], current: true },
@@ -64,7 +64,7 @@ export const WithCurrentItem = {
 // Menu Group with Many Items
 export const WithManyItems = {
   args: {
-    title: 'Departments',
+    mainHeading: 'General Information',
     items: [
       { label: 'Bureau of Development Services', href: '/departments/bds' },
       { label: 'Bureau of Environmental Services', href: '/departments/bes' },
