@@ -20,8 +20,8 @@
 
 /* Main Header Styles */
 .pgov-header-main {
-  background-color: #1b1b1b;
-  color: white;
+  background-color: var(--pgov-color-black, #1b1b1b);
+  color: var(--pgov-color-white, white);
   border-bottom: 1px solid var(--pgov-border-color, #dfe1e2);
 }
 
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: var(--pgov-color-white, white);
 }
 
 .pgov-header-logo-container {
@@ -58,12 +58,12 @@
 .pgov-header-logo-text {
   font-size: 1.25rem;
   font-weight: 700;
-  color: white;
+  color: var(--pgov-color-white, white);
 }
 
 .pgov-header-logo-tagline {
   font-size: 0.875rem;
-  color: #a8c6ff;
+  color: var(--pgov-color-blue-20, #a8c6ff);
   margin-top: 0.25rem;
   display: block;
 }
@@ -76,7 +76,7 @@
 
 .pgov-header-mobile-menu-button {
   background: transparent;
-  border: 1px solid #71767a;
+  border: 1px solid var(--pgov-color-gray-50, #71767a);
   border-radius: 4px;
   cursor: pointer;
   padding: 0.75rem;
@@ -86,7 +86,7 @@
 }
 
 .pgov-header-mobile-menu-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--pgov-color-white-10, rgba(255, 255, 255, 0.1));
 }
 
 .pgov-header-mobile-menu-icon {
@@ -98,7 +98,7 @@
 }
 
 .pgov-header-mobile-menu-text {
-  color: #71767a;
+  color: var(--pgov-color-gray-50, #71767a);
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -108,7 +108,7 @@
   position: absolute;
   height: 2px;
   width: 100%;
-  background: #71767a;
+  background: var(--pgov-color-gray-50, #71767a);
   border-radius: 1px;
   transition: all 0.2s ease;
 }
@@ -142,9 +142,9 @@
 /* Mobile Menu Dropdown Styles */
 .pgov-header-mobile-dropdown {
   display: none;
-  background-color: white;
-  border-bottom: 1px solid #dfe1e2;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--pgov-color-white, white);
+  border-bottom: 1px solid var(--pgov-border-color, #dfe1e2);
+  box-shadow: 0 4px 8px var(--pgov-color-shadow, rgba(0, 0, 0, 0.1));
 }
 
 .pgov-header-mobile-dropdown.is-open {
@@ -183,7 +183,7 @@
 
 .pgov-header-menu-item:hover,
 .pgov-header-menu-item:focus-within {
-  background-color: #e1e5ea;
+  background-color: var(--pgov-color-gray-10, #e1e5ea);
 }
 
 .pgov-header-menu-link {
@@ -196,7 +196,7 @@
 
 .pgov-header-menu-link:hover,
 .pgov-header-menu-link:focus {
-  background-color: #e1e5ea;
+  background-color: var(--pgov-color-gray-10, #e1e5ea);
   text-decoration: none;
 }
 
@@ -206,7 +206,7 @@
   font-weight: 500;
   line-height: 1.3;
   margin-bottom: 0.25rem;
-  color: #0050d8;
+  color: var(--pgov-color-blue-60, #0050d8);
 }
 
 .pgov-header-menu-link-description {
@@ -214,7 +214,7 @@
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.4;
-  color: #5d5d5d;
+  color: var(--pgov-color-gray-70, #5d5d5d);
 }
 
 /* Responsive layout for menu items */
@@ -346,7 +346,7 @@
 .pgov-header-menu-group-main-heading {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1b1b1b;
+  color: var(--pgov-color-black, #1b1b1b);
   margin: 0;
   padding-bottom: 0;
   padding-left: 1rem;

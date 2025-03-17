@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Header.css';
-import { HeaderLogo } from './HeaderLogo';
-import { HeaderMobileMenu } from './HeaderMobileMenu';
-import { HeaderMenuGroup } from './HeaderMenuGroup';
+import HeaderLogo from './HeaderLogo';
+import HeaderMobileMenu from './HeaderMobileMenu';
+import HeaderMenuGroup from './HeaderMenuGroup';
 
 /**
  * Header component for Portland.gov
  */
-export const Header = ({
+const Header = ({
   title,
   logoUrl,
   logoAlt,

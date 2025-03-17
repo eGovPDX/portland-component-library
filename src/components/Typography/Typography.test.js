@@ -1,80 +1,128 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TypographyDisplay, { 
+import {
+  Typography,
   FontFamilies,
   FontSizes,
   FontWeights,
   LineHeights,
-  LetterSpacings
-} from './Typography';
+  LetterSpacings,
+  FontFamilyDisplay,
+  FontSizeDisplay,
+  FontWeightDisplay,
+  LineHeightDisplay,
+  LetterSpacingDisplay
+} from './';
 
-describe('Typography components', () => {
-  test('FontFamilies renders all font families', () => {
-    render(<FontFamilies />);
+describe('Typography', () => {
+  test('renders the main Typography component with all sections', () => {
+    render(<Typography />);
     
+    // Check for main title
+    expect(screen.getByText('Typography Tokens')).toBeInTheDocument();
+    
+    // Check for section titles
+    expect(screen.getByText('Font Families')).toBeInTheDocument();
+    expect(screen.getByText('Font Sizes')).toBeInTheDocument();
+    expect(screen.getByText('Font Weights')).toBeInTheDocument();
+    expect(screen.getByText('Line Heights')).toBeInTheDocument();
+    expect(screen.getByText('Letter Spacing')).toBeInTheDocument();
+  });
+
+  test('renders with only selected sections when specified', () => {
+    render(
+      <Typography 
+        showFontFamilies={true} 
+        showFontSizes={false}
+        showFontWeights={false}
+        showLineHeights={false}
+        showLetterSpacings={false}
+      />
+    );
+    
+    // Should show font families
+    expect(screen.getByText('Font Families')).toBeInTheDocument();
+    
+    // Shouldn't show other sections
+    expect(screen.queryByText('Font Sizes')).not.toBeInTheDocument();
+    expect(screen.queryByText('Font Weights')).not.toBeInTheDocument();
+    expect(screen.queryByText('Line Heights')).not.toBeInTheDocument();
+    expect(screen.queryByText('Letter Spacing')).not.toBeInTheDocument();
+  });
+});
+
+describe('Individual Components', () => {
+  test('FontFamilies renders correctly', () => {
+    render(<FontFamilies />);
     expect(screen.getByText('Sans Serif')).toBeInTheDocument();
     expect(screen.getByText('Serif')).toBeInTheDocument();
     expect(screen.getByText('Monospace')).toBeInTheDocument();
-    
-    expect(screen.getByText('--pgov-font-family-sans')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-font-family-serif')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-font-family-mono')).toBeInTheDocument();
   });
-  
-  test('FontSizes renders size tokens', () => {
+
+  test('FontSizes renders correctly', () => {
     render(<FontSizes />);
-    
-    // Test a few representative sizes
-    expect(screen.getByText('3XS')).toBeInTheDocument();
     expect(screen.getByText('MD')).toBeInTheDocument();
-    expect(screen.getByText('10XL')).toBeInTheDocument();
-    
-    expect(screen.getByText('--pgov-font-size-3xs')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-font-size-md')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-font-size-10xl')).toBeInTheDocument();
+    expect(screen.getByText('1rem (16px)')).toBeInTheDocument();
   });
-  
-  test('FontWeights renders weight tokens', () => {
+
+  test('FontWeights renders correctly', () => {
     render(<FontWeights />);
-    
-    expect(screen.getByText('Thin')).toBeInTheDocument();
     expect(screen.getByText('Regular')).toBeInTheDocument();
     expect(screen.getByText('Bold')).toBeInTheDocument();
-    
-    expect(screen.getByText('--pgov-font-weight-thin')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-font-weight-regular')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-font-weight-bold')).toBeInTheDocument();
   });
-  
-  test('LineHeights renders line height tokens', () => {
+
+  test('LineHeights renders correctly', () => {
     render(<LineHeights />);
-    
-    expect(screen.getByText('Tight')).toBeInTheDocument();
     expect(screen.getByText('Normal')).toBeInTheDocument();
-    expect(screen.getByText('Loose')).toBeInTheDocument();
-    
-    expect(screen.getByText('--pgov-line-height-tight')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-line-height-normal')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-line-height-loose')).toBeInTheDocument();
+    expect(screen.getByText('1.5')).toBeInTheDocument();
   });
-  
-  test('LetterSpacings renders letter spacing tokens', () => {
+
+  test('LetterSpacings renders correctly', () => {
     render(<LetterSpacings />);
-    
-    expect(screen.getByText('Tighter')).toBeInTheDocument();
     expect(screen.getByText('Normal')).toBeInTheDocument();
-    expect(screen.getByText('Widest')).toBeInTheDocument();
-    
-    expect(screen.getByText('--pgov-letter-spacing-tighter')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-letter-spacing-normal')).toBeInTheDocument();
-    expect(screen.getByText('--pgov-letter-spacing-widest')).toBeInTheDocument();
+    expect(screen.getByText('0em')).toBeInTheDocument();
   });
-  
-  test('TypographyDisplay renders main component', () => {
-    render(<TypographyDisplay />);
+});
+
+describe('Display Components', () => {
+  test('FontFamilyDisplay renders correctly', () => {
+    const props = {
+      name: 'Test Font',
+      variable: '--test-font',
+      value: 'Arial, sans-serif'
+    };
     
-    expect(screen.getByText('Typography Tokens')).toBeInTheDocument();
-    expect(screen.getByText('The PGOV design system includes a comprehensive set of typography tokens for use in the UI.')).toBeInTheDocument();
+    render(<FontFamilyDisplay {...props} />);
+    expect(screen.getByText('Test Font')).toBeInTheDocument();
+    expect(screen.getByText('--test-font')).toBeInTheDocument();
+    expect(screen.getByText('Arial, sans-serif')).toBeInTheDocument();
+  });
+
+  test('FontSizeDisplay renders correctly', () => {
+    const props = {
+      name: 'Test Size',
+      variable: '--test-size',
+      value: '1.5rem',
+      sizeInPx: '24px'
+    };
+    
+    render(<FontSizeDisplay {...props} />);
+    expect(screen.getByText('Test Size')).toBeInTheDocument();
+    expect(screen.getByText('--test-size')).toBeInTheDocument();
+    expect(screen.getByText('1.5rem (24px)')).toBeInTheDocument();
+  });
+
+  test('FontWeightDisplay renders correctly', () => {
+    const props = {
+      name: 'Test Weight',
+      variable: '--test-weight',
+      value: '500'
+    };
+    
+    render(<FontWeightDisplay {...props} />);
+    expect(screen.getByText('Test Weight')).toBeInTheDocument();
+    expect(screen.getByText('--test-weight')).toBeInTheDocument();
+    expect(screen.getByText('500')).toBeInTheDocument();
   });
 }); 

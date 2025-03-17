@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 /**
  * Mobile menu button component for the Header
  */
-export const HeaderMobileMenu = ({
+const HeaderMobileMenu = ({
   isOpen,
   onClick,
-  menuText,
+  menuText = 'Menu',
   openMenuAriaLabel,
   closeMenuAriaLabel,
 }) => {

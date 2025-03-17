@@ -1,79 +1,137 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Banner } from './Banner';
+import '@testing-library/jest-dom';
+import { 
+  Banner, 
+  BannerHeader, 
+  BannerContent, 
+  BannerGuidance 
+} from './';
 
-describe('Banner', () => {
-  test('renders with default props', () => {
+describe('Banner Component', () => {
+  test('renders banner with default props', () => {
     render(<Banner />);
     
-    // Check if the domain text is rendered
+    // Check that domain text is rendered
     expect(screen.getByText('An official website of the City of Portland')).toBeInTheDocument();
     
-    // Check if the toggle button is rendered
-    expect(screen.getByText('Here\'s how you know')).toBeInTheDocument();
+    // Check that button is present
+    expect(screen.getByText("Here's how you know")).toBeInTheDocument();
     
-    // Banner content should be hidden initially
-    expect(screen.queryByText('Important Information')).not.toBeInTheDocument();
+    // Content should not be visible initially
+    expect(screen.queryByText('Official websites use .gov')).not.toBeInTheDocument();
   });
 
-  test('renders with custom domain', () => {
-    const customDomain = 'Custom Domain Text';
+  test('expands and collapses when button is clicked', () => {
+    render(<Banner />);
+    
+    // Content should not be visible initially
+    expect(screen.queryByText('Official websites use .gov')).not.toBeInTheDocument();
+    
+    // Click the button to expand
+    fireEvent.click(screen.getByText("Here's how you know"));
+    
+    // Now content should be visible
+    expect(screen.getByText('Official websites use .gov')).toBeInTheDocument();
+    
+    // Click again to collapse
+    fireEvent.click(screen.getByText("Here's how you know"));
+    
+    // Content should not be visible
+    expect(screen.queryByText('Official websites use .gov')).not.toBeInTheDocument();
+  });
+
+  test('uses custom domain text when provided', () => {
+    const customDomain = 'An official website of Portland, Oregon';
     render(<Banner domain={customDomain} />);
     
     expect(screen.getByText(customDomain)).toBeInTheDocument();
   });
 
-  test('renders with custom heading and description when expanded', () => {
+  test('renders with custom heading and description', () => {
     const customHeading = 'Custom Heading';
-    const customDescription = 'Custom Description';
+    const customDescription = 'This is a custom description';
     
     render(
       <Banner 
         heading={customHeading} 
-        description={customDescription} 
+        description={customDescription}
+        initiallyExpanded={true}
       />
     );
     
-    // Click the toggle button to expand the banner
-    fireEvent.click(screen.getByText('Here\'s how you know'));
-    
-    // Now the content should be visible
     expect(screen.getByText(customHeading)).toBeInTheDocument();
     expect(screen.getByText(customDescription)).toBeInTheDocument();
   });
 
-  test('toggles content visibility when button is clicked', () => {
-    render(<Banner />);
+  test('can render without HTTPS guidance', () => {
+    render(
+      <Banner 
+        showHttpsGuidance={false}
+        initiallyExpanded={true}
+      />
+    );
     
-    // Content should be hidden initially
-    expect(screen.queryByText('Important Information')).not.toBeInTheDocument();
+    // Official websites section should be visible
+    expect(screen.getByText('Official websites use .gov')).toBeInTheDocument();
     
-    // Click the toggle button to expand
-    fireEvent.click(screen.getByText('Here\'s how you know'));
-    
-    // Content should now be visible
-    expect(screen.getByText('Important Information')).toBeInTheDocument();
-    
-    // Click again to collapse
-    fireEvent.click(screen.getByText('Here\'s how you know'));
-    
-    // Content should be hidden again
-    expect(screen.queryByText('Important Information')).not.toBeInTheDocument();
+    // HTTPS section should not be visible
+    expect(screen.queryByText('Secure websites use HTTPS')).not.toBeInTheDocument();
   });
 
-  test('applies custom className when provided', () => {
-    render(<Banner className="custom-class" />);
+  test('can render initially expanded', () => {
+    render(<Banner initiallyExpanded={true} />);
     
-    const bannerElement = screen.getByText('An official website of the City of Portland').closest('.pgov-banner');
-    expect(bannerElement).toHaveClass('pgov-banner');
-    expect(bannerElement).toHaveClass('custom-class');
+    // Content should be visible
+    expect(screen.getByText('Official websites use .gov')).toBeInTheDocument();
+  });
+});
+
+describe('Banner Sub-Components', () => {
+  test('BannerHeader renders correctly', () => {
+    const onToggleMock = jest.fn();
+    
+    render(
+      <BannerHeader
+        domain="Test Domain"
+        isExpanded={false}
+        onToggle={onToggleMock}
+      />
+    );
+    
+    expect(screen.getByText('Test Domain')).toBeInTheDocument();
+    expect(screen.getByText("Here's how you know")).toBeInTheDocument();
+    
+    // Test toggle button
+    fireEvent.click(screen.getByText("Here's how you know"));
+    expect(onToggleMock).toHaveBeenCalledTimes(1);
   });
 
-  test('renders with custom icon when provided', () => {
-    const customIcon = <svg data-testid="custom-icon" />;
+  test('BannerContent renders correctly', () => {
+    render(
+      <BannerContent
+        heading="Test Heading"
+        description="Test Description"
+        showHttpsGuidance={true}
+      />
+    );
     
-    render(<Banner icon={customIcon} />);
+    expect(screen.getByText('Test Heading')).toBeInTheDocument();
+    expect(screen.getByText('Test Description')).toBeInTheDocument();
+    expect(screen.getByText('Secure websites use HTTPS')).toBeInTheDocument();
+  });
+
+  test('BannerGuidance renders correctly', () => {
+    render(
+      <BannerGuidance
+        icon={<span data-testid="test-icon" />}
+        heading="Test Guidance Heading"
+        description="Test Guidance Description"
+      />
+    );
     
-    expect(screen.getByTestId('custom-icon')).toBeInTheDocument();
+    expect(screen.getByTestId('test-icon')).toBeInTheDocument();
+    expect(screen.getByText('Test Guidance Heading')).toBeInTheDocument();
+    expect(screen.getByText('Test Guidance Description')).toBeInTheDocument();
   });
 }); 

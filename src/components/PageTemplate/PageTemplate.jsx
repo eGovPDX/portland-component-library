@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './PageTemplate.css';
-import { Banner } from '../Banner';
-import { Header } from '../Header';
-import { SkipNav } from '../SkipNav';
+import Banner from '../Banner/Banner';
+import Header from '../Header/Header';
+import SkipNav from '../SkipNav/SkipNav';
 
 /**
  * Page template component that combines Banner and Header
  */
-export const PageTemplate = ({
+const PageTemplate = ({
   bannerProps,
   headerProps,
   skipNavProps,

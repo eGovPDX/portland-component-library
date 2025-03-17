@@ -1,57 +1,17 @@
 import React from 'react';
 import { 
-  TypographyDisplay,
+  Typography,
   FontFamilies,
   FontSizes,
   FontWeights,
   LineHeights,
   LetterSpacings
-} from './Typography';
+} from './';
 import '../../styles/index.scss';
-
-// Create a dedicated component for the documentation
-const TypographyDocumentation = () => {
-  return (
-    <div>
-      <h2>Typography Tokens</h2>
-      <p>The PGOV design system includes a comprehensive set of typography tokens for use in the UI.</p>
-      
-      <div style={{ marginTop: '40px' }}>
-        <h3>Font Families</h3>
-        <p>These font families are used throughout the PGOV design system.</p>
-        <FontFamilies />
-      </div>
-      
-      <div style={{ marginTop: '40px' }}>
-        <h3>Font Sizes</h3>
-        <p>A range of font sizes from smallest (3XS) to largest (3XL).</p>
-        <FontSizes />
-      </div>
-      
-      <div style={{ marginTop: '40px' }}>
-        <h3>Font Weights</h3>
-        <p>Font weights from light to bold.</p>
-        <FontWeights />
-      </div>
-      
-      <div style={{ marginTop: '40px' }}>
-        <h3>Line Heights</h3>
-        <p>Line height options for different text densities.</p>
-        <LineHeights />
-      </div>
-      
-      <div style={{ marginTop: '40px' }}>
-        <h3>Letter Spacing</h3>
-        <p>Letter spacing options for different text styles.</p>
-        <LetterSpacings />
-      </div>
-    </div>
-  );
-};
 
 const meta = {
   title: 'Design Tokens/Typography',
-  component: TypographyDocumentation,
+  component: Typography,
   parameters: {
     layout: 'padded',
     design: {
@@ -59,12 +19,41 @@ const meta = {
       url: 'https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=115-2&m=dev',
     },
   },
+  argTypes: {
+    showFontFamilies: {
+      control: 'boolean',
+      description: 'Show font families section',
+    },
+    showFontSizes: {
+      control: 'boolean',
+      description: 'Show font sizes section',
+    },
+    showFontWeights: {
+      control: 'boolean',
+      description: 'Show font weights section',
+    },
+    showLineHeights: {
+      control: 'boolean',
+      description: 'Show line heights section',
+    },
+    showLetterSpacings: {
+      control: 'boolean',
+      description: 'Show letter spacing section',
+    }
+  }
 };
 
 export default meta;
 
 // Main story for documentation - shows all typography tokens
-export const Docs = {
+export const AllTypography = {
+  args: {
+    showFontFamilies: true,
+    showFontSizes: true,
+    showFontWeights: true,
+    showLineHeights: true,
+    showLetterSpacings: true
+  },
   parameters: {
     docs: {
       description: {
@@ -74,23 +63,58 @@ export const Docs = {
   },
 };
 
-// Individual typography token stories - only visible in the sidebar
+// Individual typography token stories
 export const Families = {
   render: () => <FontFamilies />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Font families used in the design system.',
+      },
+    },
+  },
 };
 
 export const Sizes = {
   render: () => <FontSizes />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Font sizes ranging from 3XS to 10XL.',
+      },
+    },
+  },
 };
 
 export const Weights = {
   render: () => <FontWeights />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Font weights from thin to black.',
+      },
+    },
+  },
 };
 
 export const LineHeightOptions = {
   render: () => <LineHeights />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Line height options for different text densities.',
+      },
+    },
+  },
 };
 
 export const LetterSpacingOptions = {
   render: () => <LetterSpacings />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'Letter spacing options from tight to wide.',
+      },
+    },
+  },
 }; 

@@ -1,22 +1,14 @@
 import React from 'react';
-import { PageTemplate } from './PageTemplate';
+import PageTemplate from './PageTemplate';
 import pgovLogo from '../../images/PGOV-Logo.svg';
 
-const meta = {
+export default {
   title: 'Templates/PageTemplate',
   component: PageTemplate,
   parameters: {
     layout: 'fullscreen',
-    docs: {
-      description: {
-        component: 'Page template component that combines Banner and Header components for a complete page layout.',
-      },
-    },
   },
-  tags: ['autodocs'],
 };
-
-export default meta;
 
 // Default navigation items for Portland.gov
 const defaultNavItems = [
@@ -45,6 +37,7 @@ export const Default = {
       logoUrl: pgovLogo,
       logoAlt: 'Portland.gov Logo',
       navItems: defaultNavItems,
+      mainHeading: 'General Information',
     },
     skipNavProps: {
       skipToId: 'main-content',
@@ -56,21 +49,6 @@ export const Default = {
       <div style={{ padding: '20px' }}>
         <h1>Welcome to Portland.gov</h1>
         <p>This is a sample page content using the PageTemplate component.</p>
-        <p>The PageTemplate component combines the Banner and Header components for a complete page layout.</p>
-        <div style={{ marginTop: '40px' }}>
-          <h2>Sample Content Section</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget
-            aliquam ultricies, nunc nisl aliquet nunc, quis aliquam nisl nunc quis nisl.
-            Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam
-            nisl nunc quis nisl.
-          </p>
-          <p>
-            Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet nunc, quis aliquam
-            nisl nunc quis nisl. Nullam euismod, nisl eget aliquam ultricies, nunc nisl aliquet
-            nunc, quis aliquam nisl nunc quis nisl.
-          </p>
-        </div>
       </div>
     ),
   },

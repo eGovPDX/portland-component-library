@@ -1,6 +1,5 @@
 import React from 'react';
-import { 
-  ColorSwatch,
+import ColorSwatch, { 
   RedColorSwatches,
   OrangeColorSwatches,
   GoldColorSwatches,
@@ -20,50 +19,34 @@ const ColorDocumentation = () => {
       <p>The PGOV design system includes a comprehensive set of color tokens for consistent branding and UI elements.</p>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Red Colors</h3>
-        <p>A range of red colors from lightest to darkest.</p>
         <RedColorSwatches />
       </div>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Orange Colors</h3>
-        <p>A range of orange colors from lightest to darkest.</p>
         <OrangeColorSwatches />
       </div>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Gold Colors</h3>
-        <p>A range of gold colors from lightest to darkest.</p>
         <GoldColorSwatches />
       </div>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Yellow Colors</h3>
-        <p>A range of yellow colors from lightest to darkest.</p>
         <YellowColorSwatches />
       </div>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Green Colors</h3>
-        <p>A range of green colors from lightest to darkest.</p>
         <GreenColorSwatches />
       </div>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Mint Colors</h3>
-        <p>A range of mint colors from lightest to darkest.</p>
         <MintColorSwatches />
       </div>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Cyan Colors</h3>
-        <p>A range of cyan colors from lightest to darkest.</p>
         <CyanColorSwatches />
       </div>
       
       <div style={{ marginTop: '40px' }}>
-        <h3>Blue Colors</h3>
-        <p>A range of blue colors from lightest to darkest.</p>
         <BlueColorSwatches />
       </div>
     </div>
@@ -84,8 +67,9 @@ const meta = {
 
 export default meta;
 
-// Main story for documentation
-export const Docs = {
+// Main story for the color documentation
+export const ColorTokens = {
+  render: () => <ColorDocumentation />,
   parameters: {
     docs: {
       description: {
