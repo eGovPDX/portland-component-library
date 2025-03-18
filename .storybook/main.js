@@ -15,8 +15,7 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-viewport",
     "@storybook/addon-themes",
-    "@storybook/experimental-addon-test",
-    "@storybook/addon-mdx-gfm"
+    "@storybook/experimental-addon-test"
   ],
 
   "framework": {
