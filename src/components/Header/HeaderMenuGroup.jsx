@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HeaderMenuItem from './HeaderMenuItem';
+import { HeaderMenuItem } from './HeaderMenuItem';
 
 /**
  * Menu group component for the Header mobile menu

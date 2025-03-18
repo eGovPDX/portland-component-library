@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * Menu item component for the Header mobile menu
  */
-const HeaderMenuItem = ({ item }) => {
+export const HeaderMenuItem = ({ item }) => {
   // Create a more descriptive aria-label when description is available
   const ariaLabel = item.description 
     ? `${item.label} - ${item.description}` 
@@ -45,4 +45,3 @@ HeaderMenuItem.propTypes = {
   }).isRequired
 };
 
-export default HeaderMenuItem; 

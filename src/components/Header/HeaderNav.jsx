@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 
 /**
  * Navigation component for the Header
@@ -83,5 +83,3 @@ export const HeaderNav = ({
     </nav>
   );
 };
-
-export default HeaderNav; 
