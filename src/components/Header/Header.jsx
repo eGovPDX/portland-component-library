@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Header.css';
 import HeaderLogo from './HeaderLogo';
@@ -18,13 +18,14 @@ const Header = ({
   mainHeading,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const menuId = "pgov-header-mobile-menu";
+  
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <header className={`pgov-header ${className}`}>
+    <header className={`pgov-header ${className}`} role="banner">
       <div className="pgov-header-main">
         <div className="pgov-header-container">
           <HeaderLogo
@@ -36,15 +37,22 @@ const Header = ({
           <HeaderMobileMenu
             isOpen={isMobileMenuOpen}
             onClick={toggleMobileMenu}
+            menuId={menuId}
           />
         </div>
       </div>
-      <div className={`pgov-header-mobile-dropdown ${isMobileMenuOpen ? 'is-open' : ''}`}>
+      <div 
+        id={menuId} 
+        className={`pgov-header-mobile-dropdown ${isMobileMenuOpen ? 'is-open' : ''}`}
+        aria-labelledby={menuId}
+        aria-hidden={!isMobileMenuOpen}
+      >
         <div className="pgov-header-mobile-menu-content">
           <div className="pgov-header-mobile-nav">
             <HeaderMenuGroup 
               items={navItems}
               mainHeading={mainHeading}
+              id="pgov-header-main-nav"
             />
           </div>
         </div>

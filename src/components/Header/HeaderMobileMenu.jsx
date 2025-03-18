@@ -10,6 +10,7 @@ const HeaderMobileMenu = ({
   menuText = 'Menu',
   openMenuAriaLabel,
   closeMenuAriaLabel,
+  menuId,
 }) => {
   return (
     <div className={`pgov-header-mobile-menu ${isOpen ? 'is-open' : ''}`}>
@@ -17,10 +18,12 @@ const HeaderMobileMenu = ({
         className="pgov-header-mobile-menu-button"
         onClick={onClick}
         aria-expanded={isOpen}
+        aria-controls={menuId}
         aria-label={isOpen ? closeMenuAriaLabel : openMenuAriaLabel}
+        aria-haspopup="true"
         type="button"
       >
-        <div className="pgov-header-mobile-menu-icon">
+        <div className="pgov-header-mobile-menu-icon" aria-hidden="true">
           <span></span>
           <span></span>
           <span></span>
@@ -41,13 +44,16 @@ HeaderMobileMenu.propTypes = {
   /** Aria label for the button when menu is closed */
   openMenuAriaLabel: PropTypes.string,
   /** Aria label for the button when menu is open */
-  closeMenuAriaLabel: PropTypes.string
+  closeMenuAriaLabel: PropTypes.string,
+  /** ID of the menu being controlled */
+  menuId: PropTypes.string
 };
 
 HeaderMobileMenu.defaultProps = {
   menuText: 'Menu',
   openMenuAriaLabel: 'Open menu',
-  closeMenuAriaLabel: 'Close menu'
+  closeMenuAriaLabel: 'Close menu',
+  menuId: 'pgov-header-mobile-menu'
 };
 
 export default HeaderMobileMenu; 

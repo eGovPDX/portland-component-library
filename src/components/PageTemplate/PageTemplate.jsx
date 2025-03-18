@@ -22,7 +22,13 @@ const PageTemplate = ({
       {includeSkipNav && <SkipNav {...skipNavProps} />}
       {includeBanner && <Banner {...bannerProps} />}
       <Header {...headerProps} />
-      <main id="main-content" className="pgov-page-template-main">
+      <main 
+        id="main-content" 
+        className="pgov-page-template-main"
+        tabIndex="-1"
+        role="main"
+        aria-label="Main content"
+      >
         {children}
       </main>
     </div>

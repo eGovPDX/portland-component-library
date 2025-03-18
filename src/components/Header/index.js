@@ -4,8 +4,8 @@ export { default as Header } from './Header';
 
 // Export subcomponents
 export { default as HeaderLogo } from './HeaderLogo';
-export { default as HeaderNav } from './HeaderNav';
-export { default as HeaderSearch } from './HeaderSearch';
+export { HeaderNav } from './HeaderNav';
+export { HeaderSearch } from './HeaderSearch';
 export { default as HeaderMobileMenu } from './HeaderMobileMenu';
 export { default as HeaderMenuGroup } from './HeaderMenuGroup';
-export { default as HeaderMenuItem } from './HeaderMenuItem'; 
+export { HeaderMenuItem } from './HeaderMenuItem'; 

@@ -14,13 +14,28 @@ const ColorPalette = ({
   swatchSize,
   className,
 }) => {
+  const titleId = title ? `color-palette-${title.toLowerCase().replace(/\s+/g, '-')}` : undefined;
   const combinedClassName = `pgov-color-palette ${className || ''}`;
 
   return (
-    <div className={combinedClassName}>
-      {title && <h3 className="pgov-color-palette-title">{title}</h3>}
-      {description && <p className="pgov-color-palette-description">{description}</p>}
-      <div className="pgov-color-palette-grid">
+    <div 
+      className={combinedClassName}
+      role="region"
+      aria-labelledby={titleId}
+    >
+      {title && <h3 id={titleId} className="pgov-color-palette-title">{title}</h3>}
+      {description && (
+        <p 
+          className="pgov-color-palette-description"
+          id={titleId ? `${titleId}-desc` : undefined}
+        >
+          {description}
+        </p>
+      )}
+      <div 
+        className="pgov-color-palette-grid"
+        aria-describedby={titleId && description ? `${titleId}-desc` : undefined}
+      >
         {colors.map((color, index) => (
           <ColorSwatchItem 
             key={index}

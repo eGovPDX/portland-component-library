@@ -125,5 +125,3 @@ export const HeaderSearch = ({
     </div>
   );
 };
-
-export default HeaderSearch; 
