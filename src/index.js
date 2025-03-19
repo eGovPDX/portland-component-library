@@ -4,6 +4,7 @@ export { default as Banner } from './components/Banner';
 export { default as Header } from './components/Header';
 export { default as SkipNav } from './components/SkipNav';
 export { default as PageTemplate } from './components/PageTemplate';
+export { default as Footer } from './components/Footer';
 
 // Export tokens
 // export * from './tokens';
