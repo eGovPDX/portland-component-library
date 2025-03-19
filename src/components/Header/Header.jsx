@@ -16,6 +16,11 @@ const Header = ({
   navItems,
   className,
   mainHeading,
+  menuText,
+  openMenuAriaLabel,
+  closeMenuAriaLabel,
+  homeTitle,
+  homeAriaLabel,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuId = "pgov-header-mobile-menu";
@@ -33,11 +38,16 @@ const Header = ({
             logoUrl={logoUrl}
             logoAlt={logoAlt}
             tagline={tagline}
+            homeTitle={homeTitle}
+            homeAriaLabel={homeAriaLabel}
           />
           <HeaderMobileMenu
             isOpen={isMobileMenuOpen}
             onClick={toggleMobileMenu}
             menuId={menuId}
+            menuText={menuText}
+            openMenuAriaLabel={openMenuAriaLabel}
+            closeMenuAriaLabel={closeMenuAriaLabel}
           />
         </div>
       </div>
@@ -81,7 +91,17 @@ Header.propTypes = {
   /** Additional CSS class for the header */
   className: PropTypes.string,
   /** Main heading for the navigation group */
-  mainHeading: PropTypes.string
+  mainHeading: PropTypes.string,
+  /** Text displayed on the menu button */
+  menuText: PropTypes.string,
+  /** Aria label for the menu button when closed */
+  openMenuAriaLabel: PropTypes.string,
+  /** Aria label for the menu button when open */
+  closeMenuAriaLabel: PropTypes.string,
+  /** Text for the home link */
+  homeTitle: PropTypes.string,
+  /** Aria label for the home link */
+  homeAriaLabel: PropTypes.string
 };
 
 Header.defaultProps = {
@@ -90,7 +110,12 @@ Header.defaultProps = {
   tagline: undefined,
   navItems: [],
   className: '',
-  mainHeading: 'General Information'
+  mainHeading: 'General Information',
+  menuText: 'Menu',
+  openMenuAriaLabel: 'Open menu',
+  closeMenuAriaLabel: 'Close menu',
+  homeTitle: 'Home',
+  homeAriaLabel: 'Homepage'
 };
 
 export default Header; 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkipNav } from './SkipNav';
+import SkipNav from './SkipNav';
 
 const meta = {
   title: 'Components/SkipNav',
@@ -44,25 +44,3 @@ export const Default = {
     ),
   ],
 };
-
-// Custom Label
-export const CustomLabel = {
-  args: {
-    skipToId: 'main-content',
-    label: 'Skip to content',
-  },
-  decorators: [
-    (Story) => (
-      <div>
-        <Story />
-        <div style={{ marginTop: '20px' }}>
-          <p>Tab to see the skip link with custom label appear at the top of the viewport.</p>
-          <div id="main-content" style={{ marginTop: '20px', padding: '20px', border: '1px solid #ddd' }}>
-            <h2>Main Content</h2>
-            <p>This is the main content area that the skip link targets.</p>
-          </div>
-        </div>
-      </div>
-    ),
-  ],
-}; 

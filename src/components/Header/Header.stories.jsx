@@ -16,12 +16,6 @@ export default {
   tags: ['autodocs'],
 };
 
-// Sample navigation items
-const sampleNavItems = [
-  { label: 'Home', href: '/', current: true },
-  { label: 'News', href: '/news' },
-];
-
 // Default navigation items for Portland.gov
 const defaultNavItems = [
   { label: 'Advisory Groups', href: '/advisory-groups', description: 'Groups, boards, and commissions.' },
@@ -40,6 +34,11 @@ const defaultNavItems = [
 
 // Default Header with Logo
 export const Default = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'fullscreen',
+    },
+  },
   args: {
     title: 'Portland.gov',
     logoUrl: pgovLogo,
@@ -51,6 +50,11 @@ export const Default = {
 
 // Header with Logo and Tagline
 export const WithTagline = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'fullscreen',
+    },
+  },
   args: {
     ...Default.args,
     tagline: 'The Official Website of the City of Portland',
@@ -60,7 +64,7 @@ export const WithTagline = {
 // Mobile Header
 export const Mobile = {
   args: {
-    ...WithTagline.args,
+    ...Default.args,
   },
   parameters: {
     viewport: {
@@ -84,20 +88,12 @@ export const MobileWithOpenMenu = {
     return <Header {...args} />;
   },
   args: {
-    ...WithTagline.args,
+    ...Default.args,
   },
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',
     },
-  },
-};
-
-// Header with Custom Navigation Items
-export const WithCustomNavItems = {
-  args: {
-    ...Default.args,
-    navItems: sampleNavItems,
   },
 };
 
@@ -114,7 +110,7 @@ export const WithSpanishMenuText = {
   },
   parameters: {
     viewport: {
-      defaultViewport: 'mobile1',
+      defaultViewport: 'fullscreen',
     },
   },
 }; 

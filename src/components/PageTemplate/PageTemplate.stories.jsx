@@ -28,6 +28,11 @@ const defaultNavItems = [
 
 // Default Page Template
 export const Default = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'fullscreen',
+    },
+  },
   args: {
     bannerProps: {
       domain: 'An official website of the City of Portland',
@@ -80,15 +85,3 @@ export const WithTagline = {
     },
   },
 };
-
-// Mobile Page Template
-export const Mobile = {
-  args: {
-    ...WithTagline.args,
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'mobile1',
-    },
-  },
-}; 
