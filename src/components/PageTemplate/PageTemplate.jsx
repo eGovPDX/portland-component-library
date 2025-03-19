@@ -4,18 +4,21 @@ import './PageTemplate.css';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header';
 import SkipNav from '../SkipNav/SkipNav';
+import Footer from '../Footer/Footer';
 
 /**
- * Page template component that combines Banner and Header
+ * Page template component that combines Banner, Header, and Footer
  */
 const PageTemplate = ({
   bannerProps,
   headerProps,
   skipNavProps,
+  footerProps,
   children,
-  includeBanner,
-  includeSkipNav,
-  className,
+  includeBanner = true,
+  includeSkipNav = true,
+  includeFooter = true,
+  className = '',
 }) => {
   return (
     <div className={`pgov-page-template ${className}`}>
@@ -31,6 +34,7 @@ const PageTemplate = ({
       >
         {children}
       </main>
+      {includeFooter && <Footer {...footerProps} />}
     </div>
   );
 };
@@ -42,14 +46,18 @@ PageTemplate.propTypes = {
   headerProps: PropTypes.object.isRequired,
   /** Props for the SkipNav component */
   skipNavProps: PropTypes.object,
+  /** Props for the Footer component */
+  footerProps: PropTypes.object,
   /** Content to be rendered in the main section */
   children: PropTypes.node,
   /** Whether to include the Banner component */
   includeBanner: PropTypes.bool,
   /** Whether to include the SkipNav component */
   includeSkipNav: PropTypes.bool,
-  /** Additional CSS class for the template */
-  className: PropTypes.string
+  /** Whether to include the Footer component */
+  includeFooter: PropTypes.bool,
+  /** Additional CSS class name */
+  className: PropTypes.string,
 };
 
 PageTemplate.defaultProps = {
@@ -58,6 +66,7 @@ PageTemplate.defaultProps = {
   children: null,
   includeBanner: true,
   includeSkipNav: true,
+  includeFooter: true,
   className: ''
 };
 
