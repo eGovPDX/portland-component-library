@@ -1,0 +1,82 @@
+.side-nav {
+  display: flex;
+  width: 216px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: var(--component-pgov-side-navigation-border-radius-sm, 4px) var(--component-pgov-side-navigation-border-radius-lg, 8px) var(--component-pgov-side-navigation-border-radius-lg, 8px) var(--component-pgov-side-navigation-border-radius-sm, 4px);
+  border-top: var(--component-pgov-side-navigation-border-width-md, 2px) solid var(--component-pgov-side-navigation-border-color-default, #DFE1E2);
+  border-right: var(--component-pgov-side-navigation-border-width-md, 2px) solid var(--component-pgov-side-navigation-border-color-default, #DFE1E2);
+  border-left: var(--component-pgov-side-navigation-border-width-md, 2px) solid var(--component-pgov-side-navigation-border-color-default, #DFE1E2);
+  border-bottom: var(--component-pgov-side-navigation-border-width-md, 2px) solid var(--component-pgov-side-navigation-border-color-default, #DFE1E2);
+}
+
+.side-nav-item {
+  display: flex;
+  padding-right: var(--component-pgov-side-navigation-global-padding-sm, 8px);
+  align-items: center;
+  gap: var(--component-pgov-side-navigation-global-gap-sm, 8px);
+  align-self: stretch;
+  text-decoration: none;
+  position: relative;
+  border-top: var(--component-pgov-side-navigation-border-width-sm, 1px) solid var(--component-pgov-side-navigation-border-color-default, #DFE1E2);
+}
+
+.side-nav-item:first-child {
+  border-top: none;
+}
+
+.side-nav-item.active {
+  background: var(--component-pgov-side-navigation-background-color-selected, rgba(0, 0, 0, 0.01));
+  border-top: none;
+}
+
+.nav-indicator {
+  width: 4px;
+  align-self: stretch;
+}
+
+.side-nav-item:first-child .nav-indicator {
+  border-radius: var(--component-pgov-side-navigation-border-radius-sm, 4px) 0 0 0;
+}
+
+.side-nav-item:last-child .nav-indicator {
+  border-radius: 0 0 0 var(--component-pgov-side-navigation-border-radius-sm, 4px);
+}
+
+.nav-indicator.active-indicator {
+  background: var(--component-pgov-side-navigation-border-color-selected, #2378C3);
+}
+
+.side-nav-text {
+  display: flex;
+  padding: var(--component-pgov-side-navigation-global-padding-sm, 8px) 0px;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  font-family: var(--usa-font-family-ui, "Open Sans");
+  font-size: var(--theme-font-size-ui-sm, 16.6px);
+  font-style: normal;
+  line-height: 130%;
+}
+
+.side-nav-item:not(.active) .side-nav-text {
+  color: var(--component-pgov-side-navigation-text-color-default, #565C65);
+  font-weight: 400;
+}
+
+.side-nav-item.active .side-nav-text {
+  color: var(--component-pgov-side-navigation-text-color-selected-header, #1C1D1F);
+  font-weight: 700;
+}
+
+/* Hover state */
+.side-nav-item:hover {
+  background: var(--component-pgov-side-navigation-background-color-hover, rgba(0, 0, 0, 0.05));
+}
+
+/* Focus state */
+.side-nav-item:focus {
+  outline: 2px solid var(--component-pgov-side-navigation-border-color-selected, #2378C3);
+  outline-offset: 2px;
+} 
