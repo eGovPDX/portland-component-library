@@ -1,6 +1,9 @@
 import React from 'react';
 import { SideNav } from '../SideNav/SideNav';
 import { ProcessSteps } from '../ProcessSteps/ProcessSteps';
+import { SummaryBox } from '../SummaryBox/SummaryBox';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import './ProcessStepsExample.css';
 
 export const ProcessStepsExample = () => {
@@ -49,11 +52,22 @@ export const ProcessStepsExample = () => {
           <SideNav items={steps} activeIndex={0} />
         </div>
         <div className="process-steps-content">
-          <ProcessSteps
-            title="Building Permit Process"
-            subtitle="Follow these steps to get your building permit"
-            steps={steps}
-          />
+          <div className="process-steps-main">
+            <ProcessSteps
+              title="Building Permit Process"
+              subtitle="Follow these steps to get your building permit"
+              steps={steps}
+            />
+            <SummaryBox
+              heading="Have questions?"
+              description="Schedule a time to speak with someone from the Permitting and Development office."
+            >
+              <a href="#schedule" className="summary-box-button">
+                Schedule an appointment
+                <FontAwesomeIcon icon={faArrowRight} />
+              </a>
+            </SummaryBox>
+          </div>
         </div>
       </div>
     </div>
