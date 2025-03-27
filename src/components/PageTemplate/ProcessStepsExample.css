@@ -1,0 +1,21 @@
+.process-steps-example {
+  width: 100%;
+  max-width: var(--theme-site-max-width, 1200px);
+  margin: 0 auto;
+  padding: var(--theme-site-margins-xl, 32px);
+}
+
+.process-steps-layout {
+  display: flex;
+  gap: var(--theme-site-margins-xl, 32px);
+  align-items: flex-start;
+}
+
+.process-steps-sidenav {
+  flex-shrink: 0;
+}
+
+.process-steps-content {
+  flex: 1;
+  min-width: 0; /* Prevent flex item from overflowing */
+} 
