@@ -1,54 +1,87 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { SideNav } from './SideNav';
 
-const mockItems = [
-  { title: 'Research', link: '#research' },
-  { title: 'Prepare', link: '#prepare' },
-  { title: 'Apply', link: '#apply' },
-];
-
 describe('SideNav', () => {
-  it('renders all navigation items', () => {
-    render(<SideNav items={mockItems} activeIndex={0} />);
+  const mockItems = [
+    {
+      title: 'Research',
+      link: '#research',
+      children: [
+        { title: 'Property Information', link: '#property' },
+        { title: 'Permit Types', link: '#permits' },
+      ]
+    },
+    {
+      title: 'Prepare',
+      link: '#prepare',
+    },
+    {
+      title: 'Apply',
+      link: '#apply',
+    },
+  ];
+
+  it('renders all top-level navigation items', () => {
+    render(<SideNav items={mockItems} />);
     
-    mockItems.forEach(item => {
-      expect(screen.getByText(item.title)).toBeInTheDocument();
-    });
+    expect(screen.getByText('Research')).toBeInTheDocument();
+    expect(screen.getByText('Prepare')).toBeInTheDocument();
+    expect(screen.getByText('Apply')).toBeInTheDocument();
   });
 
   it('marks the active item correctly', () => {
+    render(<SideNav items={mockItems} activeItemId="#prepare" />);
+    
+    const activeItem = screen.getByText('Prepare').closest('a');
+    expect(activeItem).toHaveClass('active');
+    expect(activeItem).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('expands section when parent item is clicked', () => {
+    render(<SideNav items={mockItems} />);
+    
+    const parentItem = screen.getByText('Research').closest('a');
+    fireEvent.click(parentItem);
+    
+    expect(screen.getByText('Property Information')).toBeInTheDocument();
+    expect(screen.getByText('Permit Types')).toBeInTheDocument();
+    expect(parentItem).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('collapses expanded section when clicked again', () => {
+    render(<SideNav items={mockItems} />);
+    
+    const parentItem = screen.getByText('Research').closest('a');
+    fireEvent.click(parentItem);
+    fireEvent.click(parentItem);
+    
+    expect(screen.queryByText('Property Information')).not.toBeInTheDocument();
+    expect(parentItem).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('has proper accessibility attributes', () => {
+    render(<SideNav items={mockItems} />);
+    
+    const nav = screen.getByRole('navigation');
+    expect(nav).toHaveAttribute('aria-label', 'Section Navigation');
+    expect(screen.getAllByRole('list')).toHaveLength(1);
+  });
+
+  it('shows additional list role when section is expanded', () => {
+    render(<SideNav items={mockItems} />);
+    
+    const parentItem = screen.getByText('Research').closest('a');
+    fireEvent.click(parentItem);
+    
+    expect(screen.getAllByRole('list')).toHaveLength(2);
+  });
+
+  it('supports legacy activeIndex prop', () => {
     render(<SideNav items={mockItems} activeIndex={1} />);
     
     const activeItem = screen.getByText('Prepare').closest('a');
     expect(activeItem).toHaveClass('active');
-    expect(activeItem).toHaveAttribute('aria-current', 'step');
-  });
-
-  it('renders correct links for each item', () => {
-    render(<SideNav items={mockItems} activeIndex={0} />);
-    
-    mockItems.forEach(item => {
-      const link = screen.getByText(item.title).closest('a');
-      expect(link).toHaveAttribute('href', item.link);
-    });
-  });
-
-  it('has proper accessibility attributes', () => {
-    render(<SideNav items={mockItems} activeIndex={0} />);
-    
-    const nav = screen.getByRole('navigation');
-    expect(nav).toHaveAttribute('aria-label', 'Section Navigation');
-  });
-
-  it('only shows active indicator for active item', () => {
-    render(<SideNav items={mockItems} activeIndex={1} />);
-    
-    const activeIndicators = document.getElementsByClassName('active-indicator');
-    expect(activeIndicators).toHaveLength(1);
-    
-    const activeItem = screen.getByText('Prepare').closest('a');
-    expect(activeItem).toContainElement(activeIndicators[0]);
+    expect(activeItem).toHaveAttribute('aria-current', 'page');
   });
 }); 

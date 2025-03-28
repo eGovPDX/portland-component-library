@@ -1,10 +1,10 @@
 const config = {
-  "stories": [
+  stories: [
     "../src/components/**/*.mdx",
     "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
 
-  "addons": [
+  addons: [
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-a11y",
@@ -18,17 +18,13 @@ const config = {
     "@storybook/experimental-addon-test"
   ],
 
-  "framework": {
-    "name": "@storybook/react-vite",
-    "options": {}
+  framework: {
+    name: "@storybook/react-vite",
+    options: {}
   },
 
-  "docs": {
-    "autodocs": true
-  },
-
-  typescript: {
-    reactDocgen: "react-docgen-typescript"
+  docs: {
+    autodocs: true
   },
 
   viteFinal: (config) => {
@@ -42,4 +38,5 @@ const config = {
     return config;
   }
 };
+
 export default config; 
