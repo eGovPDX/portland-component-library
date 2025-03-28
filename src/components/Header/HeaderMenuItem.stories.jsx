@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderMenuItem from './HeaderMenuItem';
+import { HeaderMenuItem } from './HeaderMenuItem';
 
 export default {
   title: 'Components/Header/HeaderMenuItem',
