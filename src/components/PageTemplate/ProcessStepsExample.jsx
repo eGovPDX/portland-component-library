@@ -13,14 +13,25 @@ export const ProcessStepsExample = () => {
       link: '#research',
       heading: 'Research your project',
       description: 'Learn about the requirements and regulations for your project.',
-      content: 'Research step content'
+      content: 'Research step content',
+      children: [
+        { title: 'Property Information', link: '#property' },
+        { title: 'Permit Types', link: '#permits' },
+        { title: 'Research Fees', link: '#fees' },
+        { title: 'Timelines', link: '#timelines' },
+        { title: 'Who Can Do The Work', link: '#who' },
+      ]
     },
     { 
       title: 'Prepare',
       link: '#prepare',
       heading: 'Prepare your application',
       description: 'Gather all necessary documents and information.',
-      content: 'Prepare step content'
+      content: 'Prepare step content',
+      children: [
+        { title: 'Required Documents', link: '#documents' },
+        { title: 'Application Forms', link: '#forms' },
+      ]
     },
     { 
       title: 'Apply',
@@ -49,7 +60,7 @@ export const ProcessStepsExample = () => {
     <div className="process-steps-example">
       <div className="process-steps-layout">
         <div className="process-steps-sidenav">
-          <SideNav items={steps} activeIndex={0} />
+          <SideNav items={steps} />
         </div>
         <div className="process-steps-content">
           <div className="process-steps-main">
