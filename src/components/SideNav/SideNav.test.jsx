@@ -68,13 +68,16 @@ describe('SideNav', () => {
     expect(screen.getAllByRole('list')).toHaveLength(1);
   });
 
-  it('shows additional list role when section is expanded', () => {
+  it('shows additional list when section is expanded', () => {
     render(<SideNav items={mockItems} />);
     
     const parentItem = screen.getByText('Research').closest('a');
     fireEvent.click(parentItem);
     
-    expect(screen.getAllByRole('list')).toHaveLength(2);
+    const lists = screen.getAllByRole('list');
+    expect(lists).toHaveLength(2);
+    expect(lists[0]).toBeInTheDocument();
+    expect(lists[1]).toBeInTheDocument();
   });
 
   it('supports legacy activeIndex prop', () => {
