@@ -67,7 +67,7 @@ export const SideNav = ({ items, activeItemId, activeIndex }) => {
       const position = getItemPosition(index, navItems.length, isChild);
 
       return (
-        <div key={item.link} className="nav-item-container">
+        <li key={item.link} className="nav-item-container">
           <NavItem
             item={item}
             isActive={isActive}
@@ -79,11 +79,11 @@ export const SideNav = ({ items, activeItemId, activeIndex }) => {
             }}
           />
           {isParent && isExpanded && (
-            <div className="nav-children" role="list">
+            <ul className="nav-children">
               {renderItems(item.children, true)}
-            </div>
+            </ul>
           )}
-        </div>
+        </li>
       );
     });
   };
@@ -94,9 +94,9 @@ export const SideNav = ({ items, activeItemId, activeIndex }) => {
       aria-label="Section Navigation"
       role="navigation"
     >
-      <div role="list">
+      <ul>
         {renderItems(items)}
-      </div>
+      </ul>
     </nav>
   );
 };
