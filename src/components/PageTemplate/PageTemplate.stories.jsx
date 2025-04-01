@@ -84,6 +84,9 @@ export const Default = {
       logoAlt: 'Portland.gov Logo',
       navItems: defaultNavItems,
       mainHeading: 'General Information',
+      menuText: 'Menu',
+      openMenuAriaLabel: 'Open menu',
+      closeMenuAriaLabel: 'Close menu'
     },
     skipNavProps: {
       skipToId: 'main-content',

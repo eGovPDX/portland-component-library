@@ -1,11 +1,11 @@
-import React from 'react';
+import { React } from 'react';
 import PropTypes from 'prop-types';
 import { HeaderMenuItem } from './HeaderMenuItem';
 
 /**
- * Menu group component for the Header mobile menu
+ * Menu group component for the Portland.gov header mobile menu
  */
-const HeaderMenuGroup = ({
+export const HeaderMenuGroup = ({
   items,
   mainHeading,
   id,
@@ -14,7 +14,7 @@ const HeaderMenuGroup = ({
   
   return (
     <nav className="pgov-header-menu-group" role="navigation" aria-labelledby={headingId}>
-      <h3 id={headingId} className="pgov-header-menu-group-main-heading">{mainHeading}</h3>
+      <h3 id={headingId} className="pgov-header-menu-heading">{mainHeading}</h3>
       <ul className="pgov-header-menu-group-items" role="menu">
         {items.map((item, index) => (
           <HeaderMenuItem key={index} item={item} />

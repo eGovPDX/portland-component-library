@@ -1,5 +1,5 @@
-import React from 'react';
-import Header from './Header';
+import { React } from 'react';
+import { Header } from './Header';
 import pgovLogo from '../../images/PGOV-Logo.svg';
 
 export default {
@@ -9,7 +9,7 @@ export default {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Header component for Portland.gov. The header provides branding and identity for the site.',
+        component: 'Header component for Portland.gov based on USWDS Header. The header provides branding and identity for the site.',
       },
     },
   },
@@ -79,7 +79,7 @@ export const MobileWithOpenMenu = {
     // This is a workaround to show the mobile menu open in Storybook
     // In a real app, this would be controlled by user interaction
     setTimeout(() => {
-      const menuButton = document.querySelector('.pgov-header-mobile-menu-button');
+      const menuButton = document.querySelector('.usa-menu-btn');
       if (menuButton) {
         menuButton.click();
       }
@@ -98,19 +98,23 @@ export const MobileWithOpenMenu = {
 };
 
 // Header with Internationalized Menu Text (Spanish)
-export const WithSpanishMenuText = {
+export const SpanishMenuText = {
   args: {
     ...Default.args,
     menuText: 'Menú',
     openMenuAriaLabel: 'Abrir menú',
     closeMenuAriaLabel: 'Cerrar menú',
-    homeTitle: 'Inicio',
-    homeAriaLabel: 'Página de inicio',
     mainHeading: 'Información General',
   },
-  parameters: {
-    viewport: {
-      defaultViewport: 'fullscreen',
-    },
+};
+
+// Header with Current Page
+export const WithCurrentPage = {
+  args: {
+    ...Default.args,
+    navItems: defaultNavItems.map((item, index) => ({
+      ...item,
+      current: index === 2 // Set the third item as current
+    })),
   },
 }; 
