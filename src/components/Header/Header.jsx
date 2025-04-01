@@ -63,6 +63,7 @@ export const Header = ({
             <HeaderMenuGroup
               items={navItems}
               mainHeading={mainHeading}
+              id="pgov-header-menu-group"
             />
           </nav>
         </div>
