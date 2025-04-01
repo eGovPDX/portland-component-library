@@ -1,70 +1,70 @@
 import { React, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Header.css';
-import HeaderLogo from './HeaderLogo';
-import HeaderMobileMenu from './HeaderMobileMenu';
-import HeaderMenuGroup from './HeaderMenuGroup';
+import { HeaderLogo } from './HeaderLogo';
+import { HeaderMenuGroup } from './HeaderMenuGroup';
 
 /**
  * Header component for Portland.gov
  */
-const Header = ({
+export const Header = ({
   title,
   logoUrl,
   logoAlt,
   tagline,
   navItems,
-  className,
   mainHeading,
   menuText,
   openMenuAriaLabel,
   closeMenuAriaLabel,
-  homeTitle,
-  homeAriaLabel,
 }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const menuId = "pgov-header-mobile-menu";
-  
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className={`pgov-header ${className}`} role="banner">
+    <header className="pgov-header">
       <div className="pgov-header-main">
         <div className="pgov-header-container">
-          <HeaderLogo
-            title={title}
-            logoUrl={logoUrl}
-            logoAlt={logoAlt}
-            tagline={tagline}
-            homeTitle={homeTitle}
-            homeAriaLabel={homeAriaLabel}
-          />
-          <HeaderMobileMenu
-            isOpen={isMobileMenuOpen}
-            onClick={toggleMobileMenu}
-            menuId={menuId}
-            menuText={menuText}
-            openMenuAriaLabel={openMenuAriaLabel}
-            closeMenuAriaLabel={closeMenuAriaLabel}
-          />
+          <div className="pgov-header-logo">
+            <HeaderLogo
+              title={title}
+              logoUrl={logoUrl}
+              logoAlt={logoAlt}
+              tagline={tagline}
+            />
+          </div>
+          <div className={`pgov-header-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
+            <button
+              className="pgov-header-mobile-menu-button"
+              aria-label={isMenuOpen ? closeMenuAriaLabel : openMenuAriaLabel}
+              aria-expanded={isMenuOpen}
+              aria-controls="pgov-header-mobile-dropdown"
+              onClick={toggleMenu}
+            >
+              <span className="pgov-header-mobile-menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span className="pgov-header-mobile-menu-text">{menuText}</span>
+            </button>
+          </div>
         </div>
       </div>
       <div 
-        id={menuId} 
-        className={`pgov-header-mobile-dropdown ${isMobileMenuOpen ? 'is-open' : ''}`}
-        aria-labelledby={menuId}
-        aria-hidden={!isMobileMenuOpen}
+        id="pgov-header-mobile-dropdown" 
+        className={`pgov-header-mobile-dropdown ${isMenuOpen ? 'is-open' : ''}`}
       >
         <div className="pgov-header-mobile-menu-content">
-          <div className="pgov-header-mobile-nav">
-            <HeaderMenuGroup 
+          <nav className="pgov-header-mobile-nav" aria-label="Primary navigation">
+            <HeaderMenuGroup
               items={navItems}
               mainHeading={mainHeading}
-              id="pgov-header-main-nav"
             />
-          </div>
+          </nav>
         </div>
       </div>
     </header>
@@ -72,50 +72,41 @@ const Header = ({
 };
 
 Header.propTypes = {
-  /** Title displayed in the header */
+  /** Title text for the header */
   title: PropTypes.string.isRequired,
   /** URL for the logo image */
   logoUrl: PropTypes.string,
   /** Alt text for the logo image */
   logoAlt: PropTypes.string,
-  /** Tagline displayed below the title */
+  /** Optional tagline displayed below the title */
   tagline: PropTypes.string,
   /** Array of navigation items */
   navItems: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       href: PropTypes.string.isRequired,
-      description: PropTypes.string
+      description: PropTypes.string,
+      current: PropTypes.bool
     })
-  ),
-  /** Additional CSS class for the header */
-  className: PropTypes.string,
-  /** Main heading for the navigation group */
+  ).isRequired,
+  /** Main heading text for the navigation menu */
   mainHeading: PropTypes.string,
-  /** Text displayed on the menu button */
+  /** Text for the menu button */
   menuText: PropTypes.string,
-  /** Aria label for the menu button when closed */
+  /** Aria label for opening the menu */
   openMenuAriaLabel: PropTypes.string,
-  /** Aria label for the menu button when open */
-  closeMenuAriaLabel: PropTypes.string,
-  /** Text for the home link */
-  homeTitle: PropTypes.string,
-  /** Aria label for the home link */
-  homeAriaLabel: PropTypes.string
+  /** Aria label for closing the menu */
+  closeMenuAriaLabel: PropTypes.string
 };
 
 Header.defaultProps = {
   logoUrl: undefined,
-  logoAlt: undefined,
+  logoAlt: 'Logo',
   tagline: undefined,
-  navItems: [],
-  className: '',
   mainHeading: 'General Information',
   menuText: 'Menu',
-  openMenuAriaLabel: 'Open menu',
-  closeMenuAriaLabel: 'Close menu',
-  homeTitle: 'Home',
-  homeAriaLabel: 'Homepage'
+  openMenuAriaLabel: 'Menu',
+  closeMenuAriaLabel: 'Close menu'
 };
 
 export default Header; 

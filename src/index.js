@@ -9,6 +9,9 @@ export { SideNav } from './components/SideNav/SideNav';
 // Export tokens
 // export * from './tokens';
 
+// Import USWDS CSS
+import '@uswds/uswds/dist/css/uswds.css';
+
 // Export styles
 import './styles/index.scss';
 
