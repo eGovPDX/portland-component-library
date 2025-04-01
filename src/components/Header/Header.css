@@ -9,13 +9,13 @@
 }
 
 .pgov-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--pgov-spacing-md, 1.5rem);
   display: flex;
-  padding: var(--component-pgov-header-global-padding-md, 16px) 0px;
   justify-content: space-between;
   align-items: center;
-  align-self: stretch;
-  max-width: var(--component-pgov-header-global-max-width, 64rem);
-  margin: 0 auto;
+  height: 80px;
 }
 
 /* Main Header Styles */
@@ -37,9 +37,9 @@
 }
 
 .pgov-header-logo-img {
-  height: var(--component-pgov-header-logo-height-sm, 32px);
+  max-height: 40px;
   width: auto;
-  margin-right: var(--component-pgov-header-logo-gap-sm, 8px);
+  margin-right: 1rem;
 }
 
 .pgov-header-logo-text-container {
@@ -66,58 +66,19 @@
 /* Mobile Menu Button Styles */
 .pgov-header-mobile-menu {
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
 }
 
 .pgov-header-mobile-menu-button {
   background: transparent;
-  border: 1px solid var(--theme-color-border-reverse, #A9AEB1);
-  border-radius: 4px;
-  padding: var(--component-pgov-header-button-padding-y, 8px) var(--component-pgov-header-button-padding-x, 12px);
   display: flex;
+  padding: var(--usa-spacing-105, 12px) var(--usa-spacing-205, 20px);
+  justify-content: center;
   align-items: center;
-  gap: var(--component-pgov-header-button-gap, 8px);
+  gap: var(--component-button-icon-gap, 8px);
+  border-radius: var(--component-button-radius, 4px);
+  border: 2px solid var(--component-link-reverse-color, #A9AEB1);
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  min-width: fit-content;
-}
-
-.pgov-header-mobile-menu-button:hover {
-  background-color: var(--theme-color-hover-reverse, rgba(255, 255, 255, 0.1));
-}
-
-.pgov-header-mobile-menu-icon {
-  position: relative;
-  width: var(--component-pgov-header-icon-width, 16px);
-  height: var(--component-pgov-header-icon-height, 12px);
-}
-
-.pgov-header-mobile-menu-icon span {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: var(--component-link-reverse-color, #A9AEB1);
-  border-radius: 1px;
-  transition: all 0.2s ease;
-}
-
-.pgov-header-mobile-menu-icon span:nth-child(1) { top: 0; }
-.pgov-header-mobile-menu-icon span:nth-child(2) { top: 5px; }
-.pgov-header-mobile-menu-icon span:nth-child(3) { top: 10px; }
-
-.pgov-header-mobile-menu.is-open .pgov-header-mobile-menu-icon span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 5px;
-}
-
-.pgov-header-mobile-menu.is-open .pgov-header-mobile-menu-icon span:nth-child(2) {
-  opacity: 0;
-}
-
-.pgov-header-mobile-menu.is-open .pgov-header-mobile-menu-icon span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: 5px;
 }
 
 .pgov-header-mobile-menu-text {
@@ -127,10 +88,33 @@
   font-size: var(--theme-font-size-ui-sm, 16.6px);
   font-style: normal;
   font-weight: 700;
-  line-height: 95%;
-  display: inline-block;
-  white-space: nowrap;
+  line-height: 95%; /* 15.77px */
 }
+
+.pgov-header-mobile-menu-icon {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: var(--component-link-reverse-color, #A9AEB1);
+}
+
+.pgov-header-mobile-menu-icon span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 16px;
+  background: currentColor;
+  border-radius: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pgov-header-mobile-menu-icon span:nth-child(1) { top: 8px; }
+.pgov-header-mobile-menu-icon span:nth-child(2) { top: 12px; }
+.pgov-header-mobile-menu-icon span:nth-child(3) { top: 16px; }
 
 /* Mobile Menu Dropdown Styles */
 .pgov-header-mobile-dropdown {
@@ -217,11 +201,12 @@
 /* Desktop Styles */
 @media (min-width: 64em) {
   .pgov-header-logo-img {
-    height: 64px;
+    width: 56px;
+    height: 56px;
   }
 
   .pgov-header-logo-text {
-    font-size: 1.75rem;
+    font-size: var(--usa-font-size-reading-10, 23.5px);
   }
 
   .pgov-header-mobile-nav-list {
@@ -246,7 +231,7 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .pgov-header-logo-text {
-    font-size: 1rem;
+    font-size: var(--usa-font-size-reading-10, 23.5px);
   }
 }
 
