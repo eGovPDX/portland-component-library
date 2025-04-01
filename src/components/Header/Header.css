@@ -246,6 +246,17 @@
   gap: 0.75rem;
 }
 
+.pgov-header-menu-group-main-heading {
+  color: var(--component-pgov-header-menu-heading-color, #ffffff);
+  font-family: var(--component-pgov-header-menu-heading-font-family, "Source Sans Pro", sans-serif);
+  font-size: var(--component-pgov-header-menu-heading-font-size, 23.5px);
+  font-style: var(--component-pgov-header-menu-heading-font-style, normal);
+  font-weight: var(--component-pgov-header-menu-heading-font-weight, 700);
+  line-height: var(--component-pgov-header-menu-heading-line-height, 95%);
+  margin: 0;
+  padding: 0 0 0 1rem;
+}
+
 /* Responsive Menu Styles */
 @media (min-width: 768px) {
   .pgov-header-menu-group-items {

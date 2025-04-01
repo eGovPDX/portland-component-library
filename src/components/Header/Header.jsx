@@ -17,6 +17,7 @@ export const Header = ({
   menuText,
   openMenuAriaLabel,
   closeMenuAriaLabel,
+  className,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -25,7 +26,7 @@ export const Header = ({
   };
 
   return (
-    <header className="pgov-header">
+    <header className={`pgov-header ${className || ''}`}>
       <div className="pgov-header-main">
         <div className="pgov-header-container">
           <div className="pgov-header-logo">
@@ -49,7 +50,7 @@ export const Header = ({
                 <span></span>
                 <span></span>
               </span>
-              <span className="pgov-header-mobile-menu-text">{menuText}</span>
+              <span className="pgov-header-mobile-menu-text" aria-hidden="true">{menuText}</span>
             </button>
           </div>
         </div>
@@ -97,7 +98,9 @@ Header.propTypes = {
   /** Aria label for opening the menu */
   openMenuAriaLabel: PropTypes.string,
   /** Aria label for closing the menu */
-  closeMenuAriaLabel: PropTypes.string
+  closeMenuAriaLabel: PropTypes.string,
+  /** Additional CSS class names */
+  className: PropTypes.string
 };
 
 Header.defaultProps = {
@@ -107,7 +110,8 @@ Header.defaultProps = {
   mainHeading: 'General Information',
   menuText: 'Menu',
   openMenuAriaLabel: 'Menu',
-  closeMenuAriaLabel: 'Close menu'
+  closeMenuAriaLabel: 'Close menu',
+  className: undefined
 };
 
 export default Header; 

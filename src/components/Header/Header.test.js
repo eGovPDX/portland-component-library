@@ -12,18 +12,6 @@ jest.mock('./HeaderLogo', () => ({
   )
 }));
 
-jest.mock('./HeaderMobileMenu', () => ({
-  HeaderMobileMenu: ({ isOpen, onClick }) => (
-    <button 
-      data-testid="mock-mobile-menu-button" 
-      data-is-open={isOpen} 
-      onClick={onClick}
-    >
-      Toggle Menu
-    </button>
-  )
-}));
-
 jest.mock('./HeaderMenuItem', () => ({
   HeaderMenuItem: ({ item }) => (
     <li data-testid="mock-menu-item">
@@ -48,10 +36,7 @@ describe('Header', () => {
     
     expect(screen.getByTestId('mock-header-logo')).toBeInTheDocument();
     expect(screen.getByText('Test Title')).toBeInTheDocument();
-    expect(screen.getByTestId('mock-mobile-menu-button')).toBeInTheDocument();
-    
-    // Mobile menu should be closed by default
-    expect(screen.getByTestId('mock-mobile-menu-button')).toHaveAttribute('data-is-open', 'false');
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   test('renders with tagline when provided', () => {
@@ -64,24 +49,24 @@ describe('Header', () => {
   test('toggles mobile menu when button is clicked', () => {
     render(<Header {...defaultProps} />);
     
-    const mobileMenuButton = screen.getByTestId('mock-mobile-menu-button');
+    const menuButton = screen.getByRole('button');
     
     // Menu should be closed initially
-    expect(mobileMenuButton).toHaveAttribute('data-is-open', 'false');
+    expect(menuButton).toHaveAttribute('aria-expanded', 'false');
     expect(document.querySelector('.pgov-header-mobile-dropdown.is-open')).not.toBeInTheDocument();
     
     // Click to open
-    fireEvent.click(mobileMenuButton);
+    fireEvent.click(menuButton);
     
     // Menu should now be open
-    expect(mobileMenuButton).toHaveAttribute('data-is-open', 'true');
+    expect(menuButton).toHaveAttribute('aria-expanded', 'true');
     expect(document.querySelector('.pgov-header-mobile-dropdown.is-open')).toBeInTheDocument();
     
     // Click again to close
-    fireEvent.click(mobileMenuButton);
+    fireEvent.click(menuButton);
     
     // Menu should be closed again
-    expect(mobileMenuButton).toHaveAttribute('data-is-open', 'false');
+    expect(menuButton).toHaveAttribute('aria-expanded', 'false');
     expect(document.querySelector('.pgov-header-mobile-dropdown.is-open')).not.toBeInTheDocument();
   });
 
@@ -97,7 +82,7 @@ describe('Header', () => {
   test('applies custom className when provided', () => {
     render(<Header {...defaultProps} className="custom-class" />);
     
-    const headerElement = screen.getByTestId('mock-header-logo').closest('.pgov-header');
+    const headerElement = screen.getByRole('banner');
     expect(headerElement).toHaveClass('pgov-header');
     expect(headerElement).toHaveClass('custom-class');
   });
