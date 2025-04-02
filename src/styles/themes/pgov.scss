@@ -8,6 +8,18 @@
   --pgov-font-family-serif: Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif;
   --pgov-font-family-mono: 'Roboto Mono', Consolas, Monaco, 'Andale Mono', monospace;
   
+  // USWDS font family tokens
+  --usa-font-family-heading: 'Handgloves';
+  --usa-font-family-ui: var(--pgov-font-family-sans);
+  
+  // USWDS color tokens
+  --usa-color-white: var(--pgov-color-white);
+  --usa-button-primary-background-color: #005EA2;
+  
+  // USWDS font size tokens
+  --theme-font-size-ui-sm: var(--pgov-font-size-2xs);
+  --theme-font-size-heading-sm: var(--pgov-font-size-xs);
+  
   // Font sizes
   --pgov-font-size-3xs: 0.75rem;    // 12px
   --pgov-font-size-2xs: 0.875rem;   // 14px
@@ -307,9 +319,14 @@
   --pgov-link-hover-color: var(--pgov-color-primary-darker);
   --pgov-border-color: var(--pgov-color-neutral-lighter);
   
+  // Component-specific variables
+  --component-pgov-contact-text-color: var(--pgov-color-neutral-darkest);
+  --component-prose-h-3-font-size: var(--pgov-font-size-lg);
+  --portland-background-color: var(--pgov-background-color);
+  
   // Apply theme variables to common variables for component compatibility
   --portland-font-family: var(--pgov-font-family-sans);
-  --portland-font-family-heading: var(--pgov-font-family-serif);
+  --portland-font-family-heading: var(--usa-font-family-heading);
   --portland-font-family-mono: var(--pgov-font-family-mono);
   --portland-font-size-base: var(--pgov-font-size-xs);
   --portland-line-height: var(--pgov-line-height-normal);
