@@ -27,6 +27,15 @@ const defaultNavItems = [
   { label: 'Jobs with the City', href: 'https://www.governmentjobs.com/careers/portlandor', description: 'Opportunities posted to governmentjobs.com' },
 ];
 
+// Default breadcrumb items
+const defaultBreadcrumbItems = [
+  { text: 'Home', href: '/' },
+  { text: 'Services', href: '/services' },
+  { text: 'Government', href: '/government' },
+  { text: 'Local', href: '/government/local' },
+  { text: 'Current Page' },
+];
+
 // Default footer props
 const defaultFooterProps = {
   feedbackUrl: '/contact',
@@ -92,10 +101,15 @@ export const Default = {
       skipToId: 'main-content',
       label: 'Skip to main content',
     },
+    breadcrumbsProps: {
+      items: defaultBreadcrumbItems,
+      truncateMiddle: true,
+    },
     footerProps: defaultFooterProps,
     includeBanner: true,
     includeSkipNav: true,
     includeFooter: true,
+    includeBreadcrumbs: true,
     children: (
       <div style={{ padding: '2rem' }}>
         <h1>Welcome to Portland.gov</h1>
@@ -120,5 +134,14 @@ export const WithoutSkipNav = {
   args: {
     ...Default.args,
     includeSkipNav: false,
+  },
+};
+
+// Without Breadcrumbs
+export const WithoutBreadcrumbs = {
+  ...Default,
+  args: {
+    ...Default.args,
+    includeBreadcrumbs: false,
   },
 };
