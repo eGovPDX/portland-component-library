@@ -1,0 +1,117 @@
+.pgov-breadcrumb {
+  background-color: var(--pgov-breadcrumb-background-color);
+  padding: var(--pgov-breadcrumb-padding-y) var(--pgov-breadcrumb-padding-x);
+  width: 100%;
+}
+
+.pgov-breadcrumb__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pgov-breadcrumb-mobile-padding-y);
+}
+
+.pgov-breadcrumb__item {
+  display: flex;
+  align-items: center;
+  gap: var(--pgov-breadcrumb-gap);
+  white-space: nowrap;
+}
+
+/* Light mode - link styles */
+.pgov-breadcrumb__link {
+  color: var(--pgov-color-primary, #005EA2);
+  font-family: var(--pgov-font-family-sans, "Public Sans");
+  font-size: var(--pgov-font-size-xs, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+/* Light mode - current page styles */
+.pgov-breadcrumb__current {
+  color: var(--pgov-color-neutral-darkest, #1B1B1B);
+  font-family: var(--pgov-font-family-sans, "Public Sans");
+  font-size: var(--pgov-font-size-xs, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+/* Base separator styles */
+.pgov-breadcrumb__separator {
+  color: var(--pgov-color-neutral, #71767a);
+  margin: 0 var(--pgov-breadcrumb-gap);
+  flex-shrink: 0;
+}
+
+/* Dark mode styles */
+:root[data-theme="dark"] .pgov-breadcrumb__link,
+.pgov-breadcrumb--dark .pgov-breadcrumb__link {
+  color: var(--pgov-color-neutral-light, #A9AEB1);
+  font-family: var(--pgov-font-family-sans, "Public Sans");
+  font-size: var(--pgov-font-size-xs, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+:root[data-theme="dark"] .pgov-breadcrumb__current,
+.pgov-breadcrumb--dark .pgov-breadcrumb__current {
+  color: var(--pgov-color-white, #FFF);
+  font-family: var(--pgov-font-family-sans, "Public Sans");
+  font-size: var(--pgov-font-size-xs, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+:root[data-theme="dark"] .pgov-breadcrumb__separator,
+.pgov-breadcrumb--dark .pgov-breadcrumb__separator {
+  color: var(--pgov-color-neutral-light, #A9AEB1);
+}
+
+/* Hide ellipsis by default and on mobile */
+.pgov-breadcrumb__item.ellipsis {
+  display: none;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 48em) {
+  .pgov-breadcrumb__list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Default state - all items visible */
+  .pgov-breadcrumb__item {
+    flex: 0 0 auto;
+  }
+
+  /* Truncated state */
+  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item {
+    display: none;
+  }
+
+  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item:first-child,
+  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item:last-child,
+  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item.ellipsis {
+    display: flex;
+  }
+} 
