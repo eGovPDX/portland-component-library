@@ -1,0 +1,118 @@
+.usa-tooltip__body {
+  position: absolute;
+  z-index: var(--pgov-z-index-tooltip);
+  display: none;
+  max-width: 15rem;
+  padding: 0.5rem 1rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  font-family: var(--pgov-font-family-sans);
+  font-size: var(--pgov-font-size-2xs);
+  line-height: var(--pgov-line-height-normal);
+  text-align: center;
+  border-radius: var(--pgov-border-radius-md);
+}
+
+.usa-tooltip__body[aria-hidden="false"] {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Light theme (dark appearance) */
+.usa-tooltip__body--light {
+  color: var(--pgov-color-white);
+  background-color: var(--pgov-color-neutral-darkest);
+}
+
+/* Dark theme (light appearance) */
+.usa-tooltip__body--dark {
+  color: var(--pgov-background-color, var(--pgov-color-white));
+  background-color: var(--pgov-text-color, var(--pgov-color-neutral-darkest));
+  border: var(--pgov-border-width-1) solid var(--pgov-border-color, var(--pgov-color-neutral-lighter));
+  box-shadow: var(--pgov-shadow-sm);
+}
+
+/* Arrow styles */
+.usa-tooltip__arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+}
+
+/* Light theme arrows (dark) */
+.usa-tooltip__body--light[data-popper-placement^='top'] .usa-tooltip__arrow {
+  bottom: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--pgov-color-neutral-darkest);
+  margin-bottom: -8px;
+}
+
+.usa-tooltip__body--light[data-popper-placement^='bottom'] .usa-tooltip__arrow {
+  top: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--pgov-color-neutral-darkest);
+  margin-top: -8px;
+}
+
+.usa-tooltip__body--light[data-popper-placement^='left'] .usa-tooltip__arrow {
+  right: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid var(--pgov-color-neutral-darkest);
+  margin-right: -8px;
+}
+
+.usa-tooltip__body--light[data-popper-placement^='right'] .usa-tooltip__arrow {
+  left: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid var(--pgov-color-neutral-darkest);
+  margin-left: -8px;
+}
+
+/* Dark theme arrows (light) */
+.usa-tooltip__body--dark[data-popper-placement^='top'] .usa-tooltip__arrow {
+  bottom: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--pgov-text-color, var(--pgov-color-neutral-darkest));
+  margin-bottom: -8px;
+  filter: drop-shadow(0 -1px 1px var(--pgov-border-color, var(--pgov-color-neutral-lighter)));
+}
+
+.usa-tooltip__body--dark[data-popper-placement^='bottom'] .usa-tooltip__arrow {
+  top: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--pgov-text-color, var(--pgov-color-neutral-darkest));
+  margin-top: -8px;
+  filter: drop-shadow(0 1px 1px var(--pgov-border-color, var(--pgov-color-neutral-lighter)));
+}
+
+.usa-tooltip__body--dark[data-popper-placement^='left'] .usa-tooltip__arrow {
+  right: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid var(--pgov-text-color, var(--pgov-color-neutral-darkest));
+  margin-right: -8px;
+  filter: drop-shadow(1px 0 1px var(--pgov-border-color, var(--pgov-color-neutral-lighter)));
+}
+
+.usa-tooltip__body--dark[data-popper-placement^='right'] .usa-tooltip__arrow {
+  left: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid var(--pgov-text-color, var(--pgov-color-neutral-darkest));
+  margin-left: -8px;
+  filter: drop-shadow(-1px 0 1px var(--pgov-border-color, var(--pgov-color-neutral-lighter)));
+}
+
+/* Hover behavior */
+.usa-tooltip__body:hover {
+  pointer-events: auto;
+} 

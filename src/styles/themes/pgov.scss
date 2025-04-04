@@ -551,4 +551,17 @@
   --pgov-breadcrumb-gap: 0.5rem;
   --pgov-breadcrumb-mobile-padding-y: 0.5rem;
   --pgov-breadcrumb-mobile-padding-x: 0.75rem;
+
+  // Z-index tokens
+  // Source: Added for component layering
+  --pgov-z-index-base: 0;
+  --pgov-z-index-dropdown: 1000;
+  --pgov-z-index-sticky: 1020;
+  --pgov-z-index-fixed: 1030;
+  --pgov-z-index-modal-backdrop: 1040;
+  --pgov-z-index-modal: 1050;
+  --pgov-z-index-popover: 1060;
+  --pgov-z-index-tooltip: 1070;
+  --pgov-z-index-toast: 1080;
+  --pgov-z-index-overlay: 1090;
 } 
