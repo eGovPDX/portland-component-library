@@ -14,15 +14,15 @@ const getDefaultIcon = () => (
  * Displays information about the official nature of government websites
  */
 export const Banner = ({
-  domain,
-  icon,
-  heading,
-  description,
-  showHttpsGuidance,
-  initiallyExpanded,
-  className,
+  domain = 'An official website of the City of Portland',
+  icon = undefined,
+  heading = 'Official websites use .gov',
+  description = 'A .gov website belongs to an official government organization in the United States.',
+  showHttpsGuidance = true,
+  initiallyExpanded = false,
+  className = '',
 }) => {
-  const [isExpanded, setIsExpanded] = useState(initiallyExpanded || false);
+  const [isExpanded, setIsExpanded] = useState(initiallyExpanded);
   const containerClassName = ['pgov-banner', className].filter(Boolean).join(' ');
   const iconToDisplay = icon || getDefaultIcon();
 
@@ -124,6 +124,4 @@ Banner.defaultProps = {
   showHttpsGuidance: true,
   initiallyExpanded: false,
   className: ''
-};
-
-export default Banner; 
+}; 

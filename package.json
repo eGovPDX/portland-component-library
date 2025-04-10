@@ -1,7 +1,10 @@
 {
-  "name": "portland-component-library",
+  "name": "@pgov/portland-component-library",
   "version": "0.1.0",
   "description": "Portland Component Library using design tokens from Figma",
+  "keywords": [],
+  "author": "Ken Downey",
+  "license": "ISC",
   "type": "module",
   "files": [
     "dist"
@@ -27,10 +30,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "npm run build:lib"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.6.0",
+  "packageManager": "pnpm@10.8.0",
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",

@@ -1,7 +1,7 @@
 import React from 'react';
-import PageTemplate from './PageTemplate';
+import { PageTemplate } from './PageTemplate';
 import pgovLogo from '../../images/PGOV-Logo.svg';
-import Footer from '../Footer';
+import { Footer } from '../Footer/Footer';
 
 export default {
   title: 'Templates/PageTemplate',

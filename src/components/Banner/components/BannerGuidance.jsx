@@ -41,6 +41,4 @@ BannerGuidance.propTypes = {
 
 BannerGuidance.defaultProps = {
   className: ''
-};
-
-export default BannerGuidance; 
+}; 

@@ -9,7 +9,7 @@ import {
   LetterSpacings
 } from './components';
 
-const FontFamilyDisplay = ({ name, variable, value }) => {
+export const FontFamilyDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -53,7 +53,7 @@ FontFamilyDisplay.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-const FontSizeDisplay = ({ name, variable, value, sizeInPx }) => {
+export const FontSizeDisplay = ({ name, variable, value, sizeInPx }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -101,7 +101,7 @@ FontSizeDisplay.propTypes = {
   sizeInPx: PropTypes.string.isRequired
 };
 
-const FontWeightDisplay = ({ name, variable, value }) => {
+export const FontWeightDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -149,7 +149,7 @@ FontWeightDisplay.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-const LineHeightDisplay = ({ name, variable, value }) => {
+export const LineHeightDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -199,7 +199,7 @@ LineHeightDisplay.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-const LetterSpacingDisplay = ({ name, variable, value }) => {
+export const LetterSpacingDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -261,60 +261,55 @@ export const Typography = ({
   const containerClassName = ['pgov-typography', className].filter(Boolean).join(' ');
   
   return (
-    <div className={containerClassName}>
+    <div className={containerClassName} data-testid="typography-container">
       <h2 className="pgov-typography-title">Typography Tokens</h2>
       <p className="pgov-typography-description">
         The PGOV design system includes a comprehensive set of typography tokens for use in the UI.
       </p>
       
       {showFontFamilies && (
-        <div className="pgov-typography-section">
+        <section className="pgov-typography-section">
           <h3 className="pgov-typography-section-title">Font Families</h3>
-          <p className="pgov-typography-section-description">
-            These font families are used throughout the PGOV design system.
-          </p>
-          <FontFamilies />
-        </div>
+          <div className="pgov-typography-section-content">
+            <FontFamilies />
+          </div>
+        </section>
       )}
       
       {showFontSizes && (
-        <div className="pgov-typography-section">
+        <section className="pgov-typography-section">
           <h3 className="pgov-typography-section-title">Font Sizes</h3>
-          <p className="pgov-typography-section-description">
-            A range of font sizes from smallest (3XS) to largest (10XL).
-          </p>
-          <FontSizes />
-        </div>
+          <div className="pgov-typography-section-content">
+            <FontSizes />
+          </div>
+        </section>
       )}
       
       {showFontWeights && (
-        <div className="pgov-typography-section">
+        <section className="pgov-typography-section">
           <h3 className="pgov-typography-section-title">Font Weights</h3>
-          <p className="pgov-typography-section-description">
-            Font weights from light to bold.
-          </p>
-          <FontWeights />
-        </div>
+          <div className="pgov-typography-section-content">
+            <FontWeights />
+          </div>
+        </section>
       )}
       
       {showLineHeights && (
-        <div className="pgov-typography-section">
+        <section className="pgov-typography-section">
           <h3 className="pgov-typography-section-title">Line Heights</h3>
-          <p className="pgov-typography-section-description">
-            Line height options for different text densities.
-          </p>
-          <LineHeights />
-        </div>
+          <div className="pgov-typography-section-content">
+            <LineHeights />
+          </div>
+        </section>
       )}
       
       {showLetterSpacings && (
-        <div className="pgov-typography-section">
+        <section className="pgov-typography-section">
           <h3 className="pgov-typography-section-title">Letter Spacing</h3>
-          <p className="pgov-typography-section-description">
-            Letter spacing options for different text styles.
-          </p>
-          <LetterSpacings />
-        </div>
+          <div className="pgov-typography-section-content">
+            <LetterSpacings />
+          </div>
+        </section>
       )}
     </div>
   );
@@ -351,6 +346,4 @@ export {
   FontWeights,
   LineHeights,
   LetterSpacings
-};
-
-export default Typography; 
+}; 

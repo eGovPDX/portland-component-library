@@ -9,11 +9,12 @@ export const HeaderMenuGroup = ({
   items,
   mainHeading,
   id,
+  className
 }) => {
   const headingId = `${id}-heading`;
   
   return (
-    <nav className="pgov-header-menu-group" role="navigation" aria-labelledby={headingId}>
+    <nav className={`pgov-header-menu-group ${className || ''}`} role="navigation" aria-labelledby={headingId}>
       <h3 id={headingId} className="pgov-header-menu-heading">{mainHeading}</h3>
       <ul className="pgov-header-menu-group-items" role="menu">
         {items.map((item, index) => (
@@ -37,12 +38,12 @@ HeaderMenuGroup.propTypes = {
   /** Main heading text for the menu group */
   mainHeading: PropTypes.string,
   /** ID for the component */
-  id: PropTypes.string
+  id: PropTypes.string,
+  /** Custom class name */
+  className: PropTypes.string
 };
 
 HeaderMenuGroup.defaultProps = {
   mainHeading: "General Information",
   id: "pgov-header-menu-group"
-};
-
-export default HeaderMenuGroup; 
+}; 

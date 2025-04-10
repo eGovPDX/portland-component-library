@@ -29,6 +29,4 @@ HeaderMenuItem.propTypes = {
     description: PropTypes.string,
     current: PropTypes.bool
   }).isRequired
-};
-
-export default HeaderMenuItem; 
+}; 

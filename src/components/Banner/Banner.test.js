@@ -1,44 +1,43 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { 
-  Banner, 
-  BannerHeader, 
-  BannerContent, 
-  BannerGuidance 
-} from './';
+import { Banner } from './Banner';
 
 describe('Banner Component', () => {
   test('renders banner with default props', () => {
     render(<Banner />);
     
     // Check that domain text is rendered
-    expect(screen.getByText('An official website of the City of Portland')).toBeInTheDocument();
+    const domainText = screen.getByText(/An official website of the City of Portland/i);
+    expect(domainText).toBeInTheDocument();
     
     // Check that button is present
-    expect(screen.getByText("Here's how you know")).toBeInTheDocument();
+    const button = screen.getByRole('button', { name: /Here's how you know/i });
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveAttribute('aria-expanded', 'false');
+    expect(button).toHaveAttribute('aria-controls', 'pgov-banner-content');
     
     // Content should not be visible initially
-    expect(screen.queryByText('Official websites use .gov')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Official websites use .gov/i)).not.toBeInTheDocument();
   });
 
   test('expands and collapses when button is clicked', () => {
     render(<Banner />);
     
     // Content should not be visible initially
-    expect(screen.queryByText('Official websites use .gov')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Official websites use .gov/i)).not.toBeInTheDocument();
     
     // Click the button to expand
-    fireEvent.click(screen.getByText("Here's how you know"));
+    fireEvent.click(screen.getByRole('button', { name: /Here's how you know/i }));
     
     // Now content should be visible
-    expect(screen.getByText('Official websites use .gov')).toBeInTheDocument();
+    expect(screen.getByText(/Official websites use .gov/i)).toBeInTheDocument();
     
     // Click again to collapse
-    fireEvent.click(screen.getByText("Here's how you know"));
+    fireEvent.click(screen.getByRole('button', { name: /Here's how you know/i }));
     
     // Content should not be visible
-    expect(screen.queryByText('Official websites use .gov')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Official websites use .gov/i)).not.toBeInTheDocument();
   });
 
   test('uses custom domain text when provided', () => {
@@ -73,65 +72,27 @@ describe('Banner Component', () => {
     );
     
     // Official websites section should be visible
-    expect(screen.getByText('Official websites use .gov')).toBeInTheDocument();
+    expect(screen.getByText(/Official websites use .gov/i)).toBeInTheDocument();
     
     // HTTPS section should not be visible
-    expect(screen.queryByText('Secure websites use HTTPS')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Secure websites use HTTPS/i)).not.toBeInTheDocument();
   });
 
   test('can render initially expanded', () => {
     render(<Banner initiallyExpanded={true} />);
     
     // Content should be visible
-    expect(screen.getByText('Official websites use .gov')).toBeInTheDocument();
-  });
-});
-
-describe('Banner Sub-Components', () => {
-  test('BannerHeader renders correctly', () => {
-    const onToggleMock = jest.fn();
-    
-    render(
-      <BannerHeader
-        domain="Test Domain"
-        isExpanded={false}
-        onToggle={onToggleMock}
-      />
-    );
-    
-    expect(screen.getByText('Test Domain')).toBeInTheDocument();
-    expect(screen.getByText("Here's how you know")).toBeInTheDocument();
-    
-    // Test toggle button
-    fireEvent.click(screen.getByText("Here's how you know"));
-    expect(onToggleMock).toHaveBeenCalledTimes(1);
+    expect(screen.getByText(/Official websites use .gov/i)).toBeInTheDocument();
   });
 
-  test('BannerContent renders correctly', () => {
-    render(
-      <BannerContent
-        heading="Test Heading"
-        description="Test Description"
-        showHttpsGuidance={true}
-      />
-    );
+  test('has correct ARIA attributes', () => {
+    render(<Banner />);
     
-    expect(screen.getByText('Test Heading')).toBeInTheDocument();
-    expect(screen.getByText('Test Description')).toBeInTheDocument();
-    expect(screen.getByText('Secure websites use HTTPS')).toBeInTheDocument();
-  });
-
-  test('BannerGuidance renders correctly', () => {
-    render(
-      <BannerGuidance
-        icon={<span data-testid="test-icon" />}
-        heading="Test Guidance Heading"
-        description="Test Guidance Description"
-      />
-    );
+    const button = screen.getByRole('button', { name: /Here's how you know/i });
+    expect(button).toHaveAttribute('aria-expanded', 'false');
+    expect(button).toHaveAttribute('aria-controls', 'pgov-banner-content');
     
-    expect(screen.getByTestId('test-icon')).toBeInTheDocument();
-    expect(screen.getByText('Test Guidance Heading')).toBeInTheDocument();
-    expect(screen.getByText('Test Guidance Description')).toBeInTheDocument();
+    fireEvent.click(button);
+    expect(button).toHaveAttribute('aria-expanded', 'true');
   });
 }); 

@@ -112,6 +112,4 @@ Header.defaultProps = {
   openMenuAriaLabel: 'Menu',
   closeMenuAriaLabel: 'Close menu',
   className: undefined
-};
-
-export default Header; 
+}; 

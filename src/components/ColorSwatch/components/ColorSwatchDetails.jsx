@@ -71,4 +71,4 @@ ColorSwatchDetails.defaultProps = {
   className: '',
 };
 
-export default ColorSwatchDetails; 
+export { ColorSwatchDetails }; 

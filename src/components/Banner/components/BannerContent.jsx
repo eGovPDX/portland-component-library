@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BannerGuidance from './BannerGuidance';
+import { BannerGuidance } from './BannerGuidance';
 import { getDefaultIcon, getHttpsIcon } from '../utils';
 
 /**

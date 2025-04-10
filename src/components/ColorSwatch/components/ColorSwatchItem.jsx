@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ColorSwatchPreview from './ColorSwatchPreview';
-import ColorSwatchDetails from './ColorSwatchDetails';
+import { ColorSwatchPreview } from './ColorSwatchPreview';
+import { ColorSwatchDetails } from './ColorSwatchDetails';
 
 /**
  * Individual color swatch component that combines a preview and details
@@ -74,4 +74,4 @@ ColorSwatchItem.defaultProps = {
   className: '',
 };
 
-export default ColorSwatchItem; 
+export { ColorSwatchItem }; 
