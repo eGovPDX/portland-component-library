@@ -64,4 +64,4 @@ ColorSwatchPreview.defaultProps = {
   className: '',
 };
 
-export default ColorSwatchPreview; 
+export { ColorSwatchPreview }; 

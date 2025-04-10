@@ -5,7 +5,7 @@ import './Footer.css';
 /**
  * Footer component for Portland.gov
  */
-const Footer = ({
+export const Footer = ({
   feedbackUrl,
   accessibilityText,
   serviceRequestText,
@@ -215,6 +215,4 @@ Footer.defaultProps = {
   exploreServicesText: 'Explore all services',
   exploreServicesUrl: '/services',
   className: '',
-};
-
-export default Footer; 
+}; 

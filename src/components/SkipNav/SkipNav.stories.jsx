@@ -1,5 +1,5 @@
 import React from 'react';
-import SkipNav from './SkipNav';
+import { SkipNav } from './SkipNav';
 
 const meta = {
   title: 'Components/SkipNav',

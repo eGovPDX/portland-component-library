@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderMenuGroup from './HeaderMenuGroup';
+import { HeaderMenuGroup } from './HeaderMenuGroup';
 
 export default {
   title: 'Components/Header/HeaderMenuGroup',

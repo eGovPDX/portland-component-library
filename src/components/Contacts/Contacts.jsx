@@ -15,7 +15,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import './Contacts.css';
 
-const Contacts = ({
+export const Contacts = ({
   title,
   emailAddress,
   officePhone,
@@ -195,6 +195,4 @@ Contacts.propTypes = {
     hours: PropTypes.string,
   }).isRequired,
   className: PropTypes.string
-};
-
-export default Contacts; 
+}; 

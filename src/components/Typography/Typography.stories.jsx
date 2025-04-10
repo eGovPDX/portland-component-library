@@ -6,7 +6,7 @@ import {
   FontWeights,
   LineHeights,
   LetterSpacings
-} from './';
+} from './Typography';
 import '../../styles/index.scss';
 
 const meta = {

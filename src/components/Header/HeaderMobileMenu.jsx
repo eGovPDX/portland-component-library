@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * Mobile menu button component for the Header
  */
-const HeaderMobileMenu = ({
+export const HeaderMobileMenu = ({
   isOpen,
   onClick,
   menuText = 'Menu',
@@ -54,6 +54,4 @@ HeaderMobileMenu.defaultProps = {
   openMenuAriaLabel: 'Open menu',
   closeMenuAriaLabel: 'Close menu',
   menuId: 'pgov-header-mobile-menu'
-};
-
-export default HeaderMobileMenu; 
+}; 

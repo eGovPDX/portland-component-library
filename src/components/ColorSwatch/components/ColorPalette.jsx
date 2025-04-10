@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ColorSwatchItem from './ColorSwatchItem';
+import { ColorSwatchItem } from './ColorSwatchItem';
 
 /**
  * Component for displaying a group of related color swatches
@@ -99,4 +99,4 @@ ColorPalette.defaultProps = {
   className: '',
 };
 
-export default ColorPalette; 
+export { ColorPalette }; 

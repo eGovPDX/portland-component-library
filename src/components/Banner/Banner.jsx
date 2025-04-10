@@ -124,6 +124,4 @@ Banner.defaultProps = {
   showHttpsGuidance: true,
   initiallyExpanded: false,
   className: ''
-};
-
-export default Banner; 
+}; 

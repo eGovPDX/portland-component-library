@@ -9,7 +9,7 @@ import {
   LetterSpacings
 } from './components';
 
-const FontFamilyDisplay = ({ name, variable, value }) => {
+export const FontFamilyDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -53,7 +53,7 @@ FontFamilyDisplay.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-const FontSizeDisplay = ({ name, variable, value, sizeInPx }) => {
+export const FontSizeDisplay = ({ name, variable, value, sizeInPx }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -101,7 +101,7 @@ FontSizeDisplay.propTypes = {
   sizeInPx: PropTypes.string.isRequired
 };
 
-const FontWeightDisplay = ({ name, variable, value }) => {
+export const FontWeightDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -149,7 +149,7 @@ FontWeightDisplay.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-const LineHeightDisplay = ({ name, variable, value }) => {
+export const LineHeightDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -199,7 +199,7 @@ LineHeightDisplay.propTypes = {
   value: PropTypes.string.isRequired
 };
 
-const LetterSpacingDisplay = ({ name, variable, value }) => {
+export const LetterSpacingDisplay = ({ name, variable, value }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -351,6 +351,4 @@ export {
   FontWeights,
   LineHeights,
   LetterSpacings
-};
-
-export default Typography; 
+}; 

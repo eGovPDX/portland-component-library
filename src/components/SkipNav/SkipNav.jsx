@@ -6,7 +6,7 @@ import './SkipNav.css';
  * SkipNav component for accessibility
  * Allows keyboard users to skip directly to main content
  */
-const SkipNav = ({
+export const SkipNav = ({
   skipToId,
   label,
   className,
@@ -36,6 +36,4 @@ SkipNav.defaultProps = {
   skipToId: 'main-content',
   label: 'Skip to main content',
   className: ''
-};
-
-export default SkipNav; 
+}; 

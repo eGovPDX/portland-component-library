@@ -43,6 +43,4 @@ HeaderMenuGroup.propTypes = {
 HeaderMenuGroup.defaultProps = {
   mainHeading: "General Information",
   id: "pgov-header-menu-group"
-};
-
-export default HeaderMenuGroup; 
+}; 

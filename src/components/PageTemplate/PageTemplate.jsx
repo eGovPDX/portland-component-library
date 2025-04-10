@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './PageTemplate.css';
-import Banner from '../Banner/Banner';
-import Header from '../Header/Header';
-import SkipNav from '../SkipNav/SkipNav';
-import Footer from '../Footer/Footer';
+import { Banner } from '../Banner/Banner';
+import { Header } from '../Header/Header';
+import { SkipNav } from '../SkipNav/SkipNav';
+import { Footer } from '../Footer/Footer';
 import { Breadcrumbs } from '../Breadcrumbs';
 
 /**
  * Page template component that combines Banner, Header, and Footer
  */
-const PageTemplate = ({
+export const PageTemplate = ({
   bannerProps,
   headerProps,
   skipNavProps,
@@ -78,6 +78,4 @@ PageTemplate.defaultProps = {
   includeFooter: true,
   includeBreadcrumbs: true,
   className: ''
-};
-
-export default PageTemplate; 
+}; 

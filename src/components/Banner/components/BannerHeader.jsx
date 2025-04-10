@@ -58,6 +58,4 @@ BannerHeader.propTypes = {
 BannerHeader.defaultProps = {
   icon: null,
   className: ''
-};
-
-export default BannerHeader; 
+}; 

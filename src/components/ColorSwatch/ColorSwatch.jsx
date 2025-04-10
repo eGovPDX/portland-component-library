@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ColorSwatch.css';
 import '../../styles/index.scss';
-import ColorSwatchItem from './components/ColorSwatchItem';
-import ColorPalette from './components/ColorPalette';
-import ColorSwatchDetails from './components/ColorSwatchDetails';
-import ColorSwatchPreview from './components/ColorSwatchPreview';
+import { ColorPalette } from './components/ColorPalette';
+import { ColorSwatchItem } from './components/ColorSwatchItem';
+import { ColorSwatchPreview } from './components/ColorSwatchPreview';
+import { ColorSwatchDetails } from './components/ColorSwatchDetails';
 
 /**
  * Component to display a color swatch
  */
-const ColorSwatch = ({
+export const ColorSwatch = ({
   colorVar,
   name,
   description,
@@ -73,7 +73,7 @@ ColorSwatch.defaultProps = {
 
 // Color palette definitions
 
-const RedColorSwatches = () => {
+export const RedColorSwatches = () => {
   const colors = [
     { name: 'Red 5', colorVar: '--pgov-color-red-5', hexValue: '#f9e9e9' },
     { name: 'Red 10', colorVar: '--pgov-color-red-10', hexValue: '#f8e1de' },
@@ -96,7 +96,7 @@ const RedColorSwatches = () => {
   );
 };
 
-const OrangeColorSwatches = () => {
+export const OrangeColorSwatches = () => {
   const colors = [
     { name: 'Orange 5', colorVar: '--pgov-color-orange-5', hexValue: '#faf3ef' },
     { name: 'Orange 10', colorVar: '--pgov-color-orange-10', hexValue: '#fce2cd' },
@@ -119,7 +119,7 @@ const OrangeColorSwatches = () => {
   );
 };
 
-const GoldColorSwatches = () => {
+export const GoldColorSwatches = () => {
   const colors = [
     { name: 'Gold 5', colorVar: '--pgov-color-gold-5', hexValue: '#faf5e9' },
     { name: 'Gold 10', colorVar: '--pgov-color-gold-10', hexValue: '#fcebb2' },
@@ -142,7 +142,7 @@ const GoldColorSwatches = () => {
   );
 };
 
-const YellowColorSwatches = () => {
+export const YellowColorSwatches = () => {
   const colors = [
     { name: 'Yellow 5', colorVar: '--pgov-color-yellow-5', hexValue: '#fafaee' },
     { name: 'Yellow 10', colorVar: '--pgov-color-yellow-10', hexValue: '#fdf9cd' },
@@ -165,7 +165,7 @@ const YellowColorSwatches = () => {
   );
 };
 
-const GreenColorSwatches = () => {
+export const GreenColorSwatches = () => {
   const colors = [
     { name: 'Green 5', colorVar: '--pgov-color-green-5', hexValue: '#f1f9f7' },
     { name: 'Green 10', colorVar: '--pgov-color-green-10', hexValue: '#dfefe6' },
@@ -188,7 +188,7 @@ const GreenColorSwatches = () => {
   );
 };
 
-const MintColorSwatches = () => {
+export const MintColorSwatches = () => {
   const colors = [
     { name: 'Mint 5', colorVar: '--pgov-color-mint-5', hexValue: '#e9f7f4' },
     { name: 'Mint 10', colorVar: '--pgov-color-mint-10', hexValue: '#d0f0e8' },
@@ -211,7 +211,7 @@ const MintColorSwatches = () => {
   );
 };
 
-const CyanColorSwatches = () => {
+export const CyanColorSwatches = () => {
   const colors = [
     { name: 'Cyan 5', colorVar: '--pgov-color-cyan-5', hexValue: '#e7f6f8' },
     { name: 'Cyan 10', colorVar: '--pgov-color-cyan-10', hexValue: '#ccecf2' },
@@ -234,7 +234,7 @@ const CyanColorSwatches = () => {
   );
 };
 
-const BlueColorSwatches = () => {
+export const BlueColorSwatches = () => {
   const colors = [
     { name: 'Blue 5', colorVar: '--pgov-color-blue-5', hexValue: '#e8f5ff' },
     { name: 'Blue 10', colorVar: '--pgov-color-blue-10', hexValue: '#cfe8ff' },
@@ -262,15 +262,7 @@ export {
   ColorSwatchItem,
   ColorSwatchPreview,
   ColorSwatchDetails,
-  ColorPalette,
-  RedColorSwatches,
-  OrangeColorSwatches, 
-  GoldColorSwatches,
-  YellowColorSwatches,
-  GreenColorSwatches,
-  MintColorSwatches,
-  CyanColorSwatches,
-  BlueColorSwatches
+  ColorPalette
 };
 
 export default ColorSwatch; 
