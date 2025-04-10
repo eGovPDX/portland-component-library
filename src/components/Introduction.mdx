@@ -13,7 +13,6 @@ Browse components in the sidebar to see examples and documentation.
 
 ## Features
 
-- **Themeable**: All components support multiple themes including PGOV, light, and dark
 - **Accessible**: Built with accessibility in mind
 - **Responsive**: Components work across different screen sizes
 - **Customizable**: Components can be customized via props
@@ -29,7 +28,13 @@ Browse components in the sidebar to see examples and documentation.
 ### UI Components
 - [Typography](/docs/components-typography--docs): Text components and styles
 - [ColorSwatch](/docs/components-colorswatch--docs): Color display and documentation
-- [Spacing](/docs/components-spacing--docs): Spacing and layout utilities
+- [Alert](/docs/components-alert--docs): Alert messages and notifications
+- [Button](/docs/components-button--docs): Button components
+- [Contacts](/docs/components-contacts--docs): Contact information display
+- [ProcessSteps](/docs/components-processsteps--docs): Process step indicators
+- [SideNav](/docs/components-sidenav--docs): Side navigation component
+- [SummaryBox](/docs/components-summarybox--docs): Summary information display
+- [Tooltip](/docs/components-tooltip--docs): Tooltip component
 
 ## Page Templates
 
@@ -37,14 +42,9 @@ Browse components in the sidebar to see examples and documentation.
 
 ## Theme Support
 
-This component library supports multiple themes:
+This component library uses the PGOV theme based on the Portland.gov design system. The theme includes both light and dark mode variants through the [@pgov/design-tokens](https://github.com/eGovPDX/design-tokens) package.
 
-- **PGOV**: The default theme based on the Portland.gov design system
-- **PGOV Dark**: Dark variant of the PGOV theme
-- **Light**: A generic light theme
-- **Dark**: A generic dark theme
-
-You can toggle between themes using the theme switcher in the toolbar.
+Dark mode support is determined by the user's system preferences or browser settings using the `prefers-color-scheme` media query. The design tokens automatically adjust to provide appropriate colors, contrasts, and other visual properties for both light and dark modes.
 
 ## Design Tokens
 
@@ -62,26 +62,13 @@ You can view the design tokens in the following sections:
 
 ## Token Synchronization
 
-When design tokens are updated in Figma, follow these steps to update the component library:
+Design tokens are managed in a separate project at [github.com/eGovPDX/design-tokens](https://github.com/eGovPDX/design-tokens). When design tokens are updated in Figma, follow these steps:
 
-1. **Export Tokens from Figma**: Use the [Tokens Studio for Figma](https://tokens.studio/) <ExternalLinkIcon /> plugin or a similar tool to export the updated tokens as JSON.
-
-2. **Update Local Token Files**: 
-   - Update the token values in `src/styles/themes/pgov.scss` for the PGOV theme
-   - Update the token values in `src/styles/themes/pgov-dark.scss` for the PGOV Dark theme
-
-3. **Rebuild the Library**: Run `pnpm run build` to rebuild the component library with the updated tokens.
-
-4. **Test in Storybook**: Run `pnpm run storybook` to verify that the components reflect the updated tokens.
-
-5. **Update Component Documentation**: If necessary, update component documentation to reflect any visual changes resulting from token updates.
-
-For a more automated workflow, consider implementing a token synchronization pipeline using tools like:
-- [Style Dictionary](https://amzn.github.io/style-dictionary/) <ExternalLinkIcon />
-- [Theo](https://github.com/salesforce-ux/theo) <ExternalLinkIcon />
-- [Token Transformer](https://www.npmjs.com/package/token-transformer) <ExternalLinkIcon />
-
-These tools can help automate the process of transforming design tokens from Figma into platform-specific formats.
+1. Update the design-tokens project following its documentation
+2. Run `pnpm update @pgov/design-tokens` in this project to get the latest tokens
+3. Run `pnpm run build` to rebuild the component library with the updated tokens
+4. Run `pnpm run storybook` to verify that the components reflect the updated tokens
+5. Update component documentation if necessary to reflect any visual changes
 
 ## Color System
 
