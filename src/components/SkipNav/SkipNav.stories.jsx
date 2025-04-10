@@ -19,8 +19,8 @@ export default meta;
 // Default SkipNav
 export const Default = {
   args: {
-    skipToId: 'main-content',
-    label: 'Skip to main content',
+    mainContentId: 'main-content',
+    text: 'Skip to main content',
   },
   parameters: {
     docs: {
