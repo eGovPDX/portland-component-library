@@ -91,55 +91,57 @@ export const Contacts = ({
           </div>
         </div>
 
-        <div className="pgov-contacts__section">
-          <h3 className="pgov-contacts__heading">Social Media</h3>
-          <div className="pgov-contacts__social-list">
-            {facebook && (
-              <div className="pgov-contacts__item">
-                <div className="pgov-contacts__item-header">
-                  <FontAwesomeIcon icon={faFacebook} className="pgov-contacts__icon" />
-                  <span className="pgov-contacts__label">Facebook</span>
+        {socialMedia && (
+          <div className="pgov-contacts__section">
+            <h3 className="pgov-contacts__heading">Social Media</h3>
+            <div className="pgov-contacts__social-list">
+              {facebook && (
+                <div className="pgov-contacts__item">
+                  <div className="pgov-contacts__item-header">
+                    <FontAwesomeIcon icon={faFacebook} className="pgov-contacts__icon" />
+                    <span className="pgov-contacts__label">Facebook</span>
+                  </div>
+                  <a href={`https://facebook.com/${facebook}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
+                    {facebook}
+                  </a>
                 </div>
-                <a href={`https://facebook.com/${facebook}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
-                  {facebook}
-                </a>
-              </div>
-            )}
-            {twitter && (
-              <div className="pgov-contacts__item">
-                <div className="pgov-contacts__item-header">
-                  <FontAwesomeIcon icon={faTwitter} className="pgov-contacts__icon" />
-                  <span className="pgov-contacts__label">X (Twitter)</span>
+              )}
+              {twitter && (
+                <div className="pgov-contacts__item">
+                  <div className="pgov-contacts__item-header">
+                    <FontAwesomeIcon icon={faTwitter} className="pgov-contacts__icon" />
+                    <span className="pgov-contacts__label">X (Twitter)</span>
+                  </div>
+                  <a href={`https://twitter.com/${twitter}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
+                    {twitter}
+                  </a>
                 </div>
-                <a href={`https://twitter.com/${twitter}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
-                  {twitter}
-                </a>
-              </div>
-            )}
-            {bluesky && (
-              <div className="pgov-contacts__item">
-                <div className="pgov-contacts__item-header">
-                  <FontAwesomeIcon icon={faCloud} className="pgov-contacts__icon" />
-                  <span className="pgov-contacts__label">Bluesky</span>
+              )}
+              {bluesky && (
+                <div className="pgov-contacts__item">
+                  <div className="pgov-contacts__item-header">
+                    <FontAwesomeIcon icon={faCloud} className="pgov-contacts__icon" />
+                    <span className="pgov-contacts__label">Bluesky</span>
+                  </div>
+                  <a href={`https://bsky.app/profile/${bluesky}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
+                    {bluesky}
+                  </a>
                 </div>
-                <a href={`https://bsky.app/profile/${bluesky}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
-                  {bluesky}
-                </a>
-              </div>
-            )}
-            {instagram && (
-              <div className="pgov-contacts__item">
-                <div className="pgov-contacts__item-header">
-                  <FontAwesomeIcon icon={faInstagram} className="pgov-contacts__icon" />
-                  <span className="pgov-contacts__label">Instagram</span>
+              )}
+              {instagram && (
+                <div className="pgov-contacts__item">
+                  <div className="pgov-contacts__item-header">
+                    <FontAwesomeIcon icon={faInstagram} className="pgov-contacts__icon" />
+                    <span className="pgov-contacts__label">Instagram</span>
+                  </div>
+                  <a href={`https://instagram.com/${instagram}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
+                    {instagram}
+                  </a>
                 </div>
-                <a href={`https://instagram.com/${instagram}`} className="pgov-contacts__link" target="_blank" rel="noopener noreferrer">
-                  {instagram}
-                </a>
-              </div>
-            )}
+              )}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="pgov-contacts__section">
           <h3 className="pgov-contacts__heading">Office</h3>
