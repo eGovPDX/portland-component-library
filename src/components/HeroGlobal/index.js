@@ -1,0 +1,1 @@
+export { HeroGlobal } from './HeroGlobal'; 
