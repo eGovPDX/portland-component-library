@@ -5,7 +5,7 @@ import { ColorSwatchItem } from './ColorSwatchItem';
 /**
  * Component for displaying a group of related color swatches
  */
-const ColorPalette = ({
+export const ColorPalette = ({
   colors,
   title,
   description,
@@ -98,5 +98,3 @@ ColorPalette.defaultProps = {
   swatchSize: 'large',
   className: '',
 };
-
-export { ColorPalette }; 

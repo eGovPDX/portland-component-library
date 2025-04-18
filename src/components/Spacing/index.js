@@ -1,2 +1,1 @@
-export { default } from './Spacing';
-export * from './Spacing'; 
+export { SpacingTokens, SpacingExamples, SpacingDisplay } from './Spacing'; 

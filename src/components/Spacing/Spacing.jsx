@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Spacing.css';
 
-const SpacingDisplay = ({ name, variable, value, pixels }) => {
+export const SpacingDisplay = ({ name, variable, value, pixels }) => {
   return (
     <div style={{ 
       margin: '10px', 
@@ -190,6 +190,4 @@ export const SpacingExamples = () => {
       </div>
     </div>
   );
-};
-
-export default SpacingDisplay; 
+}; 

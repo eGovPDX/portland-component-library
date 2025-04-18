@@ -1,2 +1,1 @@
-export * from './SkipNav';
-export { default } from './SkipNav'; 
+export { SkipNav } from './SkipNav'; 

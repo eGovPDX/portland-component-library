@@ -1,3 +1,2 @@
-// Export the main Footer component
-export { default } from './Footer';
-export { default as Footer } from './Footer'; 
+// Export the Footer component
+export { Footer } from './Footer'; 
