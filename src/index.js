@@ -14,7 +14,7 @@ export { HeroHomepage } from './components/HeroHomepage';
 export { HeroGlobal } from './components/HeroGlobal';
 export { Typography } from './components/Typography';
 export { ColorSwatch } from './components/ColorSwatch';
-export { Spacing } from './components/Spacing';
+export { SpacingTokens, SpacingExamples, SpacingDisplay } from './components/Spacing';
 export { Tooltip } from './components/Tooltip';
 export { Button } from './components/Button';
 export { Breadcrumbs } from './components/Breadcrumbs';
@@ -24,8 +24,7 @@ export { ExternalLinkIcon } from './components/ExternalLinkIcon';
 // Export tokens
 // export * from './tokens';
 
-// Import USWDS CSS
-import '@uswds/uswds/dist/css/uswds.css';
+// USWDS styles are now imported through Sass in styles/index.scss
 
 // Export styles
 import './styles/index.scss';

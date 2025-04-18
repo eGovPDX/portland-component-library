@@ -9,7 +9,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Add any SCSS options here if needed
+        includePaths: ['node_modules'],
+        charset: false
       },
     },
   },
