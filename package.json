@@ -1,8 +1,8 @@
 {
-  "name": "@pgov/portland-component-library",
+  "name": "@cityofportland/component-library",
   "version": "0.1.0",
   "description": "Portland Component Library using design tokens from Figma",
-  "keywords": [],
+  "keywords": ["react", "components", "portland", "design-system"],
   "author": "Ken Downey",
   "license": "ISC",
   "type": "module",
@@ -35,24 +35,23 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@chromatic-com/storybook": "^3.2.6",
-    "@storybook/addon-a11y": "^8.6.7",
-    "@storybook/addon-actions": "^8.6.7",
-    "@storybook/addon-controls": "^8.6.7",
+    "@storybook/addon-a11y": "^8.6.12",
+    "@storybook/addon-actions": "^8.6.12",
+    "@storybook/addon-controls": "^8.6.12",
     "@storybook/addon-designs": "^8.2.1",
-    "@storybook/addon-docs": "^8.6.7",
-    "@storybook/addon-essentials": "^8.6.7",
-    "@storybook/addon-storysource": "^8.6.7",
-    "@storybook/addon-themes": "^8.6.7",
-    "@storybook/addon-viewport": "^8.6.7",
-    "@storybook/blocks": "^8.6.7",
-    "@storybook/experimental-addon-test": "^8.6.7",
-    "@storybook/react": "^8.6.7",
-    "@storybook/react-vite": "^8.6.7",
-    "@storybook/test": "^8.6.7",
+    "@storybook/addon-docs": "^8.6.12",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-storysource": "^8.6.12",
+    "@storybook/addon-themes": "^8.6.12",
+    "@storybook/addon-viewport": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/experimental-addon-test": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-vite": "^8.6.12",
+    "@storybook/test": "^8.6.12",
     "@storybook/test-runner": "^0.22.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
-    "@uswds/uswds": "^3.12.0",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/browser": "^3.0.8",
     "@vitest/coverage-v8": "^3.0.8",
@@ -65,12 +64,21 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "playwright": "^1.51.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "sass": "^1.85.1",
-    "storybook": "^8.6.7",
+    "storybook": "^8.6.12",
     "vite": "^6.2.1",
     "vitest": "^3.0.8"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@popperjs/core": "^2.11.8",
+    "@uswds/uswds": "^3.12.0",
+    "prop-types": "^15.8.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -80,12 +88,16 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@popperjs/core": "^2.11.8",
-    "prop-types": "^15.8.1"
-  }
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eGovPDX/portland-component-library"
+  },
+  "bugs": {
+    "url": "https://github.com/eGovPDX/portland-component-library/issues"
+  },
+  "homepage": "https://github.com/eGovPDX/portland-component-library#readme"
 }
