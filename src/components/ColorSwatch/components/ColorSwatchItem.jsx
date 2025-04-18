@@ -6,7 +6,7 @@ import { ColorSwatchDetails } from './ColorSwatchDetails';
 /**
  * Individual color swatch component that combines a preview and details
  */
-const ColorSwatchItem = ({
+export const ColorSwatchItem = ({
   colorVar,
   name,
   description,
@@ -73,5 +73,3 @@ ColorSwatchItem.defaultProps = {
   orientation: 'vertical',
   className: '',
 };
-
-export { ColorSwatchItem }; 

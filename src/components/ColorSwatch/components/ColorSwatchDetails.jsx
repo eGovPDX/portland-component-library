@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * Component for displaying color details (name, variable, description)
  */
-const ColorSwatchDetails = ({
+export const ColorSwatchDetails = ({
   name,
   colorVar,
   description,
@@ -70,5 +70,3 @@ ColorSwatchDetails.defaultProps = {
   alignment: 'left',
   className: '',
 };
-
-export { ColorSwatchDetails }; 

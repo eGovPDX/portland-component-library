@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * Component for displaying a color preview square/rectangle
  */
-const ColorSwatchPreview = ({
+export const ColorSwatchPreview = ({
   colorValue,
   name,
   size = 'medium',
@@ -63,5 +63,3 @@ ColorSwatchPreview.defaultProps = {
   size: 'medium',
   className: '',
 };
-
-export { ColorSwatchPreview }; 

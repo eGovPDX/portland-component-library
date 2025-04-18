@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Tag.css';
 
-const Tag = ({ variant = 'default', children, className, ...props }) => {
+export const Tag = ({ variant = 'default', children, className, ...props }) => {
   const baseClassName = 'usa-tag';
   const variantClassName = variant === 'big' ? 'usa-tag--big' : '';
   const classes = [baseClassName, variantClassName, className].filter(Boolean).join(' ');
@@ -21,6 +21,4 @@ Tag.propTypes = {
   variant: PropTypes.oneOf(['default', 'big']),
   /** Additional className to be applied to the tag */
   className: PropTypes.string,
-};
-
-export default Tag; 
+}; 
