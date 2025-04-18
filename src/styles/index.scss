@@ -1,9 +1,9 @@
-// Import USWDS styles if needed
-// @use '@uswds/uswds/packages/global' as uswds-global;
-
-// Forward theme files instead of importing them
+// Forward theme files first (Sass requires @forward to be before other rules)
 @forward './themes/pgov.scss';
 @forward './themes/pgov-dark.scss';
+
+// Use relative path to USWDS CSS instead of module path
+@import '../../node_modules/@uswds/uswds/dist/css/uswds.min.css';
 
 // CSS Variables for design tokens
 :root, .light-theme {
