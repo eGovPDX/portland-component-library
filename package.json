@@ -2,7 +2,12 @@
   "name": "@cityofportland/component-library",
   "version": "0.1.0",
   "description": "Portland Component Library using design tokens from Figma",
-  "keywords": ["react", "components", "portland", "design-system"],
+  "keywords": [
+    "react",
+    "components",
+    "portland",
+    "design-system"
+  ],
   "author": "Ken Downey",
   "license": "ISC",
   "type": "module",
@@ -94,7 +99,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eGovPDX/portland-component-library"
+    "url": "git+https://github.com/eGovPDX/portland-component-library.git"
   },
   "bugs": {
     "url": "https://github.com/eGovPDX/portland-component-library/issues"
