@@ -44,6 +44,7 @@ Browse components in the sidebar to see examples and documentation.
 - [ProcessSteps](/docs/components-processsteps--docs): Process step indicators
 - [Tag](/docs/components-tag--docs): Tag component for labeling and categorization
 - [Tooltip](/docs/components-tooltip--docs): Tooltip component
+- [PopoverWithCard](/docs/components-popoverwithcard--docs): Popover component for displaying interactive Card content on hover or click, with accessibility and focus management.
 
 ### Design System Components
 - [ColorSwatch](/docs/components-colorswatch--docs): Color display and documentation
@@ -96,4 +97,32 @@ The PGOV theme includes a comprehensive color system with various palettes:
 - **Neutral Colors**: Grayscale palette for text, backgrounds, and borders
 - **Color Scales**: Complete color scales for Orange, Red, Gold, Yellow, Green, Mint, Cyan, Blue, Indigo, Violet, Magenta, Black, and White
 
-You can view all color tokens in the [Design Tokens/Colors](/docs/design-tokens-colors--docs) section. 
+You can view all color tokens in the [Design Tokens/Colors](/docs/design-tokens-colors--docs) section.
+
+## PopoverWithCard Example
+
+The `PopoverWithCard` component is designed for displaying rich, interactive content (such as Cards with buttons, lists, or links) in a popover anchored to a trigger element. It is fully accessible, using `role="dialog"`, focus management, and keyboard dismissal. Use this component instead of Tooltip for anything more complex than a simple text hint.
+
+**Example usage:**
+
+```jsx
+import { PopoverWithCard } from './PopoverWithCard';
+import { Button } from './Button';
+
+<PopoverWithCard
+  cardProps={{
+    heading: 'Popover Title',
+    text: 'This popover contains interactive content.',
+    actionButton: <Button variant="primary">Action</Button>,
+  }}
+  position="right"
+>
+  <a href="#">Hover me</a>
+</PopoverWithCard>
+```
+
+**Accessibility:**
+- Uses `role="dialog"` and `aria-labelledby` for screen readers
+- Focus moves into the popover when opened and returns to the trigger when closed
+- Dismissible with Escape key or by clicking outside
+- Suitable for interactive content (buttons, links, forms, etc.) 
