@@ -8,6 +8,7 @@ export const Card = ({
   actionButton,
   onClick,
   className,
+  children,
   ...props
 }) => {
   const baseClass = 'usa-card';
@@ -21,11 +22,14 @@ export const Card = ({
   return (
     <div className={cardClasses} {...props}>
       <div className="usa-card__container">
-        <div className="usa-card__header">
-          <h2 className="usa-card__heading">{heading}</h2>
-        </div>
+        {heading && (
+          <div className="usa-card__header">
+            <h2 className="usa-card__heading">{heading}</h2>
+          </div>
+        )}
         <div className="usa-card__body">
-          <p>{text}</p>
+          {text && <p>{text}</p>}
+          {children}
         </div>
         {actionButton && (
           <div className="usa-card__footer">
@@ -38,9 +42,10 @@ export const Card = ({
 };
 
 Card.propTypes = {
-  heading: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  heading: PropTypes.string,
+  text: PropTypes.string,
   actionButton: PropTypes.node,
   onClick: PropTypes.func,
-  className: PropTypes.string
+  className: PropTypes.string,
+  children: PropTypes.node,
 }; 
