@@ -11,7 +11,8 @@ export default {
       description: {
         component: 'Cards contain content and actions about a single subject.'
       }
-    }
+    },
+    layout: 'centered',
   },
   argTypes: {
     heading: {
@@ -30,21 +31,14 @@ export default {
       description: 'Click handler for the action button',
       action: 'clicked'
     }
-  }
+  },
+  tags: ['autodocs'],
 };
 
 // Default card
-export const Default = {
-  args: {
-    heading: 'Card',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
-    actionButton: <Button>Visit Florida Keys</Button>,
-    onClick: () => {
-      action('Card button clicked')();
-      window.location.href = '#'; // In a real app, this would navigate
-    }
-  }
-};
+export const Default = () => (
+  <Card heading="Card Title" text="This is a simple card." />
+);
 
 // Card with primary button
 export const WithPrimaryButton = {
@@ -74,4 +68,33 @@ export const WithOutlineButton = {
     actionButton: <Button variant="outline">Visit Florida Keys</Button>,
     onClick: action('Outline button clicked')
   }
-}; 
+};
+
+export const WithChildren = () => (
+  <Card heading="Card with Children">
+    <ul>
+      <li>Custom content 1</li>
+      <li>Custom content 2</li>
+    </ul>
+  </Card>
+);
+
+export const WithActionButton = () => (
+  <Card
+    heading="Card with Action"
+    text="This card has an action button."
+    actionButton={<button>Click Me</button>}
+  />
+);
+
+export const WithEverything = () => (
+  <Card
+    heading="Full Card"
+    text="This card has heading, text, children, and an action button."
+    actionButton={<button>Do Something</button>}
+  >
+    <div>
+      <strong>Extra content:</strong> You can put anything here!
+    </div>
+  </Card>
+); 
