@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tooltip } from './Tooltip';
-import { useTooltip } from './useTooltip';
 import { Button } from '../Button';
 
 export default {
@@ -27,18 +26,39 @@ export default {
       control: 'select',
       options: ['light', 'dark'],
       description: 'The visual theme of the tooltip'
+    },
+    showArrow: {
+      control: 'boolean',
+      description: 'Whether to show the arrow pointer'
+    },
+    isPopup: {
+      control: 'boolean',
+      description: 'If true, functions as a popup that can contain complex elements'
+    },
+    isCardPopup: {
+      control: 'boolean',
+      description: 'If true, creates a transparent popup designed for Card components'
+    },
+    triggerOnClick: {
+      control: 'boolean',
+      description: 'If true, the tooltip will open on click instead of hover'
     }
   }
 };
 
-// Wrapper component usage
+// Standard tooltip
 export const Default = {
   args: {
-    content: 'This is a tooltip',
-    children: <Button>Hover me</Button>
+    content: '{text}',
+    children: <Button>Hover me</Button>,
+    position: 'top',
+    theme: 'dark',
+    showArrow: true,
+    isPopup: false
   }
 };
 
+// Positions demonstration
 export const Positions = () => (
   <div style={{ padding: '5rem', display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
     <Tooltip content="Top tooltip" position="top">
@@ -56,46 +76,19 @@ export const Positions = () => (
   </div>
 );
 
+// Theme variations
 export const Themes = () => (
   <div style={{ padding: '2rem', display: 'flex', gap: '2rem' }}>
-    <Tooltip content="Light theme tooltip" theme="light">
+    <Tooltip content="Light theme tooltip" theme="dark">
       <Button>Light Theme</Button>
     </Tooltip>
     <div style={{ padding: '1rem', background: 'var(--pgov-color-neutral-darkest)' }}>
-      <Tooltip content="Dark theme tooltip" theme="dark">
+      <Tooltip content="Dark theme tooltip" theme="light">
         <Button variant="outline-inverse">Dark Theme</Button>
       </Tooltip>
     </div>
   </div>
 );
-
-// Hook usage example
-const HookExample = () => {
-  const tooltip = useTooltip({
-    content: 'This tooltip uses the hook directly',
-    position: 'top'
-  });
-
-  return (
-    <div style={{ padding: '2rem' }}>
-      <Button {...tooltip.triggerProps}>
-        Hook Usage
-      </Button>
-      <div {...tooltip.tooltipProps}>
-        <div className="usa-tooltip__content">
-          {tooltip.content}
-        </div>
-        {tooltip.isVisible && (
-          <div className="usa-tooltip__arrow" data-popper-arrow />
-        )}
-      </div>
-    </div>
-  );
-};
-
-export const UsingHook = {
-  render: () => <HookExample />
-};
 
 // Long content example
 export const LongContent = {
