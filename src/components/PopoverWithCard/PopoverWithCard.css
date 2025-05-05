@@ -1,0 +1,38 @@
+.pgov-popover-card {
+  /* Ensure the popover is above other content */
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pgov-popover-card__content,
+.pgov-popover-card__content.usa-card,
+.pgov-popover-card__content .usa-card__container {
+  margin: 0 !important;
+  /* Do NOT set padding here, so Card's internal padding is preserved */
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Center and auto-size the button in the Card footer for popover context */
+.pgov-popover-card__content .usa-card__footer {
+  text-align: center;
+}
+.pgov-popover-card__content .usa-card__footer > * {
+  width: auto;
+  display: inline-block;
+}
+
+.pgov-popover-card__arrow {
+  /* Create a square that will be rotated to form the arrow */
+  width: 10px;
+  height: 10px;
+  background-color: var(--pgov-color-neutral-lightest);
+  position: absolute;
+  transform-origin: center;
+  /* Add drop shadow to match the card */
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+} 
