@@ -9,7 +9,56 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Cards contain content and actions about a single subject.'
+        component: `
+Cards contain content and actions about a single subject. They act as an entry point to more detailed information.
+
+## Usage
+\`\`\`jsx
+import { Card } from '@portland/component-library';
+
+// Default card
+<Card heading="Title" text="Content" />
+
+// Card with media
+<Card 
+  heading="Title" 
+  text="Content" 
+  media="/path/to/image.jpg" 
+/>
+
+// Media with header first
+<Card 
+  heading="Title" 
+  text="Content" 
+  media="/path/to/image.jpg"
+  mediaFirst={true}
+/>
+
+// Inset media
+<Card 
+  heading="Title" 
+  text="Content" 
+  media="/path/to/image.jpg"
+  mediaInset={true}
+/>
+
+// Exdent media
+<Card 
+  heading="Title" 
+  text="Content" 
+  media="/path/to/image.jpg"
+  mediaExdent={true}
+/>
+
+// Flag layout (media right)
+<Card 
+  heading="Title" 
+  text="Content" 
+  media="/path/to/image.jpg"
+  mediaPosition="right"
+/>
+\`\`\`
+        `
       }
     },
     layout: 'centered',
@@ -30,6 +79,27 @@ export default {
     onClick: {
       description: 'Click handler for the action button',
       action: 'clicked'
+    },
+    media: {
+      description: 'URL string or React node for the media content',
+      control: 'text'
+    },
+    mediaPosition: {
+      description: 'Position of the media in flag layout',
+      control: 'select',
+      options: ['left', 'right']
+    },
+    mediaExdent: {
+      description: 'Whether the media extends beyond the card border',
+      control: 'boolean'
+    },
+    mediaFirst: {
+      description: 'Whether the header appears before the media',
+      control: 'boolean'
+    },
+    mediaInset: {
+      description: 'Whether the media is inset within the card padding',
+      control: 'boolean'
     }
   },
   tags: ['autodocs'],
@@ -50,28 +120,12 @@ export const WithPrimaryButton = {
   }
 };
 
-// Card with secondary button
-export const WithSecondaryButton = {
-  args: {
-    heading: 'Card with Secondary Button',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
-    actionButton: <Button variant="secondary">Visit Florida Keys</Button>,
-    onClick: action('Secondary button clicked')
-  }
-};
-
-// Card with outline button
-export const WithOutlineButton = {
-  args: {
-    heading: 'Card with Outline Button',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
-    actionButton: <Button variant="outline">Visit Florida Keys</Button>,
-    onClick: action('Outline button clicked')
-  }
-};
-
 export const WithChildren = () => (
-  <Card heading="Card with Children">
+  <Card 
+    heading="Card with Children"
+    actionButton={<Button variant="default">Visit Florida Keys</Button>}
+  >
+    <p>This is a card with children.</p>
     <ul>
       <li>Custom content 1</li>
       <li>Custom content 2</li>
@@ -79,22 +133,61 @@ export const WithChildren = () => (
   </Card>
 );
 
-export const WithActionButton = () => (
-  <Card
-    heading="Card with Action"
-    text="This card has an action button."
-    actionButton={<button>Click Me</button>}
-  />
-);
+// Card with media
+export const WithMedia = {
+  args: {
+    heading: 'Card with Media',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
+    media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+    actionButton: <Button variant="default">Visit Florida Keys</Button>,
+    onClick: action('Primary button clicked')
+  }
+};
 
-export const WithEverything = () => (
-  <Card
-    heading="Full Card"
-    text="This card has heading, text, children, and an action button."
-    actionButton={<button>Do Something</button>}
-  >
-    <div>
-      <strong>Extra content:</strong> You can put anything here!
-    </div>
-  </Card>
-); 
+// Media with header first
+export const MediaWithHeaderFirst = {
+  args: {
+    heading: 'Media with Header First',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
+    media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+    mediaFirst: true,
+    actionButton: <Button variant="default">Visit Florida Keys</Button>,
+    onClick: action('Primary button clicked')
+  }
+};
+
+// Inset media
+export const WithInsetMedia = {
+  args: {
+    heading: 'Card with Inset Media',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
+    media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+    mediaInset: true,
+    actionButton: <Button variant="default">Visit Florida Keys</Button>,
+    onClick: action('Primary button clicked')
+  }
+};
+
+// Exdent media
+export const WithExdentMedia = {
+  args: {
+    heading: 'Card with Exdent Media',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
+    media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+    mediaExdent: true,
+    actionButton: <Button variant="default">Visit Florida Keys</Button>,
+    onClick: action('Primary button clicked')
+  }
+};
+
+// Flag layout (media right)
+export const FlagLayout = {
+  args: {
+    heading: 'Flag Layout Card',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
+    media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
+    mediaPosition: 'right',
+    actionButton: <Button variant="default">Visit Florida Keys</Button>,
+    onClick: action('Primary button clicked')
+  }
+};

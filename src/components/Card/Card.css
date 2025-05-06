@@ -1,19 +1,23 @@
 /* Card Container */
 .usa-card {
   max-width: 100%;
+  border-radius: var(--component-card-border-radius, 8px);
+  overflow: hidden;
+  background: var(--theme-body-background-color, #FFF);
 }
 
 .usa-card__container {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  width: auto;
+  box-sizing: border-box;
   max-width: 298px;
   padding: var(--component-card-padding-perimeter, 24px);
-  flex-direction: column;
   align-items: flex-start;
   gap: var(--component-card-padding-y, 16px);
   border-radius: var(--component-card-border-radius, 8px);
   border: var(--component-card-border-width, 2px) solid var(--component-card-border-color, #DFE1E2);
-  background: var(--theme-body-background-color, #FFF);
+  background: transparent;
 }
 
 /* Card Header */
@@ -58,4 +62,64 @@
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
+}
+
+/* Media Variants */
+.usa-card--media .usa-card__container {
+  padding: 0;
+}
+
+.usa-card__media {
+  width: 100%;
+}
+
+.usa-card__img {
+  width: 100%;
+  height: 100%;
+}
+
+.usa-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+/* Exdent Variant */
+.usa-card--exdent .usa-card__media--exdent {
+  margin: 0 !important;
+  margin-inline: 0 !important;
+}
+
+/* Header First Variant */
+.usa-card--header-first .usa-card__header {
+  order: -1;
+}
+
+/* Inset Variant */
+.usa-card--inset .usa-card__container {
+  padding-top: var(--component-card-padding-perimeter, 24px);
+}
+
+.usa-card--inset .usa-card__media {
+  margin: 0;
+  border-radius: 0;
+  padding-left: var(--component-card-padding-perimeter, 24px);
+  padding-right: var(--component-card-padding-perimeter, 24px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.usa-card--inset .usa-card__img img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  display: block;
+  object-fit: contain;
+}
+
+/* Media First with Exdent */
+.usa-card--header-first.usa-card--exdent .usa-card__media--exdent {
+  margin-top: 0;
 } 
