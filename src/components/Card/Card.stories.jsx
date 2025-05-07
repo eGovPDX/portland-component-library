@@ -179,15 +179,3 @@ export const WithExdentMedia = {
     onClick: action('Primary button clicked')
   }
 };
-
-// Flag layout (media right)
-export const FlagLayout = {
-  args: {
-    heading: 'Flag Layout Card',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum tenetur quo cupiditate, eaque qui officia recusandae.',
-    media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
-    mediaPosition: 'right',
-    actionButton: <Button variant="default">Visit Florida Keys</Button>,
-    onClick: action('Primary button clicked')
-  }
-};
