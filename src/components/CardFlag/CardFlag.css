@@ -97,4 +97,48 @@
 
 .pdx-card-flag__footer {
   margin-top: 8px;
+}
+
+/* Mobile styles - stack media and content vertically */
+@media screen and (max-width: 767px) {
+  .pdx-card-flag {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "media"
+      "content";
+    width: 100%;
+    gap: 16px;
+  }
+
+  .pdx-card-flag--media-right {
+    grid-template-areas: 
+      "media"
+      "content";
+  }
+
+  .pdx-card-flag__media {
+    width: 100%;
+    height: 200px;
+  }
+
+  .pdx-card-flag__media--inset {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 16px 16px 0;
+  }
+
+  .pdx-card-flag__media.pdx-card-flag__media--inset.pdx-card-flag__media--left,
+  .pdx-card-flag__media.pdx-card-flag__media--inset.pdx-card-flag__media--right {
+    padding: 16px 16px 0;
+  }
+
+  /* Reset the special content padding for inset media on mobile */
+  .pdx-card-flag:not(.pdx-card-flag--media-right) .pdx-card-flag__media--inset.pdx-card-flag__media--left ~ .pdx-card-flag__content {
+    padding: var(--component-card-padding-perimeter, 16px);
+  }
+
+  .pdx-card-flag__content {
+    padding: 0 16px 16px;
+  }
 } 
