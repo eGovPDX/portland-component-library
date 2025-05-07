@@ -9,22 +9,50 @@ export const Card = ({
   onClick,
   className,
   children,
+  media,
+  mediaPosition = 'left',
+  mediaExdent = false,
+  mediaFirst = false,
+  mediaInset = false,
   ...props
 }) => {
   const baseClass = 'usa-card';
-  const cardClasses = [baseClass, className].filter(Boolean).join(' ');
+  const cardClasses = [
+    baseClass,
+    media && 'usa-card--media',
+    mediaExdent && 'usa-card--exdent',
+    mediaFirst && 'usa-card--header-first',
+    mediaInset && 'usa-card--inset',
+    className
+  ].filter(Boolean).join(' ');
 
   // Pass the onClick handler directly to the button
   const buttonWithHandler = actionButton && onClick 
     ? React.cloneElement(actionButton, { onClick }) 
     : actionButton;
 
+  const renderMedia = () => {
+    if (!media) return null;
+    return (
+      <div className={`usa-card__media ${mediaExdent ? 'usa-card__media--exdent' : ''}`}>
+        <div className="usa-card__img">
+          {typeof media === 'string' ? (
+            <img src={media} alt="" />
+          ) : (
+            media
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className={cardClasses} {...props}>
       <div className="usa-card__container">
+        {media && renderMedia()}
         {heading && (
           <div className="usa-card__header">
-            <h2 className="usa-card__heading">{heading}</h2>
+            <h4 className="usa-card__heading">{heading}</h4>
           </div>
         )}
         <div className="usa-card__body">
@@ -48,4 +76,9 @@ Card.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   children: PropTypes.node,
+  media: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  mediaPosition: PropTypes.oneOf(['left', 'right']),
+  mediaExdent: PropTypes.bool,
+  mediaFirst: PropTypes.bool,
+  mediaInset: PropTypes.bool,
 }; 
