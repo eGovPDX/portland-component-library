@@ -49,14 +49,6 @@ import { Card } from '@portland/component-library';
   media="/path/to/image.jpg"
   mediaExdent={true}
 />
-
-// Flag layout (media right)
-<Card 
-  heading="Title" 
-  text="Content" 
-  media="/path/to/image.jpg"
-  mediaPosition="right"
-/>
 \`\`\`
         `
       }

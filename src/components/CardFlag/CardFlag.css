@@ -1,0 +1,100 @@
+.pdx-card-flag {
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  grid-template-areas: "media content";
+  gap: 24px;
+  width: 573px;
+  border-radius: 8px;
+  border: var(--component-card-border-width, 2px) solid var(--component-card-border-color, #DFE1E2);
+  background: var(--theme-body-background-color, #FFF);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.pdx-card-flag--media-right {
+  grid-template-columns: 1fr 135px;
+  grid-template-areas: "content media";
+}
+
+.pdx-card-flag__media {
+  grid-area: media;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 155px;
+}
+
+.pdx-card-flag__media--inset {
+  width: 131px;
+  min-width: 131px;
+  max-width: 131px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.pdx-card-flag__media.pdx-card-flag__media--inset.pdx-card-flag__media--left {
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 24px 0 24px 24px;
+}
+
+/* Adjusts content padding when media is inset and on the left side.
+   Removes left padding since the inset media already provides spacing.
+   Only applies when card is in default left-media layout. */
+.pdx-card-flag:not(.pdx-card-flag--media-right) .pdx-card-flag__media--inset.pdx-card-flag__media--left ~ .pdx-card-flag__content {
+  padding: var(--component-card-padding-perimeter, 24px 24px 24px 0);
+}
+
+.pdx-card-flag__media.pdx-card-flag__media--inset.pdx-card-flag__media--right {
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 24px 24px 24px 0;
+}
+
+.pdx-card-flag__media-element {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.pdx-card-flag__media--inset .pdx-card-flag__media-element {
+  object-fit: cover;
+}
+
+.pdx-card-flag__content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--component-card-padding-perimeter, 24px);
+  gap: 16px;
+}
+
+.pdx-card-flag__heading {
+  color: var(--theme-body-text-color, #1B1B1B);
+  font-family: var(--component-card-header-font-family, "Public Sans");
+  font-size: var(--component-card-header-font-size, 22px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.pdx-card-flag__body {
+  color: var(--theme-body-text-color, #1B1B1B);
+  font-family: var(--component-card-font-family, "Public Sans");
+  font-size: var(--theme-font-size-body-sm, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 162%;
+}
+
+.pdx-card-flag__footer {
+  margin-top: 8px;
+} 
