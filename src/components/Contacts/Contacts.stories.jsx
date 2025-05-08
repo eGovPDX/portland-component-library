@@ -34,4 +34,10 @@ Default.args = {
     days: 'Monday - Friday',
     hours: '9:00am - 5:00pm',
   },
+};
+
+export const Container = Template.bind({});
+Container.args = {
+  ...Default.args,
+  className: 'pgov-contacts--container',
 }; 
