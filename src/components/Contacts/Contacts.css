@@ -239,4 +239,18 @@
   flex-direction: column;
   gap: var(--component-pgov-contact-gap-sm, 8px);
   flex: 1;
+}
+
+.pgov-contacts--container {
+  border-radius: var(--component-pgov-contact-border-radius, 8px);
+  background: var(--component-pgov-contact-background-color-container, #F0F0F0);
+  display: flex;
+  padding: var(--component-pgov-contact-padding-lg, 32px);
+  align-items: flex-start;
+  gap: var(--component-pgov-contact-gap-lg, 32px);
+  align-self: stretch;
+}
+
+.pgov-contacts--container .pgov-contacts__border {
+  display: none;
 } 

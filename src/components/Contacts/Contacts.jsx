@@ -48,7 +48,7 @@ export const Contacts = ({
       <div className="pgov-contacts__container">
         <div className="pgov-contacts__section">
           <div className="pgov-contacts__section-header">
-            <h3 className="pgov-contacts__heading">{title}</h3>
+            <h3 className="pgov-contacts__heading">Contact</h3>
             <div className="pgov-contacts__button-container">
               <a 
                 href={`mailto:${emailAddress}`}
