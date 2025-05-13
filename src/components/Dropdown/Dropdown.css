@@ -1,0 +1,285 @@
+/* Add any custom styles for Dropdown here */ 
+
+/* Assuming CSS custom variables are defined elsewhere (e.g., :root)
+   like --usa-spacing-1, --theme-color-ink, etc.
+   The Figma specs used "----" for variables, using "--" as per CSS standard.
+*/
+
+.usa-select {
+  /* Default State - Dimensions */
+  /* Figma specifies height and min-height as 40px. 
+     --component-input-min-height and --usa-spacing-5 are both 40px. */
+  height: var(--usa-spacing-5, 40px);
+  min-height: var(--usa-spacing-5, 40px); 
+
+  /* Default State - Padding */
+  /* USWDS select has specific padding for its arrow (padding-right).
+     Applying general padding var(--usa-spacing-1, 8px) to top, bottom, left. */
+  padding-top: var(--usa-spacing-1, 8px);
+  padding-bottom: var(--usa-spacing-1, 8px);
+  padding-left: var(--usa-spacing-1, 8px);
+  /* padding-right is intentionally left to USWDS default to accommodate its arrow */
+
+  /* Default State - Border & Background */
+  border-radius: var(--component-input-border-radius, 0px);
+  border: 1px solid var(--theme-color-ink, #1B1B1B);
+  background-color: var(--usa-color-white, #FFF);
+
+  /* Default State - Text */
+  color: var(--theme-color-ink, #1B1B1B);
+  font-family: var(--usa-font-family-ui, "Public Sans");
+  font-size: var(--theme-font-size-ui-sm, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal; /* Figma specified, USWDS might have its own */
+}
+
+/* Focus State */
+.usa-select:focus {
+  /* Override USWDS default focus (which uses outline/box-shadow) */
+  outline: none; 
+  box-shadow: none; 
+  border-radius: var(--component-input-border-radius, 0px); /* Keep consistent radius */
+  border: var(--theme-global-focus-width, 4px) solid var(--theme-global-focus-color, #2491FF);
+}
+
+/* Disabled State */
+.usa-select:disabled,
+.usa-select[disabled] {
+  /* Figma: border: 1px solid var(--theme-color-ink, #1B1B1B); 
+     USWDS default disabled border is lighter. */
+  border: 1px solid var(--theme-color-ink, #1B1B1B);
+  background-color: var(--theme-color-disabled-medium, #757575);
+
+  /* Figma: color: var(--theme-color-ink, #1B1B1B); 
+     USWDS default disabled text color is #757575.
+     Overriding to --theme-color-ink as per Figma.
+     Ensure sufficient contrast with the disabled background. */
+  color: var(--theme-color-ink, #1B1B1B);
+  /* USWDS also styles the ::after pseudo-element (arrow) for disabled state,
+     e.g., opacity. This will persist unless specifically overridden. */
+}
+
+/* Error State */
+.usa-select.usa-input--error {
+  border-radius: var(--component-input-border-radius, 0px); /* Keep consistent radius */
+  /* Figma: border: var(----usa-spacing-05, 4px) solid var(----theme-color-error-dark, #B50909);
+     USWDS usa-input--error is typically 2px border. Overriding to 4px. */
+  border: var(--usa-spacing-05, 4px) solid var(--theme-color-error-dark, #B50909);
+  background-color: var(--component-input-error-background-color, #FFF); /* Usually white, as per Figma */
+
+  /* Text color inside the select field for error state */
+  color: var(--theme-color-error-dark, #B50909); /* Figma wants this, USWDS doesn't do this for select text by default */
+}
+
+/* Error State Focus */
+/* Figma specifies global focus style applies universally.
+   This will change the error border color to the global focus color on focus. */
+.usa-select.usa-input--error:focus {
+  outline: none;
+  box-shadow: none;
+  border-radius: var(--component-input-border-radius, 0px);
+  border: var(--theme-global-focus-width, 4px) solid var(--theme-global-focus-color, #2491FF);
+}
+
+/* Optional: Specific width class for the component wrapper, if needed from Figma example */
+/* Apply this class to the div wrapping the label and select in Dropdown.jsx if fixed width is desired */
+.dropdown-wrapper--fixed-width {
+  width: 343px; 
+  /* If the overall container styles from Figma (flex, column, gap) are needed beyond
+     what .usa-form-group provides, they can be added here or to .usa-form-group if this
+     component is always in one.
+     Example:
+     display: flex;
+     flex-direction: column;
+     gap: var(--usa-spacing-1, 8px);
+  */
+}
+
+/* The container style 'background: var(----theme-body-background-color, #FFF);' 
+   from Figma seems like a page-level background, not specific to the component wrapper.
+*/
+
+/* Styles for 'Input suffix' and 'Input suffix icon' from Figma (e.g., custom chevron)
+   are not directly applicable here as we are using the native select element styled by USWDS,
+   which has its own arrow mechanism (typically a background image on ::after).
+   Replicating the exact Figma icon would require a custom non-native select implementation.
+*/
+
+/* Styles for custom chevron implementation */
+.dropdown__wrapper {
+  position: relative;
+  /* If the select is display: block, this wrapper might not need specific display properties.
+     If select is inline-block, this might need to be inline-block too. 
+     USWDS .usa-select is display: block by default. */
+}
+
+.dropdown__wrapper .usa-select {
+  /* Hide default USWDS arrow */
+  background-image: none !important; 
+  /* Add padding to the right to make space for the custom chevron */
+  /* Adjust this value as needed based on icon size and desired spacing */
+  /* USWDS default right padding is 2.5ex + some for the arrow. 
+     faChevronDown is typically 12-16px wide. Let's try with a value around 40px total padding on right. 
+     Default USWDS padding-right is approx 2rem or more. We need to ensure our icon fits.
+     Let's use a value that should be sufficient. We can use calc if needed.
+  */
+  padding-right: 3rem; /* Example value, adjust as needed */
+}
+
+.dropdown__custom-chevron {
+  position: absolute;
+  top: 50%;
+  /* Adjust right positioning to align icon nicely within the padding area */
+  right: var(--usa-spacing-2, 1rem); /* Using 1rem (16px) as a common spacing unit */
+  transform: translateY(-50%);
+  pointer-events: none; /* So it doesn't interfere with select interaction */
+  color: var(--theme-color-ink, #1B1B1B); /* Match default text color, can be themed */
+  /* FontAwesomeIcon size can be controlled via font-size or specific props if needed */
+  /* font-size: 1rem; /* Example size */
+}
+
+/* Ensure icon color changes for disabled and error states if needed */
+.dropdown__wrapper .usa-select:disabled + .dropdown__custom-chevron {
+  /* USWDS makes the default arrow less opaque for disabled. 
+     Matching the text color for disabled as per earlier Figma derived styles for text. */
+  color: var(--theme-color-ink, #1B1B1B); 
+  /* Or, if a more muted look is desired for the icon on disabled: */
+  /* opacity: 0.7; */
+}
+
+.dropdown__wrapper .usa-select.usa-input--error + .dropdown__custom-chevron {
+  color: var(--theme-color-error-dark, #B50909); /* Match error text color */
+}
+
+/* Optional: If .dropdown-wrapper--fixed-width is used on dropdown__container */
+.dropdown__container.dropdown-wrapper--fixed-width .dropdown__wrapper,
+.dropdown__container.dropdown-wrapper--fixed-width .usa-select {
+    /* Ensure select within the fixed-width wrapper behaves as expected
+       (e.g. takes full width of its direct parent if that's the fixed width container) */
+    width: 100%; 
+}
+
+/* Container for the entire component including label, button, and menu */
+.dropdown__container {
+  position: relative; /* For absolute positioning of the menu */
+  /* If using .dropdown-wrapper--fixed-width from before, ensure it targets .dropdown__container */
+}
+
+/* The button that acts as the select input */
+.usa-input.dropdown__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+  text-align: left;
+  height: var(--usa-spacing-5, 40px); 
+  min-height: var(--usa-spacing-5, 40px);
+  padding-top: var(--usa-spacing-1, 8px);
+  padding-bottom: var(--usa-spacing-1, 8px);
+  padding-left: var(--usa-spacing-1, 8px);
+  padding-right: var(--usa-spacing-5, 40px); 
+  position: relative; 
+  cursor: pointer;
+  text-indent: 0;
+}
+
+/* Disabled State - ensuring specificity */
+.usa-input.dropdown__button:disabled, 
+.usa-input.dropdown__button.usa-input--disabled {
+  cursor: not-allowed;
+  /* Visuals like background/border for disabled are expected from .usa-input--disabled */
+}
+
+/* Selected Value Text - ensure specificity for error color */
+.usa-input.dropdown__button.usa-input--error .dropdown__selected-value {
+  color: var(--theme-color-error-dark, #B50909);
+}
+/* Default color for selected value is already in .dropdown__selected-value */
+
+
+/* Custom Chevron - ensure specificity for error and disabled states */
+.usa-input.dropdown__button.usa-input--error .dropdown__custom-chevron {
+  color: var(--theme-color-error-dark, #B50909);
+}
+
+.usa-input.dropdown__button:disabled .dropdown__custom-chevron,
+.usa-input.dropdown__button.usa-input--disabled .dropdown__custom-chevron {
+  /* Matching the disabled text color of the button, which should come from .usa-input--disabled or a general disabled style */
+  /* If .usa-input--disabled text is light, this might need to be a specific muted color for the icon */
+  color: var(--theme-color-ink, #1B1B1B); /* Defaulting to ink, assuming disabled state maintains readability */
+  /* opacity: 0.7; /* Alternative for muted look */
+}
+/* Default color for chevron is in .dropdown__custom-chevron */
+
+/* Style for the text part of the button (Base Style) */
+.dropdown__selected-value {
+  flex-grow: 1; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--theme-color-ink, #1B1B1B);
+  font-family: var(--usa-font-family-ui, "Public Sans");
+  font-size: var(--theme-font-size-ui-sm, 16px);
+}
+
+/* Custom Chevron Icon inside the button (Base Style) */
+.dropdown__custom-chevron {
+  position: absolute;
+  top: 50%;
+  right: var(--usa-spacing-2, 1rem); 
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+  color: var(--theme-color-ink, #1B1B1B);
+}
+
+.dropdown__custom-chevron--open {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Dropdown Menu (ul) */
+.dropdown__menu {
+  width: fit-content;
+  position: absolute;
+  top: 100%; /* Position below the button */
+  left: 0;
+  right: 0; /* Or width: 100%; */
+  background-color: var(--usa-color-white, #FFF);
+  border: 1px solid var(--theme-color-base-lighter, #dfe1e2); /* Example border, use project tokens */
+  border-top: none; /* Usually looks better if connected to button */
+  border-radius: 0 0 var(--component-input-border-radius, 0px) var(--component-input-border-radius, 0px);
+  box-shadow: var(--theme-shadow-2, 0 4px 8px rgba(0,0,0,0.1)); /* Example shadow */
+  list-style: none;
+  margin: 0;
+  padding: var(--usa-spacing-1, 8px) 0;
+  overflow-y: auto;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Dropdown Menu Item (li) */
+.dropdown__item {
+  padding: var(--usa-spacing-1, 8px) var(--usa-spacing-2, 16px);
+  cursor: pointer;
+  color: var(--theme-color-ink, #1B1B1B);
+  font-family: var(--usa-font-family-ui, "Public Sans");
+  font-size: var(--theme-font-size-ui-sm, 16px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown__item:hover, 
+.dropdown__item:focus {
+  background-color: var(--theme-color-primary-lightest, #e0f3f8); /* Example hover/focus color */
+  color: var(--theme-color-primary-darker, #004c6c);
+  outline: none;
+}
+
+.dropdown__item--selected {
+  background-color: var(--theme-color-primary-lighter, #b3e5fc); /* Example selected color */
+  font-weight: bold; /* Or other indication of selection */
+}
+
+/* Clean up old .usa-select specific styles */
+/* .usa-select { ... } */
+/* .dropdown__wrapper .usa-select { ... } */ 
