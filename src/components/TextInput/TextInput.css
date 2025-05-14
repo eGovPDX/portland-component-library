@@ -1,0 +1,117 @@
+/* TextInput component styles */
+.usa-text-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(----usa-spacing-1, 0.5rem);
+}
+
+.usa-label {
+  display: block;
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 30rem;
+}
+
+.usa-text-input__description {
+  display: block;
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.usa-text-input__error-message {
+  display: block;
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(----theme-color-error-dark, #B50909);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Simple input wrapper with flexbox */
+.usa-input-wrapper {
+  display: flex;
+  background-color: var(----usa-color-white, #FFF);
+  border: 1px solid var(----theme-color-ink, #1B1B1B);
+  border-radius: var(----component-input-border-radius, 0px);
+  width: auto; /* Allow wrapper to size based on input's content-driven width */
+  max-width: 100%; /* Don't exceed parent's width */
+}
+
+/* Input states applied to wrapper */
+.usa-input-wrapper--error {
+  border: var(----usa-spacing-05, 0.25rem) solid var(----theme-color-error-dark, #B50909);
+}
+
+.usa-input-wrapper--success {
+  border: var(----usa-spacing-05, 0.25rem) solid var(----theme-color-success-dark, #008817);
+}
+
+.usa-input-wrapper--disabled {
+  background: var(----theme-color-disabled-medium, #757575);
+  color: var(----usa-color-white, #FFF);
+  cursor: not-allowed;
+}
+
+/* Basic input styling */
+.usa-input {
+  background-color: transparent;
+  position: relative;
+  height: var(----usa-spacing-5, 2.5rem);
+  padding: 0.5rem;
+  border: none;
+  outline: none; /* Base outline removal */
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(----theme-color-ink, #1B1B1B);
+  width: fit-content; /* Attempt to size based on text content */
+  min-width: 7.125rem; /* Starting width, expands with content */
+  margin-top: 0;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  field-sizing: content; /* Modern CSS for sizing input to its content */
+}
+
+.usa-input:disabled {
+  background: transparent;
+  color: var(----usa-color-white, #FFF);
+  cursor: not-allowed;
+}
+
+/* Prefix and suffix */
+.usa-input-prefix,
+.usa-input-suffix {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(----theme-color-ink, #1B1B1B);
+}
+
+.usa-input-prefix {
+  padding: 0 0 0 0.75rem;
+}
+
+.usa-input-prefix+input {
+  padding-left: 0.5rem;
+}
+
+.usa-input-suffix {
+  padding: 0 0.75rem 0 0;
+}
+
+/* Ensure no outline on focused input, wrapper will handle focus style */
+.usa-input:focus {
+  outline: none !important;
+}
+
+/* Standard focus style for the wrapper */
+.usa-input-wrapper:focus-within {
+  outline: 0.25rem solid #2491ff; /* USWDS standard focus color */
+  outline-offset: 0; /* Standard offset */
+} 

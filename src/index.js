@@ -20,6 +20,7 @@ export { Button } from './components/Button';
 export { Breadcrumbs } from './components/Breadcrumbs';
 export { Alert } from './components/Alert';
 export { ExternalLinkIcon } from './components/ExternalLinkIcon';
+export { TextInput } from './components/TextInput';
 
 // Export tokens
 // export * from './tokens';
