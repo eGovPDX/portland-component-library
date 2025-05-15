@@ -78,7 +78,6 @@ const TextArea = ({
         />
       </div>
       <div className="usa-text-area__footer">
-        {error && <span className="usa-text-area__error-message">{error}</span>}
         {maxCharacters && (
           <span className="usa-text-area__character-count">
             {internalValue.length}/{maxCharacters} characters
