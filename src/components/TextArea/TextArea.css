@@ -58,7 +58,7 @@
   background-color: var(----usa-color-white, #FFF);
   border: 1px solid var(----theme-color-ink, #1B1B1B);
   border-radius: var(----component-input-border-radius, 0px);
-  width: 100%;
+  width: 100% !important;
   max-width: 100%;
 }
 
