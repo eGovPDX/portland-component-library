@@ -64,7 +64,15 @@ portland-component-library/
 │   │   ├── SummaryBox/ # Summary information display
 │   │   ├── Tag/        # Tag component
 │   │   ├── Tooltip/    # Tooltip component
-│   │   └── Typography/ # Text components and styles
+│   │   ├── Typography/ # Text components and styles
+│   │   ├── Card/       # Card component for displaying content in a styled container
+│   │   ├── CardFlag/   # Card component with media and content layout
+│   │   ├── CardGrid/   # Grid layout for Card components
+│   │   ├── Dropdown/   # Accessible custom dropdown/select component
+│   │   ├── ExternalLinkIcon.jsx # External link icon component
+│   │   ├── PopoverWithCard/# Popover for displaying interactive Card content
+│   │   ├── TextArea/   # Text area component for multi-line text input
+│   │   └── TextInput/  # Text input component with validation and states
 │   ├── images/         # Image assets
 │   └── styles/         # SCSS styles and themes
 ├── .storybook/         # Storybook configuration
