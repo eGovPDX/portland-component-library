@@ -30,8 +30,10 @@ describe('StepIndicator', () => {
     // Check counter container
     expect(screen.getByText('3').closest('div')).toHaveClass('usa-step-indicator__counter-container');
     
-    // Check title
-    expect(screen.getByText('Supporting documents')).toBeInTheDocument();
+    // Check title (specifically the heading text, not the segment label)
+    const headingTexts = screen.getAllByText('Supporting documents');
+    const heading = headingTexts.find(el => el.classList.contains('usa-step-indicator__heading-text'));
+    expect(heading).toBeInTheDocument();
   });
 
   // Test complete, current, and not-complete segments
