@@ -23,6 +23,7 @@ export const StepIndicator = ({
   const countersClass = showCounters ? `${baseClass}--counters` : '';
   const smallCountersClass = smallCounters ? `${baseClass}--counters-sm` : '';
   const centeredClass = centered ? `${baseClass}--center` : '';
+  const variantClass = variant !== 'default' ? `${baseClass}--${variant}` : '';
   
   const stepIndicatorClasses = [
     baseClass,
@@ -30,11 +31,12 @@ export const StepIndicator = ({
     countersClass,
     smallCountersClass,
     centeredClass,
+    variantClass,
     className
   ].filter(Boolean).join(' ');
 
   return (
-    <div className={stepIndicatorClasses} {...props}>
+    <div className={stepIndicatorClasses} variant={variant} {...props}>
       <ol className="usa-step-indicator__segments">
         {steps.map((step, index) => (
           <StepIndicatorSegment
@@ -57,10 +59,10 @@ export const StepIndicator = ({
             <span className="usa-step-indicator__total-steps">of {steps.length}</span>
           </div>
           {title && (
-            <>
+            <div className="usa-step-indicator__title-container">
               <FontAwesomeIcon icon={faPizzaSlice} className="usa-step-indicator__heading-icon" />
               <span className="usa-step-indicator__heading-text">{title}</span>
-            </>
+            </div>
           )}
         </h4>
       </div>

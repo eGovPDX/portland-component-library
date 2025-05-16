@@ -80,6 +80,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 /* Counter Container */
@@ -95,6 +96,12 @@
   font-family: var(----component-step-indicator-heading-font-family, "Public Sans");
   font-size: var(----component-step-indicator-heading-font-size, 22px);
   font-weight: 700;
+}
+
+/* Title Container */
+.usa-step-indicator__title-container {
+  display: flex;
+  align-items: center;
 }
 
 /* Heading Text */
@@ -228,8 +235,18 @@
   font-size: 0.875rem;
 }
 
+/* Mobile Variant */
+.usa-step-indicator--mobile .usa-step-indicator__segments {
+  display: none;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 640px) {
+  /* Hide segments on mobile */
+  .usa-step-indicator__segments {
+    display: none;
+  }
+  
   .usa-step-indicator__segment-label {
     font-size: 14px;
   }
@@ -238,20 +255,24 @@
   .usa-step-indicator__heading-text {
     font-size: var(----component-step-indicator-heading-font-size-small, 18px);
   }
+}
 
-  /* Mobile Variant */
-  .usa-step-indicator[variant="mobile"] .usa-step-indicator__segments {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .usa-step-indicator[variant="mobile"] .usa-step-indicator__segment::before {
-    height: 4px;
-    width: 100%;
-  }
-  
-  .usa-step-indicator[variant="mobile"] .usa-step-indicator__heading {
+/* Only stack items on very small screens */
+@media (max-width: 480px) {
+  /* Stack heading elements on smaller screens */
+  .usa-step-indicator__heading {
     flex-direction: column;
     align-items: flex-start;
+  }
+  
+  /* Adjust margins for stacked layout */
+  .usa-step-indicator__heading-icon,
+  .usa-step-indicator__heading-text {
+    margin-left: 0;
+  }
+  
+  /* Add spacing between counter and title when stacked */
+  .usa-step-indicator__title-container {
+    margin-top: 0.5rem;
   }
 } 
