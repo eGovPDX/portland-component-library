@@ -61,6 +61,7 @@ portland-component-library/
 │   │   ├── SideNav/    # Side navigation
 │   │   ├── SkipNav/    # Keyboard accessibility
 │   │   ├── Spacing/    # Spacing utilities
+│   │   ├── StepIndicator/# Horizontal step indicator
 │   │   ├── SummaryBox/ # Summary information display
 │   │   ├── Tag/        # Tag component
 │   │   ├── Tooltip/    # Tooltip component
@@ -107,6 +108,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **Alert** - Alert messages and notifications
 - **Contacts** - Contact information display
 - **ProcessSteps** - Process step indicators
+- **StepIndicator** - Horizontal step indicator for multi-step processes
 - **Tag** - Tag component for labeling and categorization
 - **Tooltip** - Tooltip component
 
