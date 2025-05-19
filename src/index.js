@@ -21,6 +21,7 @@ export { Breadcrumbs } from './components/Breadcrumbs';
 export { Alert } from './components/Alert';
 export { ExternalLinkIcon } from './components/ExternalLinkIcon';
 export { TextInput } from './components/TextInput';
+export { StepIndicator } from './components/StepIndicator';
 
 // Export tokens
 // export * from './tokens';
