@@ -45,6 +45,7 @@ npm install -g pnpm
 portland-component-library/
 ├── src/
 │   ├── components/     # React components
+│   │   ├── Accordion/  # Accordion content sections
 │   │   ├── Alert/      # Alert messages and notifications
 │   │   ├── Banner/     # Government website banner
 │   │   ├── Breadcrumbs/# Navigation breadcrumbs
@@ -93,15 +94,25 @@ The library includes a comprehensive set of components for building Portland.gov
 - **SideNav** - Side navigation component
 - **Breadcrumbs** - Navigation breadcrumbs component
 
+### Interactive Components
+- **Accordion** - Expandable content sections with multiple variants
+- **Button** - Button components
+- **Dropdown** - Accessible custom dropdown/select component
+- **Tag** - Tag component for labeling and categorization
+
 ### Layout Components
 - **PageTemplate** - Complete page template with Banner, Header, Footer, and SkipNav
 - **HeroGlobal** - Global hero section with image and call-to-action
 - **HeroHomepage** - Homepage hero section with search and popular links
 - **SummaryBox** - Summary information display
+- **Card** - Card component for displaying content
+- **CardFlag** - Card component with media and content layout
+- **CardGrid** - Grid layout for Card components
 
 ### Form Components
 - **Search** - Search input component with variants
-- **Button** - Button components
+- **TextArea** - Text area component for multi-line text input
+- **TextInput** - Text input component with validation and states
 
 ### Content Components
 - **Typography** - Text components and styles
@@ -109,8 +120,8 @@ The library includes a comprehensive set of components for building Portland.gov
 - **Contacts** - Contact information display
 - **ProcessSteps** - Process step indicators
 - **StepIndicator** - Horizontal step indicator for multi-step processes
-- **Tag** - Tag component for labeling and categorization
 - **Tooltip** - Tooltip component
+- **PopoverWithCard** - Popover for displaying interactive Card content
 
 ### Design System Components
 - **ColorSwatch** - Color display and documentation
