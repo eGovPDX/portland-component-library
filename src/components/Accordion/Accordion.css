@@ -1,0 +1,87 @@
+/* Accordion container */
+.pgov-accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  width: 100%;
+}
+
+/* Accordion item */
+.pgov-accordion-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Bordered accordion variant */
+.pgov-accordion-item--bordered {
+  border-top: var(--local-xx-spacing-0, 0px) solid var(----component-accordion-border-color, #F0F0F0);
+  border-right: var(----component-accordion-border-width, 4px) solid var(----component-accordion-border-color, #F0F0F0);
+  border-bottom: var(----component-accordion-border-width, 4px) solid var(----component-accordion-border-color, #F0F0F0);
+  border-left: var(----component-accordion-border-width, 4px) solid var(----component-accordion-border-color, #F0F0F0);
+}
+
+/* Accordion button/header */
+.pgov-accordion-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(----component-accordion-button-background-color, #F0F0F0);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Accordion summary text */
+.pgov-accordion-summary {
+  color: var(----component-accordion-button-text-color, #1B1B1B);
+  font-family: var(----component-accordion-font-family, "Public Sans");
+  font-size: var(----component-accordion-font-size, 16px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+/* Accordion icon container */
+.pgov-accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate icon container when open */
+.pgov-accordion-item--open .pgov-accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Accordion content container - animate height */
+.pgov-accordion-details-container {
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+/* Accordion content */
+.pgov-accordion-details {
+  padding: 16px;
+  color: var(----component-accordion-details-text-color, #1B1B1B);
+  font-family: var(----component-accordion-font-family, "Public Sans");
+  font-size: var(----component-accordion-font-size, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+/* Focus styles for better accessibility */
+.pgov-accordion-button:focus {
+  outline: 2px solid #4D90FE;
+  outline-offset: -2px;
+}
+
+/* Hover styles */
+.pgov-accordion-button:hover {
+  background-color: #E7E7E7;
+} 
