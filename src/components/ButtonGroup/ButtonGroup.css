@@ -1,0 +1,75 @@
+/* Base button group styles */
+.usa-button-group {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style-type: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+}
+
+/* Button group item styles */
+.usa-button-group__item {
+  max-width: fit-content;
+}
+
+.usa-button-group__item .usa-button {
+  margin-right: 0;
+}
+
+/* Media query for desktop view */
+@media (min-width: 30em) {
+  .usa-button-group {
+    flex-direction: row;
+  }
+}
+
+/* Segmented button group styles */
+.usa-button-group--segmented {
+  flex-direction: row;
+  width: 100%;
+  gap: 0;
+}
+
+.usa-button-group--segmented .usa-button-group__item {
+  flex: 1 1 0%;
+  margin-left: -1px;
+}
+
+.usa-button-group--segmented .usa-button-group__item:first-child {
+  margin-left: 0;
+}
+
+.usa-button-group--segmented .usa-button-group__item .usa-button {
+  border-radius: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.usa-button-group--segmented .usa-button-group__item:first-child .usa-button {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.usa-button-group--segmented .usa-button-group__item:last-child .usa-button {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+/* Ensure all buttons in a group have the same height when text wraps */
+.usa-button-group .usa-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Display as row on mobile for segmented buttons */
+@media (max-width: 30em) {
+  .usa-button-group--segmented {
+    flex-direction: row;
+  }
+} 
