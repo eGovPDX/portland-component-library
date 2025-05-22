@@ -97,6 +97,7 @@ The library includes a comprehensive set of components for building Portland.gov
 ### Interactive Components
 - **Accordion** - Expandable content sections with multiple variants
 - **Button** - Button components
+- **ButtonGroup** - Group of related buttons, with default and segmented variants
 - **Dropdown** - Accessible custom dropdown/select component
 - **Tag** - Tag component for labeling and categorization
 
