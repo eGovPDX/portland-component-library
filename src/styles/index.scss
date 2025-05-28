@@ -1,8 +1,10 @@
-@import url('https://raw.githubusercontent.com/eGovPDX/design-tokens/main/output/design_tokens.css');
-
 // Forward theme files first (Sass requires @forward to be before other rules)
 @forward './themes/pgov.scss';
 @forward './themes/pgov-dark.scss';
+@forward './themes/uswds-default.scss';
+
+// Import external CSS files AFTER @forward rules
+@import url('https://egovpdx.github.io/design-tokens/design_tokens.css'); // Updated to GitHub Pages URL
 
 // Use relative path to USWDS CSS instead of module path
 @import '../../node_modules/@uswds/uswds/dist/css/uswds.min.css';
