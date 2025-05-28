@@ -28,7 +28,7 @@
 
 /* Active state */
 .usa-button:active {
-  background-color: var(--pgov-color-primary-darkest);
+  background-color: var(--pgov-button-primary-active-bg);
 }
 
 /* Focus state */
