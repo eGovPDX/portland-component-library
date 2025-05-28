@@ -1,0 +1,35 @@
+.project-theme-dark-applied {
+  // Typography
+  --pgov-font-family-sans: var(--font-family-reading);
+  --pgov-font-family-serif: var(--font-family-display);
+  --pgov-font-family-mono: var(--font-family-mono);
+
+  // Project Theme Dark Colors from design_tokens.css "USWDS Theme/Project theme dark"
+  --pgov-color-primary: var(--theme-color-primary-medium); // Expects #4a77b4 from Project Dark theme scope
+  --pgov-color-primary-hover: var(--theme-color-primary-dark); // Expects #345d96 from Project Dark theme scope
+  --pgov-color-primary-active: var(--theme-color-primary-darker); // Expects #2f4668 from Project Dark theme scope
+  
+  --pgov-color-secondary: var(--theme-color-secondary-medium); // Expects #8e704f
+  --pgov-color-secondary-hover: var(--theme-color-secondary-dark); // Expects #6b5947
+  --pgov-color-secondary-active: var(--theme-color-secondary-darker); // Expects #4d4438
+
+  // Button specific variables
+  --pgov-button-primary-bg: var(--pgov-color-primary);
+  --pgov-button-primary-text: var(--theme-color-ink); // Expects #ffffff from Project Dark theme scope
+  --pgov-button-primary-hover-bg: var(--pgov-color-primary-hover);
+  --pgov-button-primary-hover-text: var(--theme-color-ink);
+  --pgov-button-primary-active-bg: var(--pgov-color-primary-active);
+
+  // General theme colors
+  --pgov-background-color: var(--theme-color-base-darkest); // Expects #1b1b1b from Project Dark theme scope
+  --pgov-text-color: var(--theme-color-ink); // Expects #ffffff from Project Dark theme scope
+  --pgov-link-color: var(--theme-color-primary-light); // Expects #81aefc from Project Dark theme scope
+  --pgov-link-hover-color: var(--theme-color-primary-lighter); // Expects #bbcae4 from Project Dark theme scope
+  --pgov-border-color: var(--theme-color-base-dark); // Expects #5c5c5c from Project Dark theme scope
+
+  // Map to --portland-* aliases (incomplete, expand as needed)
+  --portland-font-family: var(--pgov-font-family-sans);
+  --portland-color-primary: var(--pgov-color-primary);
+  --portland-background-color: var(--pgov-background-color);
+  --portland-text-color: var(--pgov-text-color);
+} 

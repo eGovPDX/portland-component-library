@@ -1,0 +1,36 @@
+// src/styles/themes/project-theme-light.scss
+.project-theme-light-applied {
+  // Typography
+  --pgov-font-family-sans: var(--font-family-reading);
+  --pgov-font-family-serif: var(--font-family-display);
+  --pgov-font-family-mono: var(--font-family-mono);
+
+  // Project Theme Light Colors from design_tokens.css "USWDS Theme/Project theme"
+  --pgov-color-primary: var(--theme-color-primary-medium); // Expects #4a77b4 from Project theme scope
+  --pgov-color-primary-hover: var(--theme-color-primary-dark); // Expects #345d96 from Project theme scope
+  --pgov-color-primary-active: var(--theme-color-primary-darker); // Expects #2f4668 from Project theme scope
+  
+  --pgov-color-secondary: var(--theme-color-secondary-medium); // Expects #8e704f
+  --pgov-color-secondary-hover: var(--theme-color-secondary-dark); // Expects #6b5947
+  --pgov-color-secondary-active: var(--theme-color-secondary-darker); // Expects #4d4438
+
+  // Button specific variables
+  --pgov-button-primary-bg: var(--pgov-color-primary);
+  --pgov-button-primary-text: var(--theme-color-ink-reverse); // From Project theme (likely white, as ink is dark)
+  --pgov-button-primary-hover-bg: var(--pgov-color-primary-hover);
+  --pgov-button-primary-hover-text: var(--theme-color-ink-reverse);
+  --pgov-button-primary-active-bg: var(--pgov-color-primary-active);
+
+  // General theme colors
+  --pgov-background-color: var(--color-white); // Or var(--theme-color-base-lightest) from Project theme
+  --pgov-text-color: var(--theme-color-ink); // Expects #1b1b1b from Project theme scope
+  --pgov-link-color: var(--pgov-color-primary);
+  --pgov-link-hover-color: var(--pgov-color-primary-hover);
+  --pgov-border-color: var(--theme-color-base-lighter); // Expects #e6e6e6 from Project theme scope
+
+  // Map to --portland-* aliases (incomplete, expand as needed)
+  --portland-font-family: var(--pgov-font-family-sans);
+  --portland-color-primary: var(--pgov-color-primary);
+  --portland-background-color: var(--pgov-background-color);
+  --portland-text-color: var(--pgov-text-color);
+} 
