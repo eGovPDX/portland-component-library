@@ -52,7 +52,9 @@
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=165-2532&t=xJOdl0Cp5dzE6Zt7-1
   
   // Primary colors
-  --pgov-color-primary: var(--color-blue-warm-60v);
+  --pgov-color-primary: var(--theme-color-primary-medium);
+  --pgov-color-primary-hover: var(--theme-color-primary-vivid);
+  --pgov-color-primary-active: var(--theme-color-primary-dark);
   --pgov-color-primary-darker: var(--color-blue-warm-70v);
   --pgov-color-primary-darkest: var(--color-blue-warm-80v);
   --pgov-color-primary-light: var(--color-blue-30);
@@ -298,9 +300,10 @@
   
   // Button specific variables
   --pgov-button-primary-bg: var(--pgov-color-primary);
-  --pgov-button-primary-text: var(--pgov-color-white);
-  --pgov-button-primary-hover-bg: var(--pgov-color-primary-darker);
-  --pgov-button-primary-hover-text: var(--pgov-color-white);
+  --pgov-button-primary-text: var(--theme-color-ink-reverse);
+  --pgov-button-primary-hover-bg: var(--pgov-color-primary-hover);
+  --pgov-button-primary-hover-text: var(--theme-color-ink-reverse);
+  --pgov-button-primary-active-bg: var(--pgov-color-primary-active);
 
   --pgov-button-secondary-bg: var(--pgov-color-secondary);
   --pgov-button-secondary-text: var(--pgov-color-white);
