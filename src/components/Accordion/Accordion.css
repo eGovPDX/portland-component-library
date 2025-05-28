@@ -16,10 +16,10 @@
 
 /* Bordered accordion variant */
 .pgov-accordion-item--bordered {
-  border-top: var(--local-xx-spacing-0, 0px) solid var(----component-accordion-border-color, #F0F0F0);
-  border-right: var(----component-accordion-border-width, 4px) solid var(----component-accordion-border-color, #F0F0F0);
-  border-bottom: var(----component-accordion-border-width, 4px) solid var(----component-accordion-border-color, #F0F0F0);
-  border-left: var(----component-accordion-border-width, 4px) solid var(----component-accordion-border-color, #F0F0F0);
+  border-top: var(--local-xx-spacing-0, 0px) solid var(--component-accordion-border-color, #F0F0F0);
+  border-right: var(--component-accordion-border-width, 4px) solid var(--component-accordion-border-color, #F0F0F0);
+  border-bottom: var(--component-accordion-border-width, 4px) solid var(--component-accordion-border-color, #F0F0F0);
+  border-left: var(--component-accordion-border-width, 4px) solid var(--component-accordion-border-color, #F0F0F0);
 }
 
 /* Accordion button/header */
@@ -29,7 +29,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background: var(----component-accordion-button-background-color, #F0F0F0);
+  background: var(--component-accordion-button-background-color, #F0F0F0);
   border: none;
   cursor: pointer;
   text-align: left;
@@ -37,9 +37,9 @@
 
 /* Accordion summary text */
 .pgov-accordion-summary {
-  color: var(----component-accordion-button-text-color, #1B1B1B);
-  font-family: var(----component-accordion-font-family, "Public Sans");
-  font-size: var(----component-accordion-font-size, 16px);
+  color: var(--component-accordion-button-text-color, #1B1B1B);
+  font-family: var(--component-accordion-font-family, "Public Sans");
+  font-size: var(--component-accordion-font-size, 16px);
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
@@ -67,9 +67,9 @@
 /* Accordion content */
 .pgov-accordion-details {
   padding: 16px;
-  color: var(----component-accordion-details-text-color, #1B1B1B);
-  font-family: var(----component-accordion-font-family, "Public Sans");
-  font-size: var(----component-accordion-font-size, 16px);
+  color: var(--component-accordion-details-text-color, #1B1B1B);
+  font-family: var(--component-accordion-font-family, "Public Sans");
+  font-size: var(--component-accordion-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;

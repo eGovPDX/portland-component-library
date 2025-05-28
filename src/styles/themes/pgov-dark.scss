@@ -9,11 +9,11 @@
   @extend .pgov-theme;
   
   // Override with dark theme specific variables
-  --pgov-background-color: var(--pgov-color-neutral-darkest);
-  --pgov-text-color: var(--pgov-color-white);
+  --pgov-background-color: var(--theme-color-base-darkest);
+  --pgov-text-color: var(--theme-color-ink);
   --pgov-link-color: var(--pgov-color-primary-light);
   --pgov-link-hover-color: var(--pgov-color-primary-lighter);
-  --pgov-border-color: var(--pgov-color-neutral-dark);
+  --pgov-border-color: var(--theme-color-base-dark);
   
   // Apply dark theme variables to common variables for component compatibility
   --portland-background-color: var(--pgov-background-color);
