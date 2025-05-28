@@ -1,0 +1,78 @@
+// src/styles/themes/uswds-default.scss
+// This theme class aims to apply USWDS default styling
+// by setting --pgov-* variables to USWDS default token values.
+
+.uswds-default-theme-applied {
+  // Typography (aligning with what pgov.scss uses, unless USWDS strictly differs and is desired)
+  --pgov-font-family-sans: var(--font-family-reading); // Public Sans from design_tokens.css
+  --pgov-font-family-serif: var(--font-family-display); // Merriweather from design_tokens.css
+  --pgov-font-family-mono: var(--font-family-mono);     // Default mono from design_tokens.css
+
+  // Base USWDS Theme Colors from design_tokens.css (Default section values, mapped to general color palette tokens where names are clearer)
+  --pgov-color-primary: var(--color-blue-60v); // #005ea2 (USWDS Default Primary Medium)
+  --pgov-color-primary-hover: var(--color-blue-warm-70v);     // #1a4480 (classic USWDS hover for #005ea2)
+  --pgov-color-primary-active: var(--color-blue-warm-80v);    // #162e51 (classic USWDS active for #005ea2)
+  
+  --pgov-color-secondary: var(--color-red-50); // #d83933 (USWDS Default Secondary Medium)
+  --pgov-color-secondary-hover: var(--color-red-60v);          // #b50909 (classic USWDS hover for this red)
+  --pgov-color-secondary-active: var(--color-red-70v);         // #8b0a03 (classic USWDS active for this red)
+
+  // Button specific variables for USWDS Default look
+  --pgov-button-primary-bg: var(--pgov-color-primary);
+  --pgov-button-primary-text: var(--color-white); 
+  --pgov-button-primary-hover-bg: var(--pgov-color-primary-hover);
+  --pgov-button-primary-hover-text: var(--color-white);
+  --pgov-button-primary-active-bg: var(--pgov-color-primary-active);
+
+  --pgov-button-secondary-bg: var(--pgov-color-secondary);
+  --pgov-button-secondary-text: var(--color-white);
+  --pgov-button-secondary-hover-bg: var(--pgov-color-secondary-hover);
+  --pgov-button-secondary-hover-text: var(--color-white);
+  --pgov-button-secondary-active-bg: var(--pgov-color-secondary-active);
+
+
+  --pgov-button-tertiary-text: var(--pgov-color-primary);
+  --pgov-button-tertiary-hover-text: var(--pgov-color-primary-hover); 
+  --pgov-button-tertiary-hover-bg: var(--color-gray-cool-5); 
+
+  // General theme colors
+  --pgov-background-color: var(--color-white); 
+  --pgov-text-color: var(--color-gray-90); // #1b1b1b (USWDS --theme-color-ink)          
+  --pgov-link-color: var(--color-blue-60v);  // #005ea2 (USWDS --theme-color-primary-medium)
+  --pgov-link-hover-color: var(--color-blue-warm-70v);   // #1a4480 
+  --pgov-border-color: var(--color-gray-cool-10);  // #dfe1e2 (USWDS --theme-color-base-lighter)
+
+  // Spacing and other UI elements should generally inherit from the base pgov.scss mappings to design_tokens.css
+  // unless specific USWDS default overrides are needed here.
+  // For example, if USWDS default spacing is different from PGOV's use of the spacing tokens:
+  // --pgov-spacing-sm: var(--some-uswds-specific-spacing-token-if-it-exists);
+
+  // Map to --portland-* aliases that components might use
+  --portland-font-family: var(--pgov-font-family-sans);
+  --portland-font-family-heading: var(--pgov-font-family-serif); 
+  --portland-font-family-mono: var(--pgov-font-family-mono);
+  --portland-font-size-base: var(--font-size-5); // Example: 1rem, adjust if USWDS default is different
+  --portland-line-height: var(--line-height-normal); // Example: 1.5, from pgov.scss mapping to tokens
+
+  --portland-color-primary: var(--pgov-color-primary);
+  --portland-color-secondary: var(--pgov-color-secondary);
+  
+  --portland-background-color: var(--pgov-background-color);
+  --portland-text-color: var(--pgov-text-color);
+
+  // Buttons mapping to portland variables
+  --portland-button-primary-bg: var(--pgov-button-primary-bg);
+  --portland-button-primary-text: var(--pgov-button-primary-text);
+  --portland-button-primary-hover-bg: var(--pgov-button-primary-hover-bg);
+  --portland-button-primary-hover-text: var(--pgov-button-primary-hover-text);
+
+  --portland-button-secondary-bg: var(--pgov-button-secondary-bg);
+  --portland-button-secondary-text: var(--pgov-button-secondary-text);
+  --portland-button-secondary-hover-bg: var(--pgov-button-secondary-hover-bg);
+  --portland-button-secondary-hover-text: var(--pgov-button-secondary-hover-text);
+  
+  --portland-button-tertiary-bg: transparent; // USWDS tertiary/outline often transparent
+  --portland-button-tertiary-text: var(--pgov-button-tertiary-text);
+  --portland-button-tertiary-hover-bg: var(--pgov-button-tertiary-hover-bg);
+  --portland-button-tertiary-hover-text: var(--pgov-button-tertiary-hover-text);
+} 
