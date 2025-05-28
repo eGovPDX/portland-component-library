@@ -2,6 +2,8 @@
 @forward './themes/pgov.scss';
 @forward './themes/pgov-dark.scss';
 @forward './themes/uswds-default.scss';
+@forward './themes/project-theme-light.scss';
+@forward './themes/project-theme-dark.scss';
 
 // Import external CSS files AFTER @forward rules
 @import url('https://egovpdx.github.io/design-tokens/design_tokens.css'); // Updated to GitHub Pages URL
