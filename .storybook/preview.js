@@ -13,9 +13,9 @@ const preview = {
     themes: {
       default: 'pgov',
       list: [
-        { name: 'pgov', class: 'pgov-theme-enabled', color: '#0050d8' },
-        { name: 'light', class: 'light-theme', color: '#ffffff' },
-        { name: 'dark', class: 'dark-theme', color: '#1b1b1b' },
+        { name: 'PGOV Light', class: 'pgov-theme-enabled', color: '#0050d8' },
+        { name: 'PGOV Dark', class: 'pgov-dark-theme-enabled', color: '#1b1b1b' },
+        { name: 'USWDS Default', class: 'uswds-default-theme-applied', color: '#005ea2' }
       ],
     },
 
@@ -30,8 +30,8 @@ const preview = {
     withThemeByClassName({
       themes: {
         pgov: 'pgov-theme-enabled',
-        light: 'light-theme',
-        dark: 'dark-theme',
+        'pgov-dark': 'pgov-dark-theme-enabled',
+        'uswds-default': 'uswds-default-theme-applied',
       },
       defaultTheme: 'pgov',
     }),
