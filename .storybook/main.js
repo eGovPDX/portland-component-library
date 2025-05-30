@@ -25,17 +25,6 @@ const config = {
 
   docs: {
     autodocs: true
-  },
-
-  viteFinal: (config) => {
-    if (!config.optimizeDeps) {
-      config.optimizeDeps = {};
-    }
-    if (!config.optimizeDeps.exclude) {
-      config.optimizeDeps.exclude = [];
-    }
-    config.optimizeDeps.exclude.push('@storybook/docs-mdx/dist/DocsRenderer');
-    return config;
   }
 };
 
