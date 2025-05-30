@@ -116,6 +116,28 @@
   --pgov-color-orange-80: var(--color-orange-warm-80v); /* Was #5f2809, token is #3d231d */
   --pgov-color-orange-90: #3d1a06; // No direct token match in design_tokens.css
   
+  // Orange Warm color tokens
+  // Source: design_tokens.css
+  --pgov-color-orange-warm-5: var(--color-orange-warm-5);
+  --pgov-color-orange-warm-10: var(--color-orange-warm-10);
+  --pgov-color-orange-warm-20: var(--color-orange-warm-20);
+  --pgov-color-orange-warm-30: var(--color-orange-warm-30);
+  --pgov-color-orange-warm-40: var(--color-orange-warm-40);
+  --pgov-color-orange-warm-50: var(--color-orange-warm-50);
+  --pgov-color-orange-warm-60: var(--color-orange-warm-60);
+  --pgov-color-orange-warm-70: var(--color-orange-warm-70);
+  --pgov-color-orange-warm-80: var(--color-orange-warm-80);
+  --pgov-color-orange-warm-90: var(--color-orange-warm-90);
+  --pgov-color-orange-warm-5v: var(--color-orange-warm-5v);
+  --pgov-color-orange-warm-10v: var(--color-orange-warm-10v);
+  --pgov-color-orange-warm-20v: var(--color-orange-warm-20v);
+  --pgov-color-orange-warm-30v: var(--color-orange-warm-30v);
+  --pgov-color-orange-warm-40v: var(--color-orange-warm-40v);
+  --pgov-color-orange-warm-50v: var(--color-orange-warm-50v);
+  --pgov-color-orange-warm-60v: var(--color-orange-warm-60v);
+  --pgov-color-orange-warm-70v: var(--color-orange-warm-70v);
+  --pgov-color-orange-warm-80v: var(--color-orange-warm-80v);
+  
   // Red color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-2740&m=dev
   --pgov-color-red-5: var(--color-red-5);
@@ -128,6 +150,50 @@
   --pgov-color-red-70: var(--color-red-70v);
   --pgov-color-red-80: var(--color-red-80v);
   --pgov-color-red-90: #2e0c0a; // No direct token match in design_tokens.css
+  
+  // Red Cool color tokens
+  // Source: design_tokens.css
+  --pgov-color-red-cool-5: var(--color-red-cool-5);
+  --pgov-color-red-cool-10: var(--color-red-cool-10);
+  --pgov-color-red-cool-20: var(--color-red-cool-20);
+  --pgov-color-red-cool-30: var(--color-red-cool-30);
+  --pgov-color-red-cool-40: var(--color-red-cool-40);
+  --pgov-color-red-cool-50: var(--color-red-cool-50);
+  --pgov-color-red-cool-60: var(--color-red-cool-60);
+  --pgov-color-red-cool-70: var(--color-red-cool-70);
+  --pgov-color-red-cool-80: var(--color-red-cool-80);
+  --pgov-color-red-cool-90: var(--color-red-cool-90);
+  --pgov-color-red-cool-5v: var(--color-red-cool-5v);
+  --pgov-color-red-cool-10v: var(--color-red-cool-10v);
+  --pgov-color-red-cool-20v: var(--color-red-cool-20v);
+  --pgov-color-red-cool-30v: var(--color-red-cool-30v);
+  --pgov-color-red-cool-40v: var(--color-red-cool-40v);
+  --pgov-color-red-cool-50v: var(--color-red-cool-50v);
+  --pgov-color-red-cool-60v: var(--color-red-cool-60v);
+  --pgov-color-red-cool-70v: var(--color-red-cool-70v);
+  --pgov-color-red-cool-80v: var(--color-red-cool-80v);
+
+  // Red Warm color tokens
+  // Source: design_tokens.css
+  --pgov-color-red-warm-5: var(--color-red-warm-5);
+  --pgov-color-red-warm-10: var(--color-red-warm-10);
+  --pgov-color-red-warm-20: var(--color-red-warm-20);
+  --pgov-color-red-warm-30: var(--color-red-warm-30);
+  --pgov-color-red-warm-40: var(--color-red-warm-40);
+  --pgov-color-red-warm-50: var(--color-red-warm-50);
+  --pgov-color-red-warm-60: var(--color-red-warm-60);
+  --pgov-color-red-warm-70: var(--color-red-warm-70);
+  --pgov-color-red-warm-80: var(--color-red-warm-80);
+  --pgov-color-red-warm-90: var(--color-red-warm-90);
+  --pgov-color-red-warm-5v: var(--color-red-warm-5v);
+  --pgov-color-red-warm-10v: var(--color-red-warm-10v);
+  --pgov-color-red-warm-20v: var(--color-red-warm-20v);
+  --pgov-color-red-warm-30v: var(--color-red-warm-30v);
+  --pgov-color-red-warm-40v: var(--color-red-warm-40v);
+  --pgov-color-red-warm-50v: var(--color-red-warm-50v);
+  --pgov-color-red-warm-60v: var(--color-red-warm-60v);
+  --pgov-color-red-warm-70v: var(--color-red-warm-70v);
+  --pgov-color-red-warm-80v: var(--color-red-warm-80v);
   
   // Gold color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-3796&m=dev
@@ -168,6 +234,28 @@
   --pgov-color-green-80: var(--color-green-cool-70v);
   --pgov-color-green-90: var(--color-green-90); /* Corrected to resolve to #161814 */
   
+  // Green Warm color tokens
+  // Source: design_tokens.css
+  --pgov-color-green-warm-5: var(--color-green-warm-5);
+  --pgov-color-green-warm-10: var(--color-green-warm-10);
+  --pgov-color-green-warm-20: var(--color-green-warm-20);
+  --pgov-color-green-warm-30: var(--color-green-warm-30);
+  --pgov-color-green-warm-40: var(--color-green-warm-40);
+  --pgov-color-green-warm-50: var(--color-green-warm-50);
+  --pgov-color-green-warm-60: var(--color-green-warm-60);
+  --pgov-color-green-warm-70: var(--color-green-warm-70);
+  --pgov-color-green-warm-80: var(--color-green-warm-80);
+  --pgov-color-green-warm-90: var(--color-green-warm-90);
+  --pgov-color-green-warm-5v: var(--color-green-warm-5v);
+  --pgov-color-green-warm-10v: var(--color-green-warm-10v);
+  --pgov-color-green-warm-20v: var(--color-green-warm-20v);
+  --pgov-color-green-warm-30v: var(--color-green-warm-30v);
+  --pgov-color-green-warm-40v: var(--color-green-warm-40v);
+  --pgov-color-green-warm-50v: var(--color-green-warm-50v);
+  --pgov-color-green-warm-60v: var(--color-green-warm-60v);
+  --pgov-color-green-warm-70v: var(--color-green-warm-70v);
+  --pgov-color-green-warm-80v: var(--color-green-warm-80v);
+  
   // Mint color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-4188&m=dev
   --pgov-color-mint-5: var(--color-mint-cool-5);
@@ -181,6 +269,28 @@
   --pgov-color-mint-80: var(--color-mint-70v); /* Was #0d5154, token is #0c4e29 */
   --pgov-color-mint-90: var(--color-mint-80v); /* Was #072326, token is #0d351e */
   
+  // Mint Cool color tokens
+  // Source: design_tokens.css
+  --pgov-color-mint-cool-5: var(--color-mint-cool-5);
+  --pgov-color-mint-cool-10: var(--color-mint-cool-10);
+  --pgov-color-mint-cool-20: var(--color-mint-cool-20);
+  --pgov-color-mint-cool-30: var(--color-mint-cool-30);
+  --pgov-color-mint-cool-40: var(--color-mint-cool-40);
+  --pgov-color-mint-cool-50: var(--color-mint-cool-50);
+  --pgov-color-mint-cool-60: var(--color-mint-cool-60);
+  --pgov-color-mint-cool-70: var(--color-mint-cool-70);
+  --pgov-color-mint-cool-80: var(--color-mint-cool-80);
+  --pgov-color-mint-cool-90: var(--color-mint-cool-90);
+  --pgov-color-mint-cool-5v: var(--color-mint-cool-5v);
+  --pgov-color-mint-cool-10v: var(--color-mint-cool-10v);
+  --pgov-color-mint-cool-20v: var(--color-mint-cool-20v);
+  --pgov-color-mint-cool-30v: var(--color-mint-cool-30v);
+  --pgov-color-mint-cool-40v: var(--color-mint-cool-40v);
+  --pgov-color-mint-cool-50v: var(--color-mint-cool-50v);
+  --pgov-color-mint-cool-60v: var(--color-mint-cool-60v);
+  --pgov-color-mint-cool-70v: var(--color-mint-cool-70v);
+  --pgov-color-mint-cool-80v: var(--color-mint-cool-80v);
+
   // Cyan color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-4286&m=dev
   --pgov-color-cyan-5: var(--color-cyan-5);
@@ -207,6 +317,50 @@
   --pgov-color-blue-80: var(--color-blue-80);
   --pgov-color-blue-90: var(--color-blue-90);
   
+  // Blue Cool color tokens
+  // Source: design_tokens.css
+  --pgov-color-blue-cool-5: var(--color-blue-cool-5);
+  --pgov-color-blue-cool-10: var(--color-blue-cool-10);
+  --pgov-color-blue-cool-20: var(--color-blue-cool-20);
+  --pgov-color-blue-cool-30: var(--color-blue-cool-30);
+  --pgov-color-blue-cool-40: var(--color-blue-cool-40);
+  --pgov-color-blue-cool-50: var(--color-blue-cool-50);
+  --pgov-color-blue-cool-60: var(--color-blue-cool-60);
+  --pgov-color-blue-cool-70: var(--color-blue-cool-70);
+  --pgov-color-blue-cool-80: var(--color-blue-cool-80);
+  --pgov-color-blue-cool-90: var(--color-blue-cool-90);
+  --pgov-color-blue-cool-5v: var(--color-blue-cool-5v);
+  --pgov-color-blue-cool-10v: var(--color-blue-cool-10v);
+  --pgov-color-blue-cool-20v: var(--color-blue-cool-20v);
+  --pgov-color-blue-cool-30v: var(--color-blue-cool-30v);
+  --pgov-color-blue-cool-40v: var(--color-blue-cool-40v);
+  --pgov-color-blue-cool-50v: var(--color-blue-cool-50v);
+  --pgov-color-blue-cool-60v: var(--color-blue-cool-60v);
+  --pgov-color-blue-cool-70v: var(--color-blue-cool-70v);
+  --pgov-color-blue-cool-80v: var(--color-blue-cool-80v);
+
+  // Blue Warm color tokens
+  // Source: design_tokens.css
+  --pgov-color-blue-warm-5: var(--color-blue-warm-5);
+  --pgov-color-blue-warm-10: var(--color-blue-warm-10);
+  --pgov-color-blue-warm-20: var(--color-blue-warm-20);
+  --pgov-color-blue-warm-30: var(--color-blue-warm-30);
+  --pgov-color-blue-warm-40: var(--color-blue-warm-40);
+  --pgov-color-blue-warm-50: var(--color-blue-warm-50);
+  --pgov-color-blue-warm-60: var(--color-blue-warm-60);
+  --pgov-color-blue-warm-70: var(--color-blue-warm-70);
+  --pgov-color-blue-warm-80: var(--color-blue-warm-80);
+  --pgov-color-blue-warm-90: var(--color-blue-warm-90);
+  --pgov-color-blue-warm-5v: var(--color-blue-warm-5v);
+  --pgov-color-blue-warm-10v: var(--color-blue-warm-10v);
+  --pgov-color-blue-warm-20v: var(--color-blue-warm-20v);
+  --pgov-color-blue-warm-30v: var(--color-blue-warm-30v);
+  --pgov-color-blue-warm-40v: var(--color-blue-warm-40v);
+  --pgov-color-blue-warm-50v: var(--color-blue-warm-50v);
+  --pgov-color-blue-warm-60v: var(--color-blue-warm-60v);
+  --pgov-color-blue-warm-70v: var(--color-blue-warm-70v);
+  --pgov-color-blue-warm-80v: var(--color-blue-warm-80v);
+
   // Indigo color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-4042&m=dev
   --pgov-color-indigo-5: var(--color-indigo-5v);
@@ -220,6 +374,50 @@
   --pgov-color-indigo-80: var(--color-indigo-cool-80v); /* Was #0000b3, token is #1b2b85 */
   --pgov-color-indigo-90: #000080; // No direct token match
   
+  // Indigo Cool color tokens
+  // Source: design_tokens.css
+  --pgov-color-indigo-cool-5: var(--color-indigo-cool-5);
+  --pgov-color-indigo-cool-10: var(--color-indigo-cool-10);
+  --pgov-color-indigo-cool-20: var(--color-indigo-cool-20);
+  --pgov-color-indigo-cool-30: var(--color-indigo-cool-30);
+  --pgov-color-indigo-cool-40: var(--color-indigo-cool-40);
+  --pgov-color-indigo-cool-50: var(--color-indigo-cool-50);
+  --pgov-color-indigo-cool-60: var(--color-indigo-cool-60);
+  --pgov-color-indigo-cool-70: var(--color-indigo-cool-70);
+  --pgov-color-indigo-cool-80: var(--color-indigo-cool-80);
+  --pgov-color-indigo-cool-90: var(--color-indigo-cool-90);
+  --pgov-color-indigo-cool-5v: var(--color-indigo-cool-5v);
+  --pgov-color-indigo-cool-10v: var(--color-indigo-cool-10v);
+  --pgov-color-indigo-cool-20v: var(--color-indigo-cool-20v);
+  --pgov-color-indigo-cool-30v: var(--color-indigo-cool-30v);
+  --pgov-color-indigo-cool-40v: var(--color-indigo-cool-40v);
+  --pgov-color-indigo-cool-50v: var(--color-indigo-cool-50v);
+  --pgov-color-indigo-cool-60v: var(--color-indigo-cool-60v);
+  --pgov-color-indigo-cool-70v: var(--color-indigo-cool-70v);
+  --pgov-color-indigo-cool-80v: var(--color-indigo-cool-80v);
+
+  // Indigo Warm color tokens
+  // Source: design_tokens.css
+  --pgov-color-indigo-warm-5: var(--color-indigo-warm-5);
+  --pgov-color-indigo-warm-10: var(--color-indigo-warm-10);
+  --pgov-color-indigo-warm-20: var(--color-indigo-warm-20);
+  --pgov-color-indigo-warm-30: var(--color-indigo-warm-30);
+  --pgov-color-indigo-warm-40: var(--color-indigo-warm-40);
+  --pgov-color-indigo-warm-50: var(--color-indigo-warm-50);
+  --pgov-color-indigo-warm-60: var(--color-indigo-warm-60);
+  --pgov-color-indigo-warm-70: var(--color-indigo-warm-70);
+  --pgov-color-indigo-warm-80: var(--color-indigo-warm-80);
+  --pgov-color-indigo-warm-90: var(--color-indigo-warm-90);
+  --pgov-color-indigo-warm-5v: var(--color-indigo-warm-5v);
+  --pgov-color-indigo-warm-10v: var(--color-indigo-warm-10v);
+  --pgov-color-indigo-warm-20v: var(--color-indigo-warm-20v);
+  --pgov-color-indigo-warm-30v: var(--color-indigo-warm-30v);
+  --pgov-color-indigo-warm-40v: var(--color-indigo-warm-40v);
+  --pgov-color-indigo-warm-50v: var(--color-indigo-warm-50v);
+  --pgov-color-indigo-warm-60v: var(--color-indigo-warm-60v);
+  --pgov-color-indigo-warm-70v: var(--color-indigo-warm-70v);
+  --pgov-color-indigo-warm-80v: var(--color-indigo-warm-80v);
+
   // Violet color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-4092&m=dev
   --pgov-color-violet-5: var(--color-violet-5);
@@ -233,6 +431,28 @@
   --pgov-color-violet-80: var(--color-violet-80v); /* Was #341885, token is #39215e */
   --pgov-color-violet-90: var(--color-violet-90);
   
+  // Violet Warm color tokens
+  // Source: design_tokens.css
+  --pgov-color-violet-warm-5: var(--color-violet-warm-5);
+  --pgov-color-violet-warm-10: var(--color-violet-warm-10);
+  --pgov-color-violet-warm-20: var(--color-violet-warm-20);
+  --pgov-color-violet-warm-30: var(--color-violet-warm-30);
+  --pgov-color-violet-warm-40: var(--color-violet-warm-40);
+  --pgov-color-violet-warm-50: var(--color-violet-warm-50);
+  --pgov-color-violet-warm-60: var(--color-violet-warm-60);
+  --pgov-color-violet-warm-70: var(--color-violet-warm-70);
+  --pgov-color-violet-warm-80: var(--color-violet-warm-80);
+  --pgov-color-violet-warm-90: var(--color-violet-warm-90);
+  --pgov-color-violet-warm-5v: var(--color-violet-warm-5v);
+  --pgov-color-violet-warm-10v: var(--color-violet-warm-10v);
+  --pgov-color-violet-warm-20v: var(--color-violet-warm-20v);
+  --pgov-color-violet-warm-30v: var(--color-violet-warm-30v);
+  --pgov-color-violet-warm-40v: var(--color-violet-warm-40v);
+  --pgov-color-violet-warm-50v: var(--color-violet-warm-50v);
+  --pgov-color-violet-warm-60v: var(--color-violet-warm-60v);
+  --pgov-color-violet-warm-70v: var(--color-violet-warm-70v);
+  --pgov-color-violet-warm-80v: var(--color-violet-warm-80v);
+
   // Magenta color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-4142&m=dev
   --pgov-color-magenta-5: var(--color-magenta-5);
@@ -246,6 +466,35 @@
   --pgov-color-magenta-80: var(--color-magenta-80v); /* Was #641a4d, token is #4f172e */
   --pgov-color-magenta-90: #3c1224; // No direct token match
   
+  // Gray Cool color tokens
+  // Source: design_tokens.css
+  --pgov-color-gray-cool-1: var(--color-gray-cool-1);
+  --pgov-color-gray-cool-2: var(--color-gray-cool-2);
+  --pgov-color-gray-cool-3: var(--color-gray-cool-3);
+  --pgov-color-gray-cool-4: var(--color-gray-cool-4);
+  // Note: 5, 10, 30, 50, 60, 70, 90 are aliased by --pgov-color-neutral-* variables
+  // We only add the ones not directly covered by the more general 'neutral' aliases.
+  --pgov-color-gray-cool-20: var(--color-gray-cool-20);
+  --pgov-color-gray-cool-40: var(--color-gray-cool-40);
+  --pgov-color-gray-cool-80: var(--color-gray-cool-80);
+
+  // Gray Warm color tokens
+  // Source: design_tokens.css
+  --pgov-color-gray-warm-1: var(--color-gray-warm-1);
+  --pgov-color-gray-warm-2: var(--color-gray-warm-2);
+  --pgov-color-gray-warm-3: var(--color-gray-warm-3);
+  --pgov-color-gray-warm-4: var(--color-gray-warm-4);
+  --pgov-color-gray-warm-5: var(--color-gray-warm-5);
+  --pgov-color-gray-warm-10: var(--color-gray-warm-10);
+  --pgov-color-gray-warm-20: var(--color-gray-warm-20);
+  --pgov-color-gray-warm-30: var(--color-gray-warm-30);
+  --pgov-color-gray-warm-40: var(--color-gray-warm-40);
+  --pgov-color-gray-warm-50: var(--color-gray-warm-50);
+  --pgov-color-gray-warm-60: var(--color-gray-warm-60);
+  --pgov-color-gray-warm-70: var(--color-gray-warm-70);
+  --pgov-color-gray-warm-80: var(--color-gray-warm-80);
+  --pgov-color-gray-warm-90: var(--color-gray-warm-90);
+
   // Black color tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-4386&m=dev
   --pgov-color-black-5: var(--color-gray-5);
