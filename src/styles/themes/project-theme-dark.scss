@@ -27,9 +27,4 @@
   --pgov-link-hover-color: var(--theme-color-primary-lighter); // Expects #bbcae4 from Project Dark theme scope
   --pgov-border-color: var(--theme-color-base-dark); // Expects #5c5c5c from Project Dark theme scope
 
-  // Map to --portland-* aliases (incomplete, expand as needed)
-  --portland-font-family: var(--pgov-font-family-sans);
-  --portland-color-primary: var(--pgov-color-primary);
-  --portland-background-color: var(--pgov-background-color);
-  --portland-text-color: var(--pgov-text-color);
 } 

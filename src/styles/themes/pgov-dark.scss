@@ -15,10 +15,6 @@
   --pgov-link-hover-color: var(--pgov-color-primary-lighter);
   --pgov-border-color: var(--theme-color-base-dark);
   
-  // Apply dark theme variables to common variables for component compatibility
-  --portland-background-color: var(--pgov-background-color);
-  --portland-text-color: var(--pgov-text-color);
-  
   // Dark mode specific button colors
   --pgov-button-primary-bg: var(--pgov-color-primary-light);
   --pgov-button-primary-text: var(--pgov-color-neutral-darkest);
@@ -34,20 +30,4 @@
   --pgov-button-tertiary-text: var(--pgov-color-primary-light);
   --pgov-button-tertiary-hover-bg: rgba(255, 255, 255, 0.1);
   --pgov-button-tertiary-hover-text: var(--pgov-color-primary-lighter);
-  
-  // Apply button variables to common variables
-  --portland-button-primary-bg: var(--pgov-button-primary-bg);
-  --portland-button-primary-text: var(--pgov-button-primary-text);
-  --portland-button-primary-hover-bg: var(--pgov-button-primary-hover-bg);
-  --portland-button-primary-hover-text: var(--pgov-button-primary-hover-text);
-  
-  --portland-button-secondary-bg: var(--pgov-button-secondary-bg);
-  --portland-button-secondary-text: var(--pgov-button-secondary-text);
-  --portland-button-secondary-hover-bg: var(--pgov-button-secondary-hover-bg);
-  --portland-button-secondary-hover-text: var(--pgov-button-secondary-hover-text);
-  
-  --portland-button-tertiary-bg: var(--pgov-button-tertiary-bg);
-  --portland-button-tertiary-text: var(--pgov-button-tertiary-text);
-  --portland-button-tertiary-hover-bg: var(--pgov-button-tertiary-hover-bg);
-  --portland-button-tertiary-hover-text: var(--pgov-button-tertiary-hover-text);
 } 

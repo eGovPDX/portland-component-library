@@ -28,9 +28,4 @@
   --pgov-link-hover-color: var(--pgov-color-primary-hover);
   --pgov-border-color: var(--theme-color-base-lighter); // Expects #e6e6e6 from Project theme scope
 
-  // Map to --portland-* aliases (incomplete, expand as needed)
-  --portland-font-family: var(--pgov-font-family-sans);
-  --portland-color-primary: var(--pgov-color-primary);
-  --portland-background-color: var(--pgov-background-color);
-  --portland-text-color: var(--pgov-text-color);
 } 
