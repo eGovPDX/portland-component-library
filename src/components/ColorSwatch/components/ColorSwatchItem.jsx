@@ -10,7 +10,6 @@ export const ColorSwatchItem = ({
   colorVar,
   name,
   description,
-  hexValue,
   size,
   orientation,
   className,
@@ -20,7 +19,7 @@ export const ColorSwatchItem = ({
   return (
     <div className={combinedClassName}>
       <ColorSwatchPreview 
-        colorValue={hexValue || `var(${colorVar})`}
+        colorValue={`var(${colorVar})`}
         name={name}
         size={size}
       />
@@ -28,7 +27,6 @@ export const ColorSwatchItem = ({
         name={name}
         colorVar={colorVar}
         description={description}
-        hexValue={hexValue}
         alignment="center"
       />
     </div>
@@ -49,10 +47,6 @@ ColorSwatchItem.propTypes = {
    */
   description: PropTypes.string,
   /**
-   * Hex value of the color
-   */
-  hexValue: PropTypes.string,
-  /**
    * Size of the color swatch preview
    */
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -68,7 +62,6 @@ ColorSwatchItem.propTypes = {
 
 ColorSwatchItem.defaultProps = {
   description: undefined,
-  hexValue: undefined,
   size: 'medium',
   orientation: 'vertical',
   className: '',

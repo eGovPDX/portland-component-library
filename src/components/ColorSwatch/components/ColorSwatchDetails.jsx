@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -8,12 +8,25 @@ export const ColorSwatchDetails = ({
   name,
   colorVar,
   description,
-  hexValue,
+  hexValue: initialHexValue,
   alignment,
   className,
 }) => {
+  const [computedColorValue, setComputedColorValue] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && colorVar) {
+      try {
+        const value = getComputedStyle(document.documentElement).getPropertyValue(colorVar).trim();
+        setComputedColorValue(value);
+      } catch (error) {
+        console.error(`Error getting computed style for ${colorVar}:`, error);
+        setComputedColorValue('Error'); // Display an error if fetching fails
+      }
+    }
+  }, [colorVar]);
+
   const combinedClassName = `pgov-color-swatch-details ${className || ''}`;
-  const colorInfo = description || hexValue || colorVar;
   
   return (
     <div 
@@ -28,10 +41,15 @@ export const ColorSwatchDetails = ({
           {description}
         </div>
       )}
-      {hexValue && !description && (
-        <div className="pgov-color-swatch-hex" aria-label={`Hex value: ${hexValue}`}>
-          {hexValue}
+      {computedColorValue && !description && (
+        <div className="pgov-color-swatch-hex" aria-label={`Computed value: ${computedColorValue}`}>
+          {computedColorValue}
         </div>
+      )}
+      {!computedColorValue && initialHexValue && !description && (
+         <div className="pgov-color-swatch-hex" aria-label={`Initial Hex value: ${initialHexValue}`}>
+           {initialHexValue} (Initial)
+         </div>
       )}
     </div>
   );
@@ -51,7 +69,7 @@ ColorSwatchDetails.propTypes = {
    */
   description: PropTypes.string,
   /**
-   * Hex value of the color
+   * Hex value of the color (passed from parent, can be kept for prop validation)
    */
   hexValue: PropTypes.string,
   /**
