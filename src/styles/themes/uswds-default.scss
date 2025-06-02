@@ -18,22 +18,45 @@
   --pgov-color-secondary-active: var(--color-red-70v);         // #8b0a03 (classic USWDS active for this red)
 
   // Button specific variables for USWDS Default look
-  --pgov-button-primary-bg: var(--pgov-color-primary);
-  --pgov-button-primary-text: var(--color-white); 
-  --pgov-button-primary-hover-bg: var(--pgov-color-primary-hover);
-  --pgov-button-primary-hover-text: var(--color-white);
-  --pgov-button-primary-active-bg: var(--pgov-color-primary-active);
-
-  --pgov-button-secondary-bg: var(--pgov-color-secondary);
-  --pgov-button-secondary-text: var(--color-white);
-  --pgov-button-secondary-hover-bg: var(--pgov-color-secondary-hover);
-  --pgov-button-secondary-hover-text: var(--color-white);
-  --pgov-button-secondary-active-bg: var(--pgov-color-secondary-active);
-
-
-  --pgov-button-tertiary-text: var(--pgov-color-primary);
-  --pgov-button-tertiary-hover-text: var(--pgov-color-primary-hover); 
-  --pgov-button-tertiary-hover-bg: var(--color-gray-cool-5); 
+  --button-font-family-sans: var(--font-family-reading);
+  --button-font-size: var(--font-size-6);
+  --button-primary-bg: var(--color-blue-60v);
+  --button-primary-text: var(--color-white);
+  --button-primary-hover-bg: var(--color-blue-warm-70v);
+  --button-primary-hover-text: var(--color-white);
+  --button-primary-active-bg: var(--color-blue-warm-80v);
+  --button-border-radius: var(--pgov-border-radius-md);
+  --button-font-weight-bold: 700;
+  --button-spacing-2xs: var(--pgov-spacing-2xs);
+  --button-spacing-xs: var(--pgov-spacing-xs);
+  --button-spacing-205: var(--spacing-205);
+  --button-spacing-05: var(--spacing-05);
+  --button-color-blue-40v: var(--color-blue-40v);
+  --button-color-gray-20: var(--color-gray-20);
+  --button-color-white: var(--color-white);
+  --button-secondary-bg: var(--color-red-50);
+  --button-secondary-hover-bg: var(--color-red-60v);
+  --button-secondary-darkest: var(--color-red-70v);
+  --button-accent-cool: var(--color-cyan-30v);
+  --button-accent-cool-darker: var(--color-blue-cool-40v);
+  --button-accent-cool-darkest: var(--color-blue-cool-60v);
+  --button-accent-warm: var(--color-orange-30v);
+  --button-accent-warm-darker: var(--color-orange-50v);
+  --button-accent-warm-darkest: var(--color-orange-60);
+  --button-color-neutral: var(--color-gray-cool-50);
+  --button-color-neutral-dark: var(--color-gray-cool-60);
+  --button-color-neutral-darker: var(--color-gray-cool-70);
+  --button-color-primary: var(--color-blue-60v);
+  --button-color-primary-darker: var(--color-blue-warm-70v);
+  --button-color-primary-darkest: var(--color-blue-warm-80v);
+  --button-link-color: var(--color-blue-60v);
+  --button-link-hover-color: var(--color-blue-warm-70v);
+  --button-font-weight-normal: 400;
+  --button-radius-none: 0;
+  --button-spacing-0: 0;
+  --button-spacing-sm: var(--pgov-spacing-sm);
+  --button-spacing-md: var(--pgov-spacing-md);
+  --button-color-gray-10: var(--color-gray-10);
 
   // General theme colors
   --pgov-background-color: var(--color-white); 

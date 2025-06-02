@@ -1,18 +1,18 @@
 /* Base button styles */
 .usa-button {
-  font-family: var(--pgov-font-family-sans);
-  font-size: var(--font-size-6);
+  font-family: var(--button-font-family-sans);
+  font-size: var(--button-font-size);
   line-height: 0.9;
-  color: var(--pgov-button-primary-text);
-  background-color: var(--pgov-button-primary-bg);
+  color: var(--button-primary-text);
+  background-color: var(--button-primary-bg);
   appearance: none;
   border: 0;
-  border-radius: var(--pgov-border-radius-md);
+  border-radius: var(--button-border-radius);
   cursor: pointer;
   display: inline-block;
-  font-weight: var(--pgov-font-weight-bold);
-  margin-right: var(--pgov-spacing-2xs);
-  padding: var(--pgov-spacing-xs) var(--spacing-205);
+  font-weight: var(--button-font-weight-bold);
+  margin-right: var(--button-spacing-2xs);
+  padding: var(--button-spacing-xs) var(--button-spacing-205);
   text-align: center;
   text-decoration: none;
   width: auto;
@@ -20,146 +20,146 @@
 
 /* Hover state */
 .usa-button:hover {
-  background-color: var(--pgov-button-primary-hover-bg);
+  background-color: var(--button-primary-hover-bg);
   border-bottom: 0;
-  color: var(--pgov-button-primary-hover-text);
+  color: var(--button-primary-hover-text);
   text-decoration: none;
 }
 
 /* Active state */
 .usa-button:active {
-  background-color: var(--pgov-button-primary-active-bg);
+  background-color: var(--button-primary-active-bg);
 }
 
 /* Focus state */
 .usa-button:focus {
-  outline: var(--spacing-05) solid var(--color-blue-40v);
-  outline-offset: var(--spacing-05);
+  outline: var(--button-spacing-05) solid var(--button-color-blue-40v);
+  outline-offset: var(--button-spacing-05);
 }
 
 /* Disabled state */
 .usa-button:disabled,
 .usa-button[aria-disabled=true] {
-  background-color: var(--color-gray-20);
-  color: var(--pgov-color-white);
+  background-color: var(--button-color-gray-20);
+  color: var(--button-color-white);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 /* Secondary button */
 .usa-button--secondary {
-  background-color: var(--pgov-button-secondary-bg);
+  background-color: var(--button-secondary-bg);
 }
 
 .usa-button--secondary:hover {
-  background-color: var(--pgov-button-secondary-hover-bg);
+  background-color: var(--button-secondary-hover-bg);
 }
 
 .usa-button--secondary:active {
-  background-color: var(--pgov-color-secondary-darkest);
+  background-color: var(--button-secondary-darkest);
 }
 
 /* Accent cool button */
 .usa-button--accent-cool {
-  background-color: var(--pgov-color-accent-cool);
+  background-color: var(--button-accent-cool);
 }
 
 .usa-button--accent-cool:hover {
-  background-color: var(--pgov-color-accent-cool-darker);
+  background-color: var(--button-accent-cool-darker);
 }
 
 .usa-button--accent-cool:active {
-  background-color: var(--pgov-color-accent-cool-darkest);
+  background-color: var(--button-accent-cool-darkest);
 }
 
 /* Accent warm button */
 .usa-button--accent-warm {
-  background-color: var(--pgov-color-accent-warm);
+  background-color: var(--button-accent-warm);
 }
 
 .usa-button--accent-warm:hover {
-  background-color: var(--pgov-color-accent-warm-darker);
+  background-color: var(--button-accent-warm-darker);
 }
 
 .usa-button--accent-warm:active {
-  background-color: var(--pgov-color-accent-warm-darkest);
+  background-color: var(--button-accent-warm-darkest);
 }
 
 /* Base button */
 .usa-button--base {
-  background-color: var(--pgov-color-neutral);
+  background-color: var(--button-color-neutral);
 }
 
 .usa-button--base:hover {
-  background-color: var(--pgov-color-neutral-dark);
+  background-color: var(--button-color-neutral-dark);
 }
 
 .usa-button--base:active {
-  background-color: var(--pgov-color-neutral-darker);
+  background-color: var(--button-color-neutral-darker);
 }
 
 /* Outline button */
 .usa-button--outline {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--pgov-color-primary);
-  color: var(--pgov-color-primary);
+  box-shadow: inset 0 0 0 2px var(--button-color-primary);
+  color: var(--button-color-primary);
 }
 
 .usa-button--outline:hover {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--pgov-color-primary-darker);
-  color: var(--pgov-color-primary-darker);
+  box-shadow: inset 0 0 0 2px var(--button-color-primary-darker);
+  color: var(--button-color-primary-darker);
 }
 
 .usa-button--outline:active {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--pgov-color-primary-darkest);
-  color: var(--pgov-color-primary-darkest);
+  box-shadow: inset 0 0 0 2px var(--button-color-primary-darkest);
+  color: var(--button-color-primary-darkest);
 }
 
 /* Outline inverse button */
 .usa-button--outline-inverse {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--pgov-color-white);
-  color: var(--pgov-color-white);
+  box-shadow: inset 0 0 0 2px var(--button-color-white);
+  color: var(--button-color-white);
 }
 
 .usa-button--outline-inverse:hover {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--color-gray-10);
-  color: var(--color-gray-10);
+  box-shadow: inset 0 0 0 2px var(--button-color-gray-10);
+  color: var(--button-color-gray-10);
 }
 
 .usa-button--outline-inverse:active {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--color-gray-20);
-  color: var(--color-gray-20);
+  box-shadow: inset 0 0 0 2px var(--button-color-gray-20);
+  color: var(--button-color-gray-20);
 }
 
 /* Big button */
 .usa-button--big {
-  font-size: var(--font-size-6);
-  padding: var(--pgov-spacing-sm) var(--pgov-spacing-md);
+  font-size: var(--button-font-size);
+  padding: var(--button-spacing-sm) var(--button-spacing-md);
 }
 
 /* Unstyled button */
 .usa-button--unstyled {
   background-color: transparent;
   border: 0;
-  border-radius: var(--radius-none);
-  color: var(--pgov-link-color);
+  border-radius: var(--button-radius-none);
+  color: var(--button-link-color);
   cursor: pointer;
   display: inline;
-  font-weight: var(--pgov-font-weight-normal);
-  margin: var(--spacing-0);
-  padding: var(--spacing-0);
+  font-weight: var(--button-font-weight-normal);
+  margin: var(--button-spacing-0);
+  padding: var(--button-spacing-0);
   text-decoration: underline;
   width: auto;
 }
 
 .usa-button--unstyled:hover {
   background-color: transparent;
-  color: var(--pgov-link-hover-color);
+  color: var(--button-link-hover-color);
   text-decoration: underline;
 }
 

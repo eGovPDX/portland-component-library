@@ -16,18 +16,43 @@
   --pgov-border-color: var(--theme-color-base-dark);
   
   // Dark mode specific button colors
-  --pgov-button-primary-bg: var(--pgov-color-primary-light);
-  --pgov-button-primary-text: var(--pgov-color-neutral-darkest);
-  --pgov-button-primary-hover-bg: var(--pgov-color-primary-lighter);
-  --pgov-button-primary-hover-text: var(--pgov-color-neutral-darkest);
-  
-  --pgov-button-secondary-bg: var(--pgov-color-secondary-light);
-  --pgov-button-secondary-text: var(--pgov-color-neutral-darkest);
-  --pgov-button-secondary-hover-bg: var(--pgov-color-secondary-lighter);
-  --pgov-button-secondary-hover-text: var(--pgov-color-neutral-darkest);
-  
-  --pgov-button-tertiary-bg: transparent;
-  --pgov-button-tertiary-text: var(--pgov-color-primary-light);
-  --pgov-button-tertiary-hover-bg: rgba(255, 255, 255, 0.1);
-  --pgov-button-tertiary-hover-text: var(--pgov-color-primary-lighter);
+  --button-font-family-sans: var(--font-family-reading);
+  --button-font-size: var(--font-size-6);
+  --button-primary-bg: var(--pgov-color-primary-light);
+  --button-primary-text: var(--pgov-color-neutral-darkest);
+  --button-primary-hover-bg: var(--pgov-color-primary-lighter);
+  --button-primary-hover-text: var(--pgov-color-neutral-darkest);
+  --button-primary-active-bg: var(--pgov-color-primary-lightest);
+  --button-border-radius: var(--pgov-border-radius-md);
+  --button-font-weight-bold: 700;
+  --button-spacing-2xs: var(--pgov-spacing-2xs);
+  --button-spacing-xs: var(--pgov-spacing-xs);
+  --button-spacing-205: var(--spacing-205);
+  --button-spacing-05: var(--spacing-05);
+  --button-color-blue-40v: var(--color-blue-40v);
+  --button-color-gray-20: var(--color-gray-20);
+  --button-color-white: var(--color-white);
+  --button-secondary-bg: var(--pgov-color-secondary);
+  --button-secondary-hover-bg: var(--pgov-color-secondary-darker);
+  --button-secondary-darkest: var(--pgov-color-secondary-darkest);
+  --button-accent-cool: var(--pgov-color-accent-cool);
+  --button-accent-cool-darker: var(--pgov-color-accent-cool-darker);
+  --button-accent-cool-darkest: var(--pgov-color-accent-cool-darkest);
+  --button-accent-warm: var(--pgov-color-accent-warm);
+  --button-accent-warm-darker: var(--pgov-color-accent-warm-darker);
+  --button-accent-warm-darkest: var(--pgov-color-accent-warm-darkest);
+  --button-color-neutral: var(--pgov-color-neutral);
+  --button-color-neutral-dark: var(--pgov-color-neutral-dark);
+  --button-color-neutral-darker: var(--pgov-color-neutral-darker);
+  --button-color-primary: var(--pgov-color-primary);
+  --button-color-primary-darker: var(--pgov-color-primary-darker);
+  --button-color-primary-darkest: var(--pgov-color-primary-darkest);
+  --button-link-color: var(--pgov-link-color);
+  --button-link-hover-color: var(--pgov-link-hover-color);
+  --button-font-weight-normal: 400;
+  --button-radius-none: 0;
+  --button-spacing-0: 0;
+  --button-spacing-sm: var(--pgov-spacing-sm);
+  --button-spacing-md: var(--pgov-spacing-md);
+  --button-color-gray-10: var(--color-gray-10);
 } 
