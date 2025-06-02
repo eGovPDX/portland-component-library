@@ -645,21 +645,21 @@
   
   // Spacing tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=351-581&t=xJOdl0Cp5dzE6Zt7-1
-  --pgov-spacing-3xs: var(--spacing-05);  // Was 0.25rem (4px)
-  --pgov-spacing-2xs: var(--spacing-1);   // Was 0.5rem (8px)
-  --pgov-spacing-xs: var(--spacing-105);   // Was 0.75rem (12px)
-  --pgov-spacing-sm: var(--spacing-2);      // Was 1rem (16px)
-  --pgov-spacing-md: var(--spacing-3);    // Was 1.5rem (24px)
-  --pgov-spacing-lg: var(--spacing-4);      // Was 2rem (32px)
-  --pgov-spacing-xl: var(--spacing-5);    // Was 2.5rem (40px)
-  --pgov-spacing-2xl: var(--spacing-6);     // Was 3rem (48px)
-  --pgov-spacing-3xl: var(--spacing-8);     // Was 4rem (64px)
+  --pgov-spacing-3xs: var(--spacing-global-05);  // Was 0.25rem (4px)
+  --pgov-spacing-2xs: var(--spacing-global-1);   // Was 0.5rem (8px)
+  --pgov-spacing-xs: var(--spacing-global-105);   // Was 0.75rem (12px)
+  --pgov-spacing-sm: var(--spacing-global-2);      // Was 1rem (16px)
+  --pgov-spacing-md: var(--spacing-global-3);    // Was 1.5rem (24px)
+  --pgov-spacing-lg: var(--spacing-global-4);      // Was 2rem (32px)
+  --pgov-spacing-xl: var(--spacing-global-5);    // Was 2.5rem (40px)
+  --pgov-spacing-2xl: var(--spacing-global-6);     // Was 3rem (48px)
+  --pgov-spacing-3xl: var(--spacing-global-8);     // Was 4rem (64px)
   
   // Border radius
   --pgov-border-radius-sm: var(--theme-radius-sm); // Was 2px - maps to 0.125rem
   --pgov-border-radius-md: var(--theme-radius-md); // Was 4px - maps to 0.25rem
   --pgov-border-radius-lg: var(--theme-radius-lg); // Was 8px - maps to 0.5rem
-  --pgov-border-radius-pill: var(--radius-pill); // Was 999px, token is 62.5rem (1000px)
+  --pgov-border-radius-pill: var(--radius-global-pill); // Was 999px, token is 62.5rem (1000px)
   
   // Shadows
   --pgov-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05); // No direct token match
@@ -704,11 +704,11 @@
   --pgov-breadcrumb-color-current: var(--pgov-color-neutral-dark); // var(--color-gray-cool-60)
   --pgov-breadcrumb-separator-color: var(--pgov-color-neutral); // var(--color-gray-cool-50)
   --pgov-breadcrumb-background-color: transparent;
-  --pgov-breadcrumb-padding-y: 0.75rem; // No direct spacing token, var(--spacing-105) is 0.75rem
-  --pgov-breadcrumb-padding-x: 1rem; // No direct spacing token, var(--spacing-2) is 1rem
-  --pgov-breadcrumb-gap: 0.5rem; // No direct spacing token, var(--spacing-1) is 0.5rem
-  --pgov-breadcrumb-mobile-padding-y: 0.5rem; // No direct spacing token, var(--spacing-1) is 0.5rem
-  --pgov-breadcrumb-mobile-padding-x: 0.75rem; // No direct spacing token, var(--spacing-105) is 0.75rem
+  --pgov-breadcrumb-padding-y: var(--spacing-global-105); // 0.75rem
+  --pgov-breadcrumb-padding-x: var(--spacing-global-2); // 1rem
+  --pgov-breadcrumb-gap: var(--spacing-global-1); // 0.5rem
+  --pgov-breadcrumb-mobile-padding-y: var(--spacing-global-1); // 0.5rem
+  --pgov-breadcrumb-mobile-padding-x: var(--spacing-global-105); // 0.75rem
 
   // Z-index tokens
   // Source: Added for component layering
