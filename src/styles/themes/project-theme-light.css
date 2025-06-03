@@ -3,8 +3,8 @@
   /* General theme colors */
   --pgov-background-color: var(--color-white, #ffffff);
   --pgov-text-color: var(--theme-color-ink);
-  --pgov-link-color: var(--pgov-color-primary);
-  --pgov-link-hover-color: var(--pgov-color-primary-hover);
+  --pgov-link-color: var(--color-blue-60v);
+  --pgov-link-hover-color: var(--color-blue-70v);
   --pgov-border-color: var(--theme-color-base-lighter);
 
   /* Typography */
@@ -13,22 +13,22 @@
   --pgov-font-family-mono: var(--font-family-mono-roboto-mono);
 
   /* Project Theme Light Colors from design_tokens.css "USWDS Theme/Project theme" */
-  --pgov-color-primary: var(--theme-color-primary-medium);
-  --pgov-color-primary-hover: var(--theme-color-primary-dark);
-  --pgov-color-primary-active: var(--theme-color-primary-darker);
+  --pgov-color-primary: var(--color-blue-60v);
+  --pgov-color-primary-hover: var(--color-blue-70v);
+  --pgov-color-primary-active: var(--color-blue-80v);
   
-  --pgov-color-secondary: var(--theme-color-secondary-medium);
-  --pgov-color-secondary-hover: var(--theme-color-secondary-dark);
-  --pgov-color-secondary-active: var(--theme-color-secondary-darker);
+  --pgov-color-secondary: var(--color-green-60v);
+  --pgov-color-secondary-hover: var(--color-green-70v);
+  --pgov-color-secondary-active: var(--color-green-80v);
 
   /* Button specific variables */
   --button-font-family-sans: var(--font-family-reading);
   --button-font-size: var(--font-size-6);
-  --button-primary-bg: var(--pgov-color-primary);
+  --button-primary-bg: var(--color-blue-60v);
   --button-primary-text: var(--theme-color-ink-reverse);
-  --button-primary-hover-bg: var(--pgov-color-primary-hover);
+  --button-primary-hover-bg: var(--color-blue-70v);
   --button-primary-hover-text: var(--theme-color-ink-reverse);
-  --button-primary-active-bg: var(--pgov-color-primary-active);
+  --button-primary-active-bg: var(--color-blue-80v);
   --button-border-radius: var(--pgov-border-radius-md);
   --button-font-weight-bold: 700;
   --button-spacing-2xs: var(--spacing-global-1);
@@ -38,9 +38,9 @@
   --button-color-blue-40v: var(--color-blue-40v);
   --button-color-gray-20: var(--color-gray-20);
   --button-color-white: var(--color-white);
-  --button-secondary-bg: var(--pgov-color-secondary);
-  --button-secondary-hover-bg: var(--pgov-color-secondary-hover);
-  --button-secondary-darkest: var(--pgov-color-secondary-active);
+  --button-secondary-bg: var(--color-green-60v);
+  --button-secondary-hover-bg: var(--color-green-70v);
+  --button-secondary-darkest: var(--color-green-80v);
   --button-accent-cool: var(--pgov-color-accent-cool);
   --button-accent-cool-darker: var(--pgov-color-accent-cool-darker);
   --button-accent-cool-darkest: var(--pgov-color-accent-cool-darkest);
@@ -50,11 +50,11 @@
   --button-color-neutral: var(--pgov-color-neutral);
   --button-color-neutral-dark: var(--pgov-color-neutral-dark);
   --button-color-neutral-darker: var(--pgov-color-neutral-darker);
-  --button-color-primary: var(--pgov-color-primary);
-  --button-color-primary-darker: var(--pgov-color-primary-hover);
-  --button-color-primary-darkest: var(--pgov-color-primary-active);
-  --button-link-color: var(--pgov-link-color);
-  --button-link-hover-color: var(--pgov-link-hover-color);
+  --button-color-primary: var(--color-blue-60v);
+  --button-color-primary-darker: var(--color-blue-70v);
+  --button-color-primary-darkest: var(--color-blue-80v);
+  --button-link-color: var(--color-blue-60v);
+  --button-link-hover-color: var(--color-blue-70v);
   --button-font-weight-normal: 400;
   --button-radius-none: 0;
   --button-spacing-0: 0;
@@ -68,10 +68,10 @@
   --banner-font-size: var(--pgov-font-size-2xs);
   --banner-spacing-md: var(--spacing-global-3);
   --banner-spacing-xs: var(--spacing-global-105);
-  --banner-color-primary: var(--pgov-color-primary);
+  --banner-color-primary: var(--color-blue-60v);
   --banner-font-weight-medium: var(--pgov-font-weight-medium);
-  --banner-color-primary-darker: var(--pgov-color-primary-darker);
-  --banner-text-color: var(--pgov-text-color);
+  --banner-color-primary-darker: var(--color-blue-70v);
+  --banner-text-color: var(--theme-color-ink);
   --banner-border-color: var(--pgov-border-color);
   --banner-spacing-2xs: var(--spacing-global-1);
   --banner-spacing-sm: var(--spacing-global-2);
@@ -81,9 +81,9 @@
   --footer-font-family: var(--pgov-font-family-sans);
   --footer-bg: var(--pgov-color-neutral-lightest);
   --footer-text-color: var(--pgov-color-neutral-darkest);
-  --footer-link-color: var(--pgov-color-primary);
-  --footer-link-hover-color: var(--pgov-color-primary-dark);
-  --footer-link-bg: var(--pgov-color-white);
+  --footer-link-color: var(--color-blue-60v);
+  --footer-link-hover-color: var(--color-blue-70v);
+  --footer-link-bg: var(--color-white);
   --footer-heading-color: var(--component-pgov-footer-text-color, #1B1B1B);
   --footer-heading-font-family: var(--usa-font-family-heading, "Public Sans");
   --footer-heading-font-size: var(--component-prose-h-4-font-size, 1rem);
@@ -215,7 +215,7 @@
   --breadcrumb-padding-x: var(--pgov-breadcrumb-padding-x, 1rem);
   --breadcrumb-mobile-padding-y: var(--pgov-breadcrumb-mobile-padding-y, 0.5rem);
   --breadcrumb-gap: var(--pgov-breadcrumb-gap, 0.5rem);
-  --breadcrumb-link-color: var(--pgov-color-primary, #005EA2);
+  --breadcrumb-link-color: var(--color-blue-60v, #005EA2);
   --breadcrumb-font-family: var(--pgov-font-family-sans, "Public Sans");
   --breadcrumb-font-size: var(--pgov-font-size-xs, 16px);
   --breadcrumb-current-color: var(--pgov-color-neutral-darkest, #1B1B1B);
@@ -315,7 +315,7 @@
   /* SkipNav component variables */
   --skip-nav-padding-y: var(--pgov-spacing-xs, 12px);
   --skip-nav-padding-x: var(--pgov-spacing-md, 20px);
-  --skip-nav-bg: var(--pgov-color-primary, #0050d8);
+  --skip-nav-bg: var(--color-blue-60v, #0050d8);
   --skip-nav-font-family: var(--pgov-font-family-sans, "Public Sans");
   --skip-nav-font-size: var(--pgov-font-size-xs, 16px);
   --skip-nav-font-weight: var(--pgov-font-weight-medium, 500);
