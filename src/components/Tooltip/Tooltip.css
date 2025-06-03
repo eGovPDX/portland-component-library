@@ -14,8 +14,8 @@
 
 /* Light theme */
 .tooltip__body--light {
-  background-color: var(--tooltip-bg-light, var(--pgov-color-neutral-lightest));
-  color: var(--tooltip-color-light, var(--pgov-color-neutral-darkest));
+  background-color: var(--tooltip-bg-light, #edeff0);
+  color: var(--tooltip-color-light, #1c1d1f);
   box-shadow: var(--tooltip-shadow-light, 0 2px 4px rgba(0, 0, 0, 0.1));
 }
 

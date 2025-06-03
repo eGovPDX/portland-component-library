@@ -82,7 +82,7 @@ export const Themes = () => (
     <Tooltip content="Light theme tooltip" theme="dark">
       <Button>Light Theme</Button>
     </Tooltip>
-    <div style={{ padding: '1rem', background: 'var(--pgov-color-neutral-darkest)' }}>
+    <div style={{ padding: '1rem', background: '#1b1b1b' }}>
       <Tooltip content="Dark theme tooltip" theme="light">
         <Button variant="outline-inverse">Dark Theme</Button>
       </Tooltip>
@@ -106,7 +106,7 @@ export const CustomElement = {
       <span style={{ 
         textDecoration: 'underline', 
         cursor: 'help',
-        color: 'var(--pgov-color-primary)'
+        color: '#005ea2'
       }}>
         Hover this text
       </span>

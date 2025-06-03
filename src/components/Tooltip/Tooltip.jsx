@@ -129,7 +129,7 @@ export const Tooltip = ({
                   [staticSide]: '-5px',
                   width: '10px',
                   height: '10px',
-                  backgroundColor: theme === 'light' ? 'var(--pgov-color-neutral-lightest)' : '#181818',
+                  backgroundColor: theme === 'light' ? '#f0f0f0' : '#181818',
                   transform: `rotate(${getArrowRotation()})`,
                 }}
               />
