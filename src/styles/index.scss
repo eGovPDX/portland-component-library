@@ -33,7 +33,7 @@ body {
 
 // Theme toggle classes
 .pgov-theme-enabled {
-  // All --pgov-color-* variables were here, now defined and mapped in pgov.scss
+  @extend .pgov-theme;
 }
 
 .pgov-dark-theme-enabled {
