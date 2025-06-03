@@ -13,13 +13,7 @@
   --pgov-font-family-mono: var(--font-family-mono-roboto-mono);
 
   /* Project Theme Light Colors from design_tokens.css "USWDS Theme/Project theme" */
-  --pgov-color-primary: var(--color-blue-60v);
-  --pgov-color-primary-hover: var(--color-blue-70v);
-  --pgov-color-primary-active: var(--color-blue-80v);
-  
-  --pgov-color-secondary: var(--color-green-60v);
-  --pgov-color-secondary-hover: var(--color-green-70v);
-  --pgov-color-secondary-active: var(--color-green-80v);
+  /* Note: These variables have been replaced with their actual values throughout the theme */
 
   /* Button specific variables */
   --button-font-family-sans: var(--font-family-reading);
@@ -41,15 +35,15 @@
   --button-secondary-bg: var(--color-green-60v);
   --button-secondary-hover-bg: var(--color-green-70v);
   --button-secondary-darkest: var(--color-green-80v);
-  --button-accent-cool: var(--pgov-color-accent-cool);
-  --button-accent-cool-darker: var(--pgov-color-accent-cool-darker);
-  --button-accent-cool-darkest: var(--pgov-color-accent-cool-darkest);
-  --button-accent-warm: var(--pgov-color-accent-warm);
-  --button-accent-warm-darker: var(--pgov-color-accent-warm-darker);
-  --button-accent-warm-darkest: var(--pgov-color-accent-warm-darkest);
-  --button-color-neutral: var(--pgov-color-neutral);
-  --button-color-neutral-dark: var(--pgov-color-neutral-dark);
-  --button-color-neutral-darker: var(--pgov-color-neutral-darker);
+  --button-accent-cool: var(--color-cyan-30v);
+  --button-accent-cool-darker: var(--color-blue-cool-40v);
+  --button-accent-cool-darkest: var(--color-blue-cool-60v);
+  --button-accent-warm: var(--color-orange-30v);
+  --button-accent-warm-darker: var(--color-orange-50v);
+  --button-accent-warm-darkest: var(--color-orange-60);
+  --button-color-neutral: var(--color-gray-cool-50);
+  --button-color-neutral-dark: var(--color-gray-cool-60);
+  --button-color-neutral-darker: var(--color-gray-cool-70);
   --button-color-primary: var(--color-blue-60v);
   --button-color-primary-darker: var(--color-blue-70v);
   --button-color-primary-darkest: var(--color-blue-80v);
@@ -63,7 +57,7 @@
   --button-color-gray-10: var(--color-gray-10);
 
   /* Banner component variables */
-  --banner-bg: var(--pgov-color-primary-lightest);
+  --banner-bg: #f0f7ff;
   --banner-font-family: var(--pgov-font-family-sans);
   --banner-font-size: var(--pgov-font-size-2xs);
   --banner-spacing-md: var(--spacing-global-3);
@@ -79,8 +73,8 @@
 
   /* Footer component variables */
   --footer-font-family: var(--pgov-font-family-sans);
-  --footer-bg: var(--pgov-color-neutral-lightest);
-  --footer-text-color: var(--pgov-color-neutral-darkest);
+  --footer-bg: var(--color-gray-5);
+  --footer-text-color: var(--color-gray-90);
   --footer-link-color: var(--color-blue-60v);
   --footer-link-hover-color: var(--color-blue-70v);
   --footer-link-bg: var(--color-white);
@@ -218,10 +212,10 @@
   --breadcrumb-link-color: var(--color-blue-60v, #005EA2);
   --breadcrumb-font-family: var(--pgov-font-family-sans, "Public Sans");
   --breadcrumb-font-size: var(--pgov-font-size-xs, 16px);
-  --breadcrumb-current-color: var(--pgov-color-neutral-darkest, #1B1B1B);
-  --breadcrumb-separator-color: var(--pgov-color-neutral, #71767a);
-  --breadcrumb-link-color-dark: var(--pgov-color-neutral-light, #A9AEB1);
-  --breadcrumb-current-color-dark: var(--pgov-color-white, #FFF);
+  --breadcrumb-current-color: var(--color-gray-90, #1B1B1B);
+  --breadcrumb-separator-color: var(--color-gray-cool-50, #71767a);
+  --breadcrumb-link-color-dark: var(--color-gray-cool-30, #A9AEB1);
+  --breadcrumb-current-color-dark: var(--color-white, #FFF);
 
   /* Accordion component variables */
   --accordion-border-color: var(--component-accordion-border-color, #F0F0F0);
@@ -545,7 +539,7 @@
   --popover-with-card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
   --popover-with-card-radius: 8px;
   --popover-with-card-bg: #fff;
-  --popover-with-card-arrow-bg: var(--pgov-color-neutral-lightest);
+  --popover-with-card-arrow-bg: var(--color-gray-5);
   --popover-with-card-arrow-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 
   /* Tooltip component variables */
@@ -553,8 +547,8 @@
   --tooltip-font-size: var(--pgov-font-size-2xs);
   --tooltip-line-height: var(--pgov-line-height-normal);
   --tooltip-border-radius: var(--pgov-border-radius-md);
-  --tooltip-bg-light: var(--pgov-color-neutral-lightest);
-  --tooltip-color-light: var(--pgov-color-neutral-darkest);
+  --tooltip-bg-light: var(--color-gray-5);
+  --tooltip-color-light: var(--color-gray-90);
   --tooltip-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
   --tooltip-bg-dark: #181818;
   --tooltip-color-dark: #ffffff;
