@@ -2,6 +2,7 @@
 // Based on Figma Design System: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)
 
 .pgov-theme {
+  --pgov-test-color: red; // ADDED FOR TESTING
   // Typography tokens
   // Source: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=161-4230&t=xJOdl0Cp5dzE6Zt7-1
   --pgov-font-family-sans: var(--font-family-reading);
@@ -720,19 +721,28 @@
   --component-prose-h-3-font-size: var(--font-size-10);
   
   // Breadcrumb tokens
-  --pgov-breadcrumb-font-family: var(--pgov-font-family-sans);
-  --pgov-breadcrumb-font-size: var(--pgov-font-size-2xs); // var(--font-size-3)
-  --pgov-breadcrumb-font-weight: var(--pgov-font-weight-normal);
-  --pgov-breadcrumb-color: var(--pgov-color-primary); // var(--color-blue-60v)
-  --pgov-breadcrumb-color-hover: var(--pgov-color-primary-darker); // var(--color-blue-warm-70v)
-  --pgov-breadcrumb-color-current: var(--pgov-color-neutral-dark); // var(--color-gray-cool-60)
-  --pgov-breadcrumb-separator-color: var(--pgov-color-neutral); // var(--color-gray-cool-50)
-  --pgov-breadcrumb-background-color: transparent;
-  --pgov-breadcrumb-padding-y: var(--spacing-global-105); // 0.75rem
-  --pgov-breadcrumb-padding-x: var(--spacing-global-2); // 1rem
-  --pgov-breadcrumb-gap: var(--spacing-global-1); // 0.5rem
-  --pgov-breadcrumb-mobile-padding-y: var(--spacing-global-1); // 0.5rem
-  --pgov-breadcrumb-mobile-padding-x: var(--spacing-global-105); // 0.75rem
+  --breadcrumb-font-family: var(--pgov-font-family-sans);
+  --breadcrumb-font-size: var(--pgov-font-size-2xs); // var(--font-size-3)
+  --breadcrumb-font-weight: var(--pgov-font-weight-normal);
+  --breadcrumb-color: var(--pgov-color-primary); // var(--color-blue-60v)
+  --breadcrumb-color-hover: var(--pgov-color-primary-darker); // var(--color-blue-warm-70v)
+  --breadcrumb-color-current: var(--pgov-color-neutral-dark); // var(--color-gray-cool-60)
+  --breadcrumb-separator-color: var(--pgov-color-neutral); // var(--color-gray-cool-50)
+  --breadcrumb-background-color: transparent;
+  --breadcrumb-padding-y: var(--spacing-global-105); // 0.75rem
+  --breadcrumb-padding-x: var(--spacing-global-2); // 1rem
+  --breadcrumb-gap: var(--spacing-global-1); // 0.5rem
+  --breadcrumb-mobile-padding-y: var(--spacing-global-1); // 0.5rem
+  --breadcrumb-mobile-padding-x: var(--spacing-global-105); // 0.75rem
+
+  // Accordion component variables
+  --accordion-border-color: var(--component-accordion-border-color, #F0F0F0);
+  --accordion-border-width: var(--component-accordion-border-width, 4px);
+  --accordion-button-bg: var(--component-accordion-button-background-color, #F0F0F0);
+  --accordion-button-text: var(--component-accordion-button-text-color, #1B1B1B);
+  --accordion-font-family: var(--component-accordion-font-family, "Public Sans");
+  --accordion-font-size: var(--component-accordion-font-size, 16px);
+  --accordion-details-text: var(--component-accordion-details-text-color, #1B1B1B);
 
   // Z-index tokens
   // Source: Added for component layering
@@ -746,4 +756,496 @@
   --pgov-z-index-tooltip: 1070;
   --pgov-z-index-toast: 1080;
   --pgov-z-index-overlay: 1090;
+
+  // Banner component variables
+  --banner-bg: var(--pgov-color-primary-lightest);
+  --banner-font-family: var(--pgov-font-family-sans);
+  --banner-font-size: var(--pgov-font-size-2xs);
+  --banner-spacing-md: var(--pgov-spacing-md);
+  --banner-spacing-xs: var(--pgov-spacing-xs);
+  --banner-color-primary: var(--pgov-color-primary);
+  --banner-font-weight-medium: var(--pgov-font-weight-medium);
+  --banner-color-primary-darker: var(--pgov-color-primary-darker);
+  --banner-text-color: var(--pgov-text-color);
+  --banner-border-color: var(--pgov-border-color);
+  --banner-spacing-2xs: var(--pgov-spacing-2xs);
+  --banner-spacing-sm: var(--pgov-spacing-sm);
+  --banner-line-height-normal: var(--pgov-line-height-normal);
+
+  // Footer component variables
+  --footer-font-family: var(--pgov-font-family-sans);
+  --footer-bg: var(--pgov-color-neutral-lightest);
+  --footer-text-color: var(--pgov-color-neutral-darkest);
+  --footer-link-color: var(--pgov-color-primary);
+  --footer-link-hover-color: var(--pgov-color-primary-dark);
+  --footer-link-bg: var(--pgov-color-white);
+  --footer-heading-color: var(--component-pgov-footer-text-color, #1B1B1B);
+  --footer-heading-font-family: var(--usa-font-family-heading, "Public Sans");
+  --footer-heading-font-size: var(--component-prose-h-4-font-size, 1rem);
+  --footer-link-font-family: var(--component-footer-font-family, "Public Sans");
+  --footer-gap-md: var(--component-pgov-footer-gap-md, 1rem);
+  --footer-max-width: var(--component-pgov-footer-max-width, 64rem);
+  --footer-padding-md: var(--component-pgov-footer-padding-md, 1rem);
+  --footer-margin-desktop: var(--component-pgov-footer-margin-desktop, 2rem);
+  --footer-spacing-2: var(--usa-spacing-2, 1rem);
+  --footer-body-font-size: var(--theme-body-font-size, 1rem);
+
+  // PageTemplate component variables
+  --page-template-bg: var(--pgov-background-color, #ffffff);
+  --page-template-font-family: var(--pgov-font-family-sans);
+  --page-template-padding-lg: var(--pgov-spacing-lg);
+  --page-template-padding-md: var(--pgov-spacing-md);
+
+  // Card component variables
+  --card-border-radius: var(--component-card-border-radius, 8px);
+  --card-bg: var(--theme-body-background-color, #FFF);
+  --card-padding-perimeter: var(--component-card-padding-perimeter, 24px);
+  --card-padding-y: var(--component-card-padding-y, 16px);
+  --card-border-width: var(--component-card-border-width, 2px);
+  --card-border-color: var(--component-card-border-color, #DFE1E2);
+  --card-text-color: var(--theme-body-text-color, #1B1B1B);
+  --card-header-font-family: var(--component-card-header-font-family, "Public Sans");
+  --card-header-font-size: var(--component-card-header-font-size, 22px);
+  --card-font-family: var(--component-card-font-family, "Public Sans");
+  --card-font-size: var(--component-card-font-size, 16px);
+
+  // CardGrid component variables
+  --card-grid-padding-lg: var(--component-pgov-card-grid-padding-lg, 32px);
+  --card-grid-margin-mobile: var(--component-pgov-card-grid-margin-mobile, 16px);
+  --card-grid-gap-lg: var(--component-pgov-card-grid-gap-lg, 32px);
+  --card-grid-divider-color: var(--component-pgov-card-grid-divider-color, #E0E0E0);
+  --card-grid-text-color: var(--component-pgov-card-grid-text-color, #1B1B1B);
+  --card-grid-heading-font-family: var(--usa-font-family-heading, "Public Sans");
+  --card-grid-heading-font-size: var(--component-prose-h-3-font-size, 22px);
+  --card-grid-max-width: var(--component-pgov-card-grid-max-width, 1024px);
+  --card-grid-margin-desktop: var(--component-pgov-card-grid-margin-desktop, 32px);
+
+  // Alert component variables
+  --alert-bg: var(--pgov-alert-background-color, #f0f7ff);
+  --alert-border-color: var(--pgov-alert-border-color, #1a4480);
+  --alert-icon-color: var(--pgov-alert-icon-color, #1a4480);
+  --alert-text-color: var(--component-alert-text-color, #1B1B1B);
+  --alert-heading-font-family: var(--usa-font-family-heading, "Public Sans");
+  --alert-heading-font-size: var(--usa-font-size-heading-9, 22px);
+  --alert-font-family: var(--component-alert-font-family, "Public Sans");
+  --alert-font-size: var(--theme-font-size-reading-sm, 16px);
+  --alert-info-bg: var(--pgov-alert-info-background-color, #f0f7ff);
+  --alert-info-border-color: var(--pgov-alert-info-border-color, #1a4480);
+  --alert-info-icon-color: var(--pgov-alert-info-icon-color, #1a4480);
+  --alert-warning-bg: var(--pgov-alert-warning-background-color, #fff3cd);
+  --alert-warning-border-color: var(--pgov-alert-warning-border-color, #856404);
+  --alert-warning-icon-color: var(--pgov-alert-warning-icon-color, #856404);
+  --alert-success-bg: var(--pgov-alert-success-background-color, #d4edda);
+  --alert-success-border-color: var(--pgov-alert-success-border-color, #155724);
+  --alert-success-icon-color: var(--pgov-alert-success-icon-color, #155724);
+  --alert-emergency-bg: var(--pgov-alert-emergency-background-color, #fce8e6);
+  --alert-emergency-border-color: var(--pgov-alert-emergency-border-color, #b71c1c);
+  --alert-emergency-icon-color: var(--pgov-alert-emergency-icon-color, #b71c1c);
+  --alert-slim-heading-font-size: var(--pgov-font-size-base, 1rem);
+
+  // HeroGlobal component variables
+  --hero-global-bg: var(--theme-body-background-color, #FFF);
+  --hero-global-gap: var(--usa-spacing-2, 16px);
+  --hero-global-tag-gap: var(--usa-spacing-1, 8px);
+  --hero-global-tag-padding-y: var(--usa-spacing-2-px, 2px);
+  --hero-global-tag-radius: var(--usa-radius-pill, 1000px);
+  --hero-global-tag-bg: var(--theme-color-base-dark, #565C65);
+  --hero-global-tag-color: var(--usa-color-white, #FFF);
+  --hero-global-tag-font-family: var(--usa-font-family-ui, "Public Sans");
+  --hero-global-tag-font-size: var(--theme-font-size-ui-2-xs, 14px);
+  --hero-global-title-color: var(--theme-color-ink, #1B1B1B);
+  --hero-global-title-font-family: var(--usa-font-family-heading, "Public Sans");
+  --hero-global-title-font-size: var(--component-prose-h-1-font-size, 40px);
+  --hero-global-desc-font-family: var(--usa-font-family-body, "Public Sans");
+  --hero-global-desc-font-size: var(--theme-body-font-size, 16px);
+  --hero-global-image-placeholder-bg: var(--theme-color-base-lighter, #DFE1E2);
+  --hero-global-desktop-max-width: var(--usa-spacing-desktop, 1024px);
+  --hero-global-desktop-gap-x: var(--usa-spacing-4, 32px);
+  --hero-global-desktop-gap-y: var(--usa-spacing-5, 40px);
+
+  // Tag component variables
+  --tag-padding-y: var(--theme-spacing-2, 2px);
+  --tag-padding-x: var(--theme-spacing-1, 8px);
+  --tag-radius: var(--theme-radius-pill, 1000px);
+  --tag-bg: var(--theme-color-base-dark, #565C65);
+  --tag-color: var(--usa-color-white, #FFF);
+  --tag-font-family: var(--usa-font-family-ui, "Public Sans");
+  --tag-font-size: var(--theme-font-size-ui-2-xs, 14px);
+  --tag-font-size-big: var(--theme-font-size-ui-sm, 16px);
+
+  // SkipNav component variables
+  --skip-nav-padding-y: var(--pgov-spacing-xs, 12px);
+  --skip-nav-padding-x: var(--pgov-spacing-md, 20px);
+  --skip-nav-bg: var(--pgov-color-primary, #0050d8);
+  --skip-nav-font-family: var(--pgov-font-family-sans, "Public Sans");
+  --skip-nav-font-size: var(--pgov-font-size-xs, 16px);
+  --skip-nav-font-weight: var(--pgov-font-weight-medium, 500);
+  --skip-nav-color: #fff;
+
+  // SummaryBox component variables
+  --summary-box-padding: var(--usa-spacing-3, 24px);
+  --summary-box-gap: var(--usa-spacing-2, 16px);
+  --summary-box-border-color: var(--component-summary-box-border-color, #5DC0D1);
+  --summary-box-bg: var(--component-summary-box-background-color, #E7F6F8);
+  --summary-box-bg-hover: var(--component-summary-box-background-color-hover, #D1EEF3);
+  --summary-box-text-color: var(--component-summary-box-text-color, #1C1D1F);
+  --summary-box-font-family: var(--component-summary-box-font-family, "Open Sans");
+  --summary-box-heading-font-size: var(--theme-font-size-ui-lg, 23.5px);
+  --summary-box-font-size: var(--theme-font-size-ui-sm, 16.6px);
+  --summary-box-button-icon-gap: var(--component-button-icon-gap, 8px);
+  --summary-box-button-color: var(--theme-color-primary-medium, #2378C3);
+  --summary-box-button-padding-y: var(--usa-spacing-105, 12px);
+  --summary-box-button-padding-x: var(--usa-spacing-205, 20px);
+  --summary-box-button-font-family: var(--usa-font-family-ui, "Open Sans");
+  --summary-box-border-radius: 4px;
+  --summary-box-line-height: 24px;
+  --summary-box-button-radius: 4px;
+  --summary-box-button-icon-size: 15px;
+
+  // ProcessSteps component variables
+  --process-steps-gap: 8px;
+  --process-steps-title-padding: 0px 0px 0px 0px;
+  --process-steps-title-gap: 10px;
+  --process-steps-title-color: #1C1D1F;
+  --process-steps-title-font-family: "Open Sans";
+  --process-steps-title-font-size: 27.35px;
+  --process-steps-description-gap: 10px;
+  --process-steps-description-color: #1C1D1F;
+  --process-steps-description-font-family: "Open Sans";
+  --process-steps-description-font-size: 23.5px;
+  --process-steps-steps-gap: 0px;
+  --process-steps-steps-margin-top: 32px;
+  --process-steps-step-item-gap: 16px;
+  --process-steps-step-number-size: 40px;
+  --process-steps-step-number-bg: #FFF;
+  --process-steps-step-number-border-color: #1C1D1F;
+  --process-steps-step-number-border-width: 4px;
+  --process-steps-step-number-text-color: #000;
+  --process-steps-step-number-font-family: "Open Sans";
+  --process-steps-step-number-font-size: 23.5px;
+  --process-steps-connector-width: 8px;
+  --process-steps-connector-height: 127px;
+  --process-steps-connector-color: #D9E8F6;
+  --process-steps-step-content-padding-bottom: 32px;
+  --process-steps-step-heading-color: #000;
+  --process-steps-step-heading-font-family: "Open Sans";
+  --process-steps-step-heading-font-size: 23.5px;
+  --process-steps-step-heading-padding: 12px 0 0 0;
+  --process-steps-step-description-color: #1B1B1B;
+  --process-steps-step-description-font-family: "Open Sans";
+  --process-steps-step-description-font-size: 16.6px;
+
+  // SideNav component variables
+  --side-nav-border-radius-sm: var(--component-pgov-side-navigation-border-radius-sm, 4px);
+  --side-nav-border-radius-lg: var(--component-pgov-side-navigation-border-radius-lg, 8px);
+  --side-nav-border-width-md: var(--component-pgov-side-navigation-border-width-md, 2px);
+  --side-nav-border-width-sm: var(--component-pgov-side-navigation-border-width-sm, 1px);
+  --side-nav-border-color-default: var(--component-pgov-side-navigation-border-color-default, #DFE1E2);
+  --side-nav-border-color-selected: var(--component-pgov-side-navigation-border-color-selected, #2378C3);
+  --side-nav-bg-default: var(--component-pgov-side-navigation-background-color-default, transparent);
+  --side-nav-bg-hover: var(--component-pgov-side-navigation-background-color-hover, rgba(0, 0, 0, 0.05));
+  --side-nav-bg-selected: var(--component-pgov-side-navigation-background-color-selected, rgba(0, 0, 0, 0.01));
+  --side-nav-padding-sm: var(--component-pgov-side-navigation-global-padding-sm, 8px);
+  --side-nav-text-color-default: var(--component-pgov-side-navigation-text-color-default, #565C65);
+  --side-nav-text-color-selected-header: var(--component-pgov-side-navigation-text-color-selected-header, #1C1D1F);
+  --side-nav-width: 216px;
+  --side-nav-bg: #fff;
+  --side-nav-indicator-width: 4px;
+  --side-nav-font-family: "Open Sans";
+  --side-nav-font-size: 16.6px;
+  --side-nav-line-height: 130%;
+  --side-nav-child-font-family: "Open Sans";
+  --side-nav-child-font-size: 13.7px;
+  --side-nav-child-line-height: 130%;
+  --side-nav-children-max-height: 500px;
+  --side-nav-children-transition: all 0.3s ease-in-out;
+  --side-nav-item-transition: all 0.2s ease-in-out;
+  --side-nav-indicator-transition: background-color 0.2s ease-in-out;
+
+  // StepIndicator component variables
+  --step-indicator-font-family: var(--component-step-indicator-font-family, "Public Sans");
+  --step-indicator-segment-gap: var(--component-step-indicator-segment-gap, 2px);
+  --step-indicator-segment-height: var(--component-step-indicator-segment-height, 8px);
+  --step-indicator-segment-color-complete: var(--component-step-indicator-segment-color-complete, #162E51);
+  --step-indicator-segment-color-current: var(--component-step-indicator-segment-color-current, #005EA2);
+  --step-indicator-segment-color-pending: var(--component-step-indicator-segment-color-pending, #919191);
+  --step-indicator-text-pending-color: var(--component-step-indicator-text-pending-color, #565C65);
+  --step-indicator-label-font-size: var(--component-step-indicator-label-font-size, 16px);
+  --step-indicator-heading-color: var(--component-step-indicator-heading-color, #1B1B1B);
+  --step-indicator-heading-font-family: var(--component-step-indicator-heading-font-family, "Public Sans");
+  --step-indicator-heading-font-size: var(--component-step-indicator-heading-font-size, 22px);
+  --step-indicator-heading-font-size-small: var(--component-step-indicator-heading-font-size-small, 18px);
+  --step-indicator-bg: #fff;
+  --step-indicator-margin-bottom: 1.5rem;
+  --step-indicator-header-margin-top: 1rem;
+  --step-indicator-heading-gap: 0.5rem;
+  --step-indicator-heading-icon-margin: 0 0.5rem;
+  --step-indicator-label-line-height: 120%;
+  --step-indicator-label-margin-top: 0.5rem;
+  --step-indicator-segment-padding-top: 20px;
+  --step-indicator-counter-top: -12px;
+  --step-indicator-counter-sm-top: -10px;
+  --step-indicator-counter-size: 2rem;
+  --step-indicator-counter-sm-size: 1.5rem;
+  --step-indicator-counter-sm-font-size: 0.875rem;
+
+  // TextArea component variables
+  --text-area-gap: var(--usa-spacing-1, 0.5rem);
+  --text-area-label-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-area-label-font-size: 1rem;
+  --text-area-label-font-weight: 700;
+  --text-area-desc-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-area-desc-font-size: 0.875rem;
+  --text-area-footer-gap: var(--usa-spacing-2, 1rem);
+  --text-area-error-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-area-error-font-size: 0.875rem;
+  --text-area-error-font-weight: 700;
+  --text-area-error-color: var(--theme-color-error-dark, #B50909);
+  --text-area-count-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-area-count-font-size: 0.875rem;
+  --text-area-count-color: var(--theme-color-ink, #1B1B1B);
+  --text-area-bg: var(--usa-color-white, #FFF);
+  --text-area-border: 1px solid var(--theme-color-ink, #1B1B1B);
+  --text-area-border-radius: var(--component-input-border-radius, 0px);
+  --text-area-error-border: var(--usa-spacing-05, 0.25rem) solid var(--theme-color-error-dark, #B50909);
+  --text-area-success-border: var(--usa-spacing-05, 0.25rem) solid var(--theme-color-success-dark, #008817);
+  --text-area-disabled-bg: var(--theme-color-disabled-medium, #757575);
+  --text-area-disabled-color: var(--usa-color-white, #FFF);
+  --text-area-min-height: var(--usa-spacing-5, 2.5rem);
+  --text-area-input-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-area-input-font-size: 1rem;
+  --text-area-input-color: var(--theme-color-ink, #1B1B1B);
+  --text-area-input-disabled-color: var(--usa-color-white, #FFF);
+  --text-area-input-padding: 0.5rem;
+  --text-area-focus-outline: 0.25rem solid #2491ff;
+  --text-area-focus-outline-offset: 0;
+
+  // TextInput component variables
+  --text-input-gap: var(--usa-spacing-1, 0.5rem);
+  --text-input-label-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-input-label-font-size: 1rem;
+  --text-input-label-font-weight: 700;
+  --text-input-desc-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-input-desc-font-size: 0.875rem;
+  --text-input-error-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-input-error-font-size: 0.875rem;
+  --text-input-error-font-weight: 700;
+  --text-input-error-color: var(--theme-color-error-dark, #B50909);
+  --text-input-bg: var(--usa-color-white, #FFF);
+  --text-input-border: 1px solid var(--theme-color-ink, #1B1B1B);
+  --text-input-border-radius: var(--component-input-border-radius, 0px);
+  --text-input-error-border: var(--usa-spacing-05, 0.25rem) solid var(--theme-color-error-dark, #B50909);
+  --text-input-success-border: var(--usa-spacing-05, 0.25rem) solid var(--theme-color-success-dark, #008817);
+  --text-input-disabled-bg: var(--theme-color-disabled-medium, #757575);
+  --text-input-disabled-color: var(--usa-color-white, #FFF);
+  --text-input-height: var(--usa-spacing-5, 2.5rem);
+  --text-input-input-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  --text-input-input-font-size: 1rem;
+  --text-input-input-color: var(--theme-color-ink, #1B1B1B);
+  --text-input-input-disabled-color: var(--usa-color-white, #FFF);
+  --text-input-affix-color: var(--theme-color-ink, #1B1B1B);
+  --text-input-input-padding: 0.5rem;
+  --text-input-focus-outline: 0.25rem solid #2491ff;
+  --text-input-focus-outline-offset: 0;
+  --text-input-prefix-padding: 0 0 0 0.75rem;
+  --text-input-suffix-padding: 0 0.75rem 0 0;
+  --text-input-prefix-input-padding-left: 0.5rem;
+
+  // Dropdown component variables
+  --dropdown-height: var(--usa-spacing-5, 40px);
+  --dropdown-padding-y: var(--usa-spacing-1, 8px);
+  --dropdown-padding-x: var(--usa-spacing-1, 8px);
+  --dropdown-border-radius: var(--component-input-border-radius, 0px);
+  --dropdown-border: 1px solid var(--theme-color-ink, #1B1B1B);
+  --dropdown-bg: var(--usa-color-white, #FFF);
+  --dropdown-color: var(--theme-color-ink, #1B1B1B);
+  --dropdown-font-family: var(--usa-font-family-ui, "Public Sans");
+  --dropdown-font-size: var(--theme-font-size-ui-sm, 16px);
+  --dropdown-font-weight: 400;
+  --dropdown-font-style: normal;
+  --dropdown-line-height: normal;
+  --dropdown-focus-border: var(--theme-global-focus-width, 4px) solid var(--theme-global-focus-color, #2491FF);
+  --dropdown-disabled-border: 1px solid var(--theme-color-ink, #1B1B1B);
+  --dropdown-disabled-bg: var(--theme-color-disabled-medium, #757575);
+  --dropdown-disabled-color: var(--theme-color-ink, #1B1B1B);
+  --dropdown-error-border: var(--usa-spacing-05, 0.25rem) solid var(--theme-color-error-dark, #B50909);
+  --dropdown-error-bg: var(--component-input-error-background-color, #FFF);
+  --dropdown-error-color: var(--theme-color-error-dark, #B50909);
+  --dropdown-chevron-color: var(--theme-color-ink, #1B1B1B);
+  --dropdown-menu-bg: var(--usa-color-white, #FFF);
+  --dropdown-menu-border: 1px solid var(--theme-color-base-lighter, #dfe1e2);
+  --dropdown-menu-border-radius: var(--component-input-border-radius, 0px);
+  --dropdown-item-color: var(--theme-color-ink, #1B1B1B);
+  --dropdown-item-bg: transparent;
+  --dropdown-item-hover-bg: var(--theme-color-base-lighter, #dfe1e2);
+  --dropdown-item-selected-bg: var(--theme-color-base-lighter, #dfe1e2);
+  --dropdown-item-selected-color: var(--theme-color-ink, #1B1B1B);
+
+  // ButtonGroup component variables
+  --button-group-gap: 8px;
+  --button-group-segmented-margin: -1px;
+  --button-group-segmented-radius: 0;
+  --button-group-segmented-radius-left: 0.25rem;
+  --button-group-segmented-radius-right: 0.25rem;
+
+  // PopoverWithCard component variables
+  --popover-with-card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --popover-with-card-radius: 8px;
+  --popover-with-card-bg: #fff;
+  --popover-with-card-arrow-bg: var(--pgov-color-neutral-lightest);
+  --popover-with-card-arrow-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+
+  // Tooltip component variables
+  --tooltip-font-family: var(--pgov-font-family-sans);
+  --tooltip-font-size: var(--pgov-font-size-2xs);
+  --tooltip-line-height: var(--pgov-line-height-normal);
+  --tooltip-border-radius: var(--pgov-border-radius-md);
+  --tooltip-bg-light: var(--pgov-color-neutral-lightest);
+  --tooltip-color-light: var(--pgov-color-neutral-darkest);
+  --tooltip-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --tooltip-bg-dark: #181818;
+  --tooltip-color-dark: #ffffff;
+  --tooltip-border-radius-dark: 8px;
+  --tooltip-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --tooltip-arrow-bg: inherit;
+  --tooltip-popup-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  // HeroHomepage component variables
+  --hero-homepage-gap-md: 16px;
+  --hero-homepage-bg: #1B1B1B;
+  --hero-homepage-text-color: #FFF;
+  --hero-homepage-title-font-size: 40px;
+  --hero-homepage-subtitle-font-size: 32px;
+  --hero-homepage-gap-sm: 8px;
+  --hero-homepage-link-color: #A9AEB1;
+  --hero-homepage-padding-xl: 64px;
+  --hero-homepage-margin-desktop: 32px;
+  --hero-homepage-padding-lg: 32px;
+  --hero-homepage-margin-mobile: 16px;
+
+  // Search component variables
+  --search-input-margin-right: 8px;
+  --search-input-min-width: 27ch;
+  --search-input-padding: 8px;
+  --search-input-height: 2rem;
+  --search-button-padding: 8px;
+  --search-button-height: 2rem;
+  --search-icon-size: 1.25rem;
+  --search-font-size-big: 16px;
+  --search-input-padding-big: 16px;
+  --search-input-height-big: 2.5rem;
+  --search-button-padding-big: 16px;
+  --search-button-height-big: 2.5rem;
+  --search-font-size-small: 14px;
+  --search-input-padding-small: 8px;
+  --search-button-padding-small: 8px;
+
+  // ColorSwatch component variables
+  --color-swatch-palette-margin-bottom: 32px;
+  --color-swatch-title-font-size: 18px;
+  --color-swatch-title-font-weight: 600;
+  --color-swatch-title-margin-bottom: 8px;
+  --color-swatch-description-font-size: 14px;
+  --color-swatch-description-margin-bottom: 16px;
+  --color-swatch-grid-gap: 36px;
+  --color-swatch-grid-min-col-width: 140px;
+  --color-swatch-item-gap: 16px;
+  --color-swatch-item-margin-bottom: 20px;
+  --color-swatch-font-family: var(--pgov-font-family-sans, sans-serif);
+  --color-swatch-preview-radius: 6px;
+  --color-swatch-preview-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --color-swatch-details-gap: 5px;
+  --color-swatch-name-font-weight: 600;
+  --color-swatch-name-font-size: 14px;
+  --color-swatch-name-margin-bottom: 2px;
+  --color-swatch-var-font-size: 12px;
+  --color-swatch-var-color: #71767a;
+  --color-swatch-var-font-family: monospace;
+  --color-swatch-description-font-size: 12px;
+  --color-swatch-description-margin-top: 2px;
+  --color-swatch-hex-font-size: 12px;
+  --color-swatch-hex-color: #71767a;
+  --color-swatch-hex-margin-bottom: 0.25rem;
+
+  // Accordion component variables
+  --accordion-gap: 8px;
+  --accordion-border-top-width: 0px;
+  --accordion-button-padding: 16px;
+  --accordion-details-padding: 16px;
+  --accordion-focus-outline: 2px solid #4D90FE;
+  --accordion-focus-outline-offset: -2px;
+  --accordion-button-hover-bg: #E7E7E7;
+
+  // CardFlag component variables
+  --card-flag-media-col-width: 135px;
+  --card-flag-gap: 24px;
+  --card-flag-gap-mobile: 16px;
+  --card-flag-width: 573px;
+  --card-flag-width-mobile: 100%;
+  --card-flag-border-radius: 8px;
+  --card-flag-media-width: 155px;
+  --card-flag-media-width-mobile: 100%;
+  --card-flag-media-height: auto;
+  --card-flag-media-height-mobile: 200px;
+  --card-flag-media-inset-width: 131px;
+  --card-flag-media-inset-width-mobile: 100%;
+  --card-flag-media-inset-min-width: 131px;
+  --card-flag-media-inset-min-width-mobile: 100%;
+  --card-flag-media-inset-max-width: 131px;
+  --card-flag-media-inset-max-width-mobile: 100%;
+  --card-flag-media-inset-left-padding: 24px 0 24px 24px;
+  --card-flag-media-inset-left-padding-mobile: 16px 16px 0;
+  --card-flag-media-inset-right-padding: 24px 24px 24px 0;
+  --card-flag-media-inset-right-padding-mobile: 16px 16px 0;
+  --card-flag-media-inset-padding-mobile: 16px 16px 0;
+  --card-flag-padding: 24px;
+  --card-flag-padding-mobile: 0 16px 16px;
+  --card-flag-content-gap: 16px;
+  --card-flag-footer-margin-top: 8px;
+
+  // Dropdown component variables
+  --dropdown-select-padding-right: 3rem;
+  --dropdown-chevron-right: 1rem;
+  --dropdown-chevron-transform: translateY(-50%);
+  --dropdown-chevron-transition: transform 0.2s ease-in-out;
+  --dropdown-chevron-open-transform: translateY(-50%) rotate(180deg);
+  --dropdown-menu-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  --footer-font-size-base: 0.875rem;
+  --footer-border-radius: 0.25rem;
+  --footer-max-width: 1200px;
+  --footer-explore-arrow-margin-left: 0.5rem;
+  --footer-explore-arrow-font-size: 1.125rem;
+  --footer-feedback-padding: 0.75rem 1rem;
+  --footer-accessibility-padding: 1rem;
+  --footer-translation-font-size: 0.875rem;
+  --footer-translation-line-height: 1.5;
+  --footer-explore-button-padding: 0.625rem 1rem;
+  --footer-explore-button-font-size: 0.875rem;
+  --footer-explore-button-font-weight: 600;
+  --footer-explore-button-radius: 0.25rem;
+  --footer-link-line-height: 150%;
+  --footer-link-text-decoration: underline;
+  --footer-link-text-decoration-thickness: auto;
+  --footer-link-text-underline-offset: auto;
+  --footer-link-text-underline-position: from-font;
+  --footer-city-logo-width: 100px;
+  --footer-city-logo-height: auto;
+
+  // Header component variables
+  --header-menu-link-bg: #fff;
+  --header-menu-link-hover-bg: #e1e5ea;
+  --header-menu-link-radius: 4px;
+  --header-menu-link-title-color: #0050d8;
+  --header-menu-link-title-font-size: 1.125rem;
+  --header-menu-link-title-font-weight: 500;
+  --header-menu-link-title-line-height: 1.3;
+  --header-menu-link-description-color: #5d5d5d;
+  --header-menu-link-description-font-size: 0.875rem;
+  --header-menu-link-description-font-weight: 400;
+  --header-menu-link-description-line-height: 1.4;
+  --header-menu-group-title-color: #1b1b1b;
+  --header-menu-group-title-font-size: 1.25rem;
+  --header-menu-group-title-font-weight: 700;
+  --header-menu-group-title-border-color: #dfe1e2;
 } 
