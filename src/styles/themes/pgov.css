@@ -55,8 +55,8 @@
   
   /* Breadcrumb tokens */
   --breadcrumb-font-family: var(--font-family-reading-public-sans);
-  --breadcrumb-font-size: var(--pgov-font-size-2xs);
-  --breadcrumb-font-weight: var(--pgov-font-weight-normal);
+  --breadcrumb-font-size: var(--font-size-3);
+  --breadcrumb-font-weight: 400;
   --breadcrumb-link-color: var(--pgov-color-primary, #005EA2);
   --breadcrumb-color: var(--pgov-color-primary);
   --breadcrumb-color-hover: var(--pgov-color-primary-darker);
@@ -82,17 +82,17 @@
   /* Banner component variables */
   --banner-bg: var(--pgov-color-primary-lightest);
   --banner-font-family: var(--font-family-reading-public-sans);
-  --banner-font-size: var(--pgov-font-size-2xs);
+  --banner-font-size: var(--font-size-3);
   --banner-spacing-md: var(--pgov-spacing-md);
   --banner-spacing-xs: var(--pgov-spacing-xs);
   --banner-color-primary: var(--pgov-color-primary);
-  --banner-font-weight-medium: var(--pgov-font-weight-medium);
+  --banner-font-weight-medium: 500;
   --banner-color-primary-darker: var(--pgov-color-primary-darker);
   --banner-text-color: var(--pgov-text-color);
   --banner-border-color: var(--pgov-border-color);
   --banner-spacing-2xs: var(--pgov-spacing-2xs);
   --banner-spacing-sm: var(--pgov-spacing-sm);
-  --banner-line-height-normal: var(--pgov-line-height-normal);
+  --banner-line-height-normal: 1.5;
 
   /* Footer component variables */
   --footer-font-family: var(--font-family-reading-public-sans);
@@ -200,8 +200,8 @@
   --skip-nav-padding-x: var(--pgov-spacing-md, 20px);
   --skip-nav-bg: var(--pgov-color-primary, #0050d8);
   --skip-nav-font-family: var(--font-family-reading-public-sans, "Public Sans");
-  --skip-nav-font-size: var(--pgov-font-size-xs, 16px);
-  --skip-nav-font-weight: var(--pgov-font-weight-medium, 500);
+  --skip-nav-font-size: var(--font-size-5, 16px);
+  --skip-nav-font-weight: 500;
   --skip-nav-color: #fff;
 
   /* SummaryBox component variables */
@@ -419,8 +419,8 @@
 
   /* Tooltip component variables */
   --tooltip-font-family: var(--font-family-reading-public-sans);
-  --tooltip-font-size: var(--pgov-font-size-2xs);
-  --tooltip-line-height: var(--pgov-line-height-normal);
+  --tooltip-font-size: var(--font-size-3);
+  --tooltip-line-height: 1.5;
   --tooltip-border-radius: var(--pgov-border-radius-md);
   --tooltip-bg-light: var(--pgov-color-neutral-lightest);
   --tooltip-color-light: var(--pgov-color-neutral-darkest);
