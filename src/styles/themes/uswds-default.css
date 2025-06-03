@@ -1,11 +1,71 @@
 /* This theme class aims to apply USWDS default styling */
-/* by setting --pgov-* variables to USWDS default token values. */
+/* by setting component variables to USWDS default token values. */
 
 .uswds-default-theme-applied {
+  /* Banner component variables - DIRECT VALUES */
+  --banner-bg: #f0f7ff;
+  --banner-font-family: var(--font-family-reading-public-sans);
+  --banner-font-size: var(--font-size-3);
+  --banner-line-height-normal: 1.5;
+  --banner-font-weight-medium: 500;
+  --banner-color-primary-darker: var(--color-blue-warm-70v);
+  --banner-text-color: var(--color-gray-90, #1b1b1b);
+  --banner-border-color: var(--color-gray-cool-10);
+  --banner-spacing-2xs: var(--spacing-global-1);
+  --banner-spacing-sm: var(--spacing-global-2);
+  --banner-spacing-xs: var(--spacing-global-105);
+  --banner-spacing-md: var(--spacing-global-3);
+
+  /* Footer component variables - DIRECT VALUES */
+  --footer-bg: var(--color-gray-5);
+  --footer-text-color: var(--color-gray-90);
+  --footer-font-family: var(--font-family-reading-public-sans);
+  --footer-font-size: var(--font-size-4);
+  --footer-body-font-size: var(--theme-body-font-size, 1rem);
+
+  /* PageTemplate component variables - DIRECT VALUES */
+  --page-template-bg: var(--color-white, #ffffff);
+  --page-template-font-family: var(--font-family-reading-public-sans);
+  --page-template-padding-lg: var(--spacing-global-4);
+  --page-template-padding-md: var(--spacing-global-3);
+
+  /* Breadcrumb component variables - STATIC VALUES */
+  --breadcrumb-current-color: var(--color-gray-90, #1B1B1B);
+  --breadcrumb-separator-color: var(--color-gray-cool-50, #71767A);
+  --breadcrumb-font-family: var(--font-family-reading-public-sans, "Public Sans");
+  --breadcrumb-font-size: var(--font-size-5, 16px);
+  --breadcrumb-padding-y: 0.75rem;
+  --breadcrumb-padding-x: 1rem;
+  --breadcrumb-mobile-padding-y: 0.5rem;
+  --breadcrumb-gap: 0.5rem;
+
+  /* Alert component variables - STATIC VALUES */
+  --alert-bg: #f0f7ff;
+  --alert-border-color: #1a4480;
+  --alert-icon-color: #1a4480;
+  --alert-text-color: var(--component-alert-text-color, #1B1B1B);
+  --alert-heading-font-family: var(--usa-font-family-heading, "Public Sans");
+  --alert-heading-font-size: var(--usa-font-size-heading-9, 22px);
+  --alert-font-family: var(--component-alert-font-family, "Public Sans");
+  --alert-font-size: var(--theme-font-size-reading-sm, 16px);
+  --alert-info-bg: #f0f7ff;
+  --alert-info-border-color: #1a4480;
+  --alert-info-icon-color: #1a4480;
+  --alert-warning-bg: #fff3cd;
+  --alert-warning-border-color: #856404;
+  --alert-warning-icon-color: #856404;
+  --alert-success-bg: #d4edda;
+  --alert-success-border-color: #155724;
+  --alert-success-icon-color: #155724;
+  --alert-error-bg: #f8d7da;
+  --alert-error-border-color: #721c24;
+  --alert-error-icon-color: #721c24;
+  --alert-emergency-bg: #fce8e6;
+  --alert-emergency-border-color: #b71c1c;
+  --alert-emergency-icon-color: #b71c1c;
+  --alert-slim-heading-font-size: 1rem;
+
   /* General theme colors */
-  --pgov-background-color: var(--color-white, #ffffff); 
-  --pgov-text-color: var(--color-gray-90, #1b1b1b); /* #1b1b1b (USWDS --theme-color-ink) */
-  --pgov-link-color: var(--color-blue-60v, #005ea2); /* #005ea2 (USWDS --theme-color-primary-medium) */
   --pgov-link-hover-color: var(--color-blue-warm-70v, #1a4480);  
   --pgov-border-color: var(--color-gray-cool-10); 
   
@@ -176,20 +236,6 @@
   --card-grid-heading-font-size: var(--component-prose-h-3-font-size, 22px);
   --card-grid-max-width: var(--component-pgov-card-grid-max-width, 1024px);
   --card-grid-margin-desktop: var(--component-pgov-card-grid-margin-desktop, 32px);
-
-  /* Breadcrumb component variables */
-  --breadcrumb-bg: var(--color-white, transparent);
-  --breadcrumb-padding-y: var(--pgov-breadcrumb-padding-y, 0.75rem);
-  --breadcrumb-padding-x: var(--pgov-breadcrumb-padding-x, 1rem);
-  --breadcrumb-mobile-padding-y: var(--pgov-breadcrumb-mobile-padding-y, 0.5rem);
-  --breadcrumb-gap: var(--pgov-breadcrumb-gap, 0.5rem);
-  --breadcrumb-link-color: var(--color-blue-60v, #005EA2);
-  --breadcrumb-font-family: var(--font-family-reading-public-sans, "Public Sans");
-  --breadcrumb-font-size: var(--font-size-5, 16px);
-  --breadcrumb-current-color: var(--color-gray-90, #1B1B1B);
-  --breadcrumb-separator-color: var(--color-gray-cool-50, #71767a);
-  --breadcrumb-link-color-dark: var(--color-gray-cool-30, #A9AEB1);
-  --breadcrumb-current-color-dark: var(--color-white, #FFF);
 
   /* Accordion component variables */
   --accordion-border-color: var(--component-accordion-border-color, #F0F0F0);

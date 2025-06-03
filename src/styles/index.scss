@@ -16,11 +16,11 @@
 }
 
 body {
-  font-family: var(--pgov-font-family-sans, sans-serif);
-  font-size: var(--pgov-font-size-xs, 16px);
-  line-height: var(--pgov-line-height-normal, 1.5);
-  color: var(--pgov-text-color, #1b1b1b);
-  background-color: var(--pgov-background-color, #ffffff);
+  font-family: var(--font-family-reading-public-sans, sans-serif);
+  font-size: var(--font-size-5, 1rem);
+  line-height: 1.5;
+  color: var(--color-gray-90, #1b1b1b);
+  background-color: var(--color-white, #ffffff);
 }
 
 /* Utility classes */

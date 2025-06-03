@@ -53,15 +53,15 @@ SpacingDisplay.propTypes = {
 
 export const SpacingTokens = () => {
   const spacings = [
-    { name: '3XS', variable: '--pgov-spacing-3xs', value: '0.25rem', pixels: '4px' },
-    { name: '2XS', variable: '--pgov-spacing-2xs', value: '0.5rem', pixels: '8px' },
-    { name: 'XS', variable: '--pgov-spacing-xs', value: '0.75rem', pixels: '12px' },
-    { name: 'SM', variable: '--pgov-spacing-sm', value: '1rem', pixels: '16px' },
-    { name: 'MD', variable: '--pgov-spacing-md', value: '1.5rem', pixels: '24px' },
-    { name: 'LG', variable: '--pgov-spacing-lg', value: '2rem', pixels: '32px' },
-    { name: 'XL', variable: '--pgov-spacing-xl', value: '2.5rem', pixels: '40px' },
-    { name: '2XL', variable: '--pgov-spacing-2xl', value: '3rem', pixels: '48px' },
-    { name: '3XL', variable: '--pgov-spacing-3xl', value: '4rem', pixels: '64px' },
+    { name: '3XS', variable: 'var(--spacing-global-05)', value: '0.25rem', pixels: '4px' },
+    { name: '2XS', variable: 'var(--spacing-global-1)', value: '0.5rem', pixels: '8px' },
+    { name: 'XS', variable: 'var(--spacing-global-105)', value: '0.75rem', pixels: '12px' },
+    { name: 'SM', variable: 'var(--spacing-global-2)', value: '1rem', pixels: '16px' },
+    { name: 'MD', variable: 'var(--spacing-global-3)', value: '1.5rem', pixels: '24px' },
+    { name: 'LG', variable: 'var(--spacing-global-4)', value: '2rem', pixels: '32px' },
+    { name: 'XL', variable: 'var(--spacing-global-5)', value: '2.5rem', pixels: '40px' },
+    { name: '2XL', variable: 'var(--spacing-global-6)', value: '3rem', pixels: '48px' },
+    { name: '3XL', variable: 'var(--spacing-global-8)', value: '4rem', pixels: '64px' },
   ];
   
   return (

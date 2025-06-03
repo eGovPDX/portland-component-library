@@ -25,11 +25,11 @@ export const LineHeights = ({ lineHeights, className }) => {
 
 // Default line heights used in the design system
 const defaultLineHeights = [
-  { name: 'Tight', variable: '--pgov-line-height-tight', value: '1' },
-  { name: 'Snug', variable: '--pgov-line-height-snug', value: '1.25' },
-  { name: 'Normal', variable: '--pgov-line-height-normal', value: '1.5' },
-  { name: 'Relaxed', variable: '--pgov-line-height-relaxed', value: '1.75' },
-  { name: 'Loose', variable: '--pgov-line-height-loose', value: '2' }
+  { name: 'Tight', variable: '1.1', value: '1' },
+  { name: 'Snug', variable: '1.25', value: '1.25' },
+  { name: 'Normal', variable: '1.5', value: '1.5' },
+  { name: 'Relaxed', variable: '1.75', value: '1.75' },
+  { name: 'Loose', variable: '1.7', value: '2' }
 ];
 
 LineHeights.propTypes = {

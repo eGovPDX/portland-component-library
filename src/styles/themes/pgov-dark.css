@@ -3,12 +3,6 @@
 
 .pgov-dark-theme-applied {
   /* Override with dark theme specific variables */
-  --pgov-background-color: var(--color-black, #000000);
-  --pgov-text-color: var(--theme-color-ink);
-  --pgov-link-color: var(--color-blue-60v);
-  --pgov-link-hover-color: var(--color-blue-70v);
-  --pgov-border-color: var(--theme-color-base-dark);
-  
   /* Dark mode specific button colors */
   --button-font-family-sans: var(--font-family-reading);
   --button-font-size: var(--font-size-6);
@@ -127,7 +121,7 @@
   --header-menu-main-heading-line-height: var(--component-pgov-header-menu-heading-line-height, 95%);
 
   /* PageTemplate component variables */
-  --page-template-bg: var(--pgov-background-color, #ffffff);
+  --page-template-bg: var(--color-black, #000000);
   --page-template-font-family: var(--font-family-sans);
   --page-template-padding-lg: var(--spacing-global-4);
   --page-template-padding-md: var(--spacing-global-3);
@@ -158,10 +152,10 @@
 
   /* Breadcrumb component variables */
   --breadcrumb-bg: var(--color-black, transparent);
-  --breadcrumb-padding-y: var(--pgov-breadcrumb-padding-y, 0.75rem);
-  --breadcrumb-padding-x: var(--pgov-breadcrumb-padding-x, 1rem);
-  --breadcrumb-mobile-padding-y: var(--pgov-breadcrumb-mobile-padding-y, 0.5rem);
-  --breadcrumb-gap: var(--pgov-breadcrumb-gap, 0.5rem);
+  --breadcrumb-padding-y: 0.75rem;
+  --breadcrumb-padding-x: 1rem;
+  --breadcrumb-mobile-padding-y: 0.5rem;
+  --breadcrumb-gap: 0.5rem;
   --breadcrumb-link-color: var(--theme-color-base-light, #A9AEB1);
   --breadcrumb-font-family: var(--font-family-sans, "Public Sans");
   --breadcrumb-font-size: var(--font-size-5, 16px);
@@ -214,29 +208,29 @@
   --card-flag-footer-margin-top: 8px;
 
   /* Alert component variables */
-  --alert-bg: var(--pgov-alert-background-color, #f0f7ff);
-  --alert-border-color: var(--pgov-alert-border-color, #1a4480);
-  --alert-icon-color: var(--pgov-alert-icon-color, #1a4480);
+  --alert-bg: #f0f7ff;
+  --alert-border-color: #1a4480;
+  --alert-icon-color: #1a4480;
   --alert-text-color: var(--component-alert-text-color, #1B1B1B);
   --alert-heading-font-family: var(--usa-font-family-heading, "Public Sans");
   --alert-heading-font-size: var(--usa-font-size-heading-9, 22px);
   --alert-font-family: var(--component-alert-font-family, "Public Sans");
   --alert-font-size: var(--theme-font-size-reading-sm, 16px);
-  --alert-info-bg: var(--pgov-alert-info-background-color, #f0f7ff);
-  --alert-info-border-color: var(--pgov-alert-info-border-color, #1a4480);
-  --alert-info-icon-color: var(--pgov-alert-info-icon-color, #1a4480);
-  --alert-warning-bg: var(--pgov-alert-warning-background-color, #fff3cd);
-  --alert-warning-border-color: var(--pgov-alert-warning-border-color, #856404);
-  --alert-warning-icon-color: var(--pgov-alert-warning-icon-color, #856404);
-  --alert-success-bg: var(--pgov-alert-success-background-color, #d4edda);
-  --alert-success-border-color: var(--pgov-alert-success-border-color, #155724);
-  --alert-success-icon-color: var(--pgov-alert-success-icon-color, #155724);
-  --alert-error-bg: var(--pgov-alert-error-background-color, #f8d7da);
-  --alert-error-border-color: var(--pgov-alert-error-border-color, #721c24);
-  --alert-error-icon-color: var(--pgov-alert-error-icon-color, #721c24);
-  --alert-emergency-bg: var(--pgov-alert-emergency-background-color, #fce8e6);
-  --alert-emergency-border-color: var(--pgov-alert-emergency-border-color, #b71c1c);
-  --alert-emergency-icon-color: var(--pgov-alert-emergency-icon-color, #b71c1c);
+  --alert-info-bg: #f0f7ff;
+  --alert-info-border-color: #1a4480;
+  --alert-info-icon-color: #1a4480;
+  --alert-warning-bg: #fff3cd;
+  --alert-warning-border-color: #856404;
+  --alert-warning-icon-color: #856404;
+  --alert-success-bg: #d4edda;
+  --alert-success-border-color: #155724;
+  --alert-success-icon-color: #155724;
+  --alert-error-bg: #f8d7da;
+  --alert-error-border-color: #721c24;
+  --alert-error-icon-color: #721c24;
+  --alert-emergency-bg: #fce8e6;
+  --alert-emergency-border-color: #b71c1c;
+  --alert-emergency-icon-color: #b71c1c;
   --alert-slim-heading-font-size: 1rem;
 
   /* HeroGlobal component variables */
