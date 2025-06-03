@@ -9,8 +9,11 @@
   --pgov-link-hover-color: var(--pgov-color-primary-darker);
   --pgov-border-color: var(--color-gray-cool-10);
   
+  --pgov-font-family-serif: var(--font-family-display-merriweather);
+  --pgov-font-family-mono: var(--font-family-mono-roboto-mono);
+  
   /* Button specific variables */
-  --button-font-family-sans: var(--font-family-reading);
+  --button-font-family-sans: var(--font-family-reading-public-sans);
   --button-font-size: var(--font-size-6);
   --button-primary-bg: var(--color-blue-60v);
   --button-primary-text: var(--color-white);
@@ -51,7 +54,7 @@
   --button-color-gray-10: var(--color-gray-10);
   
   /* Breadcrumb tokens */
-  --breadcrumb-font-family: var(--pgov-font-family-sans);
+  --breadcrumb-font-family: var(--font-family-reading-public-sans);
   --breadcrumb-font-size: var(--pgov-font-size-2xs);
   --breadcrumb-font-weight: var(--pgov-font-weight-normal);
   --breadcrumb-link-color: var(--pgov-color-primary, #005EA2);
@@ -78,7 +81,7 @@
 
   /* Banner component variables */
   --banner-bg: var(--pgov-color-primary-lightest);
-  --banner-font-family: var(--pgov-font-family-sans);
+  --banner-font-family: var(--font-family-reading-public-sans);
   --banner-font-size: var(--pgov-font-size-2xs);
   --banner-spacing-md: var(--pgov-spacing-md);
   --banner-spacing-xs: var(--pgov-spacing-xs);
@@ -92,7 +95,7 @@
   --banner-line-height-normal: var(--pgov-line-height-normal);
 
   /* Footer component variables */
-  --footer-font-family: var(--pgov-font-family-sans);
+  --footer-font-family: var(--font-family-reading-public-sans);
   --footer-bg: var(--pgov-color-neutral-lightest);
   --footer-text-color: var(--pgov-color-neutral-darkest);
   --footer-link-color: var(--pgov-color-primary);
@@ -111,7 +114,7 @@
 
   /* PageTemplate component variables */
   --page-template-bg: var(--pgov-background-color, #ffffff);
-  --page-template-font-family: var(--pgov-font-family-sans);
+  --page-template-font-family: var(--font-family-reading-public-sans);
   --page-template-padding-lg: var(--pgov-spacing-lg);
   --page-template-padding-md: var(--pgov-spacing-md);
 
@@ -196,7 +199,7 @@
   --skip-nav-padding-y: var(--pgov-spacing-xs, 12px);
   --skip-nav-padding-x: var(--pgov-spacing-md, 20px);
   --skip-nav-bg: var(--pgov-color-primary, #0050d8);
-  --skip-nav-font-family: var(--pgov-font-family-sans, "Public Sans");
+  --skip-nav-font-family: var(--font-family-reading-public-sans, "Public Sans");
   --skip-nav-font-size: var(--pgov-font-size-xs, 16px);
   --skip-nav-font-weight: var(--pgov-font-weight-medium, 500);
   --skip-nav-color: #fff;
@@ -415,7 +418,7 @@
   --popover-with-card-arrow-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 
   /* Tooltip component variables */
-  --tooltip-font-family: var(--pgov-font-family-sans);
+  --tooltip-font-family: var(--font-family-reading-public-sans);
   --tooltip-font-size: var(--pgov-font-size-2xs);
   --tooltip-line-height: var(--pgov-line-height-normal);
   --tooltip-border-radius: var(--pgov-border-radius-md);
@@ -470,7 +473,7 @@
   --color-swatch-grid-min-col-width: 140px;
   --color-swatch-item-gap: 16px;
   --color-swatch-item-margin-bottom: 20px;
-  --color-swatch-font-family: var(--pgov-font-family-sans, sans-serif);
+  --color-swatch-font-family: var(--font-family-reading-public-sans, sans-serif);
   --color-swatch-preview-radius: 6px;
   --color-swatch-preview-shadow: 0 2px 4px rgba(0,0,0,0.1);
   --color-swatch-details-gap: 5px;

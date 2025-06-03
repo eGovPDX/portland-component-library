@@ -10,12 +10,12 @@
   --pgov-border-color: var(--color-gray-cool-10); 
   
   /* Typography (aligning with what pgov.scss uses, unless USWDS strictly differs and is desired) */
-  --pgov-font-family-sans: var(--font-family-reading); /* Public Sans from design_tokens.css */
-  --pgov-font-family-serif: var(--font-family-display); /* Merriweather from design_tokens.css */
-  --pgov-font-family-mono: var(--font-family-mono);     /* Default mono from design_tokens.css */
+  --pgov-font-family-sans: var(--font-family-reading-public-sans);
+  --pgov-font-family-serif: var(--font-family-display-merriweather);
+  --pgov-font-family-mono: var(--font-family-mono-roboto-mono);
 
   /* Base USWDS Theme Colors from design_tokens.css (Default section values, mapped to general color palette tokens where names are clearer) */
-  --pgov-color-primary: var(--color-blue-60v); /* #005ea2 (USWDS Default Primary Medium) */
+  --pgov-color-primary: var(--color-blue-60v);
   --pgov-color-primary-hover: var(--color-blue-warm-70v);
   --pgov-color-primary-active: var(--color-blue-warm-80v);
   

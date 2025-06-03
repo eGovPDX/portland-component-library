@@ -8,9 +8,9 @@
   --pgov-border-color: var(--theme-color-base-lighter);
 
   /* Typography */
-  --pgov-font-family-sans: var(--font-family-reading);
-  --pgov-font-family-serif: var(--font-family-display);
-  --pgov-font-family-mono: var(--font-family-mono);
+  --pgov-font-family-sans: var(--font-family-reading-public-sans);
+  --pgov-font-family-serif: var(--font-family-display-merriweather);
+  --pgov-font-family-mono: var(--font-family-mono-roboto-mono);
 
   /* Project Theme Light Colors from design_tokens.css "USWDS Theme/Project theme" */
   --pgov-color-primary: var(--theme-color-primary-medium);
