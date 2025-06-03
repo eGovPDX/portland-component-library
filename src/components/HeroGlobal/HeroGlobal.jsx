@@ -11,7 +11,7 @@ export const HeroGlobal = ({
   className,
   ...props
 }) => {
-  const baseClass = 'pgov-hero-global';
+  const baseClass = 'hero-global';
   const titleId = React.useId();
 
   const containerClasses = [

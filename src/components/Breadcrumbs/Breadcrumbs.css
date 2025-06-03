@@ -1,30 +1,30 @@
-.pgov-breadcrumb {
-  background-color: var(--pgov-breadcrumb-background-color);
-  padding: var(--pgov-breadcrumb-padding-y) var(--pgov-breadcrumb-padding-x);
+.breadcrumb {
+  background-color: var(--breadcrumb-bg);
+  padding: var(--breadcrumb-padding-y) var(--breadcrumb-padding-x);
   width: 100%;
 }
 
-.pgov-breadcrumb__list {
+.breadcrumb__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--pgov-breadcrumb-mobile-padding-y);
+  gap: var(--breadcrumb-mobile-padding-y);
 }
 
-.pgov-breadcrumb__item {
+.breadcrumb__item {
   display: flex;
   align-items: center;
-  gap: var(--pgov-breadcrumb-gap);
+  gap: var(--breadcrumb-gap);
   white-space: nowrap;
 }
 
 /* Light mode - link styles */
-.pgov-breadcrumb__link {
-  color: var(--pgov-color-primary, #005EA2);
-  font-family: var(--pgov-font-family-sans, "Public Sans");
-  font-size: var(--pgov-font-size-xs, 16px);
+.breadcrumb__link {
+  color: var(--breadcrumb-link-color, #005EA2);
+  font-family: var(--breadcrumb-font-family, "Public Sans");
+  font-size: var(--breadcrumb-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -32,10 +32,10 @@
 }
 
 /* Light mode - current page styles */
-.pgov-breadcrumb__current {
-  color: var(--pgov-color-neutral-darkest, #1B1B1B);
-  font-family: var(--pgov-font-family-sans, "Public Sans");
-  font-size: var(--pgov-font-size-xs, 16px);
+.breadcrumb__current {
+  color: var(--breadcrumb-current-color, #1B1B1B);
+  font-family: var(--breadcrumb-font-family, "Public Sans");
+  font-size: var(--breadcrumb-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -47,18 +47,18 @@
 }
 
 /* Base separator styles */
-.pgov-breadcrumb__separator {
-  color: var(--pgov-color-neutral, #71767a);
-  margin: 0 var(--pgov-breadcrumb-gap);
+.breadcrumb__separator {
+  color: var(--breadcrumb-separator-color, #71767a);
+  margin: 0 var(--breadcrumb-gap);
   flex-shrink: 0;
 }
 
 /* Dark mode styles */
-:root[data-theme="dark"] .pgov-breadcrumb__link,
-.pgov-breadcrumb--dark .pgov-breadcrumb__link {
-  color: var(--pgov-color-neutral-light, #A9AEB1);
-  font-family: var(--pgov-font-family-sans, "Public Sans");
-  font-size: var(--pgov-font-size-xs, 16px);
+:root[data-theme="dark"] .breadcrumb__link,
+.breadcrumb--dark .breadcrumb__link {
+  color: var(--breadcrumb-link-color-dark, #A9AEB1);
+  font-family: var(--breadcrumb-font-family, "Public Sans");
+  font-size: var(--breadcrumb-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -70,29 +70,29 @@
   text-underline-position: from-font;
 }
 
-:root[data-theme="dark"] .pgov-breadcrumb__current,
-.pgov-breadcrumb--dark .pgov-breadcrumb__current {
-  color: var(--pgov-color-white, #FFF);
-  font-family: var(--pgov-font-family-sans, "Public Sans");
-  font-size: var(--pgov-font-size-xs, 16px);
+:root[data-theme="dark"] .breadcrumb__current,
+.breadcrumb--dark .breadcrumb__current {
+  color: var(--breadcrumb-current-color-dark, #FFF);
+  font-family: var(--breadcrumb-font-family, "Public Sans");
+  font-size: var(--breadcrumb-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-:root[data-theme="dark"] .pgov-breadcrumb__separator,
-.pgov-breadcrumb--dark .pgov-breadcrumb__separator {
-  color: var(--pgov-color-neutral-light, #A9AEB1);
+:root[data-theme="dark"] .breadcrumb__separator,
+.breadcrumb--dark .breadcrumb__separator {
+  color: var(--breadcrumb-link-color-dark, #A9AEB1);
 }
 
 /* Hide ellipsis by default and on mobile */
-.pgov-breadcrumb__item.ellipsis {
+.breadcrumb__item.ellipsis {
   display: none;
 }
 
 /* Desktop styles */
 @media screen and (min-width: 48em) {
-  .pgov-breadcrumb__list {
+  .breadcrumb__list {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
@@ -100,18 +100,18 @@
   }
 
   /* Default state - all items visible */
-  .pgov-breadcrumb__item {
+  .breadcrumb__item {
     flex: 0 0 auto;
   }
 
   /* Truncated state */
-  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item {
+  .breadcrumb__list--truncate .breadcrumb__item {
     display: none;
   }
 
-  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item:first-child,
-  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item:last-child,
-  .pgov-breadcrumb__list--truncate .pgov-breadcrumb__item.ellipsis {
+  .breadcrumb__list--truncate .breadcrumb__item:first-child,
+  .breadcrumb__list--truncate .breadcrumb__item:last-child,
+  .breadcrumb__list--truncate .breadcrumb__item.ellipsis {
     display: flex;
   }
 } 

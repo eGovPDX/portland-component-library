@@ -16,7 +16,7 @@ describe('HeaderMenuGroup', () => {
     render(<HeaderMenuGroup {...defaultProps} />);
     
     expect(screen.getByRole('navigation')).toBeInTheDocument();
-    expect(screen.getByRole('menu')).toHaveClass('pgov-header-menu-group-items');
+    expect(screen.getByRole('menu')).toHaveClass('header-menu-group-items');
   });
 
   it('renders all menu items', () => {
@@ -38,7 +38,7 @@ describe('HeaderMenuGroup', () => {
     render(<HeaderMenuGroup {...defaultProps} className="custom-class" />);
     
     const nav = screen.getByRole('navigation');
-    expect(nav).toHaveClass('pgov-header-menu-group');
+    expect(nav).toHaveClass('header-menu-group');
     expect(nav).toHaveClass('custom-class');
   });
 }); 

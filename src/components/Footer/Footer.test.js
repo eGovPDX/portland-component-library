@@ -83,7 +83,7 @@ describe('Footer', () => {
     render(<Footer {...defaultProps} className="custom-class" />);
     
     const footer = screen.getByRole('contentinfo');
-    expect(footer).toHaveClass('pgov-footer');
+    expect(footer).toHaveClass('footer');
     expect(footer).toHaveClass('custom-class');
   });
 }); 

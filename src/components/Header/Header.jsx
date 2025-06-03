@@ -26,10 +26,10 @@ export const Header = ({
   };
 
   return (
-    <header className={`pgov-header ${className || ''}`}>
-      <div className="pgov-header-main">
-        <div className="pgov-header-container">
-          <div className="pgov-header-logo">
+    <header className={`header ${className || ''}`}>
+      <div className="header-main">
+        <div className="header-container">
+          <div className="header-logo">
             <HeaderLogo
               title={title}
               logoUrl={logoUrl}
@@ -37,34 +37,34 @@ export const Header = ({
               tagline={tagline}
             />
           </div>
-          <div className={`pgov-header-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
+          <div className={`header-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
             <button
-              className="pgov-header-mobile-menu-button"
+              className="header-mobile-menu-button"
               aria-label={isMenuOpen ? closeMenuAriaLabel : openMenuAriaLabel}
               aria-expanded={isMenuOpen}
-              aria-controls="pgov-header-mobile-dropdown"
+              aria-controls="header-mobile-dropdown"
               onClick={toggleMenu}
             >
-              <span className="pgov-header-mobile-menu-icon">
+              <span className="header-mobile-menu-icon">
                 <span></span>
                 <span></span>
                 <span></span>
               </span>
-              <span className="pgov-header-mobile-menu-text" aria-hidden="true">{menuText}</span>
+              <span className="header-mobile-menu-text" aria-hidden="true">{menuText}</span>
             </button>
           </div>
         </div>
       </div>
       <div 
-        id="pgov-header-mobile-dropdown" 
-        className={`pgov-header-mobile-dropdown ${isMenuOpen ? 'is-open' : ''}`}
+        id="header-mobile-dropdown" 
+        className={`header-mobile-dropdown ${isMenuOpen ? 'is-open' : ''}`}
       >
-        <div className="pgov-header-mobile-menu-content">
-          <nav className="pgov-header-mobile-nav" aria-label="Primary navigation">
+        <div className="header-mobile-menu-content">
+          <nav className="header-mobile-nav" aria-label="Primary navigation">
             <HeaderMenuGroup
               items={navItems}
               mainHeading={mainHeading}
-              id="pgov-header-menu-group"
+              id="header-menu-group"
             />
           </nav>
         </div>

@@ -11,7 +11,7 @@ export const SkipNav = ({
   mainContentId = 'main-content',
   className = ''
 }) => {
-  const containerClassName = ['pgov-skipnav', className].filter(Boolean).join(' ');
+  const containerClassName = ['skipnav', className].filter(Boolean).join(' ');
   
   return (
     <a 

@@ -13,12 +13,12 @@ export const BannerContent = ({
   showHttpsGuidance,
   className 
 }) => {
-  const containerClassName = ['pgov-banner-content', className].filter(Boolean).join(' ');
+  const containerClassName = ['banner-content', className].filter(Boolean).join(' ');
   const iconToDisplay = icon || getDefaultIcon();
 
   return (
     <div 
-      id="pgov-banner-content" 
+      id="banner-content" 
       className={containerClassName}
     >
       <BannerGuidance

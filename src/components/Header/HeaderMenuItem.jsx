@@ -6,15 +6,15 @@ import PropTypes from 'prop-types';
  */
 export const HeaderMenuItem = ({ item }) => {
   return (
-    <li className="pgov-header-menu-item" role="menuitem">
+    <li className="header-menu-item" role="menuitem">
       <a 
         href={item.href} 
-        className="pgov-header-menu-link"
+        className="header-menu-link"
         aria-current={item.current ? 'page' : undefined}
       >
-        <span className="pgov-header-menu-link-title">{item.label}</span>
+        <span className="header-menu-link-title">{item.label}</span>
         {item.description && (
-          <span className="pgov-header-menu-link-description">{item.description}</span>
+          <span className="header-menu-link-description">{item.description}</span>
         )}
       </a>
     </li>

@@ -39,5 +39,5 @@ Default.args = {
 export const Container = Template.bind({});
 Container.args = {
   ...Default.args,
-  className: 'pgov-contacts--container',
+  className: 'contacts--container',
 }; 

@@ -23,7 +23,7 @@ describe('Alert', () => {
     
     types.forEach(type => {
       const { container } = render(<Alert {...defaultProps} type={type} />);
-      expect(container.querySelector(`.pgov-alert--${type}`)).toBeInTheDocument();
+      expect(container.querySelector(`.alert--${type}`)).toBeInTheDocument();
       // Cleanup after each render
       container.remove();
     });
@@ -31,23 +31,23 @@ describe('Alert', () => {
 
   test('renders slim variant correctly', () => {
     const { container } = render(<Alert {...defaultProps} slim={true} />);
-    expect(container.querySelector('.pgov-alert--slim')).toBeInTheDocument();
+    expect(container.querySelector('.alert--slim')).toBeInTheDocument();
   });
 
   test('renders without icon when noIcon is true', () => {
     const { container } = render(<Alert {...defaultProps} noIcon={true} />);
-    expect(container.querySelector('.pgov-alert--no-icon')).toBeInTheDocument();
-    expect(container.querySelector('.pgov-alert__icon')).not.toBeInTheDocument();
+    expect(container.querySelector('.alert--no-icon')).toBeInTheDocument();
+    expect(container.querySelector('.alert__icon')).not.toBeInTheDocument();
   });
 
   test('renders with icon by default', () => {
     const { container } = render(<Alert {...defaultProps} />);
-    expect(container.querySelector('.pgov-alert__icon')).toBeInTheDocument();
+    expect(container.querySelector('.alert__icon')).toBeInTheDocument();
   });
 
   test('applies custom className when provided', () => {
     const { container } = render(<Alert {...defaultProps} className="custom-class" />);
-    expect(container.querySelector('.pgov-alert')).toHaveClass('custom-class');
+    expect(container.querySelector('.alert')).toHaveClass('custom-class');
   });
 
   test('renders without heading when not provided', () => {
@@ -60,7 +60,7 @@ describe('Alert', () => {
     
     errorTypes.forEach(type => {
       const { container } = render(<Alert {...defaultProps} type={type} />);
-      expect(container.querySelector('.pgov-alert')).toHaveAttribute('role', 'alert');
+      expect(container.querySelector('.alert')).toHaveAttribute('role', 'alert');
       container.remove();
     });
   });
@@ -70,7 +70,7 @@ describe('Alert', () => {
     
     nonErrorTypes.forEach(type => {
       const { container } = render(<Alert {...defaultProps} type={type} />);
-      expect(container.querySelector('.pgov-alert')).not.toHaveAttribute('role');
+      expect(container.querySelector('.alert')).not.toHaveAttribute('role');
       container.remove();
     });
   });

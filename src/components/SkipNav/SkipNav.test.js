@@ -31,7 +31,7 @@ describe('SkipNav', () => {
     render(<SkipNav className="custom-class" />);
     
     const skipNavLink = screen.getByRole('link', { name: /Skip to main content/i });
-    expect(skipNavLink).toHaveClass('pgov-skipnav');
+    expect(skipNavLink).toHaveClass('skipnav');
     expect(skipNavLink).toHaveClass('custom-class');
   });
 }); 

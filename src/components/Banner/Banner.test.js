@@ -15,7 +15,7 @@ describe('Banner Component', () => {
     const button = screen.getByRole('button', { name: /Here's how you know/i });
     expect(button).toBeInTheDocument();
     expect(button).toHaveAttribute('aria-expanded', 'false');
-    expect(button).toHaveAttribute('aria-controls', 'pgov-banner-content');
+    expect(button).toHaveAttribute('aria-controls', 'banner-content');
     
     // Content should not be visible initially
     expect(screen.queryByText(/Official websites use .gov/i)).not.toBeInTheDocument();
@@ -90,7 +90,7 @@ describe('Banner Component', () => {
     
     const button = screen.getByRole('button', { name: /Here's how you know/i });
     expect(button).toHaveAttribute('aria-expanded', 'false');
-    expect(button).toHaveAttribute('aria-controls', 'pgov-banner-content');
+    expect(button).toHaveAttribute('aria-controls', 'banner-content');
     
     fireEvent.click(button);
     expect(button).toHaveAttribute('aria-expanded', 'true');

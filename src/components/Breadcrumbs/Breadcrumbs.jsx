@@ -89,7 +89,7 @@ export const Breadcrumbs = ({
     return (
       <FontAwesomeIcon
         icon={isMobile ? faArrowLeft : faChevronRight}
-        className="pgov-breadcrumb__separator"
+        className="breadcrumb__separator"
         aria-hidden="true"
       />
     );
@@ -98,15 +98,15 @@ export const Breadcrumbs = ({
   const renderItems = () => {
     if (!shouldTruncate || isMobile) {
       return items.map((item, index) => (
-        <li key={index} className="pgov-breadcrumb__item">
+        <li key={index} className="breadcrumb__item">
           {isMobile && index > 0 && renderSeparator()}
           {index === items.length - 1 ? (
-            <span className="pgov-breadcrumb__current" aria-current="page">
+            <span className="breadcrumb__current" aria-current="page">
               {item.text}
             </span>
           ) : (
             <>
-              <a href={item.href} className="pgov-breadcrumb__link">
+              <a href={item.href} className="breadcrumb__link">
                 {item.text}
               </a>
               {!isMobile && renderSeparator()}
@@ -123,18 +123,18 @@ export const Breadcrumbs = ({
 
     return (
       <>
-        <li key="first" className="pgov-breadcrumb__item">
-          <a href={firstItem.href} className="pgov-breadcrumb__link">
+        <li key="first" className="breadcrumb__item">
+          <a href={firstItem.href} className="breadcrumb__link">
             {firstItem.text}
           </a>
           {renderSeparator()}
         </li>
-        <li key="ellipsis" className="pgov-breadcrumb__item ellipsis">
+        <li key="ellipsis" className="breadcrumb__item ellipsis">
           <span aria-label={`${hiddenCount} more levels`}>...</span>
           {renderSeparator()}
         </li>
-        <li key="last" className="pgov-breadcrumb__item">
-          <span className="pgov-breadcrumb__current" aria-current="page">
+        <li key="last" className="breadcrumb__item">
+          <span className="breadcrumb__current" aria-current="page">
             {lastItem.text}
           </span>
         </li>
@@ -143,8 +143,8 @@ export const Breadcrumbs = ({
   };
 
   const breadcrumbClasses = [
-    'pgov-breadcrumb',
-    shouldTruncate && !isMobile && 'pgov-breadcrumb--truncated',
+    'breadcrumb',
+    shouldTruncate && !isMobile && 'breadcrumb--truncated',
     className
   ].filter(Boolean).join(' ');
 
@@ -155,7 +155,7 @@ export const Breadcrumbs = ({
       ref={containerRef}
     >
       <ol 
-        className={`pgov-breadcrumb__list ${shouldTruncate ? 'pgov-breadcrumb__list--truncate' : ''}`}
+        className={`breadcrumb__list ${shouldTruncate ? 'breadcrumb__list--truncate' : ''}`}
         ref={listRef}
       >
         {renderItems()}

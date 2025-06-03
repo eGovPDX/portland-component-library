@@ -14,9 +14,9 @@ export const HeaderMenuGroup = ({
   const headingId = `${id}-heading`;
   
   return (
-    <nav className={`pgov-header-menu-group ${className || ''}`} role="navigation" aria-labelledby={headingId}>
-      <h3 id={headingId} className="pgov-header-menu-heading">{mainHeading}</h3>
-      <ul className="pgov-header-menu-group-items" role="menu">
+    <nav className={`header-menu-group ${className || ''}`} role="navigation" aria-labelledby={headingId}>
+      <h3 id={headingId} className="header-menu-heading">{mainHeading}</h3>
+      <ul className="header-menu-group-items" role="menu">
         {items.map((item, index) => (
           <HeaderMenuItem key={index} item={item} />
         ))}

@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--button-group-gap, 8px);
   list-style-type: none;
   margin-left: 0;
   margin-right: 0;
@@ -36,7 +36,7 @@
 
 .usa-button-group--segmented .usa-button-group__item {
   flex: 1 1 0%;
-  margin-left: -1px;
+  margin-left: var(--button-group-segmented-margin, -1px);
 }
 
 .usa-button-group--segmented .usa-button-group__item:first-child {
@@ -44,19 +44,19 @@
 }
 
 .usa-button-group--segmented .usa-button-group__item .usa-button {
-  border-radius: 0;
+  border-radius: var(--button-group-segmented-radius, 0);
   width: 100%;
   max-width: none;
 }
 
 .usa-button-group--segmented .usa-button-group__item:first-child .usa-button {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: var(--button-group-segmented-radius-left, 0.25rem);
+  border-bottom-left-radius: var(--button-group-segmented-radius-left, 0.25rem);
 }
 
 .usa-button-group--segmented .usa-button-group__item:last-child .usa-button {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: var(--button-group-segmented-radius-right, 0.25rem);
+  border-bottom-right-radius: var(--button-group-segmented-radius-right, 0.25rem);
 }
 
 /* Ensure all buttons in a group have the same height when text wraps */

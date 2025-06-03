@@ -27,85 +27,85 @@ export const Footer = ({
   className,
 }) => {
   return (
-    <footer className={`pgov-footer ${className}`} role="contentinfo">
-      <div className="pgov-feedback-section">
-        <p className="pgov-feedback-text">
-          See something we could improve on this page? <a href={feedbackUrl} className="pgov-feedback-link">Give website feedback</a>.
+    <footer className={`footer ${className}`} role="contentinfo">
+      <div className="footer-feedback-section">
+        <p className="footer-feedback-text">
+          See something we could improve on this page? <a href={feedbackUrl} className="footer-feedback-link">Give website feedback</a>.
         </p>
       </div>
       
-      <div className="pgov-accessibility-section">
-        <div className="pgov-accessibility-container">
-          <div className="pgov-text-container">
-            <p className="pgov-accessibility-text">
+      <div className="footer-accessibility-section">
+        <div className="footer-accessibility-container">
+          <div className="footer-text-container">
+            <p className="footer-accessibility-text">
               {accessibilityText}
               {' '}
-              <span className="pgov-request-services">
-                Request these services <a href={onlineServiceUrl} className="pgov-online-link">online</a> or <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="pgov-phone-link">{phoneNumber}</a>. 
-                Relay Service: <a href={`tel:${relayServiceNumber.replace(/\D/g, '')}`} className="pgov-relay-link">{relayServiceNumber}</a>.
+              <span className="footer-request-services">
+                Request these services <a href={onlineServiceUrl} className="footer-online-link">online</a> or <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="footer-phone-link">{phoneNumber}</a>. 
+                Relay Service: <a href={`tel:${relayServiceNumber.replace(/\D/g, '')}`} className="footer-relay-link">{relayServiceNumber}</a>.
               </span>
             </p>
             
-            <p className="pgov-translation-text">
-              <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="pgov-translation-phone-link">{phoneNumber}</a> {translationText}
+            <p className="footer-translation-text">
+              <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="footer-translation-phone-link">{phoneNumber}</a> {translationText}
             </p>
           </div>
           
-          <div className="pgov-explore-services">
-            <a href={exploreServicesUrl} className="pgov-explore-button">
-              {exploreServicesText} <span className="pgov-explore-arrow">→</span>
+          <div className="footer-explore-services">
+            <a href={exploreServicesUrl} className="footer-explore-button">
+              {exploreServicesText} <span className="footer-explore-arrow">→</span>
             </a>
           </div>
         </div>
       </div>
 
-      <div className="pgov-footer-main">
-        <div className="pgov-footer-nav">
-          <div className="pgov-footer-city-info">
-            <p className="pgov-city-name">{cityName}</p>
-            <img src={cityLogoUrl} alt={cityLogoAlt} className="pgov-city-logo" />
-            <p className="pgov-copyright">{copyrightText}</p>
+      <div className="footer-main">
+        <div className="footer-nav">
+          <div className="footer-city-info">
+            <p className="footer-city-name">{cityName}</p>
+            <img src={cityLogoUrl} alt={cityLogoAlt} className="footer-city-logo" />
+            <p className="footer-copyright">{copyrightText}</p>
           </div>
 
-          <div className="pgov-footer-nav-section">
-            <h4 className="pgov-footer-heading">General Information</h4>
-            <ul className="pgov-footer-links">
+          <div className="footer-nav-section">
+            <h4 className="footer-heading">General Information</h4>
+            <ul className="footer-links">
               {generalInfoLinks.map((link, index) => (
-                <li key={`general-link-${index}`} className="pgov-footer-link-item">
-                  <a href={link.href} className="pgov-footer-link">{link.label}</a>
+                <li key={`general-link-${index}`} className="footer-link-item">
+                  <a href={link.href} className="footer-link">{link.label}</a>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="pgov-footer-nav-section">
-            <h4 className="pgov-footer-heading">Terms And Policies</h4>
-            <ul className="pgov-footer-links">
+          <div className="footer-nav-section">
+            <h4 className="footer-heading">Terms And Policies</h4>
+            <ul className="footer-links">
               {termsLinks.map((link, index) => (
-                <li key={`terms-link-${index}`} className="pgov-footer-link-item">
-                  <a href={link.href} className="pgov-footer-link">{link.label}</a>
+                <li key={`terms-link-${index}`} className="footer-link-item">
+                  <a href={link.href} className="footer-link">{link.label}</a>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="pgov-footer-nav-section">
-            <h4 className="pgov-footer-heading">Portland.Gov</h4>
-            <ul className="pgov-footer-links">
+          <div className="footer-nav-section">
+            <h4 className="footer-heading">Portland.Gov</h4>
+            <ul className="footer-links">
               {portlandGovLinks.map((link, index) => (
-                <li key={`pgov-link-${index}`} className="pgov-footer-link-item">
-                  <a href={link.href} className="pgov-footer-link">{link.label}</a>
+                <li key={`pgov-link-${index}`} className="footer-link-item">
+                  <a href={link.href} className="footer-link">{link.label}</a>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="pgov-footer-nav-section">
-            <h4 className="pgov-footer-heading">Social Media</h4>
-            <ul className="pgov-footer-links">
+          <div className="footer-nav-section">
+            <h4 className="footer-heading">Social Media</h4>
+            <ul className="footer-links">
               {socialMediaLinks.map((link, index) => (
-                <li key={`social-link-${index}`} className="pgov-footer-link-item">
-                  <a href={link.href} className="pgov-footer-link">{link.label}</a>
+                <li key={`social-link-${index}`} className="footer-link-item">
+                  <a href={link.href} className="footer-link">{link.label}</a>
                 </li>
               ))}
             </ul>

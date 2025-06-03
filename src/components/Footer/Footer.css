@@ -1,233 +1,233 @@
 /* Footer Component Styles */
 
 /* Base Footer Styles */
-.pgov-footer {
+.footer {
   width: 100%;
-  font-family: var(--pgov-font-family-sans, 'Public Sans', sans-serif);
-  background-color: var(--pgov-color-neutral-lightest, #f0f0f0);
-  color: var(--pgov-color-neutral-darkest, #1b1b1b);
+  font-family: var(--footer-font-family, 'Public Sans', sans-serif);
+  background-color: var(--footer-bg, #f0f0f0);
+  color: var(--footer-text-color, #1b1b1b);
   padding: 0;
-  font-size: 0.875rem;
+  font-size: var(--footer-font-size-base, 0.875rem);
   line-height: 1.4;
 }
 
 /* Feedback Section */
-.pgov-feedback-section {
-  padding: 0.75rem 1rem;
-  background-color: var(--pgov-color-neutral-lightest, #f0f0f0);
-  max-width: 1200px;
+.footer-feedback-section {
+  padding: var(--footer-feedback-padding, 0.75rem 1rem);
+  background-color: var(--footer-bg, #f0f0f0);
+  max-width: var(--footer-max-width, 1200px);
   margin: 0 auto;
 }
 
-.pgov-feedback-text {
+.footer-feedback-text {
   margin: 0;
   text-align: left;
-  font-size: 0.875rem;
+  font-size: var(--footer-font-size-base, 0.875rem);
 }
 
-.pgov-feedback-link {
-  color: var(--pgov-color-primary, #0076d6);
-  text-decoration: underline;
+.footer-feedback-link {
+  color: var(--footer-link-color, #0076d6);
+  text-decoration: var(--footer-link-text-decoration, underline);
 }
 
-.pgov-feedback-link:hover,
-.pgov-feedback-link:focus {
-  color: var(--pgov-color-primary-dark, #005ea2);
+.footer-feedback-link:hover,
+.footer-feedback-link:focus {
+  color: var(--footer-link-hover-color, #005ea2);
 }
 
 /* Accessibility Section */
-.pgov-accessibility-section {
-  padding: 1rem;
-  max-width: 1200px;
+.footer-accessibility-section {
+  padding: var(--footer-accessibility-padding, 1rem);
+  max-width: var(--footer-max-width, 1200px);
   margin: 0 auto;
 }
 
-.pgov-accessibility-container {
+.footer-accessibility-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.pgov-text-container {
+.footer-text-container {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: var(--footer-gap-md, 1rem);
 }
 
-.pgov-accessibility-text {
-  margin: 0 0 1rem 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
+.footer-accessibility-text {
+  margin: 0 0 var(--footer-gap-md, 1rem) 0;
+  font-size: var(--footer-font-size-base, 0.875rem);
+  line-height: var(--footer-translation-line-height, 1.5);
 }
 
-.pgov-request-services {
+.footer-request-services {
   display: block;
   margin-top: 0.5rem;
 }
 
-.pgov-online-link,
-.pgov-phone-link,
-.pgov-relay-link {
-  color: var(--pgov-color-primary, #0076d6);
-  text-decoration: underline;
+.footer-online-link,
+.footer-phone-link,
+.footer-relay-link {
+  color: var(--footer-link-color, #0076d6);
+  text-decoration: var(--footer-link-text-decoration, underline);
 }
 
-.pgov-online-link:hover,
-.pgov-phone-link:hover,
-.pgov-relay-link:hover,
-.pgov-online-link:focus,
-.pgov-phone-link:focus,
-.pgov-relay-link:focus {
-  color: var(--pgov-color-primary-dark, #005ea2);
+.footer-online-link:hover,
+.footer-phone-link:hover,
+.footer-relay-link:hover,
+.footer-online-link:focus,
+.footer-phone-link:focus,
+.footer-relay-link:focus {
+  color: var(--footer-link-hover-color, #005ea2);
 }
 
 /* Translation Section */
-.pgov-translation-text {
+.footer-translation-text {
   margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--footer-translation-font-size, 0.875rem);
+  line-height: var(--footer-translation-line-height, 1.5);
 }
 
-.pgov-translation-phone-link {
-  color: var(--pgov-color-primary, #0076d6);
-  text-decoration: underline;
+.footer-translation-phone-link {
+  color: var(--footer-link-color, #0076d6);
+  text-decoration: var(--footer-link-text-decoration, underline);
   font-weight: 600;
 }
 
-.pgov-translation-phone-link:hover,
-.pgov-translation-phone-link:focus {
-  color: var(--pgov-color-primary-dark, #005ea2);
+.footer-translation-phone-link:hover,
+.footer-translation-phone-link:focus {
+  color: var(--footer-link-hover-color, #005ea2);
 }
 
 /* Explore Services Button */
-.pgov-explore-services {
+.footer-explore-services {
   display: flex;
   align-items: center;
   align-self: flex-start;
-  margin: 1rem 0;
+  margin: var(--footer-gap-md, 1rem) 0;
 }
 
-.pgov-explore-button {
+.footer-explore-button {
   display: inline-flex;
   align-items: center;
-  background-color: var(--pgov-color-primary, #0076d6);
-  color: var(--pgov-color-white, #ffffff);
-  padding: 0.625rem 1rem;
-  border-radius: 0.25rem;
+  background-color: var(--footer-link-color, #0076d6);
+  color: var(--footer-link-bg, #ffffff);
+  padding: var(--footer-explore-button-padding, 0.625rem 1rem);
+  border-radius: var(--footer-explore-button-radius, 0.25rem);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.875rem;
+  font-weight: var(--footer-explore-button-font-weight, 600);
+  font-size: var(--footer-explore-button-font-size, 0.875rem);
   transition: background-color 0.2s ease;
   white-space: nowrap;
 }
 
-.pgov-explore-button:hover,
-.pgov-explore-button:focus {
-  background-color: var(--pgov-color-primary-dark, #005ea2);
-  color: var(--pgov-color-white, #ffffff);
+.footer-explore-button:hover,
+.footer-explore-button:focus {
+  background-color: var(--footer-link-hover-color, #005ea2);
+  color: var(--footer-link-bg, #ffffff);
 }
 
-.pgov-explore-arrow {
-  margin-left: 0.5rem;
-  font-size: 1.125rem;
+.footer-explore-arrow {
+  margin-left: var(--footer-explore-arrow-margin-left, 0.5rem);
+  font-size: var(--footer-explore-arrow-font-size, 1.125rem);
 }
 
 /* Footer Main Content */
-.pgov-footer-main {
+.footer-main {
   padding: 0 1rem;
-  max-width: 1200px;
+  max-width: var(--footer-max-width, 1200px);
   margin: 0 auto;
 }
 
-.pgov-footer-content {
+.footer-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 /* Footer Navigation */
-.pgov-footer-nav {
+.footer-nav {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   order: 1;
 }
 
-.pgov-footer-nav-section {
+.footer-nav-section {
   margin-bottom: 1.5rem;
 }
 
-.pgov-footer-heading {
+.footer-heading {
   display: flex;
-  padding: var(--usa-spacing-2, 1rem) 0rem;
+  padding: var(--footer-spacing-2, 1rem) 0rem;
   align-items: flex-start;
   gap: 0.625rem;
   align-self: stretch;
-  color: var(--component-pgov-footer-text-color, #1B1B1B);
-  font-family: var(--usa-font-family-heading, "Public Sans");
-  font-size: var(--component-prose-h-4-font-size, 1rem);
+  color: var(--footer-heading-color, #1B1B1B);
+  font-family: var(--footer-heading-font-family, "Public Sans");
+  font-size: var(--footer-heading-font-size, 1rem);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0;
 }
 
-.pgov-footer-links {
+.footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.pgov-footer-link-item {
+.footer-link-item {
   display: flex;
-  padding-bottom: var(--usa-spacing-2, 1rem);
+  padding-bottom: var(--footer-spacing-2, 1rem);
   align-items: center;
   align-self: stretch;
   margin: 0;
   line-height: 1.4;
 }
 
-.pgov-footer-link {
-  color: var(--component-pgov-footer-link-color, #005EA2);
-  font-family: var(--component-footer-font-family, "Public Sans");
-  font-size: var(--component-prose-h-4-font-size, 1rem);
+.footer-link {
+  color: var(--footer-link-color, #005EA2);
+  font-family: var(--footer-link-font-family, "Public Sans");
+  font-size: var(--footer-heading-font-size, 1rem);
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 1.5rem */
-  text-decoration-line: underline;
+  line-height: var(--footer-link-line-height, 150%);
+  text-decoration-line: var(--footer-link-text-decoration, underline);
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
+  text-decoration-thickness: var(--footer-link-text-decoration-thickness, auto);
+  text-underline-offset: var(--footer-link-text-underline-offset, auto);
+  text-underline-position: var(--footer-link-text-underline-position, from-font);
 }
 
-.pgov-footer-link:hover,
-.pgov-footer-link:focus {
-  color: var(--pgov-color-primary-dark, #005ea2);
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--footer-link-hover-color, #005ea2);
 }
 
 /* City Information */
-.pgov-footer-city-info {
+.footer-city-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: var(--component-pgov-footer-gap-md, 1rem);
+  gap: var(--footer-gap-md, 1rem);
   margin-top: 0;
   max-width: 12rem;
   order: 2;
 }
 
-.pgov-city-name {
+.footer-city-name {
   display: flex;
   width: 11.5rem;
-  padding: var(--usa-spacing-2, 1rem) 0rem;
+  padding: var(--footer-spacing-2, 1rem) 0rem;
   align-items: flex-start;
   gap: 0.625rem;
-  color: var(--component-pgov-footer-text-color, #1B1B1B);
-  font-family: var(--usa-font-family-heading, "Public Sans");
-  font-size: var(--component-prose-h-4-font-size, 1rem);
+  color: var(--footer-heading-color, #1B1B1B);
+  font-family: var(--footer-heading-font-family, "Public Sans");
+  font-size: var(--footer-heading-font-size, 1rem);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -235,77 +235,76 @@
   white-space: nowrap;
 }
 
-.pgov-city-logo {
-  width: 100px;
-  height: auto;
+.footer-city-logo {
+  width: var(--footer-city-logo-width, 100px);
+  height: var(--footer-city-logo-height, auto);
 }
 
-.pgov-copyright {
-  color: var(--component-pgov-footer-text-color, #1B1B1B);
-  font-family: var(--usa-font-family-body, "Public Sans");
-  font-size: var(--theme-body-font-size, 1rem);
+.footer-copyright {
+  color: var(--footer-heading-color, #1B1B1B);
+  font-family: var(--footer-heading-font-family, "Public Sans");
+  font-size: var(--footer-body-font-size, 1rem);
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 1.5rem */
+  line-height: var(--footer-link-line-height, 150%);
   margin: 0;
-  padding-bottom: 1.5rem;
 }
 
 /* Responsive Design */
 @media (min-width: 768px) {
-  .pgov-accessibility-section, 
-  .pgov-feedback-section {
+  .footer-accessibility-section, 
+  .footer-feedback-section {
     padding: 1.25rem 2rem;
   }
   
-  .pgov-request-services {
+  .footer-request-services {
     display: inline;
     margin-top: 0;
   }
   
-  .pgov-accessibility-container {
+  .footer-accessibility-container {
     flex-direction: row;
     justify-content: space-between;
   }
   
-  .pgov-text-container {
+  .footer-text-container {
     flex: 1;
     max-width: 75%;
     margin-bottom: 0;
   }
   
-  .pgov-explore-services {
+  .footer-explore-services {
     margin: 0 0 0 1rem;
     align-self: flex-start;
   }
 
-  .pgov-footer-main {
+  .footer-main {
     padding: 0;
     margin-top: 2rem;
   }
   
-  .pgov-footer-content {
+  .footer-content {
     flex-direction: row;
     align-items: flex-start;
   }
   
-  .pgov-footer-nav {
+  .footer-nav {
     display: flex;
-    max-width: var(--component-pgov-footer-max-width, 64rem);
-    padding: var(--component-pgov-footer-padding-md, 1rem) var(--component-pgov-footer-margin-desktop, 2rem);
+    max-width: var(--footer-max-width, 64rem);
+    padding: var(--footer-padding-md, 1rem) var(--footer-margin-desktop, 2rem);
     align-items: flex-start;
-    gap: var(--component-pgov-footer-gap-md, 1rem);
+    gap: var(--footer-gap-md, 1rem);
     align-self: stretch;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
   }
   
-  .pgov-footer-city-info {
+  .footer-city-info {
     order: 0;
   }
   
-  .pgov-footer-nav-section {
+  .footer-nav-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -315,33 +314,33 @@
     order: 1;
   }
   
-  .pgov-footer-heading {
+  .footer-heading {
     display: flex;
-    padding: var(--usa-spacing-2, 1rem) 0rem;
+    padding: var(--footer-spacing-2, 1rem) 0rem;
     align-items: flex-start;
     gap: 0.625rem;
     align-self: stretch;
-    color: var(--component-pgov-footer-text-color, #1B1B1B);
-    font-family: var(--usa-font-family-heading, "Public Sans");
-    font-size: var(--component-prose-h-4-font-size, 1rem);
+    color: var(--footer-heading-color, #1B1B1B);
+    font-family: var(--footer-heading-font-family, "Public Sans");
+    font-size: var(--footer-heading-font-size, 1rem);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     margin: 0;
   }
   
-  .pgov-footer-link-item {
+  .footer-link-item {
     display: flex;
-    padding-bottom: var(--usa-spacing-2, 1rem);
+    padding-bottom: var(--footer-spacing-2, 1rem);
     align-items: center;
     align-self: stretch;
     margin-bottom: 0;
   }
   
-  .pgov-footer-link {
-    color: var(--component-pgov-footer-link-color, #005EA2);
-    font-family: var(--component-footer-font-family, "Public Sans");
-    font-size: var(--component-prose-h-4-font-size, 1rem);
+  .footer-link {
+    color: var(--footer-link-color, #005EA2);
+    font-family: var(--footer-link-font-family, "Public Sans");
+    font-size: var(--footer-heading-font-size, 1rem);
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 1.5rem */
@@ -353,30 +352,30 @@
     text-underline-position: from-font;
   }
   
-  .pgov-city-logo {
+  .footer-city-logo {
     width: 5rem;
     height: 5rem;
   }
 }
 
 @media (min-width: 992px) {
-  .pgov-feedback-section, 
-  .pgov-accessibility-section {
-    max-width: var(--component-pgov-footer-max-width, 64rem);
+  .footer-feedback-section, 
+  .footer-accessibility-section {
+    max-width: var(--footer-max-width, 64rem);
     padding-left: 2rem;
     padding-right: 2rem;
   }
   
-  .pgov-footer-content {
+  .footer-content {
     gap: 4rem;
   }
   
-  .pgov-footer-nav {
+  .footer-nav {
     flex-wrap: nowrap;
     gap: 2rem;
   }
   
-  .pgov-footer-nav-section {
+  .footer-nav-section {
     margin-bottom: 0;
   }
 } 

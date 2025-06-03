@@ -69,7 +69,7 @@ CustomSeparator.args = {
   customSeparator: (
     <FontAwesomeIcon
       icon={faSlash}
-      className="pgov-breadcrumb__separator"
+      className="breadcrumb__separator"
       aria-hidden="true"
     />
   ),

@@ -2,140 +2,140 @@
 
 /* CSS Variable definitions */
 :root {
-  --component-alert-text-color: #1B1B1B;
-  --usa-font-family-heading: "Public Sans";
-  --usa-font-size-heading-9: 22px;
-  --component-alert-font-family: "Public Sans";
-  --theme-font-size-reading-sm: 16px;
+  --alert-text-color: #1B1B1B;
+  --alert-heading-font-family: "Public Sans";
+  --alert-heading-font-size: 22px;
+  --alert-font-family: "Public Sans";
+  --alert-font-size: 16px;
 }
 
-.pgov-alert {
+.alert {
   position: relative;
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: var(--pgov-alert-background-color, #f0f7ff);
-  border-left: 0.25rem solid var(--pgov-alert-border-color, #1a4480);
+  background-color: var(--alert-bg, #f0f7ff);
+  border-left: 0.25rem solid var(--alert-border-color, #1a4480);
   border-radius: 0.25rem;
 }
 
-.pgov-alert__body {
+.alert__body {
   display: flex;
   gap: 0.75rem;
 }
 
-.pgov-alert__icon {
+.alert__icon {
   flex-shrink: 0;
   display: flex;
   width: 40px;
   height: 40px;
   justify-content: center;
   align-items: center;
-  color: var(--pgov-alert-icon-color, #1a4480);
+  color: var(--alert-icon-color, #1a4480);
   margin-top: 0.125rem; /* Align with heading */
 }
 
-.pgov-alert__icon svg {
+.alert__icon svg {
   width: 26px;
   height: 26px;
 }
 
-.pgov-alert__content {
+.alert__content {
   flex-grow: 1;
 }
 
-.pgov-alert__heading {
+.alert__heading {
   margin: 0;
-  color: var(--component-alert-text-color, #1B1B1B);
-  font-family: var(--usa-font-family-heading, "Public Sans");
-  font-size: var(--usa-font-size-heading-9, 22px);
+  color: var(--alert-text-color, #1B1B1B);
+  font-family: var(--alert-heading-font-family, "Public Sans");
+  font-size: var(--alert-heading-font-size, 22px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.pgov-alert__text {
+.alert__text {
   margin: 0;
-  color: var(--component-alert-text-color, #1B1B1B);
-  font-family: var(--component-alert-font-family, "Public Sans");
-  font-size: var(--theme-font-size-reading-sm, 16px);
+  color: var(--alert-text-color, #1B1B1B);
+  font-family: var(--alert-font-family, "Public Sans");
+  font-size: var(--alert-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 
 /* Alert variants */
-.pgov-alert--info {
-  background-color: var(--pgov-alert-info-background-color, #f0f7ff);
-  border-left-color: var(--pgov-alert-info-border-color, #1a4480);
+.alert--info {
+  background-color: var(--alert-info-bg, #f0f7ff);
+  border-left-color: var(--alert-info-border-color, #1a4480);
 }
 
-.pgov-alert--info .pgov-alert__icon {
-  color: var(--pgov-alert-info-icon-color, #1a4480);
+.alert--info .alert__icon {
+  color: var(--alert-info-icon-color, #1a4480);
 }
 
-.pgov-alert--warning {
-  background-color: var(--pgov-alert-warning-background-color, #fff3cd);
-  border-left-color: var(--pgov-alert-warning-border-color, #856404);
+.alert--warning {
+  background-color: var(--alert-warning-bg, #fff3cd);
+  border-left-color: var(--alert-warning-border-color, #856404);
 }
 
-.pgov-alert--warning .pgov-alert__icon {
-  color: var(--pgov-alert-warning-icon-color, #856404);
+.alert--warning .alert__icon {
+  color: var(--alert-warning-icon-color, #856404);
 }
 
-.pgov-alert--success {
-  background-color: var(--pgov-alert-success-background-color, #d4edda);
-  border-left-color: var(--pgov-alert-success-border-color, #155724);
+.alert--success {
+  background-color: var(--alert-success-bg, #d4edda);
+  border-left-color: var(--alert-success-border-color, #155724);
 }
 
-.pgov-alert--success .pgov-alert__icon {
-  color: var(--pgov-alert-success-icon-color, #155724);
+.alert--success .alert__icon {
+  color: var(--alert-success-icon-color, #155724);
 }
 
-.pgov-alert--error {
-  background-color: var(--pgov-alert-error-background-color, #f8d7da);
-  border-left-color: var(--pgov-alert-error-border-color, #721c24);
+.alert--error {
+  background-color: var(--alert-error-bg, #f8d7da);
+  border-left-color: var(--alert-error-border-color, #721c24);
 }
 
-.pgov-alert--error .pgov-alert__icon {
-  color: var(--pgov-alert-error-icon-color, #721c24);
+.alert--error .alert__icon {
+  color: var(--alert-error-icon-color, #721c24);
 }
 
-.pgov-alert--emergency {
-  background-color: var(--pgov-alert-emergency-background-color, #fce8e6);
-  border-left-color: var(--pgov-alert-emergency-border-color, #b71c1c);
+.alert--emergency {
+  background-color: var(--alert-emergency-bg, #fce8e6);
+  border-left-color: var(--alert-emergency-border-color, #b71c1c);
 }
 
-.pgov-alert--emergency .pgov-alert__icon {
-  color: var(--pgov-alert-emergency-icon-color, #b71c1c);
+.alert--emergency .alert__icon {
+  color: var(--alert-emergency-icon-color, #b71c1c);
 }
 
 /* Slim variant */
-.pgov-alert--slim {
+.alert--slim {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-.pgov-alert--slim .pgov-alert__body {
+.alert--slim .alert__body {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
 }
 
-.pgov-alert--slim .pgov-alert__heading {
+.alert--slim .alert__heading {
   margin: 0;
-  font-size: var(--pgov-font-size-base, 1rem);
+  font-size: var(--alert-slim-heading-font-size, 1rem);
 }
 
-.pgov-alert--slim .pgov-alert__icon {
+.alert--slim .alert__icon {
   margin-top: 0; /* Remove margin in slim variant */
 }
 
 /* No icon variant */
-.pgov-alert--no-icon {
+.alert--no-icon {
   padding-left: 1rem;
 }
 
-.pgov-alert--no-icon .pgov-alert__body {
+.alert--no-icon .alert__body {
   gap: 0;
 } 

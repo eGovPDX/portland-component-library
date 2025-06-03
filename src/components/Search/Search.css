@@ -19,52 +19,52 @@
 }
 
 .usa-search .usa-input {
-  margin-right: var(--theme-spacing-1, 8px);
-  min-width: 27ch;
-  padding: var(--theme-spacing-1, 8px);
-  height: 2rem;
+  margin-right: var(--search-input-margin-right, 8px);
+  min-width: var(--search-input-min-width, 27ch);
+  padding: var(--search-input-padding, 8px);
+  height: var(--search-input-height, 2rem);
 }
 
 .usa-search .usa-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--theme-spacing-1, 8px);
+  padding: var(--search-button-padding, 8px);
   min-width: auto;
-  height: 2rem;
+  height: var(--search-button-height, 2rem);
 }
 
 .usa-search .usa-search__submit-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--search-icon-size, 1.25rem);
+  height: var(--search-icon-size, 1.25rem);
 }
 
 /* Big variant */
 .usa-search--big {
-  font-size: var(--theme-font-size-ui-sm, 16px);
+  font-size: var(--search-font-size-big, 16px);
 }
 
 .usa-search--big .usa-input {
-  padding: var(--theme-spacing-2, 16px);
-  height: 2.5rem;
+  padding: var(--search-input-padding-big, 16px);
+  height: var(--search-input-height-big, 2.5rem);
 }
 
 .usa-search--big .usa-button {
-  padding: var(--theme-spacing-2, 16px);
-  height: 2.5rem;
+  padding: var(--search-button-padding-big, 16px);
+  height: var(--search-button-height-big, 2.5rem);
 }
 
 /* Small variant */
 .usa-search--small {
-  font-size: var(--theme-font-size-ui-2-xs, 14px);
+  font-size: var(--search-font-size-small, 14px);
 }
 
 .usa-search--small .usa-input {
-  padding: var(--theme-spacing-1, 8px);
+  padding: var(--search-input-padding-small, 8px);
 }
 
 .usa-search--small .usa-button {
-  padding: var(--theme-spacing-1, 8px);
+  padding: var(--search-button-padding-small, 8px);
 }
 
 .usa-search--small .usa-search__submit-text {

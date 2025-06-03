@@ -11,18 +11,18 @@ export const HeaderLogo = ({
   tagline
 }) => {
   return (
-    <a href="/" className="pgov-header-logo-container">
+    <a href="/" className="header-logo-container">
       {logoUrl && (
         <img
           src={logoUrl}
           alt={logoAlt}
-          className="pgov-header-logo-img"
+          className="header-logo-img"
         />
       )}
-      <div className="pgov-header-logo-text-container">
-        <span className="pgov-header-logo-text">{title}</span>
+      <div className="header-logo-text-container">
+        <span className="header-logo-text">{title}</span>
         {tagline && (
-          <span className="pgov-header-logo-tagline">{tagline}</span>
+          <span className="header-logo-tagline">{tagline}</span>
         )}
       </div>
     </a>

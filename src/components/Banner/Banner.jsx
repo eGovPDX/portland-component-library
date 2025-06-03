@@ -23,7 +23,7 @@ export const Banner = ({
   className = '',
 }) => {
   const [isExpanded, setIsExpanded] = useState(initiallyExpanded);
-  const containerClassName = ['pgov-banner', className].filter(Boolean).join(' ');
+  const containerClassName = ['banner', className].filter(Boolean).join(' ');
   const iconToDisplay = icon || getDefaultIcon();
 
   const toggleBanner = () => {
@@ -32,23 +32,23 @@ export const Banner = ({
 
   return (
     <section className={containerClassName}>
-      <div className="pgov-banner-inner">
-        <div className="pgov-banner-header">
-          <div className="pgov-banner-header-inner">
-            <div className="pgov-banner-header-content">
-              <div className="pgov-banner-header-icon">
+      <div className="banner-inner">
+        <div className="banner-header">
+          <div className="banner-header-inner">
+            <div className="banner-header-content">
+              <div className="banner-header-icon">
                 {iconToDisplay}
               </div>
-              <p className="pgov-banner-header-text">{domain}</p>
+              <p className="banner-header-text">{domain}</p>
             </div>
             <button 
-              className="pgov-banner-button" 
+              className="banner-button" 
               onClick={toggleBanner}
               aria-expanded={isExpanded}
-              aria-controls="pgov-banner-content"
+              aria-controls="banner-content"
             >
-              <span className="pgov-banner-button-text">Here's how you know</span>
-              <span className={`pgov-banner-button-icon ${isExpanded ? 'is-open' : ''}`}>
+              <span className="banner-button-text">Here's how you know</span>
+              <span className={`banner-button-icon ${isExpanded ? 'is-open' : ''}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
@@ -59,14 +59,14 @@ export const Banner = ({
         
         {isExpanded && (
           <div 
-            id="pgov-banner-content" 
-            className="pgov-banner-content"
+            id="banner-content" 
+            className="banner-content"
           >
-            <div className="pgov-banner-guidance">
-              <div className="pgov-banner-guidance-icon">
+            <div className="banner-guidance">
+              <div className="banner-guidance-icon">
                 {iconToDisplay}
               </div>
-              <div className="pgov-banner-guidance-text">
+              <div className="banner-guidance-text">
                 <p>
                   <strong>{heading}</strong>
                   <br />
@@ -76,14 +76,14 @@ export const Banner = ({
             </div>
             
             {showHttpsGuidance && (
-              <div className="pgov-banner-guidance">
-                <div className="pgov-banner-guidance-icon">
+              <div className="banner-guidance">
+                <div className="banner-guidance-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                   </svg>
                 </div>
-                <div className="pgov-banner-guidance-text">
+                <div className="banner-guidance-text">
                   <p>
                     <strong>Secure websites use HTTPS</strong>
                     <br />

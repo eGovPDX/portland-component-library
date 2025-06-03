@@ -23,10 +23,10 @@ export const Alert = ({
   className = '',
 }) => {
   const alertClasses = [
-    'pgov-alert',
-    `pgov-alert--${type}`,
-    slim && 'pgov-alert--slim',
-    noIcon && 'pgov-alert--no-icon',
+    'alert',
+    `alert--${type}`,
+    slim && 'alert--slim',
+    noIcon && 'alert--no-icon',
     className
   ].filter(Boolean).join(' ');
 
@@ -52,15 +52,15 @@ export const Alert = ({
       className={alertClasses}
       role={type === 'error' || type === 'emergency' ? 'alert' : undefined}
     >
-      <div className="pgov-alert__body">
+      <div className="alert__body">
         {!noIcon && (
-          <div className="pgov-alert__icon">
+          <div className="alert__icon">
             <FontAwesomeIcon icon={getIcon()} />
           </div>
         )}
-        <div className="pgov-alert__content">
-          {heading && <h4 className="pgov-alert__heading">{heading}</h4>}
-          <div className="pgov-alert__text">
+        <div className="alert__content">
+          {heading && <h4 className="alert__heading">{heading}</h4>}
+          <div className="alert__text">
             {children}
           </div>
         </div>
