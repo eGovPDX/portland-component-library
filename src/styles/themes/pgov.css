@@ -22,8 +22,8 @@
   --button-primary-active-bg: var(--color-blue-70);
   --button-border-radius: var(--pgov-border-radius-md);
   --button-font-weight-bold: 700;
-  --button-spacing-2xs: var(--pgov-spacing-2xs);
-  --button-spacing-xs: var(--pgov-spacing-xs);
+  --button-spacing-2xs: var(--spacing-global-1);
+  --button-spacing-xs: var(--spacing-global-105);
   --button-spacing-205: var(--spacing-205);
   --button-spacing-05: var(--spacing-05);
   --button-color-blue-40v: var(--color-blue-40v);
@@ -49,8 +49,8 @@
   --button-font-weight-normal: 400;
   --button-radius-none: 0;
   --button-spacing-0: 0;
-  --button-spacing-sm: var(--pgov-spacing-sm);
-  --button-spacing-md: var(--pgov-spacing-md);
+  --button-spacing-sm: var(--spacing-global-2);
+  --button-spacing-md: var(--spacing-global-3);
   --button-color-gray-10: var(--color-gray-10);
   
   /* Breadcrumb tokens */
@@ -83,15 +83,15 @@
   --banner-bg: var(--pgov-color-primary-lightest);
   --banner-font-family: var(--font-family-reading-public-sans);
   --banner-font-size: var(--font-size-3);
-  --banner-spacing-md: var(--pgov-spacing-md);
-  --banner-spacing-xs: var(--pgov-spacing-xs);
+  --banner-spacing-md: var(--spacing-global-3);
+  --banner-spacing-xs: var(--spacing-global-105);
   --banner-color-primary: var(--pgov-color-primary);
   --banner-font-weight-medium: 500;
   --banner-color-primary-darker: var(--pgov-color-primary-darker);
   --banner-text-color: var(--pgov-text-color);
   --banner-border-color: var(--pgov-border-color);
-  --banner-spacing-2xs: var(--pgov-spacing-2xs);
-  --banner-spacing-sm: var(--pgov-spacing-sm);
+  --banner-spacing-2xs: var(--spacing-global-1);
+  --banner-spacing-sm: var(--spacing-global-2);
   --banner-line-height-normal: 1.5;
 
   /* Footer component variables */
@@ -115,8 +115,8 @@
   /* PageTemplate component variables */
   --page-template-bg: var(--pgov-background-color, #ffffff);
   --page-template-font-family: var(--font-family-reading-public-sans);
-  --page-template-padding-lg: var(--pgov-spacing-lg);
-  --page-template-padding-md: var(--pgov-spacing-md);
+  --page-template-padding-lg: var(--spacing-global-4);
+  --page-template-padding-md: var(--spacing-global-3);
 
   /* Card component variables */
   --card-border-radius: var(--component-card-border-radius, 8px);
@@ -196,8 +196,8 @@
   --tag-font-size-big: var(--theme-font-size-ui-sm, 16px);
 
   /* SkipNav component variables */
-  --skip-nav-padding-y: var(--pgov-spacing-xs, 12px);
-  --skip-nav-padding-x: var(--pgov-spacing-md, 20px);
+  --skip-nav-padding-y: var(--spacing-global-105, 12px);
+  --skip-nav-padding-x: var(--spacing-global-3, 20px);
   --skip-nav-bg: var(--pgov-color-primary, #0050d8);
   --skip-nav-font-family: var(--font-family-reading-public-sans, "Public Sans");
   --skip-nav-font-size: var(--font-size-5, 16px);

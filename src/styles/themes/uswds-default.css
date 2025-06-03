@@ -33,6 +33,7 @@
   --button-primary-active-bg: var(--color-blue-warm-80v);
   --button-border-radius: var(--pgov-border-radius-md);
   --button-font-weight-bold: 700;
+  --button-spacing-2xs: var(--spacing-global-1);
   --button-spacing-2xs: var(--pgov-spacing-2xs);
   --button-spacing-xs: var(--pgov-spacing-xs);
   --button-spacing-205: var(--spacing-205);

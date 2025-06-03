@@ -31,8 +31,8 @@
   --button-primary-active-bg: var(--pgov-color-primary-active);
   --button-border-radius: var(--pgov-border-radius-md);
   --button-font-weight-bold: 700;
-  --button-spacing-2xs: var(--pgov-spacing-2xs);
-  --button-spacing-xs: var(--pgov-spacing-xs);
+  --button-spacing-2xs: var(--spacing-global-1);
+  --button-spacing-xs: var(--spacing-global-105);
   --button-spacing-205: var(--spacing-205);
   --button-spacing-05: var(--spacing-05);
   --button-color-blue-40v: var(--color-blue-40v);
@@ -58,23 +58,23 @@
   --button-font-weight-normal: 400;
   --button-radius-none: 0;
   --button-spacing-0: 0;
-  --button-spacing-sm: var(--pgov-spacing-sm);
-  --button-spacing-md: var(--pgov-spacing-md);
+  --button-spacing-sm: var(--spacing-global-2);
+  --button-spacing-md: var(--spacing-global-3);
   --button-color-gray-10: var(--color-gray-10);
 
   /* Banner component variables */
   --banner-bg: var(--pgov-color-primary-lightest);
   --banner-font-family: var(--pgov-font-family-sans);
   --banner-font-size: var(--pgov-font-size-2xs);
-  --banner-spacing-md: var(--pgov-spacing-md);
-  --banner-spacing-xs: var(--pgov-spacing-xs);
+  --banner-spacing-md: var(--spacing-global-3);
+  --banner-spacing-xs: var(--spacing-global-105);
   --banner-color-primary: var(--pgov-color-primary);
   --banner-font-weight-medium: var(--pgov-font-weight-medium);
   --banner-color-primary-darker: var(--pgov-color-primary-darker);
   --banner-text-color: var(--pgov-text-color);
   --banner-border-color: var(--pgov-border-color);
-  --banner-spacing-2xs: var(--pgov-spacing-2xs);
-  --banner-spacing-sm: var(--pgov-spacing-sm);
+  --banner-spacing-2xs: var(--spacing-global-1);
+  --banner-spacing-sm: var(--spacing-global-2);
   --banner-line-height-normal: var(--pgov-line-height-normal);
 
   /* Footer component variables */
@@ -156,8 +156,8 @@
   /* PageTemplate component variables */
   --page-template-bg: var(--pgov-background-color, #ffffff);
   --page-template-font-family: var(--pgov-font-family-sans);
-  --page-template-padding-lg: var(--pgov-spacing-lg);
-  --page-template-padding-md: var(--pgov-spacing-md);
+  --page-template-padding-lg: var(--spacing-global-4);
+  --page-template-padding-md: var(--spacing-global-3);
 
   /* Card component variables */
   --card-border-radius: var(--component-card-border-radius, 8px);
