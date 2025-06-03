@@ -31,7 +31,7 @@
   align-items: center;
   gap: var(--color-swatch-item-gap, 16px);
   margin-bottom: var(--color-swatch-item-margin-bottom, 20px);
-  font-family: var(--color-swatch-font-family, var(--pgov-font-family-sans, sans-serif));
+  font-family: var(--color-swatch-font-family, var(--font-family-reading-public-sans, sans-serif));
 }
 
 .pgov-color-swatch-preview {

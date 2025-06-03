@@ -164,7 +164,7 @@
   --breadcrumb-gap: var(--pgov-breadcrumb-gap, 0.5rem);
   --breadcrumb-link-color: var(--theme-color-base-light, #A9AEB1);
   --breadcrumb-font-family: var(--font-family-sans, "Public Sans");
-  --breadcrumb-font-size: var(--pgov-font-size-xs, 16px);
+  --breadcrumb-font-size: var(--font-size-5, 16px);
   --breadcrumb-current-color: var(--color-white, #FFF);
   --breadcrumb-separator-color: var(--color-white-transparent-80, #FFFFFF80);
   --breadcrumb-link-color-dark: var(--color-neutral-light, #A9AEB1);
@@ -237,7 +237,7 @@
   --alert-emergency-bg: var(--pgov-alert-emergency-background-color, #fce8e6);
   --alert-emergency-border-color: var(--pgov-alert-emergency-border-color, #b71c1c);
   --alert-emergency-icon-color: var(--pgov-alert-emergency-icon-color, #b71c1c);
-  --alert-slim-heading-font-size: var(--pgov-font-size-base, 1rem);
+  --alert-slim-heading-font-size: 1rem;
 
   /* HeroGlobal component variables */
   --hero-global-bg: var(--theme-body-background-color, #FFF);
@@ -274,8 +274,8 @@
   --skip-nav-padding-x: var(--spacing-global-3, 20px);
   --skip-nav-bg: var(--color-blue-60v, #0050d8);
   --skip-nav-font-family: var(--font-family-sans, "Public Sans");
-  --skip-nav-font-size: var(--pgov-font-size-xs, 16px);
-  --skip-nav-font-weight: var(--pgov-font-weight-medium, 500);
+  --skip-nav-font-size: var(--font-size-5, 16px);
+  --skip-nav-font-weight: 500;
   --skip-nav-color: #fff;
 
   /* SummaryBox component variables */

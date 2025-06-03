@@ -2,9 +2,9 @@
 .tooltip__body {
   max-width: 15rem;
   padding: 0.5rem 1rem;
-  font-family: var(--tooltip-font-family, var(--pgov-font-family-sans));
-  font-size: var(--tooltip-font-size, var(--pgov-font-size-2xs));
-  line-height: var(--tooltip-line-height, var(--pgov-line-height-normal));
+  font-family: var(--tooltip-font-family, var(--font-family-reading-public-sans));
+  font-size: var(--tooltip-font-size, var(--font-size-3));
+  line-height: var(--tooltip-line-height, 1.5);
   text-align: center;
   border-radius: var(--tooltip-border-radius, var(--theme-radius-md));
   z-index: 1000;

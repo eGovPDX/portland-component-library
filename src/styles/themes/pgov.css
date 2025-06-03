@@ -163,7 +163,7 @@
   --alert-emergency-bg: var(--pgov-alert-emergency-background-color, #fce8e6);
   --alert-emergency-border-color: var(--pgov-alert-emergency-border-color, #b71c1c);
   --alert-emergency-icon-color: var(--pgov-alert-emergency-icon-color, #b71c1c);
-  --alert-slim-heading-font-size: var(--pgov-font-size-base, 1rem);
+  --alert-slim-heading-font-size: 1rem;
 
   /* HeroGlobal component variables */
   --hero-global-bg: var(--theme-body-background-color, #FFF);

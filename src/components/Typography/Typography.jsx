@@ -68,7 +68,7 @@ export const FontSizeDisplay = ({ name, variable, value, sizeInPx }) => {
     }}>
       <div style={{ 
         fontSize: value,
-        fontFamily: 'var(--pgov-font-family-sans)'
+        fontFamily: 'var(--font-family-reading-public-sans)'
       }}>
         Aa
       </div>
@@ -117,7 +117,7 @@ export const FontWeightDisplay = ({ name, variable, value }) => {
       <div style={{ 
         fontWeight: value,
         fontSize: '24px',
-        fontFamily: 'var(--pgov-font-family-sans)'
+        fontFamily: 'var(--font-family-reading-public-sans)'
       }}>
         Aa
       </div>
@@ -162,7 +162,7 @@ export const LineHeightDisplay = ({ name, variable, value }) => {
       <div style={{ 
         lineHeight: value,
         fontSize: '16px',
-        fontFamily: 'var(--pgov-font-family-sans)',
+        fontFamily: 'var(--font-family-reading-public-sans)',
         marginBottom: '16px',
         padding: '10px',
         backgroundColor: '#f5f5f5',
@@ -212,7 +212,7 @@ export const LetterSpacingDisplay = ({ name, variable, value }) => {
       <div style={{ 
         letterSpacing: value,
         fontSize: '18px',
-        fontFamily: 'var(--pgov-font-family-sans)',
+        fontFamily: 'var(--font-family-reading-public-sans)',
         marginBottom: '16px',
         padding: '10px',
         backgroundColor: '#f5f5f5',
