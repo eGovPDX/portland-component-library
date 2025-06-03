@@ -1,17 +1,17 @@
-// Forward theme files first (Sass requires @forward to be before other rules)
-@forward './themes/pgov.scss';
-@forward './themes/pgov-dark.scss';
-@forward './themes/uswds-default.scss';
-@forward './themes/project-theme-light.scss';
-@forward './themes/project-theme-dark.scss';
-
-// Import external CSS files AFTER @forward rules
-@import url('https://egovpdx.github.io/design-tokens/design_tokens.css'); // Updated to GitHub Pages URL
-
-// Use relative path to USWDS CSS instead of module path
+@import url('https://egovpdx.github.io/design-tokens/design_tokens.css');
 @import '../../node_modules/@uswds/uswds/dist/css/uswds.min.css';
+@import './colors.css';
+@import './spacing.css';
+@import './typography.css';
+@import './themes/pgov.css';
+@import './themes/pgov-dark.css';
+@import './themes/uswds-default.css';
+@import './themes/project-theme-light.css';
+@import './themes/project-theme-dark.css';
 
-// Reset and base styles
+
+
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,21 +26,7 @@ body {
   background-color: var(--pgov-background-color, #ffffff);
 }
 
-// Apply default theme
-:root {
-  @extend .pgov-theme;
-}
-
-// Theme toggle classes
-.pgov-theme-enabled {
-  @extend .pgov-theme;
-}
-
-.pgov-dark-theme-enabled {
-  @extend .pgov-dark-theme;
-}
-
-// Utility classes
+/* Utility classes */
 .visually-hidden {
   position: absolute;
   width: 1px;
