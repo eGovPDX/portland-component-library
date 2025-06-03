@@ -30,7 +30,7 @@
   /* Create a square that will be rotated to form the arrow */
   width: 10px;
   height: 10px;
-  background-color: var(--popover-with-card-arrow-bg, var(--pgov-color-neutral-lightest));
+  background-color: var(--popover-with-card-arrow-bg, #f0f0f0);
   position: absolute;
   transform-origin: center;
   /* Add drop shadow to match the card */

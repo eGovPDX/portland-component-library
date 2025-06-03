@@ -4,7 +4,7 @@
   align-items: flex-start;
   gap: var(--hero-homepage-gap-md, 16px);
   background: var(--hero-homepage-bg, #1B1B1B);
-  color: var(--pgov-color-white);
+  color: #ffffff;
   width: 100%;
   box-sizing: border-box;
 }
@@ -92,11 +92,11 @@
   text-underline-position: from-font;
   
   &:hover {
-    color: var(--pgov-color-neutral-lighter);
+    color: #dfe1e2;
   }
   
   &:focus {
-    outline: 2px solid var(--pgov-color-primary);
+    outline: 2px solid #005ea2;
     outline-offset: 2px;
   }
 }
