@@ -20,7 +20,7 @@
   --button-primary-hover-bg: var(--color-blue-warm-70v);
   --button-primary-hover-text: var(--color-white);
   --button-primary-active-bg: var(--color-blue-70);
-  --button-border-radius: var(--pgov-border-radius-md);
+  --button-border-radius: var(--theme-radius-md);
   --button-font-weight-bold: 700;
   --button-spacing-2xs: var(--spacing-global-1);
   --button-spacing-xs: var(--spacing-global-105);
@@ -421,7 +421,7 @@
   --tooltip-font-family: var(--font-family-reading-public-sans);
   --tooltip-font-size: var(--font-size-3);
   --tooltip-line-height: 1.5;
-  --tooltip-border-radius: var(--pgov-border-radius-md);
+  --tooltip-border-radius: var(--theme-radius-md);
   --tooltip-bg-light: var(--color-gray-5);
   --tooltip-color-light: var(--color-gray-cool-60);
   --tooltip-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);

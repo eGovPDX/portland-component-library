@@ -23,7 +23,7 @@
   --button-primary-hover-bg: var(--color-blue-70v);
   --button-primary-hover-text: var(--theme-color-ink-reverse);
   --button-primary-active-bg: var(--color-blue-80v);
-  --button-border-radius: var(--pgov-border-radius-md);
+  --button-border-radius: var(--theme-radius-md);
   --button-font-weight-bold: 700;
   --button-spacing-2xs: var(--spacing-global-1);
   --button-spacing-xs: var(--spacing-global-105);
@@ -111,7 +111,7 @@
 
   /* Header component variables */
   --header-font-family: var(--usa-font-family-ui, "Public Sans");
-  --header-spacing-md: var(--pgov-spacing-md, 1.5rem);
+  --header-spacing-md: var(--spacing-global-3, 1.5rem);
   --header-bg: var(--theme-color-ink, #1B1B1B);
   --header-border-color-dark: var(--theme-color-border-dark, #1B1B1B);
   --header-logo-color: var(--theme-color-ink-reverse, #FFF);
@@ -307,8 +307,8 @@
   --hero-global-desktop-gap-y: var(--usa-spacing-5, 40px);
 
   /* SkipNav component variables */
-  --skip-nav-padding-y: var(--pgov-spacing-xs, 12px);
-  --skip-nav-padding-x: var(--pgov-spacing-md, 20px);
+  --skip-nav-padding-y: var(--spacing-global-105, 12px);
+  --skip-nav-padding-x: var(--spacing-global-3, 20px);
   --skip-nav-bg: var(--color-blue-60v, #0050d8);
   --skip-nav-font-family: var(--pgov-font-family-sans, "Public Sans");
   --skip-nav-font-size: var(--pgov-font-size-xs, 16px);
@@ -546,7 +546,7 @@
   --tooltip-font-family: var(--pgov-font-family-sans);
   --tooltip-font-size: var(--pgov-font-size-2xs);
   --tooltip-line-height: var(--pgov-line-height-normal);
-  --tooltip-border-radius: var(--pgov-border-radius-md);
+  --tooltip-border-radius: var(--theme-radius-md);
   --tooltip-bg-light: var(--color-gray-5);
   --tooltip-color-light: var(--color-gray-90);
   --tooltip-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);

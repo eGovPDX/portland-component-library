@@ -17,7 +17,7 @@
   --button-primary-hover-bg: var(--color-blue-70v);
   --button-primary-hover-text: var(--color-neutral-darkest);
   --button-primary-active-bg: var(--color-blue-80v);
-  --button-border-radius: var(--pgov-border-radius-md);
+  --button-border-radius: var(--theme-radius-md);
   --button-font-weight-bold: 700;
   --button-spacing-2xs: var(--spacing-global-1);
   --button-spacing-xs: var(--spacing-global-105);
@@ -105,7 +105,7 @@
 
   /* Header component variables */
   --header-font-family: var(--usa-font-family-ui, "Public Sans");
-  --header-spacing-md: var(--pgov-spacing-md, 1.5rem);
+  --header-spacing-md: var(--spacing-global-3, 1.5rem);
   --header-bg: var(--theme-color-ink, #1B1B1B);
   --header-border-color-dark: var(--theme-color-border-dark, #1B1B1B);
   --header-logo-color: var(--theme-color-ink-reverse, #FFF);
@@ -509,7 +509,7 @@
   --tooltip-font-family: var(--font-family-sans);
   --tooltip-font-size: var(--font-size-2xs);
   --tooltip-line-height: var(--line-height-normal);
-  --tooltip-border-radius: var(--pgov-border-radius-md);
+  --tooltip-border-radius: var(--theme-radius-md);
   --tooltip-bg-light: var(--color-neutral-lightest);
   --tooltip-color-light: var(--color-neutral-darkest);
   --tooltip-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);

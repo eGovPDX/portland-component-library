@@ -6,7 +6,7 @@
   font-size: var(--tooltip-font-size, var(--pgov-font-size-2xs));
   line-height: var(--tooltip-line-height, var(--pgov-line-height-normal));
   text-align: center;
-  border-radius: var(--tooltip-border-radius, var(--pgov-border-radius-md));
+  border-radius: var(--tooltip-border-radius, var(--theme-radius-md));
   z-index: 1000;
   word-wrap: break-word;
   overflow-wrap: break-word;

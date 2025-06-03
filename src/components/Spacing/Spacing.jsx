@@ -97,10 +97,10 @@ export const SpacingExamples = () => {
           <div style={{ 
             backgroundColor: '#f0f0f0',
             padding: '16px',
-            marginBottom: 'var(--pgov-spacing-md)',
+            marginBottom: 'var(--spacing-global-3)',
             borderRadius: '4px'
           }}>
-            Element with margin-bottom: var(--pgov-spacing-md)
+            Element with margin-bottom: var(--spacing-global-3)
           </div>
           <div style={{ 
             backgroundColor: '#f0f0f0',
@@ -121,27 +121,27 @@ export const SpacingExamples = () => {
         }}>
           <div style={{ 
             backgroundColor: '#f0f0f0',
-            padding: 'var(--pgov-spacing-xs)',
+            padding: 'var(--spacing-global-3)',
             borderRadius: '4px',
             width: '200px'
           }}>
-            Padding: var(--pgov-spacing-xs)
+            Padding: var(--spacing-global-3)
           </div>
           <div style={{ 
             backgroundColor: '#f0f0f0',
-            padding: 'var(--pgov-spacing-md)',
+            padding: 'var(--spacing-global-105)',
             borderRadius: '4px',
             width: '200px'
           }}>
-            Padding: var(--pgov-spacing-md)
+            Padding: var(--spacing-global-105)
           </div>
           <div style={{ 
             backgroundColor: '#f0f0f0',
-            padding: 'var(--pgov-spacing-xl)',
+            padding: 'var(--spacing-global-5)',
             borderRadius: '4px',
             width: '200px'
           }}>
-            Padding: var(--pgov-spacing-xl)
+            Padding: var(--spacing-global-5)
           </div>
         </div>
       </div>
@@ -155,7 +155,7 @@ export const SpacingExamples = () => {
         }}>
           <div style={{ 
             display: 'flex',
-            gap: 'var(--pgov-spacing-xs)',
+            gap: 'var(--spacing-global-3)',
             backgroundColor: '#f0f0f0',
             padding: '16px',
             borderRadius: '4px'
@@ -166,7 +166,7 @@ export const SpacingExamples = () => {
           </div>
           <div style={{ 
             display: 'flex',
-            gap: 'var(--pgov-spacing-md)',
+            gap: 'var(--spacing-global-105)',
             backgroundColor: '#f0f0f0',
             padding: '16px',
             borderRadius: '4px'
@@ -177,7 +177,7 @@ export const SpacingExamples = () => {
           </div>
           <div style={{ 
             display: 'flex',
-            gap: 'var(--pgov-spacing-xl)',
+            gap: 'var(--spacing-global-5)',
             backgroundColor: '#f0f0f0',
             padding: '16px',
             borderRadius: '4px'
