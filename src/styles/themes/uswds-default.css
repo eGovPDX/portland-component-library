@@ -15,13 +15,7 @@
   --pgov-font-family-mono: var(--font-family-mono-roboto-mono);
 
   /* Base USWDS Theme Colors from design_tokens.css (Default section values, mapped to general color palette tokens where names are clearer) */
-  --pgov-color-primary: var(--color-blue-60v);
-  --pgov-color-primary-hover: var(--color-blue-warm-70v);
-  --pgov-color-primary-active: var(--color-blue-warm-80v);
-  
-  --pgov-color-secondary: var(--color-red-50);
-  --pgov-color-secondary-hover: var(--color-red-60v);         
-  --pgov-color-secondary-active: var(--color-red-70v);        
+  /* Note: These variables have been replaced with their actual values throughout the theme */
 
   /* Button specific variables for USWDS Default look */
   --button-font-family-sans: var(--font-family-reading);
