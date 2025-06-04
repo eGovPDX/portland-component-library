@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLandmark, faLock } from '@fortawesome/free-solid-svg-icons';
 import './Banner.css';
-
-// Default icon if none provided
-const getDefaultIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M30 54C21.375 54 13.5 49.5 9.1875 42C4.875 34.5938 4.875 25.5 9.1875 18C13.5 10.5938 21.375 6 30 6C38.5312 6 46.4062 10.5938 50.7188 18C55.0312 25.5 55.0312 34.5938 50.7188 42C46.4062 49.5 38.5312 54 30 54ZM26.25 37.5C24.9375 37.5 24 38.5312 24 39.75C24 41.0625 24.9375 42 26.25 42H33.75C34.9688 42 36 41.0625 36 39.75C36 38.5312 34.9688 37.5 33.75 37.5H33V29.25C33 28.0312 31.9688 27 30.75 27H26.25C24.9375 27 24 28.0312 24 29.25C24 30.5625 24.9375 31.5 26.25 31.5H28.5V37.5H26.25ZM30 18C28.3125 18 27 19.4062 27 21C27 22.6875 28.3125 24 30 24C31.5938 24 33 22.6875 33 21C33 19.4062 31.5938 18 30 18Z" fill="currentColor"/>
-  </svg>
-);
 
 /**
  * Banner component based on USWDS Banner
@@ -24,7 +19,6 @@ export const Banner = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(initiallyExpanded);
   const containerClassName = ['banner', className].filter(Boolean).join(' ');
-  const iconToDisplay = icon || getDefaultIcon();
 
   const toggleBanner = () => {
     setIsExpanded(!isExpanded);
@@ -32,12 +26,71 @@ export const Banner = ({
 
   return (
     <section className={containerClassName}>
-      <div className="banner-inner">
+      <div className="banner-content">
         <div className="banner-header">
-          <div className="banner-header-inner">
-            <div className="banner-header-content">
               <div className="banner-header-icon">
-                {iconToDisplay}
+                {icon || (
+                  <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
+                    {/* Red stripes */}
+                    <rect width="24" height="16" fill="#B22234"/>
+                    {/* White stripes */}
+                    <rect y="1.23" width="24" height="1.23" fill="white"/>
+                    <rect y="3.69" width="24" height="1.23" fill="white"/>
+                    <rect y="6.15" width="24" height="1.23" fill="white"/>
+                    <rect y="8.62" width="24" height="1.23" fill="white"/>
+                    <rect y="11.08" width="24" height="1.23" fill="white"/>
+                    <rect y="13.54" width="24" height="1.23" fill="white"/>
+                    {/* Blue canton */}
+                    <rect width="9.6" height="8.62" fill="#3C3B6E"/>
+                    {/* Stars (simplified as white dots) */}
+                    <circle cx="1.2" cy="1.1" r="0.3" fill="white"/>
+                    <circle cx="2.4" cy="1.1" r="0.3" fill="white"/>
+                    <circle cx="3.6" cy="1.1" r="0.3" fill="white"/>
+                    <circle cx="4.8" cy="1.1" r="0.3" fill="white"/>
+                    <circle cx="6" cy="1.1" r="0.3" fill="white"/>
+                    <circle cx="7.2" cy="1.1" r="0.3" fill="white"/>
+                    <circle cx="8.4" cy="1.1" r="0.3" fill="white"/>
+                    <circle cx="1.8" cy="2.2" r="0.3" fill="white"/>
+                    <circle cx="3" cy="2.2" r="0.3" fill="white"/>
+                    <circle cx="4.2" cy="2.2" r="0.3" fill="white"/>
+                    <circle cx="5.4" cy="2.2" r="0.3" fill="white"/>
+                    <circle cx="6.6" cy="2.2" r="0.3" fill="white"/>
+                    <circle cx="7.8" cy="2.2" r="0.3" fill="white"/>
+                    <circle cx="1.2" cy="3.3" r="0.3" fill="white"/>
+                    <circle cx="2.4" cy="3.3" r="0.3" fill="white"/>
+                    <circle cx="3.6" cy="3.3" r="0.3" fill="white"/>
+                    <circle cx="4.8" cy="3.3" r="0.3" fill="white"/>
+                    <circle cx="6" cy="3.3" r="0.3" fill="white"/>
+                    <circle cx="7.2" cy="3.3" r="0.3" fill="white"/>
+                    <circle cx="8.4" cy="3.3" r="0.3" fill="white"/>
+                    <circle cx="1.8" cy="4.4" r="0.3" fill="white"/>
+                    <circle cx="3" cy="4.4" r="0.3" fill="white"/>
+                    <circle cx="4.2" cy="4.4" r="0.3" fill="white"/>
+                    <circle cx="5.4" cy="4.4" r="0.3" fill="white"/>
+                    <circle cx="6.6" cy="4.4" r="0.3" fill="white"/>
+                    <circle cx="7.8" cy="4.4" r="0.3" fill="white"/>
+                    <circle cx="1.2" cy="5.5" r="0.3" fill="white"/>
+                    <circle cx="2.4" cy="5.5" r="0.3" fill="white"/>
+                    <circle cx="3.6" cy="5.5" r="0.3" fill="white"/>
+                    <circle cx="4.8" cy="5.5" r="0.3" fill="white"/>
+                    <circle cx="6" cy="5.5" r="0.3" fill="white"/>
+                    <circle cx="7.2" cy="5.5" r="0.3" fill="white"/>
+                    <circle cx="8.4" cy="5.5" r="0.3" fill="white"/>
+                    <circle cx="1.8" cy="6.6" r="0.3" fill="white"/>
+                    <circle cx="3" cy="6.6" r="0.3" fill="white"/>
+                    <circle cx="4.2" cy="6.6" r="0.3" fill="white"/>
+                    <circle cx="5.4" cy="6.6" r="0.3" fill="white"/>
+                    <circle cx="6.6" cy="6.6" r="0.3" fill="white"/>
+                    <circle cx="7.8" cy="6.6" r="0.3" fill="white"/>
+                    <circle cx="1.2" cy="7.7" r="0.3" fill="white"/>
+                    <circle cx="2.4" cy="7.7" r="0.3" fill="white"/>
+                    <circle cx="3.6" cy="7.7" r="0.3" fill="white"/>
+                    <circle cx="4.8" cy="7.7" r="0.3" fill="white"/>
+                    <circle cx="6" cy="7.7" r="0.3" fill="white"/>
+                    <circle cx="7.2" cy="7.7" r="0.3" fill="white"/>
+                    <circle cx="8.4" cy="7.7" r="0.3" fill="white"/>
+                  </svg>
+                )}
               </div>
               <p className="banner-header-text">{domain}</p>
             </div>
@@ -55,16 +108,15 @@ export const Banner = ({
               </span>
             </button>
           </div>
-        </div>
         
         {isExpanded && (
           <div 
-            id="banner-content" 
-            className="banner-content"
+            id="banner-expanded-content" 
+            className="banner-expanded-content"
           >
             <div className="banner-guidance">
               <div className="banner-guidance-icon">
-                {iconToDisplay}
+                {<FontAwesomeIcon icon={faLandmark} style={{ fontSize: '40px', color: '#2378C3' }} /> || null}
               </div>
               <div className="banner-guidance-text">
                 <p>
@@ -78,10 +130,7 @@ export const Banner = ({
             {showHttpsGuidance && (
               <div className="banner-guidance">
                 <div className="banner-guidance-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                  </svg>
+                  <FontAwesomeIcon icon={faLock} style={{ fontSize: '40px', color: '#719F2A' }} />
                 </div>
                 <div className="banner-guidance-text">
                   <p>
@@ -94,7 +143,6 @@ export const Banner = ({
             )}
           </div>
         )}
-      </div>
     </section>
   );
 };
