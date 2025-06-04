@@ -107,7 +107,6 @@
   --button-unstyled-font-weight: 400;
   --button-unstyled-padding: 0;
   --button-unstyled-margin: 0;
-
   
   /* Breadcrumb tokens */
   --breadcrumb-font-family: var(--font-family-reading-public-sans);
@@ -126,20 +125,19 @@
   --breadcrumb-mobile-padding-y: var(--spacing-05);
   --breadcrumb-mobile-padding-x: var(--spacing-105);
 
-  /* Banner colors - DIRECT VALUES */
-  --banner-bg: #f0f7ff;
+  /* Banner component variables */
+  --banner-bg: var(--color-gray-5);
   --banner-font-family: var(--font-family-reading-public-sans);
   --banner-font-size: var(--font-size-3);
-  --banner-spacing-md: var(--spacing-3);
-  --banner-spacing-xs: var(--spacing-105);
-  --banner-color-primary: var(--color-blue-60v);
-  --banner-font-weight-medium: 500;
-  --banner-color-primary-darker: var(--color-blue-warm-70v);
+  --banner-content-padding: var(--spacing-05) var(--spacing-1) var(--spacing-05) var(--spacing-2);
+  --banner-content-gap: var(--spacing-1);
+  --banner-expanded-content-padding: var(--spacing-2) var(--spacing-2) var(--spacing-2) var(--spacing-1);
+  --banner-expanded-content-gap: var(--spacing-1);
   --banner-text-color: var(--color-gray-90, #1b1b1b);
   --banner-border-color: var(--color-gray-cool-10);
-  --banner-spacing-2xs: var(--spacing-1);
-  --banner-spacing-sm: var(--spacing-2);
   --banner-line-height-normal: 1.5;
+  --banner-button-color: var(--color-blue-60v);
+
 
   /* Footer component variables */
   --footer-font-family: var(--font-family-reading-public-sans);

@@ -107,19 +107,17 @@
   --button-unstyled-margin: 0;
 
   /* Banner component variables */
-  --banner-bg: #f0f7ff;
+  --banner-bg: var(--color-gray-90);
   --banner-font-family: var(--font-family-reading-public-sans);
   --banner-font-size: var(--font-size-3);
-  --banner-spacing-md: var(--spacing-3);
-  --banner-spacing-xs: var(--spacing-105);
-  --banner-spacing-2xs: var(--spacing-1);
-  --banner-spacing-sm: var(--spacing-2);
-  --banner-color-primary: var(--color-blue-60v);
-  --banner-font-weight-medium: 500;
-  --banner-color-primary-darker: var(--color-blue-warm-70v);
-  --banner-text-color: var(--theme-color-ink);
-  --banner-border-color: var(--theme-color-base-dark);
+  --banner-content-padding: var(--spacing-05) var(--spacing-1) var(--spacing-05) var(--spacing-2);
+  --banner-content-gap: var(--spacing-1);
+  --banner-expanded-content-padding: var(--spacing-2) var(--spacing-2) var(--spacing-2) var(--spacing-1);
+  --banner-expanded-content-gap: var(--spacing-1);
+  --banner-text-color: var(--color-white, #ffffff);
+  --banner-border-color: var(--color-gray-cool-10);
   --banner-line-height-normal: 1.5;
+  --banner-button-color: var(--color-blue-30);
 
   /* Footer component variables */
   --footer-font-family: var(--font-family-reading-public-sans);
