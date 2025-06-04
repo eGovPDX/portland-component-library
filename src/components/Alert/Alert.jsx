@@ -41,7 +41,7 @@ export const Alert = ({
       case 'error':
         return faExclamationCircle;
       case 'emergency':
-        return faExclamation;
+        return faExclamationCircle;
       default:
         return faInfoCircle;
     }
