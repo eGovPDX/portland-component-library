@@ -2,6 +2,21 @@
 /* Based on Figma Design System: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS) */
 
 .pgov-theme-applied {
+  /* Accordion component variables */
+  --accordion-gap: var(--spacing-1);
+  --accordion-border-color: var(--color-gray-cool-10);
+  --accordion-border-width: var(--component-accordion-border-width, 4px);
+  --accordion-button-bg: var(--color-gray-cool-10);
+  --accordion-button-text: var(--color-gray-90);
+  --accordion-button-padding-top: var(--spacing-2);
+  --accordion-button-padding-bottom: var(--spacing-205);
+  --accordion-button-outline: none;
+  --accordion-font-family: var(--font-family-reading-public-sans);
+  --accordion-font-size: var(--font-size-5);
+  --accordion-details-text: var(--color-gray-90);
+  --accordion-details-bg-color: transparent;
+  --accordion-details-padding: var(--spacing-2);
+  
   /* Button */
   --button-font-family: var(--font-family-reading-public-sans);
   --button-font-size: var(--font-size-5);
@@ -82,15 +97,6 @@
   --breadcrumb-gap: var(--spacing-05, 0.25rem);
   --breadcrumb-mobile-padding-y: var(--spacing-05);
   --breadcrumb-mobile-padding-x: var(--spacing-105);
-
-  /* Accordion component variables */
-  --accordion-border-color: var(--component-accordion-border-color, #F0F0F0);
-  --accordion-border-width: var(--component-accordion-border-width, 4px);
-  --accordion-button-bg: var(--component-accordion-button-background-color, #F0F0F0);
-  --accordion-button-text: var(--component-accordion-button-text-color, #1B1B1B);
-  --accordion-font-family: var(--component-accordion-font-family, "Public Sans");
-  --accordion-font-size: var(--component-accordion-font-size, 16px);
-  --accordion-details-text: var(--component-accordion-details-text-color, #1B1B1B);
 
   /* Banner colors - DIRECT VALUES */
   --banner-bg: #f0f7ff;

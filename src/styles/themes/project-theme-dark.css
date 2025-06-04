@@ -1,5 +1,19 @@
 .project-theme-dark-applied {
-  /* General theme colors - DIRECT VALUES */
+  /* Accordion component variables */
+  --accordion-gap: var(--spacing-1);
+  --accordion-border-color: var(--color-gray-cool-10);
+  --accordion-border-width: var(--component-accordion-border-width, 4px);
+  --accordion-button-bg: var(--color-gray-cool-10);
+  --accordion-button-text: var(--color-gray-90);
+  --accordion-button-padding-top: var(--spacing-2);
+  --accordion-button-padding-bottom: var(--spacing-205);
+  --accordion-button-outline: none;
+  --accordion-font-family: var(--font-family-reading-public-sans);
+  --accordion-font-size: var(--font-size-5);
+  --accordion-details-text: var(--color-gray-cool-10);
+  --accordion-details-bg-color: transparent;
+  --accordion-details-padding: var(--spacing-2);
+
   /* Button */
   --button-font-family: var(--font-family-reading);
   --button-font-size: var(--font-size-6);
@@ -223,22 +237,6 @@
   --breadcrumb-separator-color: var(--color-gray-cool-50, #71767a);
   --breadcrumb-link-color-dark: var(--color-gray-cool-30, #A9AEB1);
   --breadcrumb-current-color-dark: var(--color-white, #FFF);
-
-  /* Accordion component variables */
-  --accordion-border-color: var(--component-accordion-border-color, #F0F0F0);
-  --accordion-border-width: var(--component-accordion-border-width, 4px);
-  --accordion-button-bg: var(--component-accordion-button-background-color, #F0F0F0);
-  --accordion-button-text: var(--component-accordion-button-text-color, #1B1B1B);
-  --accordion-font-family: var(--component-accordion-font-family, "Public Sans");
-  --accordion-font-size: var(--component-accordion-font-size, 16px);
-  --accordion-details-text: var(--component-accordion-details-text-color, #1B1B1B);
-  --accordion-gap: 8px;
-  --accordion-border-top-width: 0px;
-  --accordion-button-padding: 16px;
-  --accordion-details-padding: 16px;
-  --accordion-focus-outline: 2px solid #4D90FE;
-  --accordion-focus-outline-offset: -2px;
-  --accordion-button-hover-bg: #E7E7E7;
 
   /* CardFlag component variables */
   --card-flag-media-col-width: 135px;
