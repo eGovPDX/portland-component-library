@@ -12,9 +12,9 @@
   --button-primary-hover-text: var(--color-neutral-darkest);
   --button-primary-active-bg: var(--color-blue-80v);
   --button-border-radius: var(--theme-radius-md);
-  --button-font-weight-bold: 700;
-  --button-spacing-2xs: var(--spacing-global-1);
-  --button-spacing-xs: var(--spacing-global-105);
+  --button-font-weight-bold: var(--theme-font-weight-bold);
+  --button-spacing-2xs: var(--spacing-1);
+  --button-spacing-xs: var(--spacing-105);
   --button-spacing-205: var(--spacing-205);
   --button-spacing-05: var(--spacing-05);
   --button-color-blue-40v: var(--color-blue-40v);
@@ -37,26 +37,26 @@
   --button-color-primary-darkest: var(--color-blue-80v);
   --button-link-color: var(--color-blue-60v);
   --button-link-hover-color: var(--color-blue-70v);
-  --button-font-weight-normal: 400;
+  --button-font-weight-normal: var(--theme-font-weight-normal);
   --button-radius-none: 0;
-  --button-spacing-0: 0;
-  --button-spacing-sm: var(--spacing-global-2);
-  --button-spacing-md: var(--spacing-global-3);
+  --button-spacing-0: var(--spacing-0);
+  --button-spacing-sm: var(--spacing-2);
+  --button-spacing-md: var(--spacing-3);
   --button-color-gray-10: var(--color-gray-10);
 
   /* Banner component variables */
   --banner-bg: var(--color-blue-10v);
   --banner-font-family: var(--font-family-sans);
   --banner-font-size: var(--font-size-2xs);
-  --banner-spacing-md: var(--spacing-global-3);
-  --banner-spacing-xs: var(--spacing-global-105);
+  --banner-spacing-md: var(--spacing-3);
+  --banner-spacing-xs: var(--spacing-105);
   --banner-color-primary: var(--color-blue-60v);
   --banner-font-weight-medium: var(--font-weight-medium);
   --banner-color-primary-darker: var(--color-blue-70v);
   --banner-text-color: var(--theme-color-ink);
   --banner-border-color: var(--theme-color-base-dark);
-  --banner-spacing-2xs: var(--spacing-global-1);
-  --banner-spacing-sm: var(--spacing-global-2);
+  --banner-spacing-2xs: var(--spacing-1);
+  --banner-spacing-sm: var(--spacing-2);
   --banner-line-height-normal: var(--line-height-normal);
 
   /* Footer component variables */
@@ -76,17 +76,17 @@
   --footer-margin-desktop: var(--component-pgov-footer-margin-desktop, 2rem);
   --footer-spacing-2: var(--usa-spacing-2, 1rem);
   --footer-body-font-size: var(--theme-body-font-size, 1rem);
-  --footer-font-size-base: 0.875rem;
-  --footer-border-radius: 0.25rem;
+  --footer-font-size-base: var(--font-size-3);
+  --footer-border-radius: var(--theme-radius-md);
   --footer-max-width: 1200px;
   --footer-explore-arrow-margin-left: 0.5rem;
-  --footer-explore-arrow-font-size: 1.125rem;
+  --footer-explore-arrow-font-size: var(--font-size-7);
   --footer-feedback-padding: 0.75rem 1rem;
   --footer-accessibility-padding: 1rem;
-  --footer-translation-font-size: 0.875rem;
+  --footer-translation-font-size: var(--font-size-3);
   --footer-translation-line-height: 1.5;
   --footer-explore-button-padding: 0.625rem 1rem;
-  --footer-explore-button-font-size: 0.875rem;
+  --footer-explore-button-font-size: var(--font-size-3);
   --footer-explore-button-font-weight: 600;
   --footer-explore-button-radius: 0.25rem;
   --footer-link-line-height: 150%;
@@ -99,7 +99,7 @@
 
   /* Header component variables */
   --header-font-family: var(--usa-font-family-ui, "Public Sans");
-  --header-spacing-md: var(--spacing-global-3, 1.5rem);
+  --header-spacing-md: var(--spacing-3, 1.5rem);
   --header-bg: var(--theme-color-ink, #1B1B1B);
   --header-border-color-dark: var(--theme-color-border-dark, #1B1B1B);
   --header-logo-color: var(--theme-color-ink-reverse, #FFF);
@@ -123,8 +123,8 @@
   /* PageTemplate component variables */
   --page-template-bg: var(--color-black, #000000);
   --page-template-font-family: var(--font-family-sans);
-  --page-template-padding-lg: var(--spacing-global-4);
-  --page-template-padding-md: var(--spacing-global-3);
+  --page-template-padding-lg: var(--spacing-4);
+  --page-template-padding-md: var(--spacing-3);
 
   /* Card component variables */
   --card-border-radius: var(--component-card-border-radius, 8px);
@@ -264,8 +264,8 @@
   --tag-font-size-big: var(--theme-font-size-ui-sm, 16px);
 
   /* SkipNav component variables */
-  --skip-nav-padding-y: var(--spacing-global-105, 12px);
-  --skip-nav-padding-x: var(--spacing-global-3, 20px);
+  --skip-nav-padding-y: var(--spacing-105, 12px);
+  --skip-nav-padding-x: var(--spacing-3, 20px);
   --skip-nav-bg: var(--color-blue-60v, #0050d8);
   --skip-nav-font-family: var(--font-family-sans, "Public Sans");
   --skip-nav-font-size: var(--font-size-5, 16px);
@@ -313,10 +313,10 @@
   --side-nav-bg: #fff;
   --side-nav-indicator-width: 4px;
   --side-nav-font-family: "Open Sans";
-  --side-nav-font-size: 16.6px;
+  --side-nav-font-size: var(--font-size-5);
   --side-nav-line-height: 130%;
   --side-nav-child-font-family: "Open Sans";
-  --side-nav-child-font-size: 13.7px;
+  --side-nav-child-font-size: var(--font-size-4);
   --side-nav-child-line-height: 130%;
   --side-nav-children-max-height: 500px;
   --side-nav-children-transition: all 0.3s ease-in-out;
@@ -341,17 +341,17 @@
   /* TextArea component variables */
   --text-area-gap: var(--usa-spacing-1, 0.5rem);
   --text-area-label-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-area-label-font-size: 1rem;
+  --text-area-label-font-size: var(--font-size-5);
   --text-area-label-font-weight: 700;
   --text-area-desc-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-area-desc-font-size: 0.875rem;
+  --text-area-desc-font-size: var(--font-size-3);
   --text-area-footer-gap: var(--usa-spacing-2, 1rem);
   --text-area-error-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-area-error-font-size: 0.875rem;
+  --text-area-error-font-size: var(--font-size-3);
   --text-area-error-font-weight: 700;
   --text-area-error-color: var(--theme-color-error-dark, #B50909);
   --text-area-count-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-area-count-font-size: 0.875rem;
+  --text-area-count-font-size: var(--font-size-3);
   --text-area-count-color: var(--theme-color-ink, #1B1B1B);
   --text-area-bg: var(--usa-color-white, #FFF);
   --text-area-border: 1px solid var(--theme-color-ink, #1B1B1B);
@@ -362,7 +362,7 @@
   --text-area-disabled-color: var(--usa-color-white, #FFF);
   --text-area-min-height: var(--usa-spacing-5, 2.5rem);
   --text-area-input-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-area-input-font-size: 1rem;
+  --text-area-input-font-size: var(--font-size-5);
   --text-area-input-color: var(--theme-color-ink, #1B1B1B);
   --text-area-input-disabled-color: var(--usa-color-white, #FFF);
   --text-area-input-padding: 0.5rem;
@@ -372,12 +372,12 @@
   /* TextInput component variables */
   --text-input-gap: var(--usa-spacing-1, 0.5rem);
   --text-input-label-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-input-label-font-size: 1rem;
+  --text-input-label-font-size: var(--font-size-5);
   --text-input-label-font-weight: 700;
   --text-input-desc-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-input-desc-font-size: 0.875rem;
+  --text-input-desc-font-size: var(--font-size-3);
   --text-input-error-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-input-error-font-size: 0.875rem;
+  --text-input-error-font-size: var(--font-size-3);
   --text-input-error-font-weight: 700;
   --text-input-error-color: var(--theme-color-error-dark, #B50909);
   --text-input-bg: var(--usa-color-white, #FFF);
@@ -389,7 +389,7 @@
   --text-input-disabled-color: var(--usa-color-white, #FFF);
   --text-input-height: var(--usa-spacing-5, 2.5rem);
   --text-input-input-font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  --text-input-input-font-size: 1rem;
+  --text-input-input-font-size: var(--font-size-5);
   --text-input-input-color: var(--theme-color-ink, #1B1B1B);
   --text-input-input-disabled-color: var(--usa-color-white, #FFF);
   --text-input-affix-color: var(--theme-color-ink, #1B1B1B);

@@ -10,8 +10,8 @@
   --button-primary-active-bg: var(--theme-color-primary-darker, #162e51);
   --button-border-radius: var(--theme-radius-md, 0.25rem);
   --button-font-weight-bold: 700;
-  --button-spacing-2xs: var(--spacing-global-1);
-  --button-spacing-xs: var(--spacing-global-105);
+  --button-spacing-2xs: var(--spacing-1);
+  --button-spacing-xs: var(--spacing-105);
   --button-spacing-205: var(--spacing-205);
   --button-spacing-05: var(--spacing-05);
   --button-color-blue-40v: var(--color-blue-40v);
@@ -37,18 +37,18 @@
   --button-font-weight-normal: 400;
   --button-radius-none: 0;
   --button-spacing-0: 0;
-  --button-spacing-sm: var(--spacing-global-2);
-  --button-spacing-md: var(--spacing-global-3);
+  --button-spacing-sm: var(--spacing-2);
+  --button-spacing-md: var(--spacing-3);
   --button-color-gray-10: var(--color-gray-10);
 
   /* Banner component variables */
   --banner-bg: #f0f7ff;
   --banner-font-family: var(--font-family-reading-public-sans);
   --banner-font-size: var(--font-size-3);
-  --banner-spacing-md: var(--spacing-global-3);
-  --banner-spacing-xs: var(--spacing-global-105);
-  --banner-spacing-2xs: var(--spacing-global-1);
-  --banner-spacing-sm: var(--spacing-global-2);
+  --banner-spacing-md: var(--spacing-3);
+  --banner-spacing-xs: var(--spacing-105);
+  --banner-spacing-2xs: var(--spacing-1);
+  --banner-spacing-sm: var(--spacing-2);
   --banner-color-primary: var(--color-blue-60v);
   --banner-font-weight-medium: 500;
   --banner-color-primary-darker: var(--color-blue-warm-70v);
@@ -96,7 +96,7 @@
 
   /* Header component variables */
   --header-font-family: var(--usa-font-family-ui, "Public Sans");
-  --header-spacing-md: var(--spacing-global-3, 1.5rem);
+  --header-spacing-md: var(--spacing-3, 1.5rem);
   --header-bg: var(--theme-color-ink, #1B1B1B);
   --header-border-color-dark: var(--theme-color-border-dark, #1B1B1B);
   --header-logo-color: var(--theme-color-ink-reverse, #FFF);
@@ -135,8 +135,8 @@
   /* PageTemplate component variables */
   --page-template-bg: var(--color-black, #000000);
   --page-template-font-family: var(--font-family-reading-public-sans);
-  --page-template-padding-lg: var(--spacing-global-4);
-  --page-template-padding-md: var(--spacing-global-3);
+  --page-template-padding-lg: var(--spacing-4);
+  --page-template-padding-md: var(--spacing-3);
 
   /* Card component variables */
   --card-border-radius: var(--component-card-border-radius, 8px);
@@ -301,8 +301,8 @@
   --tag-font-size-big: var(--theme-font-size-ui-sm, 16px);
 
   /* SkipNav component variables */
-  --skip-nav-padding-y: var(--spacing-global-105, 12px);
-  --skip-nav-padding-x: var(--spacing-global-3, 20px);
+  --skip-nav-padding-y: var(--spacing-105, 12px);
+  --skip-nav-padding-x: var(--spacing-3, 20px);
   --skip-nav-bg: var(--color-blue-60v, #0050d8);
   --skip-nav-font-family: var(--font-family-reading-public-sans, "Public Sans");
   --skip-nav-font-size: var(--font-size-5, 16px);
