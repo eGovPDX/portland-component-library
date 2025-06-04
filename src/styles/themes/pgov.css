@@ -138,6 +138,16 @@
   --banner-line-height-normal: 1.5;
   --banner-button-color: var(--color-blue-60v);
 
+  /* PGOV Contacts component variables */
+  --contacts-max-width: 1024px;
+  --contacts-padding-lg: var(--component-pgov-contacts-padding-lg, 32px);
+  --contacts-margin-desktop: var(--component-pgov-contacts-margin-desktop, 32px);
+  --contacts-gap-lg: var(--component-pgov-contacts-gap-lg, 32px);
+  --contacts-bg: var(--component-pgov-contacts-background-color, #FFF);
+  --contacts-border-color: var(--color-gray-90);
+  --contacts-text-color: var(--color-gray-90);
+  --contacts-icon-color: var(--color-gray-90);
+
 
   /* Footer component variables */
   --footer-font-family: var(--font-family-reading-public-sans);
@@ -511,15 +521,6 @@
   --color-swatch-hex-color: #71767a;
   --color-swatch-hex-margin-bottom: 0.25rem;
 
-  /* Accordion component variables */
-  --accordion-gap: 8px;
-  --accordion-border-top-width: 0px;
-  --accordion-button-padding: 16px;
-  --accordion-details-padding: 16px;
-  --accordion-focus-outline: 2px solid #4D90FE;
-  --accordion-focus-outline-offset: -2px;
-  --accordion-button-hover-bg: #E7E7E7;
-
   /* CardFlag component variables */
   --card-flag-media-col-width: 135px;
   --card-flag-gap: 24px;
@@ -546,14 +547,6 @@
   --card-flag-padding-mobile: 0 16px 16px;
   --card-flag-content-gap: 16px;
   --card-flag-footer-margin-top: 8px;
-
-  /* Dropdown component variables */
-  --dropdown-select-padding-right: 3rem;
-  --dropdown-chevron-right: 1rem;
-  --dropdown-chevron-transform: translateY(-50%);
-  --dropdown-chevron-transition: transform 0.2s ease-in-out;
-  --dropdown-chevron-open-transform: translateY(-50%) rotate(180deg);
-  --dropdown-menu-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
   --footer-font-size-base: 0.875rem;
   --footer-border-radius: 0.25rem;

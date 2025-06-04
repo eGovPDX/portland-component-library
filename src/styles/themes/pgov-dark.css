@@ -123,6 +123,16 @@
   --banner-line-height-normal: 1.5;
   --banner-button-color: var(--color-blue-30);
 
+  /* PGOV Contacts component variables */
+  --contacts-max-width: 1024px;
+  --contacts-padding-lg: var(--component-pgov-contacts-padding-lg, 32px);
+  --contacts-margin-desktop: var(--component-pgov-contacts-margin-desktop, 32px);
+  --contacts-gap-lg: var(--component-pgov-contacts-gap-lg, 32px);
+  --contacts-bg: var(--color-black, #000000);
+  --contacts-border-color: var(--color-white);
+  --contacts-text-color: var(--color-white);
+  --contacts-icon-color: var(--color-white);
+
   /* Footer component variables */
   --footer-font-family: var(--font-family-sans);
   --footer-bg: var(--color-neutral-lightest);
