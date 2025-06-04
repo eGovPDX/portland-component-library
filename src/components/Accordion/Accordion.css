@@ -28,11 +28,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--accordion-button-padding, 16px);
+  padding: var(--accordion-button-padding-top) var(--accordion-button-padding-bottom);
   background: var(--accordion-button-bg, #F0F0F0);
   border: none;
   cursor: pointer;
   text-align: left;
+}
+.accordion-button:not([disabled]):focus {
+  outline: var(--accordion-button-outline, none);
 }
 
 /* Accordion summary text */
