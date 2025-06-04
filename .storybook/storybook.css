@@ -1,0 +1,30 @@
+/* Override Storybook canvas background based on theme */
+.pgov-theme-applied body,
+.pgov-theme-applied {
+  background-color: var(--page-template-bg, #ffffff) !important;
+}
+
+.pgov-dark-theme-applied body,
+.pgov-dark-theme-applied {
+  background-color: var(--page-template-bg, #000000) !important;
+}
+
+.uswds-default-theme-applied body,
+.uswds-default-theme-applied {
+  background-color: var(--page-template-bg, #ffffff) !important;
+}
+
+.project-theme-light-applied body,
+.project-theme-light-applied {
+  background-color: var(--page-template-bg, #ffffff) !important;
+}
+
+.project-theme-dark-applied body,
+.project-theme-dark-applied {
+  background-color: var(--page-template-bg, #000000) !important;
+}
+
+/* Ensure the Storybook preview iframe also gets the background */
+#storybook-root {
+  background-color: inherit;
+} 
