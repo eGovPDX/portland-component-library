@@ -2,46 +2,68 @@
 .project-theme-light-applied {
   /* Project Theme Light Colors from design_tokens.css "USWDS Theme/Project theme" */
 
-  /* Button specific variables */
-  --button-font-family-sans: var(--font-family-reading);
+  /* Button */
+  --button-font-family: var(--font-family-reading);
   --button-font-size: var(--font-size-6);
-  --button-primary-bg: var(--color-blue-60v);
-  --button-primary-text: var(--theme-color-ink-reverse);
-  --button-primary-hover-bg: var(--color-blue-70v);
-  --button-primary-hover-text: var(--theme-color-ink-reverse);
-  --button-primary-active-bg: var(--color-blue-80v);
+  --button-bg: var(--color-blue-60v);
+  --button-text-color: var(--theme-color-ink-reverse);
+  --button-hover-bg: var(--color-blue-70v);
+  --button-hover-text-color: var(--theme-color-ink-reverse);
+  --button-active-bg-color: var(--color-blue-80v);
   --button-border-radius: var(--theme-radius-md);
-  --button-font-weight-bold: 700;
-  --button-spacing-2xs: var(--spacing-1);
-  --button-spacing-xs: var(--spacing-105);
-  --button-spacing-205: var(--spacing-205);
-  --button-spacing-05: var(--spacing-05);
-  --button-color-blue-40v: var(--color-blue-40v);
-  --button-color-gray-20: var(--color-gray-20);
-  --button-color-white: var(--color-white);
+  --button-font-weight: 700;
+  --button-margin-right: var(--spacing-1);
+  --button-padding: var(--spacing-105) var(--spacing-205);
+  --button-focus-outline: var(--button-spacing-05) solid var(--button-color-blue-40v);
+  --button-focus-outline-offset: var(--button-spacing-05);
+  /* Disabled button */
+  --button-disabled-bg-color: var(--color-gray-20);
+  --button-disabled-text-color: var(--color-white);
+  /* Secondary button */
   --button-secondary-bg: var(--color-green-60v);
   --button-secondary-hover-bg: var(--color-green-70v);
-  --button-secondary-darkest: var(--color-green-80v);
+  --button-secondary-active-bg-color: var(--color-green-80v);
+  --button-secondary-focus-bg-color: var(--color-green-60v);
+  /* Accent button cool */
   --button-accent-cool: var(--color-cyan-30v);
-  --button-accent-cool-darker: var(--color-blue-cool-40v);
-  --button-accent-cool-darkest: var(--color-blue-cool-60v);
-  --button-accent-warm: var(--color-orange-30v);
-  --button-accent-warm-darker: var(--color-orange-50v);
-  --button-accent-warm-darkest: var(--color-orange-60);
-  --button-color-neutral: var(--color-gray-cool-50);
-  --button-color-neutral-dark: var(--color-gray-cool-60);
-  --button-color-neutral-darker: var(--color-gray-cool-70);
-  --button-color-primary: var(--color-blue-60v);
-  --button-color-primary-darker: var(--color-blue-70v);
-  --button-color-primary-darkest: var(--color-blue-80v);
-  --button-link-color: var(--color-blue-60v);
-  --button-link-hover-color: var(--color-blue-70v);
-  --button-font-weight-normal: 400;
-  --button-radius-none: 0;
-  --button-spacing-0: 0;
-  --button-spacing-sm: var(--spacing-2);
-  --button-spacing-md: var(--spacing-3);
-  --button-color-gray-10: var(--color-gray-10);
+  --button-accent-cool-hover-bg-color: var(--color-blue-cool-40v);
+  --button-accent-cool-active-bg-color: var(--color-blue-cool-60v);
+  /* Accent button warm */
+  --button-accent-warm-bg-color: var(--color-orange-30v);
+  --button-accent-warm-hover-bg-color: var(--color-orange-50v);
+  --button-accent-warm-active-bg-color: var(--color-orange-60);  
+  /* Base button */
+  --button-base-bg-color: var(--color-gray-cool-50);
+  --button-base-hover-bg-color: var(--color-gray-cool-60);
+  --button-base-active-bg-color: var(--color-gray-cool-70);
+  /* Outline button */
+  --button-outline-bg-color: transparent;
+  --button-outline-box-shadow: inset 0 0 0 2px var(--color-blue-60v);
+  --button-outline-text-color: var(--color-blue-60v);
+  --button-outline-hover-box-shadow: inset 0 0 0 2px var(--color-blue-warm-70v);
+  --button-outline-hover-text-color: var(--color-blue-warm-70v);
+  --button-outline-active-box-shadow: inset 0 0 0 2px var(--color-blue-warm-80v);
+  --button-outline-active-text-color: var(--color-blue-warm-80v);
+  /* Outline inverse button */
+  --button-outline-inverse-bg-color: var(--color-white);
+  --button-outline-inverse-text-color: var(--color-blue-60v);
+  --button-outline-inverse-box-shadow: inset 0 0 0 2px var(--color-blue-60v);
+  --button-outline-inverse-hover-bg-color: var(--color-gray-10);
+  --button-outline-inverse-hover-text-color: var(--color-blue-60v);
+  --button-outline-inverse-active-bg-color: var(--color-gray-20);
+  --button-outline-inverse-active-text-color: var(--color-blue-60v);
+  --button-outline-inverse-active-box-shadow: inset 0 0 0 2px var(--color-white);
+  /* Button Big */
+  --button-big-font-size: var(--font-size-6);
+  --button-big-padding: var(--spacing-105) var(--spacing-205);
+  /* Unstyled button */
+  --button-unstyled-bg-color: transparent;
+  --button-unstyled-text-color: var(--color-blue-60v);
+  --button-unstyled-hover-bg-color: transparent;
+  --button-unstyled-hover-text-color: var(--color-blue-warm-70v);
+  --button-unstyled-font-weight: 400;
+  --button-unstyled-padding: 0;
+  --button-unstyled-margin: 0;
 
   /* Banner component variables */
   --banner-bg: #f0f7ff;
