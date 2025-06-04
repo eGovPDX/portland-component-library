@@ -1,7 +1,7 @@
 /* Container styles */
 .contacts {
   display: flex;
-  width: var(--contacts-card-grid-max-width, 1024px);
+  width: 100%;
   max-width: var(--contacts-max-width, 1024px);
   padding: var(--contacts-padding-lg, 32px) var(--contacts-margin-desktop, 32px);
   flex-direction: column;
