@@ -101,8 +101,18 @@
 }
 
 .alert--emergency {
+  color: var(--alert-emergency-text-color, #1B1B1B);
   background-color: var(--alert-emergency-bg, #fce8e6);
   border-left-color: var(--alert-emergency-border-color, #b71c1c);
+  .alert__icon {
+    color: var(--alert-emergency-icon-color, #b71c1c);
+  }
+  .alert__heading {
+    color: var(--alert-emergency-text-color, #1B1B1B);
+  }
+  .alert__text {
+    color: var(--alert-emergency-text-color, #1B1B1B);
+  }
 }
 
 .alert--emergency .alert__icon {
