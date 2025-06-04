@@ -14,6 +14,34 @@
   --accordion-details-bg-color: transparent;
   --accordion-details-padding: var(--spacing-2);
 
+  /* Alert component variables */
+  --alert-bg: var(--color-blue-60v);
+  --alert-border-color: var(--color-blue-60v);
+  --alert-icon-color: var(--color-blue-60v);
+  /* Alert Slim */
+  --alert-slim-heading-font-size: var(--font-size-5);
+  /* Alert Info */
+  --alert-info-bg: var(--color-cyan-5);
+  --alert-info-border-color: var(--color-blue-60v);
+  --alert-info-icon-color: var(--color-black);
+  /* Alert Warning */
+  --alert-warning-bg: var(--color-yellow-5);
+  --alert-warning-border-color: var(--color-orange-30v);
+  --alert-warning-icon-color: var(--color-black);
+  /* Alert Success */
+  --alert-success-bg: var(--color-green-cool-5);
+  --alert-success-border-color: var(--color-green-60v);
+  --alert-success-icon-color: var(--color-black);
+  /* Alert Emergency */
+  --alert-emergency-bg: var(--color-red-warm-60v);
+  --alert-emergency-text-color: var(--color-white);
+  --alert-emergency-border-color: var(--color-red-warm-60v);
+  --alert-emergency-icon-color: var(--color-white);
+  /* Alert Error */
+  --alert-error-bg: var(--color-red-warm-10);
+  --alert-error-border-color: var(--color-red-50);
+  --alert-error-icon-color: var(--color-black);
+
   /* Button */
   --button-font-family: var(--font-family-reading);
   --button-font-size: var(--font-size-6);
@@ -264,32 +292,6 @@
   --card-flag-padding-mobile: 0 16px 16px;
   --card-flag-content-gap: 16px;
   --card-flag-footer-margin-top: 8px;
-
-  /* Alert component variables */
-  --alert-bg: #f0f7ff;
-  --alert-border-color: #1a4480;
-  --alert-icon-color: #1a4480;
-  --alert-text-color: var(--component-alert-text-color, #1B1B1B);
-  --alert-heading-font-family: var(--usa-font-family-heading, "Public Sans");
-  --alert-heading-font-size: var(--usa-font-size-heading-9, 22px);
-  --alert-font-family: var(--component-alert-font-family, "Public Sans");
-  --alert-font-size: var(--theme-font-size-reading-sm, 16px);
-  --alert-info-bg: #f0f7ff;
-  --alert-info-border-color: #1a4480;
-  --alert-info-icon-color: #1a4480;
-  --alert-warning-bg: #fff3cd;
-  --alert-warning-border-color: #856404;
-  --alert-warning-icon-color: #856404;
-  --alert-success-bg: #d4edda;
-  --alert-success-border-color: #155724;
-  --alert-success-icon-color: #155724;
-  --alert-error-bg: #f8d7da;
-  --alert-error-border-color: #721c24;
-  --alert-error-icon-color: #721c24;
-  --alert-emergency-bg: #fce8e6;
-  --alert-emergency-border-color: #b71c1c;
-  --alert-emergency-icon-color: #b71c1c;
-  --alert-slim-heading-font-size: 1rem;
 
   /* HeroGlobal component variables */
   --hero-global-bg: var(--theme-body-background-color, #FFF);
