@@ -1,24 +1,9 @@
-/* Add any custom styles for Dropdown here */ 
-
-/* Assuming CSS custom variables are defined elsewhere (e.g., :root)
-   like --usa-spacing-1, --theme-color-ink, etc.
-   The Figma specs used "----" for variables, using "--" as per CSS standard.
-*/
-
 .usa-select {
-  /* Default State - Dimensions */
-  /* Figma specifies height and min-height as 40px. 
-     --component-input-min-height and --usa-spacing-5 are both 40px. */
   height: var(--dropdown-height, 40px);
   min-height: var(--dropdown-height, 40px); 
-
-  /* Default State - Padding */
-  /* USWDS select has specific padding for its arrow (padding-right).
-     Applying general padding var(--usa-spacing-1, 8px) to top, bottom, left. */
   padding-top: var(--dropdown-padding-y, 8px);
   padding-bottom: var(--dropdown-padding-y, 8px);
   padding-left: var(--dropdown-padding-x, 8px);
-  /* padding-right is intentionally left to USWDS default to accommodate its arrow */
 
   /* Default State - Border & Background */
   border-radius: var(--dropdown-border-radius, 0px);
@@ -73,8 +58,6 @@
 }
 
 /* Error State Focus */
-/* Figma specifies global focus style applies universally.
-   This will change the error border color to the global focus color on focus. */
 .usa-select.usa-input--error:focus {
   outline: none;
   box-shadow: none;
@@ -85,33 +68,12 @@
 /* Optional: Specific width class for the component wrapper, if needed from Figma example */
 /* Apply this class to the div wrapping the label and select in Dropdown.jsx if fixed width is desired */
 .dropdown-wrapper--fixed-width {
-  width: 343px; 
-  /* If the overall container styles from Figma (flex, column, gap) are needed beyond
-     what .usa-form-group provides, they can be added here or to .usa-form-group if this
-     component is always in one.
-     Example:
-     display: flex;
-     flex-direction: column;
-     gap: var(--usa-spacing-1, 8px);
-  */
+  width: 343px;
 }
-
-/* The container style 'background: var(----theme-body-background-color, #FFF);' 
-   from Figma seems like a page-level background, not specific to the component wrapper.
-*/
-
-/* Styles for 'Input suffix' and 'Input suffix icon' from Figma (e.g., custom chevron)
-   are not directly applicable here as we are using the native select element styled by USWDS,
-   which has its own arrow mechanism (typically a background image on ::after).
-   Replicating the exact Figma icon would require a custom non-native select implementation.
-*/
 
 /* Styles for custom chevron implementation */
 .dropdown__wrapper {
   position: relative;
-  /* If the select is display: block, this wrapper might not need specific display properties.
-     If select is inline-block, this might need to be inline-block too. 
-     USWDS .usa-select is display: block by default. */
 }
 
 .dropdown__wrapper .usa-select {
@@ -137,9 +99,7 @@
 .dropdown__wrapper .usa-select:disabled + .dropdown__custom-chevron {
   /* USWDS makes the default arrow less opaque for disabled. 
      Matching the text color for disabled as per earlier Figma derived styles for text. */
-  color: var(--dropdown-disabled-color, #1B1B1B); 
-  /* Or, if a more muted look is desired for the icon on disabled: */
-  /* opacity: 0.7; */
+  color: var(--dropdown-disabled-color, #1B1B1B);
 }
 
 .dropdown__wrapper .usa-select.usa-input--error + .dropdown__custom-chevron {
@@ -167,12 +127,12 @@
   align-items: center;
   width: 100%; 
   text-align: left;
-  height: var(--usa-spacing-5, 40px); 
-  min-height: var(--usa-spacing-5, 40px);
-  padding-top: var(--usa-spacing-1, 8px);
-  padding-bottom: var(--usa-spacing-1, 8px);
-  padding-left: var(--usa-spacing-1, 8px);
-  padding-right: var(--usa-spacing-5, 40px); 
+  height: var(--spacing-7, 40px); 
+  min-height: var(--spacing-7, 40px);
+  padding-top: var(--spacing-1, 8px);
+  padding-bottom: var(--spacing-1, 8px);
+  padding-left: var(--spacing-1, 8px);
+  padding-right: var(--spacing-7, 40px); 
   position: relative; 
   cursor: pointer;
   text-indent: 0;
@@ -221,7 +181,7 @@
 .dropdown__custom-chevron {
   position: absolute;
   top: 50%;
-  right: var(--usa-spacing-2, 1rem); 
+  right: var(--spacing-2, 1rem); 
   transform: translateY(-50%);
   transition: transform 0.2s ease-in-out;
   color: var(--dropdown-chevron-color, #1B1B1B);
@@ -244,14 +204,14 @@
   box-shadow: var(--dropdown-menu-shadow, 0 4px 8px rgba(0,0,0,0.1));
   list-style: none;
   margin: 0;
-  padding: var(--usa-spacing-1, 8px) 0;
+  padding: var(--spacing-1, 8px) 0;
   overflow-y: auto;
   z-index: 1000; /* Ensure it's above other content */
 }
 
 /* Dropdown Menu Item (li) */
 .dropdown__item {
-  padding: var(--usa-spacing-1, 8px) var(--usa-spacing-2, 16px);
+  padding: var(--spacing-1, 8px) var(--spacing-2, 16px);
   cursor: pointer;
   color: var(--dropdown-item-color, #1B1B1B);
   background: var(--dropdown-item-bg, transparent);
@@ -272,9 +232,5 @@
 .dropdown__item--selected {
   background: var(--dropdown-item-selected-bg, #dfe1e2);
   color: var(--dropdown-item-selected-color, #1B1B1B);
-  font-weight: bold; /* Or other indication of selection */
+  font-weight: bold;
 }
-
-/* Clean up old .usa-select specific styles */
-/* .usa-select { ... } */
-/* .dropdown__wrapper .usa-select { ... } */ 
