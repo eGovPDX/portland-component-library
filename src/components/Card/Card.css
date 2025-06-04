@@ -3,7 +3,7 @@
   max-width: 100%;
   border-radius: var(--card-border-radius, 8px);
   overflow: hidden;
-  background: var(--card-bg, #FFF);
+  background: transparent;
 }
 
 .usa-card__container {
@@ -17,7 +17,7 @@
   gap: var(--card-padding-y, 16px);
   border-radius: var(--card-border-radius, 8px);
   border: var(--card-border-width, 2px) solid var(--card-border-color, #DFE1E2);
-  background: transparent;
+  background: var(--card-bg, #FFF);
 }
 
 /* Card Header */
