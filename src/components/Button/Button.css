@@ -1,18 +1,18 @@
 /* Base button styles */
 .usa-button {
-  font-family: var(--button-font-family-sans);
+  font-family: var(--button-font-family);
   font-size: var(--button-font-size);
   line-height: 0.9;
-  color: var(--button-primary-text);
-  background-color: var(--button-primary-bg);
+  color: var(--button-text-color);
+  background-color: var(--button-bg);
   appearance: none;
   border: 0;
   border-radius: var(--button-border-radius);
   cursor: pointer;
   display: inline-block;
-  font-weight: var(--button-font-weight-bold);
-  margin-right: var(--button-spacing-2xs);
-  padding: var(--button-spacing-xs) var(--button-spacing-205);
+  font-weight: var(--button-font-weight);
+  margin-right: var(--button-margin-right);
+  padding: var(--button-padding);
   text-align: center;
   text-decoration: none;
   width: auto;
@@ -20,28 +20,28 @@
 
 /* Hover state */
 .usa-button:hover {
-  background-color: var(--button-primary-hover-bg);
+  background-color: var(--button-hover-bg);
   border-bottom: 0;
-  color: var(--button-primary-hover-text);
+  color: var(--button-hover-text-color);
   text-decoration: none;
 }
 
 /* Active state */
 .usa-button:active {
-  background-color: var(--button-primary-active-bg);
+  background-color: var(--button-active-bg-color);
 }
 
 /* Focus state */
 .usa-button:focus {
-  outline: var(--button-spacing-05) solid var(--button-color-blue-40v);
-  outline-offset: var(--button-spacing-05);
+  outline: var(--button-focus-outline);
+  outline-offset: var(--button-focus-outline-offset);
 }
 
 /* Disabled state */
 .usa-button:disabled,
 .usa-button[aria-disabled=true] {
-  background-color: var(--button-color-gray-20);
-  color: var(--button-color-white);
+  background-color: var(--button-disabled-bg-color);
+  color: var(--button-disabled-text-color);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -56,7 +56,11 @@
 }
 
 .usa-button--secondary:active {
-  background-color: var(--button-secondary-darkest);
+  background-color: var(--button-secondary-active-bg-color);
+}
+
+.usa-button--secondary:focus {
+  background-color: var(--button-secondary-focus-bg-color);
 }
 
 /* Accent cool button */
@@ -65,101 +69,101 @@
 }
 
 .usa-button--accent-cool:hover {
-  background-color: var(--button-accent-cool-darker);
+  background-color: var(--button-accent-cool-hover-bg-color);
 }
 
 .usa-button--accent-cool:active {
-  background-color: var(--button-accent-cool-darkest);
+  background-color: var(--button-accent-cool-active-bg-color);
 }
 
 /* Accent warm button */
 .usa-button--accent-warm {
-  background-color: var(--button-accent-warm);
+  background-color: var(--button-accent-warm-bg-color);
 }
 
 .usa-button--accent-warm:hover {
-  background-color: var(--button-accent-warm-darker);
+  background-color: var(--button-accent-warm-hover-bg-color);
 }
 
 .usa-button--accent-warm:active {
-  background-color: var(--button-accent-warm-darkest);
+  background-color: var(--button-accent-warm-active-bg-color);
 }
 
 /* Base button */
 .usa-button--base {
-  background-color: var(--button-color-neutral);
+  background-color: var(--button-base-bg-color);
 }
 
 .usa-button--base:hover {
-  background-color: var(--button-color-neutral-dark);
+  background-color: var(--button-base-hover-bg-color);
 }
 
 .usa-button--base:active {
-  background-color: var(--button-color-neutral-darker);
+  background-color: var(--button-base-active-bg-color);
 }
 
 /* Outline button */
 .usa-button--outline {
-  background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--button-color-primary);
-  color: var(--button-color-primary);
+  background-color: var(--button-outline-bg-color);
+  box-shadow: var(--button-outline-box-shadow);
+  color: var(--button-outline-text-color);
 }
 
 .usa-button--outline:hover {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--button-color-primary-darker);
-  color: var(--button-color-primary-darker);
+  box-shadow: var(--button-outline-hover-box-shadow);
+  color: var(--button-outline-hover-text-color);
 }
 
 .usa-button--outline:active {
   background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--button-color-primary-darkest);
-  color: var(--button-color-primary-darkest);
+  box-shadow: var(--button-outline-active-box-shadow);
+  color: var(--button-outline-active-text-color);
 }
 
 /* Outline inverse button */
 .usa-button--outline-inverse {
-  background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--button-color-white);
-  color: var(--button-color-white);
+  background-color: var(--button-outline-inverse-bg-color);
+  box-shadow: var(--button-outline-inverse-box-shadow);
+  color: var(--button-outline-inverse-text-color);
 }
 
 .usa-button--outline-inverse:hover {
-  background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--button-color-gray-10);
-  color: var(--button-color-gray-10);
+  background-color: var(--button-outline-inverse-hover-bg-color);
+  box-shadow: var(--button-outline-inverse-hover-box-shadow);
+  color: var(--button-outline-inverse-hover-text-color);
 }
 
 .usa-button--outline-inverse:active {
-  background-color: transparent;
-  box-shadow: inset 0 0 0 2px var(--button-color-gray-20);
-  color: var(--button-color-gray-20);
+  background-color: var(--button-outline-inverse-active-bg-color);
+  box-shadow: var(--button-outline-inverse-active-box-shadow);
+  color: var(--button-outline-inverse-active-text-color);
 }
 
 /* Big button */
 .usa-button--big {
-  font-size: var(--button-font-size);
-  padding: var(--button-spacing-sm) var(--button-spacing-md);
+  font-size: var(--button-big-font-size);
+  padding: var(--button-big-padding);
 }
 
 /* Unstyled button */
 .usa-button--unstyled {
-  background-color: transparent;
+  background-color: var(--button-unstyled-bg-color);
   border: 0;
-  border-radius: var(--button-radius-none);
-  color: var(--button-link-color);
+  border-radius: 0;
+  color: var(--button-unstyled-text-color);
   cursor: pointer;
   display: inline;
-  font-weight: var(--button-font-weight-normal);
-  margin: var(--button-spacing-0);
-  padding: var(--button-spacing-0);
+  font-weight: var(--button-unstyled-font-weight);
+  margin: var(--button-unstyled-margin);
+  padding: var(--button-unstyled-padding);
   text-decoration: underline;
   width: auto;
 }
 
 .usa-button--unstyled:hover {
-  background-color: transparent;
-  color: var(--button-link-hover-color);
+  background-color: var(--button-unstyled-hover-bg-color);
+  color: var(--button-unstyled-hover-text-color);
   text-decoration: underline;
 }
 
