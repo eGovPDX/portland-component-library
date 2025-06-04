@@ -93,17 +93,6 @@ export const Outline = {
   }
 };
 
-// Outline inverse button (displayed on dark background)
-export const OutlineInverse = {
-  args: {
-    children: 'Outline Inverse Button',
-    variant: 'outline-inverse'
-  },
-  parameters: {
-    backgrounds: { default: 'dark' }
-  }
-};
-
 // Big button
 export const Big = {
   args: {
@@ -117,14 +106,6 @@ export const Disabled = {
   args: {
     children: 'Disabled Button',
     disabled: true
-  }
-};
-
-// Aria-disabled button
-export const AriaDisabled = {
-  args: {
-    children: 'Aria-Disabled Button',
-    ariaDisabled: true
   }
 };
 
