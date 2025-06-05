@@ -5,7 +5,7 @@
   /* Accordion component variables */
   --accordion-gap: var(--spacing-1);
   --accordion-border-color: var(--color-gray-cool-10);
-  --accordion-border-width: var(--component-accordion-border-width, 4px);
+  --accordion-border-width: 4px;
   --accordion-button-bg: var(--color-gray-cool-10);
   --accordion-button-text: var(--color-gray-90);
   --accordion-button-padding-top: var(--spacing-2);
@@ -140,10 +140,10 @@
 
   /* PGOV Contacts component variables */
   --contacts-max-width: 1024px;
-  --contacts-padding-lg: var(--component-pgov-contacts-padding-lg, 32px);
-  --contacts-margin-desktop: var(--component-pgov-contacts-margin-desktop, 32px);
-  --contacts-gap-lg: var(--component-pgov-contacts-gap-lg, 32px);
-  --contacts-bg: var(--component-pgov-contacts-background-color, #FFF);
+  --contacts-padding-lg: var(--spacing-4, 32px);
+  --contacts-margin-desktop: var(--spacing-4, 32px);
+  --contacts-gap-lg: var(--spacing-4, 32px);
+  --contacts-bg: var(--color-white, #FFF);
   --contacts-border-color: var(--color-gray-90);
   --contacts-text-color: var(--color-gray-90);
   --contacts-icon-color: var(--color-gray-90);
@@ -184,34 +184,34 @@
   --page-template-padding-md: var(--spacing-3);
 
   /* Card component variables */
-  --card-border-radius: var(--component-card-border-radius, 8px);
+  --card-border-radius: var(--spacing-1, 8px);
   --card-bg: var(--theme-body-background-color, #FFF);
-  --card-padding-perimeter: var(--component-card-padding-perimeter, 24px);
-  --card-padding-y: var(--component-card-padding-y, 16px);
-  --card-border-width: var(--component-card-border-width, 2px);
-  --card-border-color: var(--component-card-border-color, #DFE1E2);
-  --card-text-color: var(--theme-body-text-color, #1B1B1B);
-  --card-header-font-family: var(--component-card-header-font-family, "Public Sans");
-  --card-header-font-size: var(--component-card-header-font-size, 22px);
-  --card-font-family: var(--component-card-font-family, "Public Sans");
-  --card-font-size: var(--component-card-font-size, 16px);
+  --card-padding-perimeter: var(--spacing-3, 24px);
+  --card-padding-y: var(--spacing-2, 16px);
+  --card-border-width: 2px;
+  --card-border-color: var(--color-gray-cool-10, #DFE1E2);
+  --card-text-color: var(--color-gray-90, #1B1B1B);
+  --card-header-font-family: var(--font-family-reading-public-sans, "Public Sans");
+  --card-header-font-size: 22px;
+  --card-font-family: var(--font-family-reading-public-sans, "Public Sans");
+  --card-font-size: var(--font-size-5, 16px);
 
   /* CardGrid component variables */
-  --card-grid-padding-lg: var(--component-pgov-card-grid-padding-lg, 32px);
-  --card-grid-margin-mobile: var(--component-pgov-card-grid-margin-mobile, 16px);
-  --card-grid-gap-lg: var(--component-pgov-card-grid-gap-lg, 32px);
-  --card-grid-divider-color: var(--component-pgov-card-grid-divider-color, #E0E0E0);
-  --card-grid-text-color: var(--component-pgov-card-grid-text-color, #1B1B1B);
-  --card-grid-heading-font-family: var(--usa-font-family-heading, "Public Sans");
+  --card-grid-padding-lg: var(--font-size-12, 32px);
+  --card-grid-margin-mobile: var(--spacing-2, 16px);
+  --card-grid-gap-lg: var(--spacing-4, 32px);
+  --card-grid-divider-color: #E0E0E0;
+  --card-grid-text-color: var(--color-gray-90, #1B1B1B);
+  --card-grid-heading-font-family: var(--font-family-reading-public-sans, "Public Sans");
   --card-grid-heading-font-size: var(--font-size-10, 22px);
-  --card-grid-max-width: var(--component-pgov-card-grid-max-width, 1024px);
-  --card-grid-margin-desktop: var(--component-pgov-card-grid-margin-desktop, 32px);
+  --card-grid-max-width: var(--spacing-desktop, 1024px);
+  --card-grid-margin-desktop: var(--spacing-4, 32px);
 
   /* HeroGlobal component variables */
-  --hero-global-bg: var(--theme-body-background-color, #FFF);
-  --hero-global-gap: var(--usa-spacing-2, 16px);
-  --hero-global-tag-gap: var(--usa-spacing-1, 8px);
-  --hero-global-tag-padding-y: var(--usa-spacing-2-px, 2px);
+  --hero-global-bg: var(--color-white, #FFF);
+  --hero-global-gap: var(--spacing-2, 16px);
+  --hero-global-tag-gap: var(--spacing-1, 8px);
+  --hero-global-tag-padding-y: 2px;
   --hero-global-tag-radius: var(--usa-radius-pill, 1000px);
   --hero-global-tag-bg: var(--theme-color-base-dark, #565C65);
   --hero-global-tag-color: var(--usa-color-white, #FFF);
