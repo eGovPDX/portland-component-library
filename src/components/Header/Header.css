@@ -20,6 +20,7 @@
 
 /* Main Header Styles */
 .header-main {
+  width: 100%;
   background-color: var(--header-bg, #1B1B1B);
   border-bottom: 1px solid var(--header-border-color-dark, #1B1B1B);
 }
