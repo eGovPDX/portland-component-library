@@ -488,7 +488,7 @@
   --hero-homepage-margin-mobile: var(--spacing-2, 16px);
 
   /* Search component variables */
-  --search-input-margin-right: var(--spacing-1, 8px);
+  --search-input-margin-right: var(--spacing-0, 0);
   --search-input-min-width: 27ch;
   --search-input-padding: var(--spacing-1, 8px);
   --search-input-height: var(--spacing-5, 2rem);
