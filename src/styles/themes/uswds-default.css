@@ -45,6 +45,36 @@
   --alert-error-border-color: #d54309;
   --alert-error-icon-color: #000000;
 
+  /* Banner component variables */
+  --banner-bg: #f0f0f0;
+  --banner-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --banner-font-size: 0.875rem;
+  --banner-content-padding: 0.25rem 0.5rem 0.25rem 1rem;
+  --banner-content-gap: 0.5rem;
+  --banner-expanded-content-padding: 1rem 1rem 1rem 0.5rem;
+  --banner-expanded-content-gap: 0.5rem;
+  --banner-text-color: #1b1b1b;
+  --banner-border-color: #dfe1e2;
+  --banner-line-height-normal: 1.5;
+  --banner-button-color: #005ea2;
+
+  /* Breadcrumb component variables */
+  --breadcrumb-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --breadcrumb-font-size: 0.875rem;
+  --breadcrumb-font-weight: 400;
+  --breadcrumb-link-color: #005ea2;
+  --breadcrumb-color: #005ea2;
+  --breadcrumb-color-hover: #1a4480;
+  --breadcrumb-color-current: #565c65;
+  --breadcrumb-separator-color: #71767a;
+  --breadcrumb-background-color: transparent;
+  --breadcrumb-bg: transparent;
+  --breadcrumb-padding-y: 0;
+  --breadcrumb-padding-x: 1rem;
+  --breadcrumb-gap: 0.25rem;
+  --breadcrumb-mobile-padding-y: 0.25rem;
+  --breadcrumb-mobile-padding-x: 0.75rem;
+
   /* Button component variables */
   --button-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --button-font-size: 1rem;
@@ -107,38 +137,93 @@
   --button-unstyled-font-weight: 400;
   --button-unstyled-padding: 0;
   --button-unstyled-margin: 0;
-  
-  /* Breadcrumb component variables */
-  --breadcrumb-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --breadcrumb-font-size: 0.875rem;
-  --breadcrumb-font-weight: 400;
-  --breadcrumb-link-color: #005ea2;
-  --breadcrumb-color: #005ea2;
-  --breadcrumb-color-hover: #1a4480;
-  --breadcrumb-color-current: #565c65;
-  --breadcrumb-separator-color: #71767a;
-  --breadcrumb-background-color: transparent;
-  --breadcrumb-bg: transparent;
-  --breadcrumb-padding-y: 0;
-  --breadcrumb-padding-x: 1rem;
-  --breadcrumb-gap: 0.25rem;
-  --breadcrumb-mobile-padding-y: 0.25rem;
-  --breadcrumb-mobile-padding-x: 0.75rem;
 
-  /* Banner component variables */
-  --banner-bg: #f0f0f0;
-  --banner-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --banner-font-size: 0.875rem;
-  --banner-content-padding: 0.25rem 0.5rem 0.25rem 1rem;
-  --banner-content-gap: 0.5rem;
-  --banner-expanded-content-padding: 1rem 1rem 1rem 0.5rem;
-  --banner-expanded-content-gap: 0.5rem;
-  --banner-text-color: #1b1b1b;
-  --banner-border-color: #dfe1e2;
-  --banner-line-height-normal: 1.5;
-  --banner-button-color: #005ea2;
+  /* ButtonGroup component variables */
+  --button-group-gap: 0.5rem;
+  --button-group-segmented-margin: -1px;
+  --button-group-segmented-radius: 0;
+  --button-group-segmented-radius-left: 0.25rem;
+  --button-group-segmented-radius-right: 0.25rem;
 
-  /* PGOV Contacts component variables */
+  /* Card component variables */
+  --card-border-radius: 0.5rem;
+  --card-bg: #ffffff;
+  --card-padding-perimeter: 1.5rem;
+  --card-padding-y: 1rem;
+  --card-border-width: 2px;
+  --card-border-color: #dfe1e2;
+  --card-text-color: #1b1b1b;
+  --card-header-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --card-header-font-size: 1.375rem;
+  --card-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --card-font-size: 1rem;
+
+  /* CardFlag component variables */
+  --card-flag-media-col-width: 8.4375rem;
+  --card-flag-gap: 1.5rem;
+  --card-flag-gap-mobile: 1rem;
+  --card-flag-width: 35.8125rem;
+  --card-flag-width-mobile: 100%;
+  --card-flag-border-radius: 0.5rem;
+  --card-flag-media-width: 9.6875rem;
+  --card-flag-media-width-mobile: 100%;
+  --card-flag-media-height: auto;
+  --card-flag-media-height-mobile: 12.5rem;
+  --card-flag-media-inset-width: 8.1875rem;
+  --card-flag-media-inset-width-mobile: 100%;
+  --card-flag-media-inset-min-width: 8.1875rem;
+  --card-flag-media-inset-min-width-mobile: 100%;
+  --card-flag-media-inset-max-width: 8.1875rem;
+  --card-flag-media-inset-max-width-mobile: 100%;
+  --card-flag-media-inset-left-padding: 1.5rem 0 1.5rem 1.5rem;
+  --card-flag-media-inset-left-padding-mobile: 1rem 1rem 0;
+  --card-flag-media-inset-right-padding: 1.5rem 1.5rem 1.5rem 0;
+  --card-flag-media-inset-right-padding-mobile: 1rem 1rem 0;
+  --card-flag-media-inset-padding-mobile: 1rem 1rem 0;
+  --card-flag-padding: 1.5rem;
+  --card-flag-padding-mobile: 0 1rem 1rem;
+  --card-flag-content-gap: 1rem;
+  --card-flag-footer-margin-top: 0.5rem;
+
+  /* CardGrid component variables */
+  --card-grid-padding-lg: 2rem;
+  --card-grid-margin-mobile: 1rem;
+  --card-grid-gap-lg: 2rem;
+  --card-grid-divider-color: #e0e0e0;
+  --card-grid-text-color: #1b1b1b;
+  --card-grid-heading-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --card-grid-heading-font-size: 1.375rem;
+  --card-grid-max-width: 64rem;
+  --card-grid-margin-desktop: 2rem;
+
+  /* ColorSwatch component variables */
+  --color-swatch-palette-margin-bottom: 2rem;
+  --color-swatch-title-font-size: 1.125rem;
+  --color-swatch-title-font-weight: 600;
+  --color-swatch-title-margin-bottom: 0.5rem;
+  --color-swatch-description-font-size: 0.875rem;
+  --color-swatch-description-margin-bottom: 1rem;
+  --color-swatch-grid-gap: 2.25rem;
+  --color-swatch-grid-min-col-width: 8.75rem;
+  --color-swatch-item-gap: 1rem;
+  --color-swatch-item-margin-bottom: 1.25rem;
+  --color-swatch-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --color-swatch-preview-radius: 0.375rem;
+  --color-swatch-preview-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+  --color-swatch-details-gap: 0.3125rem;
+  --color-swatch-name-font-weight: 600;
+  --color-swatch-name-font-size: 0.875rem;
+  --color-swatch-name-margin-bottom: 0.125rem;
+  --color-swatch-var-font-size: 0.75rem;
+  --color-swatch-var-color: #71767a;
+  --color-swatch-var-font-family: "Roboto Mono Web", "Bitstream Vera Sans Mono", "Monaco", "Courier", monospace;
+  --color-swatch-description-font-size: 0.75rem;
+  --color-swatch-description-margin-top: 0.125rem;
+  --color-swatch-hex-font-size: 0.75rem;
+  --color-swatch-hex-color: #71767a;
+  --color-swatch-hex-margin-bottom: 0.25rem;
+
+  /* Contacts component variables */
   --contacts-max-width: 1024px;
   --contacts-padding-lg: 2rem;
   --contacts-margin-desktop: 2rem;
@@ -147,6 +232,36 @@
   --contacts-border-color: #1b1b1b;
   --contacts-text-color: #1b1b1b;
   --contacts-icon-color: #1b1b1b;
+
+  /* Dropdown component variables */
+  --dropdown-height: 2.5rem;
+  --dropdown-padding-y: 0.5rem;
+  --dropdown-padding-x: 0.5rem;
+  --dropdown-border-radius: 0;
+  --dropdown-border: 1px solid #1b1b1b;
+  --dropdown-bg: #ffffff;
+  --dropdown-color: #1b1b1b;
+  --dropdown-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --dropdown-font-size: 1rem;
+  --dropdown-font-weight: 400;
+  --dropdown-font-style: normal;
+  --dropdown-line-height: normal;
+  --dropdown-focus-border: 0.25rem solid #fd5765;
+  --dropdown-disabled-border: 1px solid #1b1b1b;
+  --dropdown-disabled-bg: #757575;
+  --dropdown-disabled-color: #1b1b1b;
+  --dropdown-error-border: 0.25rem solid #b50909;
+  --dropdown-error-bg: #ffffff;
+  --dropdown-error-color: #b50909;
+  --dropdown-chevron-color: #1b1b1b;
+  --dropdown-menu-bg: #ffffff;
+  --dropdown-menu-border: 1px solid #dfe1e2;
+  --dropdown-menu-border-radius: 0;
+  --dropdown-item-color: #1b1b1b;
+  --dropdown-item-bg: transparent;
+  --dropdown-item-hover-bg: #dfe1e2;
+  --dropdown-item-selected-bg: #dfe1e2;
+  --dropdown-item-selected-color: #1b1b1b;
 
   /* Footer component variables */
   --footer-max-width: 64rem;
@@ -177,35 +292,22 @@
   --footer-heading-font-size: 1rem;
   --footer-body-font-size: 1rem;
 
-  /* Page template component variables */
-  --page-template-bg: #ffffff;
-  --page-template-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --page-template-padding-lg: 2rem;
-  --page-template-padding-md: 1.5rem;
-
-  /* Card component variables */
-  --card-border-radius: 0.5rem;
-  --card-bg: #ffffff;
-  --card-padding-perimeter: 1.5rem;
-  --card-padding-y: 1rem;
-  --card-border-width: 2px;
-  --card-border-color: #dfe1e2;
-  --card-text-color: #1b1b1b;
-  --card-header-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --card-header-font-size: 1.375rem;
-  --card-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --card-font-size: 1rem;
-
-  /* CardGrid component variables */
-  --card-grid-padding-lg: 2rem;
-  --card-grid-margin-mobile: 1rem;
-  --card-grid-gap-lg: 2rem;
-  --card-grid-divider-color: #e0e0e0;
-  --card-grid-text-color: #1b1b1b;
-  --card-grid-heading-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --card-grid-heading-font-size: 1.375rem;
-  --card-grid-max-width: 64rem;
-  --card-grid-margin-desktop: 2rem;
+  /* Header component variables */
+  --header-menu-link-bg: #ffffff;
+  --header-menu-link-hover-bg: #e1e5ea;
+  --header-menu-link-radius: 0.25rem;
+  --header-menu-link-title-color: #005ea2;
+  --header-menu-link-title-font-size: 1.125rem;
+  --header-menu-link-title-font-weight: 500;
+  --header-menu-link-title-line-height: 1.3;
+  --header-menu-link-description-color: #5d5d5d;
+  --header-menu-link-description-font-size: 0.875rem;
+  --header-menu-link-description-font-weight: 400;
+  --header-menu-link-description-line-height: 1.4;
+  --header-menu-group-title-color: #1b1b1b;
+  --header-menu-group-title-font-size: 1.25rem;
+  --header-menu-group-title-font-weight: 700;
+  --header-menu-group-title-border-color: #dfe1e2;
 
   /* HeroGlobal component variables */
   --hero-global-bg: #ffffff;
@@ -227,44 +329,31 @@
   --hero-global-desktop-gap-x: 2rem;
   --hero-global-desktop-gap-y: 2.5rem;
 
-  /* Tag component variables */
-  --tag-padding-y: 2px;
-  --tag-padding-x: 0.5rem;
-  --tag-radius: 99rem;
-  --tag-bg: #565c65;
-  --tag-color: #ffffff;
-  --tag-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --tag-font-size: 0.875rem;
-  --tag-font-size-big: 1rem;
+  /* HeroHomepage component variables */
+  --hero-homepage-gap-md: 1rem;
+  --hero-homepage-bg: #1b1b1b;
+  --hero-homepage-text-color: #ffffff;
+  --hero-homepage-title-font-size: 2.5rem;
+  --hero-homepage-subtitle-font-size: 2rem;
+  --hero-homepage-gap-sm: 0.5rem;
+  --hero-homepage-link-color: #a9aeb1;
+  --hero-homepage-padding-xl: 4rem;
+  --hero-homepage-margin-desktop: 2rem;
+  --hero-homepage-padding-lg: 2rem;
+  --hero-homepage-margin-mobile: 1rem;
 
-  /* SkipNav component variables */
-  --skip-nav-padding-y: 0.75rem;
-  --skip-nav-padding-x: 1.25rem;
-  --skip-nav-bg: #005ea2;
-  --skip-nav-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --skip-nav-font-size: 1rem;
-  --skip-nav-font-weight: 500;
-  --skip-nav-color: #ffffff;
+  /* Page template component variables */
+  --page-template-bg: #ffffff;
+  --page-template-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --page-template-padding-lg: 2rem;
+  --page-template-padding-md: 1.5rem;
 
-  /* SummaryBox component variables */
-  --summary-box-padding: 1.5rem;
-  --summary-box-gap: 1rem;
-  --summary-box-border-color: #73b3e7;
-  --summary-box-bg: #e7f4fd;
-  --summary-box-bg-hover: #d4e8fa;
-  --summary-box-text-color: #1c1d1f;
-  --summary-box-font-family: "Source Sans Pro Web", Helvetica, Arial, sans-serif;
-  --summary-box-heading-font-size: 1.46875rem;
-  --summary-box-font-size: 1.0375rem;
-  --summary-box-button-icon-gap: 0.5rem;
-  --summary-box-button-color: #2378c3;
-  --summary-box-button-padding-y: 0.75rem;
-  --summary-box-button-padding-x: 1.25rem;
-  --summary-box-button-font-family: "Source Sans Pro Web", Helvetica, Arial, sans-serif;
-  --summary-box-border-radius: 0.25rem;
-  --summary-box-line-height: 1.5rem;
-  --summary-box-button-radius: 0.25rem;
-  --summary-box-button-icon-size: 0.9375rem;
+  /* PopoverWithCard component variables */
+  --popover-with-card-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0,0,0,0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0,0,0,0.06);
+  --popover-with-card-radius: 0.5rem;
+  --popover-with-card-bg: #ffffff;
+  --popover-with-card-arrow-bg: #f0f0f0;
+  --popover-with-card-arrow-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.1);
 
   /* ProcessSteps component variables */
   --process-steps-gap: 0.5rem;
@@ -299,6 +388,24 @@
   --process-steps-step-description-font-family: "Source Sans Pro Web", Helvetica, Arial, sans-serif;
   --process-steps-step-description-font-size: 1.0375rem;
 
+  /* Search component variables */
+  --search-input-margin-right: 0;
+  --search-input-min-width: 27ch;
+  --search-input-padding: 0.5rem;
+  --search-input-height: 2rem;
+  --search-input-border: 1px solid #1b1b1b;
+  --search-button-padding: 0.5rem;
+  --search-button-height: 2rem;
+  --search-icon-size: 1.25rem;
+  --search-font-size-big: 1rem;
+  --search-input-padding-big: 1rem;
+  --search-input-height-big: 2.5rem;
+  --search-button-padding-big: 1rem;
+  --search-button-height-big: 2.5rem;
+  --search-font-size-small: 0.875rem;
+  --search-input-padding-small: 0.5rem;
+  --search-button-padding-small: 0.5rem;
+
   /* SideNav component variables */
   --side-nav-border-radius-sm: 0.25rem;
   --side-nav-border-radius-lg: 0.5rem;
@@ -326,6 +433,15 @@
   --side-nav-item-transition: all 0.2s ease-in-out;
   --side-nav-indicator-transition: background-color 0.2s ease-in-out;
 
+  /* SkipNav component variables */
+  --skip-nav-padding-y: 0.75rem;
+  --skip-nav-padding-x: 1.25rem;
+  --skip-nav-bg: #005ea2;
+  --skip-nav-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --skip-nav-font-size: 1rem;
+  --skip-nav-font-weight: 500;
+  --skip-nav-color: #ffffff;
+
   /* StepIndicator component variables */
   --step-indicator-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --step-indicator-segment-gap: 2px;
@@ -352,6 +468,36 @@
   --step-indicator-counter-size: 2rem;
   --step-indicator-counter-sm-size: 1.5rem;
   --step-indicator-counter-sm-font-size: 0.875rem;
+
+  /* SummaryBox component variables */
+  --summary-box-padding: 1.5rem;
+  --summary-box-gap: 1rem;
+  --summary-box-border-color: #73b3e7;
+  --summary-box-bg: #e7f4fd;
+  --summary-box-bg-hover: #d4e8fa;
+  --summary-box-text-color: #1c1d1f;
+  --summary-box-font-family: "Source Sans Pro Web", Helvetica, Arial, sans-serif;
+  --summary-box-heading-font-size: 1.46875rem;
+  --summary-box-font-size: 1.0375rem;
+  --summary-box-button-icon-gap: 0.5rem;
+  --summary-box-button-color: #2378c3;
+  --summary-box-button-padding-y: 0.75rem;
+  --summary-box-button-padding-x: 1.25rem;
+  --summary-box-button-font-family: "Source Sans Pro Web", Helvetica, Arial, sans-serif;
+  --summary-box-border-radius: 0.25rem;
+  --summary-box-line-height: 1.5rem;
+  --summary-box-button-radius: 0.25rem;
+  --summary-box-button-icon-size: 0.9375rem;
+
+  /* Tag component variables */
+  --tag-padding-y: 2px;
+  --tag-padding-x: 0.5rem;
+  --tag-radius: 99rem;
+  --tag-bg: #565c65;
+  --tag-color: #ffffff;
+  --tag-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --tag-font-size: 0.875rem;
+  --tag-font-size-big: 1rem;
 
   /* TextArea component variables */
   --text-area-gap: 0.5rem;
@@ -415,50 +561,6 @@
   --text-input-suffix-padding: 0 0.75rem 0 0;
   --text-input-prefix-input-padding-left: 0.5rem;
 
-  /* Dropdown component variables */
-  --dropdown-height: 2.5rem;
-  --dropdown-padding-y: 0.5rem;
-  --dropdown-padding-x: 0.5rem;
-  --dropdown-border-radius: 0;
-  --dropdown-border: 1px solid #1b1b1b;
-  --dropdown-bg: #ffffff;
-  --dropdown-color: #1b1b1b;
-  --dropdown-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --dropdown-font-size: 1rem;
-  --dropdown-font-weight: 400;
-  --dropdown-font-style: normal;
-  --dropdown-line-height: normal;
-  --dropdown-focus-border: 0.25rem solid #fd5765;
-  --dropdown-disabled-border: 1px solid #1b1b1b;
-  --dropdown-disabled-bg: #757575;
-  --dropdown-disabled-color: #1b1b1b;
-  --dropdown-error-border: 0.25rem solid #b50909;
-  --dropdown-error-bg: #ffffff;
-  --dropdown-error-color: #b50909;
-  --dropdown-chevron-color: #1b1b1b;
-  --dropdown-menu-bg: #ffffff;
-  --dropdown-menu-border: 1px solid #dfe1e2;
-  --dropdown-menu-border-radius: 0;
-  --dropdown-item-color: #1b1b1b;
-  --dropdown-item-bg: transparent;
-  --dropdown-item-hover-bg: #dfe1e2;
-  --dropdown-item-selected-bg: #dfe1e2;
-  --dropdown-item-selected-color: #1b1b1b;
-
-  /* ButtonGroup component variables */
-  --button-group-gap: 0.5rem;
-  --button-group-segmented-margin: -1px;
-  --button-group-segmented-radius: 0;
-  --button-group-segmented-radius-left: 0.25rem;
-  --button-group-segmented-radius-right: 0.25rem;
-
-  /* PopoverWithCard component variables */
-  --popover-with-card-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0,0,0,0.1), 0 0.125rem 0.25rem -0.0625rem rgba(0,0,0,0.06);
-  --popover-with-card-radius: 0.5rem;
-  --popover-with-card-bg: #ffffff;
-  --popover-with-card-arrow-bg: #f0f0f0;
-  --popover-with-card-arrow-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.1);
-
   /* Tooltip component variables */
   --tooltip-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --tooltip-font-size: 0.875rem;
@@ -473,106 +575,4 @@
   --tooltip-shadow-dark: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
   --tooltip-arrow-bg: inherit;
   --tooltip-popup-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
-
-  /* HeroHomepage component variables */
-  --hero-homepage-gap-md: 1rem;
-  --hero-homepage-bg: #1b1b1b;
-  --hero-homepage-text-color: #ffffff;
-  --hero-homepage-title-font-size: 2.5rem;
-  --hero-homepage-subtitle-font-size: 2rem;
-  --hero-homepage-gap-sm: 0.5rem;
-  --hero-homepage-link-color: #a9aeb1;
-  --hero-homepage-padding-xl: 4rem;
-  --hero-homepage-margin-desktop: 2rem;
-  --hero-homepage-padding-lg: 2rem;
-  --hero-homepage-margin-mobile: 1rem;
-
-  /* Search component variables */
-  --search-input-margin-right: 0;
-  --search-input-min-width: 27ch;
-  --search-input-padding: 0.5rem;
-  --search-input-height: 2rem;
-  --search-input-border: 1px solid #1b1b1b;
-  --search-button-padding: 0.5rem;
-  --search-button-height: 2rem;
-  --search-icon-size: 1.25rem;
-  --search-font-size-big: 1rem;
-  --search-input-padding-big: 1rem;
-  --search-input-height-big: 2.5rem;
-  --search-button-padding-big: 1rem;
-  --search-button-height-big: 2.5rem;
-  --search-font-size-small: 0.875rem;
-  --search-input-padding-small: 0.5rem;
-  --search-button-padding-small: 0.5rem;
-
-  /* ColorSwatch component variables */
-  --color-swatch-palette-margin-bottom: 2rem;
-  --color-swatch-title-font-size: 1.125rem;
-  --color-swatch-title-font-weight: 600;
-  --color-swatch-title-margin-bottom: 0.5rem;
-  --color-swatch-description-font-size: 0.875rem;
-  --color-swatch-description-margin-bottom: 1rem;
-  --color-swatch-grid-gap: 2.25rem;
-  --color-swatch-grid-min-col-width: 8.75rem;
-  --color-swatch-item-gap: 1rem;
-  --color-swatch-item-margin-bottom: 1.25rem;
-  --color-swatch-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --color-swatch-preview-radius: 0.375rem;
-  --color-swatch-preview-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
-  --color-swatch-details-gap: 0.3125rem;
-  --color-swatch-name-font-weight: 600;
-  --color-swatch-name-font-size: 0.875rem;
-  --color-swatch-name-margin-bottom: 0.125rem;
-  --color-swatch-var-font-size: 0.75rem;
-  --color-swatch-var-color: #71767a;
-  --color-swatch-var-font-family: "Roboto Mono Web", "Bitstream Vera Sans Mono", "Monaco", "Courier", monospace;
-  --color-swatch-description-font-size: 0.75rem;
-  --color-swatch-description-margin-top: 0.125rem;
-  --color-swatch-hex-font-size: 0.75rem;
-  --color-swatch-hex-color: #71767a;
-  --color-swatch-hex-margin-bottom: 0.25rem;
-
-  /* CardFlag component variables */
-  --card-flag-media-col-width: 8.4375rem;
-  --card-flag-gap: 1.5rem;
-  --card-flag-gap-mobile: 1rem;
-  --card-flag-width: 35.8125rem;
-  --card-flag-width-mobile: 100%;
-  --card-flag-border-radius: 0.5rem;
-  --card-flag-media-width: 9.6875rem;
-  --card-flag-media-width-mobile: 100%;
-  --card-flag-media-height: auto;
-  --card-flag-media-height-mobile: 12.5rem;
-  --card-flag-media-inset-width: 8.1875rem;
-  --card-flag-media-inset-width-mobile: 100%;
-  --card-flag-media-inset-min-width: 8.1875rem;
-  --card-flag-media-inset-min-width-mobile: 100%;
-  --card-flag-media-inset-max-width: 8.1875rem;
-  --card-flag-media-inset-max-width-mobile: 100%;
-  --card-flag-media-inset-left-padding: 1.5rem 0 1.5rem 1.5rem;
-  --card-flag-media-inset-left-padding-mobile: 1rem 1rem 0;
-  --card-flag-media-inset-right-padding: 1.5rem 1.5rem 1.5rem 0;
-  --card-flag-media-inset-right-padding-mobile: 1rem 1rem 0;
-  --card-flag-media-inset-padding-mobile: 1rem 1rem 0;
-  --card-flag-padding: 1.5rem;
-  --card-flag-padding-mobile: 0 1rem 1rem;
-  --card-flag-content-gap: 1rem;
-  --card-flag-footer-margin-top: 0.5rem;
-
-  /* Header component variables */
-  --header-menu-link-bg: #ffffff;
-  --header-menu-link-hover-bg: #e1e5ea;
-  --header-menu-link-radius: 0.25rem;
-  --header-menu-link-title-color: #005ea2;
-  --header-menu-link-title-font-size: 1.125rem;
-  --header-menu-link-title-font-weight: 500;
-  --header-menu-link-title-line-height: 1.3;
-  --header-menu-link-description-color: #5d5d5d;
-  --header-menu-link-description-font-size: 0.875rem;
-  --header-menu-link-description-font-weight: 400;
-  --header-menu-link-description-line-height: 1.4;
-  --header-menu-group-title-color: #1b1b1b;
-  --header-menu-group-title-font-size: 1.25rem;
-  --header-menu-group-title-font-weight: 700;
-  --header-menu-group-title-border-color: #dfe1e2;
 } 
