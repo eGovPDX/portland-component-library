@@ -19,7 +19,7 @@ export const ColorSwatchItem = ({
   return (
     <div className={combinedClassName}>
       <ColorSwatchPreview 
-        colorValue={`var(${colorVar})`}
+        colorValue={colorVar}
         name={name}
         size={size}
       />
