@@ -407,10 +407,10 @@
   --search-button-padding-small: var(--spacing-1, 8px);
 
   /* SideNav component variables */
-  --side-nav-border-radius-sm: var(--spacing-1, 4px);
+  --side-nav-border-radius-sm: 4px;
   --side-nav-border-radius-lg: var(--spacing-2, 8px);
-  --side-nav-border-width-md: var(--spacing-1, 2px);
-  --side-nav-border-width-sm: var(--spacing-1, 1px);
+  --side-nav-border-width-md: 2px;
+  --side-nav-border-width-sm: 1px;
   --side-nav-border-color-default: var(--color-gray-cool-10, #DFE1E2);
   --side-nav-border-color-selected: var(--color-blue-warm-60v, #2378C3);
   --side-nav-bg-default: transparent;
