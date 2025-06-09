@@ -13,7 +13,7 @@ describe('PopoverWithCard', () => {
 
   it('renders the trigger element', () => {
     render(
-      <PopoverWithCard content={<div>Test content</div>}>
+      <PopoverWithCard cardProps={{ children: <div>Test content</div> }}>
         <button>Hover me</button>
       </PopoverWithCard>
     );
@@ -23,7 +23,7 @@ describe('PopoverWithCard', () => {
 
   it('shows content on hover', async () => {
     render(
-      <PopoverWithCard content={<div>Test content</div>}>
+      <PopoverWithCard cardProps={{ children: <div>Test content</div> }}>
         <button>Hover me</button>
       </PopoverWithCard>
     );
@@ -41,7 +41,7 @@ describe('PopoverWithCard', () => {
 
   it('hides content when mouse leaves', async () => {
     render(
-      <PopoverWithCard content={<div>Test content</div>}>
+      <PopoverWithCard cardProps={{ children: <div>Test content</div> }}>
         <button>Hover me</button>
       </PopoverWithCard>
     );
@@ -64,7 +64,7 @@ describe('PopoverWithCard', () => {
   it('applies custom className', () => {
     render(
       <PopoverWithCard 
-        content={<div>Test content</div>}
+        cardProps={{ children: <div>Test content</div> }}
         className="custom-class"
       >
         <button>Hover me</button>
@@ -87,7 +87,7 @@ describe('PopoverWithCard', () => {
     positions.forEach(position => {
       const { unmount } = render(
         <PopoverWithCard 
-          content={<div>Test content</div>}
+          cardProps={{ children: <div>Test content</div> }}
           position={position}
         >
           <button>Hover me</button>

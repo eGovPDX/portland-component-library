@@ -29,7 +29,8 @@ describe('Contacts', () => {
     render(<Contacts {...mockProps} />);
 
     // Check headings
-    expect(screen.getByText(/contact/i)).toBeInTheDocument();
+    const contactHeadings = screen.getAllByText(/contact/i);
+    expect(contactHeadings.length).toBeGreaterThan(1); // Should find heading and button text
     expect(screen.getByText('Social Media')).toBeInTheDocument();
     expect(screen.getByText('Office')).toBeInTheDocument();
 
@@ -89,7 +90,7 @@ describe('Contacts', () => {
     );
 
     // Check title and email
-    expect(screen.getByText('Councilor')).toBeInTheDocument();
+    expect(screen.getByText('Contact this Councilor')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /contact councilor via email/i }))
       .toHaveAttribute('href', 'mailto:councilor@portland.gov');
 
@@ -108,20 +109,18 @@ describe('Contacts', () => {
     render(
       <Contacts
         title="Councilor"
-        email="councilor@portland.gov"
-        phoneNumbers={[
-          { label: 'Office', number: '(503) 823-0000' },
-          { label: 'Information', number: '311' },
-          { label: 'Oregon Relay Service', number: '711' },
-        ]}
-        address={{
-          street: 'SW 123 Normal Street',
+        emailAddress="councilor@portland.gov"
+        officePhone="(503) 823-0000"
+        informationPhone="311"
+        relayServicePhone="711"
+        officeDetails={{
+          address: 'SW 123 Normal Street',
           room: 'Room 0',
           city: 'Portland',
           state: 'OR',
           zip: '97204',
+          hours: 'Monday - Friday\n9:00am - 5:00pm',
         }}
-        hours="Monday - Friday\n9:00am - 5:00pm"
       />
     );
 
