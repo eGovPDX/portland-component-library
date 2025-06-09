@@ -5,10 +5,10 @@
   align-items: flex-start;
   flex-shrink: 0;
   border-radius: var(--side-nav-border-radius-sm, 4px) var(--side-nav-border-radius-lg, 8px) var(--side-nav-border-radius-lg, 8px) var(--side-nav-border-radius-sm, 4px);
-  border-top: var(--side-nav-border-width-md, 2px) solid var(--side-nav-border-color-default, #DFE1E2);
-  border-right: var(--side-nav-border-width-md, 2px) solid var(--side-nav-border-color-default, #DFE1E2);
-  border-left: var(--side-nav-border-width-md, 2px) solid var(--side-nav-border-color-default, #DFE1E2);
-  border-bottom: var(--side-nav-border-width-md, 2px) solid var(--side-nav-border-color-default, #DFE1E2);
+  border-top: 2px solid var(--side-nav-border-color-default, #DFE1E2);
+  border-right: 2px solid var(--side-nav-border-color-default, #DFE1E2);
+  border-left: 2px solid var(--side-nav-border-color-default, #DFE1E2);
+  border-bottom: 2px solid var(--side-nav-border-color-default, #DFE1E2);
   background: var(--side-nav-bg, #fff);
 }
 
@@ -70,7 +70,7 @@
   padding: var(--side-nav-padding-sm, 8px) var(--side-nav-padding-sm, 8px);
   align-items: flex-start;
   flex: 1;
-  border-top: var(--side-nav-border-width-sm, 1px) solid var(--side-nav-border-color-default, #DFE1E2);
+  border-top: 1px solid var(--side-nav-border-color-default, #DFE1E2);
 }
 
 /* Remove border from first item's content */
