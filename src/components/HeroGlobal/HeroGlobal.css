@@ -1,90 +1,90 @@
-.pgov-hero-global {
+.hero-global {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  background: var(--theme-body-background-color, #FFF);
+  background: var(--hero-global-bg, #FFF);
   box-sizing: border-box;
 }
 
-.pgov-hero-global__container {
+.hero-global__container {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--usa-spacing-2, 16px);
-  border-bottom: 1px solid var(--theme-color-ink, #1B1B1B);
-  background: var(--theme-body-background-color, #FFF);
+  gap: var(--hero-global-gap, 16px);
+  border-bottom: 1px solid var(--hero-global-title-color, #1B1B1B);
+  background: var(--hero-global-bg, #FFF);
   box-sizing: border-box;
 }
 
-.pgov-hero-global__content-wrapper {
+.hero-global__content-wrapper {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--usa-spacing-2, 16px);
+  gap: var(--hero-global-gap, 16px);
 }
 
-.pgov-hero-global__content {
+.hero-global__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--usa-spacing-2, 16px);
+  gap: var(--hero-global-gap, 16px);
   align-self: stretch;
 }
 
-.pgov-hero-global__tags {
+.hero-global__tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--usa-spacing-1, 8px);
+  gap: var(--hero-global-tag-gap, 8px);
 }
 
-.pgov-hero-global__tag {
+.hero-global__tag {
   display: flex;
-  padding: var(--usa-spacing-2-px, 2px) var(--usa-spacing-1, 8px);
+  padding: var(--hero-global-tag-padding-y, 2px) var(--hero-global-tag-gap, 8px);
   align-items: center;
-  border-radius: var(--usa-radius-pill, 1000px);
-  background: var(--theme-color-base-dark, #565C65);
-  color: var(--usa-color-white, #FFF);
-  font-family: var(--usa-font-family-ui, "Public Sans");
-  font-size: var(--theme-font-size-ui-2-xs, 14px);
+  border-radius: var(--hero-global-tag-radius, 1000px);
+  background: var(--hero-global-tag-bg, #565C65);
+  color: var(--hero-global-tag-color, #FFF);
+  font-family: var(--hero-global-tag-font-family, "Public Sans");
+  font-size: var(--hero-global-tag-font-size, 14px);
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
   text-transform: uppercase;
 }
 
-.pgov-hero-global__title {
-  color: var(--theme-color-ink, #1B1B1B);
-  font-family: var(--usa-font-family-heading, "Public Sans");
-  font-size: var(--component-prose-h-1-font-size, 40px);
+.hero-global__title {
+  color: var(--hero-global-title-color, #1B1B1B);
+  font-family: var(--hero-global-title-font-family, "Public Sans");
+  font-size: var(--hero-global-title-font-size, 40px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0;
 }
 
-.pgov-hero-global__description {
-  color: var(--theme-color-ink, #1B1B1B);
-  font-family: var(--usa-font-family-body, "Public Sans");
-  font-size: var(--theme-body-font-size, 16px);
+.hero-global__description {
+  color: var(--hero-global-title-color, #1B1B1B);
+  font-family: var(--hero-global-desc-font-family, "Public Sans");
+  font-size: var(--hero-global-desc-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   margin: 0;
 }
 
-.pgov-hero-global__image-wrapper {
+.hero-global__image-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--usa-spacing-1, 8px);
+  gap: var(--hero-global-tag-gap, 8px);
   width: 100%;
 }
 
-.pgov-hero-global__image-container {
+.hero-global__image-container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -94,7 +94,7 @@
   background: transparent;
 }
 
-.pgov-hero-global__image {
+.hero-global__image {
   position: absolute;
   top: 0;
   left: 0;
@@ -106,73 +106,73 @@
   transition: opacity 0.2s ease-in-out;
 }
 
-.pgov-hero-global__image-placeholder {
+.hero-global__image-placeholder {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--theme-color-base-lighter, #DFE1E2);
+  background: var(--hero-global-image-placeholder-bg, #DFE1E2);
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
-.pgov-hero-global__image--loading + .pgov-hero-global__image-placeholder,
-.pgov-hero-global__image--error + .pgov-hero-global__image-placeholder {
+.hero-global__image--loading + .hero-global__image-placeholder,
+.hero-global__image--error + .hero-global__image-placeholder {
   opacity: 1;
 }
 
-.pgov-hero-global__action {
+.hero-global__action {
   display: flex;
   align-items: center;
-  gap: var(--usa-spacing-1, 8px);
+  gap: var(--hero-global-tag-gap, 8px);
 }
 
 /* Desktop styles */
 @media screen and (min-width: 1024px) {
-  .pgov-hero-global {
+  .hero-global {
     align-items: center;
   }
 
-  .pgov-hero-global__container {
+  .hero-global__container {
     width: 1024px;
-    max-width: var(--usa-spacing-desktop, 1024px);
-    padding: var(--usa-spacing-2, 16px) var(--usa-spacing-4, 32px) var(--usa-spacing-5, 40px) var(--usa-spacing-4, 32px);
+    max-width: var(--hero-global-desktop-max-width, 1024px);
+    padding: var(--hero-global-gap, 16px) var(--hero-global-desktop-gap-x, 32px) var(--hero-global-desktop-gap-y, 40px) var(--hero-global-desktop-gap-x, 32px);
     flex-direction: row;
     align-items: center;
   }
 
-  .pgov-hero-global__content-wrapper {
+  .hero-global__content-wrapper {
     width: 960px;
     flex-direction: row;
     align-items: center;
-    gap: var(--usa-spacing-4, 32px);
+    gap: var(--hero-global-desktop-gap-x, 32px);
   }
 
-  .pgov-hero-global__content {
+  .hero-global__content {
     flex: 1 0 0;
   }
 
-  .pgov-hero-global__image-wrapper {
+  .hero-global__image-wrapper {
     flex: 1 0 0;
   }
 }
 
 /* Mobile styles */
 @media screen and (max-width: 1023px) {
-  .pgov-hero-global__container {
-    padding: var(--usa-spacing-2, 16px) var(--usa-spacing-2, 16px) var(--usa-spacing-5, 40px) var(--usa-spacing-2, 16px);
+  .hero-global__container {
+    padding: var(--hero-global-gap, 16px) var(--hero-global-gap, 16px) var(--hero-global-desktop-gap-y, 40px) var(--hero-global-gap, 16px);
   }
 
-  .pgov-hero-global__content-wrapper {
-    gap: var(--usa-spacing-2, 16px);
+  .hero-global__content-wrapper {
+    gap: var(--hero-global-gap, 16px);
   }
 
-  .pgov-hero-global__image-wrapper {
+  .hero-global__image-wrapper {
     order: -1;
   }
 
-  .pgov-hero-global__image-container {
+  .hero-global__image-container {
     aspect-ratio: 4 / 3;
   }
 } 

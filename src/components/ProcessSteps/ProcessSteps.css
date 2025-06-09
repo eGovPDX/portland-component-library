@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--usa-spacing-1, 8px);
+  gap: var(--process-steps-gap, 8px);
   align-self: stretch;
 }
 
@@ -10,20 +10,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--usa-spacing-1, 8px);
+  gap: var(--process-steps-gap, 8px);
   align-self: stretch;
 }
 
 .title {
   display: flex;
-  padding: var(--usa-spacing-0, 0px) 0px 0px 0px;
+  padding: var(--process-steps-title-padding, 0px 0px 0px 0px);
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--process-steps-title-gap, 10px);
   align-self: stretch;
-  color: var(--theme-color-ink, #1C1D1F);
-  font-family: var(--usa-font-family-heading, "Open Sans");
-  font-size: var(--component-prose-h-2-font-size, 27.35px);
+  color: var(--process-steps-title-color, #1C1D1F);
+  font-family: var(--process-steps-title-font-family, "Open Sans");
+  font-size: var(--process-steps-title-font-size, 27.35px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -34,11 +34,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--process-steps-description-gap, 10px);
   align-self: stretch;
-  color: var(--theme-color-ink, #1C1D1F);
-  font-family: var(--usa-font-family-alt, "Open Sans");
-  font-size: var(--theme-font-size-alt-lg, 23.5px);
+  color: var(--process-steps-description-color, #1C1D1F);
+  font-family: var(--process-steps-description-font-family, "Open Sans");
+  font-size: var(--process-steps-description-font-size, 23.5px);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -49,9 +49,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--usa-spacing-0, 0px);
+  gap: var(--process-steps-steps-gap, 0px);
   align-self: stretch;
-  margin-top: var(--usa-spacing-4, 32px);
+  margin-top: var(--process-steps-steps-margin-top, 32px);
 }
 
 .stepItem {
@@ -59,21 +59,21 @@
   flex-direction: row;
   align-items: flex-start;
   align-self: stretch;
-  gap: var(--usa-spacing-2, 16px);
+  gap: var(--process-steps-step-item-gap, 16px);
 }
 
 .stepNumberContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: var(--component-process-list-counter-size, 40px);
-  min-width: var(--component-process-list-counter-size, 40px);
+  width: var(--process-steps-step-number-size, 40px);
+  min-width: var(--process-steps-step-number-size, 40px);
 }
 
 .stepNumberWrapper {
   position: relative;
-  width: var(--component-process-list-counter-size, 40px);
-  height: var(--component-process-list-counter-size, 40px);
+  width: var(--process-steps-step-number-size, 40px);
+  height: var(--process-steps-step-number-size, 40px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,27 +86,27 @@
 }
 
 .stepNumberSvg circle {
-  fill: var(--component-process-list-counter-background-color, #FFF);
-  stroke: var(--component-process-list-counter-border-color, #1C1D1F);
-  stroke-width: 4px;
+  fill: var(--process-steps-step-number-bg, #FFF);
+  stroke: var(--process-steps-step-number-border-color, #1C1D1F);
+  stroke-width: var(--process-steps-step-number-border-width, 4px);
 }
 
 .stepNumberText {
   position: relative;
   z-index: 1;
-  color: #000;
+  color: var(--process-steps-step-number-text-color, #000);
   text-align: center;
-  font-family: var(--component-process-list-counter-font-family, "Open Sans");
-  font-size: var(--component-process-list-counter-font-size, 23.5px);
+  font-family: var(--process-steps-step-number-font-family, "Open Sans");
+  font-size: var(--process-steps-step-number-font-size, 23.5px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
 .verticalBar {
-  width: var(--component-process-list-connector-width, 8px);
-  height: 127px;
-  background: var(--component-process-list-connector-color, #D9E8F6);
+  width: var(--process-steps-connector-width, 8px);
+  height: var(--process-steps-connector-height, 127px);
+  background: var(--process-steps-connector-color, #D9E8F6);
   margin: 0 auto;
 }
 
@@ -115,24 +115,24 @@
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
-  padding-bottom: var(--usa-spacing-4, 32px);
+  padding-bottom: var(--process-steps-step-content-padding-bottom, 32px);
 }
 
 .stepHeading {
-  color: #000;
-  font-family: var(--component-process-list-heading-font-family, "Open Sans");
-  font-size: var(--component-process-list-heading-font-size, 23.5px);
+  color: var(--process-steps-step-heading-color, #000);
+  font-family: var(--process-steps-step-heading-font-family, "Open Sans");
+  font-size: var(--process-steps-step-heading-font-size, 23.5px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0;
-  padding: var(--usa-spacing-105, 12px) 0;
+  padding: var(--process-steps-step-heading-padding, 12px 0 0 0);
 }
 
 .stepDescription {
-  color: var(--Gray-warm-Base-ink, #1B1B1B);
-  font-family: "Open Sans";
-  font-size: var(--theme-font-size-body-sm, 16.6px);
+  color: var(--process-steps-step-description-color, #1B1B1B);
+  font-family: var(--process-steps-step-description-font-family, "Open Sans");
+  font-size: var(--process-steps-step-description-font-size, 16.6px);
   font-style: normal;
   font-weight: 400;
   line-height: 165%;

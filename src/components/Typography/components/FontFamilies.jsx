@@ -27,17 +27,17 @@ export const FontFamilies = ({ families, className }) => {
 const defaultFamilies = [
   { 
     name: 'Sans Serif', 
-    variable: '--pgov-font-family-sans', 
-    value: "'Source Sans Pro', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif" 
+    variable: 'var(--font-family-reading-public-sans)', 
+    value: "Public Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
   },
   { 
     name: 'Serif', 
-    variable: '--pgov-font-family-serif', 
+    variable: 'var(--font-family-display-merriweather)', 
     value: "Merriweather, Georgia, Cambria, 'Times New Roman', Times, serif" 
   },
   { 
     name: 'Monospace', 
-    variable: '--pgov-font-family-mono', 
+    variable: 'var(--font-family-mono-roboto-mono)', 
     value: "'Roboto Mono', Consolas, Monaco, 'Andale Mono', monospace" 
   }
 ];

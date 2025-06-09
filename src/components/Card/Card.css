@@ -1,9 +1,9 @@
 /* Card Container */
 .usa-card {
   max-width: 100%;
-  border-radius: var(--component-card-border-radius, 8px);
+  border-radius: var(--card-border-radius, 8px);
   overflow: hidden;
-  background: var(--theme-body-background-color, #FFF);
+  background: transparent;
 }
 
 .usa-card__container {
@@ -12,12 +12,12 @@
   width: auto;
   box-sizing: border-box;
   max-width: 298px;
-  padding: var(--component-card-padding-perimeter, 24px);
+  padding: var(--card-padding-perimeter, 24px);
   align-items: flex-start;
-  gap: var(--component-card-padding-y, 16px);
-  border-radius: var(--component-card-border-radius, 8px);
-  border: var(--component-card-border-width, 2px) solid var(--component-card-border-color, #DFE1E2);
-  background: transparent;
+  gap: var(--card-padding-y, 16px);
+  border-radius: var(--card-border-radius, 8px);
+  border: var(--card-border-width, 2px) solid var(--card-border-color, #DFE1E2);
+  background: var(--card-bg, #FFF);
 }
 
 /* Card Header */
@@ -30,9 +30,9 @@
 
 .usa-card__heading {
   margin: 0;
-  color: var(--theme-body-text-color, #1B1B1B);
-  font-family: var(--component-card-header-font-family, "Public Sans");
-  font-size: var(--component-card-header-font-size, 22px);
+  color: var(--card-text-color, #1B1B1B);
+  font-family: var(--card-header-font-family, "Public Sans");
+  font-size: var(--card-header-font-size, 22px);
   font-style: normal;
   font-weight: 700;
   line-height: 115%;
@@ -48,9 +48,9 @@
 
 .usa-card__body p {
   margin: 0;
-  color: var(--theme-body-text-color, #1B1B1B);
-  font-family: var(--component-card-font-family, "Public Sans");
-  font-size: var(--component-card-font-size, 16px);
+  color: var(--card-text-color, #1B1B1B);
+  font-family: var(--card-font-family, "Public Sans");
+  font-size: var(--card-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: 162%;
@@ -99,14 +99,14 @@
 
 /* Inset Variant */
 .usa-card--inset .usa-card__container {
-  padding-top: var(--component-card-padding-perimeter, 24px);
+  padding-top: var(--card-padding-perimeter, 24px);
 }
 
 .usa-card--inset .usa-card__media {
   margin: 0;
   border-radius: 0;
-  padding-left: var(--component-card-padding-perimeter, 24px);
-  padding-right: var(--component-card-padding-perimeter, 24px);
+  padding-left: var(--card-padding-perimeter, 24px);
+  padding-right: var(--card-padding-perimeter, 24px);
   width: 100%;
   box-sizing: border-box;
 }

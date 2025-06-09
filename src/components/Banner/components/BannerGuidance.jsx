@@ -10,14 +10,14 @@ export const BannerGuidance = ({
   description, 
   className 
 }) => {
-  const containerClassName = ['pgov-banner-guidance', className].filter(Boolean).join(' ');
+  const containerClassName = ['banner-guidance', className].filter(Boolean).join(' ');
 
   return (
     <div className={containerClassName}>
-      <div className="pgov-banner-guidance-icon">
+      <div className="banner-guidance-icon">
         {icon}
       </div>
-      <div className="pgov-banner-guidance-text">
+      <div className="banner-guidance-text">
         <p>
           <strong>{heading}</strong>
           <br />

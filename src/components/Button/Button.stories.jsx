@@ -120,14 +120,6 @@ export const Disabled = {
   }
 };
 
-// Aria-disabled button
-export const AriaDisabled = {
-  args: {
-    children: 'Aria-Disabled Button',
-    ariaDisabled: true
-  }
-};
-
 // Unstyled button
 export const Unstyled = {
   args: {

@@ -31,9 +31,9 @@ const MockSearchComponent = () => (
         flex: 1,
         height: '48px',
         padding: '0 16px',
-        border: '1px solid var(--pgov-color-neutral-lighter)',
+        border: '1px solid #dfe1e2',
         borderRadius: '4px 0 0 4px',
-        fontSize: 'var(--pgov-font-size-sm)'
+        fontSize: 'var(--font-size-7)'
       }}
     />
     <Button style={{ height: '48px', borderRadius: '0 4px 4px 0' }} variant="primary">Search</Button>

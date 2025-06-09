@@ -53,21 +53,21 @@ describe('Header', () => {
     
     // Menu should be closed initially
     expect(menuButton).toHaveAttribute('aria-expanded', 'false');
-    expect(document.querySelector('.pgov-header-mobile-dropdown.is-open')).not.toBeInTheDocument();
+    expect(document.querySelector('.header-mobile-dropdown.is-open')).not.toBeInTheDocument();
     
     // Click to open
     fireEvent.click(menuButton);
     
     // Menu should now be open
     expect(menuButton).toHaveAttribute('aria-expanded', 'true');
-    expect(document.querySelector('.pgov-header-mobile-dropdown.is-open')).toBeInTheDocument();
+    expect(document.querySelector('.header-mobile-dropdown.is-open')).toBeInTheDocument();
     
     // Click again to close
     fireEvent.click(menuButton);
     
     // Menu should be closed again
     expect(menuButton).toHaveAttribute('aria-expanded', 'false');
-    expect(document.querySelector('.pgov-header-mobile-dropdown.is-open')).not.toBeInTheDocument();
+    expect(document.querySelector('.header-mobile-dropdown.is-open')).not.toBeInTheDocument();
   });
 
   test('renders navigation items', () => {
@@ -83,7 +83,7 @@ describe('Header', () => {
     render(<Header {...defaultProps} className="custom-class" />);
     
     const headerElement = screen.getByRole('banner');
-    expect(headerElement).toHaveClass('pgov-header');
+    expect(headerElement).toHaveClass('header');
     expect(headerElement).toHaveClass('custom-class');
   });
 }); 

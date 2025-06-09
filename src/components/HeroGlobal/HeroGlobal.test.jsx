@@ -67,7 +67,7 @@ describe('HeroGlobal', () => {
   it('applies custom className', () => {
     render(<HeroGlobal {...mockProps} className="custom-class" />);
     
-    const container = screen.getByText('Test Title').closest('.pgov-hero-global');
+    const container = screen.getByText('Test Title').closest('.hero-global');
     expect(container).toHaveClass('custom-class');
   });
 
@@ -83,6 +83,6 @@ describe('HeroGlobal', () => {
     const image = screen.getByRole('img');
     fireEvent.error(image);
     
-    expect(image).toHaveClass('pgov-hero-global__image--error');
+    expect(image).toHaveClass('hero-global__image--error');
   });
 }); 

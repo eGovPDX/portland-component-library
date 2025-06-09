@@ -15,49 +15,49 @@ export const HeaderNav = ({
   };
 
   return (
-    <nav className={`pgov-header-nav ${isMobile ? 'is-mobile' : ''}`} role="navigation">
+    <nav className={`header-nav ${isMobile ? 'is-mobile' : ''}`} role="navigation">
       {isMobile && (
         <button 
-          className="pgov-header-nav-close" 
+          className="header-nav-close" 
           onClick={onCloseMenu}
           aria-label="Close menu"
         >
-          <span className="pgov-header-nav-close-icon">×</span>
+          <span className="header-nav-close-icon">×</span>
         </button>
       )}
       
-      <ul className="pgov-header-nav-list">
+      <ul className="header-nav-list">
         {navItems.map((item, index) => (
           <li 
             key={index} 
-            className={`pgov-header-nav-item ${item.current ? 'is-current' : ''}`}
+            className={`header-nav-item ${item.current ? 'is-current' : ''}`}
           >
             {item.children && item.children.length > 0 ? (
               <>
                 <button
-                  className={`pgov-header-nav-button ${openSubmenu === item.label ? 'is-open' : ''}`}
+                  className={`header-nav-button ${openSubmenu === item.label ? 'is-open' : ''}`}
                   onClick={() => toggleSubmenu(item.label)}
                   aria-expanded={openSubmenu === item.label}
                   aria-controls={`submenu-${index}`}
                 >
                   <span>{item.label}</span>
-                  <span className="pgov-header-nav-button-icon">
+                  <span className="header-nav-button-icon">
                     {openSubmenu === item.label ? '▲' : '▼'}
                   </span>
                 </button>
                 
                 <ul 
                   id={`submenu-${index}`}
-                  className={`pgov-header-submenu ${openSubmenu === item.label ? 'is-open' : ''}`}
+                  className={`header-submenu ${openSubmenu === item.label ? 'is-open' : ''}`}
                 >
                   {item.children.map((childItem, childIndex) => (
                     <li 
                       key={childIndex} 
-                      className={`pgov-header-submenu-item ${childItem.current ? 'is-current' : ''}`}
+                      className={`header-submenu-item ${childItem.current ? 'is-current' : ''}`}
                     >
                       <a 
                         href={childItem.href} 
-                        className="pgov-header-submenu-link"
+                        className="header-submenu-link"
                         onClick={isMobile ? onCloseMenu : undefined}
                         aria-current={childItem.current ? 'page' : undefined}
                       >
@@ -70,7 +70,7 @@ export const HeaderNav = ({
             ) : (
               <a 
                 href={item.href} 
-                className="pgov-header-nav-link"
+                className="header-nav-link"
                 onClick={isMobile ? onCloseMenu : undefined}
                 aria-current={item.current ? 'page' : undefined}
               >

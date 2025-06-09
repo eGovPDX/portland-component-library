@@ -1,13 +1,13 @@
 .process-steps-example {
   width: 100%;
-  max-width: var(--theme-site-max-width, 1200px);
+  max-width: var(--process-steps-max-width, 1200px);
   margin: 0 auto;
-  padding: var(--theme-site-margins-xl, 32px);
+  padding: var(--process-steps-gap-xl, 32px);
 }
 
 .process-steps-layout {
   display: flex;
-  gap: var(--theme-site-margins-xl, 32px);
+  gap: var(--process-steps-gap-xl, 32px);
   align-items: flex-start;
 }
 
@@ -23,10 +23,10 @@
 .process-steps-main {
   display: flex;
   flex-direction: column;
-  gap: var(--theme-site-margins-xl, 32px);
+  gap: var(--process-steps-gap-xl, 32px);
   width: 100%;
 }
 
 .process-steps-summary {
-  margin-top: var(--theme-site-margins-xl, 32px);
+  margin-top: var(--process-steps-gap-xl, 32px);
 } 

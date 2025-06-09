@@ -1,42 +1,42 @@
 /* Tooltip styles based on USWDS with Portland theme customizations */
-.pgov-tooltip__body {
+.tooltip__body {
   max-width: 15rem;
   padding: 0.5rem 1rem;
-  font-family: var(--pgov-font-family-sans);
-  font-size: var(--pgov-font-size-2xs);
-  line-height: var(--pgov-line-height-normal);
+  font-family: var(--tooltip-font-family, var(--font-family-reading-public-sans));
+  font-size: var(--tooltip-font-size, var(--font-size-3));
+  line-height: var(--tooltip-line-height, 1.5);
   text-align: center;
-  border-radius: var(--pgov-border-radius-md);
+  border-radius: var(--tooltip-border-radius, var(--theme-radius-md));
   z-index: 1000;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 /* Light theme */
-.pgov-tooltip__body--light {
-  background-color: var(--pgov-color-neutral-lightest);
-  color: var(--pgov-color-neutral-darkest);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.tooltip__body--light {
+  background-color: var(--tooltip-bg-light, #edeff0);
+  color: var(--tooltip-color-light, #1c1d1f);
+  box-shadow: var(--tooltip-shadow-light, 0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 /* Dark theme (default) - styled like screenshot */
-.pgov-tooltip__body--dark {
-  background-color: #181818;
-  color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.tooltip__body--dark {
+  background-color: var(--tooltip-bg-dark, #181818);
+  color: var(--tooltip-color-dark, #ffffff);
+  border-radius: var(--tooltip-border-radius-dark, 8px);
+  box-shadow: var(--tooltip-shadow-dark, 0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* Arrow styling */
-.pgov-tooltip__arrow {
-  background-color: inherit;
+.tooltip__arrow {
+  background-color: var(--tooltip-arrow-bg, inherit);
   z-index: -1;
 }
 
 /* Popup mode styling */
-.pgov-tooltip__body--popup {
+.tooltip__body--popup {
   pointer-events: auto;
   max-width: none;
   padding: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--tooltip-popup-shadow, 0 4px 12px rgba(0, 0, 0, 0.15));
 }

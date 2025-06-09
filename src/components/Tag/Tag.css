@@ -1,12 +1,12 @@
 .usa-tag {
   display: inline-flex;
-  padding: var(--theme-spacing-2, 2px) var(--theme-spacing-1, 8px);
+  padding: var(--tag-padding-y, 2px) var(--tag-padding-x, 8px);
   align-items: center;
-  border-radius: var(--theme-radius-pill, 1000px);
-  background: var(--theme-color-base-dark, #565C65);
-  color: var(--usa-color-white, #FFF);
-  font-family: var(--usa-font-family-ui, "Public Sans");
-  font-size: var(--theme-font-size-ui-2-xs, 14px);
+  border-radius: var(--tag-radius, 1000px);
+  background: var(--tag-bg, #565C65);
+  color: var(--tag-color, #FFF);
+  font-family: var(--tag-font-family, "Public Sans");
+  font-size: var(--tag-font-size, 14px);
   font-style: normal;
   font-weight: 400;
   line-height: 100%; /* 14px */
@@ -14,8 +14,8 @@
 }
 
 .usa-tag--big {
-  padding: var(--theme-spacing-1, 8px) var(--theme-spacing-2, 16px);
+  padding: var(--tag-padding-x, 8px) var(--tag-padding-y, 16px);
   gap: 10px;
-  font-size: var(--theme-font-size-ui-sm, 16px);
+  font-size: var(--tag-font-size-big, 16px);
   line-height: 100%;
 } 

@@ -1,9 +1,9 @@
 /* Step Indicator Container */
 .usa-step-indicator {
   width: 100%;
-  font-family: var(----component-step-indicator-font-family, "Public Sans");
-  background-color: #fff;
-  margin-bottom: 1.5rem;
+  font-family: var(--step-indicator-font-family, "Public Sans");
+  background-color: var(--step-indicator-bg, #fff);
+  margin-bottom: var(--step-indicator-margin-bottom, 1.5rem);
 }
 
 /* Step Segments Container */
@@ -12,7 +12,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(----component-step-indicator-segment-gap, 2px);
+  gap: var(--step-indicator-segment-gap, 2px);
 }
 
 /* Step Segment */
@@ -22,12 +22,13 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  padding-top: var(--step-indicator-segment-padding-top, 0);
 }
 
 /* Segment Bar Styling */
 .usa-step-indicator__segment::before {
   content: "";
-  height: var(----component-step-indicator-segment-height, 8px);
+  height: var(--step-indicator-segment-height, 8px);
   width: 100%;
   display: block;
   margin-bottom: 0.5rem;
@@ -35,66 +36,66 @@
 
 /* Complete Segment */
 .usa-step-indicator__segment--complete::before {
-  background-color: var(----component-step-indicator-segment-color-complete, #162E51);
+  background-color: var(--step-indicator-segment-color-complete, #162E51);
 }
 
 .usa-step-indicator__segment--complete .usa-step-indicator__segment-label {
-  color: var(----component-step-indicator-segment-color-complete, #162E51);
+  color: var(--step-indicator-segment-color-complete, #162E51);
   font-weight: 400;
 }
 
 /* Current Segment */
 .usa-step-indicator__segment--current::before {
-  background-color: var(----component-step-indicator-segment-color-current, #005EA2);
+  background-color: var(--step-indicator-segment-color-current, #005EA2);
 }
 
 .usa-step-indicator__segment--current .usa-step-indicator__segment-label {
-  color: var(----component-step-indicator-segment-color-complete, #162E51);
+  color: var(--step-indicator-segment-color-complete, #162E51);
   font-weight: 700;
 }
 
 /* Not Complete Segment */
 .usa-step-indicator__segment--not-complete::before {
-  background-color: var(----component-step-indicator-segment-color-pending, #919191);
+  background-color: var(--step-indicator-segment-color-pending, #919191);
 }
 
 .usa-step-indicator__segment--not-complete .usa-step-indicator__segment-label {
-  color: var(----component-step-indicator-text-pending-color, #565C65);
+  color: var(--step-indicator-text-pending-color, #565C65);
   font-weight: 400;
 }
 
 /* Segment Label */
 .usa-step-indicator__segment-label {
-  font-size: var(----component-step-indicator-label-font-size, 16px);
-  line-height: 120%;
-  margin-top: 0.5rem;
+  font-size: var(--step-indicator-label-font-size, 16px);
+  line-height: var(--step-indicator-label-line-height, 120%);
+  margin-top: var(--step-indicator-label-margin-top, 0.5rem);
 }
 
 /* Step Indicator Header */
 .usa-step-indicator__header {
-  margin-top: 1rem;
+  margin-top: var(--step-indicator-header-margin-top, 1rem);
 }
 
 .usa-step-indicator__heading {
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--step-indicator-heading-gap, 0.5rem);
   flex-wrap: wrap;
 }
 
 /* Counter Container */
 .usa-step-indicator__counter-container {
   display: flex;
-  padding: var(----usa-spacing-1, 8px);
+  padding: var(--usa-spacing-1, 8px);
   justify-content: center;
   align-items: center;
-  gap: var(----usa-spacing-05, 4px);
+  gap: var(--usa-spacing-05, 4px);
   border-radius: 20px;
-  background: var(----theme-color-base-lightest, #F0F0F0);
-  color: var(----component-step-indicator-heading-color, #1B1B1B);
-  font-family: var(----component-step-indicator-heading-font-family, "Public Sans");
-  font-size: var(----component-step-indicator-heading-font-size, 22px);
+  background: var(--theme-color-base-lightest, #F0F0F0);
+  color: var(--step-indicator-heading-color, #1B1B1B);
+  font-family: var(--step-indicator-heading-font-family, "Public Sans");
+  font-size: var(--step-indicator-heading-font-size, 22px);
   font-weight: 700;
 }
 
@@ -106,15 +107,15 @@
 
 /* Heading Text */
 .usa-step-indicator__heading-text {
-  color: var(----theme-color-ink, #1B1B1B);
-  font-family: var(----component-step-indicator-heading-font-family, "Public Sans");
-  font-size: var(----component-step-indicator-heading-font-size, 22px);
+  color: var(--theme-color-ink, #1B1B1B);
+  font-family: var(--step-indicator-heading-font-family, "Public Sans");
+  font-size: var(--step-indicator-heading-font-size, 22px);
   font-weight: 700;
 }
 
 /* Heading Icon */
 .usa-step-indicator__heading-icon {
-  margin: 0 0.5rem;
+  margin: var(--step-indicator-heading-icon-margin, 0 0.5rem);
 }
 
 /* Screen Reader Only */
@@ -131,9 +132,9 @@
 }
 
 .usa-step-indicator__current-step {
-  color: var(----component-step-indicator-heading-color, #1B1B1B);
-  font-family: var(----component-step-indicator-heading-font-family, "Public Sans");
-  font-size: var(----component-step-indicator-heading-font-size, 22px);
+  color: var(--step-indicator-heading-color, #1B1B1B);
+  font-family: var(--step-indicator-heading-font-family, "Public Sans");
+  font-size: var(--step-indicator-heading-font-size, 22px);
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -145,9 +146,9 @@
 }
 
 .usa-step-indicator__total-steps {
-  color: var(----component-step-indicator-heading-color, #1B1B1B);
-  font-family: var(----component-step-indicator-heading-font-family, "Public Sans");
-  font-size: var(----component-step-indicator-heading-font-size, 22px);
+  color: var(--step-indicator-heading-color, #1B1B1B);
+  font-family: var(--step-indicator-heading-font-family, "Public Sans");
+  font-size: var(--step-indicator-heading-font-size, 22px);
   font-style: normal;
   font-weight: 700;
 }
@@ -166,12 +167,12 @@
 /* Counters Variant */
 .usa-step-indicator--counters .usa-step-indicator__segment,
 .usa-step-indicator--counters-sm .usa-step-indicator__segment {
-  padding-top: 20px;
+  padding-top: var(--step-indicator-segment-padding-top, 20px);
 }
 
 .usa-step-indicator--counters .usa-step-indicator__counter {
   position: absolute;
-  top: -12px;
+  top: var(--step-indicator-counter-top, -12px);
   left: 0;
   display: flex;
   align-items: center;
@@ -187,8 +188,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: var(--step-indicator-counter-size, 2rem);
+  height: var(--step-indicator-counter-size, 2rem);
   border-radius: 50%;
   background-color: transparent;
   border: 1px solid;
@@ -197,27 +198,27 @@
 }
 
 .usa-step-indicator__segment--complete .usa-step-indicator__counter-inner {
-  background-color: var(----component-step-indicator-segment-color-complete, #162E51);
+  background-color: var(--step-indicator-segment-color-complete, #162E51);
   color: white;
-  border-color: var(----component-step-indicator-segment-color-complete, #162E51);
+  border-color: var(--step-indicator-segment-color-complete, #162E51);
 }
 
 .usa-step-indicator__segment--current .usa-step-indicator__counter-inner {
-  background-color: var(----component-step-indicator-segment-color-current, #005EA2);
+  background-color: var(--step-indicator-segment-color-current, #005EA2);
   color: white;
-  border-color: var(----component-step-indicator-segment-color-current, #005EA2);
+  border-color: var(--step-indicator-segment-color-current, #005EA2);
 }
 
 .usa-step-indicator__segment--not-complete .usa-step-indicator__counter-inner {
   background-color: transparent;
-  color: var(----component-step-indicator-text-pending-color, #565C65);
-  border-color: var(----component-step-indicator-segment-color-pending, #919191);
+  color: var(--step-indicator-text-pending-color, #565C65);
+  border-color: var(--step-indicator-segment-color-pending, #919191);
 }
 
 /* Small Counters Variant */
 .usa-step-indicator--counters-sm .usa-step-indicator__counter {
   position: absolute;
-  top: -10px;
+  top: var(--step-indicator-counter-sm-top, -10px);
   left: 0;
   display: flex;
   align-items: center;
@@ -230,9 +231,9 @@
 }
 
 .usa-step-indicator--counters-sm .usa-step-indicator__counter-inner {
-  width: 1.5rem;
-  height: 1.5rem;
-  font-size: 0.875rem;
+  width: var(--step-indicator-counter-sm-size, 1.5rem);
+  height: var(--step-indicator-counter-sm-size, 1.5rem);
+  font-size: var(--step-indicator-counter-sm-font-size, 0.875rem);
 }
 
 /* Mobile Variant */
@@ -246,33 +247,23 @@
   .usa-step-indicator__segments {
     display: none;
   }
-  
   .usa-step-indicator__segment-label {
     font-size: 14px;
   }
-  
   .usa-step-indicator__counter-container,
-  .usa-step-indicator__heading-text {
-    font-size: var(----component-step-indicator-heading-font-size-small, 18px);
-  }
-}
-
-/* Only stack items on very small screens */
-@media (max-width: 480px) {
-  /* Stack heading elements on smaller screens */
   .usa-step-indicator__heading {
     flex-direction: column;
     align-items: flex-start;
   }
-  
-  /* Adjust margins for stacked layout */
-  .usa-step-indicator__heading-icon,
-  .usa-step-indicator__heading-text {
-    margin-left: 0;
+}
+@media (max-width: 480px) {
+  .usa-step-indicator__heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--step-indicator-heading-gap, 0.5rem);
   }
-  
-  /* Add spacing between counter and title when stacked */
+  .usa-step-indicator__heading-icon,
   .usa-step-indicator__title-container {
-    margin-top: 0.5rem;
+    margin: 0;
   }
 } 

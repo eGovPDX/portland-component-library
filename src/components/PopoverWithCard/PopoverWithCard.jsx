@@ -116,7 +116,7 @@ export const PopoverWithCard = ({
               refs.setFloating(node);
               floatingRef.current = node;
             }}
-            className={`pgov-popover-card ${className}`}
+            className={`popover-card ${className}`}
             style={{
               position: strategy,
               top: y ?? 0,
@@ -129,7 +129,7 @@ export const PopoverWithCard = ({
             aria-labelledby={headingId}
             {...getFloatingProps()}
           >
-            <Card className="pgov-popover-card__content" {...cardWithHeadingId} />
+            <Card className="popover-card__content" {...cardWithHeadingId} />
           </div>
         </FloatingPortal>
       )}

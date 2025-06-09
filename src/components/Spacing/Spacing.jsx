@@ -53,15 +53,15 @@ SpacingDisplay.propTypes = {
 
 export const SpacingTokens = () => {
   const spacings = [
-    { name: '3XS', variable: '--pgov-spacing-3xs', value: '0.25rem', pixels: '4px' },
-    { name: '2XS', variable: '--pgov-spacing-2xs', value: '0.5rem', pixels: '8px' },
-    { name: 'XS', variable: '--pgov-spacing-xs', value: '0.75rem', pixels: '12px' },
-    { name: 'SM', variable: '--pgov-spacing-sm', value: '1rem', pixels: '16px' },
-    { name: 'MD', variable: '--pgov-spacing-md', value: '1.5rem', pixels: '24px' },
-    { name: 'LG', variable: '--pgov-spacing-lg', value: '2rem', pixels: '32px' },
-    { name: 'XL', variable: '--pgov-spacing-xl', value: '2.5rem', pixels: '40px' },
-    { name: '2XL', variable: '--pgov-spacing-2xl', value: '3rem', pixels: '48px' },
-    { name: '3XL', variable: '--pgov-spacing-3xl', value: '4rem', pixels: '64px' },
+    { name: '3XS', variable: 'var(--spacing-global-05)', value: '0.25rem', pixels: '4px' },
+    { name: '2XS', variable: 'var(--spacing-global-1)', value: '0.5rem', pixels: '8px' },
+    { name: 'XS', variable: 'var(--spacing-global-105)', value: '0.75rem', pixels: '12px' },
+    { name: 'SM', variable: 'var(--spacing-global-2)', value: '1rem', pixels: '16px' },
+    { name: 'MD', variable: 'var(--spacing-global-3)', value: '1.5rem', pixels: '24px' },
+    { name: 'LG', variable: 'var(--spacing-global-4)', value: '2rem', pixels: '32px' },
+    { name: 'XL', variable: 'var(--spacing-global-5)', value: '2.5rem', pixels: '40px' },
+    { name: '2XL', variable: 'var(--spacing-global-6)', value: '3rem', pixels: '48px' },
+    { name: '3XL', variable: 'var(--spacing-global-8)', value: '4rem', pixels: '64px' },
   ];
   
   return (
@@ -97,10 +97,10 @@ export const SpacingExamples = () => {
           <div style={{ 
             backgroundColor: '#f0f0f0',
             padding: '16px',
-            marginBottom: 'var(--pgov-spacing-md)',
+            marginBottom: 'var(--spacing-global-3)',
             borderRadius: '4px'
           }}>
-            Element with margin-bottom: var(--pgov-spacing-md)
+            Element with margin-bottom: var(--spacing-global-3)
           </div>
           <div style={{ 
             backgroundColor: '#f0f0f0',
@@ -121,27 +121,27 @@ export const SpacingExamples = () => {
         }}>
           <div style={{ 
             backgroundColor: '#f0f0f0',
-            padding: 'var(--pgov-spacing-xs)',
+            padding: 'var(--spacing-global-3)',
             borderRadius: '4px',
             width: '200px'
           }}>
-            Padding: var(--pgov-spacing-xs)
+            Padding: var(--spacing-global-3)
           </div>
           <div style={{ 
             backgroundColor: '#f0f0f0',
-            padding: 'var(--pgov-spacing-md)',
+            padding: 'var(--spacing-global-105)',
             borderRadius: '4px',
             width: '200px'
           }}>
-            Padding: var(--pgov-spacing-md)
+            Padding: var(--spacing-global-105)
           </div>
           <div style={{ 
             backgroundColor: '#f0f0f0',
-            padding: 'var(--pgov-spacing-xl)',
+            padding: 'var(--spacing-global-5)',
             borderRadius: '4px',
             width: '200px'
           }}>
-            Padding: var(--pgov-spacing-xl)
+            Padding: var(--spacing-global-5)
           </div>
         </div>
       </div>
@@ -155,7 +155,7 @@ export const SpacingExamples = () => {
         }}>
           <div style={{ 
             display: 'flex',
-            gap: 'var(--pgov-spacing-xs)',
+            gap: 'var(--spacing-global-3)',
             backgroundColor: '#f0f0f0',
             padding: '16px',
             borderRadius: '4px'
@@ -166,7 +166,7 @@ export const SpacingExamples = () => {
           </div>
           <div style={{ 
             display: 'flex',
-            gap: 'var(--pgov-spacing-md)',
+            gap: 'var(--spacing-global-105)',
             backgroundColor: '#f0f0f0',
             padding: '16px',
             borderRadius: '4px'
@@ -177,7 +177,7 @@ export const SpacingExamples = () => {
           </div>
           <div style={{ 
             display: 'flex',
-            gap: 'var(--pgov-spacing-xl)',
+            gap: 'var(--spacing-global-5)',
             backgroundColor: '#f0f0f0',
             padding: '16px',
             borderRadius: '4px'

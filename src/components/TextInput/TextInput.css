@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(----usa-spacing-1, 0.5rem);
+  gap: var(--text-input-gap, 0.5rem);
 }
 
 .usa-label {
   display: block;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: var(--text-input-label-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-input-label-font-size, 1rem);
+  font-weight: var(--text-input-label-font-weight, 700);
   margin-top: 0;
   margin-bottom: 0;
   max-width: 30rem;
@@ -18,18 +18,18 @@
 
 .usa-text-input__description {
   display: block;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.875rem;
+  font-family: var(--text-input-desc-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-input-desc-font-size, 0.875rem);
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .usa-text-input__error-message {
   display: block;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(----theme-color-error-dark, #B50909);
+  font-family: var(--text-input-error-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-input-error-font-size, 0.875rem);
+  font-weight: var(--text-input-error-font-weight, 700);
+  color: var(--text-input-error-color, #B50909);
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -37,25 +37,25 @@
 /* Simple input wrapper with flexbox */
 .usa-input-wrapper {
   display: flex;
-  background-color: var(----usa-color-white, #FFF);
-  border: 1px solid var(----theme-color-ink, #1B1B1B);
-  border-radius: var(----component-input-border-radius, 0px);
-  width: auto; /* Allow wrapper to size based on input's content-driven width */
-  max-width: 100%; /* Don't exceed parent's width */
+  background-color: var(--text-input-bg, #FFF);
+  border: var(--text-input-border, 1px solid #1B1B1B);
+  border-radius: var(--text-input-border-radius, 0px);
+  width: auto;
+  max-width: 100%;
 }
 
 /* Input states applied to wrapper */
 .usa-input-wrapper--error {
-  border: var(----usa-spacing-05, 0.25rem) solid var(----theme-color-error-dark, #B50909);
+  border: var(--text-input-error-border, 0.25rem solid #B50909);
 }
 
 .usa-input-wrapper--success {
-  border: var(----usa-spacing-05, 0.25rem) solid var(----theme-color-success-dark, #008817);
+  border: var(--text-input-success-border, 0.25rem solid #008817);
 }
 
 .usa-input-wrapper--disabled {
-  background: var(----theme-color-disabled-medium, #757575);
-  color: var(----usa-color-white, #FFF);
+  background: var(--text-input-disabled-bg, #757575);
+  color: var(--text-input-disabled-color, #FFF);
   cursor: not-allowed;
 }
 
@@ -63,24 +63,24 @@
 .usa-input {
   background-color: transparent;
   position: relative;
-  height: var(----usa-spacing-5, 2.5rem);
-  padding: 0.5rem;
+  height: var(--text-input-height, 2.5rem);
+  padding: var(--text-input-input-padding, 0.5rem);
   border: none;
-  outline: none; /* Base outline removal */
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1rem;
+  outline: none;
+  font-family: var(--text-input-input-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-input-input-font-size, 1rem);
   line-height: 1.5;
-  color: var(----theme-color-ink, #1B1B1B);
-  width: fit-content; /* Attempt to size based on text content */
-  min-width: 7.125rem; /* Starting width, expands with content */
+  color: var(--text-input-input-color, #1B1B1B);
+  width: fit-content;
+  min-width: 7.125rem;
   margin-top: 0;
-  box-sizing: border-box; /* Ensure padding is included in width calculation */
-  field-sizing: content; /* Modern CSS for sizing input to its content */
+  box-sizing: border-box;
+  field-sizing: content;
 }
 
 .usa-input:disabled {
   background: transparent;
-  color: var(----usa-color-white, #FFF);
+  color: var(--text-input-input-disabled-color, #FFF);
   cursor: not-allowed;
 }
 
@@ -90,19 +90,19 @@
   position: relative;
   display: flex;
   align-items: center;
-  color: var(----theme-color-ink, #1B1B1B);
+  color: var(--text-input-affix-color, #1B1B1B);
 }
 
 .usa-input-prefix {
-  padding: 0 0 0 0.75rem;
+  padding: var(--text-input-prefix-padding, 0 0 0 0.75rem);
 }
 
 .usa-input-prefix+input {
-  padding-left: 0.5rem;
+  padding-left: var(--text-input-prefix-input-padding-left, 0.5rem);
 }
 
 .usa-input-suffix {
-  padding: 0 0.75rem 0 0;
+  padding: var(--text-input-suffix-padding, 0 0.75rem 0 0);
 }
 
 /* Ensure no outline on focused input, wrapper will handle focus style */
@@ -112,6 +112,6 @@
 
 /* Standard focus style for the wrapper */
 .usa-input-wrapper:focus-within {
-  outline: 0.25rem solid #2491ff; /* USWDS standard focus color */
-  outline-offset: 0; /* Standard offset */
+  outline: var(--text-input-focus-outline, 0.25rem solid #2491ff);
+  outline-offset: var(--text-input-focus-outline-offset, 0);
 } 

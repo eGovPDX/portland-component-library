@@ -30,7 +30,7 @@ describe('Accordion', () => {
     
     // Initially hidden - height should be 0px
     const content = screen.getByText('Hidden Content');
-    const contentContainer = content.closest('.pgov-accordion-details-container');
+    const contentContainer = content.closest('.accordion-details-container');
     const button = screen.getByText('Click Me');
     
     expect(contentContainer.style.height).toBe('0px');
@@ -55,7 +55,7 @@ describe('Accordion', () => {
     );
     
     const content = screen.getByText('Visible Content');
-    const contentContainer = content.closest('.pgov-accordion-details-container');
+    const contentContainer = content.closest('.accordion-details-container');
     expect(contentContainer).toHaveAttribute('aria-hidden', 'false');
   });
 
@@ -67,8 +67,8 @@ describe('Accordion', () => {
       </Accordion>
     );
     
-    const accordion = screen.getByText('Bordered Item').closest('.pgov-accordion');
-    expect(accordion).toHaveClass('pgov-accordion--bordered');
+    const accordion = screen.getByText('Bordered Item').closest('.accordion');
+    expect(accordion).toHaveClass('accordion--bordered');
   });
 
   // Test multiselectable
@@ -82,12 +82,12 @@ describe('Accordion', () => {
     
     // Expand first item
     fireEvent.click(screen.getByText('Item 1'));
-    const content1Container = screen.getByText('Content 1').closest('.pgov-accordion-details-container');
+    const content1Container = screen.getByText('Content 1').closest('.accordion-details-container');
     expect(content1Container).toHaveAttribute('aria-hidden', 'false');
     
     // Expand second item (first should still be expanded)
     fireEvent.click(screen.getByText('Item 2'));
-    const content2Container = screen.getByText('Content 2').closest('.pgov-accordion-details-container');
+    const content2Container = screen.getByText('Content 2').closest('.accordion-details-container');
     expect(content1Container).toHaveAttribute('aria-hidden', 'false');
     expect(content2Container).toHaveAttribute('aria-hidden', 'false');
   });
@@ -103,12 +103,12 @@ describe('Accordion', () => {
     
     // Expand first item
     fireEvent.click(screen.getByText('Item 1'));
-    const content1Container = screen.getByText('Content 1').closest('.pgov-accordion-details-container');
+    const content1Container = screen.getByText('Content 1').closest('.accordion-details-container');
     expect(content1Container).toHaveAttribute('aria-hidden', 'false');
     
     // Expand second item (first should collapse)
     fireEvent.click(screen.getByText('Item 2'));
-    const content2Container = screen.getByText('Content 2').closest('.pgov-accordion-details-container');
+    const content2Container = screen.getByText('Content 2').closest('.accordion-details-container');
     expect(content1Container).toHaveAttribute('aria-hidden', 'true');
     expect(content2Container).toHaveAttribute('aria-hidden', 'false');
   });
@@ -122,7 +122,7 @@ describe('Accordion', () => {
     );
     
     const button = screen.getByRole('button', { name: 'ARIA Test' });
-    const accordion = button.closest('.pgov-accordion');
+    const accordion = button.closest('.accordion');
     
     expect(accordion).toHaveAttribute('data-allow-multiple', 'true');
     expect(button).toHaveAttribute('aria-expanded', 'false');

@@ -13,9 +13,9 @@ export const HeaderMobileMenu = ({
   menuId,
 }) => {
   return (
-    <div className={`pgov-header-mobile-menu ${isOpen ? 'is-open' : ''}`}>
+    <div className={`header-mobile-menu ${isOpen ? 'is-open' : ''}`}>
       <button 
-        className="pgov-header-mobile-menu-button"
+        className="header-mobile-menu-button"
         onClick={onClick}
         aria-expanded={isOpen}
         aria-controls={menuId}
@@ -23,12 +23,12 @@ export const HeaderMobileMenu = ({
         aria-haspopup="true"
         type="button"
       >
-        <div className="pgov-header-mobile-menu-icon" aria-hidden="true">
+        <div className="header-mobile-menu-icon" aria-hidden="true">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <span className="pgov-header-mobile-menu-text">{menuText}</span>
+        <span className="header-mobile-menu-text">{menuText}</span>
       </button>
     </div>
   );

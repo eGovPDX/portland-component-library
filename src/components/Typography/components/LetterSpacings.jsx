@@ -25,12 +25,12 @@ export const LetterSpacings = ({ letterSpacings, className }) => {
 
 // Default letter spacings used in the design system
 const defaultLetterSpacings = [
-  { name: 'Tighter', variable: '--pgov-letter-spacing-tighter', value: '-0.05em' },
-  { name: 'Tight', variable: '--pgov-letter-spacing-tight', value: '-0.025em' },
-  { name: 'Normal', variable: '--pgov-letter-spacing-normal', value: '0em' },
-  { name: 'Wide', variable: '--pgov-letter-spacing-wide', value: '0.025em' },
-  { name: 'Wider', variable: '--pgov-letter-spacing-wider', value: '0.05em' },
-  { name: 'Widest', variable: '--pgov-letter-spacing-widest', value: '0.1em' }
+  { name: 'Tighter', variable: '-0.05em', value: '-0.05em' },
+  { name: 'Tight', variable: '-0.01em', value: '-0.025em' },
+  { name: 'Normal', variable: '0', value: '0em' },
+  { name: 'Wide', variable: '0.025em', value: '0.025em' },
+  { name: 'Wider', variable: '0.05em', value: '0.05em' },
+  { name: 'Widest', variable: '0.1em', value: '0.1em' }
 ];
 
 LetterSpacings.propTypes = {

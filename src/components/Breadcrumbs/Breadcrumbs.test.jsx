@@ -61,7 +61,7 @@ describe('Breadcrumbs', () => {
     render(<Breadcrumbs items={defaultItems} />);
     
     const nav = screen.getByRole('navigation');
-    expect(nav).toHaveClass('pgov-breadcrumb');
+    expect(nav).toHaveClass('breadcrumb');
   });
 
   it('truncates items when truncateMiddle is true and breadcrumbs are long', async () => {

@@ -75,16 +75,16 @@ ColorSwatch.defaultProps = {
 
 export const RedColorSwatches = () => {
   const colors = [
-    { name: 'Red 5', colorVar: '--pgov-color-red-5', hexValue: '#f9e9e9' },
-    { name: 'Red 10', colorVar: '--pgov-color-red-10', hexValue: '#f8e1de' },
-    { name: 'Red 20', colorVar: '--pgov-color-red-20', hexValue: '#f7bbb3' },
-    { name: 'Red 30', colorVar: '--pgov-color-red-30', hexValue: '#f2938c' },
-    { name: 'Red 40', colorVar: '--pgov-color-red-40', hexValue: '#e76a61' },
-    { name: 'Red 50', colorVar: '--pgov-color-red-50', hexValue: '#d83933' },
-    { name: 'Red 60', colorVar: '--pgov-color-red-60', hexValue: '#b50909' },
-    { name: 'Red 70', colorVar: '--pgov-color-red-70', hexValue: '#8b0a03' },
-    { name: 'Red 80', colorVar: '--pgov-color-red-80', hexValue: '#5c1111' },
-    { name: 'Red 90', colorVar: '--pgov-color-red-90', hexValue: '#2e0c0a' }
+    { name: 'Red 5', colorVar: 'var(--color-red-5)' },
+    { name: 'Red 10', colorVar: 'var(--color-red-10)' },
+    { name: 'Red 20', colorVar: 'var(--color-red-20)' },
+    { name: 'Red 30', colorVar: 'var(--color-red-30)' },
+    { name: 'Red 40', colorVar: 'var(--color-red-40)' },
+    { name: 'Red 50', colorVar: 'var(--color-red-50)' },
+    { name: 'Red 60', colorVar: 'var(--color-red-60)' },
+    { name: 'Red 70', colorVar: 'var(--color-red-70)' },
+    { name: 'Red 80', colorVar: 'var(--color-red-80)' },
+    { name: 'Red 90', colorVar: 'var(--color-red-90)' }
   ];
 
   return (
@@ -98,16 +98,16 @@ export const RedColorSwatches = () => {
 
 export const OrangeColorSwatches = () => {
   const colors = [
-    { name: 'Orange 5', colorVar: '--pgov-color-orange-5', hexValue: '#faf3ef' },
-    { name: 'Orange 10', colorVar: '--pgov-color-orange-10', hexValue: '#fce2cd' },
-    { name: 'Orange 20', colorVar: '--pgov-color-orange-20', hexValue: '#f6bd9c' },
-    { name: 'Orange 30', colorVar: '--pgov-color-orange-30', hexValue: '#eb9873' },
-    { name: 'Orange 40', colorVar: '--pgov-color-orange-40', hexValue: '#e87939' },
-    { name: 'Orange 50', colorVar: '--pgov-color-orange-50', hexValue: '#c05600' },
-    { name: 'Orange 60', colorVar: '--pgov-color-orange-60', hexValue: '#974a00' },
-    { name: 'Orange 70', colorVar: '--pgov-color-orange-70', hexValue: '#7a3800' },
-    { name: 'Orange 80', colorVar: '--pgov-color-orange-80', hexValue: '#4e2500' },
-    { name: 'Orange 90', colorVar: '--pgov-color-orange-90', hexValue: '#331800' }
+    { name: 'Orange 5', colorVar: 'var(--color-orange-5)' },
+    { name: 'Orange 10', colorVar: 'var(--color-orange-10)' },
+    { name: 'Orange 20', colorVar: 'var(--color-orange-20)' },
+    { name: 'Orange 30', colorVar: 'var(--color-orange-30)' },
+    { name: 'Orange 40', colorVar: 'var(--color-orange-40)' },
+    { name: 'Orange 50', colorVar: 'var(--color-orange-50)' },
+    { name: 'Orange 60', colorVar: 'var(--color-orange-60)' },
+    { name: 'Orange 70', colorVar: 'var(--color-orange-70)' },
+    { name: 'Orange 80', colorVar: 'var(--color-orange-80)' },
+    { name: 'Orange 90', colorVar: 'var(--color-orange-90)' }
   ];
 
   return (
@@ -121,16 +121,16 @@ export const OrangeColorSwatches = () => {
 
 export const GoldColorSwatches = () => {
   const colors = [
-    { name: 'Gold 5', colorVar: '--pgov-color-gold-5', hexValue: '#faf5e9' },
-    { name: 'Gold 10', colorVar: '--pgov-color-gold-10', hexValue: '#fcebb2' },
-    { name: 'Gold 20', colorVar: '--pgov-color-gold-20', hexValue: '#fee685' },
-    { name: 'Gold 30', colorVar: '--pgov-color-gold-30', hexValue: '#f5d348' },
-    { name: 'Gold 40', colorVar: '--pgov-color-gold-40', hexValue: '#e5b800' },
-    { name: 'Gold 50', colorVar: '--pgov-color-gold-50', hexValue: '#b58b00' },
-    { name: 'Gold 60', colorVar: '--pgov-color-gold-60', hexValue: '#876600' },
-    { name: 'Gold 70', colorVar: '--pgov-color-gold-70', hexValue: '#5d4200' },
-    { name: 'Gold 80', colorVar: '--pgov-color-gold-80', hexValue: '#422d00' },
-    { name: 'Gold 90', colorVar: '--pgov-color-gold-90', hexValue: '#241800' }
+    { name: 'Gold 5', colorVar: 'var(--color-gold-5)' },
+    { name: 'Gold 10', colorVar: 'var(--color-gold-10)' },
+    { name: 'Gold 20', colorVar: 'var(--color-gold-20)' },
+    { name: 'Gold 30', colorVar: 'var(--color-gold-30)' },
+    { name: 'Gold 40', colorVar: 'var(--color-gold-40)' },
+    { name: 'Gold 50', colorVar: 'var(--color-gold-50)' },
+    { name: 'Gold 60', colorVar: 'var(--color-gold-60)' },
+    { name: 'Gold 70', colorVar: 'var(--color-gold-70)' },
+    { name: 'Gold 80', colorVar: 'var(--color-gold-80)' },
+    { name: 'Gold 90', colorVar: 'var(--color-gold-90)' }
   ];
 
   return (
@@ -144,16 +144,16 @@ export const GoldColorSwatches = () => {
 
 export const YellowColorSwatches = () => {
   const colors = [
-    { name: 'Yellow 5', colorVar: '--pgov-color-yellow-5', hexValue: '#fafaee' },
-    { name: 'Yellow 10', colorVar: '--pgov-color-yellow-10', hexValue: '#fdf9cd' },
-    { name: 'Yellow 20', colorVar: '--pgov-color-yellow-20', hexValue: '#fff799' },
-    { name: 'Yellow 30', colorVar: '--pgov-color-yellow-30', hexValue: '#fee800' },
-    { name: 'Yellow 40', colorVar: '--pgov-color-yellow-40', hexValue: '#ead200' },
-    { name: 'Yellow 50', colorVar: '--pgov-color-yellow-50', hexValue: '#baaa00' },
-    { name: 'Yellow 60', colorVar: '--pgov-color-yellow-60', hexValue: '#8e8000' },
-    { name: 'Yellow 70', colorVar: '--pgov-color-yellow-70', hexValue: '#635a00' },
-    { name: 'Yellow 80', colorVar: '--pgov-color-yellow-80', hexValue: '#403700' },
-    { name: 'Yellow 90', colorVar: '--pgov-color-yellow-90', hexValue: '#211d00' }
+    { name: 'Yellow 5', colorVar: 'var(--color-yellow-5)' },
+    { name: 'Yellow 10', colorVar: 'var(--color-yellow-10)' },
+    { name: 'Yellow 20', colorVar: 'var(--color-yellow-20)' },
+    { name: 'Yellow 30', colorVar: 'var(--color-yellow-30)' },
+    { name: 'Yellow 40', colorVar: 'var(--color-yellow-40)' },
+    { name: 'Yellow 50', colorVar: 'var(--color-yellow-50)' },
+    { name: 'Yellow 60', colorVar: 'var(--color-yellow-60)' },
+    { name: 'Yellow 70', colorVar: 'var(--color-yellow-70)' },
+    { name: 'Yellow 80', colorVar: 'var(--color-yellow-80)' },
+    { name: 'Yellow 90', colorVar: 'var(--color-yellow-90)' }
   ];
 
   return (
@@ -167,16 +167,16 @@ export const YellowColorSwatches = () => {
 
 export const GreenColorSwatches = () => {
   const colors = [
-    { name: 'Green 5', colorVar: '--pgov-color-green-5', hexValue: '#f1f9f7' },
-    { name: 'Green 10', colorVar: '--pgov-color-green-10', hexValue: '#dfefe6' },
-    { name: 'Green 20', colorVar: '--pgov-color-green-20', hexValue: '#b4ddc1' },
-    { name: 'Green 30', colorVar: '--pgov-color-green-30', hexValue: '#89ca9b' },
-    { name: 'Green 40', colorVar: '--pgov-color-green-40', hexValue: '#4ea868' },
-    { name: 'Green 50', colorVar: '--pgov-color-green-50', hexValue: '#008817' },
-    { name: 'Green 60', colorVar: '--pgov-color-green-60', hexValue: '#216e3a' },
-    { name: 'Green 70', colorVar: '--pgov-color-green-70', hexValue: '#154c21' },
-    { name: 'Green 80', colorVar: '--pgov-color-green-80', hexValue: '#103417' },
-    { name: 'Green 90', colorVar: '--pgov-color-green-90', hexValue: '#0b1e0f' }
+    { name: 'Green 5', colorVar: 'var(--color-green-5)' },
+    { name: 'Green 10', colorVar: 'var(--color-green-10)' },
+    { name: 'Green 20', colorVar: 'var(--color-green-20)' },
+    { name: 'Green 30', colorVar: 'var(--color-green-30)' },
+    { name: 'Green 40', colorVar: 'var(--color-green-40)' },
+    { name: 'Green 50', colorVar: 'var(--color-green-50)' },
+    { name: 'Green 60', colorVar: 'var(--color-green-60)' },
+    { name: 'Green 70', colorVar: 'var(--color-green-70)' },
+    { name: 'Green 80', colorVar: 'var(--color-green-80)' },
+    { name: 'Green 90', colorVar: 'var(--color-green-90)' }
   ];
 
   return (
@@ -190,16 +190,16 @@ export const GreenColorSwatches = () => {
 
 export const MintColorSwatches = () => {
   const colors = [
-    { name: 'Mint 5', colorVar: '--pgov-color-mint-5', hexValue: '#e9f7f4' },
-    { name: 'Mint 10', colorVar: '--pgov-color-mint-10', hexValue: '#d0f0e8' },
-    { name: 'Mint 20', colorVar: '--pgov-color-mint-20', hexValue: '#a6e8d7' },
-    { name: 'Mint 30', colorVar: '--pgov-color-mint-30', hexValue: '#6adbc3' },
-    { name: 'Mint 40', colorVar: '--pgov-color-mint-40', hexValue: '#2dc4ad' },
-    { name: 'Mint 50', colorVar: '--pgov-color-mint-50', hexValue: '#00a398' },
-    { name: 'Mint 60', colorVar: '--pgov-color-mint-60', hexValue: '#008a84' },
-    { name: 'Mint 70', colorVar: '--pgov-color-mint-70', hexValue: '#126c64' },
-    { name: 'Mint 80', colorVar: '--pgov-color-mint-80', hexValue: '#0d504a' },
-    { name: 'Mint 90', colorVar: '--pgov-color-mint-90', hexValue: '#072c29' }
+    { name: 'Mint 5', colorVar: 'var(--color-mint-5)' },
+    { name: 'Mint 10', colorVar: 'var(--color-mint-10)' },
+    { name: 'Mint 20', colorVar: 'var(--color-mint-20)' },
+    { name: 'Mint 30', colorVar: 'var(--color-mint-30)' },
+    { name: 'Mint 40', colorVar: 'var(--color-mint-40)' },
+    { name: 'Mint 50', colorVar: 'var(--color-mint-50)' },
+    { name: 'Mint 60', colorVar: 'var(--color-mint-60)' },
+    { name: 'Mint 70', colorVar: 'var(--color-mint-70)' },
+    { name: 'Mint 80', colorVar: 'var(--color-mint-80)' },
+    { name: 'Mint 90', colorVar: 'var(--color-mint-90)' }
   ];
 
   return (
@@ -213,16 +213,16 @@ export const MintColorSwatches = () => {
 
 export const CyanColorSwatches = () => {
   const colors = [
-    { name: 'Cyan 5', colorVar: '--pgov-color-cyan-5', hexValue: '#e7f6f8' },
-    { name: 'Cyan 10', colorVar: '--pgov-color-cyan-10', hexValue: '#ccecf2' },
-    { name: 'Cyan 20', colorVar: '--pgov-color-cyan-20', hexValue: '#99deea' },
-    { name: 'Cyan 30', colorVar: '--pgov-color-cyan-30', hexValue: '#5dc0d1' },
-    { name: 'Cyan 40', colorVar: '--pgov-color-cyan-40', hexValue: '#449dae' },
-    { name: 'Cyan 50', colorVar: '--pgov-color-cyan-50', hexValue: '#168092' },
-    { name: 'Cyan 60', colorVar: '--pgov-color-cyan-60', hexValue: '#0d6b7a' },
-    { name: 'Cyan 70', colorVar: '--pgov-color-cyan-70', hexValue: '#074b59' },
-    { name: 'Cyan 80', colorVar: '--pgov-color-cyan-80', hexValue: '#02313d' },
-    { name: 'Cyan 90', colorVar: '--pgov-color-cyan-90', hexValue: '#01232a' }
+    { name: 'Cyan 5', colorVar: 'var(--color-cyan-5)' },
+    { name: 'Cyan 10', colorVar: 'var(--color-cyan-10)' },
+    { name: 'Cyan 20', colorVar: 'var(--color-cyan-20)' },
+    { name: 'Cyan 30', colorVar: 'var(--color-cyan-30)' },
+    { name: 'Cyan 40', colorVar: 'var(--color-cyan-40)' },
+    { name: 'Cyan 50', colorVar: 'var(--color-cyan-50)' },
+    { name: 'Cyan 60', colorVar: 'var(--color-cyan-60)' },
+    { name: 'Cyan 70', colorVar: 'var(--color-cyan-70)' },
+    { name: 'Cyan 80', colorVar: 'var(--color-cyan-80)' },
+    { name: 'Cyan 90', colorVar: 'var(--color-cyan-90)' }
   ];
 
   return (
@@ -236,16 +236,16 @@ export const CyanColorSwatches = () => {
 
 export const BlueColorSwatches = () => {
   const colors = [
-    { name: 'Blue 5', colorVar: '--pgov-color-blue-5', hexValue: '#e8f5ff' },
-    { name: 'Blue 10', colorVar: '--pgov-color-blue-10', hexValue: '#cfe8ff' },
-    { name: 'Blue 20', colorVar: '--pgov-color-blue-20', hexValue: '#a1d3ff' },
-    { name: 'Blue 30', colorVar: '--pgov-color-blue-30', hexValue: '#58b4ff' },
-    { name: 'Blue 40', colorVar: '--pgov-color-blue-40', hexValue: '#2491ff' },
-    { name: 'Blue 50', colorVar: '--pgov-color-blue-50', hexValue: '#0076d6' },
-    { name: 'Blue 60', colorVar: '--pgov-color-blue-60', hexValue: '#005ea2' },
-    { name: 'Blue 70', colorVar: '--pgov-color-blue-70', hexValue: '#0b4778' },
-    { name: 'Blue 80', colorVar: '--pgov-color-blue-80', hexValue: '#112f4e' },
-    { name: 'Blue 90', colorVar: '--pgov-color-blue-90', hexValue: '#071d41' }
+    { name: 'Blue 5', colorVar: 'var(--color-blue-5)' },
+    { name: 'Blue 10', colorVar: 'var(--color-blue-10)' },
+    { name: 'Blue 20', colorVar: 'var(--color-blue-20)' },
+    { name: 'Blue 30', colorVar: 'var(--color-blue-30)' },
+    { name: 'Blue 40', colorVar: 'var(--color-blue-40)' },
+    { name: 'Blue 50', colorVar: 'var(--color-blue-50)' },
+    { name: 'Blue 60', colorVar: 'var(--color-blue-60)' },
+    { name: 'Blue 70', colorVar: 'var(--color-blue-70)' },
+    { name: 'Blue 80', colorVar: 'var(--color-blue-80)' },
+    { name: 'Blue 90', colorVar: 'var(--color-blue-90)' }
   ];
 
   return (

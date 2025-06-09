@@ -25,15 +25,12 @@ export const FontWeights = ({ weights, className }) => {
 
 // Default font weights used in the design system
 const defaultWeights = [
-  { name: 'Thin', variable: '--pgov-font-weight-thin', value: '100' },
-  { name: 'Extra Light', variable: '--pgov-font-weight-extralight', value: '200' },
-  { name: 'Light', variable: '--pgov-font-weight-light', value: '300' },
-  { name: 'Regular', variable: '--pgov-font-weight-regular', value: '400' },
-  { name: 'Medium', variable: '--pgov-font-weight-medium', value: '500' },
-  { name: 'Semi Bold', variable: '--pgov-font-weight-semibold', value: '600' },
-  { name: 'Bold', variable: '--pgov-font-weight-bold', value: '700' },
-  { name: 'Extra Bold', variable: '--pgov-font-weight-extrabold', value: '800' },
-  { name: 'Black', variable: '--pgov-font-weight-black', value: '900' }
+  { name: 'Thin', variable: '--theme-font-weight-thin', value: '100' },
+  { name: 'Light', variable: '--theme-font-weight-light', value: '300' },
+  { name: 'Regular', variable: '--theme-font-weight-normal', value: '400' },
+  { name: 'Semi Bold', variable: '--theme-font-weight-semibold', value: '600' },
+  { name: 'Bold', variable: '--theme-font-weight-bold', value: '700' },
+  { name: 'Extra Bold', variable: '--theme-font-weight-heavy', value: '800' },
 ];
 
 FontWeights.propTypes = {

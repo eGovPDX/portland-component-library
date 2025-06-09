@@ -3,14 +3,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(----usa-spacing-1, 0.5rem);
+  gap: var(--text-area-gap, 0.5rem);
 }
 
 .usa-label {
   display: block;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: var(--text-area-label-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-area-label-font-size, 1rem);
+  font-weight: var(--text-area-label-font-weight, 700);
   margin-top: 0;
   margin-bottom: 0;
   max-width: 30rem;
@@ -18,8 +18,8 @@
 
 .usa-text-area__description {
   display: block;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.875rem;
+  font-family: var(--text-area-desc-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-area-desc-font-size, 0.875rem);
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -29,24 +29,24 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: var(----usa-spacing-2, 1rem);
+  gap: var(--text-area-footer-gap, 1rem);
 }
 
 .usa-text-area__error-message {
   display: block;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(----theme-color-error-dark, #B50909);
+  font-family: var(--text-area-error-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-area-error-font-size, 0.875rem);
+  font-weight: var(--text-area-error-font-weight, 700);
+  color: var(--text-area-error-color, #B50909);
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .usa-text-area__character-count {
   display: block;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.875rem;
-  color: var(----theme-color-ink, #1B1B1B);
+  font-family: var(--text-area-count-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-area-count-font-size, 0.875rem);
+  color: var(--text-area-count-color, #1B1B1B);
   margin-top: 0;
   margin-bottom: 0;
   text-align: right;
@@ -55,25 +55,25 @@
 /* Input wrapper with flexbox */
 .usa-input-wrapper {
   display: flex;
-  background-color: var(----usa-color-white, #FFF);
-  border: 1px solid var(----theme-color-ink, #1B1B1B);
-  border-radius: var(----component-input-border-radius, 0px);
+  background-color: var(--text-area-bg, #FFF);
+  border: var(--text-area-border, 1px solid #1B1B1B);
+  border-radius: var(--text-area-border-radius, 0px);
   width: 100% !important;
   max-width: 100%;
 }
 
 /* Input states applied to wrapper */
 .usa-input-wrapper--error {
-  border: var(----usa-spacing-05, 0.25rem) solid var(----theme-color-error-dark, #B50909);
+  border: var(--text-area-error-border, 0.25rem solid #B50909);
 }
 
 .usa-input-wrapper--success {
-  border: var(----usa-spacing-05, 0.25rem) solid var(----theme-color-success-dark, #008817);
+  border: var(--text-area-success-border, 0.25rem solid #008817);
 }
 
 .usa-input-wrapper--disabled {
-  background: var(----theme-color-disabled-medium, #757575);
-  color: var(----usa-color-white, #FFF);
+  background: var(--text-area-disabled-bg, #757575);
+  color: var(--text-area-disabled-color, #FFF);
   cursor: not-allowed;
 }
 
@@ -81,14 +81,14 @@
 .usa-input-wrapper textarea {
   background-color: transparent;
   position: relative;
-  min-height: var(----usa-spacing-5, 2.5rem);
-  padding: 0.5rem;
+  min-height: var(--text-area-min-height, 2.5rem);
+  padding: var(--text-area-input-padding, 0.5rem);
   border: none;
   outline: none;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1rem;
+  font-family: var(--text-area-input-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
+  font-size: var(--text-area-input-font-size, 1rem);
   line-height: 1.5;
-  color: var(----theme-color-ink, #1B1B1B);
+  color: var(--text-area-input-color, #1B1B1B);
   width: 100%;
   resize: none;
   overflow: hidden;
@@ -97,12 +97,12 @@
 
 .usa-input-wrapper textarea:disabled {
   background: transparent;
-  color: var(----usa-color-white, #FFF);
+  color: var(--text-area-input-disabled-color, #FFF);
   cursor: not-allowed;
 }
 
 /* Focus styles */
 .usa-input-wrapper:focus-within {
-  outline: 0.25rem solid #2491ff;
-  outline-offset: 0;
+  outline: var(--text-area-focus-outline, 0.25rem solid #2491ff);
+  outline-offset: var(--text-area-focus-outline-offset, 0);
 } 

@@ -9,7 +9,7 @@ export const CardGrid = ({
   className,
   ...props
 }) => {
-  const baseClass = 'pgov-card-grid';
+  const baseClass = 'card-grid';
   const gridClasses = [
     baseClass,
     className
@@ -17,9 +17,9 @@ export const CardGrid = ({
 
   return (
     <div className={gridClasses} data-testid="card-grid" {...props}>
-      <hr className="pgov-card-grid__divider" />
-      {heading && <h3 className="pgov-card-grid__heading">{heading}</h3>}
-      <div className="pgov-card-grid__container">
+      <hr className="card-grid__divider" />
+      {heading && <h3 className="card-grid__heading">{heading}</h3>}
+      <div className="card-grid__container">
         {cards.map((card, index) => (
           <Card key={index} {...card} />
         ))}

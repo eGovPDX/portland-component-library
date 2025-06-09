@@ -40,30 +40,30 @@ export const AccordionItem = ({
     }
   };
 
-  const itemClass = classNames('pgov-accordion-item', {
-    'pgov-accordion-item--bordered': type === 'bordered',
-    'pgov-accordion-item--open': isExpanded,
+  const itemClass = classNames('accordion-item', {
+    'accordion-item--bordered': type === 'bordered',
+    'accordion-item--open': isExpanded,
   });
 
   return (
     <div className={itemClass} {...props}>
       <button
-        className="pgov-accordion-button"
+        className="accordion-button"
         aria-expanded={isExpanded}
         type="button"
         onClick={toggleAccordion}
       >
-        <span className="pgov-accordion-summary">{summary}</span>
-        <span className="pgov-accordion-icon">
+        <span className="accordion-summary">{summary}</span>
+        <span className="accordion-icon">
           <FontAwesomeIcon icon={isExpanded ? faMinus : faPlus} />
         </span>
       </button>
       <div
-        className="pgov-accordion-details-container"
+        className="accordion-details-container"
         style={{ height: detailsHeight }}
         aria-hidden={!isExpanded}
       >
-        <div className="pgov-accordion-details" ref={detailsRef}>
+        <div className="accordion-details" ref={detailsRef}>
           {children}
         </div>
       </div>
@@ -123,8 +123,8 @@ export const Accordion = ({
     });
   };
 
-  const accordionClass = classNames('pgov-accordion', className, {
-    'pgov-accordion--bordered': type === 'bordered',
+  const accordionClass = classNames('accordion', className, {
+    'accordion--bordered': type === 'bordered',
   });
 
   // Clone children to add props

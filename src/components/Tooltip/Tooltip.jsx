@@ -106,7 +106,7 @@ export const Tooltip = ({
         <FloatingPortal>
           <div
             ref={refs.setFloating}
-            className={`pgov-tooltip__body pgov-tooltip__body--${theme} ${isPopup ? 'pgov-tooltip__body--popup' : ''} ${className}`}
+            className={`tooltip__body tooltip__body--${theme} ${isPopup ? 'tooltip__body--popup' : ''} ${className}`}
             style={{
               position: strategy,
               top: y ?? 0,
@@ -121,7 +121,7 @@ export const Tooltip = ({
             {showArrow && (
               <div
                 ref={arrowRef}
-                className="pgov-tooltip__arrow"
+                className="tooltip__arrow"
                 style={{
                   position: 'absolute',
                   left: arrowX != null ? `${arrowX}px` : '',
@@ -129,7 +129,7 @@ export const Tooltip = ({
                   [staticSide]: '-5px',
                   width: '10px',
                   height: '10px',
-                  backgroundColor: theme === 'light' ? 'var(--pgov-color-neutral-lightest)' : '#181818',
+                  backgroundColor: theme === 'light' ? '#f0f0f0' : '#181818',
                   transform: `rotate(${getArrowRotation()})`,
                 }}
               />
@@ -142,21 +142,12 @@ export const Tooltip = ({
 };
 
 Tooltip.propTypes = {
-  /** The element that triggers the tooltip */
-  children: PropTypes.element.isRequired,
-  /** Content to display in the tooltip - can be text or elements */
-  content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  /** Position of the tooltip relative to the trigger element */
+  children: PropTypes.node.isRequired,
+  content: PropTypes.node.isRequired,
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-  /** Visual theme of the tooltip */
-  theme: PropTypes.oneOf(['light', 'dark']),
-  /** Whether to show the arrow pointer */
+  theme: PropTypes.oneOf(['dark', 'light']),
   showArrow: PropTypes.bool,
-  /** Additional CSS classes to apply to the tooltip */
   className: PropTypes.string,
-  /** If true, will function as a popup that can contain complex elements */
   isPopup: PropTypes.bool,
-  /** If true, the tooltip will open on click instead of hover */
   triggerOnClick: PropTypes.bool,
 };
-
