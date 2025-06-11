@@ -1,0 +1,225 @@
+/* Modal component styles */
+
+/* Prevent body scroll when modal is active */
+.usa-js-modal--active {
+  overflow: hidden;
+}
+
+/* Base modal dialog element */
+.usa-modal {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  max-width: none;
+  max-height: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--modal-z-index, 1050);
+  
+  /* Initial state - hidden */
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: 
+    opacity var(--modal-transition-duration, 0.15s) ease-in-out,
+    visibility var(--modal-transition-duration, 0.15s) ease-in-out,
+    transform var(--modal-transition-duration, 0.15s) ease-in-out;
+}
+
+/* Open state */
+.usa-modal[open] {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Visible animation class */
+.usa-modal--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Modal backdrop */
+.usa-modal::backdrop {
+  background: var(--modal-backdrop-bg, rgba(0, 0, 0, 0.7));
+  opacity: 0;
+  transition: opacity var(--modal-transition-duration, 0.15s) ease-in-out;
+}
+
+.usa-modal[open]::backdrop,
+.usa-modal--visible::backdrop {
+  opacity: 1;
+}
+
+/* Forced action modal backdrop - prevent clicks */
+.usa-modal--forced-action::backdrop {
+  pointer-events: none;
+}
+
+/* Modal content wrapper */
+.usa-modal__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--modal-content-padding, 1.5rem);
+  position: relative;
+  max-width: var(--modal-max-width, 30rem);
+  margin: 0 auto;
+  
+  /* Ensure content is clickable while backdrop is not (for forced action) */
+  pointer-events: auto;
+}
+
+/* Main modal container using Card */
+.usa-modal__main {
+  width: 100%;
+  position: relative;
+  background: var(--modal-bg, #ffffff);
+  border-radius: var(--modal-border-radius, 0.5rem);
+  box-shadow: var(--modal-box-shadow, 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2));
+  overflow: hidden;
+}
+
+/* Modal card styling */
+.usa-modal__card {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+  max-width: none;
+}
+
+.usa-modal__card .usa-card__container {
+  border: none;
+  background: transparent;
+  padding: var(--modal-card-padding, 2rem);
+  max-width: none;
+}
+
+/* Modal footer */
+.usa-modal__footer {
+  padding: 0 var(--modal-card-padding, 2rem) var(--modal-card-padding, 2rem);
+  margin-top: var(--modal-footer-gap, 1.5rem);
+}
+
+.usa-modal__footer .usa-button-group {
+  margin: 0;
+  justify-content: flex-end;
+  gap: var(--modal-button-gap, 0.5rem);
+}
+
+.usa-modal__footer .usa-button-group__item {
+  margin: 0;
+}
+
+/* Close button */
+.usa-modal__close {
+  position: absolute;
+  top: var(--modal-close-top, 1rem);
+  right: var(--modal-close-right, 1rem);
+  z-index: 1;
+  
+  background: transparent;
+  border: none;
+  padding: var(--modal-close-padding, 0.5rem);
+  cursor: pointer;
+  
+  color: var(--modal-close-color, #71767a);
+  font-size: var(--modal-close-size, 1.5rem);
+  line-height: 1;
+  
+  border-radius: var(--modal-close-border-radius, 0.25rem);
+  transition: 
+    color var(--modal-close-transition-duration, 0.2s) ease-in-out,
+    background-color var(--modal-close-transition-duration, 0.2s) ease-in-out;
+}
+
+.usa-modal__close:hover,
+.usa-modal__close:focus {
+  color: var(--modal-close-hover-color, #1b1b1b);
+  background-color: var(--modal-close-hover-bg, rgba(0, 0, 0, 0.1));
+}
+
+.usa-modal__close:focus {
+  outline: var(--modal-close-focus-outline, 0.25rem solid #fd5765);
+  outline-offset: var(--modal-close-focus-outline-offset, 0.25rem);
+}
+
+.usa-modal__close .usa-icon {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
+/* Large modal variant */
+.usa-modal--lg .usa-modal__content {
+  max-width: var(--modal-lg-max-width, 55rem);
+}
+
+.usa-modal--lg .usa-modal__main {
+  width: 100%;
+}
+
+.usa-modal--lg .usa-modal__card .usa-card__container {
+  padding: var(--modal-lg-card-padding, 2.5rem);
+}
+
+.usa-modal--lg .usa-modal__footer {
+  padding: 0 var(--modal-lg-card-padding, 2.5rem) var(--modal-lg-card-padding, 2.5rem);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .usa-modal__content {
+    padding: var(--modal-content-padding-mobile, 1rem);
+  }
+  
+  .usa-modal__card .usa-card__container {
+    padding: var(--modal-card-padding-mobile, 1.5rem);
+  }
+  
+  .usa-modal__footer {
+    padding: 0 var(--modal-card-padding-mobile, 1.5rem) var(--modal-card-padding-mobile, 1.5rem);
+  }
+  
+  .usa-modal--lg .usa-modal__card .usa-card__container {
+    padding: var(--modal-card-padding-mobile, 1.5rem);
+  }
+  
+  .usa-modal--lg .usa-modal__footer {
+    padding: 0 var(--modal-card-padding-mobile, 1.5rem) var(--modal-card-padding-mobile, 1.5rem);
+  }
+  
+  .usa-modal__close {
+    top: var(--modal-close-top-mobile, 0.75rem);
+    right: var(--modal-close-right-mobile, 0.75rem);
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .usa-modal__main {
+    border: 2px solid;
+  }
+  
+  .usa-modal__close {
+    border: 1px solid;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .usa-modal,
+  .usa-modal::backdrop,
+  .usa-modal__close {
+    transition: none;
+  }
+} 
