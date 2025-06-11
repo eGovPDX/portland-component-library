@@ -342,6 +342,36 @@
   --hero-homepage-padding-lg: 2rem;
   --hero-homepage-margin-mobile: 1rem;
 
+  /* Modal component variables */
+  --modal-z-index: 1050;
+  --modal-backdrop-bg: rgba(0, 0, 0, 0.7);
+  --modal-transition-duration: 0.15s;
+  --modal-max-width: 30rem;
+  --modal-lg-max-width: 55rem;
+  --modal-content-padding: 1.5rem;
+  --modal-content-padding-mobile: 1rem;
+  --modal-bg: #ffffff;
+  --modal-border-radius: 0.5rem;
+  --modal-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  --modal-card-padding: 2rem;
+  --modal-card-padding-mobile: 1.5rem;
+  --modal-lg-card-padding: 2.5rem;
+  --modal-footer-gap: 1.5rem;
+  --modal-button-gap: 0.5rem;
+  --modal-close-top: 1rem;
+  --modal-close-right: 1rem;
+  --modal-close-top-mobile: 0.75rem;
+  --modal-close-right-mobile: 0.75rem;
+  --modal-close-padding: 0.5rem;
+  --modal-close-color: #71767a;
+  --modal-close-hover-color: #1b1b1b;
+  --modal-close-hover-bg: rgba(0, 0, 0, 0.1);
+  --modal-close-size: 1.5rem;
+  --modal-close-border-radius: 0.25rem;
+  --modal-close-transition-duration: 0.2s;
+  --modal-close-focus-outline: 0.25rem solid #fd5765;
+  --modal-close-focus-outline-offset: 0.25rem;
+
   /* Page template component variables */
   --page-template-bg: #ffffff;
   --page-template-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
