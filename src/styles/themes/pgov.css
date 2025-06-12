@@ -346,8 +346,8 @@
   --modal-z-index: 1050;
   --modal-backdrop-bg: rgba(0, 0, 0, 0.7);
   --modal-transition-duration: 0.15s;
-  --modal-max-width: var(--spacing-desktop, 30rem);
-  --modal-lg-max-width: var(--spacing-desktop, 55rem);
+  --modal-max-width: 30rem;
+  --modal-lg-max-width: 55rem;
   --modal-content-padding: var(--spacing-3, 1.5rem);
   --modal-content-padding-mobile: var(--spacing-2, 1rem);
   --modal-bg: var(--color-white, #ffffff);
