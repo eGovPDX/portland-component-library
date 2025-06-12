@@ -180,6 +180,19 @@ export const Modal = ({
           tabIndex={!hasFocusableElements ? 0 : undefined}
         >
           <div className="usa-modal__main">
+            {!forcedAction && (
+                <div className="modal-header">
+                    <button
+                    type="button"
+                    className="usa-modal__close"
+                    aria-label="Close this modal"
+                    onClick={handleCloseClick}
+                    tabIndex="0"
+                    >
+                        <FontAwesomeIcon icon={faTimes} className="usa-icon" />
+                    </button>
+                </div>
+            )}
             <Card {...cardProps} />
             {(enhancedConfirmButton || enhancedCancelButton) && (
               <div className="usa-modal__footer">
@@ -198,17 +211,6 @@ export const Modal = ({
               </div>
             )}
           </div>
-          {!forcedAction && (
-            <button
-              type="button"
-              className="usa-modal__close"
-              aria-label="Close this modal"
-              onClick={handleCloseClick}
-              tabIndex="0"
-            >
-              <FontAwesomeIcon icon={faTimes} className="usa-icon" />
-            </button>
-          )}
           {!hasFocusableElements && (
             <button
               type="button"
