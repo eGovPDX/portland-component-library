@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import { FocusTrap } from 'focus-trap-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Card } from '../Card/Card';
+import { Card } from '../Card';
 import './Modal.css';
 
 export const Modal = ({
@@ -103,6 +103,22 @@ export const Modal = ({
     tabIndex: 0 // Ensure button is focusable
   });
 
+  // Create action button group for Card footer
+  const actionButtons = (enhancedConfirmButton || enhancedCancelButton) && (
+    <div className="usa-button-group">
+      {enhancedConfirmButton && (
+        <div className="usa-button-group__item">
+          {enhancedConfirmButton}
+        </div>
+      )}
+      {enhancedCancelButton && (
+        <div className="usa-button-group__item">
+          {enhancedCancelButton}
+        </div>
+      )}
+    </div>
+  );
+
   // Build CSS classes
   const modalClasses = [
     'usa-modal',
@@ -115,13 +131,6 @@ export const Modal = ({
   const hasButtons = !!(enhancedConfirmButton || enhancedCancelButton);
   const hasCloseButton = !forcedAction;
   const hasFocusableElements = hasButtons || hasCloseButton;
-
-  // Prepare Card props
-  const cardProps = {
-    heading,
-    children,
-    className: 'usa-modal__card'
-  };
 
   return (
     <dialog
@@ -176,41 +185,27 @@ export const Modal = ({
       >
         <div 
           ref={contentRef}
-          className="usa-modal__content"
+          className="usa-modal__container"
           tabIndex={!hasFocusableElements ? 0 : undefined}
         >
-          <div className="usa-modal__main">
+          <Card 
+            heading={heading}
+            actionButton={actionButtons}
+            className="usa-modal__card"
+          >
             {!forcedAction && (
-                <div className="modal-header">
-                    <button
-                    type="button"
-                    className="usa-modal__close"
-                    aria-label="Close this modal"
-                    onClick={handleCloseClick}
-                    tabIndex="0"
-                    >
-                        <FontAwesomeIcon icon={faTimes} className="usa-icon" />
-                    </button>
-                </div>
+              <button
+                type="button"
+                className="usa-modal__close"
+                aria-label="Close this modal"
+                onClick={handleCloseClick}
+                tabIndex="0"
+              >
+                <FontAwesomeIcon icon={faTimes} className="usa-icon" />
+              </button>
             )}
-            <Card {...cardProps} />
-            {(enhancedConfirmButton || enhancedCancelButton) && (
-              <div className="usa-modal__footer">
-                <div className="usa-button-group">
-                  {enhancedConfirmButton && (
-                    <div className="usa-button-group__item">
-                      {enhancedConfirmButton}
-                    </div>
-                  )}
-                  {enhancedCancelButton && (
-                    <div className="usa-button-group__item">
-                      {enhancedCancelButton}
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
+            {children}
+          </Card>
           {!hasFocusableElements && (
             <button
               type="button"
