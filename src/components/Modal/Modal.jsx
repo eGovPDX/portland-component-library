@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import { FocusTrap } from 'focus-trap-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
