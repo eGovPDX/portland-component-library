@@ -342,6 +342,36 @@
   --hero-homepage-padding-lg: var(--spacing-4, 32px);
   --hero-homepage-margin-mobile: var(--spacing-2, 16px);
 
+  /* Modal component variables */
+  --modal-z-index: 1050;
+  --modal-backdrop-bg: rgba(0, 0, 0, 0.7);
+  --modal-transition-duration: 0.15s;
+  --modal-max-width: var(--spacing-desktop, 30rem);
+  --modal-lg-max-width: var(--spacing-desktop, 55rem);
+  --modal-content-padding: var(--spacing-3, 1.5rem);
+  --modal-content-padding-mobile: var(--spacing-2, 1rem);
+  --modal-bg: var(--color-white, #ffffff);
+  --modal-border-radius: var(--radius-lg, 0.5rem);
+  --modal-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  --modal-card-padding: var(--spacing-4, 2rem);
+  --modal-card-padding-mobile: var(--spacing-3, 1.5rem);
+  --modal-lg-card-padding: var(--spacing-5, 2.5rem);
+  --modal-footer-gap: var(--spacing-3, 1.5rem);
+  --modal-button-gap: var(--spacing-1, 0.5rem);
+  --modal-close-top: var(--spacing-2, 1rem);
+  --modal-close-right: var(--spacing-2, 1rem);
+  --modal-close-top-mobile: var(--spacing-105, 0.75rem);
+  --modal-close-right-mobile: var(--spacing-105, 0.75rem);
+  --modal-close-padding: var(--spacing-1, 0.5rem);
+  --modal-close-color: var(--color-gray-cool-60, #71767a);
+  --modal-close-hover-color: var(--color-gray-90, #1b1b1b);
+  --modal-close-hover-bg: rgba(0, 0, 0, 0.1);
+  --modal-close-size: var(--font-size-9, 1.5rem);
+  --modal-close-border-radius: var(--radius-md, 0.25rem);
+  --modal-close-transition-duration: 0.2s;
+  --modal-close-focus-outline: var(--spacing-105, 0.25rem) solid var(--color-blue-cool-60v, #2491ff);
+  --modal-close-focus-outline-offset: var(--spacing-105, 0.25rem);
+
   /* Page template component variables */
   --page-template-bg: var(--color-white, #ffffff);
   --page-template-font-family: var(--font-family-reading-public-sans);

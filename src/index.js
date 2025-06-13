@@ -12,6 +12,7 @@ export { Search } from './components/Search';
 export { Contacts } from './components/Contacts';
 export { HeroHomepage } from './components/HeroHomepage';
 export { HeroGlobal } from './components/HeroGlobal';
+export { Modal } from './components/Modal';
 export { Typography } from './components/Typography';
 export { ColorSwatch } from './components/ColorSwatch';
 export { SpacingTokens, SpacingExamples, SpacingDisplay } from './components/Spacing';

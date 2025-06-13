@@ -56,6 +56,7 @@ portland-component-library/
 │   │   ├── Header/     # Navigation header
 │   │   ├── HeroGlobal/ # Global hero section
 │   │   ├── HeroHomepage/# Homepage hero section
+│   │   ├── Modal/      # Modal dialog component
 │   │   ├── PageTemplate/# Page template
 │   │   ├── ProcessSteps/# Process step indicators
 │   │   ├── Search/     # Search input component
@@ -99,6 +100,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **Button** - Button components
 - **ButtonGroup** - Group of related buttons, with default and segmented variants
 - **Dropdown** - Accessible custom dropdown/select component
+- **Modal** - Accessible modal dialog component
 - **Tag** - Tag component for labeling and categorization
 
 ### Layout Components
