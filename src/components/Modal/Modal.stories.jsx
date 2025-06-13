@@ -56,9 +56,7 @@ const ModalTemplate = (args) => {
   };
   const handleConfirm = () => {
     args.onConfirm?.();
-    if (!args.forcedAction) {
-      setIsOpen(false);
-    }
+    setIsOpen(false);
   };
 
   return (
@@ -130,7 +128,7 @@ export const ConfirmOnly = {
     children: <p>Your changes have been successfully saved to the system.</p>,
     confirmButton: <Button>Continue</Button>,
     size: 'default',
-    forcedAction: false
+    forcedAction: true
   }
 };
 
@@ -188,53 +186,3 @@ export const ComplexContent = {
     forcedAction: false
   }
 };
-
-// Always open modal for testing styles
-export const AlwaysOpen = {
-  args: {
-    isOpen: true,
-    heading: 'Style Testing Modal',
-    children: <p>This modal is always open for testing styles and layout.</p>,
-    confirmButton: <Button>Confirm</Button>,
-    cancelButton: <Button variant="outline">Cancel</Button>,
-    size: 'default',
-    forcedAction: false,
-    onClose: () => console.log('Close clicked'),
-    onConfirm: () => console.log('Confirm clicked')
-  }
-};
-
-// Large always open modal
-export const LargeAlwaysOpen = {
-  args: {
-    isOpen: true,
-    heading: 'Large Style Testing Modal',
-    children: (
-      <div>
-        <p>This is a large modal that is always open for testing styles and layout.</p>
-        <p>It demonstrates how content flows within the larger modal size.</p>
-      </div>
-    ),
-    confirmButton: <Button>Confirm</Button>,
-    cancelButton: <Button variant="outline">Cancel</Button>,
-    size: 'large',
-    forcedAction: false,
-    onClose: () => console.log('Close clicked'),
-    onConfirm: () => console.log('Confirm clicked')
-  }
-};
-
-// Forced action always open
-export const ForcedActionAlwaysOpen = {
-  args: {
-    isOpen: true,
-    heading: 'Forced Action Modal',
-    children: <p>This forced action modal cannot be closed by clicking outside or pressing escape.</p>,
-    confirmButton: <Button>Take action</Button>,
-    cancelButton: <Button variant="outline">Alternative action</Button>,
-    size: 'default',
-    forcedAction: true,
-    onClose: () => console.log('Close clicked'),
-    onConfirm: () => console.log('Confirm clicked')
-  }
-}; 
