@@ -1,0 +1,164 @@
+.radio-buttons-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.radio-buttons-title {
+  padding: 0;
+  margin-bottom: 4px;
+}
+
+.radio-buttons-description {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.options-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--radio-button-options-gap, 16px);
+}
+
+.radio-button-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--radio-button-label-gap, 8px);
+}
+
+.radio-input-wrapper {
+  display: inline-block;
+  border-radius: 50%;
+  margin: 2px 0 0;
+}
+
+.radio-button-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid #1B1B1B;
+  background: #FFF;
+  position: relative;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.radio-button-input:checked {
+  border-color: #005EA2;
+  background: #FFF;
+}
+
+.radio-button-input:checked::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #005EA2;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.radio-button-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.tiled .radio-button-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.radio-button-item.selected .radio-button-input {
+  background: var(--radio-button-tiled-background-color, #FFF);
+  padding: 10px;
+  align-items: center;
+}
+
+.radio-button-input:disabled {
+  border: 3px solid #757575;
+}
+
+.radio-button-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-text {
+  color: var(--radio-button-label-text-color, #1B1B1B);
+  font-family: var(--radio-button-label-text-font-family, "Public Sans");
+  font-size: var(--radio-button-label-text-font-size, 16px);
+  font-style: normal;
+  font-weight: var(--radio-button-label-text-font-weight, 400);
+  line-height: var(--radio-button-label-line-height, 130%); /* 20.8px */
+}
+
+.label-description {
+  color: var(--radio-button-label-text-color, #1B1B1B);
+  font-family: var(--radio-button-label-text-font-family, "Public Sans");
+  font-size: var(--radio-button-label-description-font-size, 14px);
+  font-style: normal;
+  font-weight: var(--radio-button-label-text-font-weight, 400);
+  line-height: var(--radio-button-label-line-height, 130%);
+}
+
+.radio-button-item.disabled .label-text,
+.radio-button-item.disabled .label-description {
+  color: var(--radio-button-disabled-color, #757575);
+}
+
+/* Tiled variant */
+.tiled .radio-button-item {
+  border-radius: var(--radio-button-tiled-border-radius, 4px);
+  border: var(--radio-button-tiled-border-width, 2px) solid var(--radio-button-tiled-border-color, #C9C9C9);
+  background: var(--radio-button-tiled-background-color, #FFF);
+  padding: 16px;
+  align-items: center;
+}
+
+.tiled .radio-button-item.selected {
+  border-color: var(--radio-button-tiled-selected-border-color, #005EA2);
+  background-color: var(--radio-button-tiled-selected-background-color, #005EA2);
+  background-color: rgba(var(--radio-button-tiled-selected-background-color-rgb, 0, 94, 162), var(--radio-button-tiled-selected-opacity, 0.1));
+}
+
+.tiled .radio-input-wrapper {
+  margin: 0;
+}
+
+.tiled .radio-button-item.disabled {
+  border-color: var(--radio-button-tiled-disabled-border-color, #E6E6E6);
+  background: var(--radio-button-tiled-disabled-background-color, #FFF);
+}
+
+.tiled .radio-button-input {
+  margin: 0;
+}
+
+/* Required and Error state */
+.required-asterisk {
+  color: var(--radio-button-required-asterisk-color, #B50909);
+}
+
+.error-message {
+  color: var(--radio-button-error-text-color, #B50909);
+  font-family: var(--radio-button-error-font-family, "Public Sans");
+  font-size: var(--radio-button-error-font-size, 16px);
+  font-style: normal;
+  font-weight: var(--radio-button-error-font-weight, 700);
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.error .radio-buttons-title {
+  color: var(--radio-button-error-text-color, #B50909);
+}
+
+.error .options-wrapper {
+ border-left: 4px solid var(--radio-button-error-border-color, #B50909);
+ padding-left: 16px;
+} 

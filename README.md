@@ -74,6 +74,7 @@ portland-component-library/
 │   │   ├── Dropdown/   # Accessible custom dropdown/select component
 │   │   ├── ExternalLinkIcon.jsx # External link icon component
 │   │   ├── PopoverWithCard/# Popover for displaying interactive Card content
+│   │   ├── RadioButtons/ # Accessible radio button component with multiple variants
 │   │   ├── TextArea/   # Text area component for multi-line text input
 │   │   └── TextInput/  # Text input component with validation and states
 │   ├── images/         # Image assets
@@ -116,6 +117,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **Search** - Search input component with variants
 - **TextArea** - Text area component for multi-line text input
 - **TextInput** - Text input component with validation and states
+- **RadioButtons** - Accessible radio button component with multiple variants
 
 ### Content Components
 - **Typography** - Text components and styles
