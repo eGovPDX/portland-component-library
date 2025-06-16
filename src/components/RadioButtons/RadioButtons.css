@@ -32,22 +32,12 @@
   margin: 2px 0 0;
 }
 
-.radio-input-wrapper:focus-within {
-  box-shadow: 0 0 0 2px var(--radio-button-tiled-selected-border-color, #005EA2);
-}
-
 .radio-button-input {
-  accent-color: var(--radio-button-color, #1B1B1B);
   margin: 2px 0 0;
   flex-shrink: 0;
 }
 
-.radio-button-input:focus-visible {
-  outline: none;
-}
-
 .radio-button-item.selected .radio-button-input {
-  accent-color: var(--radio-button-tiled-selected-border-color, #005EA2);
   background: var(--radio-button-tiled-background-color, #FFF);
   padding: 16px;
   align-items: center;
