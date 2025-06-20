@@ -15,7 +15,8 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-viewport",
     "@storybook/addon-themes",
-    "@storybook/experimental-addon-test"
+    "@storybook/experimental-addon-test",
+    "@whitespace/storybook-addon-html"
   ],
 
   framework: {
