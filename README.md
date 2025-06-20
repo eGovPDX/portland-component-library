@@ -76,7 +76,8 @@ portland-component-library/
 │   │   ├── PopoverWithCard/# Popover for displaying interactive Card content
 │   │   ├── RadioButtons/ # Accessible radio button component with multiple variants
 │   │   ├── TextArea/   # Text area component for multi-line text input
-│   │   └── TextInput/  # Text input component with validation and states
+│   │   ├── TextInput/  # Text input component with validation and states
+│   │   └── Checkbox/   # Checkbox component allowing multiple selections from a list
 │   ├── images/         # Image assets
 │   └── styles/         # SCSS styles and themes
 ├── .storybook/         # Storybook configuration
@@ -118,6 +119,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **TextArea** - Text area component for multi-line text input
 - **TextInput** - Text input component with validation and states
 - **RadioButtons** - Accessible radio button component with multiple variants
+- **Checkbox** - Checkbox component allowing users to select one or more options from a list
 
 ### Content Components
 - **Typography** - Text components and styles
