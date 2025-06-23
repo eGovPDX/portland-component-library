@@ -20,6 +20,7 @@ export { Tooltip } from './components/Tooltip';
 export { Button } from './components/Button';
 export { Breadcrumbs } from './components/Breadcrumbs';
 export { Alert } from './components/Alert';
+export { Checkbox } from './components/Checkbox';
 export { ExternalLinkIcon } from './components/ExternalLinkIcon';
 export { TextInput } from './components/TextInput';
 export { StepIndicator } from './components/StepIndicator';
