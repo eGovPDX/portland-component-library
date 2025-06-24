@@ -35,6 +35,7 @@
 .usa-button:focus {
   outline: var(--button-focus-outline);
   outline-offset: var(--button-focus-outline-offset);
+  background-color: var(--button-focus-bg-color);
 }
 
 /* Disabled state */

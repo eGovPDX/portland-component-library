@@ -78,15 +78,16 @@
   /* Button component variables */
   --button-font-family: var(--font-family-open-sans);
   --button-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --button-bg: var(--color-blue-60);
+  --button-bg: var(--color-blue-60v);
   --button-text-color: var(--color-white);
-  --button-hover-bg: var(--color-blue-warm-70);
+  --button-hover-bg: var(--color-blue-warm-70v);
   --button-hover-text-color: var(--color-white);
-  --button-active-bg-color: var(--color-blue-warm-80);
+  --button-active-bg-color: var(--color-blue-warm-80v);
   --button-border-radius: calc(var(--radius-md) * 1px);
   --button-font-weight: 700;
   --button-margin-right: calc(var(--spacing-xs) * 1px);
   --button-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-sm) * 1px);
+  --button-focus-bg-color: var(--color-blue-40v);
   --button-focus-outline: calc(var(--spacing-2xs) * 1px) solid var(--color-blue-40);
   --button-focus-outline-offset: calc(var(--spacing-2xs) * 1px);
   /* Disabled button */
