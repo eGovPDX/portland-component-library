@@ -16,7 +16,7 @@
 
 /* Bordered accordion variant */
 .accordion-item--bordered {
-  border-top: var(--accordion-border-top-width, 0px) solid var(--accordion-border-color, #F0F0F0);
+  border-top: 0;
   border-right: var(--accordion-border-width, 4px) solid var(--accordion-border-color, #F0F0F0);
   border-bottom: var(--accordion-border-width, 4px) solid var(--accordion-border-color, #F0F0F0);
   border-left: var(--accordion-border-width, 4px) solid var(--accordion-border-color, #F0F0F0);
@@ -28,7 +28,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--accordion-button-padding-top) var(--accordion-button-padding-bottom);
+  padding: var(--accordion-button-padding-top-bottom) var(--accordion-button-padding-left-right);
   background: var(--accordion-button-bg, #F0F0F0);
   border: none;
   cursor: pointer;
@@ -38,11 +38,22 @@
   outline: var(--accordion-button-outline, none);
 }
 
+/* Focus styles for better accessibility */
+.accordion-button:focus {
+  outline: var(--accordion-focus-outline, 2px solid #4D90FE);
+  outline-offset: var(--accordion-focus-outline-offset, -2px);
+}
+
+/* Hover styles */
+.accordion-button:hover {
+  background-color: var(--accordion-button-hover-bg, #E7E7E7);
+}
+
 /* Accordion summary text */
 .accordion-summary {
   color: var(--accordion-button-text, #1B1B1B);
   font-family: var(--accordion-font-family, "Public Sans");
-  font-size: var(--accordion-font-size, 16px);
+  font-size: var(--accordion-button-font-size, 16px);
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
@@ -70,22 +81,12 @@
 /* Accordion content */
 .accordion-details {
   background-color: var(--accordion-details-bg-color, #F0F0F0);
-  padding: var(--accordion-details-padding, 16px);
+  padding: var(--accordion-details-padding-top-bottom, 16px) var(--accordion-details-padding-left-right, 20px);
   color: var(--accordion-details-text, #1B1B1B);
   font-family: var(--accordion-font-family, "Public Sans");
-  font-size: var(--accordion-font-size, 16px);
+  font-size: var(--accordion-details-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
-
-/* Focus styles for better accessibility */
-.accordion-button:focus {
-  outline: var(--accordion-focus-outline, 2px solid #4D90FE);
-  outline-offset: var(--accordion-focus-outline-offset, -2px);
-}
-
-/* Hover styles */
-.accordion-button:hover {
-  background-color: var(--accordion-button-hover-bg, #E7E7E7);
-} 
+ 

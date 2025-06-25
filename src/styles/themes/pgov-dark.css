@@ -3,19 +3,22 @@
 
 .pgov-dark-theme-applied {
   /* Accordion component variables */
+  --accordion-font-family: var(--font-family-open-sans);
   --accordion-gap: calc(var(--spacing-xs) * 1px);
   --accordion-border-color: var(--color-gray-cool-70);
   --accordion-border-width: calc(var(--border-lg) * 1px);
   --accordion-button-bg: var(--color-gray-cool-80);
+  --accordion-button-hover-bg: var(--color-gray-cool-70);
+  --accordion-button-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --accordion-button-text: var(--color-gray-cool-10);
-  --accordion-button-padding-top: calc(var(--spacing-sm) * 1px);
-  --accordion-button-padding-bottom: calc(var(--spacing-sm) * 1px);
+  --accordion-button-padding-top-bottom: calc(var(--spacing-sm) * 1px);
+  --accordion-button-padding-left-right: calc(var(--spacing-sm) * 1px);
   --accordion-button-outline: none;
-  --accordion-font-family: var(--font-family-open-sans);
-  --accordion-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --accordion-details-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --accordion-details-text: var(--color-gray-cool-10);
   --accordion-details-bg-color: transparent;
-  --accordion-details-padding: calc(var(--spacing-sm) * 1px);
+  --accordion-details-padding-top-bottom: calc(var(--spacing-sm) * 1px);
+  --accordion-details-padding-left-right: calc(var(--spacing-sm) * 1px);
 
   /* Alert component variables */
   --alert-bg: var(--color-blue-60);

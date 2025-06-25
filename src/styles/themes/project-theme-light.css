@@ -8,8 +8,8 @@
   --accordion-border-width: calc(var(--border-lg) * 1px);
   --accordion-button-bg: var(--color-gray-cool-10);
   --accordion-button-text: var(--color-gray-90);
-  --accordion-button-padding-top: calc(var(--spacing-sm) * 1px);
-  --accordion-button-padding-bottom: calc(var(--spacing-sm) * 1px);
+  --accordion-button-padding-top-bottom: calc(var(--spacing-sm) * 1px);
+  --accordion-button-padding-left-right: calc(var(--spacing-sm) * 1px);
   --accordion-button-outline: none;
   --accordion-font-family: var(--font-family-open-sans);
   --accordion-font-size: calc(var(--font-open-sans-size-5) * 1px);
