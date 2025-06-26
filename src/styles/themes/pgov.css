@@ -49,17 +49,17 @@
   --alert-error-icon-color: var(--color-black);
 
   /* Banner component variables */
-  --banner-bg: var(--color-gray-5);
+  --banner-bg: var(--color-base-lightest);
   --banner-font-family: var(--font-family-open-sans);
   --banner-font-size: calc(var(--font-open-sans-size-3) * 1px);
-  --banner-content-padding: calc(var(--spacing-2xs) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-2xs) * 1px) calc(var(--spacing-sm) * 1px);
+  --banner-content-padding: calc(var(--spacing-2xs) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-2xs) * 1px) calc(var(--spacing-md) * 1px);
   --banner-content-gap: calc(var(--spacing-xs) * 1px);
-  --banner-expanded-content-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-sm) * 1px) calc(var(--spacing-sm) * 1px) calc(var(--spacing-xs) * 1px);
-  --banner-expanded-content-gap: calc(var(--spacing-xs) * 1px);
-  --banner-text-color: var(--color-gray-90, #1b1b1b);
-  --banner-border-color: var(--color-gray-cool-10);
+  --banner-expanded-content-padding: calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px);
+  --banner-expanded-content-gap: calc(var(--spacing-lg) * 1px);
+  --banner-text-color: var(--color-foundation-black, #1b1b1b);
+  --banner-border-color: var(--color-base-lightest);
   --banner-line-height-normal: 1.5;
-  --banner-button-color: var(--color-blue-60);
+  --banner-button-color: var(--color-foundation-link);
 
   /* Breadcrumb component variables */
   --breadcrumb-font-family: var(--font-family-open-sans);
