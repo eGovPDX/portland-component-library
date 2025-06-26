@@ -80,66 +80,90 @@
   /* Button component variables */
   --button-font-family: var(--font-family-open-sans);
   --button-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --button-bg: var(--color-blue-60v);
-  --button-text-color: var(--color-white);
-  --button-hover-bg: var(--color-blue-warm-70v);
-  --button-hover-text-color: var(--color-white);
-  --button-active-bg-color: var(--color-blue-warm-80v);
+  --button-bg: var(--color-primary-medium);
+  --button-text-color: var(--color-foundation-white);
+  --button-hover-bg: var(--color-primary-dark);
+  --button-hover-text-color: var(--color-foundation-white);
+  --button-active-bg-color: var(--color-primary-darker);
   --button-border-radius: calc(var(--radius-md) * 1px);
   --button-font-weight: 700;
   --button-margin-right: calc(var(--spacing-xs) * 1px);
   --button-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-sm) * 1px);
-  --button-focus-bg-color: var(--color-blue-40v);
+  --button-focus-bg-color: var(--color-primary-medium);
   --button-focus-outline: calc(var(--spacing-2xs) * 1px) solid var(--color-blue-40);
   --button-focus-outline-offset: calc(var(--spacing-2xs) * 1px);
   /* Disabled button */
-  --button-disabled-bg-color: var(--color-gray-20);
-  --button-disabled-text-color: var(--color-gray-70);
+  --button-disabled-bg-color: var(--color-disabled-lighter);
+  --button-disabled-text-color: var(--color-disabled-dark);
   /* Secondary button */
-  --button-secondary-bg: var(--color-red-50);
-  --button-secondary-hover-bg: var(--color-red-60);
-  --button-secondary-active-bg-color: var(--color-red-70);
-  --button-secondary-focus-bg-color: var(--color-red-50);
+  --button-secondary-bg: var(--color-secondary-medium);
+  --button-secondary-hover-bg: var(--color-secondary-dark);
+  --button-secondary-active-bg-color: var(--color-secondary-darker);
+  --button-secondary-focus-bg-color: var(--color-secondary-medium);
   /* Accent button */
-  --button-accent-cool: var(--color-cyan-30);
-  --button-accent-cool-hover-bg-color: var(--color-blue-cool-40);
-  --button-accent-cool-active-bg-color: var(--color-blue-cool-60);
-  --button-accent-warm-bg-color: var(--color-orange-30);
-  --button-accent-warm-hover-bg-color: var(--color-orange-50);
-  --button-accent-warm-active-bg-color: var(--color-orange-60);
+  --button-accent-cool-bg-color: var(--color-accent-cool-medium);
+  --button-accent-cool-hover-bg-color: var(--color-accent-cool-dark);
+  --button-accent-cool-active-bg-color: var(--color-accent-cool-darker);
+  --button-accent-cool-focus-bg-color: var(--color-accent-cool-medium);
+  --button-accent-warm-bg-color: var(--color-accent-warm-medium);
+  --button-accent-warm-hover-bg-color: var(--color-accent-warm-dark);
+  --button-accent-warm-active-bg-color: var(--color-accent-warm-darker);
+  --button-accent-warm-focus-bg-color: var(--color-accent-warm-medium);
   /* Base button */
-  --button-base-bg-color: var(--color-gray-cool-50);
-  --button-base-hover-bg-color: var(--color-gray-cool-60);
-  --button-base-active-bg-color: var(--color-gray-cool-70);
+  --button-base-bg-color: var(--color-base-medium);
+  --button-base-hover-bg-color: var(--color-base-dark);
+  --button-base-active-bg-color: var(--color-base-darker);
+  --button-base-focus-bg-color: var(--color-base-medium);
   /* Outline button */
   --button-outline-bg-color: transparent;
   --button-outline-box-shadow: inset 0 0 0 2px var(--color-blue-60);
-  --button-outline-text-color: var(--color-blue-60);
+  --button-outline-text-color: var(--color-primary-medium);
+  --button-outline-border-width: var(--border-md);
+  --button-outline-border-color: var(--color-primary-medium);
   --button-outline-hover-box-shadow: inset 0 0 0 2px var(--color-blue-warm-70);
-  --button-outline-hover-text-color: var(--color-blue-warm-70);
-  --button-outline-active-box-shadow: inset 0 0 0 2px var(--color-blue-warm-80);
-  --button-outline-active-text-color: var(--color-blue-warm-80);
+  --button-outline-hover-text-color: var(--color-primary-dark);
+  --button-outline-hover-border-color: var(--color-primary-dark);
+  --button-outline-active-box-shadow: inset 0 0 0 2px var(--color-primary-darker);
+  --button-outline-active-text-color: var(--color-primary-darker);
+  --button-outline-active-border-color: var(--color-primary-darker);
+  --button-outline-focus-box-shadow: inset 0 0 0 2px var(--color-blue-warm-80);
+  --button-outline-focus-text-color: var(--color-primary-medium);
+  --button-outline-focus-border-color: var(--color-primary-medium);
   /* Outline inverse button */
   --button-outline-inverse-bg-color: transparent;
-  --button-outline-inverse-text-color: var(--color-gray-cool-30);
+  --button-outline-inverse-text-color: var(--color-foundation-link-reverse);
   --button-outline-inverse-box-shadow: inset 0 0 0 2px var(--color-gray-cool-30);
+  --button-outline-inverse-border-width: var(--border-md);
+  --button-outline-inverse-border-color: var(--color-foundation-link-reverse);
   --button-outline-inverse-hover-bg-color: transparent;
-  --button-outline-inverse-hover-text-color: var(--color-gray-5);
-  --button-outline-inverse-hover-box-shadow: inset 0 0 0 2px var(--color-gray-5);
-  --button-outline-inverse-active-bg-color: var(--color-white);
-  --button-outline-inverse-active-text-color: var(--color-white);
-  --button-outline-inverse-active-box-shadow: inset 0 0 0 2px var(--color-white);
+  --button-outline-inverse-hover-text-color: var(--color-foundation-link-reverse-hover);
+  --button-outline-inverse-hover-box-shadow: inset 0 0 0 2px var(--color-foundation-link-reverse-hover);
+  --button-outline-inverse-hover-border-color: var(--color-foundation-link-reverse-hover);
+  --button-outline-inverse-active-bg-color: transparent;
+  --button-outline-inverse-active-text-color: var(--color-foundation-link-reverse-active);
+  --button-outline-inverse-active-box-shadow: inset 0 0 0 2px var(--color-foundation-link-reverse-active);
+  --button-outline-inverse-active-border-color: var(--color-foundation-link-reverse-active);
+  --button-outline-inverse-focus-border-color: var(--color-foundation-link);
+  --button-outline-inverse-focus-box-shadow: inset 0 0 0 2px var(--color-foundation-link);
+  --button-outline-inverse-focus-bg-color: transparent;
+  --button-outline-inverse-focus-text-color: var(--color-foundation-link);
   /* Big button */
   --button-big-font-size: calc(var(--font-open-sans-size-9) * 1px);
   --button-big-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-lg) * 1px);
   /* Unstyled button */
   --button-unstyled-bg-color: transparent;
-  --button-unstyled-text-color: var(--color-blue-60);
+  --button-unstyled-text-color: var(--color-foundation-link);
   --button-unstyled-hover-bg-color: transparent;
-  --button-unstyled-hover-text-color: var(--color-blue-warm-70);
+  --button-unstyled-hover-text-color: var(--color-foundation-link-hover);
   --button-unstyled-font-weight: 400;
   --button-unstyled-padding: 0;
   --button-unstyled-margin: 0;
+  --button-unstyled-focus-bg-color: transparent;
+  --button-unstyled-focus-text-color: var(--color-foundation-link);
+  --button-unstyled-active-bg-color: transparent;
+  --button-unstyled-active-text-color: var(--color-foundation-link-active);
+  --button-unstyled-disabled-bg-color: transparent;
+  --button-unstyled-disabled-text-color: var(--color-disabled-dark);
 
   /* ButtonGroup component variables */
   --button-group-gap: calc(var(--spacing-xs) * 1px);
