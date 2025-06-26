@@ -173,13 +173,13 @@
   --button-group-segmented-radius-right: calc(var(--spacing-xs) * 1px);
 
   /* Card component variables */
-  --card-border-radius: calc(var(--spacing-xs) * 1px);
-  --card-bg: var(--color-white, #FFF);
+  --card-border-radius: calc(var(--radius-lg) * 1px);
+  --card-bg: var(--color-foundation-white, #FFF);
   --card-padding-perimeter: calc(var(--spacing-lg) * 1px);
   --card-padding-y: calc(var(--spacing-md) * 1px);
   --card-border-width: calc(var(--border-md) * 1px);
-  --card-border-color: var(--color-gray-cool-10, #DFE1E2);
-  --card-text-color: var(--color-gray-90, #1B1B1B);
+  --card-border-color: var(--color-base-lighter, #DFE1E2);
+  --card-text-color: var(--color-foundation-black, #1B1B1B);
   --card-header-font-family: var(--font-family-open-sans, "Public Sans");
   --card-header-font-size: calc(var(--font-open-sans-size-10) * 1px);
   --card-font-family: var(--font-family-open-sans, "Public Sans");
