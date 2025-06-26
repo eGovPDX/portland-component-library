@@ -65,13 +65,12 @@
   --breadcrumb-font-family: var(--font-family-open-sans);
   --breadcrumb-font-size: calc(var(--font-open-sans-size-3) * 1px);
   --breadcrumb-font-weight: 400;
-  --breadcrumb-link-color: var(--color-blue-60, #005EA2);
-  --breadcrumb-color: var(--color-blue-60);
+  --breadcrumb-link-color: var(--color-foundation-link, #005EA2);
   --breadcrumb-color-hover: var(--color-blue-warm-70);
-  --breadcrumb-color-current: var(--color-gray-cool-60);
-  --breadcrumb-separator-color: var(--color-gray-cool-50);
-  --breadcrumb-background-color: var(--color-white, transparent);
-  --breadcrumb-bg: var(--color-white, transparent);
+  --breadcrumb-color-current: var(--color-foundation-black);
+  --breadcrumb-separator-color: var(--color-base-medium);
+  --breadcrumb-background-color: transparent;
+  --breadcrumb-bg: transparent;
   --breadcrumb-padding-y: calc(var(--spacing-none) * 1px);
   --breadcrumb-padding-x: calc(var(--spacing-sm) * 1px);
   --breadcrumb-gap: calc(var(--spacing-2xs) * 1px);
