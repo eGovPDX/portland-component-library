@@ -66,7 +66,7 @@
 
 /* Accent cool button */
 .usa-button--accent-cool {
-  background-color: var(--button-accent-cool);
+  background-color: var(--button-accent-cool-bg-color);
 }
 
 .usa-button--accent-cool:hover {
@@ -75,6 +75,10 @@
 
 .usa-button--accent-cool:active {
   background-color: var(--button-accent-cool-active-bg-color);
+}
+
+.usa-button--accent-cool:focus {
+  background-color: var(--button-accent-cool-focus-bg-color);
 }
 
 /* Accent warm button */
@@ -90,6 +94,10 @@
   background-color: var(--button-accent-warm-active-bg-color);
 }
 
+.usa-button--accent-warm:focus {
+  background-color: var(--button-accent-warm-focus-bg-color);
+}
+
 /* Base button */
 .usa-button--base {
   background-color: var(--button-base-bg-color);
@@ -103,23 +111,37 @@
   background-color: var(--button-base-active-bg-color);
 }
 
+.usa-button--base:focus {
+  background-color: var(--button-base-focus-bg-color);
+}
+
 /* Outline button */
 .usa-button--outline {
   background-color: var(--button-outline-bg-color);
   box-shadow: var(--button-outline-box-shadow);
   color: var(--button-outline-text-color);
+  border: var(--button-outline-border-width, 2px) solid var(--button-outline-text-color);
 }
 
 .usa-button--outline:hover {
   background-color: transparent;
   box-shadow: var(--button-outline-hover-box-shadow);
   color: var(--button-outline-hover-text-color);
+  border-color: var(--button-outline-hover-border-color);
 }
 
 .usa-button--outline:active {
   background-color: transparent;
   box-shadow: var(--button-outline-active-box-shadow);
   color: var(--button-outline-active-text-color);
+  border-color: var(--button-outline-active-border-color);
+}
+
+.usa-button--outline:focus {
+  background-color: transparent;
+  box-shadow: var(--button-outline-focus-box-shadow);
+  color: var(--button-outline-focus-text-color);
+  border-color: var(--button-outline-focus-border-color);
 }
 
 /* Outline inverse button */
@@ -127,18 +149,28 @@
   background-color: var(--button-outline-inverse-bg-color);
   box-shadow: var(--button-outline-inverse-box-shadow);
   color: var(--button-outline-inverse-text-color);
+  border: var(--button-outline-inverse-border-width, 2px) solid var(--button-outline-inverse-text-color);
 }
 
 .usa-button--outline-inverse:hover {
   background-color: var(--button-outline-inverse-hover-bg-color);
   box-shadow: var(--button-outline-inverse-hover-box-shadow);
   color: var(--button-outline-inverse-hover-text-color);
+  border-color: var(--button-outline-inverse-hover-border-color);
 }
 
 .usa-button--outline-inverse:active {
   background-color: var(--button-outline-inverse-active-bg-color);
   box-shadow: var(--button-outline-inverse-active-box-shadow);
   color: var(--button-outline-inverse-active-text-color);
+  border-color: var(--button-outline-inverse-active-border-color);
+}
+
+.usa-button--outline-inverse:focus {
+  background-color: var(--button-outline-inverse-focus-bg-color);
+  box-shadow: var(--button-outline-inverse-focus-box-shadow);
+  color: var(--button-outline-inverse-focus-text-color);
+  border-color: var(--button-outline-inverse-focus-border-color);
 }
 
 /* Big button */
@@ -168,12 +200,31 @@
   text-decoration: underline;
 }
 
+.usa-button--unstyled:focus {
+  background-color: var(--button-unstyled-focus-bg-color);
+  color: var(--button-unstyled-focus-text-color);
+  text-decoration: underline;
+}
+
+.usa-button--unstyled:active {
+  background-color: var(--button-unstyled-active-bg-color);
+  color: var(--button-unstyled-active-text-color);
+  text-decoration: underline;
+}
+
+.usa-button--unstyled:disabled,
+.usa-button--unstyled[aria-disabled=true] {
+  background-color: var(--button-unstyled-disabled-bg-color);
+  color: var(--button-unstyled-disabled-text-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* Icon styles */
 .usa-button__icon {
   display: inline-block;
   height: 1.1em;
   width: 1.1em;
-  vertical-align: middle;
 }
 
 .usa-button__icon--left {
