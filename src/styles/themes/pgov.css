@@ -176,7 +176,7 @@
   --card-border-radius: calc(var(--radius-lg) * 1px);
   --card-bg: var(--color-foundation-white, #FFF);
   --card-padding-perimeter: calc(var(--spacing-lg) * 1px);
-  --card-padding-y: calc(var(--spacing-md) * 1px);
+  --card-gap: calc(var(--spacing-md) * 1px);
   --card-border-width: calc(var(--border-md) * 1px);
   --card-border-color: var(--color-base-lighter, #DFE1E2);
   --card-text-color: var(--color-foundation-black, #1B1B1B);
