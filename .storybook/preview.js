@@ -35,8 +35,6 @@ const preview = {
         pgov: 'pgov-theme-applied',
         'pgov-dark': 'pgov-dark-theme-applied',
         'uswds-default': 'uswds-default-theme-applied',
-        'project-light': 'project-theme-light-applied',
-        'project-dark': 'project-theme-dark-applied',
       },
       defaultTheme: 'pgov',
     }),
