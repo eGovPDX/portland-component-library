@@ -573,7 +573,7 @@
   --search-input-min-width: 27ch;
   --search-input-padding: calc(var(--spacing-xs) * 1px);
   --search-input-height: calc(var(--units-8) * 1px);
-  --search-input-border: 1px solid var(--color-gray-90, #1B1B1B);
+  --search-input-border: 1px solid var(--color-base-darkest);
   --search-button-padding: calc(var(--spacing-xs) * 1px);
   --search-button-height: calc(var(--units-8) * 1px);
   --search-icon-size: calc(var(--font-open-sans-size-8) * 1px);
