@@ -453,13 +453,13 @@
 
   /* Modal component variables */
   --modal-z-index: 1050;
-  --modal-backdrop-bg: rgba(0, 0, 0, 0.7);
+  --modal-backdrop-bg: var(--color-black-transparent-70);
   --modal-transition-duration: 0.15s;
-  --modal-max-width: 30rem;
-  --modal-lg-max-width: 55rem;
+  --modal-max-width: var(--breakpoints-mobile-lg);
+  --modal-lg-max-width: var(--breakpoints-tablet-lg);
   --modal-content-padding: calc(var(--spacing-lg) * 1px);
   --modal-content-padding-mobile: calc(var(--spacing-md) * 1px);
-  --modal-bg: var(--color-white, #ffffff);
+  --modal-bg: var(--color-foundation-white);
   --modal-border-radius: calc(var(--radius-lg) * 1px);
   --modal-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   --modal-card-padding: calc(var(--spacing-xl) * 1px);
@@ -472,9 +472,9 @@
   --modal-close-top-mobile: calc(var(--spacing-sm) * 1px);
   --modal-close-right-mobile: calc(var(--spacing-sm) * 1px);
   --modal-close-padding: calc(var(--spacing-xs) * 1px);
-  --modal-close-color: var(--color-gray-cool-60, #71767a);
-  --modal-close-hover-color: var(--color-gray-90, #1b1b1b);
-  --modal-close-hover-bg: rgba(0, 0, 0, 0.1);
+  --modal-close-color: var(--color-foundation-black);
+  --modal-close-hover-color: var(--color-foundation-black);
+  --modal-close-hover-bg: var(--color-black-transparent-10);
   --modal-close-size: calc(var(--font-open-sans-size-9) * 1px);
   --modal-close-border-radius: calc(var(--radius-md) * 1px);
   --modal-close-transition-duration: 0.2s;
