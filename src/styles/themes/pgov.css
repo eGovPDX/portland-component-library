@@ -720,6 +720,7 @@
   --text-area-focus-outline-offset: 0;
 
   /* TextInput component variables */
+  --text-input-max-width: 640px;
   --text-input-gap: calc(var(--spacing-xs) * 1px);
   --text-input-label-font-family: var(--font-family-open-sans);
   --text-input-label-font-size: calc(var(--font-open-sans-size-5) * 1px);
@@ -729,22 +730,22 @@
   --text-input-error-font-family: var(--font-family-open-sans);
   --text-input-error-font-size: calc(var(--font-open-sans-size-3) * 1px);
   --text-input-error-font-weight: 700;
-  --text-input-error-color: var(--color-red-warm-60, #B50909);
-  --text-input-bg: var(--color-white, #FFF);
-  --text-input-border: 1px solid var(--color-gray-90, #1B1B1B);
+  --text-input-error-color: var(--color-error-dark);
+  --text-input-bg: var(--color-foundation-white);
+  --text-input-border: 1px solid var(--color-foundation-black);
   --text-input-border-radius: calc(var(--radius-0) * 1px);
-  --text-input-error-border: calc(var(--border-lg) * 1px) solid var(--color-red-warm-60, #B50909);
-  --text-input-success-border: calc(var(--border-lg) * 1px) solid var(--color-green-cool-60, #008817);
-  --text-input-disabled-bg: var(--color-gray-cool-60, #757575);
-  --text-input-disabled-color: var(--color-white, #FFF);
+  --text-input-error-border: calc(var(--border-lg) * 1px) solid var(--color-error-dark);
+  --text-input-success-border: calc(var(--border-lg) * 1px) solid var(--color-success-dark);
+  --text-input-disabled-bg: var(--color-disabled-lighter);
+  --text-input-disabled-color: var(--color-foundation-white);
   --text-input-height: calc(var(--units-10) * 1px);
   --text-input-input-font-family: var(--font-family-open-sans);
   --text-input-input-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --text-input-input-color: var(--color-gray-90, #1B1B1B);
-  --text-input-input-disabled-color: var(--color-white, #FFF);
-  --text-input-affix-color: var(--color-gray-90, #1B1B1B);
+  --text-input-input-color: var(--color-foundation-black);
+  --text-input-input-disabled-color: var(--color-foundation-white);
+  --text-input-affix-color: var(--color-foundation-black);
   --text-input-input-padding: calc(var(--spacing-sm) * 1px);
-  --text-input-focus-outline: calc(var(--border-lg) * 1px) solid var(--color-blue-cool-60, #2491ff);
+  --text-input-focus-outline: calc(var(--border-lg) * 1px) solid var(--color-primary-medium);
   --text-input-focus-outline-offset: 0;
   --text-input-prefix-padding: 0 0 0 0.75rem;
   --text-input-suffix-padding: 0 0.75rem 0 0;
