@@ -23,7 +23,7 @@
   min-width: var(--search-input-min-width, 27ch);
   padding: var(--search-input-padding, 8px);
   height: var(--search-input-height, 2rem);
-  border: var(--search-input-border, 1px solid var(--color-gray-90, #1B1B1B));
+  border: var(--search-input-border);
 }
 
 .usa-search .usa-button {
