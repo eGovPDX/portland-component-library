@@ -8,8 +8,8 @@
   --accordion-border-width: 4px;
   --accordion-button-bg: #dfe1e2;
   --accordion-button-text: #1b1b1b;
-  --accordion-button-padding-top: 1rem;
-  --accordion-button-padding-bottom: 1.25rem;
+  --accordion-button-padding-top-bottom: 1rem;
+  --accordion-button-padding-left-right: 1.25rem;
   --accordion-button-outline: none;
   --accordion-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --accordion-font-size: 1rem;

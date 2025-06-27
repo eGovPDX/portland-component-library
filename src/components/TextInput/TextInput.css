@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--text-input-gap, 0.5rem);
+  max-width: var(--text-input-max-width, 30rem);
 }
 
 .usa-label {
@@ -13,7 +14,7 @@
   font-weight: var(--text-input-label-font-weight, 700);
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 30rem;
+  max-width: var(--text-input-max-width, 30rem);
 }
 
 .usa-text-input__description {
@@ -37,6 +38,8 @@
 /* Simple input wrapper with flexbox */
 .usa-input-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--text-input-bg, #FFF);
   border: var(--text-input-border, 1px solid #1B1B1B);
   border-radius: var(--text-input-border-radius, 0px);
@@ -62,17 +65,14 @@
 /* Basic input styling */
 .usa-input {
   background-color: transparent;
-  position: relative;
   height: var(--text-input-height, 2.5rem);
-  padding: var(--text-input-input-padding, 0.5rem);
   border: none;
   outline: none;
   font-family: var(--text-input-input-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
   font-size: var(--text-input-input-font-size, 1rem);
   line-height: 1.5;
   color: var(--text-input-input-color, #1B1B1B);
-  width: fit-content;
-  min-width: 7.125rem;
+  max-width: 90%;
   margin-top: 0;
   box-sizing: border-box;
   field-sizing: content;
@@ -87,22 +87,13 @@
 /* Prefix and suffix */
 .usa-input-prefix,
 .usa-input-suffix {
-  position: relative;
   display: flex;
   align-items: center;
   color: var(--text-input-affix-color, #1B1B1B);
 }
 
-.usa-input-prefix {
-  padding: var(--text-input-prefix-padding, 0 0 0 0.75rem);
-}
-
-.usa-input-prefix+input {
-  padding-left: var(--text-input-prefix-input-padding-left, 0.5rem);
-}
-
 .usa-input-suffix {
-  padding: var(--text-input-suffix-padding, 0 0.75rem 0 0);
+  position: relative;
 }
 
 /* Ensure no outline on focused input, wrapper will handle focus style */

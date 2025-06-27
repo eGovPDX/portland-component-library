@@ -13,6 +13,7 @@ export const Banner = ({
   icon = undefined,
   heading = 'Official websites use .gov',
   description = 'A .gov website belongs to an official government organization in the United States.',
+  bannerLinkText = 'Here\'s how you know',
   showHttpsGuidance = true,
   initiallyExpanded = false,
   className = '',
@@ -100,7 +101,7 @@ export const Banner = ({
               aria-expanded={isExpanded}
               aria-controls="banner-content"
             >
-              <span className="banner-button-text">Here's how you know</span>
+              <span className="banner-button-text">{bannerLinkText}</span>
               <span className={`banner-button-icon ${isExpanded ? 'is-open' : ''}`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="6 9 12 15 18 9"></polyline>

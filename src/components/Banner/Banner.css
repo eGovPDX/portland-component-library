@@ -84,6 +84,7 @@
   flex-direction: row;
   padding: var(--banner-expanded-content-padding);
   border-top: 1px solid var(--banner-border-color, #dfe1e2);
+  gap: var(--banner-expanded-content-gap);
 }
 
 .banner-guidance {

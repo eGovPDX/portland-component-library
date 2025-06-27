@@ -39,26 +39,6 @@ LongBreadcrumbs.args = {
   truncateMiddle: true,
 };
 
-export const TruncationDemo = Template.bind({});
-TruncationDemo.args = {
-  items: [
-    { text: 'Home', href: '/' },
-    { text: 'City Services', href: '/services' },
-    { text: 'Transportation', href: '/services/transportation' },
-    { text: 'Public Transit', href: '/services/transportation/transit' },
-    { text: 'Bus Routes', href: '/services/transportation/transit/bus' },
-    { text: 'Route 20 - Burnside/Stark' },
-  ],
-  truncateMiddle: true,
-};
-TruncationDemo.parameters = {
-  docs: {
-    description: {
-      story: 'This example demonstrates the truncation behavior. Resize the container to see how the breadcrumbs adapt:\n- On wider screens, all items are visible\n- As the container narrows, middle items are replaced with an ellipsis\n- On mobile screens (< 768px), items stack vertically with no truncation',
-    },
-  },
-};
-
 export const CustomSeparator = Template.bind({});
 CustomSeparator.args = {
   items: [

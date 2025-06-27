@@ -1,7 +1,7 @@
 import React from 'react';
 import { SummaryBox } from './SummaryBox';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Button } from '../Button/Button';
 
 export default {
   title: 'Components/Summary Box',
@@ -16,10 +16,9 @@ export const WithButton = {
     heading: 'Have questions?',
     description: 'Schedule a time to speak with someone from the Permitting and Development office.',
     children: (
-      <a href="#schedule" className="summary-box-button">
+      <Button variant="primary" endIcon={faArrowRight} style={{ width: 'fit-content' }}>
         Schedule an appointment
-        <FontAwesomeIcon icon={faArrowRight} />
-      </a>
+      </Button>
     ),
   },
 };
@@ -28,10 +27,9 @@ export const WithoutDescription = {
   args: {
     heading: 'Have questions?',
     children: (
-      <a href="#schedule" className="summary-box-button">
+      <Button variant="primary" endIcon={faArrowRight} style={{ width: 'fit-content' }}>
         Schedule an appointment
-        <FontAwesomeIcon icon={faArrowRight} />
-      </a>
+      </Button>
     ),
   },
 }; 

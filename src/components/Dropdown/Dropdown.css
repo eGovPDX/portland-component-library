@@ -1,6 +1,6 @@
 .usa-select {
   height: var(--dropdown-height, 40px);
-  min-height: var(--dropdown-height, 40px); 
+  min-height: var(--dropdown-min-height, 40px); 
   padding-top: var(--dropdown-padding-y, 8px);
   padding-bottom: var(--dropdown-padding-y, 8px);
   padding-left: var(--dropdown-padding-x, 8px);
@@ -127,22 +127,23 @@
   align-items: center;
   width: 100%; 
   text-align: left;
-  height: var(--spacing-7, 40px); 
-  min-height: var(--spacing-7, 40px);
-  padding-top: var(--spacing-1, 8px);
-  padding-bottom: var(--spacing-1, 8px);
-  padding-left: var(--spacing-1, 8px);
-  padding-right: var(--spacing-7, 40px); 
+  height: var(--dropdown-height, 40px); 
+  min-height: var(--dropdown-min-height, 40px);
+  padding-top: var(--dropdown-padding-top, 8px);
+  padding-bottom: var(--dropdown-padding-bottom, 8px);
+  padding-left: var(--dropdown-padding-left, 8px);
+  padding-right: var(--dropdown-padding-right, 40px); 
   position: relative; 
   cursor: pointer;
   text-indent: 0;
+  background-color: var(--dropdown-bg, #FFF);
 }
 
 /* Disabled State - ensuring specificity */
 .usa-input.dropdown__button:disabled, 
 .usa-input.dropdown__button.usa-input--disabled {
   cursor: not-allowed;
-  /* Visuals like background/border for disabled are expected from .usa-input--disabled */
+  background-color: var(--dropdown-disabled-bg, #757575);
 }
 
 /* Selected Value Text - ensure specificity for error color */
@@ -181,7 +182,7 @@
 .dropdown__custom-chevron {
   position: absolute;
   top: 50%;
-  right: var(--spacing-2, 1rem); 
+  right: 1rem; 
   transform: translateY(-50%);
   transition: transform 0.2s ease-in-out;
   color: var(--dropdown-chevron-color, #1B1B1B);
@@ -204,19 +205,19 @@
   box-shadow: var(--dropdown-menu-shadow, 0 4px 8px rgba(0,0,0,0.1));
   list-style: none;
   margin: 0;
-  padding: var(--spacing-1, 8px) 0;
+  padding: 8px 0;
   overflow-y: auto;
   z-index: 1000; /* Ensure it's above other content */
 }
 
 /* Dropdown Menu Item (li) */
 .dropdown__item {
-  padding: var(--spacing-1, 8px) var(--spacing-2, 16px);
+  padding: var(--dropdown-item-padding-top-bottom, 8px) var(--dropdown-item-padding-left-right, 16px);
   cursor: pointer;
   color: var(--dropdown-item-color, #1B1B1B);
   background: var(--dropdown-item-bg, transparent);
-  font-family: var(--usa-font-family-ui, "Public Sans");
-  font-size: var(--theme-font-size-ui-sm, 16px);
+  font-family: var(--dropdown-font-family, "Public Sans");
+  font-size: var(--dropdown-font-size, 16px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -225,7 +226,6 @@
 .dropdown__item:hover, 
 .dropdown__item:focus {
   background: var(--dropdown-item-hover-bg, #dfe1e2);
-  color: var(--theme-color-primary-darker, #004c6c);
   outline: none;
 }
 

@@ -14,7 +14,7 @@
   margin-bottom: 1rem;
   padding: 1rem;
   background-color: var(--alert-bg, #f0f7ff);
-  border-left: 0.25rem solid var(--alert-border-color, #1a4480);
+  border-left: 0.5rem solid var(--alert-border-color, #1a4480);
   border-radius: 0.25rem;
 }
 
@@ -35,8 +35,8 @@
 }
 
 .alert__icon svg {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
 }
 
 .alert__content {
@@ -139,6 +139,11 @@
 
 .alert--slim .alert__icon {
   margin-top: 0; /* Remove margin in slim variant */
+}
+
+.alert--slim .alert__icon svg {
+  width: 26px;
+  height: 26px;
 }
 
 /* No icon variant */

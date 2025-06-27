@@ -96,8 +96,8 @@
 }
 
 .usa-input-wrapper textarea:disabled {
-  background: transparent;
-  color: var(--text-area-input-disabled-color, #FFF);
+  background: var(--text-area-disabled-bg, #757575);
+  color: var(--text-area-disabled-color, #FFF);
   cursor: not-allowed;
 }
 

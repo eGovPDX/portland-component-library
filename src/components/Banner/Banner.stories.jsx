@@ -21,6 +21,7 @@ export const Default = {
     domain: 'An official website of the City of Portland',
     heading: 'Official websites use .gov',
     description: 'A .gov website belongs to an official government organization in the United States.',
+    bannerLinkText: 'Here\'s how you know',
     showHttpsGuidance: true,
     initiallyExpanded: false
   },
