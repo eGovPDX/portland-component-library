@@ -41,34 +41,3 @@
   flex-direction: column;
   gap: var(--summary-box-gap, 16px);
 }
-
-/* Button styles for the story */
-.summary-box-button {
-  width:fit-content;
-  display: flex;
-  padding: var(--summary-box-button-padding-y, 12px) var(--summary-box-button-padding-x, 20px);
-  justify-content: center;
-  align-items: center;
-  gap: var(--summary-box-button-icon-gap, 8px);
-  border-radius: var(--summary-box-button-radius, 4px);
-  border: 1px solid var(--summary-box-border-color, #5DC0D1);
-  background: var(--summary-box-bg, #E7F6F8);
-  color: var(--summary-box-button-color, #2378C3);
-  text-align: center;
-  font-family: var(--summary-box-button-font-family, "Open Sans");
-  font-size: var(--summary-box-font-size, 16.6px);
-  font-style: normal;
-  font-weight: 700;
-  line-height: 95%;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.summary-box-button:hover {
-  background: var(--summary-box-bg-hover, #D1EEF3);
-}
-
-.summary-box-button svg {
-  width: var(--summary-box-button-icon-size, 15px);
-  height: var(--summary-box-button-icon-size, 15px);
-} 
