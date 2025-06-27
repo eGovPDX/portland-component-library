@@ -659,18 +659,18 @@
   /* SummaryBox component variables */
   --summary-box-padding: calc(var(--spacing-lg) * 1px);
   --summary-box-gap: calc(var(--spacing-md) * 1px);
-  --summary-box-border-color: var(--color-blue-cool-40, #5DC0D1);
-  --summary-box-bg: var(--color-blue-cool-10, #E7F6F8);
-  --summary-box-bg-hover: var(--color-blue-cool-20, #D1EEF3);
-  --summary-box-text-color: var(--color-gray-90, #1C1D1F);
-  --summary-box-font-family: var(--font-family-open-sans, "Open Sans");
+  --summary-box-border-color: var(--color-info-light);
+  --summary-box-bg: var(--color-info-lighter);
+  --summary-box-bg-hover: var(--color-primary-lightest);
+  --summary-box-text-color: var(--color-foundation-black);
+  --summary-box-font-family: var(--font-family-open-sans);
   --summary-box-heading-font-size: calc(var(--font-open-sans-size-10) * 1px);
   --summary-box-font-size: calc(var(--font-open-sans-size-6) * 1px);
   --summary-box-button-icon-gap: calc(var(--spacing-xs) * 1px);
-  --summary-box-button-color: var(--color-blue-warm-60, #2378C3);
+  --summary-box-button-color: var(--color-primary-medium);
   --summary-box-button-padding-y: calc(var(--spacing-sm) * 1px);
   --summary-box-button-padding-x: calc(var(--spacing-lg) * 1px);
-  --summary-box-button-font-family: var(--font-family-open-sans, "Open Sans");
+  --summary-box-button-font-family: var(--font-family-open-sans);
   --summary-box-border-radius: 4px;
   --summary-box-line-height: 24px;
   --summary-box-button-radius: 4px;
