@@ -490,8 +490,8 @@
   /* PopoverWithCard component variables */
   --popover-with-card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
   --popover-with-card-radius: 8px;
-  --popover-with-card-bg: var(--color-white, #FFF);
-  --popover-with-card-arrow-bg: var(--color-gray-5);
+  --popover-with-card-bg: var(--color-foundation-white);
+  --popover-with-card-arrow-bg: var(--color-base-lightest);
   --popover-with-card-arrow-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 
   /* ProcessSteps component variables */
