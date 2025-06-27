@@ -440,12 +440,12 @@
 
   /* HeroHomepage component variables */
   --hero-homepage-gap-md: calc(var(--spacing-md) * 1px);
-  --hero-homepage-bg: var(--color-gray-90, #1B1B1B);
-  --hero-homepage-text-color: var(--color-white, #FFF);
+  --hero-homepage-bg: var(--color-foundation-black);
+  --hero-homepage-text-color: var(--color-foundation-white);
   --hero-homepage-title-font-size: calc(var(--font-open-sans-size-12) * 1px);
   --hero-homepage-subtitle-font-size: calc(var(--font-open-sans-size-11) * 1px);
   --hero-homepage-gap-sm: calc(var(--spacing-xs) * 1px);
-  --hero-homepage-link-color: var(--color-gray-cool-60, #A9AEB1);
+  --hero-homepage-link-color: var(--color-foundation-black);
   --hero-homepage-padding-xl: calc(var(--spacing-4xl) * 1px);
   --hero-homepage-margin-desktop: calc(var(--spacing-xl) * 1px);
   --hero-homepage-padding-lg: calc(var(--spacing-xl) * 1px);
