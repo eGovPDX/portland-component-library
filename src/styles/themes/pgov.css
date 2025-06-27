@@ -530,7 +530,7 @@
   /* RadioButtons component variables */
   --radio-button-options-gap: 16px;
   --radio-button-label-gap: 8px;
-  --radio-button-color: #1B1B1B;
+  --radio-button-color: var(--color-foundation-black);
   --radio-button-border-color: var(--color-base-darkest);
   --radio-button-border-width: 3px;
   --radio-button-border-radius: 50%;
@@ -545,28 +545,28 @@
   --radio-button-checked-color: var(--color-primary-medium);
   --radio-button-checked-border-radius: 50%;
   --radio-button-checked-border-width: 3px;
-  --radio-button-label-text-color: #1B1B1B;
-  --radio-button-label-text-font-family: "Public Sans";
-  --radio-button-label-text-font-size: 16px;
+  --radio-button-label-text-color: var(--color-foundation-black);
+  --radio-button-label-text-font-family: var(--font-family-open-sans);
+  --radio-button-label-text-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --radio-button-label-text-font-weight: 400;
   --radio-button-label-line-height: 130%;
-  --radio-button-label-description-font-size: 14px;
-  --radio-button-disabled-color: #757575;
+  --radio-button-label-description-font-size: calc(var(--font-open-sans-size-4) * 1px);
+  --radio-button-disabled-color: var(--color-disabled-medium);
   --radio-button-tiled-border-radius: 4px;
   --radio-button-tiled-border-width: 2px;
-  --radio-button-tiled-border-color: #C9C9C9;
-  --radio-button-tiled-background-color: #FFF;
-  --radio-button-tiled-selected-border-color: #005EA2;
+  --radio-button-tiled-border-color: var(--color-base-lighter);
+  --radio-button-tiled-background-color: var(--color-foundation-white);
+  --radio-button-tiled-selected-border-color: var(--color-primary-medium);
   --radio-button-tiled-selected-background-color: rgba(0, 94, 162, 0.1);
   --radio-button-tiled-selected-opacity: 0.1;
-  --radio-button-tiled-disabled-border-color: #E6E6E6;
-  --radio-button-tiled-disabled-background-color: #FFF;
-  --radio-button-required-asterisk-color: #B50909;
-  --radio-button-error-text-color: #B50909;
-  --radio-button-error-font-family: "Public Sans";
-  --radio-button-error-font-size: 16px;
+  --radio-button-tiled-disabled-border-color: var(--color-base-lighter);
+  --radio-button-tiled-disabled-background-color: var(--color-foundation-white);
+  --radio-button-required-asterisk-color: var(--color-error-dark);
+  --radio-button-error-text-color: var(--color-error-dark);
+  --radio-button-error-font-family: var(--font-family-open-sans);
+  --radio-button-error-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --radio-button-error-font-weight: 700;
-  --radio-button-error-border-color: #B50909;
+  --radio-button-error-border-color: var(--color-error-dark);
 
   /* Search component variables */
   --search-input-margin-right: calc(var(--spacing-none) * 1px);
