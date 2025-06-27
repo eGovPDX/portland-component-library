@@ -419,21 +419,21 @@
   --header-menu-group-title-border-color: var(--color-base-lighter);
 
   /* HeroGlobal component variables */
-  --hero-global-bg: var(--color-white, #FFF);
+  --hero-global-bg: var(--color-foundation-white);
   --hero-global-gap: calc(var(--spacing-md) * 1px);
   --hero-global-tag-gap: calc(var(--spacing-xs) * 1px);
   --hero-global-tag-padding-y: 2px;
   --hero-global-tag-radius: calc(var(--radius-full) * 1px);
-  --hero-global-tag-bg: var(--color-gray-cool-60, #565C65);
-  --hero-global-tag-color: var(--color-white, #FFF);
+  --hero-global-tag-bg: var(--color-foundation-black);
+  --hero-global-tag-color: var(--color-foundation-white);
   --hero-global-tag-font-family: var(--font-family-open-sans, "Public Sans");
   --hero-global-tag-font-size: calc(var(--font-open-sans-size-3) * 1px);
-  --hero-global-title-color: var(--color-gray-90, #1B1B1B);
+  --hero-global-title-color: var(--color-foundation-black);
   --hero-global-title-font-family: var(--font-family-open-sans, "Public Sans");
   --hero-global-title-font-size: calc(var(--font-open-sans-size-11) * 1px);
   --hero-global-desc-font-family: var(--font-family-open-sans, "Public Sans");
   --hero-global-desc-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --hero-global-image-placeholder-bg: var(--color-gray-cool-10, #DFE1E2);
+  --hero-global-image-placeholder-bg: var(--color-base-lighter);
   --hero-global-desktop-max-width: calc(var(--breakpoints-desktop) * 1px);
   --hero-global-desktop-gap-x: calc(var(--spacing-xl) * 1px);
   --hero-global-desktop-gap-y: calc(var(--spacing-2xl) * 1px);
