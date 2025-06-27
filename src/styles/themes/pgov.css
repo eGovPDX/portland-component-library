@@ -677,14 +677,17 @@
   --summary-box-button-icon-size: 15px;
 
   /* Tag component variables */
-  --tag-padding-y: 2px;
-  --tag-padding-x: calc(var(--spacing-xs) * 1px);
+  --tag-padding-x: calc(var(--spacing-3xs) * 1px);
+  --tag-padding-y: calc(var(--spacing-xs) * 1px);
   --tag-radius: calc(var(--radius-full) * 1px);
-  --tag-bg: var(--color-gray-cool-60, #565C65);
-  --tag-color: var(--color-white, #FFF);
-  --tag-font-family: var(--font-family-open-sans, "Public Sans");
+  --tag-bg: var(--color-base-dark);
+  --tag-color: var(--color-foundation-white);
+  --tag-font-family: var(--font-family-open-sans);
   --tag-font-size: calc(var(--font-open-sans-size-3) * 1px);
-  --tag-font-size-big: calc(var(--font-open-sans-size-5) * 1px);
+  --tag-big-padding-x: calc(var(--spacing-3xs) * 1px);
+  --tag-big-padding-y: calc(var(--spacing-xs) * 1px);
+  --tag-big-gap: calc(var(--spacing-xs) * 1px);
+  --tag-big-font-size: calc(var(--font-open-sans-size-5) * 1px);
 
   /* TextArea component variables */
   --text-area-gap: calc(var(--spacing-xs) * 1px);
