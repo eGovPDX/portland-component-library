@@ -616,38 +616,45 @@
   /* SkipNav component variables */
   --skip-nav-padding-y: calc(var(--spacing-sm) * 1px);
   --skip-nav-padding-x: calc(var(--spacing-lg) * 1px);
-  --skip-nav-bg: var(--color-blue-60, #0050d8);
-  --skip-nav-font-family: var(--font-family-open-sans, "Public Sans");
+  --skip-nav-bg: var(--color-primary-medium);
+  --skip-nav-font-family: var(--font-family-open-sans);
   --skip-nav-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --skip-nav-font-weight: 500;
-  --skip-nav-color: #fff;
+  --skip-nav-color: var(--color-foundation-white);
 
   /* StepIndicator component variables */
-  --step-indicator-font-family: var(--font-family-open-sans, "Public Sans");
+  --step-indicator-font-family: var(--font-family-open-sans);
   --step-indicator-segment-gap: 2px;
   --step-indicator-segment-height: 8px;
-  --step-indicator-segment-color-complete: var(--color-blue-cool-60, #162E51);
-  --step-indicator-segment-color-current: var(--color-blue-cool-60, #005EA2);
-  --step-indicator-segment-color-pending: var(--color-gray-cool-60, #919191);
-  --step-indicator-text-pending-color: var(--color-gray-cool-60, #565C65);
+  --step-indicator-segment-color-complete: var(--color-primary-dark);
+  --step-indicator-segment-color-current: var(--color-primary-medium);
+  --step-indicator-segment-color-pending: var(--color-foundation-black);
+  --step-indicator-text-pending-color: var(--color-foundation-black);
   --step-indicator-label-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --step-indicator-heading-color: var(--color-gray-90, #1B1B1B);
-  --step-indicator-heading-font-family: var(--font-family-open-sans, "Public Sans");
+  --step-indicator-heading-color: var(--color-foundation-black);
+  --step-indicator-heading-font-family: var(--font-family-open-sans);
   --step-indicator-heading-font-size: calc(var(--font-open-sans-size-11) * 1px);
   --step-indicator-heading-font-size-small: calc(var(--font-open-sans-size-10) * 1px);
-  --step-indicator-bg: var(--color-white, #FFF);
+  --step-indicator-bg: var(--color-foundation-white);
   --step-indicator-margin-bottom: calc(var(--spacing-sm) * 1px);
   --step-indicator-header-margin-top: calc(var(--spacing-xs) * 1px);
   --step-indicator-heading-gap: calc(var(--spacing-xs) * 1px);
   --step-indicator-heading-icon-margin: 0 0.5rem;
   --step-indicator-label-line-height: 120%;
   --step-indicator-label-margin-top: 0.5rem;
-  --step-indicator-segment-padding-top: 20px;
+  --step-indicator-segment-padding-top: calc(var(--spacing-xl) * 1px);
+  --step-indicator-counter-container-padding: calc(var(--spacing-xs) * 1px);
+  --step-indicator-counter-container-bg: var(--color-base-lightest);
+  --step-indicator-counter-container-color: var(--color-foundation-black);
+  --step-indicator-counter-container-font-family: var(--font-family-open-sans);
+  --step-indicator-counter-container-font-size: calc(var(--font-open-sans-size-11) * 1px);
+  --step-indicator-counter-container-font-weight: 700;
+  --step-indicator-counter-container-gap: calc(var(--spacing-xs) * 1px);
   --step-indicator-counter-top: -12px;
   --step-indicator-counter-sm-top: -10px;
   --step-indicator-counter-size: 2rem;
   --step-indicator-counter-sm-size: 1.5rem;
-  --step-indicator-counter-sm-font-size: 0.875rem;
+  --step-indicator-counter-sm-font-size: calc(var(--font-open-sans-size-4) * 1px);
 
   /* SummaryBox component variables */
   --summary-box-padding: calc(var(--spacing-lg) * 1px);
