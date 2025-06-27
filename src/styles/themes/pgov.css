@@ -752,15 +752,15 @@
   --text-input-prefix-input-padding-left: 0.5rem;
 
   /* Tooltip component variables */
-  --tooltip-font-family: var(--font-family-open-sans, "Public Sans");
+  --tooltip-font-family: var(--font-family-open-sans);
   --tooltip-font-size: calc(var(--font-open-sans-size-3) * 1px);
   --tooltip-line-height: 1.5;
   --tooltip-border-radius: calc(var(--radius-md) * 1px);
-  --tooltip-bg-light: var(--color-gray-5);
-  --tooltip-color-light: var(--color-gray-cool-60);
+  --tooltip-bg-light: var(--color-base-lightest);
+  --tooltip-color-light: var(--color-foundation-black);
   --tooltip-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --tooltip-bg-dark: var(--color-gray-90, #181818);
-  --tooltip-color-dark: var(--color-white, #ffffff);
+  --tooltip-bg-dark: var(--color-foundation-black);
+  --tooltip-color-dark: var(--color-foundation-white);
   --tooltip-border-radius-dark: calc(var(--radius-md) * 1px);
   --tooltip-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.3);
   --tooltip-arrow-bg: inherit;
