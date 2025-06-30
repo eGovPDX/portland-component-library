@@ -10,7 +10,8 @@ import './Accordion.css';
  */
 export const AccordionItem = ({
   children,
-  summary,
+  summaryText,
+  headingLevel = 'h4',
   open = false,
   type = 'default',
   onToggle,
@@ -19,6 +20,7 @@ export const AccordionItem = ({
   const [isExpanded, setIsExpanded] = useState(open);
   const detailsRef = useRef(null);
   const [detailsHeight, setDetailsHeight] = useState('0px');
+  const Heading = headingLevel;
 
   useEffect(() => {
     if (isExpanded && detailsRef.current) {
@@ -53,7 +55,7 @@ export const AccordionItem = ({
         type="button"
         onClick={toggleAccordion}
       >
-        <span className="accordion-summary">{summary}</span>
+        <Heading className="accordion-summaryText">{summaryText}</Heading>
         <span className="accordion-icon">
           <FontAwesomeIcon icon={isExpanded ? faMinus : faPlus} />
         </span>
@@ -75,7 +77,9 @@ AccordionItem.propTypes = {
   /** Content to display when accordion is expanded */
   children: PropTypes.node.isRequired,
   /** Summary text displayed in the accordion header */
-  summary: PropTypes.node.isRequired,
+  summaryText: PropTypes.node.isRequired,
+  /** Heading level for the accordion item */
+  headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   /** Whether the accordion item is initially expanded */
   open: PropTypes.bool,
   /** The variant style of the accordion item */

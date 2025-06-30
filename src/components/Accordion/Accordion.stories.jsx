@@ -20,6 +20,11 @@ export default {
     multiselectable: {
       control: 'boolean',
       description: 'Whether multiple accordion items can be expanded at once'
+    },
+    headingLevel: {
+      control: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+      description: 'The heading level for the accordion item summary text'
     }
   }
 };
@@ -27,21 +32,22 @@ export default {
 // Default accordion
 export const Default = {
   args: {
-    type: 'default'
+    type: 'default',
+    headingLevel: 'h4',
   },
   render: (args) => (
     <Accordion {...args}>
-      <AccordionItem summary="First Item">
+      <AccordionItem summaryText="First Item" headingLevel={args.headingLevel}>
         <p>This is the content for the first item. It can contain any React elements.</p>
       </AccordionItem>
-      <AccordionItem summary="Second Item">
+      <AccordionItem summaryText="Second Item" headingLevel={args.headingLevel}>
         <p>Content for the second item.</p>
         <ul>
           <li>List item one</li>
           <li>List item two</li>
         </ul>
       </AccordionItem>
-      <AccordionItem summary="Third Item">
+      <AccordionItem summaryText="Third Item" headingLevel={args.headingLevel}>
         <p>Content for the third item.</p>
       </AccordionItem>
     </Accordion>
@@ -51,21 +57,22 @@ export const Default = {
 // Bordered accordion
 export const Bordered = {
   args: {
-    type: 'bordered'
+    type: 'bordered',
+    headingLevel: 'h4',
   },
   render: (args) => (
     <Accordion {...args}>
-      <AccordionItem summary="First Item">
+      <AccordionItem summaryText="First Item" headingLevel={args.headingLevel}>
         <p>This is the content for the first item. It can contain any React elements.</p>
       </AccordionItem>
-      <AccordionItem summary="Second Item">
+      <AccordionItem summaryText="Second Item" headingLevel={args.headingLevel}>
         <p>Content for the second item.</p>
         <ul>
           <li>List item one</li>
           <li>List item two</li>
         </ul>
       </AccordionItem>
-      <AccordionItem summary="Third Item">
+      <AccordionItem summaryText="Third Item" headingLevel={args.headingLevel}>
         <p>Content for the third item.</p>
       </AccordionItem>
     </Accordion>
@@ -75,21 +82,22 @@ export const Bordered = {
 // Multiselectable accordion
 export const Multiselectable = {
   args: {
-    multiselectable: true
+    multiselectable: true,
+    headingLevel: 'h4',
   },
   render: (args) => (
     <Accordion {...args}>
-      <AccordionItem summary="First Item">
+      <AccordionItem summaryText="First Item" headingLevel={args.headingLevel}>
         <p>This is the content for the first item. It can contain any React elements.</p>
       </AccordionItem>
-      <AccordionItem summary="Second Item">
+      <AccordionItem summaryText="Second Item" headingLevel={args.headingLevel}>
         <p>Content for the second item.</p>
         <ul>
           <li>List item one</li>
           <li>List item two</li>
         </ul>
       </AccordionItem>
-      <AccordionItem summary="Third Item">
+      <AccordionItem summaryText="Third Item" headingLevel={args.headingLevel}>
         <p>Content for the third item.</p>
       </AccordionItem>
     </Accordion>
@@ -100,21 +108,22 @@ export const Multiselectable = {
 export const MultiselectableBordered = {
   args: {
     type: 'bordered',
-    multiselectable: true
+    multiselectable: true,
+    headingLevel: 'h4',
   },
   render: (args) => (
     <Accordion {...args}>
-      <AccordionItem summary="First Item">
+      <AccordionItem summaryText="First Item" headingLevel={args.headingLevel}>
         <p>This is the content for the first item. It can contain any React elements.</p>
       </AccordionItem>
-      <AccordionItem summary="Second Item">
+      <AccordionItem summaryText="Second Item" headingLevel={args.headingLevel}>
         <p>Content for the second item.</p>
         <ul>
           <li>List item one</li>
           <li>List item two</li>
         </ul>
       </AccordionItem>
-      <AccordionItem summary="Third Item">
+      <AccordionItem summaryText="Third Item" headingLevel={args.headingLevel}>
         <p>Content for the third item.</p>
       </AccordionItem>
     </Accordion>
@@ -123,16 +132,18 @@ export const MultiselectableBordered = {
 
 // Accordion with initially expanded item
 export const InitiallyExpanded = {
-  args: {},
+  args: {
+    headingLevel: 'h4'
+  },
   render: (args) => (
     <Accordion {...args}>
-      <AccordionItem summary="First Item" open={true}>
-        <p>This item is expanded by default because open prop is set to true.</p>
+      <AccordionItem summaryText="First Item" open={true} headingLevel={args.headingLevel}>
+        <p>This item is expanded by default because the open prop is set to true.</p>
       </AccordionItem>
-      <AccordionItem summary="Second Item">
+      <AccordionItem summaryText="Second Item" headingLevel={args.headingLevel}>
         <p>This item starts collapsed.</p>
       </AccordionItem>
-      <AccordionItem summary="Third Item">
+      <AccordionItem summaryText="Third Item" headingLevel={args.headingLevel}>
         <p>This item also starts collapsed.</p>
       </AccordionItem>
     </Accordion>
