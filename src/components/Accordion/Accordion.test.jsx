@@ -12,7 +12,7 @@ describe('Accordion', () => {
   test('renders with default props', () => {
     render(
       <Accordion>
-        <AccordionItem summary="Test Item">Content</AccordionItem>
+        <AccordionItem summaryText="Test Item">Content</AccordionItem>
       </Accordion>
     );
     
@@ -24,7 +24,7 @@ describe('Accordion', () => {
   test('expands and collapses item when clicked', () => {
     render(
       <Accordion>
-        <AccordionItem summary="Click Me">Hidden Content</AccordionItem>
+        <AccordionItem summaryText="Click Me">Hidden Content</AccordionItem>
       </Accordion>
     );
     
@@ -48,7 +48,7 @@ describe('Accordion', () => {
   test('renders initially expanded item', () => {
     render(
       <Accordion>
-        <AccordionItem summary="Expanded Item" open={true}>
+        <AccordionItem summaryText="Expanded Item" open={true}>
           Visible Content
         </AccordionItem>
       </Accordion>
@@ -63,7 +63,7 @@ describe('Accordion', () => {
   test('renders with bordered style', () => {
     render(
       <Accordion type="bordered">
-        <AccordionItem summary="Bordered Item">Content</AccordionItem>
+        <AccordionItem summaryText="Bordered Item">Content</AccordionItem>
       </Accordion>
     );
     
@@ -75,8 +75,8 @@ describe('Accordion', () => {
   test('allows multiple items to be expanded when multiselectable is true', () => {
     render(
       <Accordion multiselectable={true}>
-        <AccordionItem summary="Item 1">Content 1</AccordionItem>
-        <AccordionItem summary="Item 2">Content 2</AccordionItem>
+        <AccordionItem summaryText="Item 1">Content 1</AccordionItem>
+        <AccordionItem summaryText="Item 2">Content 2</AccordionItem>
       </Accordion>
     );
     
@@ -96,8 +96,8 @@ describe('Accordion', () => {
   test('collapses previous item when a new one is expanded in single select mode', () => {
     render(
       <Accordion>
-        <AccordionItem summary="Item 1">Content 1</AccordionItem>
-        <AccordionItem summary="Item 2">Content 2</AccordionItem>
+        <AccordionItem summaryText="Item 1">Content 1</AccordionItem>
+        <AccordionItem summaryText="Item 2">Content 2</AccordionItem>
       </Accordion>
     );
     
@@ -117,7 +117,7 @@ describe('Accordion', () => {
   test('sets correct ARIA attributes', () => {
     render(
       <Accordion multiselectable={true}>
-        <AccordionItem summary="ARIA Test">Content</AccordionItem>
+        <AccordionItem summaryText="ARIA Test">Content</AccordionItem>
       </Accordion>
     );
     
@@ -129,5 +129,19 @@ describe('Accordion', () => {
     
     fireEvent.click(button);
     expect(button).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  // Test heading level
+  test('renders with specified heading level', () => {
+    render(
+      <Accordion>
+        <AccordionItem summaryText="Heading Test" headingLevel="h2">
+          Content
+        </AccordionItem>
+      </Accordion>
+    );
+    
+    const heading = screen.getByText('Heading Test');
+    expect(heading.tagName).toBe('H2');
   });
 }); 
