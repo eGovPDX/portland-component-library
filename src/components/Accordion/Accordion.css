@@ -50,13 +50,9 @@
 }
 
 /* Accordion summary text */
-.accordion-summary {
+.accordion-summaryText {
   color: var(--accordion-button-text, #1B1B1B);
   font-family: var(--accordion-font-family, "Public Sans");
-  font-size: var(--accordion-button-font-size, 16px);
-  font-style: normal;
-  font-weight: 700;
-  line-height: 100%;
 }
 
 /* Accordion icon container */
