@@ -670,4 +670,139 @@
   --checkbox-error-border-width: 4px;
   --checkbox-error-border-color: #b50909;
   --checkbox-error-padding-left: 1rem;
+
+  /* Pagination component variables */
+  --pagination-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --pagination-font-size: 1rem;
+  --pagination-font-size-mobile: 0.875rem;
+  --pagination-margin: 1rem;
+  --pagination-gap: 0.25rem;
+  --pagination-gap-mobile: 0.125rem;
+  --pagination-bg: #ffffff;
+
+  /* Button and page number sizing */
+  --pagination-button-size: 2.5rem;
+  --pagination-button-size-mobile: 2rem;
+  --pagination-button-padding: 0.25rem;
+  --pagination-button-border-radius: 0;
+  --pagination-button-border-width: 1px;
+  --pagination-button-transition: all 0.15s ease-in-out;
+
+  /* Arrow navigation styling */
+  --pagination-arrow-padding: 0.5rem 0.75rem;
+  --pagination-arrow-padding-mobile: 0.25rem 0.5rem;
+  --pagination-arrow-gap: 0.25rem;
+  --pagination-arrow-min-width: 2.5rem;
+  --pagination-arrow-min-width-mobile: 2rem;
+
+  /* Link and text colors */
+  --pagination-link-color: #005ea2;
+  --pagination-link-hover-color: #1a4480;
+  --pagination-link-focus-color: #005ea2;
+  --pagination-link-active-color: #162e51;
+  --pagination-link-font-size: 1rem;
+  --pagination-link-font-weight: 400;
+  --pagination-link-text-decoration: underline;
+  --pagination-link-text-decoration-hover: underline;
+  --pagination-link-bg-color: transparent;
+  --pagination-link-border: 1px solid #71767a;
+  --pagination-link-border-radius: 0;
+  --pagination-link-transition: all 0.15s ease-in-out;
+  --pagination-link-hover-bg-color: transparent;
+  --pagination-link-focus-bg-color: transparent;
+  --pagination-link-focus-outline: 0.25rem solid #fd5765;
+  --pagination-link-focus-outline-offset: 0.25rem;
+  --pagination-link-active-bg-color: transparent;
+  --pagination-link-disabled-color: #919191;
+  --pagination-link-disabled-bg-color: transparent;
+
+  /* Link text spacing */
+  --pagination-link-text-margin: 0;
+  --pagination-link-text-spacing: 0.25rem;
+
+  /* Icon styling */
+  --pagination-icon-size: 1rem;
+  --pagination-icon-size-mobile: 0.875rem;
+  --pagination-icon-spacing: 0.25rem;
+
+  /* Default page button states */
+  --pagination-button-bg-color: transparent;
+  --pagination-button-border: 1px solid #71767a;
+  --pagination-button-color: #005ea2;
+  --pagination-button-font-size: 1rem;
+  --pagination-button-font-weight: 400;
+  --pagination-button-text-decoration: underline;
+  --pagination-button-hover-bg-color: transparent;
+  --pagination-button-hover-border-color: #71767a;
+  --pagination-button-hover-color: #1a4480;
+  --pagination-button-hover-text-decoration: underline;
+  --pagination-button-focus-bg-color: transparent;
+  --pagination-button-focus-border-color: #71767a;
+  --pagination-button-focus-color: #005ea2;
+  --pagination-button-focus-outline: 0.25rem solid #fd5765;
+  --pagination-button-focus-outline-offset: 0.25rem;
+  --pagination-button-active-bg-color: transparent;
+  --pagination-button-active-border-color: #71767a;
+  --pagination-button-active-color: #162e51;
+
+  /* Current page button states */
+  --pagination-button-current-bg-color: #005ea2;
+  --pagination-button-current-border-color: #005ea2;
+  --pagination-button-current-color: #ffffff;
+  --pagination-current-bg: #005ea2;
+  --pagination-current-border-color: #005ea2;
+  --pagination-current-color: #ffffff;
+  --pagination-current-hover-bg: #1a4480;
+  --pagination-current-hover-border-color: #1a4480;
+  --pagination-current-hover-color: #ffffff;
+  --pagination-current-focus-bg: #005ea2;
+  --pagination-current-focus-border-color: #005ea2;
+  --pagination-current-focus-color: #ffffff;
+  --pagination-current-focus-outline: 0.25rem solid #fd5765;
+  --pagination-current-focus-outline-offset: 0.25rem;
+  --pagination-current-active-bg: #162e51;
+  --pagination-current-active-border-color: #162e51;
+  --pagination-current-active-color: #ffffff;
+
+  /* Disabled button states */
+  --pagination-disabled-bg: transparent;
+  --pagination-disabled-border-color: #c9c9c9;
+  --pagination-disabled-color: #919191;
+  --pagination-disabled-cursor: not-allowed;
+  --pagination-disabled-opacity: 1;
+
+  /* Ellipsis styling */
+  --pagination-ellipsis-color: #71767a;
+  --pagination-ellipsis-font-size: 1rem;
+  --pagination-ellipsis-font-weight: 400;
+
+  /* Arrow button states */
+  --pagination-arrow-color: #005ea2;
+  --pagination-arrow-hover-color: #1a4480;
+  --pagination-arrow-focus-color: #005ea2;
+  --pagination-arrow-active-color: #162e51;
+  --pagination-arrow-disabled-color: #919191;
+  --pagination-arrow-icon-size: 1rem;
+  --pagination-arrow-icon-size-mobile: 0.875rem;
+  --pagination-arrow-bg: transparent;
+  --pagination-arrow-border-color: #71767a;
+  --pagination-arrow-border-width: 1px;
+  --pagination-arrow-hover-bg: transparent;
+  --pagination-arrow-hover-border-color: #71767a;
+  --pagination-arrow-focus-bg: transparent;
+  --pagination-arrow-focus-border-color: #71767a;
+  --pagination-arrow-focus-outline: 0.25rem solid #fd5765;
+  --pagination-arrow-focus-outline-offset: 0.25rem;
+  --pagination-arrow-active-bg: transparent;
+  --pagination-arrow-active-border-color: #71767a;
+  --pagination-arrow-disabled-bg: transparent;
+  --pagination-arrow-disabled-border-color: #c9c9c9;
+  --pagination-arrow-disabled-cursor: not-allowed;
+  --pagination-arrow-disabled-opacity: 1;
+
+  /* Mobile responsive variables */
+  --pagination-mobile-gap: 0.125rem;
+  --pagination-mobile-font-size: 0.875rem;
+  --pagination-mobile-padding: 0.5rem;
+  --pagination-mobile-margin: 0.5rem;
 } 
