@@ -58,6 +58,7 @@ portland-component-library/
 │   │   ├── HeroHomepage/# Homepage hero section
 │   │   ├── Modal/      # Modal dialog component
 │   │   ├── PageTemplate/# Page template
+│   │   ├── Pagination/ # USWDS-compliant pagination component
 │   │   ├── ProcessSteps/# Process step indicators
 │   │   ├── Search/     # Search input component
 │   │   ├── SideNav/    # Side navigation
@@ -96,6 +97,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **SkipNav** - Keyboard accessibility enhancement
 - **SideNav** - Side navigation component
 - **Breadcrumbs** - Navigation breadcrumbs component
+- **Pagination** - USWDS-compliant pagination for navigating paginated content
 
 ### Interactive Components
 - **Accordion** - Expandable content sections with multiple variants

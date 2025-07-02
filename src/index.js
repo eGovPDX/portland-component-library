@@ -13,6 +13,7 @@ export { Contacts } from './components/Contacts';
 export { HeroHomepage } from './components/HeroHomepage';
 export { HeroGlobal } from './components/HeroGlobal';
 export { Modal } from './components/Modal';
+export { Pagination } from './components/Pagination';
 export { Typography } from './components/Typography';
 export { ColorSwatch } from './components/ColorSwatch';
 export { SpacingTokens, SpacingExamples, SpacingDisplay } from './components/Spacing';
@@ -25,12 +26,7 @@ export { ExternalLinkIcon } from './components/ExternalLinkIcon';
 export { TextInput } from './components/TextInput';
 export { StepIndicator } from './components/StepIndicator';
 
-// Export tokens
-// export * from './tokens';
-
 // USWDS styles are now imported through Sass in styles/index.scss
 
 // Export styles
 import './styles/index.scss';
-
-// This is a placeholder file. As you add components, uncomment and update the exports above. 

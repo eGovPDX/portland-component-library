@@ -1,0 +1,210 @@
+/* Base pagination styles */
+.usa-pagination {
+  font-family: var(--pagination-font-family);
+  font-size: var(--pagination-font-size);
+  margin: var(--pagination-margin);
+  background-color: var(--pagination-bg);
+}
+
+.usa-pagination__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--pagination-gap);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.usa-pagination__item {
+  display: flex;
+}
+
+/* Arrow navigation buttons */
+.usa-pagination__arrow {
+  display: flex;
+}
+
+.usa-pagination__link {
+  display: flex;
+  align-items: center;
+  padding: var(--pagination-arrow-padding);
+  color: var(--pagination-link-color);
+  text-decoration: var(--pagination-link-text-decoration);
+  font-size: var(--pagination-link-font-size);
+  font-weight: var(--pagination-link-font-weight);
+  background-color: var(--pagination-link-bg-color);
+  border: var(--pagination-link-border);
+  border-radius: var(--pagination-link-border-radius);
+  cursor: pointer;
+  transition: var(--pagination-link-transition);
+  min-height: var(--pagination-button-size);
+}
+
+.usa-pagination__link:hover:not(:disabled) {
+  color: var(--pagination-link-hover-color);
+  background-color: var(--pagination-link-hover-bg-color);
+  text-decoration: var(--pagination-link-hover-text-decoration);
+}
+
+.usa-pagination__link:focus {
+  outline: var(--pagination-link-focus-outline);
+  outline-offset: var(--pagination-link-focus-outline-offset);
+  background-color: var(--pagination-link-focus-bg-color);
+  color: var(--pagination-link-focus-color);
+}
+
+.usa-pagination__link:active:not(:disabled) {
+  background-color: var(--pagination-link-active-bg-color);
+  color: var(--pagination-link-active-color);
+}
+
+.usa-pagination__link--disabled {
+  color: var(--pagination-link-disabled-color);
+  background-color: var(--pagination-link-disabled-bg-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.usa-pagination__link-text {
+  margin: var(--pagination-link-text-margin);
+}
+
+/* Previous/Next specific styles */
+.usa-pagination__previous-page .usa-pagination__link-text {
+  margin-left: var(--pagination-link-text-spacing);
+}
+
+.usa-pagination__next-page .usa-pagination__link-text {
+  margin-right: var(--pagination-link-text-spacing);
+}
+
+/* Icons */
+.usa-pagination__icon {
+  width: var(--pagination-icon-size);
+  height: var(--pagination-icon-size);
+  flex-shrink: 0;
+}
+
+.usa-pagination__icon--left {
+  margin-right: var(--pagination-icon-spacing);
+}
+
+.usa-pagination__icon--right {
+  margin-left: var(--pagination-icon-spacing);
+}
+
+/* Page number buttons */
+.usa-pagination__page-no {
+  display: flex;
+}
+
+.usa-pagination__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--pagination-button-size);
+  min-height: var(--pagination-button-size);
+  padding: var(--pagination-button-padding);
+  color: var(--pagination-button-color);
+  background-color: var(--pagination-button-bg-color);
+  border: var(--pagination-button-border);
+  border-radius: var(--pagination-button-border-radius);
+  font-size: var(--pagination-button-font-size);
+  font-weight: var(--pagination-button-font-weight);
+  text-decoration: var(--pagination-button-text-decoration);
+  cursor: pointer;
+  transition: var(--pagination-button-transition);
+}
+
+.usa-pagination__button:hover:not(:disabled) {
+  color: var(--pagination-button-hover-color);
+  background-color: var(--pagination-button-hover-bg-color);
+  border-color: var(--pagination-button-hover-border-color);
+  text-decoration: var(--pagination-button-hover-text-decoration);
+}
+
+.usa-pagination__button:focus {
+  outline: var(--pagination-button-focus-outline);
+  outline-offset: var(--pagination-button-focus-outline-offset);
+  background-color: var(--pagination-button-focus-bg-color);
+  color: var(--pagination-button-focus-color);
+  border-color: var(--pagination-button-focus-border-color);
+}
+
+.usa-pagination__button:active:not(:disabled) {
+  background-color: var(--pagination-button-active-bg-color);
+  color: var(--pagination-button-active-color);
+  border-color: var(--pagination-button-active-border-color);
+}
+
+/* Current page button */
+.usa-pagination__button--current {
+  color: var(--pagination-button-current-color);
+  background-color: var(--pagination-button-current-bg-color);
+  border-color: var(--pagination-button-current-border-color);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Ellipsis */
+.usa-pagination__overflow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--pagination-button-size);
+  min-height: var(--pagination-button-size);
+}
+
+.usa-pagination__ellipsis {
+  color: var(--pagination-ellipsis-color);
+  font-size: var(--pagination-ellipsis-font-size);
+  font-weight: var(--pagination-ellipsis-font-weight);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .usa-pagination__list {
+    gap: var(--pagination-gap-mobile);
+  }
+  
+  .usa-pagination__button,
+  .usa-pagination__link {
+    min-width: var(--pagination-button-size-mobile);
+    min-height: var(--pagination-button-size-mobile);
+    font-size: var(--pagination-font-size-mobile);
+  }
+  
+  .usa-pagination__icon {
+    width: var(--pagination-icon-size-mobile);
+    height: var(--pagination-icon-size-mobile);
+  }
+  
+  /* Hide some page numbers on mobile, show more ellipsis */
+  .usa-pagination__item:nth-child(n+6):nth-last-child(n+4) .usa-pagination__button {
+    display: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .usa-pagination__button,
+  .usa-pagination__link {
+    border-width: var(--pagination-high-contrast-border-width, 2px);
+  }
+  
+  .usa-pagination__button--current {
+    border-width: var(--pagination-high-contrast-border-width, 2px);
+    border-style: solid;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .usa-pagination__button,
+  .usa-pagination__link {
+    transition: none;
+  }
+} 
