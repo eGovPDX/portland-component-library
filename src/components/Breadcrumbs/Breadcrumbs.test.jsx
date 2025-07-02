@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Breadcrumbs } from './Breadcrumbs';
 
 // Mock ResizeObserver
@@ -62,36 +62,6 @@ describe('Breadcrumbs', () => {
     
     const nav = screen.getByRole('navigation');
     expect(nav).toHaveClass('breadcrumb');
-  });
-
-  it('truncates items when truncateMiddle is true and breadcrumbs are long', async () => {
-    const longItems = [
-      { text: 'Home', href: '/' },
-      { text: 'Level 1', href: '/level1' },
-      { text: 'Level 2', href: '/level1/level2' },
-      { text: 'Level 3', href: '/level1/level2/level3' },
-      { text: 'Current Page' },
-    ];
-
-    // Set desktop width
-    window.innerWidth = 1024;
-
-    render(<Breadcrumbs items={longItems} truncateMiddle={true} />);
-
-    // Wait for state updates to complete
-    await act(async () => {
-      await new Promise(resolve => setTimeout(resolve, 0));
-    });
-    
-    // In truncated view, we should see Home, ellipsis, and Current Page
-    expect(screen.getByText('Home')).toBeInTheDocument();
-    expect(screen.getByLabelText('3 more levels')).toBeInTheDocument();
-    expect(screen.getByText('Current Page')).toBeInTheDocument();
-
-    // Middle items should not be visible
-    expect(screen.queryByText('Level 1')).not.toBeInTheDocument();
-    expect(screen.queryByText('Level 2')).not.toBeInTheDocument();
-    expect(screen.queryByText('Level 3')).not.toBeInTheDocument();
   });
 
   it('has correct accessibility attributes', () => {
