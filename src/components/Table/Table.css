@@ -78,6 +78,7 @@
 .usa-table--striped tbody tr:nth-child(odd) th,
 .usa-table--striped tbody tr:nth-child(odd) .usa-table__cell {
   background-color: transparent;
+  color: var(--table-stripe-text-color);
 }
 
 /* Scrollable variant */

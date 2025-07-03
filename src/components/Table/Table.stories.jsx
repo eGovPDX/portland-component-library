@@ -324,6 +324,7 @@ export const ComplexExample = () => {
               <span style={{ 
                 padding: '2px 8px', 
                 borderRadius: '4px',
+                color: index % 2 === 0 ? '#004731' : '#564d1f',
                 backgroundColor: index % 2 === 0 ? '#d4f4dd' : '#fef2c0',
                 fontSize: '14px'
               }}>
