@@ -84,7 +84,7 @@ export const Table = ({
     </table>
   );
 
-  if (scrollable) {
+  if (scrollable && !isStackedView) {
     return (
       <div className={`${baseClass}--scrollable`} tabIndex="0" role="region" aria-label="Scrollable table">
         {tableContent}

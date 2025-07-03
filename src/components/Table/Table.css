@@ -90,11 +90,23 @@
 
 .usa-table--scrollable .usa-table {
   margin: 0;
+  min-width: max-content;
 }
 
 .usa-table--scrollable:focus {
   outline: var(--table-scrollable-focus-outline);
   outline-offset: var(--table-scrollable-focus-outline-offset);
+}
+
+/* Disable horizontal scrolling on mobile when stacked */
+@media (max-width: 640px) {
+  .usa-table--scrollable {
+    overflow-x: visible;
+  }
+  
+  .usa-table--scrollable .usa-table {
+    min-width: auto;
+  }
 }
 
 /* Sticky header variant */

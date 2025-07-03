@@ -168,46 +168,61 @@ export const Sortable = () => {
 };
 
 // Scrollable table with many columns
-export const Scrollable = () => {
+export const HorizontallyScrollable = () => {
   const extendedData = sampleData.map(item => ({
     ...item,
     type: 'Historical Document',
     location: 'National Archives',
     status: 'Preserved',
     digitized: 'Yes',
-    publicAccess: 'Available'
+    publicAccess: 'Available',
+    category: 'Government',
+    pages: Math.floor(Math.random() * 100) + 1,
+    condition: 'Good'
   }));
 
   return (
-    <Table scrollable>
-      <TableCaption>Scrollable table - Scroll horizontally to see all columns</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHeaderCell>Document title</TableHeaderCell>
-          <TableHeaderCell>Type</TableHeaderCell>
-          <TableHeaderCell>Description</TableHeaderCell>
-          <TableHeaderCell>Year</TableHeaderCell>
-          <TableHeaderCell>Location</TableHeaderCell>
-          <TableHeaderCell>Status</TableHeaderCell>
-          <TableHeaderCell>Digitized</TableHeaderCell>
-          <TableHeaderCell>Public Access</TableHeaderCell>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {extendedData.map((item) => (
-          <TableRow key={item.id}>
-            <TableCell header scope="row">{item.title}</TableCell>
-            <TableCell>{item.type}</TableCell>
-            <TableCell>{item.description}</TableCell>
-            <TableCell>{item.year}</TableCell>
-            <TableCell>{item.location}</TableCell>
-            <TableCell>{item.status}</TableCell>
-            <TableCell>{item.digitized}</TableCell>
-            <TableCell>{item.publicAccess}</TableCell>
+    <>
+      <p style={{ marginBottom: '16px', fontStyle: 'italic' }}>
+        This table shows horizontal scrolling on larger screens (&gt; 640px) and automatically stacks on mobile screens (&lt; 640px). 
+        Try resizing your browser window to see the responsive behavior.
+      </p>
+      <Table scrollable>
+        <TableCaption>Scrollable table - Scroll horizontally to see all columns, stacks on mobile</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Document title</TableHeaderCell>
+            <TableHeaderCell>Type</TableHeaderCell>
+            <TableHeaderCell>Description</TableHeaderCell>
+            <TableHeaderCell>Year</TableHeaderCell>
+            <TableHeaderCell>Location</TableHeaderCell>
+            <TableHeaderCell>Status</TableHeaderCell>
+            <TableHeaderCell>Digitized</TableHeaderCell>
+            <TableHeaderCell>Public Access</TableHeaderCell>
+            <TableHeaderCell>Category</TableHeaderCell>
+            <TableHeaderCell>Pages</TableHeaderCell>
+            <TableHeaderCell>Condition</TableHeaderCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody headers={['Document title', 'Type', 'Description', 'Year', 'Location', 'Status', 'Digitized', 'Public Access', 'Category', 'Pages', 'Condition']}>
+          {extendedData.map((item) => (
+            <TableRow key={item.id}>
+              <TableCell header scope="row">{item.title}</TableCell>
+              <TableCell>{item.type}</TableCell>
+              <TableCell>{item.description}</TableCell>
+              <TableCell>{item.year}</TableCell>
+              <TableCell>{item.location}</TableCell>
+              <TableCell>{item.status}</TableCell>
+              <TableCell>{item.digitized}</TableCell>
+              <TableCell>{item.publicAccess}</TableCell>
+              <TableCell>{item.category}</TableCell>
+              <TableCell>{item.pages}</TableCell>
+              <TableCell>{item.condition}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 };
 
