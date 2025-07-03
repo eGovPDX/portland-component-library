@@ -67,11 +67,17 @@
 }
 
 /* Striped variant */
+.usa-table--striped tbody tr:nth-child(even) td,
+.usa-table--striped tbody tr:nth-child(even) th,
+.usa-table--striped tbody tr:nth-child(even) .usa-table__cell {
+  background-color: var(--table-stripe-bg-color);
+  color: var(--table-stripe-text-color);
+}
+
 .usa-table--striped tbody tr:nth-child(odd) td,
 .usa-table--striped tbody tr:nth-child(odd) th,
 .usa-table--striped tbody tr:nth-child(odd) .usa-table__cell {
-  background-color: var(--table-stripe-bg-color);
-  color: var(--table-stripe-text-color);
+  background-color: transparent;
 }
 
 /* Scrollable variant */
@@ -145,8 +151,8 @@
   background-color: var(--table-sorted-bg-color);
 }
 
-.usa-table--striped tbody tr:nth-child(odd) td[data-sort-column="true"],
-.usa-table--striped tbody tr:nth-child(odd) .usa-table__cell[data-sort-column="true"] {
+.usa-table--striped tbody tr:nth-child(even) td[data-sort-column="true"],
+.usa-table--striped tbody tr:nth-child(even) .usa-table__cell[data-sort-column="true"] {
   background-color: var(--table-sorted-stripe-bg-color);
 }
 
