@@ -768,6 +768,61 @@
   --summary-box-button-radius: 4px;
   --summary-box-button-icon-size: 15px;
 
+  /* Table component variables */
+  --table-margin: calc(var(--spacing-lg) * 1px) 0;
+  --table-font-family: var(--font-family-open-sans);
+  --table-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --table-line-height: 1.5;
+  --table-bg-color: var(--color-foundation-white);
+  --table-text-color: var(--color-foundation-black);
+  --table-border-width: calc(var(--border-sm) * 1px);
+  --table-border-color: var(--color-foundation-black);
+  --table-cell-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-md) * 1px);
+  --table-cell-bg-color: var(--color-foundation-white);
+  /* Table caption */
+  --table-caption-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --table-caption-font-weight: 700;
+  --table-caption-margin-bottom: calc(var(--spacing-xs) * 1px);
+  --table-caption-text-align: left;
+  --table-caption-text-color: var(--color-foundation-black);
+  /* Table header */
+  --table-header-bg-color: var(--color-base-lightest);
+  --table-header-text-color: var(--color-foundation-black);
+  --table-header-font-weight: 700;
+  --table-header-hover-bg-color: var(--color-base-lighter);
+  --table-header-focus-outline: calc(var(--border-md) * 1px) solid var(--color-primary-medium);
+  --table-header-focus-outline-offset: -2px;
+  /* Borderless variant */
+  --table-borderless-border-width: 0;
+  --table-borderless-border-color: transparent;
+  --table-borderless-bg-color: transparent;
+  --table-borderless-text-color: var(--color-foundation-black);
+  --table-borderless-font-weight: 400;
+  --table-borderless-hover-bg-color: var(--color-base-lightest);
+  /* Striped variant */
+  --table-stripe-bg-color: var(--color-base-lightest);
+  --table-stripe-text-color: var(--color-foundation-black);
+  /* Sorted columns */
+  --table-sort-icon-gap: calc(var(--spacing-xs) * 1px);
+  --table-sort-icon-size: 24px;
+  --table-sort-icon-color: var(--color-foundation-black);
+  --table-sorted-header-bg-color: var(--color-base-lighter);
+  --table-sorted-header-text-color: var(--color-foundation-black);
+  --table-sorted-bg-color: var(--color-info-light);
+  --table-sorted-stripe-bg-color: var(--color-info-light);
+  /* Scrollable variant */
+  --table-scrollable-focus-outline: calc(var(--border-md) * 1px) solid var(--color-primary-medium);
+  --table-scrollable-focus-outline-offset: 0;
+  /* Sticky header */
+  --table-sticky-top-offset: 0;
+  --table-sticky-z-index: 100;
+  /* Stacked layout */
+  --table-stacked-separator-width: calc(var(--border-lg) * 1px);
+  --table-stacked-row-gap: calc(var(--spacing-md) * 1px);
+  --table-stacked-header-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-2xs) * 1px);
+  --table-stacked-cell-padding: 0 calc(var(--spacing-md) * 1px) calc(var(--spacing-sm) * 1px);
+ 
+
   /* Tag component variables */
   --tag-padding-x: calc(var(--spacing-3xs) * 1px);
   --tag-padding-y: calc(var(--spacing-xs) * 1px);
