@@ -1,4 +1,5 @@
 /* PGOV Dark Theme */
+/* PGOV Dark Theme */
 /* Based on Figma Design System: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS) */
 
 .pgov-dark-theme-applied {
@@ -345,6 +346,49 @@
   --hero-homepage-margin-desktop: calc(var(--spacing-xl) * 1px);
   --hero-homepage-padding-lg: calc(var(--spacing-xl) * 1px);
   --hero-homepage-margin-mobile: calc(var(--spacing-md) * 1px);
+  
+  /* LanguageSelector component variables */
+  --language-selector-button-color: var(--color-blue-cool-30);
+  --language-selector-button-hover-color: var(--color-blue-cool-20);
+  --language-selector-button-gap: calc(var(--spacing-2xs) * 1px);
+  --language-selector-focus-outline: calc(var(--border-lg) * 1px) solid var(--color-blue-cool-40);
+  --language-selector-focus-outline-offset: calc(var(--border-sm) * 1px);
+  --language-selector-focus-color: var(--color-blue-cool-40);
+  --language-selector-disabled-color: var(--color-gray-cool-50);
+  --language-selector-border-radius: calc(var(--radius-md) * 1px);
+  --language-selector-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --language-selector-chevron-font-size: 0.8em;
+  --language-selector-transition-duration: 0.2s;
+  --language-selector-animation-duration: 0.2s;
+  --language-selector-animation-offset: -10px;
+  --language-selector-z-index: 1000;
+  --language-selector-menu-bg: var(--color-gray-80);
+  --language-selector-menu-border-color: var(--color-gray-cool-60);
+  --language-selector-menu-border-width: calc(var(--border-sm) * 1px);
+  --language-selector-menu-min-width: 200px;
+  --language-selector-menu-max-height: 300px;
+  --language-selector-menu-min-width-unstyled: 180px;
+  --language-selector-menu-text-color: var(--color-white);
+  --language-selector-menu-hover-bg: var(--color-gray-cool-70);
+  --language-selector-menu-selected-bg: var(--color-blue-cool-60);
+  --language-selector-menu-selected-text: var(--color-white);
+  --language-selector-menu-selected-hover-bg: var(--color-blue-cool-50);
+  --language-selector-menu-secondary-text: var(--color-gray-cool-30);
+  --language-selector-menu-selected-secondary-text: var(--color-gray-cool-10);
+  --language-selector-menu-footer-text: var(--color-gray-cool-30);
+  --language-selector-menu-footer-bg: var(--color-gray-90);
+  --language-selector-option-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
+  --language-selector-option-padding-mobile: calc(var(--spacing-md) * 1px);
+  --language-selector-option-border-width: calc(var(--border-sm) * 1px);
+  --language-selector-option-font-size: calc(var(--font-open-sans-size-4) * 1px);
+  --language-selector-option-font-size-mobile: calc(var(--font-open-sans-size-5) * 1px);
+  --language-selector-option-line-height: 1.4;
+  --language-selector-option-focus-outline-width: calc(var(--border-sm) * 1px);
+  --language-selector-option-focus-outline-offset: calc(var(--border-sm) * -1px);
+  --language-selector-footer-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
+  --language-selector-footer-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --language-selector-footer-border-width: calc(var(--border-sm) * 1px);
+  --language-selector-high-contrast-border-width: calc(var(--border-lg) * 1px);
 
   /* Modal component variables */
   --modal-z-index: 1050;
@@ -751,7 +795,8 @@
   --pagination-mobile-padding: calc(var(--spacing-sm) * 1px);
   --pagination-mobile-margin: calc(var(--spacing-sm) * 1px);
 
-  /* Table component variables */
+  
+/* Table component variables */
   --table-margin: calc(var(--spacing-lg) * 1px) 0;
   --table-font-family: var(--font-family-open-sans);
   --table-font-size: calc(var(--font-open-sans-size-5) * 1px);

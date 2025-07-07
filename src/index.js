@@ -4,6 +4,7 @@ export { Header } from './components/Header';
 export { SkipNav } from './components/SkipNav';
 export { PageTemplate } from './components/PageTemplate';
 export { Footer } from './components/Footer';
+export { LanguageSelector } from './components/LanguageSelector';
 export { SideNav } from './components/SideNav/SideNav';
 export { SummaryBox } from './components/SummaryBox';
 export { ProcessSteps } from './components/ProcessSteps';
