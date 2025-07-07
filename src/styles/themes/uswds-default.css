@@ -379,6 +379,80 @@
   --language-selector-option-font-size-mobile: 1rem;
   --language-selector-option-line-height: 1.4;
 
+  /* Identifier component variables */
+  --identifier-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --identifier-background-color: #1b1b1b;
+  --identifier-text-color: #ffffff;
+  --identifier-max-width: 64rem;
+  --identifier-container-padding-x: 1.5rem;
+  
+  /* Masthead section */
+  --identifier-masthead-background-color: #1b1b1b;
+  --identifier-masthead-padding-y: 1.5rem;
+  --identifier-masthead-border-width: 1px;
+  --identifier-masthead-border-color: #565c65;
+  --identifier-masthead-gap: 1.5rem;
+  --identifier-masthead-gap-tablet: 1rem;
+  --identifier-masthead-gap-mobile: 1rem;
+  --identifier-masthead-gap-desktop: 1.5rem;
+  
+  /* Agency logos */
+  --identifier-logos-gap: 1rem;
+  --identifier-logos-margin-bottom-mobile: 0.75rem;
+  --identifier-logo-height: 2.5rem;
+  --identifier-logo-height-mobile: 2rem;
+  --identifier-logo-max-width: 4rem;
+  
+  /* Agency identity */
+  --identifier-domain-font-size: 1.125rem;
+  --identifier-domain-font-size-mobile: 1rem;
+  --identifier-domain-font-weight: 400;
+  --identifier-domain-line-height: 1.3;
+  --identifier-domain-margin-bottom: 0.5rem;
+  --identifier-identity-domain-color: #ffffff;
+  --identifier-disclaimer-font-size: 1rem;
+  --identifier-disclaimer-font-size-mobile: 0.875rem;
+  --identifier-disclaimer-font-weight: 400;
+  --identifier-disclaimer-line-height: 1.5;
+  --identifier-disclaimer-color: #ffffff;
+  --identifier-primary-link-color: #ffffff;
+  --identifier-primary-link-hover-color: #dfe1e2;
+  --identifier-primary-link-visited-color: #ffffff;
+  
+  /* Required links section */
+  --identifier-required-links-background-color: #565c65;
+  --identifier-required-links-padding-y: 1.5rem;
+  --identifier-required-links-gap-x: 1.5rem;
+  --identifier-required-links-gap-y: 0.75rem;
+  --identifier-required-links-gap-tablet: 1rem;
+  --identifier-required-links-gap-mobile: 0.75rem;
+  --identifier-required-links-gap-desktop: 1.5rem;
+  --identifier-required-link-font-size: 0.875rem;
+  --identifier-required-link-font-size-mobile: 0.875rem;
+  --identifier-required-link-font-weight: 400;
+  --identifier-required-link-line-height: 1.4;
+  --identifier-secondary-link-color: #dfe1e2;
+  --identifier-secondary-link-hover-color: #ffffff;
+  --identifier-secondary-link-visited-color: #dfe1e2;
+  
+  /* USA.gov section */
+  --identifier-usagov-background-color: #565c65;
+  --identifier-usagov-padding-y: 1rem;
+  --identifier-usagov-font-size: 0.875rem;
+  --identifier-usagov-font-size-mobile: 0.875rem;
+  --identifier-usagov-font-weight: 400;
+  --identifier-usagov-line-height: 1.4;
+  --identifier-usagov-text-color: #dfe1e2;
+  --identifier-usagov-link-color: #ffffff;
+  --identifier-usagov-link-hover-color: #dfe1e2;
+  --identifier-usagov-link-visited-color: #ffffff;
+  
+  /* Focus styles */
+  --identifier-focus-outline-width: 0.25rem;
+  --identifier-focus-outline-color: #fd5765;
+  --identifier-focus-outline-offset: 0.25rem;
+  --identifier-focus-border-radius: 0.25rem;
+
   /* Modal component variables */
   --modal-z-index: 1050;
   --modal-backdrop-bg: rgba(0, 0, 0, 0.7);
