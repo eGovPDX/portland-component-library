@@ -805,4 +805,61 @@
   --pagination-mobile-font-size: 0.875rem;
   --pagination-mobile-padding: 0.5rem;
   --pagination-mobile-margin: 0.5rem;
+
+  /* Table component variables */
+  --table-margin: 1.5rem 0;
+  --table-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --table-font-size: 1rem;
+  --table-line-height: 1.5;
+  --table-bg-color: #ffffff;
+  --table-text-color: #1b1b1b;
+  --table-border-width: 1px;
+  --table-border-color: #1b1b1b;
+  --table-cell-padding: 0.75rem 1rem;
+  --table-cell-bg-color: #ffffff;
+
+  /* Table caption */
+  --table-caption-font-size: 1rem;
+  --table-caption-font-weight: 700;
+  --table-caption-margin-bottom: 0.5rem;
+  --table-caption-text-align: left;
+  --table-caption-text-color: #1b1b1b;
+
+  /* Table header */
+  --table-header-bg-color: #dfe1e2;
+  --table-header-text-color: #1b1b1b;
+  --table-header-font-weight: 700;
+  --table-header-hover-bg-color: #c9c9c9;
+  --table-header-focus-outline: 0.25rem solid #fd5765;
+  --table-header-focus-outline-offset: -2px;
+
+  /* Borderless variant */
+  --table-borderless-bg-color: transparent;
+
+  /* Striped variant */
+  --table-stripe-bg-color: #f0f0f0;
+  --table-stripe-text-color: #1b1b1b;
+
+  /* Sort functionality */
+  --table-sort-icon-gap: 0.5rem;
+  --table-sort-icon-size: 1rem;
+  --table-sort-icon-color: #1b1b1b;
+  --table-sorted-header-bg-color: #c9c9c9;
+  --table-sorted-header-text-color: #1b1b1b;
+  --table-sorted-bg-color: #e7f4fd;
+  --table-sorted-stripe-bg-color: #d4e8fa;
+
+  /* Scrollable variant */
+  --table-scrollable-focus-outline: 0.25rem solid #fd5765;
+  --table-scrollable-focus-outline-offset: 0;
+
+  /* Sticky header */
+  --table-sticky-top-offset: 0;
+  --table-sticky-z-index: 100;
+
+  /* Responsive stacked layout */
+  --table-stacked-separator-width: 4px;
+  --table-stacked-row-gap: 1rem;
+  --table-stacked-header-padding: 0.75rem 1rem 0.25rem;
+  --table-stacked-cell-padding: 0 1rem 0.75rem;
 } 

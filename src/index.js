@@ -25,6 +25,15 @@ export { Checkbox } from './components/Checkbox';
 export { ExternalLinkIcon } from './components/ExternalLinkIcon';
 export { TextInput } from './components/TextInput';
 export { StepIndicator } from './components/StepIndicator';
+export { 
+  Table, 
+  TableCaption, 
+  TableHeader, 
+  TableHeaderCell, 
+  TableBody, 
+  TableRow, 
+  TableCell 
+} from './components/Table';
 
 // USWDS styles are now imported through Sass in styles/index.scss
 

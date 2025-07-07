@@ -66,7 +66,8 @@ portland-component-library/
 │   │   ├── Spacing/    # Spacing utilities
 │   │   ├── StepIndicator/# Horizontal step indicator
 │   │   ├── SummaryBox/ # Summary information display
-│   │   ├── Tag/        # Tag component
+│   │   ├── Tag/        # Tag component for labeling and categorization
+│   │   ├── Table/      # Table component for displaying tabular data
 │   │   ├── Tooltip/    # Tooltip component
 │   │   ├── Typography/ # Text components and styles
 │   │   ├── Card/       # Card component for displaying content in a styled container
@@ -131,6 +132,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **StepIndicator** - Horizontal step indicator for multi-step processes
 - **Tooltip** - Tooltip component
 - **PopoverWithCard** - Popover for displaying interactive Card content
+- **Table** - Table component for displaying tabular data with sorting, striping, sticky headers, scrollable and stacked (responsive) layouts.
 
 ### Design System Components
 - **ColorSwatch** - Color display and documentation
