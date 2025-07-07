@@ -912,4 +912,47 @@
   --tooltip-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.3);
   --tooltip-arrow-bg: inherit;
   --tooltip-popup-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* LanguageSelector component variables */
+  --language-selector-button-color: var(--color-foundation-link);
+  --language-selector-button-hover-color: var(--color-foundation-link-hover);
+  --language-selector-button-gap: calc(var(--spacing-2xs) * 1px);
+  --language-selector-focus-outline: calc(var(--border-lg) * 1px) solid var(--color-primary-medium);
+  --language-selector-focus-outline-offset: calc(var(--border-sm) * 1px);
+  --language-selector-focus-color: var(--color-primary-medium);
+  --language-selector-disabled-color: var(--color-disabled-medium);
+  --language-selector-border-radius: calc(var(--radius-md) * 1px);
+  --language-selector-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --language-selector-chevron-font-size: 0.8em;
+  --language-selector-transition-duration: 0.2s;
+  --language-selector-animation-duration: 0.2s;
+  --language-selector-animation-offset: -10px;
+  --language-selector-z-index: 1000;
+  --language-selector-menu-bg: var(--color-foundation-white);
+  --language-selector-menu-border-color: var(--color-base-lighter);
+  --language-selector-menu-border-width: calc(var(--border-sm) * 1px);
+  --language-selector-menu-min-width: 200px;
+  --language-selector-menu-max-height: 300px;
+  --language-selector-menu-min-width-unstyled: 180px;
+  --language-selector-menu-text-color: var(--color-foundation-black);
+  --language-selector-menu-hover-bg: var(--color-base-lighter);
+  --language-selector-menu-selected-bg: var(--color-primary-medium);
+  --language-selector-menu-selected-text: var(--color-foundation-white);
+  --language-selector-menu-selected-hover-bg: var(--color-primary-dark);
+  --language-selector-menu-secondary-text: var(--color-base-medium);
+  --language-selector-menu-selected-secondary-text: var(--color-base-lightest);
+  --language-selector-menu-footer-text: var(--color-base-medium);
+  --language-selector-menu-footer-bg: var(--color-base-lightest);
+  --language-selector-option-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
+  --language-selector-option-padding-mobile: calc(var(--spacing-md) * 1px);
+  --language-selector-option-border-width: calc(var(--border-sm) * 1px);
+  --language-selector-option-font-size: calc(var(--font-open-sans-size-4) * 1px);
+  --language-selector-option-font-size-mobile: calc(var(--font-open-sans-size-5) * 1px);
+  --language-selector-option-line-height: 1.4;
+  --language-selector-option-focus-outline-width: calc(var(--border-sm) * 1px);
+  --language-selector-option-focus-outline-offset: calc(var(--border-sm) * -1px);
+  --language-selector-footer-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
+  --language-selector-footer-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --language-selector-footer-border-width: calc(var(--border-sm) * 1px);
+  --language-selector-high-contrast-border-width: calc(var(--border-lg) * 1px);
 } 

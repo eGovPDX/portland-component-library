@@ -80,6 +80,7 @@ portland-component-library/
 │   │   ├── TextArea/   # Text area component for multi-line text input
 │   │   ├── TextInput/  # Text input component with validation and states
 │   │   └── Checkbox/   # Checkbox component allowing multiple selections from a list
+│   │   └── LanguageSelector/ # Language selection dropdown component
 │   ├── images/         # Image assets
 │   └── styles/         # SCSS styles and themes
 ├── .storybook/         # Storybook configuration
@@ -123,6 +124,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **TextInput** - Text input component with validation and states
 - **RadioButtons** - Accessible radio button component with multiple variants
 - **Checkbox** - Checkbox component allowing users to select one or more options from a list
+- **LanguageSelector** - Language selection dropdown for switching site language, with accessibility and theme support
 
 ### Content Components
 - **Typography** - Text components and styles
