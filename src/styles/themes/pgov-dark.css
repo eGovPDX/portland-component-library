@@ -870,7 +870,7 @@
   --pagination-mobile-margin: calc(var(--spacing-sm) * 1px);
 
   
-/* Table component variables */
+  /* Table component variables */
   --table-margin: calc(var(--spacing-lg) * 1px) 0;
   --table-font-family: var(--font-family-open-sans);
   --table-font-size: calc(var(--font-open-sans-size-5) * 1px);
