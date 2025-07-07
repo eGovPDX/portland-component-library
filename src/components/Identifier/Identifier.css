@@ -97,9 +97,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--identifier-required-links-gap-y) var(--identifier-required-links-gap-x);
+  display: grid;
 }
 
 .usa-identifier__required-links-item {
@@ -186,7 +184,7 @@
   }
 
   .usa-identifier__required-links-list {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--identifier-required-links-gap-mobile);
   }
 
@@ -207,6 +205,7 @@
   }
 
   .usa-identifier__required-links-list {
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--identifier-required-links-gap-tablet);
   }
 }
@@ -218,6 +217,7 @@
   }
 
   .usa-identifier__required-links-list {
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--identifier-required-links-gap-desktop);
   }
 }
