@@ -1,0 +1,270 @@
+/* Identifier Component Styles */
+/* Based on USWDS Identifier specifications and Figma designs */
+
+.usa-identifier {
+  font-family: var(--identifier-font-family);
+  background-color: var(--identifier-background-color);
+  color: var(--identifier-text-color);
+}
+
+/* Container */
+.usa-identifier__container {
+  max-width: var(--identifier-max-width);
+  margin: 0 auto;
+  padding: 0 var(--identifier-container-padding-x);
+}
+
+/* Section - Base styles for all sections */
+.usa-identifier__section {
+  width: 100%;
+}
+
+/* Masthead Section */
+.usa-identifier__section--masthead {
+  background-color: var(--identifier-masthead-background-color);
+  padding: var(--identifier-masthead-padding-y) 0;
+  border-bottom: var(--identifier-masthead-border-width) solid var(--identifier-masthead-border-color);
+}
+
+.usa-identifier__section--masthead .usa-identifier__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--identifier-masthead-gap);
+}
+
+/* Agency Logos */
+.usa-identifier__logos {
+  display: flex;
+  align-items: center;
+  gap: var(--identifier-logos-gap);
+  flex-shrink: 0;
+}
+
+.usa-identifier__logo {
+  display: inline-block;
+  line-height: 0;
+}
+
+.usa-identifier__logo-img {
+  height: var(--identifier-logo-height);
+  width: auto;
+  max-width: var(--identifier-logo-max-width);
+}
+
+/* Agency Identity */
+.usa-identifier__identity {
+  flex: 1;
+  min-width: 0;
+}
+
+.usa-identifier__identity-domain {
+  margin: 0 0 var(--identifier-domain-margin-bottom) 0;
+  font-size: var(--identifier-domain-font-size);
+  font-weight: var(--identifier-domain-font-weight);
+  color: var(--identifier-identity-domain-color);
+  line-height: var(--identifier-domain-line-height);
+}
+
+.usa-identifier__identity-disclaimer {
+  margin: 0;
+  font-size: var(--identifier-disclaimer-font-size);
+  font-weight: var(--identifier-disclaimer-font-weight);
+  color: var(--identifier-disclaimer-color);
+  line-height: var(--identifier-disclaimer-line-height);
+}
+
+.usa-identifier__identity-disclaimer a {
+  color: var(--identifier-primary-link-color);
+  text-decoration: underline;
+}
+
+.usa-identifier__identity-disclaimer a:hover {
+  color: var(--identifier-primary-link-hover-color);
+}
+
+.usa-identifier__identity-disclaimer a:visited {
+  color: var(--identifier-primary-link-visited-color);
+}
+
+/* Required Links Section */
+.usa-identifier__section--required-links {
+  background-color: var(--identifier-required-links-background-color);
+  padding: var(--identifier-required-links-padding-y) 0;
+}
+
+.usa-identifier__required-links-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+}
+
+.usa-identifier__required-links-item {
+  margin: 0;
+  padding: 0;
+}
+
+.usa-identifier__required-link {
+  color: var(--identifier-secondary-link-color);
+  font-size: var(--identifier-required-link-font-size);
+  font-weight: var(--identifier-required-link-font-weight);
+  text-decoration: underline;
+  line-height: var(--identifier-required-link-line-height);
+}
+
+.usa-identifier__required-link:hover {
+  color: var(--identifier-secondary-link-hover-color);
+}
+
+.usa-identifier__required-link:visited {
+  color: var(--identifier-secondary-link-visited-color);
+}
+
+/* USA.gov Section */
+.usa-identifier__section--usagov {
+  background-color: var(--identifier-usagov-background-color);
+  padding: var(--identifier-usagov-padding-y) 0;
+}
+
+.usa-identifier__usagov-description {
+  font-size: var(--identifier-usagov-font-size);
+  font-weight: var(--identifier-usagov-font-weight);
+  color: var(--identifier-usagov-text-color);
+  line-height: var(--identifier-usagov-line-height);
+  text-align: center;
+}
+
+.usa-identifier__usagov-description a {
+  color: var(--identifier-usagov-link-color);
+  text-decoration: underline;
+  margin-left: 0.5rem;
+}
+
+/* External link icon styles */
+.usa-identifier__required-link svg,
+.usa-identifier__usagov-description a svg {
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+  font-size: 0.75em;
+}
+
+.usa-identifier__usagov-description a:hover {
+  color: var(--identifier-usagov-link-hover-color);
+}
+
+.usa-identifier__usagov-description a:visited {
+  color: var(--identifier-usagov-link-visited-color);
+}
+
+/* Mobile and Small Screens */
+@media (max-width: 640px) {
+  .usa-identifier__section--masthead .usa-identifier__container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--identifier-masthead-gap-mobile);
+  }
+
+  .usa-identifier__logos {
+    align-self: flex-start;
+    margin-bottom: var(--identifier-logos-margin-bottom-mobile);
+  }
+
+  .usa-identifier__logo-img {
+    height: var(--identifier-logo-height-mobile);
+  }
+
+  .usa-identifier__identity-domain {
+    font-size: var(--identifier-domain-font-size-mobile);
+  }
+
+  .usa-identifier__identity-disclaimer {
+    font-size: var(--identifier-disclaimer-font-size-mobile);
+  }
+
+  .usa-identifier__required-links-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--identifier-required-links-gap-mobile);
+  }
+
+  .usa-identifier__required-link {
+    font-size: var(--identifier-required-link-font-size-mobile);
+  }
+
+  .usa-identifier__usagov-description {
+    font-size: var(--identifier-usagov-font-size-mobile);
+    text-align: left;
+  }
+}
+
+/* Tablet Screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .usa-identifier__section--masthead .usa-identifier__container {
+    gap: var(--identifier-masthead-gap-tablet);
+  }
+
+  .usa-identifier__required-links-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--identifier-required-links-gap-tablet);
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+  .usa-identifier__section--masthead .usa-identifier__container {
+    gap: var(--identifier-masthead-gap-desktop);
+  }
+
+  .usa-identifier__required-links-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--identifier-required-links-gap-desktop);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .usa-identifier__identity-disclaimer a,
+  .usa-identifier__required-link,
+  .usa-identifier__usagov-description a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .usa-identifier *,
+  .usa-identifier *:before,
+  .usa-identifier *:after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Styles */
+.usa-identifier__identity-disclaimer a:focus,
+.usa-identifier__required-link:focus,
+.usa-identifier__usagov-description a:focus {
+  outline: var(--identifier-focus-outline-width) solid var(--identifier-focus-outline-color);
+  outline-offset: var(--identifier-focus-outline-offset);
+  border-radius: var(--identifier-focus-border-radius);
+}
+
+/* Print Styles */
+@media print {
+  .usa-identifier {
+    background: transparent !important;
+    color: black !important;
+  }
+  
+  .usa-identifier__section {
+    background: transparent !important;
+  }
+  
+  .usa-identifier a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+} 

@@ -13,6 +13,7 @@ export { Search } from './components/Search';
 export { Contacts } from './components/Contacts';
 export { HeroHomepage } from './components/HeroHomepage';
 export { HeroGlobal } from './components/HeroGlobal';
+export { Identifier } from './components/Identifier';
 export { Modal } from './components/Modal';
 export { Pagination } from './components/Pagination';
 export { Typography } from './components/Typography';

@@ -56,6 +56,7 @@ portland-component-library/
 │   │   ├── Header/     # Navigation header
 │   │   ├── HeroGlobal/ # Global hero section
 │   │   ├── HeroHomepage/# Homepage hero section
+│   │   ├── Identifier/ # Agency identifier component
 │   │   ├── Modal/      # Modal dialog component
 │   │   ├── PageTemplate/# Page template
 │   │   ├── Pagination/ # USWDS-compliant pagination component
@@ -96,6 +97,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **Banner** - Official government website banner
 - **Header** - Navigation component based on USWDS Header
 - **Footer** - Site footer with accessibility information
+- **Identifier** - Agency identifier component displaying parent agency and required policy links
 - **SkipNav** - Keyboard accessibility enhancement
 - **SideNav** - Side navigation component
 - **Breadcrumbs** - Navigation breadcrumbs component
