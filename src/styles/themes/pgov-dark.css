@@ -412,7 +412,7 @@
   --identifier-logos-margin-bottom-mobile: calc(var(--spacing-sm) * 1px);
   --identifier-logo-height: calc(var(--spacing-3xl) * 1px);
   --identifier-logo-height-mobile: calc(var(--spacing-2xl) * 1px);
-  --identifier-logo-max-width: calc(var(--spacing-5xl) * 1px);
+  --identifier-logo-max-width: calc(var(--units-20) * 1px);
   
   /* Agency identity */
   --identifier-domain-font-size: calc(var(--font-open-sans-size-7) * 1px);
