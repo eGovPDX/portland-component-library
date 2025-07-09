@@ -12,22 +12,28 @@
   --accordion-button-hover-bg: var(--color-gray-cool-70);
   --accordion-button-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --accordion-button-text: var(--color-gray-cool-10);
-  --accordion-button-padding-top-bottom: calc(var(--spacing-sm) * 1px);
-  --accordion-button-padding-left-right: calc(var(--spacing-sm) * 1px);
+  --accordion-button-padding-top-bottom: calc(var(--spacing-md) * 1px);
+  --accordion-button-padding-left-right: calc(var(--spacing-lg) * 1px);
   --accordion-button-outline: none;
-  --accordion-details-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --accordion-summary-text-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --accordion-details-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
   --accordion-details-text: var(--color-gray-cool-10);
   --accordion-details-bg-color: transparent;
-  --accordion-details-padding-top-bottom: calc(var(--spacing-sm) * 1px);
-  --accordion-details-padding-left-right: calc(var(--spacing-sm) * 1px);
+  --accordion-details-padding-top-bottom: calc(var(--spacing-md) * 1px);
+  --accordion-details-padding-left-right: calc(var(--spacing-lg) * 1px);
 
   /* Alert component variables */
   --alert-bg: var(--color-blue-60);
   --alert-border-color: var(--color-blue-60);
   --alert-icon-color: var(--color-blue-60);
+  --alert-heading-color: var(--color-white);
+  --alert-heading-font-family: var(--font-family-open-sans);
+  --alert-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --alert-text-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --alert-text-color: var(--color-white);
+  --alert-text-font-family: var(--font-family-open-sans);
   /* Alert Slim */
-  --alert-slim-heading-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  /* Alert Info */
+  --alert-slim-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
   /* Alert Info */
   --alert-info-bg: var(--color-info-lighter);
   --alert-info-border-color: var(--color-info-medium);
@@ -51,17 +57,22 @@
   --alert-error-icon-color: var(--color-black);
 
   /* Banner component variables */
-  --banner-bg: var(--color-gray-90);
+  --banner-bg: var(--color-gray-cool-70);
   --banner-font-family: var(--font-family-open-sans);
-  --banner-font-size: calc(var(--font-open-sans-size-3) * 1px);
-  --banner-content-padding: calc(var(--spacing-2xs) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-2xs) * 1px) calc(var(--spacing-sm) * 1px);
+  --banner-font-size: calc(var(--font-open-sans-abstraction-open-sans-2xs) * 1px);
+  --banner-content-padding: calc(var(--spacing-2xs) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-2xs) * 1px) calc(var(--spacing-md) * 1px);
   --banner-content-gap: calc(var(--spacing-xs) * 1px);
-  --banner-expanded-content-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-sm) * 1px) calc(var(--spacing-sm) * 1px) calc(var(--spacing-xs) * 1px);
-  --banner-expanded-content-gap: calc(var(--spacing-xs) * 1px);
+  --banner-expanded-content-padding: calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px);
+  --banner-expanded-content-gap: calc(var(--spacing-lg) * 1px);
   --banner-text-color: var(--color-white);
   --banner-border-color: var(--color-gray-cool-70);
   --banner-line-height-normal: 1.5;
   --banner-button-color: var(--color-blue-30);
+  --banner-guidance-heading-font-family: var(--font-family-open-sans);
+  --banner-guidance-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --banner-guidance-description-color: var(--color-white);
+  --banner-guidance-description-font-family: var(--font-family-open-sans);
+  --banner-guidance-description-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
 
   /* Breadcrumb component variables */
   --breadcrumb-font-family: var(--font-family-open-sans);

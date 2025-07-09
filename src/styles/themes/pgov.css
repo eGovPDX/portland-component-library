@@ -14,7 +14,8 @@
   --accordion-button-padding-top-bottom: calc(var(--spacing-md) * 1px);
   --accordion-button-padding-left-right: calc(var(--spacing-lg) * 1px);
   --accordion-button-outline: none;
-  --accordion-details-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --accordion-summary-text-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --accordion-details-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
   --accordion-details-text: var(--color-gray-90);
   --accordion-details-bg-color: transparent;
   --accordion-details-padding-top-bottom: calc(var(--spacing-md) * 1px);
@@ -24,8 +25,14 @@
   --alert-bg: var(--color-blue-60);
   --alert-border-color: var(--color-blue-60);
   --alert-icon-color: var(--color-blue-60);
+  --alert-heading-color: var(--color-gray-90);
+  --alert-heading-font-family: var(--font-family-open-sans);
+  --alert-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --alert-text-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --alert-text-color: var(--color-gray-90);
+  --alert-text-font-family: var(--font-family-open-sans);
   /* Alert Slim */
-  --alert-slim-heading-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --alert-slim-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
   /* Alert Info */
   --alert-info-bg: var(--color-info-lighter);
   --alert-info-border-color: var(--color-info-medium);
@@ -51,7 +58,7 @@
   /* Banner component variables */
   --banner-bg: var(--color-base-lightest);
   --banner-font-family: var(--font-family-open-sans);
-  --banner-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --banner-font-size: calc(var(--font-open-sans-abstraction-open-sans-2xs) * 1px);
   --banner-content-padding: calc(var(--spacing-2xs) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-2xs) * 1px) calc(var(--spacing-md) * 1px);
   --banner-content-gap: calc(var(--spacing-xs) * 1px);
   --banner-expanded-content-padding: calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px);
@@ -60,7 +67,12 @@
   --banner-border-color: var(--color-base-lightest);
   --banner-line-height-normal: 1.5;
   --banner-button-color: var(--color-foundation-link);
-
+  --banner-guidance-heading-font-family: var(--font-family-open-sans);
+  --banner-guidance-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --banner-guidance-description-color: var(--color-foundation-black, #1b1b1b);
+  --banner-guidance-description-font-family: var(--font-family-open-sans);
+  --banner-guidance-description-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  
   /* Breadcrumb component variables */
   --breadcrumb-font-family: var(--font-family-open-sans);
   --breadcrumb-font-size: calc(var(--font-open-sans-size-3) * 1px);

@@ -120,11 +120,8 @@ export const Banner = ({
                 {<FontAwesomeIcon icon={faLandmark} style={{ fontSize: '40px', color: '#2378C3' }} /> || null}
               </div>
               <div className="banner-guidance-text">
-                <p>
-                  <strong>{heading}</strong>
-                  <br />
-                  {description}
-                </p>
+                <div className="banner-guidance-heading">{heading}</div>
+                <div className="banner-guidance-description">{description}</div>
               </div>
             </div>
             
@@ -134,11 +131,10 @@ export const Banner = ({
                   <FontAwesomeIcon icon={faLock} style={{ fontSize: '40px', color: '#719F2A' }} />
                 </div>
                 <div className="banner-guidance-text">
-                  <p>
-                    <strong>Secure websites use HTTPS</strong>
-                    <br />
+                  <div className="banner-guidance-heading">Secure websites use HTTPS</div>
+                  <div className="banner-guidance-description">
                     A <strong>lock</strong> or <strong>https://</strong> means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
-                  </p>
+                  </div>
                 </div>
               </div>
             )}
