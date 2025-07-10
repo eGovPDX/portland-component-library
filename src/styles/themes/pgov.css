@@ -9,7 +9,6 @@
   --accordion-border-width: calc(var(--border-lg) * 1px);
   --accordion-button-bg: var(--color-gray-5);
   --accordion-button-hover-bg: #E7E7E7;
-  --accordion-button-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --accordion-button-text: var(--color-gray-90);
   --accordion-button-padding-top-bottom: calc(var(--spacing-md) * 1px);
   --accordion-button-padding-left-right: calc(var(--spacing-lg) * 1px);
