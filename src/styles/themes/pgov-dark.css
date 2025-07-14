@@ -14,8 +14,8 @@
   --accordion-button-padding-top-bottom: calc(var(--spacing-md) * 1px);
   --accordion-button-padding-left-right: calc(var(--spacing-lg) * 1px);
   --accordion-button-outline: none;
-  --accordion-summary-text-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
-  --accordion-details-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --accordion-summary-text-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --accordion-details-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --accordion-details-text: var(--color-gray-cool-10);
   --accordion-details-bg-color: transparent;
   --accordion-details-padding-top-bottom: calc(var(--spacing-md) * 1px);
@@ -27,12 +27,12 @@
   --alert-icon-color: var(--color-blue-60);
   --alert-heading-color: var(--color-white);
   --alert-heading-font-family: var(--font-family-open-sans);
-  --alert-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
-  --alert-text-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --alert-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --alert-text-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --alert-text-color: var(--color-white);
   --alert-text-font-family: var(--font-family-open-sans);
   /* Alert Slim */
-  --alert-slim-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --alert-slim-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   /* Alert Info */
   --alert-info-bg: var(--color-info-lighter);
   --alert-info-border-color: var(--color-info-medium);
@@ -58,7 +58,7 @@
   /* Banner component variables */
   --banner-bg: var(--color-gray-cool-70);
   --banner-font-family: var(--font-family-open-sans);
-  --banner-font-size: calc(var(--font-open-sans-abstraction-open-sans-2xs) * 1px);
+  --banner-font-size: calc(var(--font-abstraction-open-sans-2xs) * 1px);
   --banner-content-padding: calc(var(--spacing-2xs) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-2xs) * 1px) calc(var(--spacing-md) * 1px);
   --banner-content-gap: calc(var(--spacing-xs) * 1px);
   --banner-expanded-content-padding: calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px);
@@ -68,10 +68,10 @@
   --banner-line-height-normal: 1.5;
   --banner-button-color: var(--color-blue-30);
   --banner-guidance-heading-font-family: var(--font-family-open-sans);
-  --banner-guidance-heading-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --banner-guidance-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --banner-guidance-description-color: var(--color-white);
   --banner-guidance-description-font-family: var(--font-family-open-sans);
-  --banner-guidance-description-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
+  --banner-guidance-description-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
 
   /* Breadcrumb component variables */
   --breadcrumb-font-family: var(--font-family-open-sans);
@@ -92,7 +92,7 @@
 
   /* Button component variables */
   --button-font-family: var(--font-family-open-sans);
-  --button-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --button-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --button-bg: var(--color-blue-60);
   --button-text-color: var(--color-white);
   --button-hover-bg: var(--color-blue-warm-70);
@@ -142,7 +142,7 @@
   --button-outline-inverse-active-text-color: var(--color-white);
   --button-outline-inverse-active-box-shadow: inset 0 0 0 2px var(--color-white);
   /* Big button */
-  --button-big-font-size: calc(var(--font-open-sans-size-9) * 1px);
+  --button-big-font-size: calc(var(--font-abstraction-open-sans-lg) * 1px);
   --button-big-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-lg) * 1px);
   /* Unstyled button */
   --button-unstyled-bg-color: transparent;
