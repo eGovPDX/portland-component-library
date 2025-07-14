@@ -74,7 +74,7 @@
   
   /* Breadcrumb component variables */
   --breadcrumb-font-family: var(--font-family-open-sans);
-  --breadcrumb-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --breadcrumb-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
   --breadcrumb-font-weight: 400;
   --breadcrumb-link-color: var(--color-foundation-link, #005EA2);
   --breadcrumb-color-hover: var(--color-blue-warm-70);
@@ -90,7 +90,7 @@
 
   /* Button component variables */
   --button-font-family: var(--font-family-open-sans);
-  --button-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --button-font-size: calc(var(--font-open-sans-abstraction-open-sans-sm) * 1px);
   --button-bg: var(--color-primary-medium);
   --button-text-color: var(--color-foundation-white);
   --button-hover-bg: var(--color-primary-dark);
@@ -159,7 +159,7 @@
   --button-outline-inverse-focus-bg-color: transparent;
   --button-outline-inverse-focus-text-color: var(--color-foundation-link);
   /* Big button */
-  --button-big-font-size: calc(var(--font-open-sans-size-9) * 1px);
+  --button-big-font-size: calc(var(--font-open-sans-abstraction-open-sans-lg) * 1px);
   --button-big-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-lg) * 1px);
   /* Unstyled button */
   --button-unstyled-bg-color: transparent;
