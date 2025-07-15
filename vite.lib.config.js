@@ -1,26 +1,39 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
+import { resolve, dirname, basename } from 'path';
+import { fileURLToPath } from 'url';
+import { glob } from 'glob';
 
-export default defineConfig({
-  plugins: [
-    react()
-  ],
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Find all component index.js files and prepare entries
+const componentFiles = glob.sync('src/components/**/index.js', {
+  cwd: __dirname,
+  ignore: ['src/components/index.js', 'src/components/**/components/index.js'],
+});
+
+const componentEntries = componentFiles.map((file) => {
+  const componentName = basename(dirname(file));
+  return {
+    name: componentName,
+    path: resolve(__dirname, file),
+  };
+});
+
+const baseConfig = {
+  plugins: [react()],
   css: {
     preprocessorOptions: {
       scss: {
         includePaths: ['node_modules'],
-        charset: false
+        charset: false,
       },
     },
   },
   build: {
-    lib: {
-      entry: resolve(__dirname, 'src/index.js'),
-      name: 'PortlandComponentLibrary',
-      formats: ['es', 'umd'],
-      fileName: (format) => `portland-component-library.${format}.js`,
-    },
+    outDir: 'dist',
+    sourcemap: true,
     rollupOptions: {
       external: ['react', 'react-dom'],
       output: {
@@ -28,11 +41,49 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'style.css') return 'portland-component-library.css';
-          return assetInfo.name;
-        },
       },
     },
   },
-}); 
+};
+
+export const libraryBuilds = componentEntries.map(({ name, path }) => ({
+  ...baseConfig,
+  build: {
+    ...baseConfig.build,
+    lib: {
+      entry: path,
+      name: name,
+      fileName: `components/${name}/index`,
+      formats: ['es'],
+    },
+    rollupOptions: {
+      ...baseConfig.build.rollupOptions,
+      output: {
+        ...baseConfig.build.rollupOptions.output,
+        assetFileNames: `components/${name}/style.css`,
+      },
+    },
+  },
+}));
+
+const mainBuild = {
+  ...baseConfig,
+  build: {
+    ...baseConfig.build,
+    lib: {
+      entry: resolve(__dirname, 'src/index.js'),
+      name: 'PortlandComponentLibrary',
+      fileName: 'portland-component-library',
+      formats: ['es'],
+    },
+    rollupOptions: {
+      ...baseConfig.build.rollupOptions,
+      output: {
+        ...baseConfig.build.rollupOptions.output,
+        assetFileNames: 'style.css',
+      },
+    },
+  },
+};
+
+export default defineConfig(mainBuild); 

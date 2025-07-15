@@ -14,19 +14,164 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/portland-component-library.umd.js",
-  "module": "./dist/portland-component-library.es.js",
   "exports": {
     ".": {
-      "import": "./dist/portland-component-library.es.js",
-      "require": "./dist/portland-component-library.umd.js"
+      "import": "./dist/portland-component-library.es.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/style.css": "./dist/style.css",
+    "./components/Accordion": {
+      "import": "./dist/components/Accordion/index.js"
+    },
+    "./components/Accordion/style.css": "./dist/components/Accordion/style.css",
+    "./components/Alert": {
+      "import": "./dist/components/Alert/index.js"
+    },
+    "./components/Alert/style.css": "./dist/components/Alert/style.css",
+    "./components/Banner": {
+      "import": "./dist/components/Banner/index.js"
+    },
+    "./components/Banner/style.css": "./dist/components/Banner/style.css",
+    "./components/Breadcrumbs": {
+      "import": "./dist/components/Breadcrumbs/index.js"
+    },
+    "./components/Breadcrumbs/style.css": "./dist/components/Breadcrumbs/style.css",
+    "./components/Button": {
+      "import": "./dist/components/Button/index.js"
+    },
+    "./components/Button/style.css": "./dist/components/Button/style.css",
+    "./components/ButtonGroup": {
+      "import": "./dist/components/ButtonGroup/index.js"
+    },
+    "./components/ButtonGroup/style.css": "./dist/components/ButtonGroup/style.css",
+    "./components/Card": {
+      "import": "./dist/components/Card/index.js"
+    },
+    "./components/Card/style.css": "./dist/components/Card/style.css",
+    "./components/CardFlag": {
+      "import": "./dist/components/CardFlag/index.js"
+    },
+    "./components/CardFlag/style.css": "./dist/components/CardFlag/style.css",
+    "./components/CardGrid": {
+      "import": "./dist/components/CardGrid/index.js"
+    },
+    "./components/CardGrid/style.css": "./dist/components/CardGrid/style.css",
+    "./components/Checkbox": {
+      "import": "./dist/components/Checkbox/index.js"
+    },
+    "./components/Checkbox/style.css": "./dist/components/Checkbox/style.css",
+    "./components/ColorSwatch": {
+      "import": "./dist/components/ColorSwatch/index.js"
+    },
+    "./components/ColorSwatch/style.css": "./dist/components/ColorSwatch/style.css",
+    "./components/Contacts": {
+      "import": "./dist/components/Contacts/index.js"
+    },
+    "./components/Contacts/style.css": "./dist/components/Contacts/style.css",
+    "./components/Dropdown": {
+      "import": "./dist/components/Dropdown/index.js"
+    },
+    "./components/Dropdown/style.css": "./dist/components/Dropdown/style.css",
+    "./components/Footer": {
+      "import": "./dist/components/Footer/index.js"
+    },
+    "./components/Footer/style.css": "./dist/components/Footer/style.css",
+    "./components/Header": {
+      "import": "./dist/components/Header/index.js"
+    },
+    "./components/Header/style.css": "./dist/components/Header/style.css",
+    "./components/HeroGlobal": {
+      "import": "./dist/components/HeroGlobal/index.js"
+    },
+    "./components/HeroGlobal/style.css": "./dist/components/HeroGlobal/style.css",
+    "./components/HeroHomepage": {
+      "import": "./dist/components/HeroHomepage/index.js"
+    },
+    "./components/HeroHomepage/style.css": "./dist/components/HeroHomepage/style.css",
+    "./components/Identifier": {
+      "import": "./dist/components/Identifier/index.js"
+    },
+    "./components/Identifier/style.css": "./dist/components/Identifier/style.css",
+    "./components/LanguageSelector": {
+      "import": "./dist/components/LanguageSelector/index.js"
+    },
+    "./components/LanguageSelector/style.css": "./dist/components/LanguageSelector/style.css",
+    "./components/Modal": {
+      "import": "./dist/components/Modal/index.js"
+    },
+    "./components/Modal/style.css": "./dist/components/Modal/style.css",
+    "./components/PageTemplate": {
+      "import": "./dist/components/PageTemplate/index.js"
+    },
+    "./components/PageTemplate/style.css": "./dist/components/PageTemplate/style.css",
+    "./components/Pagination": {
+      "import": "./dist/components/Pagination/index.js"
+    },
+    "./components/Pagination/style.css": "./dist/components/Pagination/style.css",
+    "./components/PopoverWithCard": {
+      "import": "./dist/components/PopoverWithCard/index.js"
+    },
+    "./components/PopoverWithCard/style.css": "./dist/components/PopoverWithCard/style.css",
+    "./components/ProcessSteps": {
+      "import": "./dist/components/ProcessSteps/index.js"
+    },
+    "./components/ProcessSteps/style.css": "./dist/components/ProcessSteps/style.css",
+    "./components/RadioButtons": {
+      "import": "./dist/components/RadioButtons/index.js"
+    },
+    "./components/RadioButtons/style.css": "./dist/components/RadioButtons/style.css",
+    "./components/Search": {
+      "import": "./dist/components/Search/index.js"
+    },
+    "./components/Search/style.css": "./dist/components/Search/style.css",
+    "./components/SideNav": {
+      "import": "./dist/components/SideNav/index.js"
+    },
+    "./components/SideNav/style.css": "./dist/components/SideNav/style.css",
+    "./components/SkipNav": {
+      "import": "./dist/components/SkipNav/index.js"
+    },
+    "./components/SkipNav/style.css": "./dist/components/SkipNav/style.css",
+    "./components/Spacing": {
+      "import": "./dist/components/Spacing/index.js"
+    },
+    "./components/Spacing/style.css": "./dist/components/Spacing/style.css",
+    "./components/StepIndicator": {
+      "import": "./dist/components/StepIndicator/index.js"
+    },
+    "./components/StepIndicator/style.css": "./dist/components/StepIndicator/style.css",
+    "./components/SummaryBox": {
+      "import": "./dist/components/SummaryBox/index.js"
+    },
+    "./components/SummaryBox/style.css": "./dist/components/SummaryBox/style.css",
+    "./components/Table": {
+      "import": "./dist/components/Table/index.js"
+    },
+    "./components/Table/style.css": "./dist/components/Table/style.css",
+    "./components/Tag": {
+      "import": "./dist/components/Tag/index.js"
+    },
+    "./components/Tag/style.css": "./dist/components/Tag/style.css",
+    "./components/TextArea": {
+      "import": "./dist/components/TextArea/index.js"
+    },
+    "./components/TextArea/style.css": "./dist/components/TextArea/style.css",
+    "./components/TextInput": {
+      "import": "./dist/components/TextInput/index.js"
+    },
+    "./components/TextInput/style.css": "./dist/components/TextInput/style.css",
+    "./components/Tooltip": {
+      "import": "./dist/components/Tooltip/index.js"
+    },
+    "./components/Tooltip/style.css": "./dist/components/Tooltip/style.css",
+    "./components/Typography": {
+      "import": "./dist/components/Typography/index.js"
+    },
+    "./components/Typography/style.css": "./dist/components/Typography/style.css"
   },
   "scripts": {
     "dev": "vite",
     "build": "pnpm run build:lib",
-    "build:lib": "vite build --config vite.lib.config.js",
+    "build:lib": "node build-all.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "storybook dev -p 6006",
@@ -66,6 +211,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-storybook": "^0.11.6",
+    "glob": "^11.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
