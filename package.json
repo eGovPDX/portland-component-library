@@ -166,7 +166,10 @@
     "./components/Typography": {
       "import": "./dist/components/Typography/index.js"
     },
-    "./components/Typography/style.css": "./dist/components/Typography/style.css"
+    "./components/Typography/style.css": "./dist/components/Typography/style.css",
+    "./themes/pgov": "./dist/themes/pgov.css",
+    "./themes/pgov-dark": "./dist/themes/pgov-dark.css",
+    "./themes/uswds-default": "./dist/themes/uswds-default.css"
   },
   "scripts": {
     "dev": "vite",

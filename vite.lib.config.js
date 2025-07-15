@@ -21,6 +21,18 @@ const componentEntries = componentFiles.map((file) => {
   };
 });
 
+const themeFiles = glob.sync('src/styles/themes/*.css', {
+  cwd: __dirname,
+});
+
+const themeEntries = themeFiles.map((file) => {
+  const themeName = basename(file, '.css');
+  return {
+    name: themeName,
+    path: resolve(__dirname, file),
+  };
+});
+
 const baseConfig = {
   plugins: [react()],
   css: {
@@ -61,6 +73,26 @@ export const libraryBuilds = componentEntries.map(({ name, path }) => ({
       output: {
         ...baseConfig.build.rollupOptions.output,
         assetFileNames: `components/${name}/style.css`,
+      },
+    },
+  },
+}));
+
+export const themeBuilds = themeEntries.map(({ name, path }) => ({
+  ...baseConfig,
+  build: {
+    ...baseConfig.build,
+    lib: {
+      entry: path,
+      name: name,
+      fileName: `themes/${name}`,
+      formats: ['es'],
+    },
+    rollupOptions: {
+      ...baseConfig.build.rollupOptions,
+      output: {
+        ...baseConfig.build.rollupOptions.output,
+        assetFileNames: `themes/${name}.css`,
       },
     },
   },
