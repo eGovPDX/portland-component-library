@@ -9,12 +9,12 @@
   --accordion-border-width: calc(var(--border-lg) * 1px);
   --accordion-button-bg: var(--color-gray-5);
   --accordion-button-hover-bg: #E7E7E7;
-  --accordion-button-font-size: calc(var(--font-open-sans-size-5) * 1px);
   --accordion-button-text: var(--color-gray-90);
   --accordion-button-padding-top-bottom: calc(var(--spacing-md) * 1px);
   --accordion-button-padding-left-right: calc(var(--spacing-lg) * 1px);
   --accordion-button-outline: none;
-  --accordion-details-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --accordion-summary-text-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --accordion-details-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --accordion-details-text: var(--color-gray-90);
   --accordion-details-bg-color: transparent;
   --accordion-details-padding-top-bottom: calc(var(--spacing-md) * 1px);
@@ -24,8 +24,14 @@
   --alert-bg: var(--color-blue-60);
   --alert-border-color: var(--color-blue-60);
   --alert-icon-color: var(--color-blue-60);
+  --alert-heading-color: var(--color-gray-90);
+  --alert-heading-font-family: var(--font-family-open-sans);
+  --alert-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --alert-text-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --alert-text-color: var(--color-gray-90);
+  --alert-text-font-family: var(--font-family-open-sans);
   /* Alert Slim */
-  --alert-slim-heading-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --alert-slim-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   /* Alert Info */
   --alert-info-bg: var(--color-info-lighter);
   --alert-info-border-color: var(--color-info-medium);
@@ -51,7 +57,7 @@
   /* Banner component variables */
   --banner-bg: var(--color-base-lightest);
   --banner-font-family: var(--font-family-open-sans);
-  --banner-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --banner-font-size: calc(var(--font-abstraction-open-sans-2xs) * 1px);
   --banner-content-padding: calc(var(--spacing-2xs) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-2xs) * 1px) calc(var(--spacing-md) * 1px);
   --banner-content-gap: calc(var(--spacing-xs) * 1px);
   --banner-expanded-content-padding: calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-md) * 1px);
@@ -60,10 +66,15 @@
   --banner-border-color: var(--color-base-lightest);
   --banner-line-height-normal: 1.5;
   --banner-button-color: var(--color-foundation-link);
-
+  --banner-guidance-heading-font-family: var(--font-family-open-sans);
+  --banner-guidance-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --banner-guidance-description-color: var(--color-foundation-black, #1b1b1b);
+  --banner-guidance-description-font-family: var(--font-family-open-sans);
+  --banner-guidance-description-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  
   /* Breadcrumb component variables */
   --breadcrumb-font-family: var(--font-family-open-sans);
-  --breadcrumb-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --breadcrumb-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --breadcrumb-font-weight: 400;
   --breadcrumb-link-color: var(--color-foundation-link, #005EA2);
   --breadcrumb-color-hover: var(--color-blue-warm-70);
@@ -79,7 +90,7 @@
 
   /* Button component variables */
   --button-font-family: var(--font-family-open-sans);
-  --button-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --button-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --button-bg: var(--color-primary-medium);
   --button-text-color: var(--color-foundation-white);
   --button-hover-bg: var(--color-primary-dark);
@@ -148,7 +159,7 @@
   --button-outline-inverse-focus-bg-color: transparent;
   --button-outline-inverse-focus-text-color: var(--color-foundation-link);
   /* Big button */
-  --button-big-font-size: calc(var(--font-open-sans-size-9) * 1px);
+  --button-big-font-size: calc(var(--font-abstraction-open-sans-lg) * 1px);
   --button-big-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-lg) * 1px);
   /* Unstyled button */
   --button-unstyled-bg-color: transparent;
@@ -181,9 +192,9 @@
   --card-border-color: var(--color-base-lighter, #DFE1E2);
   --card-text-color: var(--color-foundation-black, #1B1B1B);
   --card-header-font-family: var(--font-family-open-sans, "Public Sans");
-  --card-header-font-size: calc(var(--font-open-sans-size-10) * 1px);
+  --card-header-font-size: calc(var(--font-abstraction-open-sans-header-sm) * 1px);
   --card-font-family: var(--font-family-open-sans, "Public Sans");
-  --card-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --card-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
 
   /* CardFlag component variables */
   --card-flag-media-col-width: 135px;
@@ -197,11 +208,11 @@
   --card-flag-bg: var(--color-foundation-white, #FFF);
   --card-flag-text-color: var(--color-foundation-black, #1B1B1B);
   --card-flag-font-family: var(--font-family-open-sans, "Public Sans");
-  --card-flag-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --card-flag-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --card-flag-font-weight: 400;
   --card-flag-line-height: 162%;
   --card-flag-header-font-family: var(--font-family-open-sans, "Public Sans");
-  --card-flag-header-font-size: calc(var(--font-open-sans-size-10) * 1px);
+  --card-flag-header-font-size: calc(var(--font-abstraction-open-sans-header-sm) * 1px);
   --card-flag-header-font-weight: 700;
   --card-flag-header-line-height: 120%;
   --card-flag-media-width: 155px;
@@ -225,30 +236,30 @@
   --card-flag-footer-margin-top: 8px;
 
   /* CardGrid component variables */
-  --card-grid-padding-lg: calc(var(--font-open-sans-size-12) * 1px);
+  --card-grid-padding-lg: calc(var(--spacing-xl) * 1px);
   --card-grid-margin-mobile: calc(var(--spacing-md) * 1px);
   --card-grid-gap-lg: calc(var(--spacing-xl) * 1px);
   --card-grid-divider-color: #E0E0E0;
   --card-grid-text-color: var(--color-gray-90, #1B1B1B);
   --card-grid-heading-font-family: var(--font-family-open-sans, "Public Sans");
-  --card-grid-heading-font-size: calc(var(--font-open-sans-size-10) * 1px);
+  --card-grid-heading-font-size: calc(var(--font-abstraction-open-sans-lg) * 1px);
   --card-grid-max-width: calc(var(--breakpoints-desktop) * 1px);
   --card-grid-margin-desktop: calc(var(--spacing-xl) * 1px);
 
   /* Checkbox component variables */
   --checkbox-title-font-family: var(--font-family-open-sans);
-  --checkbox-title-font-size: calc(var(--font-open-sans-size-7) * 1px);
+  --checkbox-title-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --checkbox-title-font-weight: 700;
   --checkbox-title-color: var(--color-foundation-black);
   --checkbox-title-margin-bottom: calc(var(--spacing-2xs) * 1px);
   --checkbox-description-font-family: var(--font-family-open-sans);
-  --checkbox-description-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --checkbox-description-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --checkbox-description-color: var(--color-foundation-black);
   --checkbox-description-margin-bottom: calc(var(--spacing-xs) * 1px);
   --checkbox-options-gap: calc(var(--spacing-sm) * 1px);
   --checkbox-background: var(--color-foundation-white);
   --checkbox-label-font-family: var(--font-family-open-sans);
-  --checkbox-label-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --checkbox-label-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --checkbox-label-font-weight: 400;
   --checkbox-label-color: var(--color-foundation-black);
   --checkbox-label-line-height: 1.5;
@@ -273,7 +284,7 @@
   --checkbox-disabled-border-color: var(--color-disabled-medium);
   --checkbox-disabled-checked-background: var(--color-foundation-white);
   --checkbox-label-description-font-family: var(--font-family-open-sans);
-  --checkbox-label-description-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --checkbox-label-description-font-size: calc(var(--font-abstraction-open-sans-2xs) * 1px);
   --checkbox-label-description-color: var(--color-foundation-black);
   --checkbox-label-description-margin-top: calc(var(--spacing-xs) * 1px);
   /* Tiled variant */
@@ -293,7 +304,7 @@
   --checkbox-required-asterisk-color: var(--color-error-dark);
   --checkbox-error-text-color: var(--color-error-dark);
   --checkbox-error-font-family: var(--font-family-open-sans);
-  --checkbox-error-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --checkbox-error-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --checkbox-error-font-weight: 700;
   --checkbox-error-margin-bottom: calc(var(--spacing-xs) * 1px);
   --checkbox-error-border-width: 4px;
@@ -338,32 +349,30 @@
   --contacts-icon-color: var(--color-gray-90);
 
   /* Dropdown component variables */
-  --dropdown-height: calc(var(--spacing-2xl) * 1px);
-  --dropdown-min-height: calc(var(--spacing-2xl) * 1px);
-  --dropdown-padding-top: calc(var(--spacing-xs) * 1px);
-  --dropdown-padding-bottom: calc(var(--spacing-xs) * 1px);
-  --dropdown-padding-left: calc(var(--spacing-xs) * 1px);
-  --dropdown-padding-right: calc(var(--spacing-xs) * 1px);
-  --dropdown-border-radius: calc(var(--radius-0) * 1px);
-  --dropdown-border: 1px solid var(--color-foundation-black);
-  --dropdown-bg: var(--color-foundation-white);
-  --dropdown-color: var(--color-foundation-black);
-  --dropdown-font-family: var(--font-family-open-sans, "Public Sans");
-  --dropdown-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --dropdown-font-weight: 400;
-  --dropdown-font-style: normal;
-  --dropdown-line-height: normal;
+  --dropdown-button-height: calc(var(--spacing-2xl) * 1px);
+  --dropdown-button-min-height: calc(var(--spacing-2xl) * 1px);
+  --dropdown-button-padding-top: calc(var(--spacing-xs) * 1px);
+  --dropdown-button-padding-bottom: calc(var(--spacing-xs) * 1px);
+  --dropdown-button-padding-left: calc(var(--spacing-xs) * 1px);
+  --dropdown-button-padding-right: calc(var(--spacing-xs) * 1px);
+  --dropdown-button-border-radius: calc(var(--radius-0) * 1px);
+  --dropdown-button-bg: var(--color-foundation-white);
+  --dropdown-button-color: var(--color-foundation-black);
+  --dropdown-button-font-family: var(--font-family-open-sans);
+  --dropdown-button-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --dropdown-button-font-weight: 400;
+  --dropdown-button-font-style: normal;
+  --dropdown-button-line-height: normal;
   --dropdown-focus-border: calc(var(--border-lg) * 1px) solid var(--color-primary-medium);
-  --dropdown-disabled-border: 1px solid var(--color-foundation-black);
   --dropdown-disabled-bg: var(--color-disabled-lighter);
   --dropdown-disabled-color: var(--color-foundation-black);
-  --dropdown-error-border: calc(var(--border-lg) * 1px) solid var(--color-error-dark);
   --dropdown-error-bg: var(--color-foundation-white);
   --dropdown-error-color: var(--color-error-dark);
   --dropdown-chevron-color: var(--color-foundation-black);
   --dropdown-menu-bg: var(--color-foundation-white);
   --dropdown-menu-border: 1px solid var(--color-base-lighter);
   --dropdown-menu-border-radius: calc(var(--radius-0) * 1px);
+  --dropdown-menu-shadow: 0 4px 8px rgba(0,0,0,0.1);
   --dropdown-item-color: var(--color-foundation-black);
   --dropdown-item-bg: transparent;
   --dropdown-item-hover-bg: var(--color-base-lighter);
@@ -371,6 +380,19 @@
   --dropdown-item-padding-left-right: calc(var(--spacing-lg) * 1px);
   --dropdown-item-selected-bg: var(--color-base-lighter);
   --dropdown-item-selected-color: var(--color-foundation-black);
+  --dropdown-hint-color: var(--color-base-dark);
+  --dropdown-hint-font-family: var(--font-family-open-sans);
+  --dropdown-hint-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --dropdown-hint-margin-top: 4px;
+  --dropdown-label-color: var(--color-foundation-black);
+  --dropdown-label-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --dropdown-label-font-family: var(--font-family-open-sans);
+  --dropdown-label-font-weight: 600;
+  --dropdown-label-margin-bottom: 4px;
+  --dropdown-label-error-color: var(--color-error-dark);
+  --dropdown-error-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --dropdown-error-font-family: var(--font-family-open-sans);
+  --dropdown-error-margin-top: 4px;
 
   /* Footer component variables */
   --footer-max-width: 64rem;
@@ -570,8 +592,8 @@
 
   /* Pagination component variables */
   --pagination-font-family: var(--font-family-open-sans);
-  --pagination-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --pagination-font-size-mobile: calc(var(--font-open-sans-size-4) * 1px);
+  --pagination-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --pagination-font-size-mobile: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-margin: calc(var(--spacing-md) * 1px);
   --pagination-gap: calc(var(--spacing-xs) * 1px);
   --pagination-gap-mobile: calc(var(--spacing-2xs) * 1px);
@@ -588,7 +610,7 @@
   --pagination-link-bg-color: transparent;
   --pagination-link-border: none;
   --pagination-link-border-radius: calc(var(--radius-md) * 1px);
-  --pagination-link-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --pagination-link-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-link-font-weight: 400;
   --pagination-link-text-decoration: underline;
   --pagination-link-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
@@ -615,8 +637,8 @@
   --pagination-link-disabled-bg-color: transparent;
   
   /* Icon styles */
-  --pagination-icon-size: calc(var(--font-open-sans-size-5) * 1px);
-  --pagination-icon-size-mobile: calc(var(--font-open-sans-size-4) * 1px);
+  --pagination-icon-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --pagination-icon-size-mobile: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-icon-spacing: calc(var(--spacing-2xs) * 1px);
   
   /* Page number button styles */
@@ -624,7 +646,7 @@
   --pagination-button-bg-color: var(--color-foundation-white);
   --pagination-button-border: calc(var(--border-sm) * 1px) solid var(--color-base-lighter);
   --pagination-button-border-radius: calc(var(--radius-md) * 1px);
-  --pagination-button-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --pagination-button-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-button-font-weight: 400;
   --pagination-button-text-decoration: underline;
   --pagination-button-transition: all 0.15s ease-in-out;
@@ -654,7 +676,7 @@
   
   /* Ellipsis styles */
   --pagination-ellipsis-color: var(--color-base-medium);
-  --pagination-ellipsis-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --pagination-ellipsis-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-ellipsis-font-weight: 400;
   
   /* High contrast mode support */
@@ -666,11 +688,11 @@
   --process-steps-title-gap: calc(var(--spacing-xs) * 1px);
   --process-steps-title-color: var(--color-base-darkest, #1C1D1F);
   --process-steps-title-font-family: var(--font-family-open-sans, "Open Sans");
-  --process-steps-title-font-size: calc(var(--font-open-sans-size-11) * 1px);
+  --process-steps-title-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --process-steps-description-gap: calc(var(--spacing-xs) * 1px);
   --process-steps-description-color: var(--color-base-darkest);
   --process-steps-description-font-family: var(--font-family-open-sans, "Open Sans");
-  --process-steps-description-font-size: calc(var(--font-open-sans-size-10) * 1px);
+  --process-steps-description-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --process-steps-steps-gap: 0px;
   --process-steps-steps-margin-top: calc(var(--spacing-xl) * 1px);
   --process-steps-step-item-gap: calc(var(--spacing-md) * 1px);
@@ -680,18 +702,18 @@
   --process-steps-step-number-border-width: 4px;
   --process-steps-step-number-text-color: var(--color-foundation-black);
   --process-steps-step-number-font-family: var(--font-family-open-sans, "Open Sans");
-  --process-steps-step-number-font-size: calc(var(--font-open-sans-size-10) * 1px);
+  --process-steps-step-number-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --process-steps-connector-width: 8px;
   --process-steps-connector-height: 127px;
   --process-steps-connector-color: var(--color-primary-lighter, #D9E8F6);
   --process-steps-step-content-padding-bottom: calc(var(--spacing-xl) * 1px);
   --process-steps-step-heading-color: var(--color-foundation-black);
   --process-steps-step-heading-font-family: var(--font-family-open-sans, "Open Sans");
-  --process-steps-step-heading-font-size: calc(var(--font-open-sans-size-10) * 1px);
+  --process-steps-step-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --process-steps-step-heading-padding: 12px 0 0 0;
   --process-steps-step-description-color: var(--color-base-darkest);
   --process-steps-step-description-font-family: var(--font-family-open-sans, "Open Sans");
-  --process-steps-step-description-font-size: calc(var(--font-open-sans-size-6) * 1px);
+  --process-steps-step-description-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
 
   /* RadioButtons component variables */
   --radio-button-options-gap: 16px;
@@ -713,10 +735,10 @@
   --radio-button-checked-border-width: 3px;
   --radio-button-label-text-color: var(--color-foundation-black);
   --radio-button-label-text-font-family: var(--font-family-open-sans);
-  --radio-button-label-text-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --radio-button-label-text-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --radio-button-label-text-font-weight: 400;
   --radio-button-label-line-height: 130%;
-  --radio-button-label-description-font-size: calc(var(--font-open-sans-size-4) * 1px);
+  --radio-button-label-description-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --radio-button-disabled-color: var(--color-disabled-medium);
   --radio-button-tiled-border-radius: 4px;
   --radio-button-tiled-border-width: 2px;
@@ -730,7 +752,7 @@
   --radio-button-required-asterisk-color: var(--color-error-dark);
   --radio-button-error-text-color: var(--color-error-dark);
   --radio-button-error-font-family: var(--font-family-open-sans);
-  --radio-button-error-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --radio-button-error-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --radio-button-error-font-weight: 700;
   --radio-button-error-border-color: var(--color-error-dark);
 
@@ -742,13 +764,13 @@
   --search-input-border: 1px solid var(--color-base-darkest);
   --search-button-padding: calc(var(--spacing-xs) * 1px);
   --search-button-height: calc(var(--units-8) * 1px);
-  --search-icon-size: calc(var(--font-open-sans-size-8) * 1px);
-  --search-font-size-big: calc(var(--font-open-sans-size-5) * 1px);
+  --search-icon-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --search-font-size-big: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --search-input-padding-big: calc(var(--spacing-md) * 1px);
   --search-input-height-big: calc(var(--units-10) * 1px);
   --search-button-padding-big: calc(var(--spacing-md) * 1px);
   --search-button-height-big: calc(var(--units-10) * 1px);
-  --search-font-size-small: calc(var(--font-open-sans-size-3) * 1px);
+  --search-font-size-small: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --search-input-padding-small: calc(var(--spacing-xs) * 1px);
   --search-button-padding-small: calc(var(--spacing-xs) * 1px);
 
@@ -769,10 +791,10 @@
   --side-nav-bg: var(--color-foundation-white);
   --side-nav-indicator-width: 4px;
   --side-nav-font-family: var(--font-family-open-sans);
-  --side-nav-font-size: calc(var(--font-open-sans-size-6) * 1px);
+  --side-nav-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --side-nav-line-height: 130%;
   --side-nav-child-font-family: var(--font-family-open-sans);
-  --side-nav-child-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --side-nav-child-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --side-nav-child-line-height: 130%;
   --side-nav-children-max-height: 500px;
   --side-nav-children-transition: all 0.3s ease-in-out;
@@ -784,7 +806,7 @@
   --skip-nav-padding-x: calc(var(--spacing-lg) * 1px);
   --skip-nav-bg: var(--color-primary-medium);
   --skip-nav-font-family: var(--font-family-open-sans);
-  --skip-nav-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --skip-nav-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --skip-nav-font-weight: 500;
   --skip-nav-color: var(--color-foundation-white);
 
@@ -796,11 +818,11 @@
   --step-indicator-segment-color-current: var(--color-primary-medium);
   --step-indicator-segment-color-pending: var(--color-foundation-black);
   --step-indicator-text-pending-color: var(--color-foundation-black);
-  --step-indicator-label-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --step-indicator-label-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --step-indicator-heading-color: var(--color-foundation-black);
   --step-indicator-heading-font-family: var(--font-family-open-sans);
-  --step-indicator-heading-font-size: calc(var(--font-open-sans-size-11) * 1px);
-  --step-indicator-heading-font-size-small: calc(var(--font-open-sans-size-10) * 1px);
+  --step-indicator-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --step-indicator-heading-font-size-small: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --step-indicator-bg: var(--color-foundation-white);
   --step-indicator-margin-bottom: calc(var(--spacing-sm) * 1px);
   --step-indicator-header-margin-top: calc(var(--spacing-xs) * 1px);
@@ -813,14 +835,14 @@
   --step-indicator-counter-container-bg: var(--color-base-lightest);
   --step-indicator-counter-container-color: var(--color-foundation-black);
   --step-indicator-counter-container-font-family: var(--font-family-open-sans);
-  --step-indicator-counter-container-font-size: calc(var(--font-open-sans-size-11) * 1px);
+  --step-indicator-counter-container-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --step-indicator-counter-container-font-weight: 700;
   --step-indicator-counter-container-gap: calc(var(--spacing-xs) * 1px);
   --step-indicator-counter-top: -12px;
   --step-indicator-counter-sm-top: -10px;
   --step-indicator-counter-size: 2rem;
   --step-indicator-counter-sm-size: 1.5rem;
-  --step-indicator-counter-sm-font-size: calc(var(--font-open-sans-size-4) * 1px);
+  --step-indicator-counter-sm-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
 
   /* SummaryBox component variables */
   --summary-box-padding: calc(var(--spacing-lg) * 1px);
@@ -830,8 +852,8 @@
   --summary-box-bg-hover: var(--color-primary-lightest);
   --summary-box-text-color: var(--color-foundation-black);
   --summary-box-font-family: var(--font-family-open-sans);
-  --summary-box-heading-font-size: calc(var(--font-open-sans-size-10) * 1px);
-  --summary-box-font-size: calc(var(--font-open-sans-size-6) * 1px);
+  --summary-box-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --summary-box-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --summary-box-button-icon-gap: calc(var(--spacing-xs) * 1px);
   --summary-box-button-color: var(--color-primary-medium);
   --summary-box-button-padding-y: calc(var(--spacing-sm) * 1px);
@@ -845,7 +867,7 @@
   /* Table component variables */
   --table-margin: calc(var(--spacing-lg) * 1px) 0;
   --table-font-family: var(--font-family-open-sans);
-  --table-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --table-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --table-line-height: 1.5;
   --table-bg-color: var(--color-foundation-white);
   --table-text-color: var(--color-foundation-black);
@@ -854,7 +876,7 @@
   --table-cell-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-md) * 1px);
   --table-cell-bg-color: var(--color-foundation-white);
   /* Table caption */
-  --table-caption-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --table-caption-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --table-caption-font-weight: 700;
   --table-caption-margin-bottom: calc(var(--spacing-xs) * 1px);
   --table-caption-text-align: left;
@@ -904,26 +926,26 @@
   --tag-bg: var(--color-base-dark);
   --tag-color: var(--color-foundation-white);
   --tag-font-family: var(--font-family-open-sans);
-  --tag-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --tag-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --tag-big-padding-x: calc(var(--spacing-3xs) * 1px);
   --tag-big-padding-y: calc(var(--spacing-xs) * 1px);
   --tag-big-gap: calc(var(--spacing-xs) * 1px);
-  --tag-big-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --tag-big-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
 
   /* TextArea component variables */
   --text-area-gap: calc(var(--spacing-xs) * 1px);
   --text-area-label-font-family: var(--font-family-open-sans);
-  --text-area-label-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --text-area-label-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-area-label-font-weight: 700;
   --text-area-desc-font-family: var(--font-family-open-sans);
-  --text-area-desc-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --text-area-desc-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-area-footer-gap: calc(var(--spacing-md) * 1px);
   --text-area-error-font-family: var(--font-family-open-sans);
-  --text-area-error-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --text-area-error-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-area-error-font-weight: 700;
   --text-area-error-color: var(--color-error-dark);
   --text-area-count-font-family: var(--font-family-open-sans);
-  --text-area-count-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --text-area-count-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-area-count-color: var(--color-foundation-black);
   --text-area-bg: var(--color-foundation-white);
   --text-area-border: 1px solid var(--color-foundation-black);
@@ -934,7 +956,7 @@
   --text-area-disabled-color: var(--color-foundation-white);
   --text-area-min-height: calc(var(--units-10) * 1px);
   --text-area-input-font-family: var(--font-family-open-sans);
-  --text-area-input-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --text-area-input-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-area-input-color: var(--color-foundation-black);
   --text-area-input-padding: calc(var(--spacing-sm) * 1px);
   --text-area-focus-outline: calc(var(--border-lg) * 1px) solid var(--color-primary-medium);
@@ -944,12 +966,12 @@
   --text-input-max-width: 640px;
   --text-input-gap: calc(var(--spacing-xs) * 1px);
   --text-input-label-font-family: var(--font-family-open-sans);
-  --text-input-label-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --text-input-label-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-input-label-font-weight: 700;
   --text-input-desc-font-family: var(--font-family-open-sans);
-  --text-input-desc-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --text-input-desc-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-input-error-font-family: var(--font-family-open-sans);
-  --text-input-error-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --text-input-error-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-input-error-font-weight: 700;
   --text-input-error-color: var(--color-error-dark);
   --text-input-bg: var(--color-foundation-white);
@@ -961,7 +983,7 @@
   --text-input-disabled-color: var(--color-foundation-white);
   --text-input-height: calc(var(--units-10) * 1px);
   --text-input-input-font-family: var(--font-family-open-sans);
-  --text-input-input-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --text-input-input-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-input-input-color: var(--color-foundation-black);
   --text-input-input-disabled-color: var(--color-foundation-white);
   --text-input-affix-color: var(--color-foundation-black);
@@ -974,7 +996,7 @@
 
   /* Tooltip component variables */
   --tooltip-font-family: var(--font-family-open-sans);
-  --tooltip-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --tooltip-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --tooltip-line-height: 1.5;
   --tooltip-border-radius: calc(var(--radius-md) * 1px);
   --tooltip-bg-light: var(--color-base-lightest);
@@ -1020,13 +1042,13 @@
   --language-selector-option-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
   --language-selector-option-padding-mobile: calc(var(--spacing-md) * 1px);
   --language-selector-option-border-width: calc(var(--border-sm) * 1px);
-  --language-selector-option-font-size: calc(var(--font-open-sans-size-4) * 1px);
-  --language-selector-option-font-size-mobile: calc(var(--font-open-sans-size-5) * 1px);
+  --language-selector-option-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --language-selector-option-font-size-mobile: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --language-selector-option-line-height: 1.4;
   --language-selector-option-focus-outline-width: calc(var(--border-sm) * 1px);
   --language-selector-option-focus-outline-offset: calc(var(--border-sm) * -1px);
   --language-selector-footer-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
-  --language-selector-footer-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --language-selector-footer-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --language-selector-footer-border-width: calc(var(--border-sm) * 1px);
   --language-selector-high-contrast-border-width: calc(var(--border-lg) * 1px);
 } 

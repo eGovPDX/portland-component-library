@@ -33,6 +33,15 @@ Default.args = {
   defaultOptionLabel: '-Select-',
 };
 
+export const WithHintText = Template.bind({});
+WithHintText.args = {
+  id: 'hint-text-dropdown',
+  label: 'Favorite animal',
+  hintText: 'Select your favorite animal from the list below.',
+  options: optionsData,
+  defaultOptionLabel: '-Select-',
+};
+
 export const WithSelectedValue = Template.bind({});
 WithSelectedValue.args = {
   id: 'selected-dropdown',
@@ -82,4 +91,4 @@ ErrorNoLabel.args = {
   options: optionsData,
   error: 'This selection has an error.',
   defaultOptionLabel: '-Select an option-',
-}; 
+};

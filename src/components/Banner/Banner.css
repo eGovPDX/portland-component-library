@@ -91,6 +91,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--banner-expanded-content-gap);
+  flex: 1 0 0;
 }
 
 .banner-guidance-icon {
@@ -101,9 +102,21 @@
   flex-grow: 1;
 }
 
-.banner-guidance-text p {
+.banner-guidance-heading {
   margin: 0;
   color: var(--banner-text-color, #1b1b1b);
+  line-height: var(--banner-line-height-normal);
+  font-style: normal;
+  font-weight: 700;
+  font-family: var(--banner-guidance-heading-font-family);
+  font-size: var(--banner-guidance-heading-font-size, 16px);
+}
+
+.banner-guidance-description {
+  margin: 0;
+  color: var(--banner-guidance-description-color, #1b1b1b);
+  font-family: var(--banner-guidance-description-font-family);
+  font-size: var(--banner-guidance-description-font-size, 16px);
   line-height: var(--banner-line-height-normal);
 }
 

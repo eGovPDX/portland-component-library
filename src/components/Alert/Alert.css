@@ -1,13 +1,13 @@
 /* Alert component styles */
 
 /* CSS Variable definitions */
-:root {
+/* :root {
   --alert-text-color: #1B1B1B;
   --alert-heading-font-family: "Public Sans";
   --alert-heading-font-size: 22px;
   --alert-font-family: "Public Sans";
   --alert-font-size: 16px;
-}
+} */
 
 .alert {
   position: relative;
@@ -45,7 +45,7 @@
 
 .alert__heading {
   margin: 0;
-  color: var(--alert-text-color, #1B1B1B);
+  color: var(--alert-heading-color, #1B1B1B);
   font-family: var(--alert-heading-font-family, "Public Sans");
   font-size: var(--alert-heading-font-size, 22px);
   font-style: normal;
@@ -56,8 +56,8 @@
 .alert__text {
   margin: 0;
   color: var(--alert-text-color, #1B1B1B);
-  font-family: var(--alert-font-family, "Public Sans");
-  font-size: var(--alert-font-size, 16px);
+  font-family: var(--alert-text-font-family, "Public Sans");
+  font-size: var(--alert-text-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;

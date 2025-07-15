@@ -27,6 +27,7 @@ const useOutsideClick = (ref, handler) => {
 const Dropdown = ({
   id,
   label,
+  hintText,
   options,
   disabled,
   error,
@@ -122,7 +123,8 @@ const Dropdown = ({
     <div className={containerClasses} ref={dropdownRef}>
       {label && (
         <label className={classNames("usa-label", {"usa-label--error": error})} htmlFor={id}>
-          {label}
+          {label && <span className="usa-label__text">{label}</span>}
+          {hintText && <span className="usa-hint__text">{hintText}</span>}
           {error && typeof error === 'string' && <span className="usa-error-message" role="alert">{error}</span>}
           {error && typeof error !== 'string' && <span className="usa-error-message" role="alert">This field is required.</span>}
         </label>
@@ -188,6 +190,7 @@ const Dropdown = ({
 Dropdown.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string,
+  hintText: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
