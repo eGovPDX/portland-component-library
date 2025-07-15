@@ -17,6 +17,39 @@ Browse components in the sidebar to see examples and documentation.
 - **Responsive**: Components work across different screen sizes
 - **Customizable**: Components can be customized via props
 
+## Usage
+
+### Component-Level Imports (Recommended)
+
+This approach provides optimal tree shaking by allowing you to import only the components and styles you need, resulting in the smallest possible bundle size.
+
+1.  **Import the component:**
+
+    ```jsx
+    import { Button } from '@cityofportland/component-library/components/Button';
+    ```
+
+2.  **Import the component's stylesheet:**
+
+    ```jsx
+    import '@cityofportland/component-library/components/Button/style.css';
+    ```
+
+### Selective Theme Loading
+
+You can import a specific theme to style your application. Choose one of the following:
+
+```jsx
+// PGOV Theme (Default)
+import '@cityofportland/component-library/themes/pgov.css';
+
+// PGOV Dark Theme
+import '@cityofportland/component-library/themes/pgov-dark.css';
+
+// USWDS Default Theme
+import '@cityofportland/component-library/themes/uswds-default.css';
+```
+
 ## Available Components
 
 ### Navigation Components

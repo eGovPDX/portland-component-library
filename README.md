@@ -4,7 +4,48 @@
 
 A React component library for Portland.gov, built with design tokens from Figma and based on the USWDS design system.
 
-## Quick Start
+## Usage
+
+Install the library in your project:
+
+```bash
+pnpm add @cityofportland/component-library
+```
+
+### Component-Level Imports (Recommended)
+
+This approach provides optimal tree shaking by allowing you to import only the components and styles you need, resulting in the smallest possible bundle size.
+
+1.  **Import the component:**
+
+    ```jsx
+    import { Button } from '@cityofportland/component-library/components/Button';
+    ```
+
+2.  **Import the component's stylesheet:**
+
+    ```jsx
+    import '@cityofportland/component-library/components/Button/style.css';
+    ```
+
+### Selective Theme Loading
+
+You can import a specific theme to style your application. Choose one of the following:
+
+```jsx
+// PGOV Theme (Default)
+import '@cityofportland/component-library/themes/pgov.css';
+
+// PGOV Dark Theme
+import '@cityofportland/component-library/themes/pgov-dark.css';
+
+// USWDS Default Theme
+import '@cityofportland/component-library/themes/uswds-default.css';
+```
+
+## Contributing to the Library
+
+### Quick Start
 
 ```bash
 # Clone the repository
