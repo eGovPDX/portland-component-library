@@ -1,5 +1,5 @@
 import { build } from 'vite';
-import { libraryBuilds, themeBuilds } from './vite.lib.config.js';
+import { libraryBuilds, themeBuilds, tokensBuild, themeLoaderBuild } from './vite.lib.config.js';
 import fs from 'fs';
 import { resolve, dirname } from 'path';
 
@@ -46,6 +46,12 @@ import { resolve, dirname } from 'path';
     for (const buildConfig of tempThemeBuilds) {
       await build(buildConfig);
     }
+
+    // Build the tokens
+    await build(tokensBuild);
+
+    // Build the theme loader
+    await build(themeLoaderBuild);
 
     console.log('All builds completed successfully!');
   } catch (error) {

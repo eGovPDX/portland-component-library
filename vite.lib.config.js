@@ -98,6 +98,32 @@ export const themeBuilds = themeEntries.map(({ name, path }) => ({
   },
 }));
 
+export const themeLoaderBuild = {
+  ...baseConfig,
+  build: {
+    ...baseConfig.build,
+    lib: {
+      entry: resolve(__dirname, 'src/themeLoader.js'),
+      name: 'themeLoader',
+      fileName: 'themeLoader',
+      formats: ['es'],
+    },
+  },
+};
+
+export const tokensBuild = {
+  ...baseConfig,
+  build: {
+    ...baseConfig.build,
+    lib: {
+      entry: resolve(__dirname, 'src/tokens.js'),
+      name: 'tokens',
+      fileName: 'tokens',
+      formats: ['es'],
+    },
+  },
+};
+
 const mainBuild = {
   ...baseConfig,
   build: {

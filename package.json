@@ -1,6 +1,6 @@
 {
   "name": "@cityofportland/component-library",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Portland Component Library using design tokens from Figma",
   "keywords": [
     "react",
@@ -169,7 +169,13 @@
     "./components/Typography/style.css": "./dist/components/Typography/style.css",
     "./themes/pgov": "./dist/themes/pgov.css",
     "./themes/pgov-dark": "./dist/themes/pgov-dark.css",
-    "./themes/uswds-default": "./dist/themes/uswds-default.css"
+    "./themes/uswds-default": "./dist/themes/uswds-default.css",
+    "./tokens": {
+      "import": "./dist/tokens.js"
+    },
+    "./themeLoader": {
+      "import": "./dist/themeLoader.js"
+    }
   },
   "scripts": {
     "dev": "vite",
@@ -225,6 +231,7 @@
     "vitest": "^3.0.8"
   },
   "dependencies": {
+    "@cityofportland/design-tokens": "^1.1.0",
     "@floating-ui/react": "^0.27.8",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
