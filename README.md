@@ -43,6 +43,41 @@ import '@cityofportland/component-library/themes/pgov-dark.css';
 import '@cityofportland/component-library/themes/uswds-default.css';
 ```
 
+### Using Design Tokens
+
+You can import the design tokens as a JavaScript object to use in your own custom components and styling.
+
+```jsx
+import { designTokens } from '@cityofportland/component-library/tokens';
+
+const MyCustomComponent = () => (
+  <div style={{
+    backgroundColor: designTokens.color.primary.medium,
+    padding: designTokens.spacing.md,
+  }}>
+    Hello, World!
+  </div>
+);
+```
+
+### Dynamic Theme Loading
+
+For applications that need to switch themes on the fly (e.g., a light/dark mode toggle), you can use the `themeLoader`.
+
+```jsx
+import { loadTheme } from '@cityofportland/component-library/themeLoader';
+
+const ThemeToggleButton = ({ theme, setTheme }) => {
+  const toggleTheme = async () => {
+    const newTheme = theme === 'pgov' ? 'pgov-dark' : 'pgov';
+    await loadTheme(newTheme);
+    setTheme(newTheme);
+  };
+
+  return <button onClick={toggleTheme}>Toggle Theme</button>;
+};
+```
+
 ## Contributing to the Library
 
 ### Quick Start
