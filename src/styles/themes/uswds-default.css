@@ -232,6 +232,12 @@
   --contacts-border-color: #1b1b1b;
   --contacts-text-color: #1b1b1b;
   --contacts-icon-color: #1b1b1b;
+  --contacts-button-hover-bg: #1a4480;
+  --contacts-margin-mobile: 1rem;
+  --contacts-padding-md: 1rem;
+  --contacts-card-grid-max-width: 30rem;
+  --contacts-border-radius: 0.5rem;
+  --contacts-bg-container: #f0f0f0;
 
   /* Dropdown component variables */
   --dropdown-height: 2.5rem;

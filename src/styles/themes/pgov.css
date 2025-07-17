@@ -339,14 +339,40 @@
   --color-swatch-hex-margin-bottom: 0.25rem;
 
   /* Contacts component variables */
+  --contacts-heading-font-family: var(--font-family-open-sans, "Public Sans");
+  --contacts-heading-font-size: calc(var(--font-abstraction-open-sans-h3) * 1px);
   --contacts-max-width: 1024px;
   --contacts-padding-lg: calc(var(--spacing-xl) * 1px);
   --contacts-margin-desktop: calc(var(--spacing-xl) * 1px);
   --contacts-gap-lg: calc(var(--spacing-xl) * 1px);
+  --contacts-gap-md: calc(var(--spacing-md) * 1px);
+  --contacts-gap-sm: calc(var(--spacing-xs) * 1px);
   --contacts-bg: var(--color-white, #FFF);
   --contacts-border-color: var(--color-gray-90);
   --contacts-text-color: var(--color-gray-90);
   --contacts-icon-color: var(--color-gray-90);
+  --contacts-button-bg: var(--color-primary-medium);
+  --contacts-button-hover-bg: var(--color-primary-dark);
+  --contacts-button-color: var(--color-foundation-white);
+  --contacts-button-font-family: var(--font-family-open-sans, "Public Sans");
+  --contacts-button-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --contacts-button-font-weight: 400;
+  --contacts-button-line-height: 1.5;
+  --contacts-button-padding: 12px 20px;
+  --contacts-button-radius: 4px;
+  --contacts-button-text: var(--color-foundation-white);
+  --contacts-label-font-family: var(--font-family-open-sans, "Public Sans");
+  --contacts-label-font-size: calc(var(--font-abstraction-open-sans-header-sm) * 1px);
+  --contacts-body-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --contacts-link-color: var(--color-foundation-black);
+  --contacts-link-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --contacts-link-font-weight: 400;
+  --contacts-link-line-height: 1.5;
+  --contacts-margin-mobile: calc(var(--spacing-md) * 1px);
+  --contacts-padding-md: calc(var(--spacing-md) * 1px);
+  --contacts-card-grid-max-width: calc(var(--breakpoints-mobile-lg) * 1px);
+  --contacts-border-radius: calc(var(--radius-lg) * 1px);
+  --contacts-bg-container: var(--color-base-lightest);
 
   /* Dropdown component variables */
   --dropdown-button-height: calc(var(--spacing-2xl) * 1px);

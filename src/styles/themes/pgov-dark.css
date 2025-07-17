@@ -247,6 +247,12 @@
   --contacts-border-color: var(--color-gray-cool-20);
   --contacts-text-color: var(--color-white);
   --contacts-icon-color: var(--color-white);
+  --contacts-button-hover-bg: var(--color-blue-warm-70);
+  --contacts-margin-mobile: calc(var(--spacing-md) * 1px);
+  --contacts-padding-md: calc(var(--spacing-md) * 1px);
+  --contacts-card-grid-max-width: calc(var(--breakpoints-mobile-lg) * 1px);
+  --contacts-border-radius: calc(var(--radius-lg) * 1px);
+  --contacts-bg-container: var(--color-gray-80);
 
   /* Dropdown component variables */
   --dropdown-button-height: calc(var(--spacing-xl) * 1px);
