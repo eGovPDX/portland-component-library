@@ -463,7 +463,10 @@
   --pgov-header-bg: var(--color-foundation-black);
   --pgov-header-border-color-dark: var(--color-foundation-black);
   --pgov-header-logo-color: var(--color-foundation-white);
-  --pgov-header-logo-tagline-color: var(--color-accent-cool-lighter);
+  --pgov-header-title-font-size: calc(var(--font-abstraction-open-sans-header-lg) * 1px);
+  --pgov-header-title-color: var(--color-foundation-white);
+  --pgov-header-tagline-font-size: calc(var(--font-abstraction-open-sans-header-2xs) * 1px);
+  --pgov-header-tagline-color: var(--color-foundation-white);
   --pgov-header-link-reverse-color: var(--color-base-light);
   --pgov-header-link-hover-bg: rgba(255, 255, 255, 0.1);
   --pgov-header-dropdown-bg: var(--color-foundation-white);

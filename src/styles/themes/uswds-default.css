@@ -310,7 +310,10 @@
   --pgov-header-bg: #1b1b1b;
   --pgov-header-border-color-dark: #1b1b1b;
   --pgov-header-logo-color: #ffffff;
-  --pgov-header-logo-tagline-color: #a8c6ff;
+  --pgov-header-title-color: #ffffff;
+  --pgov-header-title-font-size: 1.25rem;
+  --pgov-header-tagline-color: #a8c6ff;
+  --pgov-header-tagline-font-size: 0.875rem;
   --pgov-header-link-reverse-color: #a9aeb1;
   --pgov-header-link-hover-bg: rgba(255, 255, 255, 0.1);
   --pgov-header-dropdown-bg: #ffffff;
