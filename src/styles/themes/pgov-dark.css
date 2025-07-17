@@ -298,6 +298,12 @@
   --dropdown-error-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --dropdown-error-font-family: var(--font-family-open-sans);
   --dropdown-error-margin-top: 4px;
+  --dropdown-chevron-right: 1rem;
+  --dropdown-chevron-transform: translateY(-50%);
+  --dropdown-chevron-transition: transform 0.2s ease-in-out;
+  --dropdown-chevron-open-transform: translateY(-50%) rotate(180deg);
+  --dropdown-item-padding-top-bottom: calc(var(--spacing-xs) * 1px);
+  --dropdown-item-padding-left-right: calc(var(--spacing-lg) * 1px);
 
   /* Footer component variables */
   --footer-max-width: 64rem;
@@ -372,6 +378,10 @@
   --hero-homepage-title-font-size: calc(var(--font-open-sans-size-12) * 1px);
   --hero-homepage-subtitle-font-size: calc(var(--font-open-sans-size-11) * 1px);
   --hero-homepage-gap-sm: calc(var(--spacing-xs) * 1px);
+  --hero-homepage-title-font-family: var(--font-family-open-sans, "Public Sans");
+  --hero-homepage-subtitle-font-family: var(--font-family-open-sans, "Public Sans");
+  --hero-homepage-link-font-family: var(--font-family-open-sans, "Public Sans");
+  --hero-homepage-link-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --hero-homepage-link-color: var(--color-gray-cool-30);
   --hero-homepage-padding-xl: calc(var(--spacing-4xl) * 1px);
   --hero-homepage-margin-desktop: calc(var(--spacing-xl) * 1px);
