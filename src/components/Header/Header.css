@@ -1,0 +1,339 @@
+/* Header Component Styles */
+
+/* Base header styles */
+.usa-header {
+  font-family: var(--header-font-family, "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif);
+  font-size: var(--header-font-size, 1rem);
+  line-height: var(--header-line-height, 1.5);
+  position: relative;
+}
+
+/* Header container for basic variant */
+.usa-nav-container {
+  max-width: var(--header-max-width, 64rem);
+  margin: 0 auto;
+  padding: 0 var(--header-container-padding, 1rem);
+}
+
+/* Header navbar - contains logo and mobile menu button */
+.usa-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-navbar-height, 4rem);
+  padding: var(--header-navbar-padding, 0.5rem 0);
+}
+
+/* Logo styles */
+.usa-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: var(--header-logo-line-height, 1.2);
+}
+
+.usa-logo__text {
+  font-style: normal;
+  font-weight: var(--header-logo-font-weight, 700);
+  font-size: var(--header-logo-font-size, 1.34rem);
+  color: var(--header-logo-color, #1b1b1b);
+  text-decoration: none;
+}
+
+.usa-logo__text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.usa-logo__text a:hover {
+  color: var(--header-logo-hover-color, #005ea2);
+  text-decoration: none;
+}
+
+.usa-logo__subtitle {
+  font-size: var(--header-logo-subtitle-font-size, 0.875rem);
+  font-weight: var(--header-logo-subtitle-font-weight, 400);
+  color: var(--header-logo-subtitle-color, #5c5c5c);
+  margin-top: var(--header-logo-subtitle-margin-top, 0.25rem);
+}
+
+/* Mobile menu button */
+.usa-menu-btn {
+  background: var(--header-menu-btn-bg, transparent);
+  border: var(--header-menu-btn-border, 1px solid #dfe1e2);
+  border-radius: var(--header-menu-btn-border-radius, 0.25rem);
+  color: var(--header-menu-btn-color, #1b1b1b);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: var(--header-menu-btn-font-size, 0.9rem);
+  padding: var(--header-menu-btn-padding, 0.375rem 0.75rem);
+  text-decoration: none;
+}
+
+.usa-menu-btn:hover {
+  background-color: var(--header-menu-btn-hover-bg, #f0f0f0);
+  border-color: var(--header-menu-btn-hover-border-color, #adadad);
+  color: var(--header-menu-btn-hover-color, #1b1b1b);
+  text-decoration: none;
+}
+
+.usa-menu-btn:focus {
+  outline: var(--header-menu-btn-focus-outline, 0.25rem solid #2491ff);
+  outline-offset: var(--header-menu-btn-focus-outline-offset, 0);
+}
+
+@media (min-width: 64em) {
+  .usa-menu-btn {
+    display: none;
+  }
+}
+
+/* Navigation styles */
+.usa-nav {
+  position: relative;
+}
+
+@media (max-width: 63.99em) {
+  .usa-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: var(--header-nav-z-index, 500);
+    background: var(--header-nav-mobile-bg, white);
+    border-top: var(--header-nav-mobile-border-top, 1px solid #dfe1e2);
+    box-shadow: var(--header-nav-mobile-shadow, 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15));
+    display: none;
+    max-height: var(--header-nav-mobile-max-height, 80vh);
+    overflow-y: auto;
+  }
+
+  .usa-nav[aria-expanded="true"] {
+    display: block;
+  }
+}
+
+.usa-nav__close {
+  position: absolute;
+  top: var(--header-nav-close-top, 0.75rem);
+  right: var(--header-nav-close-right, 1rem);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--header-nav-close-padding, 0.5rem);
+  z-index: var(--header-nav-close-z-index, 1);
+}
+
+.usa-nav__close img {
+  width: var(--header-nav-close-icon-size, 1rem);
+  height: var(--header-nav-close-icon-size, 1rem);
+}
+
+@media (min-width: 64em) {
+  .usa-nav__close {
+    display: none;
+  }
+}
+
+/* Primary navigation */
+.usa-nav__primary {
+  list-style: none;
+  margin: 0;
+  padding: var(--header-nav-primary-padding, 1rem);
+}
+
+@media (min-width: 64em) {
+  .usa-nav__primary {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+}
+
+.usa-nav__primary-item {
+  border-bottom: var(--header-nav-item-border-bottom, 1px solid #f0f0f0);
+}
+
+@media (min-width: 64em) {
+  .usa-nav__primary-item {
+    border-bottom: none;
+    margin-right: var(--header-nav-item-margin-right, 1rem);
+  }
+
+  .usa-nav__primary-item:last-child {
+    margin-right: 0;
+  }
+}
+
+/* Navigation links */
+.usa-nav__link {
+  background: transparent;
+  border: none;
+  color: var(--header-nav-link-color, #1b1b1b);
+  cursor: pointer;
+  display: block;
+  font-size: var(--header-nav-link-font-size, 1rem);
+  font-weight: var(--header-nav-link-font-weight, 400);
+  line-height: var(--header-nav-link-line-height, 1.3);
+  padding: var(--header-nav-link-padding, 0.75rem 0);
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+}
+
+.usa-nav__link:hover {
+  background-color: var(--header-nav-link-hover-bg, #f0f0f0);
+  color: var(--header-nav-link-hover-color, #1b1b1b);
+  text-decoration: none;
+}
+
+.usa-nav__link:focus {
+  outline: var(--header-nav-link-focus-outline, 0.25rem solid #2491ff);
+  outline-offset: var(--header-nav-link-focus-outline-offset, 0);
+}
+
+@media (min-width: 64em) {
+  .usa-nav__link {
+    padding: var(--header-nav-link-padding-desktop, 0.75rem 1rem);
+    white-space: nowrap;
+  }
+
+  .usa-nav__link:hover {
+    background-color: transparent;
+    color: var(--header-nav-link-hover-color-desktop, #005ea2);
+  }
+}
+
+/* Current page indicator */
+.usa-nav__link.usa-current {
+  color: var(--header-nav-link-current-color, #005ea2);
+  font-weight: var(--header-nav-link-current-font-weight, 700);
+}
+
+@media (min-width: 64em) {
+  .usa-nav__link.usa-current::after {
+    background-color: var(--header-nav-link-current-indicator-color, #005ea2);
+    bottom: 0;
+    content: "";
+    display: block;
+    height: var(--header-nav-link-current-indicator-height, 0.25rem);
+    left: var(--header-nav-link-padding-desktop, 1rem);
+    position: absolute;
+    right: var(--header-nav-link-padding-desktop, 1rem);
+  }
+}
+
+/* Extended header styles */
+.usa-header--extended .usa-navbar {
+  border-bottom: var(--header-extended-navbar-border, 1px solid #dfe1e2);
+}
+
+.usa-header--extended .usa-nav__inner {
+  max-width: var(--header-max-width, 64rem);
+  margin: 0 auto;
+  padding: 0 var(--header-container-padding, 1rem);
+}
+
+.usa-header--extended .usa-nav__secondary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: var(--header-secondary-margin-top, 1rem);
+  gap: var(--header-secondary-gap, 1rem);
+}
+
+@media (min-width: 64em) {
+  .usa-header--extended .usa-nav__secondary {
+    margin-top: 0;
+  }
+}
+
+.usa-nav__secondary-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--header-secondary-links-gap, 1rem);
+}
+
+.usa-nav__secondary-item {
+  /* Individual secondary nav item styles */
+}
+
+/* Megamenu support */
+.usa-header--megamenu .usa-nav__submenu {
+  /* Megamenu specific styles will be added here when implemented */
+}
+
+/* Search area */
+.usa-nav section[aria-label="Search component"] {
+  margin-top: var(--header-search-margin-top, 1rem);
+}
+
+@media (min-width: 64em) {
+  .usa-nav section[aria-label="Search component"] {
+    margin-top: 0;
+  }
+}
+
+/* Responsive behavior */
+@media (min-width: 64em) {
+  .usa-nav {
+    display: flex !important;
+    align-items: center;
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .usa-header--extended .usa-nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--header-extended-nav-padding, 1rem 0);
+  }
+
+  .usa-header--extended .usa-nav__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Focus management and accessibility */
+.usa-header [tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .usa-logo__text {
+    color: var(--header-logo-color-high-contrast, ButtonText);
+  }
+  
+  .usa-nav__link {
+    color: var(--header-nav-link-color-high-contrast, ButtonText);
+  }
+  
+  .usa-menu-btn {
+    border-color: var(--header-menu-btn-border-color-high-contrast, ButtonText);
+  }
+}
+
+/* Print styles */
+@media print {
+  .usa-menu-btn,
+  .usa-nav__close {
+    display: none;
+  }
+  
+  .usa-nav {
+    display: block !important;
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+} 
