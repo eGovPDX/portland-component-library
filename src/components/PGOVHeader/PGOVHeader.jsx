@@ -31,12 +31,16 @@ export const PGOVHeader = ({
         <div className="header-container">
           <div className="header-logo">
             <HeaderLogo
-              title={title}
               logoUrl={logoUrl}
               logoAlt={logoAlt}
-              tagline={tagline}
             />
           </div>
+            <div className="header-text-container">
+              <span className="header-title">{title}</span>
+              {tagline && (
+                <span className="header-tagline">{tagline}</span>
+              )}
+            </div>
           <div className={`header-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
             <button
               className="header-mobile-menu-button"
@@ -104,6 +108,7 @@ PGOVHeader.propTypes = {
 };
 
 PGOVHeader.defaultProps = {
+  title: 'Portland.gov',
   logoUrl: undefined,
   logoAlt: 'Logo',
   tagline: undefined,
