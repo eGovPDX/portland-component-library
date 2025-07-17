@@ -129,7 +129,7 @@ portland-component-library/
 │   │   ├── ColorSwatch/# Color display and documentation
 │   │   ├── Contacts/   # Contact information display
 │   │   ├── Footer/     # Site footer
-│   │   ├── Header/     # Navigation header
+│   │   ├── PGOVHeader/ # Portland.gov navigation header
 │   │   ├── HeroGlobal/ # Global hero section
 │   │   ├── HeroHomepage/# Homepage hero section
 │   │   ├── Identifier/ # Agency identifier component
@@ -171,7 +171,7 @@ The library includes a comprehensive set of components for building Portland.gov
 
 ### Navigation Components
 - **Banner** - Official government website banner
-- **Header** - Navigation component based on USWDS Header
+- **PGOVHeader** - Portland.gov navigation component based on USWDS Header
 - **Footer** - Site footer with accessibility information
 - **Identifier** - Agency identifier component displaying parent agency and required policy links
 - **SkipNav** - Keyboard accessibility enhancement
@@ -188,7 +188,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **Tag** - Tag component for labeling and categorization
 
 ### Layout Components
-- **PageTemplate** - Complete page template with Banner, Header, Footer, and SkipNav
+- **PageTemplate** - Complete page template with Banner, PGOVHeader, Footer, and SkipNav
 - **HeroGlobal** - Global hero section with image and call-to-action
 - **HeroHomepage** - Homepage hero section with search and popular links
 - **SummaryBox** - Summary information display

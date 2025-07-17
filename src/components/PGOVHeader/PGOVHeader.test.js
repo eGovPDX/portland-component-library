@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Header } from './Header';
+import { PGOVHeader } from './PGOVHeader';
 
 // Mock the child components
 jest.mock('./HeaderLogo', () => ({
@@ -20,7 +20,7 @@ jest.mock('./HeaderMenuItem', () => ({
   )
 }));
 
-describe('Header', () => {
+describe('PGOVHeader', () => {
   const defaultProps = {
     title: 'Test Title',
     logoUrl: 'test-logo.svg',
@@ -32,7 +32,7 @@ describe('Header', () => {
   };
 
   test('renders with default props', () => {
-    render(<Header {...defaultProps} />);
+    render(<PGOVHeader {...defaultProps} />);
     
     expect(screen.getByTestId('mock-header-logo')).toBeInTheDocument();
     expect(screen.getByText('Test Title')).toBeInTheDocument();
@@ -40,14 +40,14 @@ describe('Header', () => {
   });
 
   test('renders with tagline when provided', () => {
-    render(<Header {...defaultProps} tagline="Test Tagline" />);
+    render(<PGOVHeader {...defaultProps} tagline="Test Tagline" />);
     
     expect(screen.getByTestId('tagline')).toBeInTheDocument();
     expect(screen.getByText('Test Tagline')).toBeInTheDocument();
   });
 
   test('toggles mobile menu when button is clicked', () => {
-    render(<Header {...defaultProps} />);
+    render(<PGOVHeader {...defaultProps} />);
     
     const menuButton = screen.getByRole('button');
     
@@ -71,7 +71,7 @@ describe('Header', () => {
   });
 
   test('renders navigation items', () => {
-    render(<Header {...defaultProps} />);
+    render(<PGOVHeader {...defaultProps} />);
     
     const menuItems = screen.getAllByTestId('mock-menu-item');
     expect(menuItems).toHaveLength(2);
@@ -80,7 +80,7 @@ describe('Header', () => {
   });
 
   test('applies custom className when provided', () => {
-    render(<Header {...defaultProps} className="custom-class" />);
+    render(<PGOVHeader {...defaultProps} className="custom-class" />);
     
     const headerElement = screen.getByRole('banner');
     expect(headerElement).toHaveClass('header');

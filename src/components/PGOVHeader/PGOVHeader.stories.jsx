@@ -1,15 +1,15 @@
 import { React } from 'react';
-import { Header } from './Header';
+import { PGOVHeader } from './PGOVHeader';
 import pgovLogo from '../../images/PGOV-Logo.svg';
 
 export default {
-  title: 'Components/Header',
-  component: Header,
+  title: 'Components/PGOVHeader',
+  component: PGOVHeader,
   parameters: {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Header component for Portland.gov based on USWDS Header. The header provides branding and identity for the site.',
+        component: 'PGOVHeader component for Portland.gov based on USWDS Header. The header provides branding and identity for the site.',
       },
     },
   },
@@ -32,7 +32,7 @@ const defaultNavItems = [
   { label: 'Jobs with the City', href: 'https://www.governmentjobs.com/careers/portlandor', description: 'Opportunities posted to governmentjobs.com' },
 ];
 
-// Default Header with Logo
+// Default PGOVHeader with Logo
 export const Default = {
   parameters: {
     viewport: {
@@ -48,7 +48,7 @@ export const Default = {
   },
 };
 
-// Header with Logo and Tagline
+// PGOVHeader with Logo and Tagline
 export const WithTagline = {
   parameters: {
     viewport: {
@@ -61,7 +61,7 @@ export const WithTagline = {
   },
 };
 
-// Mobile Header
+// Mobile PGOVHeader
 export const Mobile = {
   args: {
     ...Default.args,
@@ -73,7 +73,7 @@ export const Mobile = {
   },
 };
 
-// Mobile Header with Open Menu
+// Mobile PGOVHeader with Open Menu
 export const MobileWithOpenMenu = {
   render: (args) => {
     // This is a workaround to show the mobile menu open in Storybook
@@ -85,7 +85,7 @@ export const MobileWithOpenMenu = {
       }
     }, 100);
     
-    return <Header {...args} />;
+    return <PGOVHeader {...args} />;
   },
   args: {
     ...Default.args,
@@ -97,7 +97,7 @@ export const MobileWithOpenMenu = {
   },
 };
 
-// Header with Internationalized Menu Text (Spanish)
+// PGOVHeader with Internationalized Menu Text (Spanish)
 export const SpanishMenuText = {
   args: {
     ...Default.args,
@@ -108,7 +108,7 @@ export const SpanishMenuText = {
   },
 };
 
-// Header with Current Page
+// PGOVHeader with Current Page
 export const WithCurrentPage = {
   args: {
     ...Default.args,

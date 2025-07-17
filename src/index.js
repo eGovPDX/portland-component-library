@@ -1,6 +1,6 @@
 // Export components
 export { Banner } from './components/Banner';
-export { Header } from './components/Header';
+export { PGOVHeader } from './components/PGOVHeader';
 export { SkipNav } from './components/SkipNav';
 export { PageTemplate } from './components/PageTemplate';
 export { Footer } from './components/Footer';

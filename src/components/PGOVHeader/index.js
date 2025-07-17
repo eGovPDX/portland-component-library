@@ -1,5 +1,5 @@
-// Export the main Header component
-export { Header } from './Header';
+// Export the main PGOVHeader component
+export { PGOVHeader } from './PGOVHeader';
 
 // Export subcomponents
 export { HeaderLogo } from './HeaderLogo';

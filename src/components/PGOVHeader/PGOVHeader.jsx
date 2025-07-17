@@ -1,13 +1,13 @@
 import { React, useState } from 'react';
 import PropTypes from 'prop-types';
-import './Header.css';
+import './PGOVHeader.css';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderMenuGroup } from './HeaderMenuGroup';
 
 /**
- * Header component for Portland.gov
+ * PGOVHeader component for Portland.gov
  */
-export const Header = ({
+export const PGOVHeader = ({
   title,
   logoUrl,
   logoAlt,
@@ -73,7 +73,7 @@ export const Header = ({
   );
 };
 
-Header.propTypes = {
+PGOVHeader.propTypes = {
   /** Title text for the header */
   title: PropTypes.string.isRequired,
   /** URL for the logo image */
@@ -103,7 +103,7 @@ Header.propTypes = {
   className: PropTypes.string
 };
 
-Header.defaultProps = {
+PGOVHeader.defaultProps = {
   logoUrl: undefined,
   logoAlt: 'Logo',
   tagline: undefined,
