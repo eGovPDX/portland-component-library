@@ -67,7 +67,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 16px;
+  padding: var(--contacts-button-padding, 12px 20px);
   background-color: var(--contacts-button-bg, #005EA2);
   color: var(--contacts-button-text, #FFF);
   text-align: center;
