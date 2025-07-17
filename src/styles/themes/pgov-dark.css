@@ -755,8 +755,8 @@
   --text-input-prefix-input-padding-left: 0.5rem;
 
   /* Tooltip component variables */
-  --tooltip-font-family: var(--font-family-open-sans, "Public Sans");
-  --tooltip-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --tooltip-font-family: var(--font-family-open-sans);
+  --tooltip-font-size: calc(var(--font-abstraction-open-sans-body-xs) * 1px);
   --tooltip-line-height: 1.5;
   --tooltip-border-radius: calc(var(--radius-md) * 1px);
   --tooltip-bg-light: var(--color-gray-80);
@@ -771,8 +771,8 @@
 
   /* Pagination component variables */
   --pagination-font-family: var(--font-family-open-sans);
-  --pagination-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --pagination-font-size-mobile: calc(var(--font-open-sans-size-4) * 1px);
+  --pagination-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --pagination-font-size-mobile: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --pagination-margin: calc(var(--spacing-md) * 1px);
   --pagination-gap: calc(var(--spacing-xs) * 1px);
   --pagination-gap-mobile: calc(var(--spacing-2xs) * 1px);

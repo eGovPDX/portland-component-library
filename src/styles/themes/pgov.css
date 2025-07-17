@@ -1034,7 +1034,7 @@
 
   /* Tooltip component variables */
   --tooltip-font-family: var(--font-family-open-sans);
-  --tooltip-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --tooltip-font-size: calc(var(--font-abstraction-open-sans-body-xs) * 1px);
   --tooltip-line-height: 1.5;
   --tooltip-border-radius: calc(var(--radius-md) * 1px);
   --tooltip-bg-light: var(--color-base-lightest);
