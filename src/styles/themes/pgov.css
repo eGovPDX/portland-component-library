@@ -431,7 +431,7 @@
   /* Footer component variables */
   --footer-max-width: 64rem;
   --footer-font-family: var(--font-family-open-sans);
-  --footer-font-size-base: calc(var(--font-open-sans-size-3) * 1px);
+  --footer-font-size-base: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --footer-bg: var(--color-base-lightest);
   --footer-text-color: var(--color-foundation-black);
   --footer-link-color: var(--color-primary-medium);
@@ -442,11 +442,11 @@
   --footer-link-font-family: var(--font-family-open-sans, "Public Sans");
   --footer-gap-md: 1rem;
   --footer-translation-line-height: 1.5;
-  --footer-translation-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --footer-translation-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --footer-explore-button-padding: 0.625rem 1rem;
   --footer-explore-button-radius: 0.25rem;
   --footer-explore-button-font-weight: 600;
-  --footer-explore-button-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --footer-explore-button-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --footer-explore-arrow-margin-left: 0.5rem;
   --footer-explore-arrow-font-size: 1.25rem;
   --footer-padding-md: 1rem;
@@ -454,8 +454,8 @@
   --footer-spacing-2: calc(var(--spacing-sm) * 1px);
   --footer-heading-color: var(--color-foundation-black);
   --footer-heading-font-family: var(--font-family-open-sans, "Public Sans");
-  --footer-heading-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --footer-body-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --footer-heading-font-size: calc(var(--font-abstraction-open-sans-header-h4) * 1px);
+  --footer-body-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
 
   /* Header component variables */
   --header-menu-link-bg: var(--color-foundation-white);
@@ -483,12 +483,12 @@
   --hero-global-tag-bg: var(--color-foundation-black);
   --hero-global-tag-color: var(--color-foundation-white);
   --hero-global-tag-font-family: var(--font-family-open-sans, "Public Sans");
-  --hero-global-tag-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --hero-global-tag-font-size: calc(var(--font-abstraction-open-sans-header-2xs) * 1px);
   --hero-global-title-color: var(--color-foundation-black);
   --hero-global-title-font-family: var(--font-family-open-sans, "Public Sans");
-  --hero-global-title-font-size: calc(var(--font-open-sans-size-11) * 1px);
+  --hero-global-title-font-size: calc(var(--font-abstraction-open-sans-header-h1) * 1px);
   --hero-global-desc-font-family: var(--font-family-open-sans, "Public Sans");
-  --hero-global-desc-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --hero-global-desc-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --hero-global-image-placeholder-bg: var(--color-base-lighter);
   --hero-global-desktop-max-width: calc(var(--breakpoints-desktop) * 1px);
   --hero-global-desktop-gap-x: calc(var(--spacing-xl) * 1px);
@@ -499,9 +499,9 @@
   --hero-homepage-bg: var(--color-foundation-black);
   --hero-homepage-text-color: var(--color-foundation-white);
   --hero-homepage-title-font-family: var(--font-family-open-sans, "Public Sans");
-  --hero-homepage-title-font-size: calc(var(--font-open-sans-size-12) * 1px);
+  --hero-homepage-title-font-size: calc(var(--font-abstraction-open-sans-header-h1) * 1px);
   --hero-homepage-subtitle-font-family: var(--font-family-open-sans, "Public Sans");
-  --hero-homepage-subtitle-font-size: calc(var(--font-open-sans-size-11) * 1px);
+  --hero-homepage-subtitle-font-size: calc(var(--font-abstraction-open-sans-header-h2) * 1px);
   --hero-homepage-gap-sm: calc(var(--spacing-xs) * 1px);
   --hero-homepage-link-font-family: var(--font-family-open-sans, "Public Sans");
   --hero-homepage-link-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
@@ -513,8 +513,8 @@
 
   /* Identifier component variables */
   --identifier-font-family: var(--font-family-open-sans);
-  --identifier-background-color: var(--color-base-darkest);
   --identifier-text-color: var(--color-foundation-white);
+  --identifier-background-color: var(--color-base-darkest);
   --identifier-max-width: calc(var(--breakpoints-desktop) * 1px);
   --identifier-container-padding-x: calc(var(--spacing-lg) * 1px);
   
@@ -536,14 +536,14 @@
   --identifier-logo-max-width: calc(var(--units-20) * 1px);
   
   /* Agency identity */
-  --identifier-domain-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --identifier-domain-font-size-mobile: calc(var(--font-open-sans-size-6) * 1px);
+  --identifier-domain-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --identifier-domain-font-size-mobile: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --identifier-domain-font-weight: 400;
   --identifier-domain-line-height: 1.3;
   --identifier-domain-margin-bottom: calc(var(--spacing-xs) * 1px);
   --identifier-identity-domain-color: var(--color-foundation-link-reverse);
-  --identifier-disclaimer-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --identifier-disclaimer-font-size-mobile: calc(var(--font-open-sans-size-4) * 1px);
+  --identifier-disclaimer-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --identifier-disclaimer-font-size-mobile: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --identifier-disclaimer-font-weight: 400;
   --identifier-disclaimer-line-height: 1.5;
   --identifier-disclaimer-color: var(--color-foundation-white);
@@ -559,8 +559,8 @@
   --identifier-required-links-gap-tablet: calc(var(--spacing-md) * 1px);
   --identifier-required-links-gap-mobile: calc(var(--spacing-sm) * 1px);
   --identifier-required-links-gap-desktop: calc(var(--spacing-lg) * 1px);
-  --identifier-required-link-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --identifier-required-link-font-size-mobile: calc(var(--font-open-sans-size-4) * 1px);
+  --identifier-required-link-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --identifier-required-link-font-size-mobile: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --identifier-required-link-font-weight: 400;
   --identifier-required-link-line-height: 1.4;
   --identifier-secondary-link-color: var(--color-gray-30);
@@ -570,8 +570,8 @@
   /* USA.gov section */
   --identifier-usagov-background-color: var(--color-base-darkest);
   --identifier-usagov-padding-y: calc(var(--spacing-md) * 1px);
-  --identifier-usagov-font-size: calc(var(--font-open-sans-size-5) * 1px);
-  --identifier-usagov-font-size-mobile: calc(var(--font-open-sans-size-4) * 1px);
+  --identifier-usagov-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --identifier-usagov-font-size-mobile: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --identifier-usagov-font-weight: 400;
   --identifier-usagov-line-height: 1.4;
   --identifier-usagov-text-color: var(--color-foundation-white);
