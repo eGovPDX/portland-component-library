@@ -1,7 +1,7 @@
 /* PGOV Theme */
 /* Based on Figma Design System: https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS) */
 
-.pgov-theme-applied {
+.pgov-theme {
   /* Accordion component variables */
   --accordion-font-family: var(--font-family-open-sans);
   --accordion-gap: calc(var(--spacing-xs) * 1px);
