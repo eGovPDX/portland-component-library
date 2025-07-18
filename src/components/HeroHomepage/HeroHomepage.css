@@ -19,7 +19,7 @@
 
 .pgov-hero-homepage__title {
   color: var(--hero-homepage-text-color, #FFF);
-  font-family: var(--usa-font-family-heading, "Public Sans");
+  font-family: var(--hero-homepage-title-font-family, "Public Sans");
   font-size: var(--hero-homepage-title-font-size, 40px);
   font-style: normal;
   font-weight: 700;
@@ -50,7 +50,7 @@
 
 .pgov-hero-homepage__subtitle-container {
   display: flex;
-  padding: var(--usa-spacing-0, 0px) 0px 0px 0px;
+  padding: 0px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
@@ -59,7 +59,7 @@
 
 .pgov-hero-homepage__subtitle {
   color: var(--hero-homepage-text-color, #FFF);
-  font-family: var(--usa-font-family-heading, "Public Sans");
+  font-family: var(--hero-homepage-subtitle-font-family, "Public Sans");
   font-size: var(--hero-homepage-subtitle-font-size, 32px);
   font-style: normal;
   font-weight: 700;
@@ -79,8 +79,8 @@
 
 .pgov-hero-homepage__link {
   color: var(--hero-homepage-link-color, #A9AEB1);
-  font-family: var(--usa-font-family-body, "Public Sans");
-  font-size: var(--theme-body-font-size, 16px);
+  font-family: var(--hero-homepage-link-font-family, "Public Sans");
+  font-size: var(--hero-homepage-link-font-size, 16px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;

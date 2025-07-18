@@ -232,6 +232,12 @@
   --contacts-border-color: #1b1b1b;
   --contacts-text-color: #1b1b1b;
   --contacts-icon-color: #1b1b1b;
+  --contacts-button-hover-bg: #1a4480;
+  --contacts-margin-mobile: 1rem;
+  --contacts-padding-md: 1rem;
+  --contacts-card-grid-max-width: 30rem;
+  --contacts-border-radius: 0.5rem;
+  --contacts-bg-container: #f0f0f0;
 
   /* Dropdown component variables */
   --dropdown-height: 2.5rem;
@@ -262,6 +268,12 @@
   --dropdown-item-hover-bg: #dfe1e2;
   --dropdown-item-selected-bg: #dfe1e2;
   --dropdown-item-selected-color: #1b1b1b;
+  --dropdown-chevron-right: 1rem;
+  --dropdown-chevron-transform: translateY(-50%);
+  --dropdown-chevron-transition: transform 0.2s ease-in-out;
+  --dropdown-chevron-open-transform: translateY(-50%) rotate(180deg);
+  --dropdown-item-padding-top-bottom: 0.5rem;
+  --dropdown-item-padding-left-right: 1rem;
 
   /* Footer component variables */
   --footer-max-width: 64rem;
@@ -336,6 +348,10 @@
   --hero-homepage-title-font-size: 2.5rem;
   --hero-homepage-subtitle-font-size: 2rem;
   --hero-homepage-gap-sm: 0.5rem;
+  --hero-homepage-title-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --hero-homepage-subtitle-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --hero-homepage-link-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --hero-homepage-link-font-size: 1rem;
   --hero-homepage-link-color: #a9aeb1;
   --hero-homepage-padding-xl: 4rem;
   --hero-homepage-margin-desktop: 2rem;

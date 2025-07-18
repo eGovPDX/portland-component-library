@@ -142,8 +142,8 @@
   cursor: pointer;
   color: var(--dropdown-item-color, #1B1B1B);
   background: var(--dropdown-item-bg, transparent);
-  font-family: var(--dropdown-font-family, "Public Sans");
-  font-size: var(--dropdown-font-size, 16px);
+  font-family: var(--dropdown-item-font-family, "Public Sans");
+  font-size: var(--dropdown-item-font-size, 16px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

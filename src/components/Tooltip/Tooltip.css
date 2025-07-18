@@ -2,11 +2,11 @@
 .tooltip__body {
   max-width: 15rem;
   padding: 0.5rem 1rem;
-  font-family: var(--tooltip-font-family, var(--font-family-reading-public-sans));
-  font-size: var(--tooltip-font-size, var(--font-size-3));
+  font-family: var(--tooltip-font-family, "Public Sans");
+  font-size: var(--tooltip-font-size, 14.3px);
   line-height: var(--tooltip-line-height, 1.5);
   text-align: center;
-  border-radius: var(--tooltip-border-radius, var(--theme-radius-md));
+  border-radius: var(--tooltip-border-radius, 4px);
   z-index: 1000;
   word-wrap: break-word;
   overflow-wrap: break-word;
