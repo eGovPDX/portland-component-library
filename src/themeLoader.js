@@ -18,6 +18,7 @@ export async function loadTheme(themeName) {
         await import('./styles/themes/pgov.css');
         break;
       case 'pgov-dark':
+        await import('./styles/themes/pgov.css');
         await import('./styles/themes/pgov-dark.css');
         break;
       case 'uswds-default':
