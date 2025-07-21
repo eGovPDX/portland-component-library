@@ -20,6 +20,7 @@ export const Alert = ({
   children,
   slim = false,
   noIcon = false,
+  roundedCorners = false,
   className = '',
 }) => {
   const alertClasses = [
@@ -27,6 +28,7 @@ export const Alert = ({
     `alert--${type}`,
     slim && 'alert--slim',
     noIcon && 'alert--no-icon',
+    roundedCorners && 'alert--rounded-corners',
     className
   ].filter(Boolean).join(' ');
 
