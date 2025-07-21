@@ -1,5 +1,80 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faFlag, 
+  faStar, 
+  faHeart, 
+  faShieldHalved, 
+  faCircleInfo, 
+  faExclamationTriangle,
+  faCheckCircle,
+  faTimesCircle,
+  faQuestionCircle,
+  faCog,
+  faHome,
+  faUser,
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt,
+  faCalendar,
+  faClock,
+  faSearch,
+  faDownload,
+  faUpload,
+  faPrint,
+  faSave,
+  faEdit,
+  faTrash,
+  faPlus,
+  faMinus,
+  faArrowRight,
+  faArrowLeft,
+  faChevronUp,
+  faChevronDown
+} from '@fortawesome/free-solid-svg-icons';
 import { Banner } from './Banner';
+
+// Icon mapping object
+const iconMap = {
+  'flag': faFlag,
+  'star': faStar,
+  'heart': faHeart,
+  'shield': faShieldHalved,
+  'info-circle': faCircleInfo,
+  'exclamation-triangle': faExclamationTriangle,
+  'check-circle': faCheckCircle,
+  'times-circle': faTimesCircle,
+  'question-circle': faQuestionCircle,
+  'cog': faCog,
+  'home': faHome,
+  'user': faUser,
+  'envelope': faEnvelope,
+  'phone': faPhone,
+  'map-marker': faMapMarkerAlt,
+  'calendar': faCalendar,
+  'clock': faClock,
+  'search': faSearch,
+  'download': faDownload,
+  'upload': faUpload,
+  'print': faPrint,
+  'save': faSave,
+  'edit': faEdit,
+  'trash': faTrash,
+  'plus': faPlus,
+  'minus': faMinus,
+  'arrow-right': faArrowRight,
+  'arrow-left': faArrowLeft,
+  'chevron-up': faChevronUp,
+  'chevron-down': faChevronDown
+};
+
+// Helper function to create FontAwesome icon element
+const createIconElement = (iconName, color = '#0050d8', size = 'lg') => {
+  if (!iconName || iconName === 'none') return null;
+  const icon = iconMap[iconName];
+  if (!icon) return null;
+  return <FontAwesomeIcon icon={icon} color={color} size={size} />;
+};
 
 export default {
   title: 'Components/Banner',
@@ -12,6 +87,46 @@ export default {
       },
     },
   },
+  argTypes: {
+    icon: {
+      control: 'select',
+      options: [
+        'none',
+        'flag',
+        'star',
+        'heart',
+        'shield',
+        'info-circle',
+        'exclamation-triangle',
+        'check-circle',
+        'times-circle',
+        'question-circle',
+        'cog',
+        'home',
+        'user',
+        'envelope',
+        'phone',
+        'map-marker',
+        'calendar',
+        'clock',
+        'search',
+        'download',
+        'upload',
+        'print',
+        'save',
+        'edit',
+        'trash',
+        'plus',
+        'minus',
+        'arrow-right',
+        'arrow-left',
+        'chevron-up',
+        'chevron-down'
+      ],
+      description: 'FontAwesome icon to display in the banner header',
+      defaultValue: 'none'
+    }
+  },
   tags: ['autodocs'],
 };
 
@@ -23,8 +138,13 @@ export const Default = {
     description: 'A .gov website belongs to an official government organization in the United States.',
     bannerLinkText: 'Here\'s how you know',
     showHttpsGuidance: true,
-    initiallyExpanded: false
+    initiallyExpanded: false,
+    icon: 'none'
   },
+  render: (args) => {
+    const iconElement = createIconElement(args.icon);
+    return <Banner {...args} icon={iconElement} />;
+  }
 };
 
 // Expanded Banner
@@ -33,6 +153,7 @@ export const Expanded = {
     ...Default.args,
     initiallyExpanded: true
   },
+  render: Default.render
 };
 
 // Custom Domain Text
@@ -41,6 +162,7 @@ export const CustomDomain = {
     ...Default.args,
     domain: 'An official website of Portland, Oregon',
   },
+  render: Default.render
 };
 
 // Custom Content
@@ -50,6 +172,7 @@ export const CustomContent = {
     heading: 'Important Information',
     description: 'This banner contains important information about this website and its services.',
   },
+  render: Default.render
 };
 
 // Without HTTPS Guidance
@@ -59,19 +182,7 @@ export const WithoutHttpsGuidance = {
     showHttpsGuidance: false,
     initiallyExpanded: true
   },
-};
-
-// With Custom Icon
-export const WithCustomIcon = {
-  args: {
-    ...Default.args,
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 100-16 8 8 0 000 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z" fill="#0050d8"/>
-      </svg>
-    ),
-    initiallyExpanded: true
-  },
+  render: Default.render
 };
 
 // Mobile Banner
@@ -79,6 +190,7 @@ export const Mobile = {
   args: {
     ...Default.args,
   },
+  render: Default.render,
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',
