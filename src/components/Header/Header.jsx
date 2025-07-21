@@ -1,115 +1,174 @@
-import { React, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Header.css';
-import { HeaderLogo } from './HeaderLogo';
-import { HeaderMenuGroup } from './HeaderMenuGroup';
 
-/**
- * Header component for Portland.gov
- */
 export const Header = ({
   title,
-  logoUrl,
-  logoAlt,
-  tagline,
-  navItems,
-  mainHeading,
-  menuText,
-  openMenuAriaLabel,
-  closeMenuAriaLabel,
+  subtitle,
+  titleUrl = '/',
+  variant = 'basic',
+  extended = false,
+  megamenu = false,
+  search,
+  primaryNav,
+  secondaryNav,
+  secondaryContent,
+  mobileMenuLabel = 'Menu',
+  mobileCloseLabel = 'Close',
   className,
+  children,
+  ...props
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const baseClass = 'usa-header';
+  const variantClass = variant !== 'basic' ? `${baseClass}--${variant}` : '';
+  const extendedClass = extended ? `${baseClass}--extended` : '';
+  const megamenuClass = megamenu ? `${baseClass}--megamenu` : '';
+  
+  const headerClasses = [
+    baseClass,
+    variantClass,
+    extendedClass,
+    megamenuClass,
+    className
+  ].filter(Boolean).join(' ');
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const renderLogo = () => {
+    if (!title) return null;
+    
+    return (
+      <div className="usa-logo">
+        <em className="usa-logo__text">
+          <a href={titleUrl} title={title} aria-label={title}>
+            {title}
+          </a>
+        </em>
+        {subtitle && (
+          <div className="usa-logo__subtitle">
+            {subtitle}
+          </div>
+        )}
+      </div>
+    );
   };
 
+  const renderNavigation = () => {
+    if (!primaryNav && !search && !secondaryNav && !secondaryContent) return null;
+
+    return (
+      <nav aria-label="Primary navigation" className="usa-nav">
+        {extended && (
+          <div className="usa-nav__inner">
+            {renderNavContent()}
+            {(secondaryNav || secondaryContent || search) && (
+              <div className="usa-nav__secondary">
+                {secondaryNav && (
+                  <ul className="usa-nav__secondary-links">
+                    {React.Children.map(secondaryNav, (item, index) => (
+                      <li key={index} className="usa-nav__secondary-item">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {secondaryContent}
+                {search && (
+                  <section aria-label="Search component">
+                    {search}
+                  </section>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+        {!extended && renderNavContent()}
+      </nav>
+    );
+  };
+
+  const renderNavContent = () => (
+    <>
+      <button type="button" className="usa-nav__close">
+        <img 
+          src="/assets/img/usa-icons/close.svg" 
+          role="img" 
+          alt={mobileCloseLabel} 
+        />
+      </button>
+      {primaryNav && (
+        <ul className="usa-nav__primary usa-accordion">
+          {React.Children.map(primaryNav, (item, index) => (
+            <li key={index} className="usa-nav__primary-item">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
+      {!extended && search && (
+        <section aria-label="Search component">
+          {search}
+        </section>
+      )}
+    </>
+  );
+
+  if (extended) {
+    return (
+      <header className={headerClasses} role="banner" {...props}>
+        <div className="usa-navbar">
+          {renderLogo()}
+          <button type="button" className="usa-menu-btn">
+            {mobileMenuLabel}
+          </button>
+        </div>
+        {renderNavigation()}
+        {children}
+      </header>
+    );
+  }
+
   return (
-    <header className={`header ${className || ''}`}>
-      <div className="header-main">
-        <div className="header-container">
-          <div className="header-logo">
-            <HeaderLogo
-              title={title}
-              logoUrl={logoUrl}
-              logoAlt={logoAlt}
-              tagline={tagline}
-            />
-          </div>
-          <div className={`header-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
-            <button
-              className="header-mobile-menu-button"
-              aria-label={isMenuOpen ? closeMenuAriaLabel : openMenuAriaLabel}
-              aria-expanded={isMenuOpen}
-              aria-controls="header-mobile-dropdown"
-              onClick={toggleMenu}
-            >
-              <span className="header-mobile-menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-              <span className="header-mobile-menu-text" aria-hidden="true">{menuText}</span>
-            </button>
-          </div>
+    <header className={headerClasses} role="banner" {...props}>
+      <div className="usa-nav-container">
+        <div className="usa-navbar">
+          {renderLogo()}
+          <button type="button" className="usa-menu-btn">
+            {mobileMenuLabel}
+          </button>
         </div>
+        {renderNavigation()}
       </div>
-      <div 
-        id="header-mobile-dropdown" 
-        className={`header-mobile-dropdown ${isMenuOpen ? 'is-open' : ''}`}
-      >
-        <div className="header-mobile-menu-content">
-          <nav className="header-mobile-nav" aria-label="Primary navigation">
-            <HeaderMenuGroup
-              items={navItems}
-              mainHeading={mainHeading}
-              id="header-menu-group"
-            />
-          </nav>
-        </div>
-      </div>
+      {children}
     </header>
   );
 };
 
 Header.propTypes = {
   /** Title text for the header */
-  title: PropTypes.string.isRequired,
-  /** URL for the logo image */
-  logoUrl: PropTypes.string,
-  /** Alt text for the logo image */
-  logoAlt: PropTypes.string,
-  /** Optional tagline displayed below the title */
-  tagline: PropTypes.string,
-  /** Array of navigation items */
-  navItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-      description: PropTypes.string,
-      current: PropTypes.bool
-    })
-  ).isRequired,
-  /** Main heading text for the navigation menu */
-  mainHeading: PropTypes.string,
-  /** Text for the menu button */
-  menuText: PropTypes.string,
-  /** Aria label for opening the menu */
-  openMenuAriaLabel: PropTypes.string,
-  /** Aria label for closing the menu */
-  closeMenuAriaLabel: PropTypes.string,
-  /** Additional CSS class names */
-  className: PropTypes.string
-};
-
-Header.defaultProps = {
-  logoUrl: undefined,
-  logoAlt: 'Logo',
-  tagline: undefined,
-  mainHeading: 'General Information',
-  menuText: 'Menu',
-  openMenuAriaLabel: 'Menu',
-  closeMenuAriaLabel: 'Close menu',
-  className: undefined
+  title: PropTypes.string,
+  /** Subtitle or tagline text */
+  subtitle: PropTypes.string,
+  /** URL for the title link */
+  titleUrl: PropTypes.string,
+  /** Header variant */
+  variant: PropTypes.oneOf(['basic']),
+  /** Whether to use extended header layout */
+  extended: PropTypes.bool,
+  /** Whether to enable megamenu support */
+  megamenu: PropTypes.bool,
+  /** Search component to display */
+  search: PropTypes.node,
+  /** Primary navigation items */
+  primaryNav: PropTypes.node,
+  /** Secondary navigation items (for extended headers) */
+  secondaryNav: PropTypes.node,
+  /** Additional content for secondary area */
+  secondaryContent: PropTypes.node,
+  /** Label for mobile menu button */
+  mobileMenuLabel: PropTypes.string,
+  /** Label for mobile close button */
+  mobileCloseLabel: PropTypes.string,
+  /** Additional CSS classes */
+  className: PropTypes.string,
+  /** Additional content (for secondary row) */
+  children: PropTypes.node,
 }; 

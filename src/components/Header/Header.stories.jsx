@@ -1,120 +1,281 @@
-import { React } from 'react';
+import React from 'react';
 import { Header } from './Header';
-import pgovLogo from '../../images/PGOV-Logo.svg';
+import { Button } from '../Button';
+import { Search } from '../Search';
 
 export default {
   title: 'Components/Header',
   component: Header,
   parameters: {
-    layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Header component for Portland.gov based on USWDS Header. The header provides branding and identity for the site.',
-      },
-    },
-  },
-  tags: ['autodocs'],
-};
+        component: `
+A header helps users identify where they are and provides a quick, organized way to reach the main sections of a website.
 
-// Default navigation items for Portland.gov
-const defaultNavItems = [
-  { label: 'Advisory Groups', href: '/advisory-groups', description: 'Groups, boards, and commissions.' },
-  { label: 'Bureaus and Offices', href: '/bureaus-offices', description: 'City departments.' },
-  { label: 'Calendar of Events', href: '/events', description: 'Events, public meetings, and hearings.' },
-  { label: 'Charter, Code, Policies', href: '/charter-code-policies', description: 'Official City documents.' },
-  { label: 'City Council', href: '/council', description: 'Districts, officials, meetings, and news.' },
-  { label: 'Construction Projects', href: '/construction', description: 'Building, transportation, maintenance, and sewer projects.' },
-  { label: 'Find a Park', href: '/parks/search', description: 'Parks, facilities, and reservations.' },
-  { label: 'Neighborhoods', href: '/neighborhoods', description: 'Neighborhood directory.' },
-  { label: 'News', href: '/news', description: 'Articles, blogs, press releases, public notices, and newsletters.' },
-  { label: 'Projects', href: '/projects', description: 'Planning, outreach and education, strategic, and technology projects.' },
-  { label: 'Services and Resources', href: '/services', description: 'Service and resource directory.' },
-  { label: 'Jobs with the City', href: 'https://www.governmentjobs.com/careers/portlandor', description: 'Opportunities posted to governmentjobs.com' },
-];
+## Usage
+\`\`\`jsx
+import { Header } from '@portland/component-library';
 
-// Default Header with Logo
-export const Default = {
-  parameters: {
-    viewport: {
-      defaultViewport: 'fullscreen',
-    },
-  },
-  args: {
-    title: 'Portland.gov',
-    logoUrl: pgovLogo,
-    logoAlt: 'Portland.gov Logo',
-    navItems: defaultNavItems,
-    mainHeading: 'General Information',
-  },
-};
+// Basic header with title
+<Header title="My Website" />
 
-// Header with Logo and Tagline
-export const WithTagline = {
-  parameters: {
-    viewport: {
-      defaultViewport: 'fullscreen',
-    },
-  },
-  args: {
-    ...Default.args,
-    tagline: 'The Official Website of the City of Portland',
-  },
-};
+// Extended header with navigation
+<Header 
+  title="My Website" 
+  subtitle="Serving the community"
+  extended={true}
+  primaryNav={[
+    <a href="#section1">Section 1</a>,
+    <a href="#section2">Section 2</a>
+  ]}
+/>
 
-// Mobile Header
-export const Mobile = {
-  args: {
-    ...Default.args,
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'mobile1',
-    },
-  },
-};
-
-// Mobile Header with Open Menu
-export const MobileWithOpenMenu = {
-  render: (args) => {
-    // This is a workaround to show the mobile menu open in Storybook
-    // In a real app, this would be controlled by user interaction
-    setTimeout(() => {
-      const menuButton = document.querySelector('.usa-menu-btn');
-      if (menuButton) {
-        menuButton.click();
+// Header with search
+<Header 
+  title="My Website"
+  search={<Search />}
+  primaryNav={[
+    <a href="#home">Home</a>,
+    <a href="#about">About</a>
+  ]}
+/>
+\`\`\`
+        `
       }
-    }, 100);
-    
-    return <Header {...args} />;
+    }
   },
-  args: {
-    ...Default.args,
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'mobile1',
+  argTypes: {
+    title: {
+      control: 'text',
+      description: 'Title text for the header'
     },
-  },
+    subtitle: {
+      control: 'text',
+      description: 'Subtitle or tagline text'
+    },
+    titleUrl: {
+      control: 'text',
+      description: 'URL for the title link'
+    },
+    variant: {
+      control: 'select',
+      options: ['basic'],
+      description: 'Header variant'
+    },
+    extended: {
+      control: 'boolean',
+      description: 'Whether to use extended header layout'
+    },
+    megamenu: {
+      control: 'boolean',
+      description: 'Whether to enable megamenu support'
+    },
+    mobileMenuLabel: {
+      control: 'text',
+      description: 'Label for mobile menu button'
+    },
+    mobileCloseLabel: {
+      control: 'text',
+      description: 'Label for mobile close button'
+    }
+  }
 };
 
-// Header with Internationalized Menu Text (Spanish)
-export const SpanishMenuText = {
+// Basic header with just title
+export const Default = {
   args: {
-    ...Default.args,
-    menuText: 'Menú',
-    openMenuAriaLabel: 'Abrir menú',
-    closeMenuAriaLabel: 'Cerrar menú',
-    mainHeading: 'Información General',
-  },
+    title: 'My Website'
+  }
 };
 
-// Header with Current Page
-export const WithCurrentPage = {
+// Header with title and subtitle
+export const WithSubtitle = {
   args: {
-    ...Default.args,
-    navItems: defaultNavItems.map((item, index) => ({
-      ...item,
-      current: index === 2 // Set the third item as current
-    })),
-  },
+    title: 'My Website',
+    subtitle: 'Serving the community since 1851'
+  }
+};
+
+// Basic header with navigation
+export const WithNavigation = {
+  args: {
+    title: 'My Website',
+    primaryNav: [
+      <a key="home" href="#home" className="usa-nav__link">
+        <span>Home</span>
+      </a>,
+      <a key="about" href="#about" className="usa-nav__link">
+        <span>About</span>
+      </a>,
+      <a key="services" href="#services" className="usa-nav__link">
+        <span>Services</span>
+      </a>,
+      <a key="contact" href="#contact" className="usa-nav__link">
+        <span>Contact</span>
+      </a>
+    ]
+  }
+};
+
+// Header with search
+export const WithSearch = {
+  args: {
+    title: 'My Website',
+    search: (
+      <form className="usa-search usa-search--small" role="search">
+        <label className="usa-sr-only" htmlFor="search-field">Search</label>
+        <input
+          className="usa-input"
+          id="search-field"
+          type="search"
+          name="search"
+        />
+        <button className="usa-button" type="submit">
+          <span className="usa-sr-only">Search</span>
+          🔍
+        </button>
+      </form>
+    ),
+    primaryNav: [
+      <a key="home" href="#home" className="usa-nav__link">
+        <span>Home</span>
+      </a>,
+      <a key="about" href="#about" className="usa-nav__link">
+        <span>About</span>
+      </a>
+    ]
+  }
+};
+
+// Extended header
+export const Extended = {
+  args: {
+    title: 'My Website',
+    subtitle: 'Serving the community',
+    extended: true,
+    primaryNav: [
+      <a key="home" href="#home" className="usa-nav__link usa-current">
+        <span>Home</span>
+      </a>,
+      <a key="about" href="#about" className="usa-nav__link">
+        <span>About</span>
+      </a>,
+      <a key="services" href="#services" className="usa-nav__link">
+        <span>Services</span>
+      </a>,
+      <a key="contact" href="#contact" className="usa-nav__link">
+        <span>Contact</span>
+      </a>
+    ]
+  }
+};
+
+// Extended header with secondary navigation
+export const ExtendedWithSecondary = {
+  args: {
+    title: 'My Website',
+    subtitle: 'Serving the community',
+    extended: true,
+    primaryNav: [
+      <a key="home" href="#home" className="usa-nav__link usa-current">
+        <span>Home</span>
+      </a>,
+      <a key="about" href="#about" className="usa-nav__link">
+        <span>About</span>
+      </a>,
+      <a key="services" href="#services" className="usa-nav__link">
+        <span>Services</span>
+      </a>
+    ],
+    secondaryNav: [
+      <a key="login" href="#login">Log in</a>,
+      <a key="signup" href="#signup">Sign up</a>
+    ]
+  }
+};
+
+// Extended header with search and secondary content
+export const ExtendedWithSearchAndSecondary = {
+  args: {
+    title: 'My Website',
+    subtitle: 'Serving the community',
+    extended: true,
+    primaryNav: [
+      <a key="home" href="#home" className="usa-nav__link usa-current">
+        <span>Home</span>
+      </a>,
+      <a key="about" href="#about" className="usa-nav__link">
+        <span>About</span>
+      </a>,
+      <a key="services" href="#services" className="usa-nav__link">
+        <span>Services</span>
+      </a>,
+      <a key="contact" href="#contact" className="usa-nav__link">
+        <span>Contact</span>
+      </a>
+    ],
+    secondaryNav: [
+      <a key="login" href="#login">Log in</a>,
+      <a key="signup" href="#signup">Sign up</a>
+    ],
+    search: (
+      <form className="usa-search usa-search--small" role="search">
+        <label className="usa-sr-only" htmlFor="extended-search-field">Search</label>
+        <input
+          className="usa-input"
+          id="extended-search-field"
+          type="search"
+          name="search"
+        />
+        <button className="usa-button" type="submit">
+          <span className="usa-sr-only">Search</span>
+          🔍
+        </button>
+      </form>
+    )
+  }
+};
+
+// Header with secondary content row
+export const WithSecondaryContent = {
+  args: {
+    title: 'My Website',
+    primaryNav: [
+      <a key="home" href="#home" className="usa-nav__link">
+        <span>Home</span>
+      </a>,
+      <a key="about" href="#about" className="usa-nav__link">
+        <span>About</span>
+      </a>
+    ],
+    children: (
+      <div style={{ 
+        backgroundColor: '#f0f0f0', 
+        padding: '1rem',
+        borderTop: '1px solid #dfe1e2' 
+      }}>
+        <p style={{ margin: 0, textAlign: 'center' }}>
+          📢 Important announcement: Our offices will be closed on Monday for the holiday.
+        </p>
+      </div>
+    )
+  }
+};
+
+// Navigation with dropdown (basic implementation)
+export const WithDropdownNavigation = {
+  args: {
+    title: 'My Website',
+    primaryNav: [
+      <button key="services" className="usa-accordion__button usa-nav__link" aria-expanded="false">
+        <span>Services</span>
+      </button>,
+      <a key="about" href="#about" className="usa-nav__link">
+        <span>About</span>
+      </a>,
+      <a key="contact" href="#contact" className="usa-nav__link">
+        <span>Contact</span>
+      </a>
+    ]
+  }
 }; 

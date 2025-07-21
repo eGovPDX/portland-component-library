@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './PageTemplate.css';
 import { Banner } from '../Banner/Banner';
-import { Header } from '../Header/Header';
+import { PGOVHeader } from '../PGOVHeader/PGOVHeader';
 import { SkipNav } from '../SkipNav/SkipNav';
 import { Footer } from '../Footer/Footer';
 import { Breadcrumbs } from '../Breadcrumbs';
@@ -27,7 +27,7 @@ export const PageTemplate = ({
     <div className={`pgov-page-template ${className}`}>
       {includeSkipNav && <SkipNav {...skipNavProps} />}
       {includeBanner && <Banner {...bannerProps} />}
-      <Header {...headerProps} />
+      <PGOVHeader {...headerProps} />
       <main 
         id="main-content" 
         className="pgov-page-template-main"
@@ -46,7 +46,7 @@ export const PageTemplate = ({
 PageTemplate.propTypes = {
   /** Props for the Banner component */
   bannerProps: PropTypes.object,
-  /** Props for the Header component */
+  /** Props for the PGOVHeader component */
   headerProps: PropTypes.object.isRequired,
   /** Props for the SkipNav component */
   skipNavProps: PropTypes.object,

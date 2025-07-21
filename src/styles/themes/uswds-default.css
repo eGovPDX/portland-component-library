@@ -304,22 +304,117 @@
   --footer-heading-font-size: 1rem;
   --footer-body-font-size: 1rem;
 
+  /* Header component variables (PGOVHeader) */
+  --pgov-header-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --pgov-header-spacing-md: 1.5rem;
+  --pgov-header-bg: #1b1b1b;
+  --pgov-header-border-color-dark: #1b1b1b;
+  --pgov-header-logo-color: #ffffff;
+  --pgov-header-title-color: #ffffff;
+  --pgov-header-title-font-size: 1.25rem;
+  --pgov-header-tagline-color: #a8c6ff;
+  --pgov-header-tagline-font-size: 0.875rem;
+  --pgov-header-link-reverse-color: #a9aeb1;
+  --pgov-header-link-hover-bg: rgba(255, 255, 255, 0.1);
+  --pgov-header-dropdown-bg: #ffffff;
+  --pgov-header-dropdown-border: #dfe1e2;
+  --pgov-header-dropdown-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --pgov-header-menu-heading-color: #1b1b1b;
+  --pgov-header-menu-heading-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --pgov-header-menu-heading-font-size: 1.375rem;
+  --pgov-header-menu-gap-lg: 24px;
+  --pgov-header-menu-link-bg: #ffffff;
+  --pgov-header-menu-link-hover-bg: #e1e5ea;
+  --pgov-header-menu-link-radius: 0.25rem;
+  --pgov-header-menu-link-title-color: #005ea2;
+  --pgov-header-menu-link-title-font-size: 1.125rem;
+  --pgov-header-menu-link-title-font-weight: 500;
+  --pgov-header-menu-link-title-line-height: 1.3;
+  --pgov-header-menu-link-description-color: #5d5d5d;
+  --pgov-header-menu-link-description-font-size: 0.875rem;
+  --pgov-header-menu-link-description-font-weight: 400;
+  --pgov-header-menu-link-description-line-height: 1.4;
+  --pgov-header-menu-group-title-color: #1b1b1b;
+  --pgov-header-menu-group-title-font-size: 1.25rem;
+  --pgov-header-menu-group-title-font-weight: 700;
+  --pgov-header-menu-group-title-border-color: #dfe1e2;
+
   /* Header component variables */
-  --header-menu-link-bg: #ffffff;
-  --header-menu-link-hover-bg: #e1e5ea;
-  --header-menu-link-radius: 0.25rem;
-  --header-menu-link-title-color: #005ea2;
-  --header-menu-link-title-font-size: 1.125rem;
-  --header-menu-link-title-font-weight: 500;
-  --header-menu-link-title-line-height: 1.3;
-  --header-menu-link-description-color: #5d5d5d;
-  --header-menu-link-description-font-size: 0.875rem;
-  --header-menu-link-description-font-weight: 400;
-  --header-menu-link-description-line-height: 1.4;
-  --header-menu-group-title-color: #1b1b1b;
-  --header-menu-group-title-font-size: 1.25rem;
-  --header-menu-group-title-font-weight: 700;
-  --header-menu-group-title-border-color: #dfe1e2;
+  --header-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --header-font-size: 1rem;
+  --header-line-height: 1.5;
+  --header-max-width: 64rem;
+  --header-container-padding: 1rem;
+  --header-navbar-height: 4rem;
+  --header-navbar-padding: 0.5rem 0;
+
+  /* Logo styles */
+  --header-logo-font-size: 1.34rem;
+  --header-logo-font-weight: 700;
+  --header-logo-color: #1b1b1b;
+  --header-logo-hover-color: #005ea2;
+  --header-logo-line-height: 1.2;
+  --header-logo-subtitle-font-size: 0.875rem;
+  --header-logo-subtitle-font-weight: 400;
+  --header-logo-subtitle-color: #5c5c5c;
+  --header-logo-subtitle-margin-top: 0.25rem;
+
+  /* Mobile menu button */
+  --header-menu-btn-bg: transparent;
+  --header-menu-btn-border: 1px solid #dfe1e2;
+  --header-menu-btn-border-radius: 0.25rem;
+  --header-menu-btn-color: #1b1b1b;
+  --header-menu-btn-font-size: 0.9rem;
+  --header-menu-btn-padding: 0.375rem 0.75rem;
+  --header-menu-btn-hover-bg: #f0f0f0;
+  --header-menu-btn-hover-border-color: #adadad;
+  --header-menu-btn-hover-color: #1b1b1b;
+  --header-menu-btn-focus-outline: 0.25rem solid #2491ff;
+  --header-menu-btn-focus-outline-offset: 0;
+
+  /* Navigation */
+  --header-nav-z-index: 500;
+  --header-nav-mobile-bg: white;
+  --header-nav-mobile-border-top: 1px solid #dfe1e2;
+  --header-nav-mobile-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  --header-nav-mobile-max-height: 80vh;
+  --header-nav-close-top: 0.75rem;
+  --header-nav-close-right: 1rem;
+  --header-nav-close-padding: 0.5rem;
+  --header-nav-close-z-index: 1;
+  --header-nav-close-icon-size: 1rem;
+
+  /* Primary navigation */
+  --header-nav-primary-padding: 1rem;
+  --header-nav-item-border-bottom: 1px solid #f0f0f0;
+  --header-nav-item-margin-right: 1rem;
+
+  /* Navigation links */
+  --header-nav-link-color: #1b1b1b;
+  --header-nav-link-font-size: 1rem;
+  --header-nav-link-font-weight: 400;
+  --header-nav-link-line-height: 1.3;
+  --header-nav-link-padding: 0.75rem 0;
+  --header-nav-link-padding-desktop: 0.75rem 1rem;
+  --header-nav-link-hover-bg: #f0f0f0;
+  --header-nav-link-hover-color: #1b1b1b;
+  --header-nav-link-hover-color-desktop: #005ea2;
+  --header-nav-link-focus-outline: 0.25rem solid #2491ff;
+  --header-nav-link-focus-outline-offset: 0;
+  --header-nav-link-current-color: #005ea2;
+  --header-nav-link-current-font-weight: 700;
+  --header-nav-link-current-indicator-color: #005ea2;
+  --header-nav-link-current-indicator-height: 0.25rem;
+
+  /* Extended header */
+  --header-extended-navbar-border: 1px solid #dfe1e2;
+  --header-extended-nav-padding: 1rem 0;
+  --header-secondary-margin-top: 1rem;
+  --header-secondary-gap: 1rem;
+  --header-secondary-links-gap: 1rem;
+
+  /* Search area */
+  --header-search-margin-top: 1rem;
 
   /* HeroGlobal component variables */
   --hero-global-bg: #ffffff;

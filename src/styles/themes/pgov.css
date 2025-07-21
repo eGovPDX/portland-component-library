@@ -457,22 +457,117 @@
   --footer-heading-font-size: calc(var(--font-abstraction-open-sans-header-h4) * 1px);
   --footer-body-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
 
+  /* Header component variables (PGOVHeader) */
+  --pgov-header-font-family: var(--font-family-open-sans);
+  --pgov-header-spacing-md: calc(var(--spacing-lg) * 1px);
+  --pgov-header-bg: var(--color-foundation-black);
+  --pgov-header-border-color-dark: var(--color-foundation-black);
+  --pgov-header-logo-color: var(--color-foundation-white);
+  --pgov-header-title-font-size: calc(var(--font-abstraction-open-sans-header-lg) * 1px);
+  --pgov-header-title-color: var(--color-foundation-white);
+  --pgov-header-tagline-font-size: calc(var(--font-abstraction-open-sans-header-2xs) * 1px);
+  --pgov-header-tagline-color: var(--color-foundation-white);
+  --pgov-header-link-reverse-color: var(--color-base-light);
+  --pgov-header-link-hover-bg: rgba(255, 255, 255, 0.1);
+  --pgov-header-dropdown-bg: var(--color-foundation-white);
+  --pgov-header-dropdown-border: var(--color-base-lighter);
+  --pgov-header-dropdown-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --pgov-header-menu-heading-color: var(--color-foundation-black);
+  --pgov-header-menu-heading-font-family: var(--font-family-open-sans);
+  --pgov-header-menu-heading-font-size: calc(var(--font-open-sans-size-8) * 1px);
+  --pgov-header-menu-gap-lg: calc(var(--spacing-xl) * 1px);
+  --pgov-header-menu-link-bg: var(--color-foundation-white);
+  --pgov-header-menu-link-hover-bg: var(--color-base-lighter);
+  --pgov-header-menu-link-radius: 4px;
+  --pgov-header-menu-link-title-color: var(--color-foundation-link);
+  --pgov-header-menu-link-title-font-size: calc(var(--font-open-sans-size-7) * 1px);
+  --pgov-header-menu-link-title-font-weight: 500;
+  --pgov-header-menu-link-title-line-height: 1.3;
+  --pgov-header-menu-link-description-color: var(--color-foundation-black);
+  --pgov-header-menu-link-description-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --pgov-header-menu-link-description-font-weight: 400;
+  --pgov-header-menu-link-description-line-height: 1.4;
+  --pgov-header-menu-group-title-color: var(--color-foundation-black);
+  --pgov-header-menu-group-title-font-size: calc(var(--font-open-sans-size-8) * 1px);
+  --pgov-header-menu-group-title-font-weight: 700;
+  --pgov-header-menu-group-title-border-color: var(--color-base-lighter);
+
   /* Header component variables */
-  --header-menu-link-bg: var(--color-foundation-white);
-  --header-menu-link-hover-bg: var(--color-base-lighter);
-  --header-menu-link-radius: 4px;
-  --header-menu-link-title-color: var(--color-foundation-link);
-  --header-menu-link-title-font-size: calc(var(--font-open-sans-size-7) * 1px);
-  --header-menu-link-title-font-weight: 500;
-  --header-menu-link-title-line-height: 1.3;
-  --header-menu-link-description-color: var(--color-foundation-black);
-  --header-menu-link-description-font-size: calc(var(--font-open-sans-size-3) * 1px);
-  --header-menu-link-description-font-weight: 400;
-  --header-menu-link-description-line-height: 1.4;
-  --header-menu-group-title-color: var(--color-foundation-black);
-  --header-menu-group-title-font-size: calc(var(--font-open-sans-size-8) * 1px);
-  --header-menu-group-title-font-weight: 700;
-  --header-menu-group-title-border-color: var(--color-base-lighter);
+  --header-font-family: var(--font-family-open-sans);
+  --header-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --header-line-height: 1.5;
+  --header-max-width: 75rem;
+  --header-container-padding: calc(var(--spacing-lg) * 1px);
+  --header-navbar-height: calc(var(--spacing-2xl) * 1px);
+  --header-navbar-padding: calc(var(--spacing-sm) * 1px) 0;
+
+  /* Logo styles */
+  --header-logo-font-size: calc(var(--font-open-sans-size-9) * 1px);
+  --header-logo-font-weight: 700;
+  --header-logo-color: var(--color-foundation-black);
+  --header-logo-hover-color: var(--color-foundation-link);
+  --header-logo-line-height: 1.2;
+  --header-logo-subtitle-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --header-logo-subtitle-font-weight: 400;
+  --header-logo-subtitle-color: var(--color-gray-70);
+  --header-logo-subtitle-margin-top: calc(var(--spacing-2xs) * 1px);
+
+  /* Mobile menu button */
+  --header-menu-btn-bg: transparent;
+  --header-menu-btn-border: 1px solid var(--color-base-lighter);
+  --header-menu-btn-border-radius: calc(var(--radius-sm) * 1px);
+  --header-menu-btn-color: var(--color-foundation-black);
+  --header-menu-btn-font-size: calc(var(--font-open-sans-size-3) * 1px);
+  --header-menu-btn-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-sm) * 1px);
+  --header-menu-btn-hover-bg: var(--color-base-lightest);
+  --header-menu-btn-hover-border-color: var(--color-base);
+  --header-menu-btn-hover-color: var(--color-foundation-black);
+  --header-menu-btn-focus-outline: 0.25rem solid var(--color-foundation-focus);
+  --header-menu-btn-focus-outline-offset: 0;
+
+  /* Navigation */
+  --header-nav-z-index: 500;
+  --header-nav-mobile-bg: var(--color-foundation-white);
+  --header-nav-mobile-border-top: 1px solid var(--color-base-lighter);
+  --header-nav-mobile-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  --header-nav-mobile-max-height: 80vh;
+  --header-nav-close-top: calc(var(--spacing-sm) * 1px);
+  --header-nav-close-right: calc(var(--spacing-lg) * 1px);
+  --header-nav-close-padding: calc(var(--spacing-xs) * 1px);
+  --header-nav-close-z-index: 1;
+  --header-nav-close-icon-size: calc(var(--spacing-lg) * 1px);
+
+  /* Primary navigation */
+  --header-nav-primary-padding: calc(var(--spacing-lg) * 1px);
+  --header-nav-item-border-bottom: 1px solid var(--color-base-lightest);
+  --header-nav-item-margin-right: calc(var(--spacing-lg) * 1px);
+
+  /* Navigation links */
+  --header-nav-link-color: var(--color-foundation-black);
+  --header-nav-link-font-size: calc(var(--font-open-sans-size-5) * 1px);
+  --header-nav-link-font-weight: 400;
+  --header-nav-link-line-height: 1.3;
+  --header-nav-link-padding: calc(var(--spacing-sm) * 1px) 0;
+  --header-nav-link-padding-desktop: calc(var(--spacing-sm) * 1px) calc(var(--spacing-lg) * 1px);
+  --header-nav-link-hover-bg: var(--color-base-lightest);
+  --header-nav-link-hover-color: var(--color-foundation-black);
+  --header-nav-link-hover-color-desktop: var(--color-foundation-link);
+  --header-nav-link-focus-outline: 0.25rem solid var(--color-foundation-focus);
+  --header-nav-link-focus-outline-offset: 0;
+  --header-nav-link-current-color: var(--color-foundation-link);
+  --header-nav-link-current-font-weight: 700;
+  --header-nav-link-current-indicator-color: var(--color-foundation-link);
+  --header-nav-link-current-indicator-height: calc(var(--spacing-2xs) * 1px);
+
+  /* Extended header */
+  --header-extended-navbar-border: 1px solid var(--color-base-lighter);
+  --header-extended-nav-padding: calc(var(--spacing-lg) * 1px) 0;
+  --header-secondary-margin-top: calc(var(--spacing-lg) * 1px);
+  --header-secondary-gap: calc(var(--spacing-lg) * 1px);
+  --header-secondary-links-gap: calc(var(--spacing-lg) * 1px);
+
+  /* Search area */
+  --header-search-margin-top: calc(var(--spacing-lg) * 1px);
 
   /* HeroGlobal component variables */
   --hero-global-bg: var(--color-foundation-white);
