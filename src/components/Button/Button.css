@@ -12,7 +12,7 @@
   display: inline-block;
   font-weight: var(--button-font-weight);
   margin-right: var(--button-margin-right);
-  padding: var(--button-padding);
+  padding: var(--button-padding-top) var(--button-padding-sides);
   text-align: center;
   text-decoration: none;
   width: auto;

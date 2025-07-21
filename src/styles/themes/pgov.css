@@ -100,7 +100,8 @@
   --button-border-radius: calc(var(--radius-md) * 1px);
   --button-font-weight: 700;
   --button-margin-right: calc(var(--spacing-xs) * 1px);
-  --button-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-sm) * 1px);
+  --button-padding-top: calc(var(--spacing-sm) * 1px);
+  --button-padding-sides: calc(var(--spacing-lg) * 1px);
   --button-focus-bg-color: var(--color-primary-medium);
   --button-focus-outline: calc(var(--spacing-2xs) * 1px) solid var(--color-blue-40);
   --button-focus-outline-offset: calc(var(--spacing-2xs) * 1px);
