@@ -13,6 +13,7 @@
 
 /* Button group item styles */
 .usa-button-group__item {
+  margin: 0;
   max-width: fit-content;
 }
 
@@ -72,4 +73,8 @@
   .usa-button-group--segmented {
     flex-direction: row;
   }
-} 
+}
+
+.usa-button-group--segmented .usa-button-group__item:where(:not(:last-child)) .usa-button::before {
+  border-right: 1px solid #ffffff;
+}
