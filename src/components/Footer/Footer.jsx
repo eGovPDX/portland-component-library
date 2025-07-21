@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from '../Button/Button';
 import './Footer.css';
 
 /**
@@ -52,9 +53,9 @@ export const Footer = ({
           </div>
           
           <div className="footer-explore-services">
-            <a href={exploreServicesUrl} className="footer-explore-button">
+            <Button href={exploreServicesUrl} className="footer-explore-button">
               {exploreServicesText} <span className="footer-explore-arrow">→</span>
-            </a>
+            </Button>
           </div>
         </div>
       </div>
