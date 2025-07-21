@@ -7,7 +7,7 @@
   background-color: var(--button-bg);
   appearance: none;
   border: 0;
-  border-radius: var(--button-border-radius);
+  box-shadow: none;
   cursor: pointer;
   display: inline-block;
   font-weight: var(--button-font-weight);
@@ -118,9 +118,9 @@
 /* Outline button */
 .usa-button--outline {
   background-color: var(--button-outline-bg-color);
-  box-shadow: var(--button-outline-box-shadow);
   color: var(--button-outline-text-color);
-  border: var(--button-outline-border-width, 2px) solid var(--button-outline-text-color);
+  border: var(--button-outline-border-width, 2px) solid var(--button-outline-border-color);
+  box-shadow: none;
 }
 
 .usa-button--outline:hover {
