@@ -21,6 +21,13 @@
   border-bottom: var(--accordion-border-width, 4px) solid var(--accordion-border-color, #F0F0F0);
   border-left: var(--accordion-border-width, 4px) solid var(--accordion-border-color, #F0F0F0);
 }
+.accordion-item--bordered:hover {
+  border-color: var(--accordion-border-color-hover, #E7E7E7);
+}
+.accordion-item--bordered:hover .accordion-button {
+  background-color: var(--accordion-button-hover-bg, #E7E7E7);
+  border-color: var(--accordion-border-color-hover, #E7E7E7);
+}
 
 /* Accordion button/header */
 .accordion-button {
@@ -47,13 +54,13 @@
 /* Hover styles */
 .accordion-button:hover {
   background-color: var(--accordion-button-hover-bg, #E7E7E7);
+  border-color: var(--accordion-border-color-hover, #E7E7E7);
 }
 
 /* Accordion summary text */
 .accordion-summaryText {
   color: var(--accordion-button-text, #1B1B1B);
   font-family: var(--accordion-font-family, "Public Sans");
-  font-size: var(--accordion-summary-text-size, 16px);
 }
 
 /* Accordion icon container */
