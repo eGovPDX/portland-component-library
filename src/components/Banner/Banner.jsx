@@ -30,7 +30,7 @@ export const Banner = ({
       <div className="banner-content">
         <div className="banner-header">
               <div className="banner-header-icon">
-                {icon || (
+                {React.isValidElement(icon) ? icon : (
                   <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg">
                     {/* Red stripes */}
                     <rect width="24" height="16" fill="#B22234"/>
