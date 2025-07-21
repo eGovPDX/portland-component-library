@@ -131,7 +131,7 @@
   --button-outline-bg-color: transparent;
   --button-outline-box-shadow: inset 0 0 0 2px var(--color-blue-60);
   --button-outline-text-color: var(--color-primary-medium);
-  --button-outline-border-width: var(--border-md);
+  --button-outline-border-width: calc(var(--border-md) * 1px);
   --button-outline-border-color: var(--color-primary-medium);
   --button-outline-hover-box-shadow: inset 0 0 0 2px var(--color-blue-warm-70);
   --button-outline-hover-text-color: var(--color-primary-dark);
