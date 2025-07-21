@@ -47,8 +47,8 @@ export const Segmented = {
   render: (args) => (
     <ButtonGroup {...args}>
       <Button>Map</Button>
-      <Button variant="outline">Hybrid</Button>
-      <Button variant="outline">Satellite</Button>
+      <Button>Hybrid</Button>
+      <Button>Satellite</Button>
     </ButtonGroup>
   ),
   args: {
