@@ -12,11 +12,17 @@ export default {
     },
     options: {
       storySort: {
-        order: ['Emergency', 'Error', 'Info', 'NoIcon', 'Slim', 'Success', 'Warning', 'WithLink'],
+        order: ['Emergency', 'Error', 'Info', 'NoIcon', 'Slim', 'Success', 'Warning', 'WithLink', 'RoundedCorners'],
       },
     },
   },
   tags: ['autodocs'],
+  argTypes: {
+    roundedCorners: {
+      control: 'boolean',
+      description: 'Whether to display the alert with rounded corners',
+    },
+  },
 };
 
 // Emergency Alert
@@ -82,6 +88,16 @@ export const Warning = {
   },
 };
 
+// Alert with Rounded Corners
+export const RoundedCorners = {
+  args: {
+    type: 'info',
+    heading: 'Rounded Corners Alert',
+    children: 'This is an alert with rounded corners.',
+    roundedCorners: true,
+  },
+};
+
 // Alert with Link
 export const WithLink = {
   args: {
@@ -97,4 +113,4 @@ export const WithLink = {
       </>
     ),
   },
-}; 
+};
