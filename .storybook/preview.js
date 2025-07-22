@@ -4,7 +4,9 @@ import './storybook.css'
 
 const preview = {
   parameters: {
+    layout: 'centered',
     controls: {
+      expanded: true,
       matchers: {
        color: /(background|color)$/i,
        date: /Date$/i,
