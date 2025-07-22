@@ -920,6 +920,8 @@
   --side-nav-bg-hover: rgba(0, 0, 0, 0.05);
   --side-nav-bg-selected: rgba(0, 0, 0, 0.01);
   --side-nav-padding-sm: calc(var(--spacing-xs) * 1px);
+  --side-nav-active-child-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-xs) * 1px) calc(var(--spacing-sm) * 1px) calc(var(--spacing-xl) * 1px);
+  --side-nav-active-child-bg: var(--color-black-transparent-5);
   --side-nav-text-color-default: var(--color-foundation-black);
   --side-nav-text-color-selected-header: var(--color-foundation-black);
   --side-nav-width: 216px;
@@ -929,7 +931,7 @@
   --side-nav-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --side-nav-line-height: 130%;
   --side-nav-child-font-family: var(--font-family-open-sans);
-  --side-nav-child-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --side-nav-child-font-size: calc(var(--font-abstraction-open-sans-body-2xs) * 1px);
   --side-nav-child-line-height: 130%;
   --side-nav-children-max-height: 500px;
   --side-nav-children-transition: all 0.3s ease-in-out;
