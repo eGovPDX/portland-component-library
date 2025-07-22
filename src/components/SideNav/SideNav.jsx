@@ -94,7 +94,7 @@ export const SideNav = ({ items, activeItemId, activeIndex }) => {
       aria-label="Section Navigation"
       role="navigation"
     >
-      <ul>
+      <ul className="side-nav-list">
         {renderItems(items)}
       </ul>
     </nav>
