@@ -989,7 +989,7 @@
   --summary-box-bg-hover: var(--color-primary-lightest);
   --summary-box-text-color: var(--color-foundation-black);
   --summary-box-font-family: var(--font-family-open-sans);
-  --summary-box-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --summary-box-heading-font-size: calc(var(--font-abstraction-open-sans-header-lg) * 1px);
   --summary-box-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --summary-box-button-icon-gap: calc(var(--spacing-xs) * 1px);
   --summary-box-button-color: var(--color-primary-medium);

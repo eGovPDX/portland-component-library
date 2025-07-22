@@ -12,9 +12,9 @@ export const SummaryBox = ({ heading, description, children }) => {
       aria-labelledby={headingId}
     >
       <div className="usa-summary-box__body">
-        <h4 className="usa-summary-box__heading" id={headingId}>
+        <div className="usa-summary-box__heading" id={headingId}>
           {heading}
-        </h4>
+        </div>
         {description && (
           <div className="summary-box-description">
             {description}
