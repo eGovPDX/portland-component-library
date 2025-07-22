@@ -1063,7 +1063,7 @@
   --tag-bg: var(--color-base-dark);
   --tag-color: var(--color-foundation-white);
   --tag-font-family: var(--font-family-open-sans);
-  --tag-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --tag-font-size: calc(var(--font-abstraction-open-sans-2xs) * 1px);
   --tag-big-padding-x: calc(var(--spacing-3xs) * 1px);
   --tag-big-padding-y: calc(var(--spacing-xs) * 1px);
   --tag-big-gap: calc(var(--spacing-xs) * 1px);
