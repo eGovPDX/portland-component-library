@@ -127,21 +127,24 @@
   background-color: transparent;
   box-shadow: var(--button-outline-hover-box-shadow);
   color: var(--button-outline-hover-text-color);
-  border-color: var(--button-outline-hover-border-color);
+  border: var(--button-outline-border-width, 2px) solid var(--button-outline-hover-border-color);
+  box-shadow: none;
 }
 
 .usa-button--outline:active {
   background-color: transparent;
   box-shadow: var(--button-outline-active-box-shadow);
   color: var(--button-outline-active-text-color);
-  border-color: var(--button-outline-active-border-color);
+  border: var(--button-outline-border-width, 2px) solid var(--button-outline-active-border-color);
+  box-shadow: none;
 }
 
 .usa-button--outline:focus {
   background-color: transparent;
   box-shadow: var(--button-outline-focus-box-shadow);
   color: var(--button-outline-focus-text-color);
-  border-color: var(--button-outline-focus-border-color);
+  border: var(--button-outline-border-width, 2px) solid var(--button-outline-focus-border-color);
+  box-shadow: none;
 }
 
 /* Outline inverse button */
