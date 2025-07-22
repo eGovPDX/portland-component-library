@@ -57,8 +57,7 @@
 .stepItem {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  align-self: stretch;
+  align-items: stretch;
   gap: var(--process-steps-step-item-gap, 16px);
 }
 
@@ -68,7 +67,6 @@
   align-items: center;
   width: var(--process-steps-step-number-size, 40px);
   min-width: var(--process-steps-step-number-size, 40px);
-  height: -webkit-fill-available;
 }
 
 .stepNumberWrapper {
