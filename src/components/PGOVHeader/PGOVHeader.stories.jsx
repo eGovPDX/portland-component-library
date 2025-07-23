@@ -73,30 +73,6 @@ export const Mobile = {
   },
 };
 
-// Mobile PGOVHeader with Open Menu
-export const MobileWithOpenMenu = {
-  render: (args) => {
-    // This is a workaround to show the mobile menu open in Storybook
-    // In a real app, this would be controlled by user interaction
-    setTimeout(() => {
-      const menuButton = document.querySelector('.usa-menu-btn');
-      if (menuButton) {
-        menuButton.click();
-      }
-    }, 100);
-    
-    return <PGOVHeader {...args} />;
-  },
-  args: {
-    ...Default.args,
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'mobile1',
-    },
-  },
-};
-
 // PGOVHeader with Internationalized Menu Text (Spanish)
 export const SpanishMenuText = {
   args: {
