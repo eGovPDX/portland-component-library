@@ -5,6 +5,8 @@ import './CardGrid.css';
 
 export const CardGrid = ({
   heading,
+  showDivider = true,
+  showHeading = true,
   cards,
   className,
   ...props
@@ -17,8 +19,8 @@ export const CardGrid = ({
 
   return (
     <div className={gridClasses} data-testid="card-grid" {...props}>
-      <hr className="card-grid__divider" />
-      {heading && <h3 className="card-grid__heading">{heading}</h3>}
+      {showDivider && <hr className="card-grid__divider" />}
+      {showHeading && heading && <h3 className="card-grid__heading">{heading}</h3>}
       <div className="card-grid__container">
         {cards.map((card, index) => (
           <Card key={index} {...card} />
@@ -30,6 +32,8 @@ export const CardGrid = ({
 
 CardGrid.propTypes = {
   heading: PropTypes.string,
+  showDivider: PropTypes.bool,
+  showHeading: PropTypes.bool,
   cards: PropTypes.arrayOf(PropTypes.shape({
     heading: PropTypes.string,
     text: PropTypes.string,
