@@ -199,8 +199,8 @@
   --card-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
 
   /* CardFlag component variables */
-  --card-flag-media-col-width: 135px;
-  --card-flag-gap: 24px;
+  --card-flag-media-col-width: 155px;
+  --card-flag-gap: 0;
   --card-flag-gap-mobile: 16px;
   --card-flag-width: 573px;
   --card-flag-width-mobile: 100%;
@@ -227,15 +227,15 @@
   --card-flag-media-inset-min-width-mobile: 100%;
   --card-flag-media-inset-max-width: 131px;
   --card-flag-media-inset-max-width-mobile: 100%;
-  --card-flag-media-inset-left-padding: 24px 0 24px 24px;
+  --card-flag-media-inset-left-padding: calc(var(--spacing-lg) * 1px) 0 calc(var(--spacing-lg) * 1px) calc(var(--spacing-lg) * 1px);
   --card-flag-media-inset-left-padding-mobile: 16px 16px 0;
-  --card-flag-media-inset-right-padding: 24px 24px 24px 0;
+  --card-flag-media-inset-right-padding: calc(var(--spacing-lg) * 1px) calc(var(--spacing-lg) * 1px) calc(var(--spacing-lg) * 1px) 0;
   --card-flag-media-inset-right-padding-mobile: 16px 16px 0;
   --card-flag-media-inset-padding-mobile: 16px 16px 0;
-  --card-flag-padding: 24px;
+  --card-flag-padding: calc(var(--spacing-lg) * 1px);
   --card-flag-padding-mobile: 0 16px 16px;
-  --card-flag-content-gap: 16px;
-  --card-flag-footer-margin-top: 8px;
+  --card-flag-content-gap: 0;
+  --card-flag-footer-margin-top: calc(var(--spacing-md) * 1px);
 
   /* CardGrid component variables */
   --card-grid-padding-lg: calc(var(--spacing-xl) * 1px);
