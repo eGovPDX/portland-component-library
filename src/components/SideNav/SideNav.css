@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: flex-start;
   flex-shrink: 0;
-  border-radius: var(--side-nav-border-radius-sm, 4px) var(--side-nav-border-radius-lg, 8px) var(--side-nav-border-radius-lg, 8px) var(--side-nav-border-radius-sm, 4px);
+  border-radius: var(--side-nav-border-radius, 8px);
   border-top: 2px solid var(--side-nav-border-color-default, #DFE1E2);
   border-right: 2px solid var(--side-nav-border-color-default, #DFE1E2);
   border-left: 2px solid var(--side-nav-border-color-default, #DFE1E2);
@@ -113,6 +113,15 @@
 .nav-item-container:has(.expanded) .nav-children {
   max-height: var(--side-nav-children-max-height, 500px);
   opacity: 1;
+}
+/* Hide nav-indicator for top-level items, show for child items and parent items */
+.nav-item-container .nav-indicator {
+  display: none;
+}
+
+.nav-children .nav-item-container .nav-indicator,
+.nav-item-container:has(.parent) .nav-indicator {
+  display: block;
 }
 
 /* Parent item styles */
