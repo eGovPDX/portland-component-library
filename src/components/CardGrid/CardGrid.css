@@ -29,7 +29,7 @@
 .card-grid__container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--card-grid-gap-lg, 32px);
+  gap: var(--card-grid-gap, 32px);
   width: 100%;
 }
 
