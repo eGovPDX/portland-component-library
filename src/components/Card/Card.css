@@ -131,6 +131,10 @@
   box-sizing: border-box;
 }
 
+.usa-card--inset .usa-card__img {
+  border-radius: 0;
+}
+
 .usa-card--inset .usa-card__img img {
   width: 100%;
   height: auto;
@@ -148,30 +152,30 @@
 .usa-card.usa-card--media:not(.usa-card--header-first) .usa-card__header,
 .usa-card.usa-card--media.usa-card--exdent .usa-card__header,
 .usa-card.usa-card--media.usa-card--inset .usa-card__header {
-  padding: 1.5rem 1.5rem 0;
+  padding: 20px 20px 0 20px;
 }
 
 .usa-card .usa-card__body,
 .usa-card.usa-card--media.usa-card--exdent .usa-card__body,
 .usa-card.usa-card--media.usa-card--inset .usa-card__body {
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 20px 20px 20px;
 }
 
 .usa-card .usa-card__footer,
 .usa-card.usa-card--media.usa-card--exdent .usa-card__footer,
 .usa-card.usa-card--media.usa-card--inset .usa-card__footer {
-  padding: 0 1.5rem 1.5rem;
+  padding: 16px 20px;
   margin: 0;
 }
 
 .usa-card.usa-card--media.usa-card--header-first .usa-card__header {
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 16px 20px;
 }
 
 .usa-card.usa-card--media.usa-card--header-first .usa-card__body {
-  padding: 1.5rem 1.5rem 0;
+  padding: 16px 20px;
 }
 
 .usa-card.usa-card--media.usa-card--header-first .usa-card__footer {
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 16px 20px;
 }
