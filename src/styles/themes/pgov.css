@@ -241,7 +241,7 @@
   --card-grid-padding-lg: calc(var(--spacing-xl) * 1px);
   --card-grid-margin-mobile: calc(var(--spacing-md) * 1px);
   --card-grid-gap-lg: calc(var(--spacing-xl) * 1px);
-  --card-grid-divider-color: #E0E0E0;
+  --card-grid-divider-color: var(--color-foundation-black);
   --card-grid-text-color: var(--color-gray-90, #1B1B1B);
   --card-grid-heading-font-family: var(--font-family-open-sans, "Public Sans");
   --card-grid-heading-font-size: calc(var(--font-abstraction-open-sans-lg) * 1px);
