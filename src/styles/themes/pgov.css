@@ -199,7 +199,8 @@
   --card-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
 
   /* CardFlag component variables */
-  --card-flag-media-col-width: 155px;
+  --card-flag-inset-media-col-width: 131px;
+  --card-flag-media-col-width: 154px;
   --card-flag-gap: 0;
   --card-flag-gap-mobile: 16px;
   --card-flag-width: 573px;
