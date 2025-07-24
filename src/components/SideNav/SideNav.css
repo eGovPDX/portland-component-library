@@ -120,7 +120,7 @@
 }
 
 .nav-children .nav-item-container .nav-indicator,
-.nav-item-container:has(.parent) .nav-indicator {
+.nav-item-container:has(.parent):has(.expanded) .nav-indicator {
   display: block;
 }
 
