@@ -120,7 +120,7 @@
 
 /* Dropdown Menu (ul) */
 .dropdown__menu {
-  width: fit-content;
+  width: 100%;
   position: absolute;
   top: 100%;
   left: 0;
@@ -144,7 +144,6 @@
   background: var(--dropdown-item-bg, transparent);
   font-family: var(--dropdown-item-font-family, "Public Sans");
   font-size: var(--dropdown-item-font-size, 16px);
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
