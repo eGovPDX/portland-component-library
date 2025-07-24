@@ -1,7 +1,7 @@
 /* Card Container */
 .usa-card {
-  width: 298px;
-  max-width: 100%;
+  max-width: 298px;
+  width: 100%;
   border-radius: var(--card-border-radius, 8px);
   overflow: hidden;
   background: transparent;
