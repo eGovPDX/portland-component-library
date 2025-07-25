@@ -110,9 +110,12 @@ export default {
 };
 
 // Default card
-export const Default = () => (
-  <Card heading="Card Title" text="This is a simple card." />
-);
+export const Default = {
+  args: {
+    heading: 'Card Title',
+    text: 'This is a simple card.'
+  }
+};
 
 // Card with primary button
 export const WithPrimaryButton = {
