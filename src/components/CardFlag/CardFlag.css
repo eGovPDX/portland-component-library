@@ -1,6 +1,6 @@
 .pdx-card-flag {
   display: grid;
-  grid-template-columns: var(--card-flag-media-col-width, 135px) 1fr;
+  grid-template-columns: var(--card-flag-media-col-width, 154px) 1fr;
   grid-template-areas: "media content";
   gap: var(--card-flag-gap, 24px);
   width: var(--card-flag-width, 573px);
@@ -12,8 +12,12 @@
 }
 
 .pdx-card-flag--media-right {
-  grid-template-columns: 1fr var(--card-flag-media-col-width, 135px);
+  grid-template-columns: 1fr var(--card-flag-media-col-width, 154px);
   grid-template-areas: "content media";
+}
+
+.pdx-card-flag--media-right:has(.pdx-card-flag__media--inset) {
+  grid-template-columns: 1fr var(--card-flag-inset-media-col-width, 131px);
 }
 
 .pdx-card-flag__media {
