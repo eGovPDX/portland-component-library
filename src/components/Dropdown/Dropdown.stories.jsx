@@ -91,6 +91,25 @@ const optionsDataWithLongLabel = [
   { value: 'option4', label: 'Option with a very long label to show the width following the size of the label' }
 ];
 
+const veryLongOptionsData = [
+  { value: 'option1', label: 'Option A' },
+  { value: 'option2', label: 'Option B' },
+  { value: 'option3', label: 'Option C' },
+  { value: 'dogs', label: 'Dogs' },
+  { value: 'cats', label: 'Cats' },
+  { value: 'fish', label: 'Fish' },
+  { value: 'birds', label: 'Birds' },
+  { value: 'hamsters', label: 'Hamsters' },
+  { value: 'rabbits', label: 'Rabbits' },
+  { value: 'guinea_pigs', label: 'Guinea Pigs' },
+  { value: 'turtles', label: 'Turtles' },
+  { value: 'snakes', label: 'Snakes' },
+  { value: 'lizards', label: 'Lizards' },
+  { value: 'ferrets', label: 'Ferrets' },
+  { value: 'hedgehogs', label: 'Hedgehogs' },
+  { value: 'chinchillas', label: 'Chinchillas' },
+];
+
 // Custom template for Default story to include HTML select comparison
 // const DefaultTemplate = (args) => (
 //   <div>
@@ -213,6 +232,14 @@ Dropdown with long option labels to demonstrate text overflow handling.
       `,
     },
   },
+};
+
+export const WithLongOptionsList = Template.bind({});
+WithLongOptionsList.args = {
+  id: 'long-options-list-dropdown',
+  label: 'Favorite animal',
+  options: veryLongOptionsData,
+  defaultOptionLabel: '-Select-',
 };
 
 export const Disabled = Template.bind({});
