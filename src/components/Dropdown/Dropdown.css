@@ -100,6 +100,7 @@
   align-items: center;
   width: 100%; 
   min-width: 250px;
+  max-width: 285px;
   text-align: left;
   height: var(--dropdown-button-height, 40px); 
   min-height: var(--dropdown-button-min-height, 40px);
