@@ -1071,7 +1071,7 @@
   --tag-big-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
 
   /* TextArea component variables */
-  --text-area-gap: calc(var(--spacing-xs) * 1px);
+  --text-area-gap: calc(var(--spacing-2xs) * 1px);
   --text-area-label-font-family: var(--font-family-open-sans);
   --text-area-label-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --text-area-label-font-weight: 700;
@@ -1091,7 +1091,7 @@
   --text-area-error-border: calc(var(--border-lg) * 1px) solid var(--color-error-dark);
   --text-area-success-border: calc(var(--border-lg) * 1px) solid var(--color-success-dark);
   --text-area-disabled-bg: var(--color-disabled-lighter);
-  --text-area-disabled-color: var(--color-foundation-white);
+  --text-area-disabled-color: var(--color-foundation-black);
   --text-area-min-height: calc(var(--units-10) * 1px);
   --text-area-input-font-family: var(--font-family-open-sans);
   --text-area-input-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
