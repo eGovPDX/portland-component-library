@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TextArea from './TextArea';
 
 const Wrapper = ({ children }) => (
-  <div style={{ width: '50%', margin: '0 auto' }}>
+  <div style={{ width: '80%', margin: '0 auto' }}>
     {children}
   </div>
 );
