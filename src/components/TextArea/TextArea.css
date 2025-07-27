@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--text-area-gap, 0.5rem);
 }
 
 .usa-label {
@@ -20,7 +19,7 @@
   display: block;
   font-family: var(--text-area-desc-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
   font-size: var(--text-area-desc-font-size, 0.875rem);
-  margin-top: 0;
+  margin-top: 4px;
   margin-bottom: 0;
 }
 
@@ -29,7 +28,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: var(--text-area-footer-gap, 1rem);
+  margin-top: 8px;
 }
 
 .usa-text-area__error-message {
@@ -60,6 +59,7 @@
   border-radius: var(--text-area-border-radius, 0px);
   width: 100% !important;
   max-width: 100%;
+  margin-top: 8px;
 }
 
 /* Input states applied to wrapper */
