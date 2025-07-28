@@ -64,6 +64,12 @@ export const MultipleButtons = {
       <Button>Option 2</Button>
       <Button>Option 3</Button>
       <Button>Option 4</Button>
+      <Button>Option 5</Button>
+      <Button>Option 6</Button>
+      <Button>Option 7</Button>
+      <Button>Option 8</Button>
+      <Button>Option 9</Button>
+      <Button>Option 10</Button>
     </ButtonGroup>
   ),
   args: {
