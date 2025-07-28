@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--text-input-gap, 0.5rem);
   max-width: var(--text-input-max-width, 30rem);
 }
 
@@ -21,7 +20,7 @@
   display: block;
   font-family: var(--text-input-desc-font-family, Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif);
   font-size: var(--text-input-desc-font-size, 0.875rem);
-  margin-top: 0;
+  margin-top: 4px;
   margin-bottom: 0;
 }
 
@@ -31,7 +30,7 @@
   font-size: var(--text-input-error-font-size, 0.875rem);
   font-weight: var(--text-input-error-font-weight, 700);
   color: var(--text-input-error-color, #B50909);
-  margin-top: 0;
+  margin-top: 4px;
   margin-bottom: 0;
 }
 
@@ -45,6 +44,7 @@
   border-radius: var(--text-input-border-radius, 0px);
   width: auto;
   max-width: 100%;
+  margin-top: 8px;
 }
 
 /* Input states applied to wrapper */
@@ -62,6 +62,35 @@
   cursor: not-allowed;
 }
 
+/* Size variants for wrapper */
+.usa-input-wrapper--2xs {
+  height: 1.5rem;
+}
+
+.usa-input-wrapper--xs {
+  height: 2rem;
+}
+
+.usa-input-wrapper--sm {
+  height: 2.25rem;
+}
+
+.usa-input-wrapper--md {
+  height: 2.5rem;
+}
+
+.usa-input-wrapper--lg {
+  height: 3rem;
+}
+
+.usa-input-wrapper--xl {
+  height: 3.5rem;
+}
+
+.usa-input-wrapper--2xl {
+  height: 4rem;
+}
+
 /* Basic input styling */
 .usa-input {
   background-color: transparent;
@@ -76,6 +105,42 @@
   margin-top: 0;
   box-sizing: border-box;
   field-sizing: content;
+}
+
+/* Size variants for input */
+.usa-input--2xs {
+  height: 1.5rem;
+  font-size: 0.75rem;
+}
+
+.usa-input--xs {
+  height: 2rem;
+  font-size: 0.875rem;
+}
+
+.usa-input--sm {
+  height: 2.25rem;
+  font-size: 0.875rem;
+}
+
+.usa-input--md {
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+.usa-input--lg {
+  height: 3rem;
+  font-size: 1.125rem;
+}
+
+.usa-input--xl {
+  height: 3.5rem;
+  font-size: 1.25rem;
+}
+
+.usa-input--2xl {
+  height: 4rem;
+  font-size: 1.5rem;
 }
 
 .usa-input:disabled {
