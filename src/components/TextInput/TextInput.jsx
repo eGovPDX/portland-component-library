@@ -19,13 +19,16 @@ export const TextInput = ({
   className,
   ...props
 }) => {
+  // Determine if input should be disabled (either from disabled prop or state)
+  const isDisabled = disabled || state === 'disabled';
+
   // Input classes
   const inputClasses = [
     'usa-input',
     size !== 'default' ? `usa-input--${size}` : '',
     state === 'error' ? 'usa-input--error' : '',
     state === 'success' ? 'usa-input--success' : '',
-    state === 'disabled' ? 'usa-input--disabled' : '',
+    isDisabled ? 'usa-input--disabled' : '',
     className
   ].filter(Boolean).join(' ');
 
@@ -37,7 +40,7 @@ export const TextInput = ({
     suffixContent ? 'usa-input-wrapper--suffix' : '',
     state === 'error' ? 'usa-input-wrapper--error' : '',
     state === 'success' ? 'usa-input-wrapper--success' : '',
-    disabled ? 'usa-input-wrapper--disabled' : ''
+    isDisabled ? 'usa-input-wrapper--disabled' : ''
   ].filter(Boolean).join(' ');
 
   return (
@@ -70,7 +73,7 @@ export const TextInput = ({
         <input
           id={id}
           className={inputClasses}
-          disabled={disabled}
+          disabled={isDisabled}
           value={value}
           onChange={onChange}
           pattern={pattern}
