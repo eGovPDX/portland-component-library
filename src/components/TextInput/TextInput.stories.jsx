@@ -27,6 +27,11 @@ export default {
       options: ['default', 'disabled', 'error', 'success'],
       description: 'The state of the input'
     },
+    size: {
+      control: 'select',
+      options: ['default', '2xs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'],
+      description: 'The size of the input'
+    },
     disabled: {
       control: 'boolean',
       description: 'Whether the input is disabled'
@@ -84,6 +89,25 @@ export const Success = {
   }
 };
 
+// Size variants
+export const Small = {
+  args: {
+    id: 'input-small',
+    label: 'Small input',
+    description: 'This is a small sized input',
+    size: 'sm'
+  }
+};
+
+export const Large = {
+  args: {
+    id: 'input-large',
+    label: 'Large input',
+    description: 'This is a large sized input',
+    size: 'lg'
+  }
+};
+
 // With prefix icon and suffix
 export const WithPrefixIcon = {
   args: {
@@ -121,5 +145,17 @@ export const WithInputValidationPattern = {
     pattern: '[0-9]{16}',
     errorMessage: 'Incorrect format for credit card number',
     state: 'error'
+  }
+};
+
+// Comprehensive example showing all controls
+export const Playground = {
+  args: {
+    id: 'playground-input',
+    label: 'Playground Input',
+    description: 'Try changing the state and size controls above',
+    value: 'Sample text',
+    state: 'default',
+    size: 'default'
   }
 }; 
