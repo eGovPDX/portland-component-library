@@ -33,11 +33,14 @@
   flex-direction: row;
   width: 100%;
   gap: 0;
+  align-items: stretch; /* Force all items to stretch to the same height */
 }
 
 .usa-button-group--segmented .usa-button-group__item {
   flex: 1 1 0%;
   margin-left: var(--button-group-segmented-margin, -1px);
+  display: flex; /* Make each item a flex container */
+  align-items: stretch; /* Stretch to match the tallest item */
 }
 
 .usa-button-group--segmented .usa-button-group__item:first-child {
@@ -48,6 +51,12 @@
   border-radius: var(--button-group-segmented-radius, 0);
   width: 100%;
   max-width: none;
+  box-sizing: border-box; /* Include padding and border in height calculation */
+  flex: 1; /* Fill the available height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem; /* Ensure minimum consistent height */
 }
 
 .usa-button-group--segmented .usa-button-group__item:first-child .usa-button {
@@ -66,6 +75,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-height: 2.5rem; /* Ensure minimum consistent height */
 }
 
 /* Display as row on mobile for segmented buttons */
