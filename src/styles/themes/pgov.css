@@ -367,7 +367,7 @@
   --contacts-label-font-family: var(--font-family-open-sans, "Public Sans");
   --contacts-label-font-size: calc(var(--font-abstraction-open-sans-header-sm) * 1px);
   --contacts-body-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
-  --contacts-link-color: var(--color-foundation-black);
+  --contacts-link-color: var(--color-foundation-link);
   --contacts-link-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --contacts-link-font-weight: 400;
   --contacts-link-line-height: 1.5;
