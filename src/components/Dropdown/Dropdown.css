@@ -151,6 +151,7 @@
   color: var(--dropdown-button-color, #1B1B1B);
   font-family: var(--dropdown-button-font-family, "Public Sans");
   font-size: var(--dropdown-button-font-size, 16px);
+  margin-right: 25px;
 }
 
 /* Custom Chevron Icon inside the button (Base Style) */
