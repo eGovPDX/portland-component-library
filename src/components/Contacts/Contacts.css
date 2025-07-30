@@ -188,7 +188,7 @@
 /* Mobile styles */
 @media screen and (max-width: 480px) {
   .contacts {
-    width: var(--contacts-card-grid-max-width, 480px);
+    width: 100%;
     padding: var(--contacts-padding-lg, 32px) var(--contacts-margin-mobile, 16px);
     gap: var(--contacts-gap-md, 16px);
   }
