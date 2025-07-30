@@ -588,6 +588,7 @@
   --hero-global-desc-font-family: var(--font-family-open-sans, "Public Sans");
   --hero-global-desc-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --hero-global-image-placeholder-bg: var(--color-base-lighter);
+  --hero-global-image-border-radius: calc(var(--radius-lg) * 1px);
   --hero-global-desktop-max-width: calc(var(--breakpoints-desktop) * 1px);
   --hero-global-desktop-gap-x: calc(var(--spacing-xl) * 1px);
   --hero-global-desktop-gap-y: calc(var(--spacing-2xl) * 1px);

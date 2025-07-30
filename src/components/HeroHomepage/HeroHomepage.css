@@ -102,7 +102,7 @@
 }
 
 /* Desktop styles */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 801px) {
   .pgov-hero-homepage {
     padding: var(--hero-homepage-padding-xl, 64px) var(--hero-homepage-margin-desktop, 32px);
   }
@@ -114,7 +114,7 @@
 }
 
 /* Mobile styles */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 800px) {
   .pgov-hero-homepage {
     padding: var(--hero-homepage-padding-lg, 32px) var(--hero-homepage-margin-mobile, 16px);
   }
