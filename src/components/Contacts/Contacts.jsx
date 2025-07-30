@@ -10,8 +10,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
-  faTwitter,
+  faXTwitter,
   faInstagram,
+  faBluesky,
 } from '@fortawesome/free-brands-svg-icons';
 import './Contacts.css';
 
@@ -109,7 +110,7 @@ export const Contacts = ({
               {twitter && (
                 <div className="contacts__item">
                   <div className="contacts__item-header">
-                    <FontAwesomeIcon icon={faTwitter} className="contacts__icon" />
+                    <FontAwesomeIcon icon={faXTwitter} className="contacts__icon" />
                     <span className="contacts__label">X (Twitter)</span>
                   </div>
                   <a href={`https://twitter.com/${twitter}`} className="contacts__link" target="_blank" rel="noopener noreferrer">
@@ -120,7 +121,7 @@ export const Contacts = ({
               {bluesky && (
                 <div className="contacts__item">
                   <div className="contacts__item-header">
-                    <FontAwesomeIcon icon={faCloud} className="contacts__icon" />
+                    <FontAwesomeIcon icon={faBluesky} className="contacts__icon" />
                     <span className="contacts__label">Bluesky</span>
                   </div>
                   <a href={`https://bsky.app/profile/${bluesky}`} className="contacts__link" target="_blank" rel="noopener noreferrer">
