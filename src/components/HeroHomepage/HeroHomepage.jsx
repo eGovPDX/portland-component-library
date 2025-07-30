@@ -27,13 +27,13 @@ export const HeroHomepage = ({
         {searchComponent}
       </div>
 
-      {subtitle && (
-        <div className={`${baseClass}__subtitle-container`}>
-          <h2 className={`${baseClass}__subtitle`}>{subtitle}</h2>
-        </div>
-      )}
-
-      {links.length > 0 && (
+      {links?.length > 0 && (
+        <>
+        {subtitle && (
+          <div className={`${baseClass}__subtitle-container`}>
+            <h2 className={`${baseClass}__subtitle`}>{subtitle}</h2>
+          </div>
+        )}
         <div className={`${baseClass}__links-container`}>
           {links.map((link, index) => (
             <a
@@ -46,6 +46,7 @@ export const HeroHomepage = ({
             </a>
           ))}
         </div>
+        </>
       )}
     </div>
   );
