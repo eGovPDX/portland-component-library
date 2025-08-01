@@ -4,17 +4,21 @@ import userEvent from '@testing-library/user-event';
 import { LanguageSelector } from './LanguageSelector';
 
 // Mock the Dropdown component with a simple implementation
+const mockDropdown = jest.fn();
 jest.mock('../Dropdown', () => ({
-  Dropdown: function MockDropdown({ 
-    id, 
-    options, 
-    selectedOptionValue, 
-    onSelect, 
-    disabled, 
-    className, 
-    defaultOptionLabel,
-    'aria-label': ariaLabel 
-  }) {
+  Dropdown: function MockDropdown(props) {
+    mockDropdown(props);
+    const { 
+      id, 
+      options, 
+      selectedOptionValue, 
+      onSelect, 
+      disabled, 
+      className, 
+      defaultOptionLabel,
+      'aria-label': ariaLabel 
+    } = props;
+    
     const selectedOption = options?.find(opt => opt.value === selectedOptionValue);
     
     return (
@@ -48,6 +52,10 @@ const twoLanguages = [
 ];
 
 describe('LanguageSelector', () => {
+  beforeEach(() => {
+    mockDropdown.mockClear();
+  });
+
   describe('Default variant', () => {
     test('renders with default props', () => {
       render(<LanguageSelector />);
@@ -55,9 +63,22 @@ describe('LanguageSelector', () => {
       expect(screen.getByRole('button')).toBeInTheDocument();
     });
 
-    test('renders with custom button text', () => {
+    test('displays selected language name in button', () => {
       render(<LanguageSelector buttonText="Select Language" />);
       expect(screen.getByText('English')).toBeInTheDocument();
+    });
+
+    test('passes buttonText as defaultOptionLabel to Dropdown', () => {
+      const customButtonText = 'Choose Language';
+      render(<LanguageSelector buttonText={customButtonText} />);
+      
+      // The mock Dropdown should have received the buttonText as defaultOptionLabel
+      // We can verify this by checking that the mock was called with the correct props
+      expect(mockDropdown).toHaveBeenLastCalledWith(
+        expect.objectContaining({
+          defaultOptionLabel: customButtonText
+        })
+      );
     });
 
     test('calls onLanguageChange when language is selected', () => {

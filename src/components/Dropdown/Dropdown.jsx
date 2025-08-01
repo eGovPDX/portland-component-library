@@ -369,6 +369,7 @@ const Dropdown = ({
             role="option"
             aria-selected={selectedItem && selectedItem.value === option.value}
             tabIndex={-1}
+            data-footer={option.isFooter ? "true" : undefined}
           >
             {option.label}
           </li>

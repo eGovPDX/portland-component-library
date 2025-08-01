@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Dropdown } from '../Dropdown';
 import { Button } from '../Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 import './LanguageSelector.css';
 
 /**
@@ -38,9 +40,10 @@ const DEFAULT_LANGUAGES = [
  * @param {string} [props.className] - Additional CSS classes
  * @param {string} [props.id='language-selector'] - Component ID for accessibility
  * @param {boolean} [props.disabled=false] - Whether the component is disabled
- * @param {boolean} [props.showFooterText=true] - Whether to show footer text (legacy prop, no longer used)
- * @param {string} [props.footerText='Selected content in additional languages'] - Custom footer text (legacy prop, no longer used)
+ * @param {boolean} [props.showFooterText=true] - Whether to show footer text
+ * @param {string} [props.footerText='Selected content in additional languages'] - Custom footer text
  * @param {string} [props.ariaLabel='Select language'] - ARIA label for the component
+ * @param {boolean} [props.showIcon=false] - Whether to show the language icon
  * @returns {JSX.Element} LanguageSelector component
  * 
  * @example
@@ -53,6 +56,13 @@ const DEFAULT_LANGUAGES = [
  *   ]}
  *   selectedLanguage="en"
  *   onLanguageChange={(code, language) => console.log('Changed to:', code)}
+ * />
+ * 
+ * // With language icon (matches Figma design)
+ * <LanguageSelector
+ *   showIcon={true}
+ *   languages={languages}
+ *   onLanguageChange={handleLanguageChange}
  * />
  * 
  * // Two languages variant (toggles between two languages)
@@ -89,6 +99,7 @@ export const LanguageSelector = ({
   showFooterText = true,
   footerText = 'Selected content in additional languages',
   ariaLabel = 'Select language',
+  showIcon = false,
   ...props
 }) => {
   /**
@@ -102,11 +113,25 @@ export const LanguageSelector = ({
       : language.nativeName
   }));
 
+  // Add footer text option if enabled
+  if (showFooterText) {
+    dropdownOptions.push({
+      value: 'footer',
+      label: footerText,
+      isFooter: true
+    });
+  }
+
   /**
    * Handles language selection from the dropdown
    * @param {string} languageCode - The selected language code
    */
   const handleLanguageSelect = (languageCode) => {
+    // Don't trigger callback for footer text
+    if (languageCode === 'footer') {
+      return;
+    }
+    
     const selectedLanguageObj = languages.find(lang => lang.code === languageCode);
     if (onLanguageChange && selectedLanguageObj) {
       onLanguageChange(languageCode, selectedLanguageObj);
@@ -122,6 +147,7 @@ export const LanguageSelector = ({
     {
       'usa-language-selector--two-languages': variant === 'two-languages',
       'usa-language-selector--unstyled': variant === 'unstyled',
+      'usa-language-selector--with-icon': showIcon,
     },
     className
   );
@@ -141,6 +167,13 @@ export const LanguageSelector = ({
           aria-label={ariaLabel}
           className="usa-language-selector__button"
         >
+          {showIcon && (
+            <FontAwesomeIcon 
+              icon={faLanguage} 
+              className="usa-language-selector__icon"
+              aria-hidden="true"
+            />
+          )}
           <span lang={otherLanguage.code}>{otherLanguage.nativeName}</span>
           {otherLanguage.englishName !== otherLanguage.nativeName && (
             <span className="usa-language-selector__english-name">
@@ -225,10 +258,12 @@ LanguageSelector.propTypes = {
   id: PropTypes.string,
   /** Whether the component is disabled */
   disabled: PropTypes.bool,
-  /** Whether to show footer text (legacy prop, no longer used) */
+  /** Whether to show footer text */
   showFooterText: PropTypes.bool,
-  /** Custom footer text (legacy prop, no longer used) */
+  /** Custom footer text */
   footerText: PropTypes.string,
   /** ARIA label for the component */
   ariaLabel: PropTypes.string,
+  /** Whether to show the language icon */
+  showIcon: PropTypes.bool,
 };

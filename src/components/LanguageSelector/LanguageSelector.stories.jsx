@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'The consistent placement, interface, and behavior of the language selection component allows users to easily find and access content in the language the user is most comfortable in.'
+        component: 'The consistent placement, interface, and behavior of the language selection component allows users to easily find and access content in the language the user is most comfortable in. The component displays the currently selected language name on the button/link.'
       }
     }
   },
@@ -40,9 +40,9 @@ export default {
       control: 'boolean',
       description: 'Whether to show footer text'
     },
-    buttonText: {
-      control: 'text',
-      description: 'Text to display on the button'
+    showIcon: {
+      control: 'boolean',
+      description: 'Whether to show the language icon (for two-languages variant)'
     },
     footerText: {
       control: 'text',
@@ -77,24 +77,48 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   variant: 'default',
-  buttonText: 'Languages',
   buttonVariant: 'default',
   selectedLanguage: 'en',
   showFooterText: true
+};
+Default.parameters = {
+  docs: {
+    description: {
+      story: 'The default language selector appears as a blue button with white text showing the currently selected language name. When clicked, it opens a dropdown menu with language options. The component does not include a chevron icon for a cleaner appearance.'
+    }
+  }
 };
 
 // Unstyled Variant
 export const Unstyled = Template.bind({});
 Unstyled.args = {
   variant: 'unstyled',
-  buttonText: 'Languages',
   selectedLanguage: 'en',
   showFooterText: true
 };
 Unstyled.parameters = {
   docs: {
     description: {
-      story: 'Use the unstyled version of the language button if your implementation calls for a link, or must be placed in a secondary navigation section with other links.'
+      story: 'Use the unstyled version of the language selector if your implementation calls for a link, or must be placed in a secondary navigation section with other links. This variant appears as a blue underlined link showing the selected language name instead of a button, without any chevron icon.'
+    }
+  }
+};
+
+// Two Languages Variant
+export const TwoLanguages = Template.bind({});
+TwoLanguages.args = {
+  variant: 'two-languages',
+  showIcon: true,
+  languages: [
+    { code: 'en', nativeName: 'English', englishName: 'English' },
+    { code: 'es', nativeName: 'Español', englishName: 'Spanish' }
+  ],
+  selectedLanguage: 'en'
+};
+TwoLanguages.parameters = {
+  docs: {
+    description: {
+      story: 'The two-languages variant toggles between exactly two languages. It shows the language that is NOT currently selected, allowing users to quickly switch to the other language. This variant can optionally include a language icon.'
     }
   }
 };
@@ -103,7 +127,6 @@ Unstyled.parameters = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   variant: 'default',
-  buttonText: 'Languages',
   disabled: true,
   selectedLanguage: 'en'
 };
@@ -112,7 +135,6 @@ Disabled.args = {
 export const CustomLanguages = Template.bind({});
 CustomLanguages.args = {
   variant: 'default',
-  buttonText: 'Select Language',
   languages: [
     { code: 'en', nativeName: 'English', englishName: 'English' },
     { code: 'de', nativeName: 'Deutsch', englishName: 'German' },
@@ -127,7 +149,7 @@ CustomLanguages.args = {
 CustomLanguages.parameters = {
   docs: {
     description: {
-      story: 'Example with custom set of languages including various scripts and writing systems.'
+      story: 'Example with custom set of languages including various scripts and writing systems. The button will display the currently selected language name.'
     }
   }
 };
@@ -136,53 +158,8 @@ CustomLanguages.parameters = {
 export const WithoutFooterText = Template.bind({});
 WithoutFooterText.args = {
   variant: 'default',
-  buttonText: 'Languages',
   selectedLanguage: 'en',
   showFooterText: false
-};
-
-// Custom Footer Text
-export const CustomFooterText = Template.bind({});
-CustomFooterText.args = {
-  variant: 'default',
-  buttonText: 'Languages',
-  selectedLanguage: 'en',
-  showFooterText: true,
-  footerText: 'More languages available online'
-};
-
-// In Header Context (Small Button)
-export const InHeaderContext = Template.bind({});
-InHeaderContext.args = {
-  variant: 'default',
-  buttonText: 'Languages',
-  buttonVariant: 'default',
-  buttonSize: 'default',
-  selectedLanguage: 'en',
-  showFooterText: true
-};
-InHeaderContext.parameters = {
-  docs: {
-    description: {
-      story: 'Example of how the language selector would appear in a header context.'
-    }
-  }
-};
-
-// Accessibility Example with ARIA Label
-export const WithAriaLabel = Template.bind({});
-WithAriaLabel.args = {
-  variant: 'default',
-  buttonText: 'Languages',
-  selectedLanguage: 'en',
-  ariaLabel: 'Choose your preferred language for this website'
-};
-WithAriaLabel.parameters = {
-  docs: {
-    description: {
-      story: 'Example with custom ARIA label for enhanced accessibility.'
-    }
-  }
 };
 
 // Multiple Language Selectors
@@ -192,38 +169,51 @@ export const MultipleSelectorExample = () => {
   const [lang3, setLang3] = useState('fr');
   
   return (
-    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-      <LanguageSelector
-        id="lang-selector-1"
-        variant="default"
-        buttonText="Languages"
-        selectedLanguage={lang1}
-        onLanguageChange={setLang1}
-      />
-      <LanguageSelector
-        id="lang-selector-2"
-        variant="two-languages"
-        languages={[
-          { code: 'en', nativeName: 'English', englishName: 'English' },
-          { code: 'es', nativeName: 'Español', englishName: 'Spanish' }
-        ]}
-        selectedLanguage={lang2}
-        onLanguageChange={setLang2}
-      />
-      <LanguageSelector
-        id="lang-selector-3"
-        variant="unstyled"
-        buttonText="Languages"
-        selectedLanguage={lang3}
-        onLanguageChange={setLang3}
-      />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      <div>
+        <h3>Default Variant (Button Style)</h3>
+        <p>Shows selected language name: "{lang1 === 'en' ? 'English' : lang1 === 'es' ? 'Español' : 'Français'}"</p>
+        <LanguageSelector
+          id="lang-selector-1"
+          variant="default"
+          selectedLanguage={lang1}
+          onLanguageChange={setLang1}
+        />
+      </div>
+      
+      <div>
+        <h3>Two Languages Variant</h3>
+        <p>Shows the language to switch TO: "{lang2 === 'en' ? 'English' : 'Español'}"</p>
+        <LanguageSelector
+          id="lang-selector-2"
+          variant="two-languages"
+          showIcon={true}
+          languages={[
+            { code: 'en', nativeName: 'English', englishName: 'English' },
+            { code: 'es', nativeName: 'Español', englishName: 'Spanish' }
+          ]}
+          selectedLanguage={lang2}
+          onLanguageChange={setLang2}
+        />
+      </div>
+      
+      <div>
+        <h3>Unstyled Variant (Link Style)</h3>
+        <p>Shows selected language name as link: "{lang3 === 'en' ? 'English' : lang3 === 'es' ? 'Español' : 'Français'}"</p>
+        <LanguageSelector
+          id="lang-selector-3"
+          variant="unstyled"
+          selectedLanguage={lang3}
+          onLanguageChange={setLang3}
+        />
+      </div>
     </div>
   );
 };
 MultipleSelectorExample.parameters = {
   docs: {
     description: {
-      story: 'Multiple language selectors on the same page with different variants.'
+      story: 'Multiple language selectors on the same page with different variants. Each variant displays the selected language name in its own style.'
     }
   }
 };

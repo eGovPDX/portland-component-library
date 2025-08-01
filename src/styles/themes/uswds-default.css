@@ -468,28 +468,59 @@
   --language-selector-animation-duration: 0.2s;
   --language-selector-animation-offset: -10px;
   --language-selector-z-index: 1000;
-  --language-selector-menu-bg: #ffffff;
-  --language-selector-menu-border-color: #dfe1e2;
+  --language-selector-menu-bg: #1f303e;
+  --language-selector-menu-border-color: #1f303e;
   --language-selector-menu-border-width: 1px;
   --language-selector-menu-min-width: 200px;
   --language-selector-menu-max-height: 300px;
   --language-selector-menu-min-width-unstyled: 180px;
-  --language-selector-menu-text-color: #1b1b1b;
-  --language-selector-menu-hover-bg: #dfe1e2;
-  --language-selector-menu-selected-bg: #005ea2;
+  --language-selector-menu-text-color: #ffffff;
+  --language-selector-menu-hover-bg: #2a3f4f;
+  --language-selector-menu-selected-bg: #2a3f4f;
   --language-selector-menu-selected-text: #ffffff;
-  --language-selector-menu-selected-hover-bg: #1a4480;
-  --language-selector-menu-secondary-text: #71767a;
+  --language-selector-menu-selected-hover-bg: #2a3f4f;
+  --language-selector-menu-secondary-text: #dfe1e2;
   --language-selector-menu-selected-secondary-text: #dfe1e2;
-  --language-selector-menu-footer-text: #71767a;
-  --language-selector-menu-footer-bg: #f0f0f0;
+  --language-selector-menu-footer-text: #ffffff;
+  --language-selector-menu-footer-bg: #1f303e;
   --language-selector-option-padding: 0.75rem 1rem;
   --language-selector-option-padding-mobile: 1rem;
   --language-selector-option-border-width: 1px;
   --language-selector-option-font-size: 0.875rem;
   --language-selector-option-font-size-mobile: 1rem;
   --language-selector-option-line-height: 1.4;
-
+  
+  /* Additional LanguageSelector button variables */
+  --language-selector-button-padding: 0;
+  --language-selector-button-margin: 0;
+  --language-selector-button-bg: transparent;
+  --language-selector-button-border: none;
+  --language-selector-button-font-size: inherit;
+  --language-selector-button-font-family: inherit;
+  --language-selector-button-text-decoration: underline;
+  --language-selector-button-hover-text-decoration: underline;
+  --language-selector-button-hover-bg: transparent;
+  --language-selector-button-focus-bg: transparent;
+  --language-selector-disabled-bg: transparent;
+  
+  /* Language icon variables */
+  --language-selector-icon-font-size: 12px;
+  --language-selector-icon-margin: 4px;
+  
+  /* Updated menu styling to match Figma design */
+  --language-selector-menu-bg: #1f303e;
+  --language-selector-menu-border-color: #1f303e;
+  --language-selector-menu-text-color: #ffffff;
+  --language-selector-menu-hover-bg: #2a3f4f;
+  --language-selector-menu-selected-bg: #2a3f4f;
+  --language-selector-menu-selected-text: #ffffff;
+  --language-selector-menu-selected-hover-bg: #2a3f4f;
+  --language-selector-menu-secondary-text: #dfe1e2;
+  --language-selector-menu-selected-secondary-text: #dfe1e2;
+  --language-selector-menu-footer-text: #ffffff;
+  --language-selector-menu-footer-bg: #1f303e;
+  --language-selector-option-font-family: "Open Sans";
+  
   /* Identifier component variables */
   --identifier-font-family: "Public Sans Web", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --identifier-background-color: #1b1b1b;
