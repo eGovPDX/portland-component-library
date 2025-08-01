@@ -79,7 +79,6 @@
   background-position: center center;
   background-size: var(--checkbox-check-size) auto;
   background-repeat: no-repeat;
-  background-image: var(--checkbox-check-icon);
 }
 
 .usa-checkbox__input:disabled + .usa-checkbox__label,
