@@ -1,24 +1,24 @@
-const a = /* @__PURE__ */ new Set();
-async function t(o) {
-  if (!a.has(o))
+const r = /* @__PURE__ */ new Set();
+async function t(a) {
+  if (!r.has(a))
     try {
-      switch (o) {
+      switch (a) {
         case "pgov":
           await Promise.resolve({         });
           break;
         case "pgov-dark":
-          await Promise.resolve({              });
+          await Promise.resolve({         }), await Promise.resolve({              });
           break;
         case "uswds-default":
           await Promise.resolve({                  });
           break;
         default:
-          console.warn(`Theme "${o}" not found.`);
+          console.warn(`Theme "${a}" not found.`);
           return;
       }
-      a.add(o);
-    } catch (r) {
-      throw console.error(`Failed to load theme "${o}":`, r), r;
+      r.add(a);
+    } catch (o) {
+      throw console.error(`Failed to load theme "${a}":`, o), o;
     }
 }
 export {
