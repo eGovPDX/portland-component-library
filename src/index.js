@@ -27,6 +27,7 @@ export { Checkbox } from './components/Checkbox';
 export { ExternalLinkIcon } from './components/ExternalLinkIcon';
 export { TextInput } from './components/TextInput';
 export { StepIndicator } from './components/StepIndicator';
+export { Dropdown } from './components/Dropdown';
 export { 
   Table, 
   TableCaption, 

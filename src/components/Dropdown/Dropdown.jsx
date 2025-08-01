@@ -5,7 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import './Dropdown.css';
 
-// Device detection utility
+/**
+ * Detects if the current device is a mobile device
+ * @returns {boolean} True if the device is mobile, false otherwise
+ */
 const isMobileDevice = () => {
   if (typeof window === 'undefined') return false;
   
@@ -24,7 +27,11 @@ const isMobileDevice = () => {
   return isMobile || (hasTouchAndCoarsePointer && isSmallScreen);
 };
 
-// Simple useOutsideClick hook implementation (can be moved to a separate file)
+/**
+ * Custom hook to handle clicks outside of a referenced element
+ * @param {React.RefObject} ref - React ref object for the element to monitor
+ * @param {Function} handler - Function to call when a click outside occurs
+ */
 const useOutsideClick = (ref, handler) => {
   useEffect(() => {
     const listener = (event) => {
@@ -42,6 +49,43 @@ const useOutsideClick = (ref, handler) => {
   }, [ref, handler]);
 };
 
+/**
+ * Dropdown Component
+ * 
+ * A responsive dropdown component that automatically switches between native select elements
+ * on mobile devices and custom dropdown implementation on desktop. Provides full keyboard
+ * navigation, type-to-search functionality, and comprehensive accessibility features.
+ * 
+ * @param {Object} props - Component props
+ * @param {string} props.id - Unique identifier for the dropdown (required)
+ * @param {string} [props.label] - Label text for the dropdown
+ * @param {string} [props.hintText] - Helper text displayed below the label
+ * @param {Array<{value: string, label: string}>} props.options - Array of options to display
+ * @param {boolean} [props.disabled=false] - Whether the dropdown is disabled
+ * @param {boolean|string} [props.error=false] - Error state or error message
+ * @param {string} [props.className] - Additional CSS classes
+ * @param {string} [props.selectedOptionValue] - Currently selected option value
+ * @param {Function} [props.onSelect] - Callback function when an option is selected
+ * @param {string} [props.defaultOptionLabel='- Select -'] - Text for the default/placeholder option
+ * @param {boolean} [props.forceCustom=false] - Force custom dropdown implementation (for testing)
+ * @returns {JSX.Element} Dropdown component
+ * 
+ * @example
+ * ```jsx
+ * const options = [
+ *   { value: 'option1', label: 'Option 1' },
+ *   { value: 'option2', label: 'Option 2' }
+ * ];
+ * 
+ * <Dropdown
+ *   id="my-dropdown"
+ *   label="Select an option"
+ *   options={options}
+ *   selectedOptionValue="option1"
+ *   onSelect={(value) => console.log('Selected:', value)}
+ * />
+ * ```
+ */
 const Dropdown = ({
   id,
   label,
@@ -61,7 +105,10 @@ const Dropdown = ({
     setIsMobile(forceCustom ? false : isMobileDevice());
   }, [forceCustom]);
 
-  // Shared label/hint/error rendering
+  /**
+   * Renders the label, hint text, and error message
+   * @returns {JSX.Element|null} Label element or null if no label
+   */
   const renderLabel = () =>
     label && (
       <label className="usa-label" htmlFor={id}>
@@ -146,7 +193,10 @@ const Dropdown = ({
     }
   }, [isOpen, menuId]);
 
-  // Type-to-search logic
+  /**
+   * Handles type-to-search functionality
+   * @param {string} char - Character typed by user
+   */
   const handleTypeahead = (char) => {
     const newTypeahead = typeahead + char.toLowerCase();
     setTypeahead(newTypeahead);
@@ -164,6 +214,11 @@ const Dropdown = ({
     typeaheadTimeout.current = setTimeout(() => setTypeahead(''), 500);
   };
 
+  /**
+   * Handles option selection
+   * @param {Object} option - Selected option object
+   * @param {number} idx - Index of the selected option
+   */
   const handleOptionClick = (option, idx) => {
     setSelectedItem(option);
     setIsOpen(false);
@@ -173,6 +228,10 @@ const Dropdown = ({
     }
   };
 
+  /**
+   * Handles keyboard events on the dropdown button
+   * @param {KeyboardEvent} e - Keyboard event
+   */
   const handleButtonKeyDown = (e) => {
     if (!isOpen && (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ')) {
       setIsOpen(true);
@@ -205,6 +264,10 @@ const Dropdown = ({
     }
   };
 
+  /**
+   * Handles keyboard events on the dropdown menu
+   * @param {KeyboardEvent} e - Keyboard event
+   */
   const handleMenuKeyDown = (e) => {
     if (e.key === 'ArrowDown') {
       setActiveIndex((prev) => (prev + 1) % options.length);
@@ -306,6 +369,7 @@ const Dropdown = ({
             role="option"
             aria-selected={selectedItem && selectedItem.value === option.value}
             tabIndex={-1}
+            data-footer={option.isFooter ? "true" : undefined}
           >
             {option.label}
           </li>
@@ -320,25 +384,42 @@ const Dropdown = ({
   );
 };
 
+/**
+ * PropTypes for the Dropdown component
+ */
 Dropdown.propTypes = {
+  /** Unique identifier for the dropdown (required) */
   id: PropTypes.string.isRequired,
+  /** Label text for the dropdown */
   label: PropTypes.string,
+  /** Helper text displayed below the label */
   hintText: PropTypes.string,
+  /** Array of options to display (required) */
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
     })
   ).isRequired,
+  /** Whether the dropdown is disabled */
   disabled: PropTypes.bool,
+  /** Error state or error message */
   error: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  /** Additional CSS classes */
   className: PropTypes.string,
+  /** Currently selected option value */
   selectedOptionValue: PropTypes.string,
+  /** Callback function when an option is selected */
   onSelect: PropTypes.func,
+  /** Text for the default/placeholder option */
   defaultOptionLabel: PropTypes.string,
+  /** Force custom dropdown implementation (for testing) */
   forceCustom: PropTypes.bool,
 };
 
+/**
+ * Default props for the Dropdown component
+ */
 Dropdown.defaultProps = {
   label: null,
   disabled: false,
