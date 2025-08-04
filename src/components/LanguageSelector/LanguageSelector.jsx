@@ -1,11 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Dropdown } from '../Dropdown';
 import { Button } from '../Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 import './LanguageSelector.css';
+
+/**
+ * Detects if the current device is a mobile device
+ * @returns {boolean} True if the device is mobile, false otherwise
+ */
+const isMobileDevice = () => {
+  if (typeof window === 'undefined') return false;
+  
+  // Check if we're in a mobile environment
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  // Check for touch capability AND coarse pointer (more reliable than just touch events)
+  const hasTouchAndCoarsePointer = 
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0) &&
+    window.matchMedia('(pointer: coarse)').matches;
+  
+  // Check for small screen (mobile-like)
+  const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+  
+  // Only consider it mobile if it's actually a mobile device OR has touch+coarse pointer AND small screen
+  return isMobile || (hasTouchAndCoarsePointer && isSmallScreen);
+};
+
+/**
+ * Custom hook to handle clicks outside of a referenced element
+ * @param {React.RefObject} ref - React ref object for the element to monitor
+ * @param {Function} handler - Function to call when a click outside occurs
+ */
+const useOutsideClick = (ref, handler) => {
+  useEffect(() => {
+    const listener = (event) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [ref, handler]);
+};
 
 /**
  * Default language options with common languages
@@ -102,28 +145,28 @@ export const LanguageSelector = ({
   showIcon = false,
   ...props
 }) => {
-  /**
-   * Converts language objects to the format expected by the Dropdown component
-   * @type {Array<{value: string, label: string}>}
-   */
-  const dropdownOptions = languages.map(language => ({
-    value: language.code,
-    label: language.nativeName !== language.englishName 
-      ? `${language.nativeName} (${language.englishName})`
-      : language.nativeName
-  }));
+  // State for menu visibility and navigation
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [typeahead, setTypeahead] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Refs for DOM elements
+  const containerRef = useRef(null);
+  const buttonRef = useRef(null);
+  const menuRef = useRef(null);
+  const typeaheadTimeout = useRef(null);
+  
+  // Hook for outside click detection
+  useOutsideClick(containerRef, () => setIsOpen(false));
+  
+  // Check for mobile device on mount
+  useEffect(() => {
+    setIsMobile(isMobileDevice());
+  }, []);
 
-  // Add footer text option if enabled
-  if (showFooterText) {
-    dropdownOptions.push({
-      value: 'footer',
-      label: footerText,
-      isFooter: true
-    });
-  }
-
   /**
-   * Handles language selection from the dropdown
+   * Handles language selection from the menu
    * @param {string} languageCode - The selected language code
    */
   const handleLanguageSelect = (languageCode) => {
@@ -136,7 +179,76 @@ export const LanguageSelector = ({
     if (onLanguageChange && selectedLanguageObj) {
       onLanguageChange(languageCode, selectedLanguageObj);
     }
+    setIsOpen(false);
+    setActiveIndex(-1);
   };
+
+  /**
+   * Handles type-to-search functionality
+   * @param {string} char - Character typed by user
+   */
+  const handleTypeahead = (char) => {
+    const newTypeahead = typeahead + char.toLowerCase();
+    setTypeahead(newTypeahead);
+
+    // Find first language that starts with the typed string
+    const idx = languages.findIndex(lang =>
+      lang.nativeName.toLowerCase().startsWith(newTypeahead) ||
+      lang.englishName.toLowerCase().startsWith(newTypeahead)
+    );
+    if (idx !== -1) {
+      setActiveIndex(idx);
+    }
+
+    // Reset typeahead after 500ms
+    if (typeaheadTimeout.current) clearTimeout(typeaheadTimeout.current);
+    typeaheadTimeout.current = setTimeout(() => setTypeahead(''), 500);
+  };
+
+  /**
+   * Handles keyboard navigation
+   * @param {KeyboardEvent} e - Keyboard event
+   */
+  const handleKeyDown = (e) => {
+    if (!isOpen && (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ')) {
+      setIsOpen(true);
+      setActiveIndex(0);
+      e.preventDefault();
+    } else if (isOpen) {
+      if (e.key === 'ArrowDown') {
+        setActiveIndex((prev) => (prev + 1) % languages.length);
+        e.preventDefault();
+      } else if (e.key === 'ArrowUp') {
+        setActiveIndex((prev) => (prev - 1 + languages.length) % languages.length);
+        e.preventDefault();
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        if (activeIndex >= 0 && activeIndex < languages.length) {
+          handleLanguageSelect(languages[activeIndex].code);
+        }
+        e.preventDefault();
+      } else if (e.key === 'Escape') {
+        setIsOpen(false);
+        setActiveIndex(-1);
+        buttonRef.current?.focus();
+        e.preventDefault();
+      } else if (e.key === 'Tab') {
+        setIsOpen(false);
+        setActiveIndex(-1);
+      } else if (e.key.length === 1 && /^[a-z0-9]$/i.test(e.key)) {
+        handleTypeahead(e.key);
+      }
+    }
+  };
+
+  // Focus management for active menu item
+  useEffect(() => {
+    if (isOpen && activeIndex >= 0 && menuRef.current) {
+      const activeOption = menuRef.current.querySelector(`[data-index="${activeIndex}"]`);
+      if (activeOption) {
+        activeOption.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  }, [isOpen, activeIndex]);
 
   /**
    * CSS classes for the component wrapper
@@ -185,37 +297,169 @@ export const LanguageSelector = ({
     );
   }
 
+  // Render mobile native select for all variants on mobile
+  if (isMobile) {
+    return (
+      <div className={wrapperClasses} ref={containerRef} {...props}>
+        <select
+          id={id}
+          className="usa-language-selector__native-select"
+          value={selectedLanguage || ''}
+          onChange={e => handleLanguageSelect(e.target.value)}
+          disabled={disabled}
+          aria-label={ariaLabel}
+        >
+          <option value="" disabled>{buttonText}</option>
+          {languages.map(language => (
+            <option key={language.code} value={language.code}>
+              {language.nativeName !== language.englishName 
+                ? `${language.nativeName} (${language.englishName})`
+                : language.nativeName}
+            </option>
+          ))}
+        </select>
+      </div>
+    );
+  }
+
   // Render unstyled variant
   if (variant === 'unstyled') {
     return (
-      <div className={wrapperClasses} {...props}>
-        <Dropdown
+      <div className={wrapperClasses} ref={containerRef} {...props}>
+        <button
+          type="button"
           id={id}
-          options={dropdownOptions}
-          selectedOptionValue={selectedLanguage}
-          onSelect={handleLanguageSelect}
+          ref={buttonRef}
+          className="usa-language-selector__button usa-language-selector__button--unstyled"
+          onClick={() => !disabled && setIsOpen(!isOpen)}
+          onKeyDown={handleKeyDown}
           disabled={disabled}
-          className="usa-language-selector__dropdown--unstyled"
-          defaultOptionLabel={buttonText}
+          aria-haspopup="listbox"
+          aria-expanded={isOpen}
+          aria-controls={`${id}-menu`}
           aria-label={ariaLabel}
-        />
+          aria-activedescendant={isOpen && activeIndex >= 0 ? `${id}-option-${activeIndex}` : undefined}
+        >
+          {showIcon && (
+            <FontAwesomeIcon 
+              icon={faLanguage} 
+              className="usa-language-selector__icon"
+              aria-hidden="true"
+            />
+          )}
+          {buttonText}
+        </button>
+        {isOpen && (
+          <ul
+            id={`${id}-menu`}
+            ref={menuRef}
+            className="usa-language-selector__menu"
+            role="listbox"
+            aria-labelledby={id}
+            onKeyDown={handleKeyDown}
+          >
+            {languages.map((language, index) => (
+              <li
+                key={language.code}
+                id={`${id}-option-${index}`}
+                data-index={index}
+                className={classNames('usa-language-selector__option', {
+                  'usa-language-selector__option--selected': selectedLanguage === language.code,
+                  'usa-language-selector__option--active': activeIndex === index,
+                })}
+                onClick={() => handleLanguageSelect(language.code)}
+                role="option"
+                aria-selected={selectedLanguage === language.code}
+              >
+                <span lang={language.code}>{language.nativeName}</span>
+                {language.englishName !== language.nativeName && (
+                  <span className="usa-language-selector__english-name">
+                    {` (${language.englishName})`}
+                  </span>
+                )}
+              </li>
+            ))}
+            {showFooterText && (
+              <li
+                className="usa-language-selector__footer"
+                role="presentation"
+              >
+                {footerText}
+              </li>
+            )}
+          </ul>
+        )}
       </div>
     );
   }
 
   // Render default variant (multiple languages with styled button)
   return (
-    <div className={wrapperClasses} {...props}>
-      <Dropdown
+    <div className={wrapperClasses} ref={containerRef} {...props}>
+      <Button
         id={id}
-        options={dropdownOptions}
-        selectedOptionValue={selectedLanguage}
-        onSelect={handleLanguageSelect}
+        ref={buttonRef}
+        variant={buttonVariant}
+        size={buttonSize}
         disabled={disabled}
-        className="usa-language-selector__dropdown"
-        defaultOptionLabel={buttonText}
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+        onKeyDown={handleKeyDown}
+        className="usa-language-selector__button"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-controls={`${id}-menu`}
         aria-label={ariaLabel}
-      />
+        aria-activedescendant={isOpen && activeIndex >= 0 ? `${id}-option-${activeIndex}` : undefined}
+      >
+        {showIcon && (
+          <FontAwesomeIcon 
+            icon={faLanguage} 
+            className="usa-language-selector__icon"
+            aria-hidden="true"
+          />
+        )}
+        {buttonText}
+      </Button>
+      {isOpen && (
+        <ul
+          id={`${id}-menu`}
+          ref={menuRef}
+          className="usa-language-selector__menu"
+          role="listbox"
+          aria-labelledby={id}
+          onKeyDown={handleKeyDown}
+        >
+          {languages.map((language, index) => (
+            <li
+              key={language.code}
+              id={`${id}-option-${index}`}
+              data-index={index}
+              className={classNames('usa-language-selector__option', {
+                'usa-language-selector__option--selected': selectedLanguage === language.code,
+                'usa-language-selector__option--active': activeIndex === index,
+              })}
+              onClick={() => handleLanguageSelect(language.code)}
+              role="option"
+              aria-selected={selectedLanguage === language.code}
+            >
+              <span lang={language.code}>{language.nativeName}</span>
+              {language.englishName !== language.nativeName && (
+                <span className="usa-language-selector__english-name">
+                  {` (${language.englishName})`}
+                </span>
+              )}
+            </li>
+          ))}
+          {showFooterText && (
+            <li
+              className="usa-language-selector__footer"
+              role="presentation"
+            >
+              {footerText}
+            </li>
+          )}
+        </ul>
+      )}
     </div>
   );
 };
