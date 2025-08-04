@@ -861,7 +861,7 @@
   --radio-button-label-gap: 8px;
   --radio-button-color: var(--color-foundation-black);
   --radio-button-border-color: var(--color-base-darkest);
-  --radio-button-border-width: 3px;
+  --radio-button-border-width: 2px;
   --radio-button-border-radius: 50%;
   --radio-button-bg: var(--color-foundation-white);
   --radio-button-checked-border-color: var(--color-primary-medium);
