@@ -1149,7 +1149,7 @@
   --tooltip-popup-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   /* LanguageSelector component variables */
-  --language-selector-button-color: var(--color-foundation-link);
+  --language-selector-button-color: var(--color-primary-medium);
   --language-selector-button-hover-color: var(--color-foundation-link-hover);
   --language-selector-button-gap: calc(var(--spacing-2xs) * 1px);
   --language-selector-focus-outline: calc(var(--border-lg) * 1px) solid var(--color-primary-medium);
@@ -1181,14 +1181,15 @@
   --language-selector-option-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
   --language-selector-option-padding-mobile: calc(var(--spacing-md) * 1px);
   --language-selector-option-border-width: calc(var(--border-sm) * 1px);
-  --language-selector-option-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
-  --language-selector-option-font-size-mobile: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --language-selector-option-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --language-selector-option-font-size-mobile: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --language-selector-option-line-height: 1.4;
+  --language-selector-option-font-weight: 700;
   --language-selector-option-font-family: var(--font-family-open-sans);
   --language-selector-option-focus-outline-width: calc(var(--border-sm) * 1px);
   --language-selector-option-focus-outline-offset: calc(var(--border-sm) * -1px);
   --language-selector-footer-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px);
-  --language-selector-footer-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --language-selector-footer-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
   --language-selector-footer-border-width: calc(var(--border-sm) * 1px);
   --language-selector-high-contrast-border-width: calc(var(--border-lg) * 1px);
   
