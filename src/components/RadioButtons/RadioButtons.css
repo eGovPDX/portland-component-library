@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-.radio-buttons-title {
+.radio-buttons-legend {
   padding: 0;
   margin-bottom: 4px;
   font-family: var(--radio-button-title-font-family, "Public Sans");
@@ -162,7 +162,7 @@ input[type="radio"]:not(:disabled):focus {
   margin-bottom: 8px;
 }
 
-.error .radio-buttons-title {
+.error .radio-buttons-legend {
   color: var(--radio-button-error-text-color, #B50909);
 }
 

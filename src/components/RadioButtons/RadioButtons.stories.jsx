@@ -5,11 +5,20 @@ export default {
   title: 'Components/RadioButtons',
   component: RadioButtons,
   argTypes: {
+    legend: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
+    },
     tiled: {
       control: 'boolean',
     },
     required: {
       control: 'boolean',
+    },
+    errorMessage: {
+      control: 'text',
     },
   },
 };
@@ -52,7 +61,8 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   name: 'historical-figures-default',
-  title: 'Select one historical figure',
+  legend: 'Select one historical figure',
+  description: 'Select the historical figure that best represents your interests',
   options: options,
   selectedValue: 'frederick-douglass',
 };
@@ -60,7 +70,8 @@ Default.args = {
 export const Tiled = Template.bind({});
 Tiled.args = {
   name: 'historical-figures-tiled',
-  title: 'Select one historical figure',
+  legend: 'Select one historical figure',
+  description: 'Select the historical figure that best represents your interests',
   options: options,
   selectedValue: 'frederick-douglass',
   tiled: true,
@@ -69,7 +80,7 @@ Tiled.args = {
 export const RequiredWithError = Template.bind({});
 RequiredWithError.args = {
   name: 'local-school-district',
-  title: 'Local school district',
+  legend: 'Local school district',
   description: 'Choose the district closest to your primary residence',
   options: [
     { value: 'frederick-douglass', labelText: 'Frederick Douglass', labelDescription: '{labelDescription}' },
