@@ -7,7 +7,7 @@ import './RadioButtons.css';
  */
 export const RadioButtons = ({
   name,
-  title,
+  legend,
   description,
   options,
   selectedValue,
@@ -28,8 +28,8 @@ export const RadioButtons = ({
 
   return (
     <fieldset className={groupClasses}>
-      <legend className="radio-buttons-title">
-        {title}
+      <legend className="radio-buttons-legend">
+        {legend}
         {required && <span className="required-asterisk">&nbsp;*</span>}
       </legend>
       {description && <p className="radio-buttons-description">{description}</p>}
@@ -78,9 +78,9 @@ RadioButtons.propTypes = {
    */
   name: PropTypes.string.isRequired,
   /**
-   * The title for the radio button group.
+   * The legend for the radio button group.
    */
-  title: PropTypes.string.isRequired,
+  legend: PropTypes.string.isRequired,
   /**
    * Optional description for the radio button group.
    */
