@@ -845,14 +845,18 @@
   --process-steps-connector-color: var(--color-primary-lighter, #D9E8F6);
   --process-steps-step-content-padding-bottom: calc(var(--spacing-xl) * 1px);
   --process-steps-step-heading-color: var(--color-foundation-black);
-  --process-steps-step-heading-font-family: var(--font-family-open-sans, "Open Sans");
+  --process-steps-step-heading-font-family: var(--font-family-open-sans);
   --process-steps-step-heading-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --process-steps-step-heading-padding: 12px 0 0 0;
   --process-steps-step-description-color: var(--color-base-darkest);
-  --process-steps-step-description-font-family: var(--font-family-open-sans, "Open Sans");
+  --process-steps-step-description-font-family: var(--font-family-open-sans);
   --process-steps-step-description-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
 
   /* RadioButtons component variables */
+  --radio-button-title-font-family: var(--font-family-open-sans);
+  --radio-button-title-font-weight: 700;
+  --radio-button-title-font-size: calc(var(--font-abstraction-open-sans-body-sm) * 1px);
+  --radio-button-title-line-height: "normal";
   --radio-button-options-gap: 16px;
   --radio-button-label-gap: 8px;
   --radio-button-color: var(--color-foundation-black);

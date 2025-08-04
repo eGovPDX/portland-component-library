@@ -7,6 +7,10 @@
 .radio-buttons-title {
   padding: 0;
   margin-bottom: 4px;
+  font-family: var(--radio-button-title-font-family, "Public Sans");
+  font-weight: var(--radio-button-title-font-weight, 700);
+  font-size: var(--radio-button-title-font-size, 16px);
+  line-height: var(--radio-button-title-line-height, "normal");
 }
 
 .radio-buttons-description {
