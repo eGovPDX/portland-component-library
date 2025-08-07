@@ -3,20 +3,44 @@ import PropTypes from 'prop-types';
 import './Table.css';
 
 /**
- * Table component based on USWDS Table
- * A table shows information in columns and rows
+ * Table Component
+ * 
+ * A responsive table component that displays information in columns and rows.
+ * Supports various display modes including bordered, striped, scrollable, and stacked layouts.
+ * The component automatically handles responsive behavior and can be configured for sorting.
  * 
  * @param {Object} props - Component props
  * @param {React.ReactNode} props.children - Table content (caption, thead, tbody)
- * @param {boolean} props.bordered - Whether to show borders (default: true)
- * @param {boolean} props.striped - Whether to show alternating row colors
- * @param {boolean} props.scrollable - Whether the table should be horizontally scrollable
- * @param {boolean} props.stickyHeader - Whether the header should stick to top when scrolling
- * @param {boolean} props.stacked - Whether to force stacked layout (auto on mobile)
- * @param {string} props.className - Additional CSS classes
- * @param {Object} props.sortConfig - Sorting configuration {column: string, direction: 'asc'|'desc'}
- * @param {Function} props.onSort - Callback when a sortable column is clicked
- * @returns {React.Element} Table component
+ * @param {boolean} [props.bordered=true] - Whether to show borders
+ * @param {boolean} [props.striped=false] - Whether to show alternating row colors
+ * @param {boolean} [props.scrollable=false] - Whether the table should be horizontally scrollable
+ * @param {boolean} [props.stickyHeader=false] - Whether the header should stick to top when scrolling
+ * @param {boolean} [props.stacked=false] - Whether to force stacked layout (auto on mobile)
+ * @param {string} [props.className=''] - Additional CSS classes
+ * @param {Object} [props.sortConfig=null] - Sorting configuration {column: string, direction: 'asc'|'desc'}
+ * @param {Function} [props.onSort=null] - Callback when a sortable column is clicked
+ * @returns {JSX.Element} Table component
+ * 
+ * @example
+ * ```jsx
+ * <Table bordered striped scrollable>
+ *   <TableCaption>Monthly Budget Summary</TableCaption>
+ *   <TableHeader>
+ *     <TableRow>
+ *       <TableHeaderCell>Category</TableHeaderCell>
+ *       <TableHeaderCell>Budgeted</TableHeaderCell>
+ *       <TableHeaderCell>Actual</TableHeaderCell>
+ *     </TableRow>
+ *   </TableHeader>
+ *   <TableBody>
+ *     <TableRow>
+ *       <TableCell>Housing</TableCell>
+ *       <TableCell>$1,200</TableCell>
+ *       <TableCell>$1,180</TableCell>
+ *     </TableRow>
+ *   </TableBody>
+ * </Table>
+ * ```
  */
 export const Table = ({
   children,
@@ -34,6 +58,10 @@ export const Table = ({
 
   // Check if we should use stacked view based on screen size
   useEffect(() => {
+    /**
+     * Determines if the table should use stacked layout
+     * @returns {void}
+     */
     const checkStackedView = () => {
       const shouldStack = stacked || window.innerWidth < 640;
       setIsStackedView(shouldStack);
@@ -84,6 +112,7 @@ export const Table = ({
     </table>
   );
 
+  // Wrap in scrollable container if needed and not in stacked view
   if (scrollable && !isStackedView) {
     return (
       <div className={`${baseClass}--scrollable`} tabIndex="0" role="region" aria-label="Scrollable table">
@@ -95,17 +124,43 @@ export const Table = ({
   return tableContent;
 };
 
+/**
+ * PropTypes for the Table component
+ */
 Table.propTypes = {
+  /** Table content including TableCaption, TableHeader, and TableBody components */
   children: PropTypes.node.isRequired,
+  /** Whether to display table borders */
   bordered: PropTypes.bool,
+  /** Whether to display alternating row colors for better readability */
   striped: PropTypes.bool,
+  /** Whether the table should be horizontally scrollable on smaller screens */
   scrollable: PropTypes.bool,
+  /** Whether the table header should stick to the top when scrolling vertically */
   stickyHeader: PropTypes.bool,
+  /** Whether to force stacked layout (automatically enabled on mobile devices) */
   stacked: PropTypes.bool,
+  /** Additional CSS classes to apply to the table */
   className: PropTypes.string,
+  /** Configuration object for table sorting */
   sortConfig: PropTypes.shape({
     column: PropTypes.string,
     direction: PropTypes.oneOf(['asc', 'desc'])
   }),
+  /** Callback function called when a sortable column header is clicked */
   onSort: PropTypes.func
+};
+
+/**
+ * Default props for the Table component
+ */
+Table.defaultProps = {
+  bordered: true,
+  striped: false,
+  scrollable: false,
+  stickyHeader: false,
+  stacked: false,
+  className: '',
+  sortConfig: null,
+  onSort: null
 }; 
