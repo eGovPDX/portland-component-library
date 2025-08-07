@@ -133,6 +133,28 @@
   background-color: var(--table-header-bg-color);
 }
 
+/* Ensure a visible top rule when header sticks and avoid double-thick borders */
+.usa-table--sticky-header {
+  /* Remove top margin so the sticky header aligns flush with the scroll container */
+  margin-top: 0;
+}
+
+.usa-table--sticky-header thead::before {
+  /* Draw a persistent top border that stays with the sticky header */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--table-border-width);
+  background-color: var(--table-border-color);
+}
+
+.usa-table--sticky-header thead th {
+  /* Let the pseudo-element provide the top line to prevent a doubled border */
+  border-top: 0;
+}
+
 /* Sortable columns */
 .usa-table__header-cell[role="columnheader button"] {
   cursor: pointer;
