@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import './Table.css';
 
@@ -55,6 +55,7 @@ export const Table = ({
   ...props
 }) => {
   const [isStackedView, setIsStackedView] = useState(false);
+  const [stackedHeaders, setStackedHeaders] = useState([]);
 
   // Check if we should use stacked view based on screen size
   useEffect(() => {
@@ -91,19 +92,21 @@ export const Table = ({
       {React.Children.map(children, child => {
         if (!React.isValidElement(child)) return child;
         
-        // Pass down sort props to TableHeader
+        // Pass down sort props and header callback to TableHeader
         if (child.type?.displayName === 'TableHeader' || child.props?.role === 'rowgroup') {
           return React.cloneElement(child, {
             sortConfig,
             onSort,
-            isStackedView
+            isStackedView,
+            onHeadersExtracted: setStackedHeaders
           });
         }
         
-        // Pass down stacked view to TableBody
+        // Pass down stacked view and headers to TableBody
         if (child.type?.displayName === 'TableBody' || child.props?.role === 'rowgroup') {
           return React.cloneElement(child, {
-            isStackedView
+            isStackedView,
+            headers: stackedHeaders
           });
         }
         
