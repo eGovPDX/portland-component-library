@@ -5,8 +5,9 @@ import {
   TableHeaderCell, 
   TableBody, 
   TableRow, 
-  TableCell 
+  TableCell, 
 } from './index';
+import { Tag } from '../Tag';
 
 export default {
   title: 'Components/Table',
@@ -255,28 +256,6 @@ export const StickyHeader = () => {
   );
 };
 
-// Stacked table (mobile view)
-export const Stacked = () => (
-  <Table stacked>
-    <TableHeader>
-      <TableRow>
-        <TableHeaderCell>Document title</TableHeaderCell>
-        <TableHeaderCell>Description</TableHeaderCell>
-        <TableHeaderCell>Year</TableHeaderCell>
-      </TableRow>
-    </TableHeader>
-    <TableBody headers={['Document title', 'Description', 'Start date']}>
-      {sampleData.map((item) => (
-        <TableRow key={item.id}>
-          <TableCell header scope="row">{item.title}</TableCell>
-          <TableCell>{item.description}</TableCell>
-          <TableCell>{item.year}</TableCell>
-        </TableRow>
-      ))}
-    </TableBody>
-  </Table>
-);
-
 // Complex table with all features
 export const ComplexExample = () => {
   const [data, setData] = useState(sampleData);
@@ -326,15 +305,7 @@ export const ComplexExample = () => {
               {item.year}
             </TableCell>
             <TableCell>
-              <span style={{ 
-                padding: '2px 8px', 
-                borderRadius: '4px',
-                color: index % 2 === 0 ? '#004731' : '#564d1f',
-                backgroundColor: index % 2 === 0 ? '#d4f4dd' : '#fef2c0',
-                fontSize: '14px'
-              }}>
-                {index % 2 === 0 ? 'Archived' : 'Active'}
-              </span>
+              <Tag>{index % 2 === 0 ? 'Archived' : 'Active'}</Tag>
             </TableCell>
           </TableRow>
         ))}
@@ -342,30 +313,3 @@ export const ComplexExample = () => {
     </Table>
   );
 };
-
-// Responsive table (automatically stacks on mobile)
-export const Responsive = () => (
-  <>
-    <p style={{ marginBottom: '16px', fontStyle: 'italic' }}>
-      Resize your browser window to see the table stack on mobile screens (&lt; 640px)
-    </p>
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHeaderCell>Document title</TableHeaderCell>
-          <TableHeaderCell>Description</TableHeaderCell>
-          <TableHeaderCell>Year</TableHeaderCell>
-        </TableRow>
-      </TableHeader>
-      <TableBody headers={['Document title', 'Description', 'Start date']}>
-        {sampleData.map((item) => (
-          <TableRow key={item.id}>
-            <TableCell header scope="row">{item.title}</TableCell>
-            <TableCell>{item.description}</TableCell>
-            <TableCell>{item.year}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </>
-); 
