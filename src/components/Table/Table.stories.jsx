@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { 
   Table, 
-  TableCaption,
   TableHeader, 
   TableHeaderCell, 
   TableBody, 
   TableRow, 
   TableCell 
 } from './index';
-import { Button } from '../Button';
 
 export default {
   title: 'Components/Table',
@@ -53,7 +51,6 @@ const sampleData = [
 // Default bordered table
 export const Default = () => (
   <Table>
-    <TableCaption>Bordered table</TableCaption>
     <TableHeader>
       <TableRow>
         <TableHeaderCell>Document title</TableHeaderCell>
@@ -76,7 +73,6 @@ export const Default = () => (
 // Borderless table
 export const Borderless = () => (
   <Table bordered={false}>
-    <TableCaption>Borderless table</TableCaption>
     <TableHeader>
       <TableRow>
         <TableHeaderCell>Document title</TableHeaderCell>
@@ -99,7 +95,6 @@ export const Borderless = () => (
 // Striped table
 export const Striped = () => (
   <Table striped>
-    <TableCaption>Striped table</TableCaption>
     <TableHeader>
       <TableRow>
         <TableHeaderCell>Document title</TableHeaderCell>
@@ -138,7 +133,6 @@ export const Sortable = () => {
 
   return (
     <Table sortConfig={sortConfig} onSort={handleSort}>
-      <TableCaption>Sortable table - Click column headers to sort</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHeaderCell sortKey="title">Document title</TableHeaderCell>
@@ -188,7 +182,6 @@ export const HorizontallyScrollable = () => {
         Try resizing your browser window to see the responsive behavior.
       </p>
       <Table scrollable>
-        <TableCaption>Scrollable table - Scroll horizontally to see all columns, stacks on mobile</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHeaderCell>Document title</TableHeaderCell>
@@ -241,7 +234,6 @@ export const StickyHeader = () => {
   return (
     <div style={{ height: '400px', overflow: 'auto' }}>
       <Table stickyHeader>
-        <TableCaption>Sticky header table - Scroll down to see header stick</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHeaderCell>Document title</TableHeaderCell>
@@ -266,7 +258,6 @@ export const StickyHeader = () => {
 // Stacked table (mobile view)
 export const Stacked = () => (
   <Table stacked>
-    <TableCaption>Stacked table - Mobile responsive view</TableCaption>
     <TableHeader>
       <TableRow>
         <TableHeaderCell>Document title</TableHeaderCell>
@@ -310,7 +301,6 @@ export const ComplexExample = () => {
       sortConfig={sortConfig} 
       onSort={handleSort}
     >
-      <TableCaption>Complex table with multiple features</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHeaderCell sortKey="title">Document title</TableHeaderCell>
@@ -360,7 +350,6 @@ export const Responsive = () => (
       Resize your browser window to see the table stack on mobile screens (&lt; 640px)
     </p>
     <Table>
-      <TableCaption>Responsive table - Automatically stacks on mobile</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHeaderCell>Document title</TableHeaderCell>
