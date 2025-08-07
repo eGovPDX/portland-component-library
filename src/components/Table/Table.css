@@ -26,7 +26,7 @@
 .usa-table__header-cell {
   font-weight: var(--table-header-font-weight);
   text-align: left;
-  background-color: var(--table-header-bg-color);
+  background-color: transparent;
   color: var(--table-header-text-color);
   padding: var(--table-cell-padding);
   border: var(--table-border-width) solid var(--table-border-color);
@@ -86,6 +86,10 @@
 .usa-table--striped tbody tr:nth-child(odd) .usa-table__cell {
   background-color: transparent;
   color: var(--table-stripe-text-color);
+}
+
+.usa-table--striped thead tr th {
+  background-color: var(--table-stripe-bg-color);
 }
 
 /* Scrollable variant */
@@ -296,5 +300,17 @@
     padding: revert;
     margin: revert;
     background-color: revert;
+  }
+
+  /* On larger screens, keep thead background but make header cells transparent unless striped */
+  .usa-table:not(.usa-table--striped):not(.usa-table--borderless) thead {
+    background-color: var(--table-header-bg-color);
+  }
+  .usa-table--borderless:not(.usa-table--striped) thead {
+    background-color: var(--table-header-bg-color);
+  }
+  .usa-table:not(.usa-table--striped) thead th,
+  .usa-table:not(.usa-table--striped) thead .usa-table__header-cell {
+    background-color: transparent;
   }
 } 
