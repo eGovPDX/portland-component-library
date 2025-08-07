@@ -302,4 +302,45 @@ describe('Responsive behavior', () => {
     const table = screen.getByRole('table');
     expect(table).not.toHaveClass('usa-table--stacked');
   });
+
+  test('displays headers above data cells in stacked view', () => {
+    // Set mobile viewport
+    window.innerWidth = 500;
+    
+    render(
+      <Table stacked>
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Document title</TableHeaderCell>
+            <TableHeaderCell>Description</TableHeaderCell>
+            <TableHeaderCell>Year</TableHeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>Declaration of Independence</TableCell>
+            <TableCell>Statement adopted by the Continental Congress</TableCell>
+            <TableCell>1776</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    );
+    
+    // Trigger resize event to enable stacked view
+    fireEvent(window, new Event('resize'));
+    
+    // Check that headers are displayed in stacked layout
+    expect(screen.getByText('Document title')).toBeInTheDocument();
+    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.getByText('Year')).toBeInTheDocument();
+    
+    // Check that data cells are displayed
+    expect(screen.getByText('Declaration of Independence')).toBeInTheDocument();
+    expect(screen.getByText('Statement adopted by the Continental Congress')).toBeInTheDocument();
+    expect(screen.getByText('1776')).toBeInTheDocument();
+    
+    // Verify stacked layout structure
+    const table = screen.getByRole('table');
+    expect(table).toHaveClass('usa-table--stacked');
+  });
 }); 

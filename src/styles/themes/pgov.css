@@ -1060,6 +1060,7 @@
   --table-stacked-row-gap: calc(var(--spacing-md) * 1px);
   --table-stacked-header-padding: calc(var(--spacing-sm) * 1px) calc(var(--spacing-md) * 1px) calc(var(--spacing-2xs) * 1px);
   --table-stacked-cell-padding: 0 calc(var(--spacing-md) * 1px) calc(var(--spacing-sm) * 1px);
+  --table-row-border-top: calc(var(--border-lg) * 1px) solid var(--color-foundation-black);
  
 
   /* Tag component variables */

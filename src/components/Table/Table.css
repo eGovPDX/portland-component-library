@@ -13,6 +13,7 @@
 
 /* Table caption */
 .usa-table__caption {
+  display: flex;
   font-size: var(--table-caption-font-size);
   font-weight: var(--table-caption-font-weight);
   margin-bottom: var(--table-caption-margin-bottom);
@@ -25,7 +26,7 @@
 .usa-table__header-cell {
   font-weight: var(--table-header-font-weight);
   text-align: left;
-  background-color: var(--table-header-bg-color);
+  background-color: transparent;
   color: var(--table-header-text-color);
   padding: var(--table-cell-padding);
   border: var(--table-border-width) solid var(--table-border-color);
@@ -65,6 +66,12 @@
 .usa-table--borderless tbody tr:last-child .usa-table__cell {
   border-bottom: var(--table-border-width) solid var(--table-border-color);
 }
+@media (max-width: 640px) {
+  .usa-table--borderless tbody tr .usa-table__cell--stacked {
+    border-left: 0;
+    border-right: 0;
+  }
+}
 
 /* Striped variant */
 .usa-table--striped tbody tr:nth-child(even) td,
@@ -79,6 +86,10 @@
 .usa-table--striped tbody tr:nth-child(odd) .usa-table__cell {
   background-color: transparent;
   color: var(--table-stripe-text-color);
+}
+
+.usa-table--striped thead tr th {
+  background-color: var(--table-stripe-bg-color);
 }
 
 /* Scrollable variant */
@@ -120,6 +131,28 @@
   position: sticky;
   top: var(--table-sticky-top-offset);
   background-color: var(--table-header-bg-color);
+}
+
+/* Ensure a visible top rule when header sticks and avoid double-thick borders */
+.usa-table--sticky-header {
+  /* Remove top margin so the sticky header aligns flush with the scroll container */
+  margin-top: 0;
+}
+
+.usa-table--sticky-header thead::before {
+  /* Draw a persistent top border that stays with the sticky header */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--table-border-width);
+  background-color: var(--table-border-color);
+}
+
+.usa-table--sticky-header thead th {
+  /* Let the pseudo-element provide the top line to prevent a doubled border */
+  border-top: 0;
 }
 
 /* Sortable columns */
@@ -187,41 +220,93 @@
   }
 
   .usa-table--stacked tr {
-    border: var(--table-border-width) solid var(--table-border-color);
-    border-bottom-width: var(--table-stacked-separator-width);
-    margin-bottom: var(--table-stacked-row-gap);
+    border-bottom: 0;
+    margin-bottom: 0;
+    border-top: var(--table-row-border-top);
   }
-
+  
   .usa-table--stacked .usa-table__row--stacked {
-    border: var(--table-border-width) solid var(--table-border-color);
-    border-bottom-width: var(--table-stacked-separator-width);
-    margin-bottom: var(--table-stacked-row-gap);
+    margin-bottom: 0;
   }
-
+  
   .usa-table--stacked .usa-table__cell--stacked {
-    border: none;
+    border: 0;
     padding: 0;
+    margin: 0;
+  }
+  .usa-table--stacked .usa-table__cell-group--stacked:first-child {
+    border-top: 0;
+  }
+  .usa-table .usa-table--borderless .usa-table--stacked {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
   }
 
   .usa-table--stacked .usa-table__cell-group--stacked {
     display: flex;
     flex-direction: column;
-    border-bottom: var(--table-border-width) solid var(--table-border-color);
+    margin-bottom: 0;
   }
-
-  .usa-table--stacked .usa-table__cell-group--stacked:last-child {
-    border-bottom: none;
+  
+  .usa-table--stacked .usa-table__cell-group--stacked:not(:last-child) {
+    border-bottom: var(--table-border-width) solid var(--table-border-color);
   }
 
   .usa-table--stacked .usa-table__header--stacked {
     font-weight: var(--table-header-font-weight);
-    padding: var(--table-stacked-header-padding);
+    padding: var(--table-stacked-header-padding, 12px 16px 4px 16px);
     background-color: var(--table-header-bg-color);
     color: var(--table-header-text-color);
+    border-bottom: 0;
+    font-size: var(--table-font-size);
+    line-height: var(--table-line-height);
   }
 
   .usa-table--stacked .usa-table__cell-content--stacked {
-    padding: var(--table-stacked-cell-padding);
+    padding: var(--table-stacked-cell-padding, 0 16px 12px 16px);
+    background-color: var(--table-cell-bg-color);
+    font-size: var(--table-font-size);
+    line-height: var(--table-line-height);
+  }
+
+  /* Borderless variant in stacked view */
+  .usa-table--stacked.usa-table--borderless .usa-table__cell-group--stacked {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .usa-table--stacked.usa-table--borderless .usa-table__header--stacked {
+    background-color: var(--table-borderless-bg-color);
+    border-top: 0;
+  }
+
+  /* Remove thick top border from the first stacked header in borderless tables */
+  .usa-table--stacked.usa-table--borderless .usa-table__cell-group--stacked:first-child .usa-table__header--stacked {
+    border-top: 0;
+  }
+
+  /* Ensure no top border on stacked data cells in borderless tables */
+  .usa-table--stacked.usa-table--borderless td.usa-table__cell--stacked {
+    border-top: 0;
+  }
+
+  .usa-table--stacked.usa-table--borderless .usa-table__cell-content--stacked {
+    background-color: var(--table-borderless-bg-color);
+  }
+
+  /* Remove default thick top border on the very first cell for borderless stacked tables */
+  .usa-table--stacked.usa-table--borderless tr:first-child td:first-child,
+  .usa-table--stacked.usa-table--borderless tr:first-child th:first-child,
+  .usa-table--stacked-header.usa-table--borderless tr:first-child td:first-child,
+  .usa-table--stacked-header.usa-table--borderless tr:first-child th:first-child {
+    border-top: 0;
+  }
+
+  /* Default (non-borderless) stacked cells: ensure side borders on td */
+  .usa-table--stacked:not(.usa-table--borderless) tr td.usa-table__cell--stacked {
+    border-left: var(--table-border-width) solid var(--table-border-color);
+    border-right: var(--table-border-width) solid var(--table-border-color);
   }
 }
 
@@ -237,5 +322,17 @@
     padding: revert;
     margin: revert;
     background-color: revert;
+  }
+
+  /* On larger screens, keep thead background but make header cells transparent unless striped */
+  .usa-table:not(.usa-table--striped):not(.usa-table--borderless) thead {
+    background-color: var(--table-header-bg-color);
+  }
+  .usa-table--borderless:not(.usa-table--striped) thead {
+    background-color: var(--table-header-bg-color);
+  }
+  .usa-table:not(.usa-table--striped) thead th,
+  .usa-table:not(.usa-table--striped) thead .usa-table__header-cell {
+    background-color: transparent;
   }
 } 
