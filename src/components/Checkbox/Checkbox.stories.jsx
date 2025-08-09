@@ -105,7 +105,7 @@ WithDescriptions.args = {
     { value: 'weekly-digest', labelText: 'Weekly Digest', labelDescription: 'This is optional text that can be used to describe the label in more detail.' },
     { value: 'breaking-news', labelText: 'Breaking News Alerts', labelDescription: 'This is optional text that can be used to describe the label in more detail.' },
     { value: 'community-events', labelText: 'Community Events', labelDescription: 'This is optional text that can be used to describe the label in more detail.' },
-    { value: 'job-postings', labelText: 'Job Postings', labelDescription: 'This is optional text that can be used to describe the label in more detail.' },
+    { value: 'job-postings', labelText: 'Job Postings', labelDescription: 'This option is disabled.', disabled: true },
   ],
   selectedValues: ['weekly-digest', 'community-events'],
 };

@@ -163,7 +163,7 @@ input[type="radio"]:not(:disabled):focus {
 }
 
 .error .radio-buttons-legend {
-  color: var(--radio-button-error-text-color, #B50909);
+  /* color: var(--radio-button-error-text-color, #B50909); */
 }
 
 .error .options-wrapper {
