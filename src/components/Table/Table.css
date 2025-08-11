@@ -264,7 +264,7 @@
   .usa-table--stacked .usa-table__header--stacked {
     font-weight: var(--table-header-font-weight);
     padding: var(--table-stacked-header-padding, 12px 16px 4px 16px);
-    background-color: var(--table-header-bg-color);
+    background-color: var(--table-header-bg-color-mobile);
     color: var(--table-header-text-color);
     border-bottom: 0;
     font-size: var(--table-font-size);
@@ -315,6 +315,16 @@
   .usa-table--stacked:not(.usa-table--borderless) tr td.usa-table__cell--stacked {
     border-left: var(--table-border-width) solid var(--table-border-color);
     border-right: var(--table-border-width) solid var(--table-border-color);
+  }
+
+  /* Force transparent stacked headers on mobile across all variants (striped, borderless, etc.) */
+  .usa-table--stacked .usa-table__header--stacked {
+    background-color: transparent !important;
+  }
+
+  /* In striped tables, prevent the TD wrapper from applying stripe bg in stacked view */
+  .usa-table--stacked.usa-table--striped tbody tr:nth-child(even) td.usa-table__cell--stacked {
+    background-color: transparent;
   }
 }
 
