@@ -53,6 +53,7 @@
 
 .usa-card__body p {
   margin: 0;
+  padding: 0;
   color: var(--card-text-color, #1B1B1B);
   font-family: var(--card-font-family, "Public Sans");
   font-size: var(--card-font-size, 16px);
