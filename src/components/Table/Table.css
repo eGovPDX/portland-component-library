@@ -121,6 +121,14 @@
 }
 
 /* Sticky header variant */
+.usa-table--sticky-header {
+  border: none;
+}
+@media (min-width: 640px) {
+  .usa-table--sticky-header {
+    border-right: var(--table-border-width) solid var(--table-border-color);
+  }
+}
 .usa-table--sticky-header thead {
   position: sticky;
   top: var(--table-sticky-top-offset);
