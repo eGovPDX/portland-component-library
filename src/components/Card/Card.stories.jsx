@@ -28,16 +28,6 @@ export default {
     },
     text: {
       control: 'text',
-    },
-    layout: 'centered',
-  },
-  argTypes: {
-    heading: {
-      control: 'text',
-      description: 'The heading text of the card'
-    },
-    text: {
-      control: 'text',
       description: 'The body text of the card'
     },
     actionButton: {
