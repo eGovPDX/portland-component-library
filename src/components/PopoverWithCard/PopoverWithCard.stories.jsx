@@ -48,8 +48,10 @@ export const WithComplexContent = Template.bind({});
 WithComplexContent.args = {
   children: <a href="#">Hover me</a>,
   cardProps: {
+    style: { maxWidth: '300px' },
     heading: 'Complex Content',
     text: 'This popover contains multiple elements and formatting.',
+    media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
     children: (
       <ul style={{ margin: '0.5rem 0 0 0', paddingLeft: '1.5rem' }}>
         <li>List item 1</li>
