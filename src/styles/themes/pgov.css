@@ -690,6 +690,7 @@
   --modal-transition-duration: 0.15s;
   --modal-max-width: var(--breakpoints-mobile-lg);
   --modal-lg-max-width: var(--breakpoints-tablet-lg);
+  --modal-heading-font-size: calc(var(--font-abstraction-open-sans-header-lg) * 1px);
   --modal-content-padding: calc(var(--spacing-lg) * 1px);
   --modal-content-padding-mobile: calc(var(--spacing-md) * 1px);
   --modal-bg: var(--color-foundation-white);

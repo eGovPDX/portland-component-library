@@ -106,7 +106,7 @@
 .usa-modal__close {
   background: transparent;
   border: none;
-  padding: var(--modal-close-padding, 0.5rem);
+  padding: 4px;
   cursor: pointer;
   color: var(--modal-close-color, #71767a);
   font-size: var(--modal-close-size, 1.5rem);
@@ -147,12 +147,20 @@
   margin-top: 1rem;
 }
 
+.usa-modal__card .usa-card__header .usa-card__heading {
+  font-size: var(--modal-heading-font-size, 1.25rem);
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
 .usa-modal__card .usa-card__body {
   padding: 0.5rem 0;
 }
 
-.usa-card__body>:first-child {
-  padding: 0.5rem;
+.usa-card__body>:first-child, .usa-card__header>:first-child {
+  margin-top: 0;
+  padding-top: 4px;
 }
 
 .usa-card__body>:last-child, .usa-card__header>:last-child {
@@ -161,7 +169,7 @@
 
 /* Card footer adjustments for modal */
 .usa-modal__card .usa-card__footer {
-  margin-top: var(--modal-footer-gap, 1.5rem);
+  margin-top: 16px;
   padding: 0.5rem 0;
 }
 
@@ -207,6 +215,14 @@
   
   .usa-modal__card .usa-card__header {
     padding-right: var(--modal-header-padding-right-mobile, 2.5rem);
+  }
+
+  .usa-modal__card .usa-card__footer .usa-button-group {
+    width: 100%;
+  }
+  .usa-modal__card .usa-card__footer .usa-button-group button {
+    width: 100%;
+    min-height: 44px;
   }
 }
 

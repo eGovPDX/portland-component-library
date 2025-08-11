@@ -14,59 +14,13 @@ export default {
     },
     layout: 'centered',
   },
-  argTypes: {
-    heading: {
-      control: 'text',
-      description: 'The heading text of the card'
-    },
-    text: {
-      control: 'text',
-//         component: `
-// Cards contain content and actions about a single subject. They act as an entry point to more detailed information.
-
-// ## Usage
-// \`\`\`jsx
-// import { Card } from '@portland/component-library';
-
-// // Default card
-// <Card heading="Title" text="Content" />
-
-// // Card with media
-// <Card 
-//   heading="Title" 
-//   text="Content" 
-//   media="/path/to/image.jpg" 
-// />
-
-// // Media with header first
-// <Card 
-//   heading="Title" 
-//   text="Content" 
-//   media="/path/to/image.jpg"
-//   mediaFirst={true}
-// />
-
-// // Inset media
-// <Card 
-//   heading="Title" 
-//   text="Content" 
-//   media="/path/to/image.jpg"
-//   mediaInset={true}
-// />
-
-// // Exdent media
-// <Card 
-//   heading="Title" 
-//   text="Content" 
-//   media="/path/to/image.jpg"
-//   mediaExdent={true}
-// />
-// \`\`\`
-//         `
-//       }
-    },
-    layout: 'centered',
-  },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+        <Story />
+      </div>
+    ),
+  ],
   argTypes: {
     heading: {
       control: 'text',

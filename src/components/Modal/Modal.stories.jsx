@@ -17,11 +17,7 @@ export default {
       control: 'boolean',
       description: 'Whether the modal is open'
     },
-    size: {
-      control: 'select',
-      options: ['default', 'large'],
-      description: 'Size of the modal'
-    },
+    size: { control: { disable: true }},
     forcedAction: {
       control: 'boolean',
       description: 'Whether user must take action (cannot close with escape or backdrop click)'
