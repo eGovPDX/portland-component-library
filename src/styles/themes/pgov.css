@@ -1026,6 +1026,7 @@
   --table-caption-text-color: var(--color-foundation-black);
   /* Table header */
   --table-header-bg-color: var(--color-base-lightest);
+  --table-header-bg-color-mobile: transparent;
   --table-header-text-color: var(--color-foundation-black);
   --table-header-font-weight: 700;
   --table-header-hover-bg-color: var(--color-base-lighter);
