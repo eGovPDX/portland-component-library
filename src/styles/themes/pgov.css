@@ -786,7 +786,7 @@
   --pagination-button-border-radius: calc(var(--radius-md) * 1px);
   --pagination-button-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-button-font-weight: 400;
-  --pagination-button-text-decoration: underline;
+  --pagination-button-text-decoration: none;
   --pagination-button-transition: all 0.15s ease-in-out;
   
   /* Page number button hover states */
@@ -811,6 +811,7 @@
   --pagination-button-current-color: var(--color-foundation-white);
   --pagination-button-current-bg-color: var(--color-foundation-black);
   --pagination-button-current-border-color: var(--color-foundation-black);
+  --pagination-button-current-font-weight: 700;
   
   /* Ellipsis styles */
   --pagination-ellipsis-color: var(--color-base-medium);

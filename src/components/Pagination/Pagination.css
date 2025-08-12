@@ -145,6 +145,7 @@
   border-color: var(--pagination-button-current-border-color);
   cursor: default;
   pointer-events: none;
+  font-weight: var(--pagination-button-current-font-weight, 700);
 }
 
 /* Ellipsis */
