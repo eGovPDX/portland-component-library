@@ -334,30 +334,4 @@ Pagination.propTypes = {
  * 
  * @typedef {PageItem | EllipsisItem} PaginationItem
  * 
- * Future TypeScript interfaces:
- * 
- * interface PaginationProps {
- *   currentPage: number;
- *   totalPages: number;
- *   onPageChange: (page: number) => void;
- *   maxVisiblePages?: number;
- *   showEllipsis?: boolean;
- *   ariaLabel?: string;
- *   previousText?: string;
- *   nextText?: string;
- *   className?: string;
- * }
- * 
- * interface PageItem {
- *   type: 'page';
- *   value: number;
- *   isCurrent: boolean;
- * }
- * 
- * interface EllipsisItem {
- *   type: 'ellipsis';
- *   value: '...';
- * }
- * 
- * type PaginationItem = PageItem | EllipsisItem;
  */ 
