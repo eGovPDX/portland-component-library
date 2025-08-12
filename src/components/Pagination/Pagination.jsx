@@ -1,19 +1,3 @@
-/**
- * @fileoverview Pagination component for navigating paginated content.
- * 
- * This component provides USWDS-compliant pagination with intelligent ellipsis
- * placement, accessibility features, and responsive design. It uses a JavaScript
- * generator function for efficient page sequence calculation.
- * 
- * @author Portland Component Library
- * @version 1.0.0
- * @since 1.0.0
- * 
- * @todo Consider extracting TypeScript types when migrating to TypeScript
- * @todo Add keyboard navigation enhancements (arrow keys, home/end)
- * @todo Consider adding a "Go to page" input for large datasets
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -128,7 +112,7 @@ export const Pagination = ({
   maxVisiblePages = 7,
   showEllipsis = true,
   ariaLabel = 'Pagination',
-  previousText = 'Previous',
+  previousText = 'Back',
   nextText = 'Next',
   className,
   ...props
