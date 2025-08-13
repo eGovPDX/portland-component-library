@@ -144,6 +144,11 @@ export const Pagination = ({
   firstText = 'First',
   lastText = 'Last',
   responsive = true,
+  showStatus = true,
+  resultsPerPage,
+  totalResults,
+  statusPosition = 'before',
+  showStatusText = false,
   className,
   ...props
 }) => {
@@ -279,6 +284,17 @@ export const Pagination = ({
     }
   };
 
+  const statusText = useMemo(() => {
+    if (!showStatus) return null;
+    const hasResultCounts = typeof resultsPerPage === 'number' && typeof totalResults === 'number' && resultsPerPage > 0 && totalResults > 0;
+    if (hasResultCounts) {
+      const start = (currentPage - 1) * resultsPerPage + 1;
+      const end = Math.min(currentPage * resultsPerPage, totalResults);
+      return `Showing results ${start} - ${end} of ${totalResults}`;
+    }
+    return `Page ${currentPage} of ${totalPages}`;
+  }, [showStatus, resultsPerPage, totalResults, currentPage, totalPages]);
+
   return (
     <nav
       aria-label={ariaLabel}
@@ -286,6 +302,9 @@ export const Pagination = ({
       ref={navRef}
       {...props}
     >
+      {showStatusText && statusText && statusPosition === 'before' && (
+        <div className="usa-pagination__status" aria-live="polite">{statusText}</div>
+      )}
       <ul className="usa-pagination__list" ref={listRef}>
         {showFirstLast && canGoPrevious && (
           <li className="usa-pagination__item usa-pagination__arrow">
@@ -393,6 +412,9 @@ export const Pagination = ({
           </li>
         )}
       </ul>
+      {statusText && statusPosition === 'after' && (
+        <div className="usa-pagination__status" aria-live="polite">{statusText}</div>
+      )}
     </nav>
   );
 };
@@ -493,6 +515,30 @@ Pagination.propTypes = {
    * @default true
    */
   responsive: PropTypes.bool,
+  
+  /**
+   * Shows status text indicating current page or results range.
+   * When resultsPerPage and totalResults are provided, shows "Showing results X - Y of Z".
+   * Otherwise shows "Page current of total".
+   * @type {boolean}
+   * @default true
+   */
+  showStatus: PropTypes.bool,
+
+  /**
+   * Controls whether the computed status text is rendered at all.
+   * Useful when you want status text available for screen readers but hidden visually via your own layout logic.
+   * @type {boolean}
+   * @default true
+   */
+  showStatusText: PropTypes.bool,
+
+  /** Number of results per page. When used with totalResults, enables results summary status. */
+  resultsPerPage: PropTypes.number,
+  /** Total number of results. When used with resultsPerPage, enables results summary status. */
+  totalResults: PropTypes.number,
+  /** Where to render the status text relative to the controls. 'before' or 'after'. */
+  statusPosition: PropTypes.oneOf(['before', 'after']),
   
   /** 
    * Additional CSS class names to apply to the root navigation element.

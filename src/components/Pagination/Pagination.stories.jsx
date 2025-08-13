@@ -59,6 +59,27 @@ export default {
     responsive: {
       control: 'boolean',
       description: 'Auto-fit number of visible pages to container width'
+    },
+    showStatus: {
+      control: 'boolean',
+      description: 'Compute status text (current page or results range)'
+    },
+    showStatusText: {
+      control: 'boolean',
+      description: 'Render the computed status text'
+    },
+    resultsPerPage: {
+      control: 'number',
+      description: 'Results per page (enables results summary when totalResults provided)'
+    },
+    totalResults: {
+      control: 'number',
+      description: 'Total number of results (enables results summary when resultsPerPage provided)'
+    },
+    statusPosition: {
+      control: 'radio',
+      options: ['before', 'after'],
+      description: 'Where to render the status text relative to the controls'
     }
   }
 };
@@ -139,38 +160,24 @@ export const ManyPages = {
     totalPages: 100,
     maxVisiblePages: 7,
     responsive: true,
-    showFirstLast: true
+    showFirstLast: true,
+    showStatusText: false
   }
 };
 
 // Example implementation with state management
 export const WithStateManagement = {
-  render: () => {
-    const [currentPage, setCurrentPage] = useState(5);
-    const [resultsPerPage] = useState(10);
-    const totalResults = 247;
-    const totalPages = Math.ceil(totalResults / resultsPerPage);
-
-    const handlePageChange = (page) => {
-      setCurrentPage(page);
-      // In a real app, you would fetch new data here
-      console.log(`Fetching page ${page} with ${resultsPerPage} results per page`);
-    };
-
-    return (
-      <div style={{ width: '100%', padding: '20px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ marginBottom: '8px', fontSize: '15.63px', color: '#666' }}>
-          Showing results {((currentPage - 1) * resultsPerPage) + 1} - {Math.min(currentPage * resultsPerPage, totalResults)} of {totalResults}
-        </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-          maxVisiblePages={7}
-          responsive
-        />
-      </div>
-    );
+  render: InteractiveTemplate,
+  args: {
+    currentPage: 5,
+    totalPages: Math.ceil(247 / 10),
+    maxVisiblePages: 7,
+    responsive: true,
+    showStatus: true,
+    showStatusText: true,
+    resultsPerPage: 10,
+    totalResults: 247,
+    statusPosition: 'before'
   },
   parameters: {
     docs: {

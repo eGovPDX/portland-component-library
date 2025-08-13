@@ -1,5 +1,9 @@
 /* Base pagination styles */
 .usa-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: var(--pagination-font-family);
   font-size: var(--pagination-font-size);
   margin: 0;
@@ -20,8 +24,15 @@
   align-items: center;
   flex-wrap: nowrap;
   max-width: 100%;
+  min-height: var(--pagination-container-min-height, var(--pagination-button-size, 48px));
   overflow-x: hidden;
   overflow-y: visible;
+}
+
+.usa-pagination__status {
+  margin: var(--pagination-status-margin, 0 0 8px 0);
+  font-size: var(--pagination-status-font-size, 15.63px);
+  color: var(--pagination-status-color, #666);
 }
 
 .usa-pagination__item {
