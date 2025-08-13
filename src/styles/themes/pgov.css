@@ -753,7 +753,7 @@
   --pagination-link-font-weight: 400;
   --pagination-link-text-decoration: underline;
   --pagination-link-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-  --pagination-link-text-margin: 0;
+  --pagination-link-text-margin: 0 4px;
   --pagination-link-text-spacing: calc(var(--spacing-xs) * 1px);
   
   /* Navigation link hover states */
@@ -776,8 +776,8 @@
   --pagination-link-disabled-bg-color: transparent;
   
   /* Icon styles */
-  --pagination-icon-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
-  --pagination-icon-size-mobile: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --pagination-icon-size: 12px;
+  --pagination-icon-size-mobile: 12px;
   --pagination-icon-spacing: calc(var(--spacing-2xs) * 1px);
   
   /* Button and link styles */
