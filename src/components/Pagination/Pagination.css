@@ -29,6 +29,8 @@
   overflow-y: visible;
 }
 
+/* Removed scroll overflow behavior; pagination stays within container using responsive calculation */
+
 .usa-pagination__status {
   margin: var(--pagination-status-margin, 0 0 8px 0);
   font-size: var(--pagination-status-font-size, 15.63px);

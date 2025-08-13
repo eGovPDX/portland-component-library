@@ -16,6 +16,7 @@ import './Pagination.css';
  * @param {number} [maxVisiblePages=7] - Maximum number of page buttons to show
  * @param {boolean} [includeEdgeAnchors=true] - When true, always include first and last page numbers as anchors
  * @param {boolean} [includeEllipsis=true] - When true, include ellipsis items when truncation occurs
+ * @param {boolean} [preferLeadingNumber=false] - When true, replace the leading ellipsis with page 2
  * @yields {Object} Page or ellipsis item
  * @yields {Object} item.type - Either 'page' or 'ellipsis'
  * @yields {number|string} item.value - Page number (for 'page') or '...' (for 'ellipsis')
@@ -31,7 +32,7 @@ import './Pagination.css';
  * // Yields: [1, 2, 3, 4, 5] (no ellipsis needed)
  * const sequence = Array.from(generatePageSequence(3, 5, 7));
  */
-function* generatePageSequence(currentPage, totalPages, maxVisiblePages = 7, includeEdgeAnchors = true, includeEllipsis = true) {
+function* generatePageSequence(currentPage, totalPages, maxVisiblePages = 7, includeEdgeAnchors = true, includeEllipsis = true, preferLeadingNumber = false) {
   if (totalPages <= maxVisiblePages) {
     // Show all pages if total fits within max visible
     for (let i = 1; i <= totalPages; i++) {
@@ -44,13 +45,22 @@ function* generatePageSequence(currentPage, totalPages, maxVisiblePages = 7, inc
     // Always show first page
     yield { type: 'page', value: 1, isCurrent: currentPage === 1 };
 
-    const sidePages = Math.floor((maxVisiblePages - 3) / 2); // Reserve space for first, last, and ellipsis
-    const startPage = Math.max(2, currentPage - sidePages);
-    const endPage = Math.min(totalPages - 1, currentPage + sidePages);
+    // Bias the window toward the start so we avoid a leading ellipsis when possible
+    const windowSize = Math.max(3, maxVisiblePages - 1); // reserve space for last and potential single ellipsis
+    let startPage = Math.max(2, currentPage - Math.floor((windowSize - 1) / 2));
+    let endPage = startPage + windowSize - 1;
+    if (endPage > totalPages - 1) {
+      endPage = totalPages - 1;
+      startPage = Math.max(2, endPage - windowSize + 1);
+    }
 
-    // Show ellipsis after first page if needed
-    if (includeEllipsis && startPage > 2) {
-      yield { type: 'ellipsis', value: '...' };
+    // Show ellipsis after first page if needed (or replace with page 2 when preferred)
+    if (startPage > 2) {
+      if (preferLeadingNumber) {
+        yield { type: 'page', value: 2, isCurrent: currentPage === 2 };
+      } else if (includeEllipsis) {
+        yield { type: 'ellipsis', value: '...' };
+      }
     }
 
     // Show pages around current page
@@ -79,9 +89,7 @@ function* generatePageSequence(currentPage, totalPages, maxVisiblePages = 7, inc
     start = Math.max(1, end - windowSize + 1);
   }
 
-  if (includeEllipsis && start > 1) {
-    yield { type: 'ellipsis', value: '...' };
-  }
+  // Prefer showing the next lowest number rather than a leading ellipsis
 
   for (let i = start; i <= end; i++) {
     yield { type: 'page', value: i, isCurrent: i === currentPage };
@@ -90,6 +98,79 @@ function* generatePageSequence(currentPage, totalPages, maxVisiblePages = 7, inc
   if (includeEllipsis && end < totalPages) {
     yield { type: 'ellipsis', value: '...' };
   }
+}
+
+/**
+ * Build a hard-capped page sequence where the total number of items (pages + ellipsis)
+ * does not exceed totalSlotsCap. Navigation arrows are not counted here.
+ */
+function buildHardCappedSequence(currentPage, totalPages, totalSlotsCap, includeEdgeAnchors, includeEllipsis, preferLeadingNumber) {
+  const items = [];
+  const cap = Math.max(1, Math.floor(totalSlotsCap || 1));
+
+  if (totalPages <= cap) {
+    for (let i = 1; i <= totalPages; i++) {
+      items.push({ type: 'page', value: i, isCurrent: i === currentPage });
+    }
+    return items;
+  }
+
+  if (includeEdgeAnchors) {
+    // Reserve slots for first/last and one possible trailing ellipsis
+    // Layout: [1] [2..k] [...] [total]
+    items.push({ type: 'page', value: 1, isCurrent: currentPage === 1 });
+
+    const maxMiddleWithoutEllipsis = Math.max(0, totalPages - 2);
+    const canShowAllMiddle = (2 + maxMiddleWithoutEllipsis) <= cap - 1; // not used; we cap below
+
+    // Leave room for last and a potential trailing ellipsis
+    let middleSize = Math.max(0, cap - 3);
+    middleSize = Math.min(middleSize, maxMiddleWithoutEllipsis);
+
+    // Middle pages start at 2
+    const middleStart = 2;
+    const middleEnd = middleStart + middleSize - 1;
+
+    for (let i = middleStart; i <= middleEnd; i++) {
+      if (i >= 2 && i <= totalPages - 1) {
+        items.push({ type: 'page', value: i, isCurrent: i === currentPage });
+      }
+    }
+
+    const needTrailingEllipsis = includeEllipsis && middleEnd < (totalPages - 1);
+    if (needTrailingEllipsis) {
+      items.push({ type: 'ellipsis', value: '...' });
+    }
+
+    items.push({ type: 'page', value: totalPages, isCurrent: currentPage === totalPages });
+    return items;
+  }
+
+  // No edge anchors: build a window around the current page, biasing to the low side,
+  // but without ever adding a leading ellipsis. Only a trailing ellipsis is allowed.
+  const pagesCount = Math.max(1, cap - (includeEllipsis ? 1 : 0));
+  if (pagesCount >= totalPages) {
+    for (let i = 1; i <= totalPages; i++) {
+      items.push({ type: 'page', value: i, isCurrent: i === currentPage });
+    }
+    return items;
+  }
+
+  let end = Math.min(totalPages, Math.max(currentPage, pagesCount));
+  let start = Math.max(1, end - pagesCount + 1);
+  // If current page extends beyond, slide window so current is included at the end as needed
+  if (currentPage > end) {
+    end = currentPage;
+    start = Math.max(1, end - pagesCount + 1);
+  }
+
+  for (let i = start; i <= end; i++) {
+    items.push({ type: 'page', value: i, isCurrent: i === currentPage });
+  }
+  if (includeEllipsis && end < totalPages) {
+    items.push({ type: 'ellipsis', value: '...' });
+  }
+  return items;
 }
 
 /**
@@ -103,8 +184,8 @@ function* generatePageSequence(currentPage, totalPages, maxVisiblePages = 7, inc
  * @param {number} [props.maxVisiblePages=7] - Maximum number of page buttons to show (including ellipsis)
  * @param {boolean} [props.showEllipsis=true] - Whether to show ellipsis for truncated pages
  * @param {string} [props.ariaLabel='Pagination'] - Aria label for the pagination navigation
- * @param {string} [props.previousText='Previous'] - Text for the previous button
- * @param {string} [props.nextText='Next'] - Text for the next button
+ * @param {string} [props.previousButtonText='Previous'] - Text for the previous button
+ * @param {string} [props.nextButtonText='Next'] - Text for the next button
  * @param {string} [props.className] - Additional CSS classes to apply
  * @param {Object} [props...props] - Additional props to pass to the nav element
  * @returns {JSX.Element|null} The pagination component or null if props are invalid
@@ -126,8 +207,8 @@ function* generatePageSequence(currentPage, totalPages, maxVisiblePages = 7, inc
  *   maxVisiblePages={5}
  *   showEllipsis={true}
  *   ariaLabel="Search results pagination"
- *   previousText="Anterior"
- *   nextText="Siguiente"
+ *   previousButtonText="Anterior"
+ *   nextButtonText="Siguiente"
  *   className="custom-pagination"
  * />
  */
@@ -138,12 +219,11 @@ export const Pagination = ({
   maxVisiblePages = 7,
   showEllipsis = true,
   ariaLabel = 'Pagination',
-  previousText = 'Back',
-  nextText = 'Next',
+  previousButtonText = 'Back',
+  nextButtonText = 'Next',
   showFirstLast = true,
-  firstText = 'First',
-  lastText = 'Last',
-  responsive = true,
+  firstButtonText = 'First',
+  lastButtonText = 'Last',
   showStatus = true,
   resultsPerPage,
   totalResults,
@@ -152,8 +232,17 @@ export const Pagination = ({
   className,
   ...props
 }) => {
-  // Validate props
-  if (currentPage < 1 || currentPage > totalPages || totalPages < 1) {
+  // Determine effective total pages from results if provided
+  const hasResultCounts = typeof resultsPerPage === 'number' && typeof totalResults === 'number' && resultsPerPage > 0 && totalResults > 0;
+  const effectiveTotalPages = hasResultCounts ? Math.max(1, Math.ceil(totalResults / resultsPerPage)) : totalPages;
+
+  // Normalize and validate current page against effective total pages
+  const normalizedCurrentPage = Math.min(
+    Math.max(1, Math.floor(Number(currentPage) || 1)),
+    Math.max(1, Math.floor(Number(effectiveTotalPages) || 1))
+  );
+
+  if (normalizedCurrentPage < 1 || normalizedCurrentPage > effectiveTotalPages || effectiveTotalPages < 1) {
     console.warn('Pagination: Invalid currentPage or totalPages');
     return null;
   }
@@ -165,24 +254,25 @@ export const Pagination = ({
   const listRef = useRef(null);
   const [calculatedMaxPages, setCalculatedMaxPages] = useState(maxVisiblePages);
 
-  const canGoPrevious = currentPage > 1;
-  const canGoNext = currentPage < totalPages;
+  const canGoPrevious = normalizedCurrentPage > 1;
+  const canGoNext = normalizedCurrentPage < effectiveTotalPages;
 
   // Measure and calculate how many page buttons fit in the available width
   useEffect(() => {
-    if (!responsive) {
-      setCalculatedMaxPages(maxVisiblePages);
-      return;
-    }
-
     const navEl = navRef.current;
     const listEl = listRef.current;
     if (!navEl || !listEl) return;
 
     const compute = () => {
-      // Prefer clientWidth of parent/list to avoid transform-scaled rects in Storybook
-      const parent = listEl.parentElement;
-      let containerWidth = (parent && parent.clientWidth) || navEl.clientWidth || navEl.getBoundingClientRect().width;
+      // Prefer the widest ancestor width to avoid flex-centering shrink and Storybook transforms
+      const a = navEl;
+      const b = a && a.parentElement;
+      const c = b && b.parentElement;
+      const d = c && c.parentElement;
+      const widths = [a, b, c, d]
+        .filter(Boolean)
+        .map((el) => el.clientWidth || el.getBoundingClientRect().width || 0);
+      let containerWidth = Math.max(...widths, 0);
       // Subtract horizontal padding from nav to estimate usable content width
       const navStyles = window.getComputedStyle(navEl);
       const padL = parseFloat(navStyles.paddingLeft || '0') || 0;
@@ -190,15 +280,15 @@ export const Pagination = ({
       containerWidth = Math.max(0, containerWidth - padL - padR);
       if (!containerWidth || containerWidth <= 0) return;
 
-      const arrowButton = listEl.querySelector('.usa-pagination__arrow .usa-pagination__link');
+      const arrowButton = listEl.querySelector('.usa-pagination__arrow .usa-pagination__button');
       const pageButton = listEl.querySelector('.usa-pagination__page-no .usa-pagination__button');
       const overflowEl = listEl.querySelector('.usa-pagination__overflow');
       const styles = window.getComputedStyle(listEl);
       const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
 
-      const arrowWidth = arrowButton ? arrowButton.getBoundingClientRect().width : 40;
-      const pageWidth = pageButton ? pageButton.getBoundingClientRect().width : 36;
-      const ellipsisWidth = overflowEl ? overflowEl.getBoundingClientRect().width : pageWidth;
+      const arrowWidth = arrowButton ? Math.ceil(arrowButton.getBoundingClientRect().width) : 40;
+      const pageWidth = pageButton ? Math.ceil(pageButton.getBoundingClientRect().width) : 36;
+      const ellipsisWidth = overflowEl ? Math.ceil(overflowEl.getBoundingClientRect().width) : pageWidth;
 
       // Count only controls that are actually rendered
       const prevCount = canGoPrevious ? 1 : 0;
@@ -211,18 +301,17 @@ export const Pagination = ({
       // On very small screens, omit ellipsis to leave room for first/last controls
       const isNarrow = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 480px)').matches;
       const includeEllipsis = !(isNarrow && showFirstLast);
-      const maxEllipsisCount = showEllipsis && includeEllipsis ? 2 : 0;
+      // We only ever render a trailing ellipsis in hard-capped mode, so budget at most 1
+      const maxEllipsisCount = showEllipsis && includeEllipsis ? 1 : 0;
       const ellipsisTotalWidth = maxEllipsisCount * (ellipsisWidth + gap);
 
-      const availableForPages = Math.max(0, containerWidth - controlsWidth - ellipsisTotalWidth - gap);
+      const availableForPages = Math.max(0, containerWidth - controlsWidth - ellipsisTotalWidth);
       const perItem = pageWidth + gap;
       const estimated = perItem > 0 ? Math.floor((availableForPages + gap) / perItem) : maxVisiblePages;
 
-      // Keep odd number >= 1 to center current page when possible
       const clampMin = 1;
       const clampMax = Math.max(3, maxVisiblePages);
-      let effective = Math.max(clampMin, Math.min(clampMax, estimated));
-      if (effective > 1 && effective % 2 === 0) effective -= 1; // make odd when possible
+      const effective = Math.max(clampMin, Math.min(clampMax, estimated));
 
       setCalculatedMaxPages(effective);
     };
@@ -234,7 +323,7 @@ export const Pagination = ({
     });
     ro.observe(navEl);
     return () => ro.disconnect();
-  }, [maxVisiblePages, responsive, showFirstLast, currentPage, totalPages, canGoPrevious, canGoNext]);
+  }, [maxVisiblePages, showFirstLast, normalizedCurrentPage, effectiveTotalPages, canGoPrevious, canGoNext]);
 
   const handlePageClick = (page) => {
     if (page !== currentPage && onPageChange) {
@@ -244,56 +333,60 @@ export const Pagination = ({
 
   const handlePreviousClick = () => {
     if (canGoPrevious) {
-      handlePageClick(currentPage - 1);
+      handlePageClick(normalizedCurrentPage - 1);
     }
   };
 
   const handleNextClick = () => {
     if (canGoNext) {
-      handlePageClick(currentPage + 1);
+      handlePageClick(normalizedCurrentPage + 1);
     }
   };
 
   // Determine effective max pages (responsive-aware)
   const effectiveMaxPages = useMemo(() => (
-    responsive ? Math.min(maxVisiblePages, calculatedMaxPages) : maxVisiblePages
-  ), [responsive, maxVisiblePages, calculatedMaxPages]);
+    Math.min(maxVisiblePages, calculatedMaxPages)
+  ), [maxVisiblePages, calculatedMaxPages]);
 
   // Generate page sequence using generator
   const pageSequence = useMemo(() => {
-    // When fast nav is available, do not duplicate first/last page anchors.
     const includeEdgeAnchors = !(showFirstLast && (canGoPrevious || canGoNext));
     const isNarrow = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 480px)').matches;
     const includeEllipsis = !(isNarrow && showFirstLast);
-    return Array.from(
-      showEllipsis
-        ? generatePageSequence(currentPage, totalPages, effectiveMaxPages, includeEdgeAnchors, includeEllipsis)
-        : generatePageSequence(currentPage, totalPages, totalPages, includeEdgeAnchors, includeEllipsis)
+    const preferLeadingNumber = !isNarrow && includeEdgeAnchors && showEllipsis;
+    // Enforce hard cap: total items (pages + ellipsis) <= effectiveMaxPages
+    const cap = Math.max(1, effectiveMaxPages);
+    return buildHardCappedSequence(
+      normalizedCurrentPage,
+      effectiveTotalPages,
+      cap,
+      includeEdgeAnchors,
+      showEllipsis && includeEllipsis,
+      preferLeadingNumber
     );
-  }, [currentPage, totalPages, showEllipsis, effectiveMaxPages, showFirstLast, canGoPrevious, canGoNext]);
+  }, [normalizedCurrentPage, effectiveTotalPages, showEllipsis, effectiveMaxPages, showFirstLast, canGoPrevious, canGoNext]);
 
   const handleFirstClick = () => {
-    if (currentPage !== 1) {
+    if (normalizedCurrentPage !== 1) {
       handlePageClick(1);
     }
   };
 
   const handleLastClick = () => {
-    if (currentPage !== totalPages) {
-      handlePageClick(totalPages);
+    if (normalizedCurrentPage !== effectiveTotalPages) {
+      handlePageClick(effectiveTotalPages);
     }
   };
 
   const statusText = useMemo(() => {
     if (!showStatus) return null;
-    const hasResultCounts = typeof resultsPerPage === 'number' && typeof totalResults === 'number' && resultsPerPage > 0 && totalResults > 0;
     if (hasResultCounts) {
-      const start = (currentPage - 1) * resultsPerPage + 1;
-      const end = Math.min(currentPage * resultsPerPage, totalResults);
+      const start = (normalizedCurrentPage - 1) * resultsPerPage + 1;
+      const end = Math.min(normalizedCurrentPage * resultsPerPage, totalResults);
       return `Showing results ${start} - ${end} of ${totalResults}`;
     }
-    return `Page ${currentPage} of ${totalPages}`;
-  }, [showStatus, resultsPerPage, totalResults, currentPage, totalPages]);
+    return `Page ${normalizedCurrentPage} of ${effectiveTotalPages}`;
+  }, [showStatus, resultsPerPage, totalResults, normalizedCurrentPage, effectiveTotalPages]);
 
   return (
     <nav
@@ -313,14 +406,14 @@ export const Pagination = ({
               className={`usa-pagination__button usa-pagination__first-page`}
               aria-label="First page"
               onClick={handleFirstClick}
-              disabled={currentPage === 1}
+               disabled={normalizedCurrentPage === 1}
             >
               <FontAwesomeIcon
                 icon={faAnglesLeft}
                 className="usa-pagination__icon usa-pagination__icon--left"
                 aria-hidden="true"
               />
-              <span className="usa-pagination__link-text">{firstText}</span>
+              <span className="usa-pagination__link-text">{firstButtonText}</span>
             </button>
           </li>
         )}
@@ -332,14 +425,14 @@ export const Pagination = ({
               className={`usa-pagination__button usa-pagination__previous-page`}
               aria-label="Previous page"
               onClick={handlePreviousClick}
-              disabled={!canGoPrevious}
+               disabled={!canGoPrevious}
             >
               <FontAwesomeIcon 
                 icon={faChevronLeft} 
                 className="usa-pagination__icon usa-pagination__icon--left"
                 aria-hidden="true"
               />
-              <span className="usa-pagination__link-text">{previousText}</span>
+              <span className="usa-pagination__link-text">{previousButtonText}</span>
             </button>
           </li>
         )}
@@ -365,7 +458,7 @@ export const Pagination = ({
                 className={`usa-pagination__button ${item.isCurrent ? 'usa-pagination__button--current' : ''}`}
                 aria-label={`${item.isCurrent ? 'Current page, ' : ''}Page ${item.value}`}
                 aria-current={item.isCurrent ? 'page' : undefined}
-                onClick={() => handlePageClick(item.value)}
+                 onClick={() => handlePageClick(item.value)}
                 disabled={item.isCurrent}
               >
                 {item.value}
@@ -382,9 +475,9 @@ export const Pagination = ({
               className={`usa-pagination__button usa-pagination__next-page`}
               aria-label="Next page"
               onClick={handleNextClick}
-              disabled={!canGoNext}
+               disabled={!canGoNext}
             >
-              <span className="usa-pagination__link-text">{nextText}</span>
+              <span className="usa-pagination__link-text">{nextButtonText}</span>
               <FontAwesomeIcon 
                 icon={faChevronRight} 
                 className="usa-pagination__icon usa-pagination__icon--right"
@@ -400,9 +493,9 @@ export const Pagination = ({
               className={`usa-pagination__button usa-pagination__last-page`}
               aria-label="Last page"
               onClick={handleLastClick}
-              disabled={currentPage === totalPages}
+               disabled={normalizedCurrentPage === effectiveTotalPages}
             >
-              <span className="usa-pagination__link-text">{lastText}</span>
+              <span className="usa-pagination__link-text">{lastButtonText}</span>
               <FontAwesomeIcon
                 icon={faAnglesRight}
                 className="usa-pagination__icon usa-pagination__icon--right"
@@ -412,7 +505,7 @@ export const Pagination = ({
           </li>
         )}
       </ul>
-      {statusText && statusPosition === 'after' && (
+      {showStatusText && statusText && statusPosition === 'after' && (
         <div className="usa-pagination__status" aria-live="polite">{statusText}</div>
       )}
     </nav>
@@ -478,7 +571,7 @@ Pagination.propTypes = {
    * @type {string}
    * @default 'Previous'
    */
-  previousText: PropTypes.string,
+  previousButtonText: PropTypes.string,
   
   /** 
    * Text content for the next page button.
@@ -486,7 +579,7 @@ Pagination.propTypes = {
    * @type {string}
    * @default 'Next'
    */
-  nextText: PropTypes.string,
+  nextButtonText: PropTypes.string,
   
   /**
    * Whether to show fast navigation buttons to jump to first/last page.
@@ -500,21 +593,14 @@ Pagination.propTypes = {
    * @type {string}
    * @default 'First'
    */
-  firstText: PropTypes.string,
+  firstButtonText: PropTypes.string,
 
   /**
    * Text content for the last page button.
    * @type {string}
    * @default 'Last'
    */
-  lastText: PropTypes.string,
-
-  /**
-   * Enable responsive behavior to auto-fit the number of visible page buttons to the container width.
-   * @type {boolean}
-   * @default true
-   */
-  responsive: PropTypes.bool,
+  lastButtonText: PropTypes.string,
   
   /**
    * Shows status text indicating current page or results range.
@@ -559,8 +645,8 @@ Pagination.propTypes = {
  * @property {number} [maxVisiblePages=7] - Maximum number of page buttons to show
  * @property {boolean} [showEllipsis=true] - Whether to show ellipsis for truncated pages
  * @property {string} [ariaLabel='Pagination'] - Aria label for the pagination navigation
- * @property {string} [previousText='Previous'] - Text for the previous button
- * @property {string} [nextText='Next'] - Text for the next button
+ * @property {string} [previousButtonText='Previous'] - Text for the previous button
+ * @property {string} [nextButtonText='Next'] - Text for the next button
  * @property {string} [className] - Additional CSS classes to apply
  * 
  * @typedef {Object} PageItem
