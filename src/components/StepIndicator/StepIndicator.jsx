@@ -5,6 +5,22 @@ import { StepIndicatorSegment } from './StepIndicatorSegment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
 
+/**
+ * StepIndicator displays progress through a multi-step process.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {Array<{label: string}>} props.steps - Steps with labels
+ * @param {number} props.currentStep - 1-based current step indicator
+ * @param {string} [props.title] - Optional heading shown next to counters
+ * @param {('default'|'mobile')} [props.variant='default'] - Visual variant
+ * @param {boolean} [props.showLabels=true] - Show labels under segments
+ * @param {boolean} [props.showCounters=false] - Show number counters inside segments
+ * @param {boolean} [props.centered=false] - Center labels alignment
+ * @param {boolean} [props.smallCounters=false] - Smaller counter style
+ * @param {string} [props.className=''] - Additional CSS class names
+ * @returns {JSX.Element} Step indicator element
+ */
 export const StepIndicator = ({
   steps,
   currentStep,

@@ -16,6 +16,21 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import './Contacts.css';
 
+/**
+ * Contact information panel with email, phones, social links, and office details.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} props.title - Entity being contacted (used in aria-labels)
+ * @param {string} props.emailAddress - Email address used by contact button
+ * @param {string} [props.officePhone] - Office phone number
+ * @param {string} [props.informationPhone] - Information line phone number
+ * @param {string} [props.relayServicePhone] - Relay service phone number
+ * @param {{facebook?: string, twitter?: string, bluesky?: string, instagram?: string}} [props.socialMedia] - Social handles
+ * @param {{address: string, room?: string, city: string, state: string, zip: string, hours?: string, days?: string}} props.officeDetails - Office address and hours
+ * @param {string} [props.className] - Additional CSS class names
+ * @returns {JSX.Element} Contacts panel
+ */
 export const Contacts = ({
   title,
   emailAddress,

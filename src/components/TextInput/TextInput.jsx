@@ -3,6 +3,26 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './TextInput.css';
 
+/**
+ * Text input with size and state variants, optional prefix icon and suffix content.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} props.id - Input id (required when label is provided)
+ * @param {string} [props.label] - Visible label text
+ * @param {string} [props.description] - Helper text below the label
+ * @param {('default'|'disabled'|'error'|'success')} [props.state='default'] - Visual validation/disabled state
+ * @param {('default'|'2xs'|'xs'|'sm'|'md'|'lg'|'xl'|'2xl')} [props.size='default'] - Size variant
+ * @param {boolean} [props.disabled=false] - Native disabled attribute
+ * @param {string} [props.value] - Controlled value
+ * @param {function} [props.onChange] - Change handler
+ * @param {import('@fortawesome/fontawesome-svg-core').IconProp} [props.prefixIcon] - Icon rendered as prefix
+ * @param {React.ReactNode} [props.suffixContent] - Content rendered as suffix (e.g., units)
+ * @param {string} [props.pattern] - HTML pattern attribute
+ * @param {string} [props.errorMessage] - Error text shown when state='error'
+ * @param {string} [props.className] - Additional CSS classes
+ * @returns {JSX.Element} Text input wrapper
+ */
 export const TextInput = ({
   id,
   label,

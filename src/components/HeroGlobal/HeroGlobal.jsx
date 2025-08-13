@@ -2,6 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './HeroGlobal.css';
 
+/**
+ * Global site hero with title, optional description, tags, image, and action slot.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} props.title - Main heading
+ * @param {string} [props.description] - Supporting description
+ * @param {string[]} [props.tags=[]] - Category tags rendered as badges
+ * @param {{src: string|Object, alt?: string}} [props.image] - Hero image configuration
+ * @param {React.ReactNode} [props.actionButton] - Optional action button
+ * @param {string} [props.className] - Additional CSS class names
+ * @returns {JSX.Element} Global hero section
+ */
 export const HeroGlobal = ({
   title,
   description,

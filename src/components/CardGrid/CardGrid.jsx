@@ -3,6 +3,18 @@ import PropTypes from 'prop-types';
 import { Card } from '../Card';
 import './CardGrid.css';
 
+/**
+ * Grid layout for rendering a collection of `Card` components.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.heading] - Optional section heading
+ * @param {boolean} [props.showDivider=true] - Show divider line above
+ * @param {boolean} [props.showHeading=true] - Control heading visibility
+ * @param {Array<Object>} props.cards - Array of props passed to each `Card`
+ * @param {string} [props.className] - Additional CSS class names
+ * @returns {JSX.Element} Card grid section
+ */
 export const CardGrid = ({
   heading,
   showDivider = true,
