@@ -56,7 +56,6 @@ export default {
       control: 'text',
       description: 'Text for last page button'
     },
-    // responsive removed; component always fits to available width
     showStatus: {
       control: 'boolean',
       description: 'Compute status text (current page or results range)'
@@ -104,7 +103,7 @@ export const FirstPage = {
   render: InteractiveTemplate,
   args: {
     currentPage: 1,
-    totalPages: 10,
+    totalPages: 24,
     maxVisiblePages: 7
   }
 };
