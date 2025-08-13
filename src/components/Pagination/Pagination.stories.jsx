@@ -5,6 +5,7 @@ export default {
   title: 'Components/Pagination',
   component: Pagination,
   parameters: {
+    layout: 'fullscreen',
     docs: {
       description: {
         component: 'Pagination is navigation for paginated content, allowing users to navigate between pages of results.'
