@@ -290,11 +290,12 @@ export const Pagination = ({
       const pageWidth = pageButton ? Math.ceil(pageButton.getBoundingClientRect().width) : 36;
       const ellipsisWidth = overflowEl ? Math.ceil(overflowEl.getBoundingClientRect().width) : pageWidth;
 
-      // Count only controls that are actually rendered
-      const prevCount = canGoPrevious ? 1 : 0;
-      const nextCount = canGoNext ? 1 : 0;
-      const firstCount = showFirstLast && canGoPrevious ? 1 : 0;
-      const lastCount = showFirstLast && canGoNext ? 1 : 0;
+      // Count controls as present based on feature flags, not enabledness,
+      // because we now always render them but toggle disabled state
+      const prevCount = 1;
+      const nextCount = 1;
+      const firstCount = showFirstLast ? 1 : 0;
+      const lastCount = showFirstLast ? 1 : 0;
       const controlCount = prevCount + nextCount + firstCount + lastCount;
       const controlsWidth = controlCount * arrowWidth + controlCount * gap;
 
@@ -350,7 +351,17 @@ export const Pagination = ({
 
   // Generate page sequence using generator
   const pageSequence = useMemo(() => {
-    const includeEdgeAnchors = !(showFirstLast && (canGoPrevious || canGoNext));
+    // Show all pages if ellipsis is disabled
+    if (!showEllipsis) {
+      const items = [];
+      for (let i = 1; i <= effectiveTotalPages; i++) {
+        items.push({ type: 'page', value: i, isCurrent: i === normalizedCurrentPage });
+      }
+      return items;
+    }
+
+    // When first/last buttons are shown, do not include page 1/last anchors in the sequence
+    const includeEdgeAnchors = !showFirstLast;
     const isNarrow = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 480px)').matches;
     const includeEllipsis = !(isNarrow && showFirstLast);
     const preferLeadingNumber = !isNarrow && includeEdgeAnchors && showEllipsis;
@@ -364,7 +375,7 @@ export const Pagination = ({
       showEllipsis && includeEllipsis,
       preferLeadingNumber
     );
-  }, [normalizedCurrentPage, effectiveTotalPages, showEllipsis, effectiveMaxPages, showFirstLast, canGoPrevious, canGoNext]);
+  }, [normalizedCurrentPage, effectiveTotalPages, showEllipsis, effectiveMaxPages, showFirstLast]);
 
   const handleFirstClick = () => {
     if (normalizedCurrentPage !== 1) {
@@ -395,18 +406,21 @@ export const Pagination = ({
       ref={navRef}
       {...props}
     >
+      {showStatus && (
+        <div className="visually-hidden" aria-live="polite" aria-atomic="true">{statusText}</div>
+      )}
       {showStatusText && statusText && statusPosition === 'before' && (
-        <div className="usa-pagination__status" aria-live="polite">{statusText}</div>
+        <div className="usa-pagination__status">{statusText}</div>
       )}
       <ul className="usa-pagination__list" ref={listRef}>
-        {showFirstLast && canGoPrevious && (
+        {showFirstLast && (
           <li className="usa-pagination__item usa-pagination__arrow">
             <button
               type="button"
               className={`usa-pagination__button usa-pagination__first-page`}
               aria-label="First page"
               onClick={handleFirstClick}
-               disabled={normalizedCurrentPage === 1}
+              disabled={normalizedCurrentPage === 1}
             >
               <FontAwesomeIcon
                 icon={faAnglesLeft}
@@ -418,24 +432,22 @@ export const Pagination = ({
           </li>
         )}
         {/* Previous button */}
-        {canGoPrevious && (
-          <li className="usa-pagination__item usa-pagination__arrow">
-            <button
-              type="button"
-              className={`usa-pagination__button usa-pagination__previous-page`}
-              aria-label="Previous page"
-              onClick={handlePreviousClick}
-               disabled={!canGoPrevious}
-            >
-              <FontAwesomeIcon 
-                icon={faChevronLeft} 
-                className="usa-pagination__icon usa-pagination__icon--left"
-                aria-hidden="true"
-              />
-              <span className="usa-pagination__link-text">{previousButtonText}</span>
-            </button>
-          </li>
-        )}
+        <li className="usa-pagination__item usa-pagination__arrow">
+          <button
+            type="button"
+            className={`usa-pagination__button usa-pagination__previous-page`}
+            aria-label="Previous page"
+            onClick={handlePreviousClick}
+            disabled={!canGoPrevious}
+          >
+            <FontAwesomeIcon 
+              icon={faChevronLeft} 
+              className="usa-pagination__icon usa-pagination__icon--left"
+              aria-hidden="true"
+            />
+            <span className="usa-pagination__link-text">{previousButtonText}</span>
+          </button>
+        </li>
 
         {/* Page numbers and ellipsis */}
         {pageSequence.map((item, index) => {
@@ -444,9 +456,9 @@ export const Pagination = ({
               <li
                 key={`ellipsis-${index}`}
                 className="usa-pagination__item usa-pagination__overflow"
-                aria-label="ellipsis indicating non-visible pages"
+                aria-hidden="true"
               >
-                <span className="usa-pagination__ellipsis">{item.value}</span>
+                <span className="usa-pagination__ellipsis" aria-hidden="true">{item.value}</span>
               </li>
             );
           }
@@ -468,32 +480,30 @@ export const Pagination = ({
         })}
 
         {/* Next button */}
-        {canGoNext && (
-          <li className="usa-pagination__item usa-pagination__arrow">
-            <button
-              type="button"
-              className={`usa-pagination__button usa-pagination__next-page`}
-              aria-label="Next page"
-              onClick={handleNextClick}
-               disabled={!canGoNext}
-            >
-              <span className="usa-pagination__link-text">{nextButtonText}</span>
-              <FontAwesomeIcon 
-                icon={faChevronRight} 
-                className="usa-pagination__icon usa-pagination__icon--right"
-                aria-hidden="true"
-              />
-            </button>
-          </li>
-        )}
-        {showFirstLast && canGoNext && (
+        <li className="usa-pagination__item usa-pagination__arrow">
+          <button
+            type="button"
+            className={`usa-pagination__button usa-pagination__next-page`}
+            aria-label="Next page"
+            onClick={handleNextClick}
+            disabled={!canGoNext}
+          >
+            <span className="usa-pagination__link-text">{nextButtonText}</span>
+            <FontAwesomeIcon 
+              icon={faChevronRight} 
+              className="usa-pagination__icon usa-pagination__icon--right"
+              aria-hidden="true"
+            />
+          </button>
+        </li>
+        {showFirstLast && (
           <li className="usa-pagination__item usa-pagination__arrow">
             <button
               type="button"
               className={`usa-pagination__button usa-pagination__last-page`}
               aria-label="Last page"
               onClick={handleLastClick}
-               disabled={normalizedCurrentPage === effectiveTotalPages}
+              disabled={normalizedCurrentPage === effectiveTotalPages}
             >
               <span className="usa-pagination__link-text">{lastButtonText}</span>
               <FontAwesomeIcon
@@ -506,7 +516,7 @@ export const Pagination = ({
         )}
       </ul>
       {showStatusText && statusText && statusPosition === 'after' && (
-        <div className="usa-pagination__status" aria-live="polite">{statusText}</div>
+        <div className="usa-pagination__status">{statusText}</div>
       )}
     </nav>
   );
