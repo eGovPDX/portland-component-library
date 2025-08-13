@@ -420,6 +420,7 @@ export const Pagination = ({
               className={`usa-pagination__button usa-pagination__first-page`}
               aria-label="First page"
               onClick={handleFirstClick}
+              aria-disabled={normalizedCurrentPage === 1}
               disabled={normalizedCurrentPage === 1}
             >
               <FontAwesomeIcon
@@ -438,6 +439,7 @@ export const Pagination = ({
             className={`usa-pagination__button usa-pagination__previous-page`}
             aria-label="Previous page"
             onClick={handlePreviousClick}
+            aria-disabled={!canGoPrevious}
             disabled={!canGoPrevious}
           >
             <FontAwesomeIcon 
@@ -486,6 +488,7 @@ export const Pagination = ({
             className={`usa-pagination__button usa-pagination__next-page`}
             aria-label="Next page"
             onClick={handleNextClick}
+            aria-disabled={!canGoNext}
             disabled={!canGoNext}
           >
             <span className="usa-pagination__link-text">{nextButtonText}</span>
@@ -503,6 +506,7 @@ export const Pagination = ({
               className={`usa-pagination__button usa-pagination__last-page`}
               aria-label="Last page"
               onClick={handleLastClick}
+              aria-disabled={normalizedCurrentPage === effectiveTotalPages}
               disabled={normalizedCurrentPage === effectiveTotalPages}
             >
               <span className="usa-pagination__link-text">{lastButtonText}</span>
