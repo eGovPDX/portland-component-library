@@ -49,12 +49,6 @@
   display: flex;
 }
 
-/* Remove separate styles for link arrows; all controls share button styles */
-
-.usa-pagination__link-text {
-  margin: var(--pagination-link-text-margin);
-}
-
 /* Icons */
 .usa-pagination__icon {
   width: var(--pagination-icon-size);
@@ -92,6 +86,27 @@
   cursor: pointer;
   transition: var(--pagination-button-transition);
   box-sizing: border-box;
+}
+
+/* Specific padding for directional controls */
+.usa-pagination__button.usa-pagination__next-page,
+.usa-pagination__button.usa-pagination__last-page {
+  padding: 0 12px 0 16px;
+}
+
+.usa-pagination__button.usa-pagination__next-page .usa-pagination__link-text,
+.usa-pagination__button.usa-pagination__last-page .usa-pagination__link-text {
+  margin: 0 4px 0 0;
+}
+
+.usa-pagination__button.usa-pagination__first-page .usa-pagination__link-text,
+.usa-pagination__button.usa-pagination__previous-page .usa-pagination__link-text {
+  margin: 0 0 0 4px;
+}
+
+.usa-pagination__button.usa-pagination__first-page,
+.usa-pagination__button.usa-pagination__previous-page {
+  padding: 0 16px 0 12px;
 }
 
 /* Non-current links should follow default link underline and typography specs */
@@ -145,13 +160,24 @@
 
 /* Current page button */
 .usa-pagination__button--current {
-  color: var(--pagination-button-current-color);
-  background-color: var(--pagination-button-current-bg-color);
+  color: var(--pagination-button-current-color, #fff);
+  background-color: var(--pagination-button-current-bg-color, #000);
   border-color: var(--pagination-button-current-border-color);
   text-decoration: none;
   cursor: default;
   pointer-events: none;
   font-weight: var(--pagination-button-current-font-weight, 700);
+}
+
+/* Ensure current page styling wins even when button is disabled for semantics */
+.usa-pagination__button--current:disabled,
+.usa-pagination__button--current[aria-disabled="true"] {
+  color: var(--pagination-button-current-color, #fff);
+  background-color: var(--pagination-button-current-bg-color, #000);
+  border-color: var(--pagination-button-current-border-color);
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: auto; /* allow hover so not-allowed cursor shows */
 }
 
 /* Ellipsis */
