@@ -56,10 +56,7 @@ export default {
       control: 'text',
       description: 'Text for last page button'
     },
-    responsive: {
-      control: 'boolean',
-      description: 'Auto-fit number of visible pages to container width'
-    },
+    // responsive removed; component always fits to available width
     showStatus: {
       control: 'boolean',
       description: 'Compute status text (current page or results range)'
@@ -132,37 +129,13 @@ export const LastPage = {
   }
 };
 
-// Few pages (no ellipsis needed)
-export const FewPages = {
-  render: InteractiveTemplate,
-  args: {
-    currentPage: 3,
-    totalPages: 5,
-    maxVisiblePages: 7
-  }
-};
-
-// Many pages (stress test)
-export const ManyPages = {
-  render: InteractiveTemplate,
-  args: {
-    currentPage: 50,
-    totalPages: 100,
-    maxVisiblePages: 7,
-    responsive: true,
-    showFirstLast: true,
-    showStatusText: false
-  }
-};
-
 // Example implementation with state management
-export const WithStatusText = {
+export const WithStatusTextAbove = {
   render: InteractiveTemplate,
   args: {
     currentPage: 5,
     totalPages: Math.ceil(247 / 10),
     maxVisiblePages: 7,
-    responsive: true,
     showStatus: true,
     showStatusText: true,
     resultsPerPage: 10,
@@ -176,4 +149,25 @@ export const WithStatusText = {
       }
     }
   }
-}; 
+};
+
+export const WithStatusTextBelow = {
+  render: InteractiveTemplate,
+  args: {
+    currentPage: 5,
+    totalPages: Math.ceil(247 / 10),
+    maxVisiblePages: 7,
+    showStatus: true,
+    showStatusText: true,
+    resultsPerPage: 10,
+    totalResults: 247,
+    statusPosition: 'after'
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Example showing how to integrate pagination with state management and result counts.'
+      }
+    }
+  }
+};
