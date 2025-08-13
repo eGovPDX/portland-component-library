@@ -736,12 +736,13 @@
   --pagination-gap: calc(var(--spacing-xs) * 1px);
   --pagination-gap-mobile: calc(var(--spacing-2xs) * 1px);
   --pagination-bg: transparent;
-  
-  /* Button and link sizing */
-  --pagination-button-size: calc(var(--units-10) * 1px);
-  --pagination-button-size-mobile: calc(var(--units-8) * 1px);
-  --pagination-button-padding: calc(var(--spacing-2xs) * 1px);
-  --pagination-arrow-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-sm) * 1px);
+  --pagination-container-min-height: 50px;
+  --pagination-container-min-height-mobile: 50px;
+
+  /* Status text */
+  --pagination-status-margin: 8px 0;
+  --pagination-status-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --pagination-status-color: var(--color-foundation-black);
   
   /* Navigation link styles */
   --pagination-link-color: var(--color-foundation-link);
@@ -752,7 +753,7 @@
   --pagination-link-font-weight: 400;
   --pagination-link-text-decoration: underline;
   --pagination-link-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
-  --pagination-link-text-margin: 0;
+  --pagination-link-text-margin: 0 4px;
   --pagination-link-text-spacing: calc(var(--spacing-xs) * 1px);
   
   /* Navigation link hover states */
@@ -775,49 +776,43 @@
   --pagination-link-disabled-bg-color: transparent;
   
   /* Icon styles */
-  --pagination-icon-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
-  --pagination-icon-size-mobile: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --pagination-icon-size: 12px;
+  --pagination-icon-size-mobile: 12px;
   --pagination-icon-spacing: calc(var(--spacing-2xs) * 1px);
   
-  /* Page number button styles */
-  --pagination-button-color: var(--color-foundation-link);
+  /* Button and link styles */
+  --pagination-button-size: calc(var(--units-10) * 1px);
+  --pagination-button-size-mobile: 44px;
+  --pagination-button-padding: calc(var(--spacing-2xs) * 1px);
+  --pagination-arrow-padding: calc(var(--spacing-xs) * 1px) calc(var(--spacing-sm) * 1px);
+  --pagination-arrow-icon-color: var(--color-foundation-black);
+  --pagination-button-text-color: var(--color-foundation-link);
   --pagination-button-bg-color: var(--color-foundation-white);
   --pagination-button-border: calc(var(--border-sm) * 1px) solid var(--color-base-lighter);
   --pagination-button-border-radius: calc(var(--radius-md) * 1px);
   --pagination-button-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-button-font-weight: 400;
-  --pagination-button-text-decoration: underline;
+  --pagination-button-text-decoration: none;
   --pagination-button-transition: all 0.15s ease-in-out;
-  
-  /* Page number button hover states */
   --pagination-button-hover-color: var(--color-primary-dark);
   --pagination-button-hover-bg-color: var(--color-base-lightest);
   --pagination-button-hover-border-color: var(--color-base-lighter);
   --pagination-button-hover-text-decoration: underline;
-  
-  /* Page number button focus states */
   --pagination-button-focus-color: var(--color-primary-dark);
   --pagination-button-focus-bg-color: var(--color-base-lightest);
   --pagination-button-focus-border-color: var(--color-primary-medium);
   --pagination-button-focus-outline: calc(var(--border-lg) * 1px) solid var(--color-primary-medium);
   --pagination-button-focus-outline-offset: calc(var(--border-sm) * 1px);
-  
-  /* Page number button active states */
   --pagination-button-active-color: var(--color-primary-dark);
   --pagination-button-active-bg-color: var(--color-base-lighter);
   --pagination-button-active-border-color: var(--color-primary-medium);
-  
-  /* Current page button styles */
   --pagination-button-current-color: var(--color-foundation-white);
   --pagination-button-current-bg-color: var(--color-foundation-black);
   --pagination-button-current-border-color: var(--color-foundation-black);
-  
-  /* Ellipsis styles */
+  --pagination-button-current-font-weight: 700;
   --pagination-ellipsis-color: var(--color-base-medium);
   --pagination-ellipsis-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
   --pagination-ellipsis-font-weight: 400;
-  
-  /* High contrast mode support */
   --pagination-high-contrast-border-width: calc(var(--border-lg) * 1px);
 
   /* ProcessSteps component variables */
