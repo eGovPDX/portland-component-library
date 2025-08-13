@@ -738,6 +738,11 @@
   --pagination-bg: transparent;
   --pagination-container-min-height: 50px;
   --pagination-container-min-height-mobile: 50px;
+
+  /* Status text */
+  --pagination-status-margin: 8px 0;
+  --pagination-status-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --pagination-status-color: var(--color-foundation-black);
   
   /* Navigation link styles */
   --pagination-link-color: var(--color-foundation-link);
