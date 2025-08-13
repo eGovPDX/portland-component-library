@@ -142,16 +142,6 @@ export const FewPages = {
   }
 };
 
-// Single page (no navigation needed)
-export const SinglePage = {
-  render: InteractiveTemplate,
-  args: {
-    currentPage: 1,
-    totalPages: 1,
-    maxVisiblePages: 7
-  }
-};
-
 // Many pages (stress test)
 export const ManyPages = {
   render: InteractiveTemplate,
@@ -166,7 +156,7 @@ export const ManyPages = {
 };
 
 // Example implementation with state management
-export const WithStateManagement = {
+export const WithStatusText = {
   render: InteractiveTemplate,
   args: {
     currentPage: 5,
