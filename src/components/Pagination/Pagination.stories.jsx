@@ -43,6 +43,22 @@ export default {
     nextText: {
       control: 'text',
       description: 'Text for the next button'
+    },
+    showFirstLast: {
+      control: 'boolean',
+      description: 'Show buttons to jump to first/last page'
+    },
+    firstText: {
+      control: 'text',
+      description: 'Text for first page button'
+    },
+    lastText: {
+      control: 'text',
+      description: 'Text for last page button'
+    },
+    responsive: {
+      control: 'boolean',
+      description: 'Auto-fit number of visible pages to container width'
     }
   }
 };
@@ -121,51 +137,9 @@ export const ManyPages = {
   args: {
     currentPage: 50,
     totalPages: 100,
-    maxVisiblePages: 7
-  }
-};
-
-// No ellipsis (show all pages)
-export const NoEllipsis = {
-  render: InteractiveTemplate,
-  args: {
-    currentPage: 5,
-    totalPages: 10,
     maxVisiblePages: 7,
-    showEllipsis: false
-  }
-};
-
-// Custom labels
-export const CustomLabels = {
-  render: InteractiveTemplate,
-  args: {
-    currentPage: 3,
-    totalPages: 8,
-    maxVisiblePages: 7,
-    previousText: 'Anterior',
-    nextText: 'Siguiente',
-    ariaLabel: 'Paginación'
-  }
-};
-
-// Compact version (fewer visible pages)
-export const Compact = {
-  render: InteractiveTemplate,
-  args: {
-    currentPage: 5,
-    totalPages: 20,
-    maxVisiblePages: 5
-  }
-};
-
-// Large dataset pagination
-export const LargeDataset = {
-  render: InteractiveTemplate,
-  args: {
-    currentPage: 156,
-    totalPages: 1000,
-    maxVisiblePages: 7
+    responsive: true,
+    showFirstLast: true
   }
 };
 
@@ -184,8 +158,8 @@ export const WithStateManagement = {
     };
 
     return (
-      <div style={{ padding: '20px' }}>
-        <div style={{ marginBottom: '20px', fontSize: '14px', color: '#666' }}>
+      <div style={{ width: '100%', padding: '20px', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ marginBottom: '8px', fontSize: '15.63px', color: '#666' }}>
           Showing results {((currentPage - 1) * resultsPerPage) + 1} - {Math.min(currentPage * resultsPerPage, totalResults)} of {totalResults}
         </div>
         <Pagination
@@ -193,6 +167,7 @@ export const WithStateManagement = {
           totalPages={totalPages}
           onPageChange={handlePageChange}
           maxVisiblePages={7}
+          responsive
         />
       </div>
     );
