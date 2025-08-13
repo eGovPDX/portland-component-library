@@ -15,6 +15,9 @@ import { resolve, dirname } from 'path';
     // Build the main library
     await build({
       configFile: 'vite.lib.config.js',
+      build: {
+        emptyOutDir: true,
+      }
     });
 
     // Build each component
