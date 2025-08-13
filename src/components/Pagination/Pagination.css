@@ -2,8 +2,13 @@
 .usa-pagination {
   font-family: var(--pagination-font-family);
   font-size: var(--pagination-font-size);
-  margin: var(--pagination-margin);
+  margin: 0;
   background-color: var(--pagination-bg);
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  /* Ensure container is at least as tall as the buttons to avoid clipping on small screens or scaled previews */
+  min-height: var(--pagination-container-min-height, var(--pagination-button-size, 48px));
 }
 
 .usa-pagination__list {
@@ -13,11 +18,17 @@
   padding: 0;
   gap: var(--pagination-gap);
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .usa-pagination__item {
   display: flex;
+  flex: 0 0 auto;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 /* Arrow navigation buttons */
@@ -25,58 +36,10 @@
   display: flex;
 }
 
-.usa-pagination__link {
-  display: flex;
-  align-items: center;
-  padding: var(--pagination-arrow-padding);
-  color: var(--pagination-link-color);
-  text-decoration: var(--pagination-link-text-decoration);
-  font-size: var(--pagination-link-font-size);
-  font-weight: var(--pagination-link-font-weight);
-  background-color: var(--pagination-link-bg-color);
-  border: var(--pagination-link-border);
-  border-radius: var(--pagination-link-border-radius);
-  cursor: pointer;
-  transition: var(--pagination-link-transition);
-  min-height: var(--pagination-button-size);
-}
-
-.usa-pagination__link:hover:not(:disabled) {
-  color: var(--pagination-link-hover-color);
-  background-color: var(--pagination-link-hover-bg-color);
-  text-decoration: var(--pagination-link-hover-text-decoration);
-}
-
-.usa-pagination__link:focus {
-  outline: var(--pagination-link-focus-outline);
-  outline-offset: var(--pagination-link-focus-outline-offset);
-  background-color: var(--pagination-link-focus-bg-color);
-  color: var(--pagination-link-focus-color);
-}
-
-.usa-pagination__link:active:not(:disabled) {
-  background-color: var(--pagination-link-active-bg-color);
-  color: var(--pagination-link-active-color);
-}
-
-.usa-pagination__link--disabled {
-  color: var(--pagination-link-disabled-color);
-  background-color: var(--pagination-link-disabled-bg-color);
-  cursor: not-allowed;
-  pointer-events: none;
-}
+/* Remove separate styles for link arrows; all controls share button styles */
 
 .usa-pagination__link-text {
   margin: var(--pagination-link-text-margin);
-}
-
-/* Previous/Next specific styles */
-.usa-pagination__previous-page .usa-pagination__link-text {
-  margin-left: var(--pagination-link-text-spacing);
-}
-
-.usa-pagination__next-page .usa-pagination__link-text {
-  margin-right: var(--pagination-link-text-spacing);
 }
 
 /* Icons */
@@ -86,12 +49,12 @@
   flex-shrink: 0;
 }
 
-.usa-pagination__icon--left {
-  margin-right: var(--pagination-icon-spacing);
-}
-
-.usa-pagination__icon--right {
-  margin-left: var(--pagination-icon-spacing);
+/* Force chevron/angles icons in first/prev/next/last to be black (or theme var) */
+.usa-pagination__first-page .usa-pagination__icon,
+.usa-pagination__previous-page .usa-pagination__icon,
+.usa-pagination__next-page .usa-pagination__icon,
+.usa-pagination__last-page .usa-pagination__icon {
+  color: var(--pagination-arrow-icon-color, #000);
 }
 
 /* Page number buttons */
@@ -106,15 +69,28 @@
   min-width: var(--pagination-button-size);
   min-height: var(--pagination-button-size);
   padding: var(--pagination-button-padding);
-  color: var(--pagination-button-color);
+  color: var(--pagination-button-text-color);
   background-color: var(--pagination-button-bg-color);
   border: var(--pagination-button-border);
   border-radius: var(--pagination-button-border-radius);
   font-size: var(--pagination-button-font-size);
   font-weight: var(--pagination-button-font-weight);
-  text-decoration: var(--pagination-button-text-decoration);
+  text-decoration: underline;
   cursor: pointer;
   transition: var(--pagination-button-transition);
+  box-sizing: border-box;
+}
+
+/* Non-current links should follow default link underline and typography specs */
+.usa-pagination__button:not(.usa-pagination__button--current) {
+  font-style: normal;
+  line-height: 16px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
 }
 
 .usa-pagination__button:hover:not(:disabled) {
@@ -143,6 +119,7 @@
   color: var(--pagination-button-current-color);
   background-color: var(--pagination-button-current-bg-color);
   border-color: var(--pagination-button-current-border-color);
+  text-decoration: none;
   cursor: default;
   pointer-events: none;
   font-weight: var(--pagination-button-current-font-weight, 700);
@@ -166,7 +143,20 @@
 }
 
 /* Mobile responsive adjustments */
+@media (min-width: 40em) {
+  .usa-pagination__previous-page {
+      margin-right: 0;
+  }
+  .usa-pagination__next-page {
+    margin-left: 0;
+  }
+}
+
+
 @media (max-width: 480px) {
+  .usa-pagination {
+    min-height: var(--pagination-container-min-height-mobile, var(--pagination-button-size-mobile, 44px));
+  }
   .usa-pagination__list {
     gap: var(--pagination-gap-mobile);
   }
@@ -183,8 +173,8 @@
     height: var(--pagination-icon-size-mobile);
   }
   
-  /* Hide some page numbers on mobile, show more ellipsis */
-  .usa-pagination__item:nth-child(n+6):nth-last-child(n+4) .usa-pagination__button {
+  /* Hide button text labels on mobile to reduce width */
+  .usa-pagination__link-text {
     display: none;
   }
 }
