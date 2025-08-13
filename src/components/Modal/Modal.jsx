@@ -6,6 +6,25 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Card } from '../Card';
 import './Modal.css';
 
+/**
+ * Accessible modal dialog built on the native <dialog> element with focus trapping.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {boolean} [props.isOpen=false] - Whether the modal is open
+ * @param {function} [props.onClose] - Called when modal should close (Escape/backdrop when not forced)
+ * @param {function} [props.onConfirm] - Called when primary action is confirmed
+ * @param {string} [props.heading] - Modal heading text
+ * @param {React.ReactNode} [props.children] - Modal body content
+ * @param {React.ReactElement} [props.confirmButton] - Primary action button element
+ * @param {React.ReactElement} [props.cancelButton] - Secondary/cancel button element
+ * @param {('default'|'large')} [props.size='default'] - Modal size variant
+ * @param {boolean} [props.forcedAction=false] - Disable closing with Escape/backdrop
+ * @param {string} [props.className] - Additional CSS class names
+ * @param {string} [props.ariaLabelledBy] - ID of element that labels the modal
+ * @param {string} [props.ariaDescribedBy] - ID of element that describes the modal
+ * @returns {JSX.Element} Modal dialog
+ */
 export const Modal = ({
   isOpen = false,
   onClose,

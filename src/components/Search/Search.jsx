@@ -4,6 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Search.css';
 
+/**
+ * Search input with optional big/small variants and icon-only button.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {('default'|'big'|'small')} [props.variant='default'] - Visual size variant
+ * @param {string} [props.buttonText='Search'] - Button text (hidden when variant is 'small')
+ * @param {string} [props.className] - Additional CSS class names
+ * @param {string} props.id - Input id attribute
+ * @param {string} [props.name='search'] - Input name attribute
+ * @param {string} [props.placeholder] - Placeholder text
+ * @param {function} [props.onSubmit] - Submit handler (receives form submit event)
+ * @returns {JSX.Element} Search form
+ */
 export const Search = ({ 
   variant = 'default', 
   buttonText = 'Search',

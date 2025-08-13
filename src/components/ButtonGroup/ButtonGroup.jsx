@@ -2,6 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ButtonGroup.css';
 
+/**
+ * Groups multiple buttons together with optional segmented styling.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.children - Button elements to be grouped
+ * @param {boolean} [props.segmented=false] - Removes spacing between grouped buttons
+ * @param {string} [props.className] - Additional CSS class names
+ * @returns {JSX.Element} Group container wrapping buttons
+ */
 export const ButtonGroup = ({
   children,
   segmented = false,

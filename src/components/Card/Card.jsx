@@ -2,6 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
 
+/**
+ * Card component based on USWDS Card
+ *
+ * Displays an optional media area, heading, text, custom content, and footer action button.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.heading] - Heading text
+ * @param {string} [props.text] - Supporting body text
+ * @param {React.ReactNode} [props.actionButton] - Optional button rendered in the footer
+ * @param {function} [props.onClick] - Click handler passed to `actionButton` if provided
+ * @param {string} [props.className] - Additional CSS class names
+ * @param {React.ReactNode} [props.children] - Arbitrary content inside the card body
+ * @param {string|React.ReactNode} [props.media] - Image URL or custom media element
+ * @param {('left'|'right')} [props.mediaPosition='left'] - Media position when used with grid layouts
+ * @param {boolean} [props.mediaExdent=false] - Use the exdent media variant
+ * @param {boolean} [props.mediaFirst=false] - Render media before header/body
+ * @param {boolean} [props.mediaInset=false] - Use the inset media variant
+ * @returns {JSX.Element} Card element
+ */
 export const Card = ({
   heading,
   text,

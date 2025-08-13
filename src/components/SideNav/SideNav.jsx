@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './SideNav.css';
 
+/**
+ * Section navigation with expandable parent items and active state indication.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {Array<{title: string, link: string, children?: Array<{title: string, link: string}>}>} props.items - Navigation items
+ * @param {string} [props.activeItemId] - Active item URL; if omitted, `activeIndex` is used
+ * @param {number} [props.activeIndex] - Active item index when `activeItemId` is not provided
+ * @returns {JSX.Element} Navigation element
+ */
 const NavItem = ({ item, isActive, isExpanded, isParent, position, onClick }) => {
   const itemClasses = [
     'side-nav-item',

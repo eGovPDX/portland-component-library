@@ -1,6 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import './TextArea.css';
 
+/**
+ * Resizing textarea with optional character counter and validation helpers.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} props.id - Textarea id
+ * @param {string} [props.name] - Textarea name
+ * @param {string} [props.label] - Visible label text
+ * @param {string} [props.description] - Helper text under the label
+ * @param {string} [props.error] - Error message
+ * @param {string} [props.value] - Controlled value
+ * @param {function} [props.onChange] - Change handler (receives event)
+ * @param {boolean} [props.disabled] - Disabled state
+ * @param {boolean} [props.required] - Required attribute
+ * @param {string} [props.placeholder] - Placeholder text
+ * @param {string} [props.className] - Additional CSS class names
+ * @param {number} [props.maxCharacters] - Character limit; shows counter when provided
+ * @returns {JSX.Element} Textarea wrapper
+ */
 const TextArea = ({
   id,
   name,
