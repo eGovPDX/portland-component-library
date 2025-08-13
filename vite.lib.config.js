@@ -46,6 +46,7 @@ const baseConfig = {
   build: {
     outDir: 'dist',
     sourcemap: true,
+    emptyOutDir: false,
     rollupOptions: {
       external: ['react', 'react-dom'],
       output: {
