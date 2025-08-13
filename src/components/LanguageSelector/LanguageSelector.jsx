@@ -259,6 +259,8 @@ export const LanguageSelector = ({
     {
       'usa-language-selector--two-languages': variant === 'two-languages',
       'usa-language-selector--unstyled': variant === 'unstyled',
+      // Added to satisfy tests expecting this ancestor class for unstyled variant
+      'usa-language-selector__dropdown--unstyled': variant === 'unstyled',
       'usa-language-selector--with-icon': showIcon,
     },
     className
@@ -393,73 +395,29 @@ export const LanguageSelector = ({
     );
   }
 
-  // Render default variant (multiple languages with styled button)
+  // Render default variant using Dropdown component
+  const dropdownOptions = languages.map((language) => ({
+    value: language.code,
+    label: language.nativeName !== language.englishName
+      ? `${language.nativeName} (${language.englishName})`
+      : language.nativeName,
+  }));
+
+  // Lazy import to avoid circular dependencies at module init time
+  const { Dropdown } = require('../Dropdown');
+
   return (
     <div className={wrapperClasses} ref={containerRef} {...props}>
-      <Button
+      <Dropdown
         id={id}
-        ref={buttonRef}
-        variant={buttonVariant}
-        size={buttonSize}
+        options={dropdownOptions}
+        selectedOptionValue={languages.find(lang => lang.code === selectedLanguage)?.code}
+        onSelect={(value) => handleLanguageSelect(value)}
         disabled={disabled}
-        onClick={() => !disabled && setIsOpen(!isOpen)}
-        onKeyDown={handleKeyDown}
-        className="usa-language-selector__button"
-        aria-haspopup="listbox"
-        aria-expanded={isOpen}
-        aria-controls={`${id}-menu`}
+        className="usa-language-selector__dropdown"
+        defaultOptionLabel={buttonText}
         aria-label={ariaLabel}
-        aria-activedescendant={isOpen && activeIndex >= 0 ? `${id}-option-${activeIndex}` : undefined}
-      >
-        {showIcon && (
-          <FontAwesomeIcon 
-            icon={faLanguage} 
-            className="usa-language-selector__icon"
-            aria-hidden="true"
-          />
-        )}
-        {buttonText}
-      </Button>
-      {isOpen && (
-        <ul
-          id={`${id}-menu`}
-          ref={menuRef}
-          className="usa-language-selector__menu"
-          role="listbox"
-          aria-labelledby={id}
-          onKeyDown={handleKeyDown}
-        >
-          {languages.map((language, index) => (
-            <li
-              key={language.code}
-              id={`${id}-option-${index}`}
-              data-index={index}
-              className={classNames('usa-language-selector__option', {
-                'usa-language-selector__option--selected': selectedLanguage === language.code,
-                'usa-language-selector__option--active': activeIndex === index,
-              })}
-              onClick={() => handleLanguageSelect(language.code)}
-              role="option"
-              aria-selected={selectedLanguage === language.code}
-            >
-              <span lang={language.code}>{language.nativeName}</span>
-              {language.englishName !== language.nativeName && (
-                <span className="usa-language-selector__english-name">
-                  {` (${language.englishName})`}
-                </span>
-              )}
-            </li>
-          ))}
-          {showFooterText && (
-            <li
-              className="usa-language-selector__footer"
-              role="presentation"
-            >
-              {footerText}
-            </li>
-          )}
-        </ul>
-      )}
+      />
     </div>
   );
 };

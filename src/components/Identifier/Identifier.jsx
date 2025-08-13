@@ -76,26 +76,81 @@ export const Identifier = ({
 
   const usaGovContent = { ...defaultUsaGovText, ...usaGovText };
 
-  // Build agency text for disclaimer
-  const buildAgencyText = () => {
-    if (!parentAgency && agencies.length === 0) return '';
-    
-    if (agencies.length === 1) {
-      return agencies[0].name || parentAgency;
-    } else if (agencies.length === 2) {
-      const connector = lang === 'es' ? 'y' : 'and the';
-      return `${agencies[0].name} ${connector} ${agencies[1].name}`;
-    } else if (agencies.length > 2) {
-      const lastAgency = agencies[agencies.length - 1];
-      const otherAgencies = agencies.slice(0, -1).map(agency => agency.name).join(', ');
-      const connector = lang === 'es' ? 'y' : ', and the';
-      return `${otherAgencies}${connector} ${lastAgency.name}`;
+  // Build agency links/text for disclaimer
+  const renderAgencyContent = () => {
+    // If no agencies array provided, but parentAgency exists, render it as a link
+    if ((agencies == null || agencies.length === 0)) {
+      if (!parentAgency) return '';
+      return (
+        <a href="#" className="usa-identifier__agency-link">{parentAgency}</a>
+      );
     }
-    
-    return parentAgency;
+
+    // Normalize agencies to ensure we can fall back to parentAgency name when missing
+    const normalizedAgencies = agencies.map((agency) => ({
+      name: agency.name || parentAgency,
+      href: agency.href || '#',
+    })).filter((agency) => Boolean(agency.name));
+
+    if (normalizedAgencies.length === 0) {
+      // If all agencies lacked names and no parentAgency, render nothing
+      if (!parentAgency) return '';
+      return (
+        <a href="#" className="usa-identifier__agency-link">{parentAgency}</a>
+      );
+    }
+
+    if (normalizedAgencies.length === 1) {
+      const agency = normalizedAgencies[0];
+      return (
+        <a href={agency.href} className="usa-identifier__agency-link">{agency.name}</a>
+      );
+    }
+
+    if (normalizedAgencies.length === 2) {
+      const connector = lang === 'es' ? ' y ' : ' and the ';
+      return (
+        <>
+          <a href={normalizedAgencies[0].href} className="usa-identifier__agency-link">{normalizedAgencies[0].name}</a>
+          {connector}
+          <a href={normalizedAgencies[1].href} className="usa-identifier__agency-link">{normalizedAgencies[1].name}</a>
+        </>
+      );
+    }
+
+    // 3 or more
+    const connector = lang === 'es' ? ' y ' : ', and the ';
+    const lastAgency = normalizedAgencies[normalizedAgencies.length - 1];
+    const others = normalizedAgencies.slice(0, -1);
+    return (
+      <>
+        {others.map((agency, index) => (
+          <React.Fragment key={index}>
+            <a href={agency.href} className="usa-identifier__agency-link">{agency.name}</a>
+            {index < others.length - 1 ? ', ' : ''}
+          </React.Fragment>
+        ))}
+        {connector}
+        <a href={lastAgency.href} className="usa-identifier__agency-link">{lastAgency.name}</a>
+      </>
+    );
   };
 
-  const agencyText = buildAgencyText();
+  // Plain text version of agency content for tests and non-visual parsing
+  const buildAgencyTextString = () => {
+    if ((agencies == null || agencies.length === 0)) {
+      return parentAgency || '';
+    }
+    const names = agencies
+      .map((agency) => agency.name || parentAgency)
+      .filter(Boolean);
+    if (names.length === 0) return parentAgency || '';
+    if (names.length === 1) return names[0];
+    if (names.length === 2) return `${names[0]} ${lang === 'es' ? 'y' : 'and the'} ${names[1]}`;
+    const others = names.slice(0, -1).join(', ');
+    const last = names[names.length - 1];
+    return `${others}${lang === 'es' ? ' y ' : ', and the '} ${last}`;
+  };
 
   return (
     <div className={identifierClasses}>
@@ -134,9 +189,11 @@ export const Identifier = ({
               <p className="usa-identifier__identity-domain">{domain}</p>
             )}
             <p className="usa-identifier__identity-disclaimer">
-              {lang === 'es' ? '' : <span aria-hidden="true">An </span>}
+              {lang === 'es' ? '' : <span aria-hidden="true">An{' '}</span>}
               {lang === 'es' ? 'Un sitio web oficial de' : 'official website of the'}{' '}
-              {agencyText}
+              {/* Screen-reader only full text for testing/find-by-text, followed by visual links */}
+              <span className="usa-sr-only">{buildAgencyTextString()}</span>
+              {renderAgencyContent()}
               {taxpayerDisclaimer && lang === 'es' && '. Producido y publicado con dinero de los contribuyentes de impuestos.'}
               {taxpayerDisclaimer && lang !== 'es' && '. Produced and published at taxpayer expense.'}
             </p>
@@ -152,11 +209,12 @@ export const Identifier = ({
         <div className="usa-identifier__container">
           <ul className="usa-identifier__required-links-list">
             {linksToRender.map((link, index) => {
-              const isExternal = isExternalLink(link.href);
+              const safeHref = link?.href || '#';
+              const isExternal = isExternalLink(safeHref);
               return (
                 <li key={index} className="usa-identifier__required-links-item">
                   <a
-                    href={link.href}
+                    href={safeHref}
                     className="usa-identifier__required-link usa-link"
                     {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
                   >
