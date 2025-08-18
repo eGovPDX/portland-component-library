@@ -201,6 +201,41 @@
   --summary-box-text-color: var(--color-white);
   --summary-box-button-color: var(--color-blue-cool-20);
 
+  /* Person component variables */
+  --person-gap: calc(var(--spacing-md) * 1px);
+  --person-avatar-size: calc(var(--spacing-xl) * 1px);
+  --person-avatar-size-mobile: calc(var(--spacing-lg) * 1px);
+  --person-avatar-size-tablet: calc(var(--spacing-xl) * 1px);
+  --person-avatar-size-desktop: calc(var(--spacing-2xl) * 1px);
+  --person-avatar-size-lg: calc(var(--spacing-2xl) * 1px);
+  --person-border-color: var(--color-gray-cool-60, #7D7D7D);
+  --person-border-radius: calc(var(--spacing-xs) * 1px);
+  --person-padding: calc(var(--spacing-md) * 1px);
+  --person-body-gap: calc(var(--spacing-2xs) * 1px);
+  --person-name-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --person-name-font-weight: 700;
+  --person-name-line-height: 130%;
+  --person-name-color: var(--color-white);
+  --person-name-font-family: var(--font-family-open-sans);
+  --person-title-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --person-title-font-weight: 400;
+  --person-title-color: var(--color-gray-cool-20, #cccccc);
+  --person-dept-color: var(--color-gray-cool-30, #b3b3b3);
+  --person-meta-color: var(--color-gray-cool-30, #b3b3b3);
+  --person-meta-font-size: calc(var(--font-abstraction-open-sans-2xs) * 1px);
+  --person-meta-font-weight: 400;
+  --person-meta-line-height: 140%;
+  --person-action-color: var(--color-blue-cool-30, #73b3e7);
+  --person-avatar-bg: var(--color-gray-70, #707070);
+  --person-avatar-fg: var(--color-white, #ffffff);
+  --person-tags-gap: calc(var(--spacing-xs) * 1px);
+  --person-tag-bg: var(--color-gray-cool-60, #565C65);
+  --person-tag-fg: var(--color-white, #ffffff);
+  --person-tag-radius: 999px;
+  --person-tag-pad-x: calc(var(--spacing-sm) * 1px);
+  --person-tag-height: calc(var(--spacing-md) * 1px);
+  --person-tag-font: 600 12px/1 var(--font-family-open-sans);
+
   /* Tag component variables */
   --tag-bg: var(--color-gray-cool-60, #565C65);
   --tag-color: var(--color-white, #FFF);

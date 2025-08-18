@@ -815,6 +815,43 @@
   --pagination-ellipsis-font-weight: 400;
   --pagination-high-contrast-border-width: calc(var(--border-lg) * 1px);
 
+  /* Person component variables */
+  --person-gap: calc(var(--spacing-md) * 1px);
+  --person-avatar-size: calc(var(--spacing-xl) * 1px);
+  --person-avatar-size-mobile: calc(var(--spacing-lg) * 1px);
+  --person-avatar-size-tablet: calc(var(--spacing-xl) * 1px);
+  --person-avatar-size-desktop: calc(var(--spacing-2xl) * 1px);
+  --person-avatar-size-lg: calc(var(--spacing-2xl) * 1px);
+  --person-border-color: var(--color-base-lighter, #D0D0D0);
+  --person-border-radius: calc(var(--spacing-xs) * 1px);
+  --person-padding: calc(var(--spacing-md) * 1px);
+  --person-body-gap: 0;
+  --person-children-margin-top: calc(var(--spacing-xs) * 1px);
+  --person-tags-margin-top: calc(var(--spacing-xs) * 1px);
+  --person-name-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --person-name-font-weight: 700;
+  --person-name-line-height: 130%;
+  --person-name-color: var(--color-foundation-black);
+  --person-name-font-family: var(--font-family-open-sans);
+  --person-title-font-size: calc(var(--font-abstraction-open-sans-sm) * 1px);
+  --person-title-font-weight: 400;
+  --person-title-color: var(--color-base-dark, #3D3D3D);
+  --person-dept-color: var(--color-base-dark, #3D3D3D);
+  --person-meta-color: var(--color-base-dark, #3D3D3D);
+  --person-meta-font-size: calc(var(--font-abstraction-open-sans-2xs) * 1px);
+  --person-meta-font-weight: 400;
+  --person-meta-line-height: 140%;
+  --person-action-color: var(--color-foundation-link, #005EA2);
+  --person-avatar-bg: var(--color-base-lightest, #E6E6E6);
+  --person-avatar-fg: var(--color-foundation-black, #1B1B1B);
+  --person-tags-gap: calc(var(--spacing-xs) * 1px);
+  --person-tag-bg: var(--color-base-lightest, #F0F0F0);
+  --person-tag-fg: var(--color-foundation-black, #1B1B1B);
+  --person-tag-radius: 999px;
+  --person-tag-pad-x: calc(var(--spacing-sm) * 1px);
+  --person-tag-height: calc(var(--spacing-md) * 1px);
+  --person-tag-font: 600 12px/1 var(--font-family-open-sans);
+
   /* ProcessSteps component variables */
   --process-steps-gap: calc(var(--spacing-xs) * 1px);
   --process-steps-title-padding: 0px 0px 0px 0px;
