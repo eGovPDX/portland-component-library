@@ -63,23 +63,25 @@
 }
 
 .i18n-demo__language-button:disabled {
-  opacity: 0.6;
+  opacity: 1;
   cursor: not-allowed;
-  background-color: var(--color-background-secondary, #e9ecef);
-  color: var(--color-text-secondary, #666);
-  border-color: var(--color-border, #dee2e6);
+  background-color: #f8f9fa;
+  color: #495057;
+  border-color: #6c757d;
+  border-width: 2px;
 }
 
 .i18n-demo__language-button:disabled .i18n-demo__language-english {
-  opacity: 0.5;
+  opacity: 0.8;
+  color: #495057;
 }
 
 /* High contrast mode support for disabled buttons */
 @media (prefers-contrast: high) {
   .i18n-demo__language-button:disabled {
-    border: 2px solid var(--color-text, #1a1a1a);
-    background-color: var(--color-background, #f8f9fa);
-    color: var(--color-text, #1a1a1a);
+    border: 3px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
   }
 }
 
