@@ -85,37 +85,13 @@ export default {
   tags: ['autodocs']
 };
 
-// Default I18nDemo
+// Interactive I18nDemo with language switching
 export const Default = {
   args: {},
   parameters: {
     docs: {
       description: {
-        story: 'The default I18nDemo component shows all supported languages and allows interactive language switching. Users can click on any language button to see the component adapt to that language.'
-      }
-    }
-  }
-};
-
-// I18nDemo with specific language focus
-export const LanguageFocus = {
-  args: {},
-  parameters: {
-    docs: {
-      description: {
-        story: 'This story focuses on the language selection capabilities. Users can explore different languages and see how the component interface changes accordingly.'
-      }
-    }
-  }
-};
-
-// I18nDemo for accessibility testing
-export const Accessibility = {
-  args: {},
-  parameters: {
-    docs: {
-      description: {
-        story: 'This story is designed for testing accessibility features of the i18n system, including proper lang attributes and screen reader support.'
+        story: 'Interactive demonstration of internationalization capabilities. Click on different language buttons to see the Person component update in real-time with translated content. Supports English and Spanish with visual feedback showing language changes.'
       }
     },
     a11y: {
@@ -123,6 +99,10 @@ export const Accessibility = {
         rules: [
           {
             id: 'lang-attribute',
+            enabled: true
+          },
+          {
+            id: 'button-name',
             enabled: true
           }
         ]
