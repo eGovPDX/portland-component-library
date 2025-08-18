@@ -1,0 +1,56 @@
+{
+  "Alert": {
+    "types": {
+      "info": "Information",
+      "success": "Success",
+      "warning": "Warning",
+      "error": "Error"
+    },
+    "accessibility": {
+      "alert": "Alert",
+      "infoAlert": "Information alert",
+      "successAlert": "Success alert",
+      "warningAlert": "Warning alert",
+      "errorAlert": "Error alert",
+      "dismissAlert": "Dismiss alert",
+      "alertIcon": "Alert icon",
+      "alertCloseButton": "Close alert"
+    },
+    "actions": {
+      "dismiss": "Dismiss",
+      "close": "Close",
+      "acknowledge": "Acknowledge",
+      "learnMore": "Learn more",
+      "viewDetails": "View details",
+      "takeAction": "Take action"
+    },
+    "defaults": {
+      "infoMessage": "This is an informational message.",
+      "successMessage": "Operation completed successfully.",
+      "warningMessage": "Please review the information before proceeding.",
+      "errorMessage": "An error occurred. Please try again."
+    },
+    "content": {
+      "title": "Alert title",
+      "message": "Alert message",
+      "description": "Alert description",
+      "details": "Additional details",
+      "recommendations": "Recommendations",
+      "nextSteps": "Next steps"
+    },
+    "variants": {
+      "banner": "Banner alert",
+      "inline": "Inline alert",
+      "toast": "Toast notification",
+      "modal": "Modal alert"
+    },
+    "states": {
+      "visible": "Alert visible",
+      "hidden": "Alert hidden",
+      "expanded": "Alert expanded",
+      "collapsed": "Alert collapsed",
+      "loading": "Alert loading",
+      "dismissed": "Alert dismissed"
+    }
+  }
+}

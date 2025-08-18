@@ -1,0 +1,56 @@
+{
+  "Alert": {
+    "types": {
+      "info": "Información",
+      "success": "Éxito",
+      "warning": "Advertencia",
+      "error": "Error"
+    },
+    "accessibility": {
+      "alert": "Alerta",
+      "infoAlert": "Alerta de información",
+      "successAlert": "Alerta de éxito",
+      "warningAlert": "Alerta de advertencia",
+      "errorAlert": "Alerta de error",
+      "dismissAlert": "Descartar alerta",
+      "alertIcon": "Icono de alerta",
+      "alertCloseButton": "Cerrar alerta"
+    },
+    "actions": {
+      "dismiss": "Descartar",
+      "close": "Cerrar",
+      "acknowledge": "Reconocer",
+      "learnMore": "Más información",
+      "viewDetails": "Ver detalles",
+      "takeAction": "Tomar acción"
+    },
+    "defaults": {
+      "infoMessage": "Este es un mensaje informativo.",
+      "successMessage": "Operación completada exitosamente.",
+      "warningMessage": "Por favor revise la información antes de continuar.",
+      "errorMessage": "Ocurrió un error. Por favor inténtelo de nuevo."
+    },
+    "content": {
+      "title": "Título de la alerta",
+      "message": "Mensaje de la alerta",
+      "description": "Descripción de la alerta",
+      "details": "Detalles adicionales",
+      "recommendations": "Recomendaciones",
+      "nextSteps": "Próximos pasos"
+    },
+    "variants": {
+      "banner": "Alerta de banner",
+      "inline": "Alerta en línea",
+      "toast": "Notificación toast",
+      "modal": "Alerta modal"
+    },
+    "states": {
+      "visible": "Alerta visible",
+      "hidden": "Alerta oculta",
+      "expanded": "Alerta expandida",
+      "collapsed": "Alerta colapsada",
+      "loading": "Alerta cargando",
+      "dismissed": "Alerta descartada"
+    }
+  }
+}

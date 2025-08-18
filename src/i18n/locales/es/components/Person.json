@@ -1,0 +1,50 @@
+{
+  "Person": {
+    "actions": {
+      "viewProfile": "Ver Perfil",
+      "emailPerson": "Enviar correo a {{name}}",
+      "callPerson": "Llamar a {{name}}{{#if label}} ({{label}}){{/if}}",
+      "contactPerson": "Contactar a {{name}}"
+    },
+    "meta": {
+      "speaks": "Habla: {{languages}}",
+      "pronouns": "Pronombres: {{pronouns}}",
+      "department": "Departamento: {{department}}",
+      "location": "Ubicación: {{location}}",
+      "office": "Oficina: {{office}}",
+      "hours": "Horarios: {{hours}}",
+      "specialties": "Especialidades: {{specialties}}",
+      "certifications": "Certificaciones: {{certifications}}"
+    },
+    "accessibility": {
+      "emailAriaLabel": "Enviar correo a {{name}}",
+      "phoneAriaLabel": "Llamar a {{name}}{{#if label}} ({{label}}){{/if}}",
+      "profileLinkAriaLabel": "Ver perfil de {{name}}",
+      "avatarAltText": "Retrato de {{name}}",
+      "avatarDecorative": "Imagen decorativa del avatar"
+    },
+    "layout": {
+      "row": "Diseño en fila",
+      "column": "Diseño en columna",
+      "avatarLeft": "Avatar a la izquierda",
+      "avatarRight": "Avatar a la derecha",
+      "avatarTop": "Avatar en la parte superior",
+      "avatarCenter": "Avatar centrado"
+    },
+    "sizes": {
+      "small": "Pequeño",
+      "medium": "Mediano",
+      "large": "Grande"
+    },
+    "variants": {
+      "bordered": "Con borde",
+      "unbordered": "Sin borde"
+    },
+    "defaults": {
+      "noTitle": "No se proporcionó título",
+      "noDepartment": "No se especificó departamento",
+      "noContactInfo": "No hay información de contacto disponible",
+      "noMetaInfo": "No hay información adicional disponible"
+    }
+  }
+}

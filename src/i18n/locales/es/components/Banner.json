@@ -1,0 +1,69 @@
+{
+  "Banner": {
+    "types": {
+      "info": "Banner de información",
+      "success": "Banner de éxito",
+      "warning": "Banner de advertencia",
+      "error": "Banner de error",
+      "emergency": "Banner de emergencia"
+    },
+    "accessibility": {
+      "banner": "Banner",
+      "infoBanner": "Banner de información",
+      "successBanner": "Banner de éxito",
+      "warningBanner": "Banner de advertencia",
+      "errorBanner": "Banner de error",
+      "emergencyBanner": "Banner de emergencia",
+      "bannerIcon": "Icono del banner",
+      "bannerCloseButton": "Cerrar banner",
+      "dismissBanner": "Descartar banner"
+    },
+    "actions": {
+      "dismiss": "Descartar",
+      "close": "Cerrar",
+      "acknowledge": "Reconocer",
+      "learnMore": "Más información",
+      "viewDetails": "Ver detalles",
+      "takeAction": "Tomar acción",
+      "contactSupport": "Contactar soporte"
+    },
+    "content": {
+      "title": "Título del banner",
+      "message": "Mensaje del banner",
+      "description": "Descripción del banner",
+      "details": "Detalles adicionales",
+      "recommendations": "Recomendaciones",
+      "nextSteps": "Próximos pasos",
+      "contactInfo": "Información de contacto"
+    },
+    "variants": {
+      "fullWidth": "Banner de ancho completo",
+      "contained": "Banner contenido",
+      "floating": "Banner flotante",
+      "sticky": "Banner fijo"
+    },
+    "states": {
+      "visible": "Banner visible",
+      "hidden": "Banner oculto",
+      "expanded": "Banner expandido",
+      "collapsed": "Banner colapsado",
+      "loading": "Banner cargando",
+      "dismissed": "Banner descartado"
+    },
+    "defaults": {
+      "infoMessage": "Este es un mensaje de banner informativo.",
+      "successMessage": "Operación completada exitosamente.",
+      "warningMessage": "Por favor revise la información antes de continuar.",
+      "errorMessage": "Ocurrió un error. Por favor inténtelo de nuevo.",
+      "emergencyMessage": "Esta es una notificación de emergencia."
+    },
+    "guidance": {
+      "guidance": "Orientación",
+      "instructions": "Instrucciones",
+      "requirements": "Requisitos",
+      "deadlines": "Fechas límite",
+      "resources": "Recursos",
+      "help": "Ayuda"
+    }
+  }
+}
