@@ -41,7 +41,7 @@ i18n
     fallbackLng: 'en',
     debug: false,
     supportedLngs: ['en', 'es'],
-    ns: ['common'],
+    ns: ['common', 'components'],
     defaultNS: 'common',
     interpolation: {
       escapeValue: false,
@@ -59,7 +59,7 @@ Object.entries(mockTranslations).forEach(([language, namespaces]) => {
 });
 
 // Ensure translations are loaded
-i18n.loadNamespaces(['common']);
+i18n.loadNamespaces(['common', 'components']);
 
 export default {
   title: 'Internationalization/I18nDemo',

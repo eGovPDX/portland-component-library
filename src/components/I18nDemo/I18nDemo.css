@@ -111,6 +111,25 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.i18n-demo__language-info {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--color-background-secondary, #e9ecef);
+  border-radius: 4px;
+  text-align: center;
+  border-left: 4px solid var(--color-primary, #0071bc);
+}
+
+.i18n-demo__language-info small {
+  color: var(--color-text-secondary, #666);
+  font-size: 0.9rem;
+}
+
+.i18n-demo__language-info strong {
+  color: var(--color-primary, #0071bc);
+  font-weight: 600;
+}
+
 .i18n-demo__features {
   background: var(--color-background, #f8f9fa);
   padding: 1.5rem;

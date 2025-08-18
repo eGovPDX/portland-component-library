@@ -24,22 +24,30 @@ export const I18nDemo = () => {
     }
   };
 
-  const demoPerson = {
-    name: 'Jane Doe',
-    title: 'Senior Policy Analyst',
-    department: 'Bureau of Transportation',
-    email: 'jane.doe@portland.gov',
-    phones: [
-      { label: 'Office', value: '503-555-1234' }
-    ],
-    meta: ['Speaks: English, Spanish'],
-    tags: ['Policy', 'Transportation', 'Public Service']
-  };
-
   // Update selectedLanguage when i18n language changes
   useEffect(() => {
     setSelectedLanguage(i18n.language);
   }, [i18n.language]);
+
+  // Create demo person data that updates with language
+  const demoPerson = React.useMemo(() => ({
+    name: 'Jane Doe',
+    title: selectedLanguage === 'es' ? 'Analista de Políticas Senior' : 'Senior Policy Analyst',
+    department: selectedLanguage === 'es' ? 'Oficina de Transporte' : 'Bureau of Transportation',
+    email: 'jane.doe@portland.gov',
+    phones: [
+      { 
+        label: selectedLanguage === 'es' ? 'Oficina' : 'Office', 
+        value: '503-555-1234' 
+      }
+    ],
+    meta: selectedLanguage === 'es' 
+      ? ['Habla: Inglés, Español'] 
+      : ['Speaks: English, Spanish'],
+    tags: selectedLanguage === 'es' 
+      ? ['Política', 'Transporte', 'Servicio Público'] 
+      : ['Policy', 'Transportation', 'Public Service']
+  }), [selectedLanguage]);
 
   return (
     <div className="i18n-demo" lang={selectedLanguage}>
@@ -85,6 +93,12 @@ export const I18nDemo = () => {
         <p>This Person component automatically adapts to the selected language:</p>
         <div className="i18n-demo__person-wrapper">
           <Person {...demoPerson} key={selectedLanguage} />
+          <div className="i18n-demo__language-info">
+            <small>
+              Language: <strong>{selectedLanguage}</strong> | 
+              Component re-renders when language changes
+            </small>
+          </div>
         </div>
       </div>
 

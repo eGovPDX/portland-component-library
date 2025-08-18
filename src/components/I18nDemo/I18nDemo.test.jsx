@@ -1,15 +1,25 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { I18nDemo } from './I18nDemo';
 import { renderWithI18n, resetLanguageInTest } from '../../test-utils/i18n-test-utils';
 
 // Mock the Person component to avoid complex dependencies
 jest.mock('../Person', () => ({
-  Person: ({ name, title, department }) => (
+  Person: ({ name, title, department, phones, meta, tags }) => (
     <div data-testid="person-component">
       <h3>{name}</h3>
       <p>{title}</p>
       <p>{department}</p>
+      {phones && phones.map((phone, index) => (
+        <p key={index}>{phone.label}</p>
+      ))}
+      {meta && meta.map((item, index) => (
+        <p key={index}>{item}</p>
+      ))}
+      {tags && tags.map((tag, index) => (
+        <p key={index}>{tag}</p>
+      ))}
     </div>
   )
 }));
@@ -93,6 +103,28 @@ describe('I18nDemo', () => {
     expect(screen.getByText('Jane Doe')).toBeInTheDocument();
     expect(screen.getByText('Senior Policy Analyst')).toBeInTheDocument();
     expect(screen.getByText('Bureau of Transportation')).toBeInTheDocument();
+  });
+
+  test('person component updates when language changes', async () => {
+    const user = userEvent.setup();
+    renderWithI18n(<I18nDemo />);
+    
+    // Initially should show English content
+    expect(screen.getByText('Senior Policy Analyst')).toBeInTheDocument();
+    expect(screen.getByText('Bureau of Transportation')).toBeInTheDocument();
+    expect(screen.getByText('Office')).toBeInTheDocument();
+    
+    // Find and click Spanish language button
+    const spanishButton = screen.getByText('Español');
+    await user.click(spanishButton);
+    
+    // Should now show Spanish content
+    expect(screen.getByText('Analista de Políticas Senior')).toBeInTheDocument();
+    expect(screen.getByText('Oficina de Transporte')).toBeInTheDocument();
+    expect(screen.getByText('Oficina')).toBeInTheDocument();
+    
+    // Check that language info shows Spanish
+    expect(screen.getByText(/es/, { selector: 'strong' })).toBeInTheDocument();
   });
 
   test('maintains accessibility features', () => {
