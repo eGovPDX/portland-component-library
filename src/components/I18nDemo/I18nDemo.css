@@ -92,7 +92,7 @@
 }
 
 .i18n-demo__current-language {
-  background: var(--color-background, #f8f9fa);
+  background: #f8f9fa;
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 3rem;
@@ -100,22 +100,24 @@
 
 .i18n-demo__current-language h3 {
   margin: 0 0 1rem 0;
-  color: var(--color-text, #1a1a1a);
+  color: #1a1a1a;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 .i18n-demo__current-language p {
   margin: 0.5rem 0;
-  color: var(--color-text, #1a1a1a);
+  color: #1a1a1a;
+  line-height: 1.6;
 }
 
 .i18n-demo__current-language code {
-  background: var(--color-background-secondary, #e9ecef);
+  background: #e9ecef;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: 0.9rem;
+  color: #1a1a1a;
 }
 
 .i18n-demo__component-example {
@@ -124,14 +126,14 @@
 
 .i18n-demo__component-example h3 {
   margin: 0 0 1rem 0;
-  color: var(--color-text, #1a1a1a);
+  color: #1a1a1a;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 .i18n-demo__component-example p {
   margin: 0 0 1.5rem 0;
-  color: var(--color-text, #1a1a1a);
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
@@ -145,31 +147,31 @@
 .i18n-demo__language-info {
   margin-top: 1rem;
   padding: 0.75rem;
-  background: var(--color-background-secondary, #e9ecef);
+  background: #e9ecef;
   border-radius: 4px;
   text-align: center;
-  border-left: 4px solid var(--color-primary, #0071bc);
+  border-left: 4px solid #0071bc;
 }
 
 .i18n-demo__language-info small {
-  color: var(--color-text-secondary, #666);
+  color: #495057;
   font-size: 0.9rem;
 }
 
 .i18n-demo__language-info strong {
-  color: var(--color-primary, #0071bc);
+  color: #0071bc;
   font-weight: 600;
 }
 
 .i18n-demo__features {
-  background: var(--color-background, #f8f9fa);
+  background: #f8f9fa;
   padding: 1.5rem;
   border-radius: 8px;
 }
 
 .i18n-demo__features h3 {
   margin: 0 0 1rem 0;
-  color: var(--color-text, #1a1a1a);
+  color: #1a1a1a;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -177,7 +179,7 @@
 .i18n-demo__features ul {
   margin: 0;
   padding-left: 1.5rem;
-  color: var(--color-text, #1a1a1a);
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
