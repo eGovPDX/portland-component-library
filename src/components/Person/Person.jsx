@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Person.css';
 import { Avatar } from './Avatar';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 
 /**
  * A reusable profile block for individuals (staff, officials, program contacts).
@@ -76,6 +77,7 @@ export const Person = ({
   extraActions,
   ...rest
 }) => {
+  const { t, currentLanguage } = useComponentTranslation('Person');
   const HeadingTag = `h${headingLevel}`;
 
   const rootClassName = [
@@ -112,7 +114,11 @@ export const Person = ({
   );
 
   return (
-    <div className={rootClassName} {...rest}>
+    <div 
+      className={rootClassName} 
+      lang={currentLanguage}
+      {...rest}
+    >
       <div className="person__media">
         {renderAvatar()}
       </div>
@@ -121,7 +127,12 @@ export const Person = ({
         {name && (
           <HeadingTag className="person__name">
             {profileUrl ? (
-              <a href={profileUrl}>{name}</a>
+              <a 
+                href={profileUrl}
+                aria-label={t('accessibility.profileLinkAriaLabel', { name })}
+              >
+                {name}
+              </a>
             ) : (
               name
             )}
@@ -149,7 +160,7 @@ export const Person = ({
             {email && (
               <a
                 href={`mailto:${email}`}
-                aria-label={`Email ${name}`}
+                aria-label={t('accessibility.emailAriaLabel', { name })}
                 className="person__action-link"
               >
                 {email}
@@ -159,7 +170,7 @@ export const Person = ({
               <a
                 key={`phone-${index}`}
                 href={`tel:${phone.value}`}
-                aria-label={`Call ${name}${phone.label ? ` (${phone.label})` : ''}`}
+                aria-label={t('accessibility.phoneAriaLabel', { name, label: phone.label })}
                 className="person__action-link"
               >
                 {phone.value}

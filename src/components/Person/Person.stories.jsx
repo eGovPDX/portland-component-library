@@ -4,10 +4,73 @@ import { Tag } from '../Tag';
 import avatarPlaceholder from '../../images/avatar-card-placeholder.png';
 import { Button } from '../Button';
 import { action } from '@storybook/addon-actions';
+import { I18nextProvider } from 'react-i18next';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+// Mock translations for Person component in Storybook
+const mockPersonTranslations = {
+  en: {
+    components: {
+      Person: {
+        accessibility: {
+          emailAriaLabel: 'Email {{name}}',
+          phoneAriaLabel: 'Call {{name}}{{#if label}} ({{label}}){{/if}}',
+          profileLinkAriaLabel: 'View profile for {{name}}'
+        }
+      }
+    }
+  },
+  es: {
+    components: {
+      Person: {
+        accessibility: {
+          emailAriaLabel: 'Enviar correo a {{name}}',
+          phoneAriaLabel: 'Llamar a {{name}}{{#if label}} ({{label}}){{/if}}',
+          profileLinkAriaLabel: 'Ver perfil de {{name}}'
+        }
+      }
+    }
+  }
+};
+
+// Initialize i18n for Person component stories
+i18n
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'en',
+    debug: false,
+    supportedLngs: ['en', 'es'],
+    ns: ['components'],
+    defaultNS: 'components',
+    interpolation: {
+      escapeValue: false,
+    },
+    react: {
+      useSuspense: false,
+    },
+  });
+
+// Add mock translations
+Object.entries(mockPersonTranslations).forEach(([language, namespaces]) => {
+  Object.entries(namespaces).forEach(([namespace, translations]) => {
+    i18n.addResourceBundle(language, namespace, translations, true, true);
+  });
+});
+
+// Ensure translations are loaded
+i18n.loadNamespaces(['components']);
 
 export default {
   title: 'Components/Person',
   component: Person,
+  decorators: [
+    (Story) => (
+      <I18nextProvider i18n={i18n}>
+        <Story />
+      </I18nextProvider>
+    ),
+  ],
   parameters: {
     docs: {
       description: {
@@ -28,6 +91,12 @@ export default {
     children: {
       description: 'React node for custom content (e.g., action buttons)',
       control: { disable: true }
+    },
+    language: {
+      control: 'select',
+      options: ['en', 'es', 'vi', 'zh', 'ru', 'so', 'uk', 'ro', 'ne', 'chk', 'ja', 'ko', 'tl', 'lo', 'ar', 'km'],
+      description: 'Language for the component',
+      defaultValue: 'en'
     }
   },
   tags: ['autodocs']
@@ -109,4 +178,20 @@ export const WithTagsAndMeta = {
     meta: ['Speaks: English, Spanish'],
     tags: ['Fallback style', <Tag key="tag1" variant="default">Tag component</Tag>]
   }
+};
+
+// Language switching example
+export const WithLanguageSwitching = {
+  args: {
+    ...Default.args,
+    email: 'jane.doe@example.com',
+    phones,
+    meta: ['Speaks: English, Spanish'],
+    tags: ['Fallback style', <Tag key="tag1" variant="default">Tag component</Tag>]
+  },
+  parameters: {
+    controls: {
+      include: ['language'],
+    },
+  },
 };
