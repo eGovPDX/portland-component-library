@@ -152,7 +152,7 @@ export const Person = ({
                 aria-label={`Email ${name}`}
                 className="person__action-link"
               >
-                Email
+                {email}
               </a>
             )}
             {Array.isArray(phones) && phones.map((phone, index) => (
