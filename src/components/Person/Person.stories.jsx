@@ -1,8 +1,9 @@
 import React from 'react';
 import { Person } from './Person';
 import { Tag } from '../Tag';
-import avatarPlaceholder from '../../images/avatar-placeholder.svg';
+import avatarPlaceholder from '../../images/avatar-card-placeholder.png';
 import { Button } from '../Button';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Components/Person',
@@ -18,10 +19,16 @@ export default {
   argTypes: {
     layout: { control: 'radio', options: ['row', 'column'] },
     imageAlign: { control: 'radio', options: ['top', 'center'] },
+    avatarUrl: { control: 'text', description: 'URL for the avatar image', defaultValue: '' },
+    avatarAlt: { control: 'text', description: 'Alt text for the avatar image' },
     avatarPosition: { control: 'radio', options: ['left', 'right'] },
     avatarSize: { control: 'radio', options: ['sm', 'md', 'lg'] },
     bordered: { control: 'boolean' },
     headingLevel: { control: 'number', options: [2,3,4,5,6] },
+    children: {
+      description: 'React node for custom content (e.g., action buttons)',
+      control: { disable: true }
+    }
   },
   tags: ['autodocs']
 };
@@ -34,20 +41,18 @@ export const Default = {
   args: {
     name: 'Jane Doe',
     title: 'Senior Policy Analyst',
-    // email: 'jane.doe@example.com',
-    email: '',
+    email: undefined,
     department: 'Bureau of Transportation',
     layout: 'row',
     imageAlign: 'top',
     headingLevel: 3,
     bordered: false,
-    avatarUrl: avatarPlaceholder,
     avatarAlt: 'Portrait of Jane Doe',
     avatarSize: 'md',
     avatarPosition: 'left',
-    // phones,
-    phones: [],
-    children: <Button>View Profile</Button>
+    avatarUrl: avatarPlaceholder,
+    phones: undefined,
+    children: <Button onClick={action('View Profile button clicked')}>View Profile</Button>
   }
 };
 
@@ -103,14 +108,5 @@ export const WithTagsAndMeta = {
     phones,
     meta: ['Speaks: English, Spanish'],
     tags: ['Fallback style', <Tag key="tag1" variant="default">Tag component</Tag>]
-  }
-};
-
-export const LongTextWrapping = {
-  args: {
-    ...Default.args,
-    name: 'Jane Alexandra Doe-Smithington the Third',
-    title: 'Senior Policy Analyst and Strategic Partnerships Coordinator, Office of Community Engagement',
-    department: 'Bureau of Transportation and Regional Mobility Services'
   }
 };
