@@ -26,6 +26,14 @@
   color: var(--color-text-secondary, #666);
 }
 
+.secondary-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
 .i18n-demo__language-selector {
   margin-bottom: 3rem;
 }
@@ -52,6 +60,27 @@
   text-align: center;
   min-height: 80px;
   justify-content: center;
+}
+
+.i18n-demo__language-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-background-secondary, #e9ecef);
+  color: var(--color-text-secondary, #666);
+  border-color: var(--color-border, #dee2e6);
+}
+
+.i18n-demo__language-button:disabled .i18n-demo__language-english {
+  opacity: 0.5;
+}
+
+/* High contrast mode support for disabled buttons */
+@media (prefers-contrast: high) {
+  .i18n-demo__language-button:disabled {
+    border: 2px solid var(--color-text, #1a1a1a);
+    background-color: var(--color-background, #f8f9fa);
+    color: var(--color-text, #1a1a1a);
+  }
 }
 
 .i18n-demo__language-english {
