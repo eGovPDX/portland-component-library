@@ -1,0 +1,3 @@
+export { Person } from './Person';
+
+

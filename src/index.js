@@ -28,6 +28,7 @@ export { ExternalLinkIcon } from './components/ExternalLinkIcon';
 export { TextInput } from './components/TextInput';
 export { StepIndicator } from './components/StepIndicator';
 export { Dropdown } from './components/Dropdown';
+export { Person } from './components/Person';
 export { 
   Table, 
   TableCaption, 
