@@ -40,32 +40,32 @@
 
 /* Size modifiers */
 .person--sm .person__avatar {
-  width: var(--person-avatar-size-mobile, 40px);
-  height: var(--person-avatar-size-mobile, 40px);
+  width: 40px;
+  height: 40px;
 }
 
 .person--md .person__avatar {
-  width: var(--person-avatar-size, 64px);
-  height: var(--person-avatar-size, 64px);
+  width: 64px;
+  height: 64px;
 }
 
 .person--lg .person__avatar {
-  width: var(--person-avatar-size-lg, 133px);
-  height: var(--person-avatar-size-lg, 133px);
+  width: 133px;
+  height: 133px;
 }
 
 /* Responsive avatar sizes for medium variant */
 @media (min-width: 640px) {
   .person--md .person__avatar {
-    width: var(--person-avatar-size-tablet, var(--person-avatar-size, 64px));
-    height: var(--person-avatar-size-tablet, var(--person-avatar-size, 64px));
+    width: 64px;
+    height: 64px;
   }
 }
 
 @media (min-width: 1024px) {
   .person--md .person__avatar {
-    width: var(--person-avatar-size-desktop, var(--person-avatar-size, 64px));
-    height: var(--person-avatar-size-desktop, var(--person-avatar-size, 64px));
+    width: 64px;
+    height: 64px;
   }
 }
 
