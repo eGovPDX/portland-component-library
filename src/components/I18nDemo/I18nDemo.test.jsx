@@ -35,17 +35,19 @@ describe('I18nDemo', () => {
     
     expect(screen.getByText(/Language Demo/i)).toBeInTheDocument();
     expect(screen.getByText(/Select language/i)).toBeInTheDocument();
-    expect(screen.getByText(/Available languages/i)).toBeInTheDocument();
+    expect(screen.getByText(/Change Language/i)).toBeInTheDocument();
   });
 
-  test('displays all supported languages', () => {
+  test('displays language selector with English and Spanish', () => {
     renderWithI18n(<I18nDemo />);
     
-    // Check for some key languages - use more specific selectors
-    expect(screen.getByText('English', { selector: 'span[lang="en"]' })).toBeInTheDocument();
+    // Check that the language selector is present
+    expect(screen.getByText('Change Language')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Select language' })).toBeInTheDocument();
+    
+    // Check that the language selector shows Spanish (current non-selected language)
     expect(screen.getByText('Español')).toBeInTheDocument();
-    expect(screen.getByText('Tiếng Việt')).toBeInTheDocument();
-    expect(screen.getByText('中文')).toBeInTheDocument();
+    expect(screen.getByText('(Spanish)')).toBeInTheDocument();
   });
 
   test('shows current language information', () => {
@@ -81,12 +83,12 @@ describe('I18nDemo', () => {
     expect(demoElement).toHaveAttribute('lang');
   });
 
-  test('language buttons are clickable', () => {
+  test('language selector button is clickable', () => {
     renderWithI18n(<I18nDemo />);
     
-    const spanishButton = screen.getByText('Español');
-    expect(spanishButton).toBeInTheDocument();
-    expect(spanishButton.closest('button')).toBeInTheDocument();
+    const languageButton = screen.getByRole('button', { name: 'Select language' });
+    expect(languageButton).toBeInTheDocument();
+    expect(languageButton).toBeEnabled();
   });
 
   test('displays language direction information', () => {
@@ -132,17 +134,19 @@ describe('I18nDemo', () => {
     
     // Check for proper heading structure
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 2 })).toBeInTheDocument();
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(4); // Current language, Component Example, Jane Doe, i18n Features
+    expect(screen.getByRole('heading', { level: 4 })).toBeInTheDocument(); // Change Language
     
     // Check for proper button roles
-    const languageButtons = screen.getAllByRole('button');
-    expect(languageButtons.length).toBeGreaterThan(0);
+    const languageButton = screen.getByRole('button', { name: 'Select language' });
+    expect(languageButton).toBeInTheDocument();
   });
 
   test('responsive design elements', () => {
     renderWithI18n(<I18nDemo />);
     
-    const languageGrid = screen.getByText(/Available languages/i).nextElementSibling;
-    expect(languageGrid).toHaveClass('i18n-demo__language-grid');
+    // Check that the language selector wrapper has proper styling
+    const languageSelectorWrapper = screen.getByText(/Change Language/i).closest('.i18n-demo__language-selector-wrapper');
+    expect(languageSelectorWrapper).toBeInTheDocument();
   });
 });
