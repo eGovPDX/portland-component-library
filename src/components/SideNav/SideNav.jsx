@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './SideNav.css';
 
 /**
@@ -61,6 +62,7 @@ NavItem.propTypes = {
 };
 
 export const SideNav = ({ items, activeItemId, activeIndex }) => {
+  const { t } = useComponentTranslation('SideNav');
   const [expandedSection, setExpandedSection] = useState(null);
 
   const getItemPosition = (index, total, isChild = false) => {
@@ -101,7 +103,7 @@ export const SideNav = ({ items, activeItemId, activeIndex }) => {
   return (
     <nav 
       className="side-nav"
-      aria-label="Section Navigation"
+      aria-label={t('accessibility.sectionNavigation')}
       role="navigation"
     >
       <ul className="side-nav-list">
