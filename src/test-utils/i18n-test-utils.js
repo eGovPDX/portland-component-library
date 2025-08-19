@@ -94,6 +94,40 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      Footer: {
+        feedback: {
+          improveText: 'See something we could improve on this page?',
+          feedbackLink: 'Give website feedback'
+        },
+        accessibility: {
+          requestServices: 'Request these services',
+          online: 'online',
+          or: 'or',
+          relayService: 'Relay Service:'
+        },
+        translation: {
+          translationText: 'for translation assistance'
+        },
+        exploreServices: {
+          exploreServicesText: 'Explore services'
+        },
+        sections: {
+          generalInformation: 'General Information',
+          termsAndPolicies: 'Terms And Policies',
+          portlandGov: 'Portland.Gov'
+        },
+        defaults: {
+          feedback: 'Give website feedback',
+          requestServices: 'Request these services',
+          online: 'online',
+          relayService: 'Relay Service:',
+          translation: 'for translation assistance',
+          exploreServices: 'Explore services',
+          generalInformation: 'General Information',
+          termsAndPolicies: 'Terms And Policies',
+          portlandGov: 'Portland.Gov'
+        }
+      },
       Alert: {
         types: {
           info: 'Information',
@@ -178,6 +212,40 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      Footer: {
+        feedback: {
+          improveText: '¿Ves algo que podríamos mejorar en esta página?',
+          feedbackLink: 'Dar retroalimentación del sitio web'
+        },
+        accessibility: {
+          requestServices: 'Solicitar estos servicios',
+          online: 'en línea',
+          or: 'o',
+          relayService: 'Servicio de relevo:'
+        },
+        translation: {
+          translationText: 'para asistencia de traducción'
+        },
+        exploreServices: {
+          exploreServicesText: 'Explorar servicios'
+        },
+        sections: {
+          generalInformation: 'Información General',
+          termsAndPolicies: 'Términos y Políticas',
+          portlandGov: 'Portland.Gov'
+        },
+        defaults: {
+          feedback: 'Dar retroalimentación del sitio web',
+          requestServices: 'Solicitar estos servicios',
+          online: 'en línea',
+          relayService: 'Servicio de relevo:',
+          translation: 'para asistencia de traducción',
+          exploreServices: 'Explorar servicios',
+          generalInformation: 'Información General',
+          termsAndPolicies: 'Términos y Políticas',
+          portlandGov: 'Portland.Gov'
         }
       }
     }

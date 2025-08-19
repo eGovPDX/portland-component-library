@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { Footer } from './Footer';
 
 describe('Footer', () => {
@@ -37,7 +38,7 @@ describe('Footer', () => {
   };
 
   test('renders accessibility and translation information', () => {
-    render(<Footer {...defaultProps} />);
+    renderWithI18n(<Footer {...defaultProps} />);
     expect(screen.getByText(/The City of Portland ensures meaningful access/i)).toBeInTheDocument();
     
     // Check accessibility and translation information
@@ -52,7 +53,7 @@ describe('Footer', () => {
   });
 
   test('renders feedback section', () => {
-    render(<Footer {...defaultProps} />);
+    renderWithI18n(<Footer {...defaultProps} />);
     
     const feedbackLink = screen.getByRole('link', { name: /Give website feedback/i });
     expect(feedbackLink).toBeInTheDocument();
@@ -60,7 +61,7 @@ describe('Footer', () => {
   });
 
   test('renders navigation sections', () => {
-    render(<Footer {...defaultProps} />);
+    renderWithI18n(<Footer {...defaultProps} />);
     
     // Check for navigation headings
     expect(screen.getByText('General Information')).toBeInTheDocument();
@@ -72,7 +73,7 @@ describe('Footer', () => {
   });
 
   test('renders city information', () => {
-    render(<Footer {...defaultProps} />);
+    renderWithI18n(<Footer {...defaultProps} />);
     
     expect(screen.getByText('City of Portland, Oregon')).toBeInTheDocument();
     expect(screen.getByAltText('City of Portland Seal')).toHaveAttribute('src', '/city-seal.png');
@@ -80,7 +81,7 @@ describe('Footer', () => {
   });
 
   test('applies custom className', () => {
-    render(<Footer {...defaultProps} className="custom-class" />);
+    renderWithI18n(<Footer {...defaultProps} className="custom-class" />);
     
     const footer = screen.getByRole('contentinfo');
     expect(footer).toHaveClass('footer');
