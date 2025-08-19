@@ -1,0 +1,14 @@
+{
+  "Breadcrumb": {
+    "accessibility": {
+      "breadcrumb": "Navegación de migas de pan",
+      "currentPage": "Página actual",
+      "separator": "Separador de migas de pan"
+    },
+    "defaults": {
+      "breadcrumb": "Navegación de migas de pan",
+      "currentPage": "Página actual",
+      "separator": "Separador de migas de pan"
+    }
+  }
+}

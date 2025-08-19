@@ -94,6 +94,18 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      Breadcrumb: {
+        accessibility: {
+          breadcrumb: 'Breadcrumb navigation',
+          currentPage: 'Current page',
+          separator: 'Breadcrumb separator'
+        },
+        defaults: {
+          breadcrumb: 'Breadcrumb navigation',
+          currentPage: 'Current page',
+          separator: 'Breadcrumb separator'
+        }
+      },
       Dropdown: {
         validation: {
           required: 'This field is required.',
@@ -303,6 +315,18 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      Breadcrumb: {
+        accessibility: {
+          breadcrumb: 'Navegación de migas de pan',
+          currentPage: 'Página actual',
+          separator: 'Separador de migas de pan'
+        },
+        defaults: {
+          breadcrumb: 'Navegación de migas de pan',
+          currentPage: 'Página actual',
+          separator: 'Separador de migas de pan'
         }
       },
       Dropdown: {
