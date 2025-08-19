@@ -1,0 +1,16 @@
+{
+  "Radio": {
+    "accessibility": {
+      "radio": "Botón de radio",
+      "radioGroup": "Grupo de botones de radio",
+      "selected": "Seleccionado",
+      "unselected": "No seleccionado"
+    },
+    "defaults": {
+      "radio": "Botón de radio",
+      "radioGroup": "Grupo de botones de radio",
+      "selected": "Seleccionado",
+      "unselected": "No seleccionado"
+    }
+  }
+}

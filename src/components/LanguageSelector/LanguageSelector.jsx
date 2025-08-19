@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import { Dropdown } from '../Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './LanguageSelector.css';
 
 /**
@@ -134,18 +135,24 @@ export const LanguageSelector = ({
   selectedLanguage = 'en',
   onLanguageChange,
   variant = 'default',
-  buttonText = 'Languages',
+  buttonText,
   buttonVariant = 'default',
   buttonSize = 'default',
   className,
   id = 'language-selector',
   disabled = false,
   showFooterText = true,
-  footerText = 'Selected content in additional languages',
-  ariaLabel = 'Select language',
+  footerText,
+  ariaLabel,
   showIcon = false,
   ...props
 }) => {
+  const { t } = useComponentTranslation('LanguageSelector');
+  
+  // Use i18n translations with fallbacks to props
+  const languagesButtonText = buttonText || t('defaults.languages');
+  const languageAriaLabel = ariaLabel || t('defaults.selectLanguage');
+  const languageFooterText = footerText || t('defaults.footerText');
   // State for menu visibility and navigation
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -327,9 +334,9 @@ export const LanguageSelector = ({
           value={selectedLanguage || ''}
           onChange={e => handleLanguageSelect(e.target.value)}
           disabled={disabled}
-          aria-label={ariaLabel}
+          aria-label={languageAriaLabel}
         >
-          <option value="" disabled>{buttonText}</option>
+          <option value="" disabled>{languagesButtonText}</option>
           {languages.map(language => (
             <option 
               key={language.code} 
@@ -371,7 +378,7 @@ export const LanguageSelector = ({
               aria-hidden="true"
             />
           )}
-          {buttonText}
+                      {languagesButtonText}
         </button>
         {isOpen && (
           <ul
@@ -415,7 +422,7 @@ export const LanguageSelector = ({
                 className="usa-language-selector__footer"
                 role="presentation"
               >
-                {footerText}
+                {languageFooterText}
               </li>
             )}
           </ul>
@@ -444,7 +451,7 @@ export const LanguageSelector = ({
         onSelect={(value) => handleLanguageSelect(value)}
         disabled={disabled}
         className="usa-language-selector__dropdown"
-        defaultOptionLabel={buttonText}
+                    defaultOptionLabel={languagesButtonText}
         aria-label={ariaLabel}
       />
     </div>

@@ -1,0 +1,16 @@
+{
+  "Select": {
+    "accessibility": {
+      "select": "Menú desplegable de selección",
+      "selectOption": "Seleccionar opción",
+      "required": "Campo obligatorio",
+      "optional": "Campo opcional"
+    },
+    "defaults": {
+      "select": "Menú desplegable de selección",
+      "selectOption": "Seleccionar opción",
+      "required": "Campo obligatorio",
+      "optional": "Campo opcional"
+    }
+  }
+}

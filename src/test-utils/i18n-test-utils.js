@@ -94,6 +94,22 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      LanguageSelector: {
+        labels: {
+          languages: 'Languages',
+          selectLanguage: 'Select language',
+          footerText: 'Selected content in additional languages'
+        },
+        accessibility: {
+          languageSelector: 'Language selector',
+          selectLanguage: 'Select language'
+        },
+        defaults: {
+          languages: 'Languages',
+          selectLanguage: 'Select language',
+          footerText: 'Selected content in additional languages'
+        }
+      },
       Breadcrumb: {
         accessibility: {
           breadcrumb: 'Breadcrumb navigation',
@@ -315,6 +331,22 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      LanguageSelector: {
+        labels: {
+          languages: 'Idiomas',
+          selectLanguage: 'Seleccionar idioma',
+          footerText: 'Contenido seleccionado en idiomas adicionales'
+        },
+        accessibility: {
+          languageSelector: 'Selector de idioma',
+          selectLanguage: 'Seleccionar idioma'
+        },
+        defaults: {
+          languages: 'Idiomas',
+          selectLanguage: 'Seleccionar idioma',
+          footerText: 'Contenido seleccionado en idiomas adicionales'
         }
       },
       Breadcrumb: {
