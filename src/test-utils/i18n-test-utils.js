@@ -94,6 +94,15 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      Modal: {
+        accessibility: {
+          closeButton: 'Close this modal',
+          modalDialog: 'Modal dialog'
+        },
+        defaults: {
+          closeButton: 'Close'
+        }
+      },
       Search: {
         labels: {
           search: 'Search',
@@ -226,6 +235,15 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      Modal: {
+        accessibility: {
+          closeButton: 'Cerrar este modal',
+          modalDialog: 'Diálogo modal'
+        },
+        defaults: {
+          closeButton: 'Cerrar'
         }
       },
       Search: {

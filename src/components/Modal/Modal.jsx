@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FocusTrap } from 'focus-trap-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import { Card } from '../Card';
 import './Modal.css';
 
@@ -40,6 +41,7 @@ export const Modal = ({
   ariaDescribedBy,
   ...props
 }) => {
+  const { t } = useComponentTranslation('Modal');
   const dialogRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -216,7 +218,7 @@ export const Modal = ({
               <button
                 type="button"
                 className="usa-modal__close"
-                aria-label="Close this modal"
+                aria-label={t('accessibility.closeButton')}
                 onClick={handleCloseClick}
                 tabIndex="0"
               >
@@ -226,31 +228,31 @@ export const Modal = ({
             {children}
           </Card>
           {!hasFocusableElements && (
-            <button
-              type="button"
-              className="usa-modal__fallback-focus"
-              tabIndex="0"
-              style={{ 
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '1px',
-                height: '1px',
-                padding: 0,
-                margin: '-1px',
-                overflow: 'hidden',
-                clip: 'rect(0, 0, 0, 0)',
-                whiteSpace: 'nowrap',
-                border: 0
-              }}
-              aria-label="Focus target"
-              onFocus={(e) => {
-                // When this gets focus, try to focus the modal content instead
-                if (contentRef.current) {
-                  contentRef.current.focus();
-                }
-              }}
-            >
+                          <button
+                type="button"
+                className="usa-modal__fallback-focus"
+                tabIndex="0"
+                style={{ 
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '1px',
+                  height: '1px',
+                  padding: 0,
+                  margin: '-1px',
+                  overflow: 'hidden',
+                  clip: 'rect(0, 0, 0, 0)',
+                  whiteSpace: 'nowrap',
+                  border: 0
+                }}
+                aria-label={t('accessibility.modalDialog')}
+                onFocus={(e) => {
+                  // When this gets focus, try to focus the modal content instead
+                  if (contentRef.current) {
+                    contentRef.current.focus();
+                  }
+                }}
+              >
               &nbsp;
             </button>
           )}

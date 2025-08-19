@@ -1,0 +1,11 @@
+{
+  "Modal": {
+    "accessibility": {
+      "closeButton": "Cerrar",
+      "modalDialog": "Diálogo modal"
+    },
+    "defaults": {
+      "closeButton": "Cerrar"
+    }
+  }
+}
