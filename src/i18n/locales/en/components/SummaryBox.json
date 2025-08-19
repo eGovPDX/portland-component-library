@@ -1,0 +1,11 @@
+{
+  "SummaryBox": {
+    "accessibility": {
+      "summaryBox": "Summary box",
+      "summary": "Summary"
+    },
+    "defaults": {
+      "summary": "Summary"
+    }
+  }
+}

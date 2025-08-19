@@ -2,55 +2,14 @@
   "Accordion": {
     "accessibility": {
       "accordion": "Accordion",
-      "accordionSection": "Accordion section",
-      "expandSection": "Expand section",
-      "collapseSection": "Collapse section",
-      "sectionExpanded": "Section expanded",
-      "sectionCollapsed": "Section collapsed",
-      "sectionHeader": "Section header",
-      "sectionContent": "Section content",
-      "sectionNumber": "Section {{number}}",
-      "sectionOf": "Section {{current}} of {{total}}"
-    },
-    "actions": {
       "expand": "Expand",
       "collapse": "Collapse",
-      "expandAll": "Expand all",
-      "collapseAll": "Collapse all",
-      "toggleSection": "Toggle section"
-    },
-    "states": {
-      "expanded": "Expanded",
-      "collapsed": "Collapsed",
-      "loading": "Loading",
-      "disabled": "Disabled",
-      "error": "Error"
-    },
-    "content": {
-      "header": "Section header",
-      "content": "Section content",
-      "summary": "Section summary",
-      "details": "Section details",
-      "description": "Section description"
-    },
-    "variants": {
-      "single": "Single accordion",
-      "multiple": "Multiple accordion",
-      "bordered": "Bordered accordion",
-      "unbordered": "Unbordered accordion"
+      "section": "Section"
     },
     "defaults": {
-      "noContent": "No content available",
-      "loadingContent": "Loading content...",
-      "errorContent": "Error loading content",
-      "emptySection": "Empty section"
-    },
-    "navigation": {
-      "nextSection": "Next section",
-      "previousSection": "Previous section",
-      "firstSection": "First section",
-      "lastSection": "Last section",
-      "goToSection": "Go to section {{number}}"
+      "expand": "Expand",
+      "collapse": "Collapse",
+      "section": "Section"
     }
   }
 }

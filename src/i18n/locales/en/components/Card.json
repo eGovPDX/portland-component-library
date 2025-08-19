@@ -1,0 +1,18 @@
+{
+  "Card": {
+    "accessibility": {
+      "card": "Card",
+      "cardContent": "Card content",
+      "cardHeader": "Card header",
+      "cardBody": "Card body",
+      "cardFooter": "Card footer"
+    },
+    "defaults": {
+      "card": "Card",
+      "cardContent": "Card content",
+      "cardHeader": "Card header",
+      "cardBody": "Card body",
+      "cardFooter": "Card footer"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "Dropdown": {
+    "validation": {
+      "required": "This field is required.",
+      "select": "Select"
+    },
+    "accessibility": {
+      "dropdown": "Dropdown",
+      "selectOption": "Select option"
+    },
+    "defaults": {
+      "required": "This field is required.",
+      "select": "- Select -"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "Dropdown": {
+    "validation": {
+      "required": "Este campo es obligatorio.",
+      "select": "Seleccionar"
+    },
+    "accessibility": {
+      "dropdown": "Menú desplegable",
+      "selectOption": "Seleccionar opción"
+    },
+    "defaults": {
+      "required": "Este campo es obligatorio.",
+      "select": "- Seleccionar -"
+    }
+  }
+}

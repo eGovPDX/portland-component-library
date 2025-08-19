@@ -1,0 +1,18 @@
+{
+  "Card": {
+    "accessibility": {
+      "card": "Tarjeta",
+      "cardContent": "Contenido de la tarjeta",
+      "cardHeader": "Encabezado de la tarjeta",
+      "cardBody": "Cuerpo de la tarjeta",
+      "cardFooter": "Pie de la tarjeta"
+    },
+    "defaults": {
+      "card": "Tarjeta",
+      "cardContent": "Contenido de la tarjeta",
+      "cardHeader": "Encabezado de la tarjeta",
+      "cardBody": "Cuerpo de la tarjeta",
+      "cardFooter": "Pie de la tarjeta"
+    }
+  }
+}

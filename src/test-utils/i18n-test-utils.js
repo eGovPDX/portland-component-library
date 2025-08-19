@@ -94,6 +94,20 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      Dropdown: {
+        validation: {
+          required: 'This field is required.',
+          select: 'Select'
+        },
+        accessibility: {
+          dropdown: 'Dropdown',
+          selectOption: 'Select option'
+        },
+        defaults: {
+          required: 'This field is required.',
+          select: '- Select -'
+        }
+      },
       StepIndicator: {
         accessibility: {
           stepIndicator: 'Step indicator',
@@ -289,6 +303,20 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      Dropdown: {
+        validation: {
+          required: 'Este campo es obligatorio.',
+          select: 'Seleccionar'
+        },
+        accessibility: {
+          dropdown: 'Menú desplegable',
+          selectOption: 'Seleccionar opción'
+        },
+        defaults: {
+          required: 'Este campo es obligatorio.',
+          select: '- Seleccionar -'
         }
       },
       StepIndicator: {
