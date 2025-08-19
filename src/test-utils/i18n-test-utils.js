@@ -290,6 +290,11 @@ const mockTranslations = {
           accessibility: {
             contentCategories: 'Content categories'
           }
+        },
+        ButtonGroup: {
+          accessibility: {
+            buttonGroup: 'Button Group'
+          }
         }
     }
   },
@@ -555,6 +560,11 @@ const mockTranslations = {
          HeroGlobal: {
            accessibility: {
              contentCategories: 'Categorías de contenido'
+           }
+         },
+         ButtonGroup: {
+           accessibility: {
+             buttonGroup: 'Grupo de Botones'
            }
          }
       }

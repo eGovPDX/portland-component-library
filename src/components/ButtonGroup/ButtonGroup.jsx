@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './ButtonGroup.css';
 
 /**
@@ -18,6 +19,7 @@ export const ButtonGroup = ({
   className,
   ...props
 }) => {
+  const { t } = useComponentTranslation('ButtonGroup');
   const baseClass = 'usa-button-group';
   const segmentedClass = segmented ? `${baseClass}--segmented` : '';
   
@@ -28,7 +30,7 @@ export const ButtonGroup = ({
   ].filter(Boolean).join(' ');
 
   return (
-    <ul className={buttonGroupClasses} role="group" aria-label={props['aria-label'] || 'Button Group'} {...props}>
+    <ul className={buttonGroupClasses} role="group" aria-label={props['aria-label'] || t('accessibility.buttonGroup')} {...props}>
       {React.Children.map(children, (child) => (
         <li className="usa-button-group__item">
           {child}
