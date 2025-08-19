@@ -3,6 +3,11 @@ import { I18nDemo } from './I18nDemo';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import '../LanguageSelector/LanguageSelector.css';
+import '../Person/Person.css';
+import '../Button/Button.css';
+import '../Dropdown/Dropdown.css';
+import '../../styles/themes/pgov.css';
 
 // Mock translations for Storybook
 const mockTranslations = {
