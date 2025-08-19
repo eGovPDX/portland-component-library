@@ -204,7 +204,6 @@ button.usa-input.dropdown__button {
   margin-bottom: 0.5rem;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .i18n-demo {
     padding: 1rem;
