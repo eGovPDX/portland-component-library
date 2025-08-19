@@ -1,0 +1,17 @@
+{
+  "StepIndicator": {
+    "accessibility": {
+      "stepIndicator": "Indicador de pasos",
+      "step": "Paso {{step}}",
+      "currentStep": "Paso actual {{step}}",
+      "completedStep": "Paso completado {{step}}",
+      "totalSteps": "de {{total}} pasos"
+    },
+    "defaults": {
+      "step": "Paso",
+      "currentStep": "Paso actual",
+      "completedStep": "Paso completado",
+      "totalSteps": "de {{total}} pasos"
+    }
+  }
+}

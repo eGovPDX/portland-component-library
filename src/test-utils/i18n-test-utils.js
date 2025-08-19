@@ -94,6 +94,21 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      StepIndicator: {
+        accessibility: {
+          stepIndicator: 'Step indicator',
+          step: 'Step',
+          currentStep: 'Current step',
+          completedStep: 'Completed step',
+          totalSteps: 'of {{total}} steps'
+        },
+        defaults: {
+          step: 'Step',
+          currentStep: 'Current step',
+          completedStep: 'Completed step',
+          totalSteps: 'of {{total}} steps'
+        }
+      },
       Pagination: {
         navigation: {
           previous: 'Previous',
@@ -274,6 +289,21 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      StepIndicator: {
+        accessibility: {
+          stepIndicator: 'Indicador de pasos',
+          step: 'Paso',
+          currentStep: 'Paso actual',
+          completedStep: 'Paso completado',
+          totalSteps: 'de {{total}} pasos'
+        },
+        defaults: {
+          step: 'Paso',
+          currentStep: 'Paso actual',
+          completedStep: 'Paso completado',
+          totalSteps: 'de {{total}} pasos'
         }
       },
       Pagination: {

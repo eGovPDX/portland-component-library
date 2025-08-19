@@ -1,0 +1,15 @@
+{
+  "ProcessSteps": {
+    "accessibility": {
+      "processSteps": "Pasos del proceso",
+      "step": "Paso {{step}}",
+      "currentStep": "Paso actual {{step}}",
+      "completedStep": "Paso completado {{step}}"
+    },
+    "defaults": {
+      "step": "Paso",
+      "currentStep": "Paso actual",
+      "completedStep": "Paso completado"
+    }
+  }
+}
