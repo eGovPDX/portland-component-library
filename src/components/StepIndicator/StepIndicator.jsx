@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './StepIndicator.css';
 import { StepIndicatorSegment } from './StepIndicatorSegment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,6 +34,7 @@ export const StepIndicator = ({
   className = '',
   ...props
 }) => {
+  const { t } = useComponentTranslation('StepIndicator');
   // Calculate classes based on variants
   const baseClass = 'usa-step-indicator';
   const noLabelsClass = !showLabels ? `${baseClass}--no-labels` : '';
@@ -70,9 +72,9 @@ export const StepIndicator = ({
       <div className="usa-step-indicator__header">
         <h4 className="usa-step-indicator__heading">
           <div className="usa-step-indicator__counter-container">
-            <span className="usa-sr-only">Step</span>
+            <span className="usa-sr-only">{t('accessibility.step')}</span>
             <span className="usa-step-indicator__current-step">{currentStep}</span>
-            <span className="usa-step-indicator__total-steps">of {steps.length}</span>
+            <span className="usa-step-indicator__total-steps">{t('accessibility.totalSteps', { total: steps.length })}</span>
           </div>
           {title && (
             <div className="usa-step-indicator__title-container">

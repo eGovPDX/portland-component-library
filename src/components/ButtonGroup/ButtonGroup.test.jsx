@@ -1,12 +1,13 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { ButtonGroup } from './ButtonGroup';
 import { Button } from '../Button';
 
 describe('ButtonGroup', () => {
   // Test default rendering
   test('renders with default props', () => {
-    render(
+    renderWithI18n(
       <ButtonGroup>
         <Button>Button 1</Button>
         <Button>Button 2</Button>
@@ -29,7 +30,7 @@ describe('ButtonGroup', () => {
 
   // Test segmented button group
   test('renders segmented button group correctly', () => {
-    render(
+    renderWithI18n(
       <ButtonGroup segmented>
         <Button>Button 1</Button>
         <Button>Button 2</Button>
@@ -46,7 +47,7 @@ describe('ButtonGroup', () => {
 
   // Test with custom class name
   test('applies custom className', () => {
-    render(
+    renderWithI18n(
       <ButtonGroup className="custom-class">
         <Button>Button 1</Button>
       </ButtonGroup>
@@ -58,7 +59,7 @@ describe('ButtonGroup', () => {
 
   // Test with custom aria-label
   test('applies custom aria-label', () => {
-    render(
+    renderWithI18n(
       <ButtonGroup aria-label="Custom Label">
         <Button>Button 1</Button>
       </ButtonGroup>
@@ -70,7 +71,7 @@ describe('ButtonGroup', () => {
 
   // Test with non-button children
   test('renders with non-button children', () => {
-    render(
+    renderWithI18n(
       <ButtonGroup>
         <Button>Button 1</Button>
         <span>Not a button</span>

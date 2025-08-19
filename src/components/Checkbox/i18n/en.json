@@ -1,0 +1,16 @@
+{
+  "Checkbox": {
+    "accessibility": {
+      "checkbox": "Checkbox",
+      "checked": "Checked",
+      "unchecked": "Unchecked",
+      "required": "Required field"
+    },
+    "defaults": {
+      "checkbox": "Checkbox",
+      "checked": "Checked",
+      "unchecked": "Unchecked",
+      "required": "Required field"
+    }
+  }
+}

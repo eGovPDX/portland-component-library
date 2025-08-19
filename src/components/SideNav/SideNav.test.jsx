@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { SideNav } from './SideNav';
 
 describe('SideNav', () => {
@@ -23,7 +24,7 @@ describe('SideNav', () => {
   ];
 
   it('renders all top-level navigation items', () => {
-    render(<SideNav items={mockItems} />);
+    renderWithI18n(<SideNav items={mockItems} />);
     
     expect(screen.getByText('Research')).toBeInTheDocument();
     expect(screen.getByText('Prepare')).toBeInTheDocument();
@@ -31,7 +32,7 @@ describe('SideNav', () => {
   });
 
   it('marks the active item correctly', () => {
-    render(<SideNav items={mockItems} activeItemId="#prepare" />);
+    renderWithI18n(<SideNav items={mockItems} activeItemId="#prepare" />);
     
     const activeItem = screen.getByText('Prepare').closest('a');
     expect(activeItem).toHaveClass('active');
@@ -39,7 +40,7 @@ describe('SideNav', () => {
   });
 
   it('expands section when parent item is clicked', () => {
-    render(<SideNav items={mockItems} />);
+    renderWithI18n(<SideNav items={mockItems} />);
     
     const parentItem = screen.getByText('Research').closest('a');
     fireEvent.click(parentItem);
@@ -50,7 +51,7 @@ describe('SideNav', () => {
   });
 
   it('collapses expanded section when clicked again', () => {
-    render(<SideNav items={mockItems} />);
+    renderWithI18n(<SideNav items={mockItems} />);
     
     const parentItem = screen.getByText('Research').closest('a');
     fireEvent.click(parentItem);
@@ -61,7 +62,7 @@ describe('SideNav', () => {
   });
 
   it('has proper accessibility attributes', () => {
-    render(<SideNav items={mockItems} />);
+    renderWithI18n(<SideNav items={mockItems} />);
     
     const nav = screen.getByRole('navigation');
     expect(nav).toHaveAttribute('aria-label', 'Section Navigation');
@@ -69,7 +70,7 @@ describe('SideNav', () => {
   });
 
   it('shows additional list when section is expanded', () => {
-    render(<SideNav items={mockItems} />);
+    renderWithI18n(<SideNav items={mockItems} />);
     
     const parentItem = screen.getByText('Research').closest('a');
     fireEvent.click(parentItem);
@@ -81,7 +82,7 @@ describe('SideNav', () => {
   });
 
   it('supports legacy activeIndex prop', () => {
-    render(<SideNav items={mockItems} activeIndex={1} />);
+    renderWithI18n(<SideNav items={mockItems} activeIndex={1} />);
     
     const activeItem = screen.getByText('Prepare').closest('a');
     expect(activeItem).toHaveClass('active');

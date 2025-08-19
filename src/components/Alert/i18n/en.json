@@ -1,0 +1,23 @@
+{
+  "Alert": {
+    "types": {
+      "info": "Information",
+      "success": "Success",
+      "warning": "Warning",
+      "error": "Error"
+    },
+    "accessibility": {
+      "alert": "Alert",
+      "info": "Information alert",
+      "success": "Success alert",
+      "warning": "Warning alert",
+      "error": "Error alert"
+    },
+    "defaults": {
+      "info": "Information",
+      "success": "Success",
+      "warning": "Warning",
+      "error": "Error"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './PGOVHeader.css';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderMenuGroup } from './HeaderMenuGroup';
@@ -19,6 +20,7 @@ export const PGOVHeader = ({
   closeMenuAriaLabel,
   className,
 }) => {
+  const { t } = useComponentTranslation('PGOVHeader');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -32,19 +34,19 @@ export const PGOVHeader = ({
           <div className="header-logo">
             <HeaderLogo
               logoUrl={logoUrl}
-              logoAlt={logoAlt}
+              logoAlt={logoAlt || t('defaults.logoAlt')}
             />
           </div>
-            <div className="header-text-container">
-              <span className="header-title">{title}</span>
-              {tagline && (
-                <span className="header-tagline" data-testid="tagline">{tagline}</span>
-              )}
-            </div>
+                      <div className="header-text-container">
+            <span className="header-title">{title || t('defaults.title')}</span>
+            {tagline && (
+              <span className="header-tagline" data-testid="tagline">{tagline}</span>
+            )}
+          </div>
           <div className={`header-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
             <button
               className="header-mobile-menu-button"
-              aria-label={isMenuOpen ? closeMenuAriaLabel : openMenuAriaLabel}
+              aria-label={isMenuOpen ? (closeMenuAriaLabel || t('defaults.closeMenuAriaLabel')) : (openMenuAriaLabel || t('defaults.openMenuAriaLabel'))}
               aria-expanded={isMenuOpen}
               aria-controls="header-mobile-dropdown"
               onClick={toggleMenu}
@@ -54,7 +56,7 @@ export const PGOVHeader = ({
                 <span></span>
                 <span></span>
               </span>
-              <span className="header-mobile-menu-text" aria-hidden="true">{menuText}</span>
+              <span className="header-mobile-menu-text" aria-hidden="true">{menuText || t('defaults.menuText')}</span>
             </button>
           </div>
         </div>
@@ -67,7 +69,7 @@ export const PGOVHeader = ({
           <nav className="header-mobile-nav" aria-label="Primary navigation">
             <HeaderMenuGroup
               items={navItems}
-              mainHeading={mainHeading}
+              mainHeading={mainHeading || t('defaults.mainHeading')}
               id="header-menu-group"
             />
           </nav>
@@ -108,13 +110,13 @@ PGOVHeader.propTypes = {
 };
 
 PGOVHeader.defaultProps = {
-  title: 'Portland.gov',
+  title: undefined, // Will use translation if not provided
   logoUrl: undefined,
-  logoAlt: 'Logo',
+  logoAlt: undefined, // Will use translation if not provided
   tagline: undefined,
-  mainHeading: 'General Information',
-  menuText: 'Menu',
-  openMenuAriaLabel: 'Menu',
-  closeMenuAriaLabel: 'Close menu',
+  mainHeading: undefined, // Will use translation if not provided
+  menuText: undefined, // Will use translation if not provided
+  openMenuAriaLabel: undefined, // Will use translation if not provided
+  closeMenuAriaLabel: undefined, // Will use translation if not provided
   className: undefined
 }; 

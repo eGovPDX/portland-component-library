@@ -1,0 +1,16 @@
+{
+  "Checkbox": {
+    "accessibility": {
+      "checkbox": "Casilla de verificación",
+      "checked": "Marcada",
+      "unchecked": "Desmarcada",
+      "required": "Campo obligatorio"
+    },
+    "defaults": {
+      "checkbox": "Casilla de verificación",
+      "checked": "Marcada",
+      "unchecked": "Desmarcada",
+      "required": "Campo obligatorio"
+    }
+  }
+}

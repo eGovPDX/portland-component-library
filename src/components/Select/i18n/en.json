@@ -1,0 +1,16 @@
+{
+  "Select": {
+    "accessibility": {
+      "select": "Select dropdown",
+      "selectOption": "Select option",
+      "required": "Required field",
+      "optional": "Optional field"
+    },
+    "defaults": {
+      "select": "Select dropdown",
+      "selectOption": "Select option",
+      "required": "Required field",
+      "optional": "Optional field"
+    }
+  }
+}

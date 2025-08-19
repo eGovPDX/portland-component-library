@@ -1,0 +1,14 @@
+{
+  "TextInput": {
+    "accessibility": {
+      "textInput": "Campo de texto",
+      "required": "Campo obligatorio",
+      "optional": "Campo opcional"
+    },
+    "defaults": {
+      "textInput": "Campo de texto",
+      "required": "Campo obligatorio",
+      "optional": "Campo opcional"
+    }
+  }
+}

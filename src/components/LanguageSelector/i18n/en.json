@@ -1,0 +1,18 @@
+{
+  "LanguageSelector": {
+    "labels": {
+      "languages": "Languages",
+      "selectLanguage": "Select language",
+      "footerText": "Selected content in additional languages"
+    },
+    "accessibility": {
+      "languageSelector": "Language selector",
+      "selectLanguage": "Select language"
+    },
+    "defaults": {
+      "languages": "Languages",
+      "selectLanguage": "Select language",
+      "footerText": "Selected content in additional languages"
+    }
+  }
+}

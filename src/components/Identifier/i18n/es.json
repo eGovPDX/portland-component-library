@@ -1,0 +1,31 @@
+{
+  "accessibility": {
+    "agencyIdentifier": "Identificador de agencia,",
+    "agencyDescription": "Descripción de agencia,",
+    "importantLinks": "Enlaces importantes,",
+    "usaGovSection": "Enlace a USA.gov,"
+  },
+  "disclaimer": {
+    "officialWebsitePrefix": "",
+    "officialWebsiteText": "Un sitio web oficial de",
+    "taxpayerExpense": ". Producido y publicado con dinero de los contribuyentes de impuestos."
+  },
+  "connectors": {
+    "and": " y ",
+    "andComma": " y "
+  },
+  "defaultRequiredLinks": {
+    "about": "Acerca de",
+    "accessibilityStatement": "Declaración de accesibilidad",
+    "foiaRequests": "Solicitud a través de FOIA",
+    "noFearActData": "Datos de la ley No FEAR",
+    "inspectorGeneral": "Oficina del Inspector General",
+    "performanceReports": "Informes de desempeño",
+    "privacyPolicy": "Política de privacidad"
+  },
+  "usaGov": {
+    "text": "¿Necesita información y servicios del Gobierno?",
+    "linkText": "Visite USAGov en Español",
+    "href": "https://www.usa.gov/es/"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "Button": {
+    "variants": {
+      "default": "Botón predeterminado",
+      "secondary": "Botón secundario",
+      "accentCool": "Botón de acento frío",
+      "accentWarm": "Botón de acento cálido",
+      "base": "Botón base",
+      "outline": "Botón de contorno",
+      "outlineInverse": "Botón de contorno inverso",
+      "big": "Botón grande"
+    },
+    "sizes": {
+      "default": "Tamaño predeterminado",
+      "big": "Tamaño grande"
+    },
+    "states": {
+      "enabled": "Habilitado",
+      "disabled": "Deshabilitado",
+      "loading": "Cargando",
+      "pressed": "Presionado",
+      "focused": "Enfocado"
+    },
+    "accessibility": {
+      "button": "Botón",
+      "submitButton": "Botón de envío",
+      "resetButton": "Botón de restablecimiento",
+      "buttonPressed": "Botón presionado",
+      "buttonReleased": "Botón liberado",
+      "buttonLoading": "Botón cargando",
+      "buttonDisabled": "Botón deshabilitado"
+    },
+    "defaults": {
+      "submit": "Enviar",
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "delete": "Eliminar",
+      "edit": "Editar",
+      "view": "Ver",
+      "close": "Cerrar",
+      "back": "Atrás",
+      "next": "Siguiente",
+      "previous": "Anterior",
+      "continue": "Continuar",
+      "finish": "Finalizar",
+      "search": "Buscar",
+      "filter": "Filtrar",
+      "sort": "Ordenar",
+      "refresh": "Actualizar",
+      "loading": "Cargando...",
+      "error": "Error",
+      "success": "Éxito",
+      "warning": "Advertencia",
+      "info": "Información"
+    }
+  }
+}

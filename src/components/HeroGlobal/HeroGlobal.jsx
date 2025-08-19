@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './HeroGlobal.css';
 
 /**
@@ -24,6 +25,7 @@ export const HeroGlobal = ({
   className,
   ...props
 }) => {
+  const { t } = useComponentTranslation('HeroGlobal');
   const baseClass = 'hero-global';
   const titleId = React.useId();
 
@@ -52,7 +54,7 @@ export const HeroGlobal = ({
             {tags.length > 0 && (
               <div 
                 className={`${baseClass}__tags`}
-                aria-label="Content categories"
+                aria-label={t('accessibility.contentCategories')}
               >
                 {tags.map((tag, index) => (
                   <span 

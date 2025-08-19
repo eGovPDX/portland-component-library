@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Search.css';
@@ -20,7 +21,7 @@ import './Search.css';
  */
 export const Search = ({ 
   variant = 'default', 
-  buttonText = 'Search',
+  buttonText,
   className,
   id,
   name = 'search',
@@ -28,6 +29,10 @@ export const Search = ({
   onSubmit,
   ...props 
 }) => {
+  const { t } = useComponentTranslation('Search');
+  
+  // Use i18n translations with fallbacks to props
+  const searchButtonText = buttonText || t('defaults.search');
   const baseClassName = 'usa-search';
   const variantClassName = variant === 'big' ? 'usa-search--big' : 
                          variant === 'small' ? 'usa-search--small' : '';
@@ -41,10 +46,10 @@ export const Search = ({
   };
 
   return (
-    <section aria-label={`${variant} search component`}>
+    <section aria-label={`${variant} ${t('labels.searchComponent')}`}>
       <form className={classes} role="search" onSubmit={handleSubmit}>
         <label className="usa-sr-only" htmlFor={id}>
-          {buttonText}
+          {searchButtonText}
         </label>
         <input
           className="usa-input"
@@ -62,7 +67,7 @@ export const Search = ({
               aria-hidden="true"
             />
           ) : (
-            <span className="usa-search__submit-text">{buttonText}</span>
+            <span className="usa-search__submit-text">{searchButtonText}</span>
           )}
         </button>
       </form>

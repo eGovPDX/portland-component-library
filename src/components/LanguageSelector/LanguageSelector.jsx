@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Button } from '../Button';
+import { Dropdown } from '../Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './LanguageSelector.css';
 
 /**
@@ -133,18 +135,24 @@ export const LanguageSelector = ({
   selectedLanguage = 'en',
   onLanguageChange,
   variant = 'default',
-  buttonText = 'Languages',
+  buttonText,
   buttonVariant = 'default',
   buttonSize = 'default',
   className,
   id = 'language-selector',
   disabled = false,
   showFooterText = true,
-  footerText = 'Selected content in additional languages',
-  ariaLabel = 'Select language',
+  footerText,
+  ariaLabel,
   showIcon = false,
   ...props
 }) => {
+  const { t } = useComponentTranslation('LanguageSelector');
+  
+  // Use i18n translations with fallbacks to props
+  const languagesButtonText = buttonText || t('defaults.languages');
+  const languageAriaLabel = ariaLabel || t('defaults.selectLanguage');
+  const languageFooterText = footerText || t('defaults.footerText');
   // State for menu visibility and navigation
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -176,7 +184,7 @@ export const LanguageSelector = ({
     }
     
     const selectedLanguageObj = languages.find(lang => lang.code === languageCode);
-    if (onLanguageChange && selectedLanguageObj) {
+    if (onLanguageChange && selectedLanguageObj && !selectedLanguageObj.disabled) {
       onLanguageChange(languageCode, selectedLanguageObj);
     }
     setIsOpen(false);
@@ -191,8 +199,8 @@ export const LanguageSelector = ({
     const newTypeahead = typeahead + char.toLowerCase();
     setTypeahead(newTypeahead);
 
-    // Find first language that starts with the typed string
-    const idx = languages.findIndex(lang =>
+    // Find first non-disabled language that starts with the typed string
+    const idx = enabledLanguages.findIndex(lang =>
       lang.nativeName.toLowerCase().startsWith(newTypeahead) ||
       lang.englishName.toLowerCase().startsWith(newTypeahead)
     );
@@ -212,18 +220,27 @@ export const LanguageSelector = ({
   const handleKeyDown = (e) => {
     if (!isOpen && (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ')) {
       setIsOpen(true);
-      setActiveIndex(0);
+      // Find first non-disabled language
+      setActiveIndex(enabledLanguages.length > 0 ? 0 : -1);
       e.preventDefault();
     } else if (isOpen) {
       if (e.key === 'ArrowDown') {
-        setActiveIndex((prev) => (prev + 1) % languages.length);
+        setActiveIndex((prev) => {
+          const currentLangIndex = languages.findIndex(lang => lang.code === enabledLanguages[prev]?.code);
+          let nextIndex = (prev + 1) % enabledLanguages.length;
+          return nextIndex;
+        });
         e.preventDefault();
       } else if (e.key === 'ArrowUp') {
-        setActiveIndex((prev) => (prev - 1 + languages.length) % languages.length);
+        setActiveIndex((prev) => {
+          const currentLangIndex = languages.findIndex(lang => lang.code === enabledLanguages[prev]?.code);
+          let nextIndex = (prev - 1 + enabledLanguages.length) % enabledLanguages.length;
+          return nextIndex;
+        });
         e.preventDefault();
       } else if (e.key === 'Enter' || e.key === ' ') {
-        if (activeIndex >= 0 && activeIndex < languages.length) {
-          handleLanguageSelect(languages[activeIndex].code);
+        if (activeIndex >= 0 && activeIndex < enabledLanguages.length) {
+          handleLanguageSelect(enabledLanguages[activeIndex].code);
         }
         e.preventDefault();
       } else if (e.key === 'Escape') {
@@ -249,6 +266,9 @@ export const LanguageSelector = ({
       }
     }
   }, [isOpen, activeIndex]);
+
+  // Filter out disabled languages for navigation
+  const enabledLanguages = languages.filter(lang => !lang.disabled);
 
   /**
    * CSS classes for the component wrapper
@@ -276,8 +296,8 @@ export const LanguageSelector = ({
           id={id}
           variant={buttonVariant}
           size={buttonSize}
-          disabled={disabled}
-          onClick={() => handleLanguageSelect(otherLanguage.code)}
+          disabled={disabled || otherLanguage.disabled}
+          onClick={() => !otherLanguage.disabled && handleLanguageSelect(otherLanguage.code)}
           aria-label={ariaLabel}
           className="usa-language-selector__button"
         >
@@ -292,6 +312,11 @@ export const LanguageSelector = ({
           {otherLanguage.englishName !== otherLanguage.nativeName && (
             <span className="usa-language-selector__english-name">
               {` (${otherLanguage.englishName})`}
+            </span>
+          )}
+          {otherLanguage.disabled && (
+            <span className="usa-language-selector__disabled-indicator">
+              {' '}(Coming Soon)
             </span>
           )}
         </Button>
@@ -309,14 +334,18 @@ export const LanguageSelector = ({
           value={selectedLanguage || ''}
           onChange={e => handleLanguageSelect(e.target.value)}
           disabled={disabled}
-          aria-label={ariaLabel}
+          aria-label={languageAriaLabel}
         >
-          <option value="" disabled>{buttonText}</option>
+          <option value="" disabled>{languagesButtonText}</option>
           {languages.map(language => (
-            <option key={language.code} value={language.code}>
+            <option 
+              key={language.code} 
+              value={language.code}
+              disabled={language.disabled}
+            >
               {language.nativeName !== language.englishName 
-                ? `${language.nativeName} (${language.englishName})`
-                : language.nativeName}
+                ? `${language.nativeName} (${language.englishName})${language.disabled ? ' (Coming Soon)' : ''}`
+                : `${language.nativeName}${language.disabled ? ' (Coming Soon)' : ''}`}
             </option>
           ))}
         </select>
@@ -349,7 +378,7 @@ export const LanguageSelector = ({
               aria-hidden="true"
             />
           )}
-          {buttonText}
+                      {languagesButtonText}
         </button>
         {isOpen && (
           <ul
@@ -368,15 +397,22 @@ export const LanguageSelector = ({
                 className={classNames('usa-language-selector__option', {
                   'usa-language-selector__option--selected': selectedLanguage === language.code,
                   'usa-language-selector__option--active': activeIndex === index,
+                  'usa-language-selector__option--disabled': language.disabled,
                 })}
-                onClick={() => handleLanguageSelect(language.code)}
+                onClick={() => !language.disabled && handleLanguageSelect(language.code)}
                 role="option"
                 aria-selected={selectedLanguage === language.code}
+                aria-disabled={language.disabled}
               >
                 <span lang={language.code}>{language.nativeName}</span>
                 {language.englishName !== language.nativeName && (
                   <span className="usa-language-selector__english-name">
                     {` (${language.englishName})`}
+                  </span>
+                )}
+                {language.disabled && (
+                  <span className="usa-language-selector__disabled-indicator">
+                    {' '}(Coming Soon)
                   </span>
                 )}
               </li>
@@ -386,7 +422,7 @@ export const LanguageSelector = ({
                 className="usa-language-selector__footer"
                 role="presentation"
               >
-                {footerText}
+                {languageFooterText}
               </li>
             )}
           </ul>
@@ -399,12 +435,12 @@ export const LanguageSelector = ({
   const dropdownOptions = languages.map((language) => ({
     value: language.code,
     label: language.nativeName !== language.englishName
-      ? `${language.nativeName} (${language.englishName})`
-      : language.nativeName,
+      ? `${language.nativeName} (${language.englishName})${language.disabled ? ' (Coming Soon)' : ''}`
+      : `${language.nativeName}${language.disabled ? ' (Coming Soon)' : ''}`,
+    disabled: language.disabled,
   }));
 
-  // Lazy import to avoid circular dependencies at module init time
-  const { Dropdown } = require('../Dropdown');
+
 
   return (
     <div className={wrapperClasses} ref={containerRef} {...props}>
@@ -415,7 +451,7 @@ export const LanguageSelector = ({
         onSelect={(value) => handleLanguageSelect(value)}
         disabled={disabled}
         className="usa-language-selector__dropdown"
-        defaultOptionLabel={buttonText}
+                    defaultOptionLabel={languagesButtonText}
         aria-label={ariaLabel}
       />
     </div>
@@ -432,6 +468,7 @@ LanguageSelector.propTypes = {
       code: PropTypes.string.isRequired,
       nativeName: PropTypes.string.isRequired,
       englishName: PropTypes.string.isRequired,
+      disabled: PropTypes.bool,
     })
   ),
   /** Currently selected language code */

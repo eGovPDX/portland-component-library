@@ -1,0 +1,27 @@
+{
+  "Pagination": {
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "page": "Página",
+      "of": "de"
+    },
+    "accessibility": {
+      "pagination": "Paginación",
+      "previousPage": "Ir a la página anterior",
+      "nextPage": "Ir a la página siguiente",
+      "firstPage": "Ir a la primera página",
+      "lastPage": "Ir a la última página",
+      "currentPage": "Página actual",
+      "pageNumber": "Ir a la página {{page}}"
+    },
+    "defaults": {
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "first": "Primera",
+      "last": "Última",
+      "page": "Página",
+      "of": "de"
+    }
+  }
+}

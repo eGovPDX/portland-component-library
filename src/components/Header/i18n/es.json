@@ -1,0 +1,21 @@
+{
+  "Header": {
+    "navigation": {
+      "primary": "Navegación principal",
+      "search": "Componente de búsqueda"
+    },
+    "mobile": {
+      "menu": "Menú",
+      "close": "Cerrar"
+    },
+    "accessibility": {
+      "logo": "Logo",
+      "title": "Título",
+      "subtitle": "Subtítulo"
+    },
+    "defaults": {
+      "menu": "Menú",
+      "close": "Cerrar"
+    }
+  }
+}

@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Person.css';
 import { Avatar } from './Avatar';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 
 /**
  * A reusable profile block for individuals (staff, officials, program contacts).
  *
- * Supports two layouts (row, column), avatar alignment (top, center), size variants,
+ * Supports two layouts (row, column), avatar alignment (top, center), avatar size variants,
  * a bordered/card-like container, contact actions, meta, and tags (strings or custom components).
  *
  * This component is not part of USWDS. It uses component-scoped CSS custom properties which
@@ -68,7 +69,7 @@ export const Person = ({
   layout = 'row',
   meta,
   name,
-  phones,
+  phones = [],
   profileUrl,
   tags,
   title,
@@ -76,6 +77,7 @@ export const Person = ({
   extraActions,
   ...rest
 }) => {
+  const { t, currentLanguage } = useComponentTranslation('Person');
   const HeadingTag = `h${headingLevel}`;
 
   const rootClassName = [
@@ -88,40 +90,26 @@ export const Person = ({
     className,
   ].filter(Boolean).join(' ');
 
-  /**
-   * Compute initials from name. Uses first letter of first and last tokens.
-   * If only one token, uses first letter. Falls back to '?' when no name.
-   * @param {string|undefined} fullName
-   * @returns {string}
-   */
-  const computeInitials = (fullName) => {
-    if (!fullName || typeof fullName !== 'string') return '?';
-    const tokens = fullName
-      .trim()
-      .split(/\s+/)
-      .filter(Boolean);
-    if (tokens.length === 0) return '?';
-    if (tokens.length === 1) return tokens[0].charAt(0).toUpperCase();
-    const first = tokens[0].charAt(0).toUpperCase();
-    const last = tokens[tokens.length - 1].charAt(0).toUpperCase();
-    return `${first}${last}`;
-  };
-
-  const renderAvatar = () => (
-    <Avatar name={name} avatarUrl={avatarUrl} avatarAlt={avatarAlt} />
-  );
-
   return (
-    <div className={rootClassName} {...rest}>
+    <div 
+    className={rootClassName} 
+    lang={currentLanguage}
+    {...rest}
+    >
       <div className="person__media">
-        {renderAvatar()}
+        <Avatar name={name} avatarUrl={avatarUrl} avatarAlt={avatarAlt} className={avatarSize} />
       </div>
 
       <div className="person__body">
         {name && (
           <HeadingTag className="person__name">
             {profileUrl ? (
-              <a href={profileUrl}>{name}</a>
+              <a 
+                href={profileUrl}
+                aria-label={t('accessibility.profileLinkAriaLabel', { name })}
+              >
+                {name}
+              </a>
             ) : (
               name
             )}
@@ -149,7 +137,7 @@ export const Person = ({
             {email && (
               <a
                 href={`mailto:${email}`}
-                aria-label={`Email ${name}`}
+                aria-label={t('accessibility.emailAriaLabel', { name })}
                 className="person__action-link"
               >
                 {email}
@@ -159,7 +147,7 @@ export const Person = ({
               <a
                 key={`phone-${index}`}
                 href={`tel:${phone.value}`}
-                aria-label={`Call ${name}${phone.label ? ` (${phone.label})` : ''}`}
+                aria-label={t('accessibility.phoneAriaLabel', { name, label: phone.label })}
                 className="person__action-link"
               >
                 {phone.value}

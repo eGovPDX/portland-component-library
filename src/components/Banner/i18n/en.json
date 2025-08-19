@@ -1,0 +1,69 @@
+{
+  "Banner": {
+    "types": {
+      "info": "Information banner",
+      "success": "Success banner",
+      "warning": "Warning banner",
+      "error": "Error banner",
+      "emergency": "Emergency banner"
+    },
+    "accessibility": {
+      "banner": "Banner",
+      "infoBanner": "Information banner",
+      "successBanner": "Success banner",
+      "warningBanner": "Warning banner",
+      "errorBanner": "Error banner",
+      "emergencyBanner": "Emergency banner",
+      "bannerIcon": "Banner icon",
+      "bannerCloseButton": "Close banner",
+      "dismissBanner": "Dismiss banner"
+    },
+    "actions": {
+      "dismiss": "Dismiss",
+      "close": "Close",
+      "acknowledge": "Acknowledge",
+      "learnMore": "Learn more",
+      "viewDetails": "View details",
+      "takeAction": "Take action",
+      "contactSupport": "Contact support"
+    },
+    "content": {
+      "title": "Banner title",
+      "message": "Banner message",
+      "description": "Banner description",
+      "details": "Additional details",
+      "recommendations": "Recommendations",
+      "nextSteps": "Next steps",
+      "contactInfo": "Contact information"
+    },
+    "variants": {
+      "fullWidth": "Full width banner",
+      "contained": "Contained banner",
+      "floating": "Floating banner",
+      "sticky": "Sticky banner"
+    },
+    "states": {
+      "visible": "Banner visible",
+      "hidden": "Banner hidden",
+      "expanded": "Banner expanded",
+      "collapsed": "Banner collapsed",
+      "loading": "Banner loading",
+      "dismissed": "Banner dismissed"
+    },
+    "defaults": {
+      "infoMessage": "This is an informational banner message.",
+      "successMessage": "Operation completed successfully.",
+      "warningMessage": "Please review the information before proceeding.",
+      "errorMessage": "An error occurred. Please try again.",
+      "emergencyMessage": "This is an emergency notification."
+    },
+    "guidance": {
+      "guidance": "Guidance",
+      "instructions": "Instructions",
+      "requirements": "Requirements",
+      "deadlines": "Deadlines",
+      "resources": "Resources",
+      "help": "Help"
+    }
+  }
+}

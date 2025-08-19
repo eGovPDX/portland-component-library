@@ -1,0 +1,21 @@
+{
+  "Header": {
+    "navigation": {
+      "primary": "Primary navigation",
+      "search": "Search component"
+    },
+    "mobile": {
+      "menu": "Menu",
+      "close": "Close"
+    },
+    "accessibility": {
+      "logo": "Logo",
+      "title": "Title",
+      "subtitle": "Subtitle"
+    },
+    "defaults": {
+      "menu": "Menu",
+      "close": "Close"
+    }
+  }
+}

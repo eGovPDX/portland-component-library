@@ -1,0 +1,14 @@
+{
+  "Breadcrumb": {
+    "accessibility": {
+      "breadcrumb": "Breadcrumb navigation",
+      "currentPage": "Current page",
+      "separator": "Breadcrumb separator"
+    },
+    "defaults": {
+      "breadcrumb": "Breadcrumb navigation",
+      "currentPage": "Current page",
+      "separator": "Breadcrumb separator"
+    }
+  }
+}

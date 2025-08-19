@@ -1,0 +1,11 @@
+{
+  "SummaryBox": {
+    "accessibility": {
+      "summaryBox": "Caja de resumen",
+      "summary": "Resumen"
+    },
+    "defaults": {
+      "summary": "Resumen"
+    }
+  }
+}

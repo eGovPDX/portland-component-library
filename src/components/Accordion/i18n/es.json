@@ -1,0 +1,56 @@
+{
+  "Accordion": {
+    "accessibility": {
+      "accordion": "Acordeón",
+      "accordionSection": "Sección del acordeón",
+      "expandSection": "Expandir sección",
+      "collapseSection": "Colapsar sección",
+      "sectionExpanded": "Sección expandida",
+      "sectionCollapsed": "Sección colapsada",
+      "sectionHeader": "Encabezado de sección",
+      "sectionContent": "Contenido de sección",
+      "sectionNumber": "Sección {{number}}",
+      "sectionOf": "Sección {{current}} de {{total}}"
+    },
+    "actions": {
+      "expand": "Expandir",
+      "collapse": "Colapsar",
+      "expandAll": "Expandir todo",
+      "collapseAll": "Colapsar todo",
+      "toggleSection": "Alternar sección"
+    },
+    "states": {
+      "expanded": "Expandida",
+      "collapsed": "Colapsada",
+      "loading": "Cargando",
+      "disabled": "Deshabilitada",
+      "error": "Error"
+    },
+    "content": {
+      "header": "Encabezado de sección",
+      "content": "Contenido de sección",
+      "summary": "Resumen de sección",
+      "details": "Detalles de sección",
+      "description": "Descripción de sección"
+    },
+    "variants": {
+      "single": "Acordeón simple",
+      "multiple": "Acordeón múltiple",
+      "bordered": "Acordeón con borde",
+      "unbordered": "Acordeón sin borde"
+    },
+    "defaults": {
+      "noContent": "No hay contenido disponible",
+      "loadingContent": "Cargando contenido...",
+      "errorContent": "Error al cargar contenido",
+      "emptySection": "Sección vacía"
+    },
+    "navigation": {
+      "nextSection": "Siguiente sección",
+      "previousSection": "Sección anterior",
+      "firstSection": "Primera sección",
+      "lastSection": "Última sección",
+      "goToSection": "Ir a la sección {{number}}"
+    }
+  }
+}

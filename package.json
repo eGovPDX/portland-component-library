@@ -187,6 +187,7 @@
     "build:lib": "node build-all.js",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:i18n": "jest --testPathPattern=i18n",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
@@ -198,6 +199,7 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@chromatic-com/storybook": "^3.2.6",
+    "@esbuild/darwin-x64": "^0.25.9",
     "@storybook/addon-a11y": "^8.6.12",
     "@storybook/addon-actions": "^8.6.12",
     "@storybook/addon-controls": "^8.6.12",
@@ -231,6 +233,8 @@
     "playwright": "^1.51.0",
     "sass": "^1.85.1",
     "storybook": "^8.6.12",
+    "storybook-i18n": "^3.1.1",
+    "storybook-react-i18next": "^3.3.1",
     "vite": "^6.2.1",
     "vitest": "^3.0.8"
   },
@@ -245,9 +249,13 @@
     "@uswds/uswds": "^3.12.0",
     "classnames": "^2.5.1",
     "focus-trap-react": "^11.0.4",
+    "i18next": "^25.3.6",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "i18next-http-backend": "^3.0.2",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-i18next": "^15.6.1"
   },
   "eslintConfig": {
     "extends": [

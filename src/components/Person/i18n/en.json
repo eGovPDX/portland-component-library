@@ -1,0 +1,50 @@
+{
+  "Person": {
+    "actions": {
+      "viewProfile": "View Profile",
+      "emailPerson": "Email {{name}}",
+      "callPerson": "Call {{name}}{{#if label}} ({{label}}){{/if}}",
+      "contactPerson": "Contact {{name}}"
+    },
+    "meta": {
+      "speaks": "Speaks: {{languages}}",
+      "pronouns": "Pronouns: {{pronouns}}",
+      "department": "Department: {{department}}",
+      "location": "Location: {{location}}",
+      "office": "Office: {{office}}",
+      "hours": "Hours: {{hours}}",
+      "specialties": "Specialties: {{specialties}}",
+      "certifications": "Certifications: {{certifications}}"
+    },
+    "accessibility": {
+      "emailAriaLabel": "Email {{name}}",
+      "phoneAriaLabel": "Call {{name}}{{#if label}} ({{label}}){{/if}}",
+      "profileLinkAriaLabel": "View profile for {{name}}",
+      "avatarAltText": "Portrait of {{name}}",
+      "avatarDecorative": "Decorative avatar image"
+    },
+    "layout": {
+      "row": "Row layout",
+      "column": "Column layout",
+      "avatarLeft": "Avatar on left",
+      "avatarRight": "Avatar on right",
+      "avatarTop": "Avatar on top",
+      "avatarCenter": "Avatar centered"
+    },
+    "sizes": {
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large"
+    },
+    "variants": {
+      "bordered": "Bordered",
+      "unbordered": "Unbordered"
+    },
+    "defaults": {
+      "noTitle": "No title provided",
+      "noDepartment": "No department specified",
+      "noContactInfo": "No contact information available",
+      "noMetaInfo": "No additional information available"
+    }
+  }
+}

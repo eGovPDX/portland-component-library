@@ -1,0 +1,26 @@
+{
+  "headings": {
+    "contact": "Contacto",
+    "socialMedia": "Redes Sociales",
+    "office": "Oficina"
+  },
+  "actions": {
+    "contactThis": "Contactar a este {{title}}",
+    "contactViaEmail": "Contactar a {{title}} por correo electrónico"
+  },
+  "phone": {
+    "office": "Teléfono: Oficina",
+    "information": "Teléfono: Información",
+    "relayService": "Teléfono: Servicio de Retransmisión de Oregón"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "twitter": "X (Twitter)",
+    "bluesky": "Bluesky",
+    "instagram": "Instagram"
+  },
+  "office": {
+    "address": "Dirección",
+    "hours": "Horario"
+  }
+}

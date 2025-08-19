@@ -1,4 +1,6 @@
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import { Button } from '../Button/Button';
 import './Footer.css';
 
@@ -26,11 +28,12 @@ export const Footer = ({
   exploreServicesUrl,
   className,
 }) => {
+  const { t } = useComponentTranslation('Footer');
   return (
     <footer className={`footer ${className}`} role="contentinfo">
       <div className="footer-feedback-section">
         <p className="footer-feedback-text">
-          See something we could improve on this page? <a href={feedbackUrl} className="footer-feedback-link">Give website feedback</a>.
+          {t('feedback.improveText')} <a href={feedbackUrl} className="footer-feedback-link">{t('feedback.feedbackLink')}</a>.
         </p>
       </div>
       
@@ -41,19 +44,19 @@ export const Footer = ({
               {accessibilityText}
               {' '}
               <span className="footer-request-services">
-                Request these services <a href={onlineServiceUrl} className="footer-online-link">online</a> or <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="footer-phone-link">{phoneNumber}</a>. 
-                Relay Service: <a href={`tel:${relayServiceNumber.replace(/\D/g, '')}`} className="footer-relay-link">{relayServiceNumber}</a>.
+                {t('accessibility.requestServices')} <a href={onlineServiceUrl} className="footer-online-link">{t('accessibility.online')}</a> {t('accessibility.or')} <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="footer-phone-link">{phoneNumber}</a>. 
+                {t('accessibility.relayService')} <a href={`tel:${relayServiceNumber.replace(/\D/g, '')}`} className="footer-relay-link">{relayServiceNumber}</a>.
               </span>
             </p>
             
             <p className="footer-translation-text">
-              <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="footer-translation-phone-link">{phoneNumber}</a> {translationText}
+              <a href={`tel:${phoneNumber.replace(/\D/g, '')}`} className="footer-translation-phone-link">{phoneNumber}</a> {translationText || t('translation.translationText')}
             </p>
           </div>
           
           <div className="footer-explore-services">
             <Button href={exploreServicesUrl} className="footer-explore-button">
-              {exploreServicesText} <span className="footer-explore-arrow">→</span>
+              {exploreServicesText || t('exploreServices.exploreServicesText')} <span className="footer-explore-arrow">→</span>
             </Button>
           </div>
         </div>
@@ -68,7 +71,7 @@ export const Footer = ({
           </div>
 
           <div className="footer-nav-section">
-            <h4 className="footer-heading">General Information</h4>
+            <h4 className="footer-heading">{t('sections.generalInformation')}</h4>
             <ul className="footer-links">
               {generalInfoLinks.map((link, index) => (
                 <li key={`general-link-${index}`} className="footer-link-item">
@@ -79,7 +82,7 @@ export const Footer = ({
           </div>
 
           <div className="footer-nav-section">
-            <h4 className="footer-heading">Terms And Policies</h4>
+            <h4 className="footer-heading">{t('sections.termsAndPolicies')}</h4>
             <ul className="footer-links">
               {termsLinks.map((link, index) => (
                 <li key={`terms-link-${index}`} className="footer-link-item">
@@ -90,7 +93,7 @@ export const Footer = ({
           </div>
 
           <div className="footer-nav-section">
-            <h4 className="footer-heading">Portland.Gov</h4>
+            <h4 className="footer-heading">{t('sections.portlandGov')}</h4>
             <ul className="footer-links">
               {portlandGovLinks.map((link, index) => (
                 <li key={`pgov-link-${index}`} className="footer-link-item">

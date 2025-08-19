@@ -1,0 +1,14 @@
+{
+  "Textarea": {
+    "accessibility": {
+      "textarea": "Text area",
+      "required": "Required field",
+      "optional": "Optional field"
+    },
+    "defaults": {
+      "textarea": "Text area",
+      "required": "Required field",
+      "optional": "Optional field"
+    }
+  }
+}

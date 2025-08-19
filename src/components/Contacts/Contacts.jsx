@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import { 
   faEnvelope,
   faPhoneVolume,
@@ -41,6 +42,7 @@ export const Contacts = ({
   officeDetails,
   className
 }) => {
+  const { t } = useComponentTranslation('Contacts');
   const {
     facebook,
     twitter,
@@ -64,15 +66,15 @@ export const Contacts = ({
       <div className="contacts__container">
         <div className="contacts__section">
           <div className="contacts__section-header">
-            <h3 className="contacts__heading">Contact</h3>
+            <h3 className="contacts__heading">{t('headings.contact')}</h3>
             <div className="contacts__button-container">
               <a 
                 href={`mailto:${emailAddress}`}
                 className="contacts__button"
-                aria-label={`Contact ${title} via email`}
+                aria-label={t('actions.contactViaEmail', { title })}
               >
                 <FontAwesomeIcon icon={faEnvelope} className="contacts__button-icon" />
-                <span>Contact this {title}</span>
+                <span>{t('actions.contactThis', { title })}</span>
               </a>
             </div>
           </div>
@@ -81,7 +83,7 @@ export const Contacts = ({
               <div className="contacts__item">
                 <div className="contacts__item-header">
                   <FontAwesomeIcon icon={faPhoneVolume} className="contacts__icon" />
-                  <span className="contacts__label">Phone: Office</span>
+                  <span className="contacts__label">{t('phone.office')}</span>
                 </div>
                 <a href={`tel:${officePhone}`} className="contacts__link">{officePhone}</a>
               </div>
@@ -90,7 +92,7 @@ export const Contacts = ({
               <div className="contacts__item">
                 <div className="contacts__item-header">
                   <FontAwesomeIcon icon={faPhoneVolume} className="contacts__icon" />
-                  <span className="contacts__label">Phone: Information</span>
+                  <span className="contacts__label">{t('phone.information')}</span>
                 </div>
                 <a href={`tel:${informationPhone}`} className="contacts__link">{informationPhone}</a>
               </div>
@@ -99,7 +101,7 @@ export const Contacts = ({
               <div className="contacts__item">
                 <div className="contacts__item-header">
                   <FontAwesomeIcon icon={faPhoneVolume} className="contacts__icon" />
-                  <span className="contacts__label">Phone: Oregon Relay Service</span>
+                  <span className="contacts__label">{t('phone.relayService')}</span>
                 </div>
                 <a href={`tel:${relayServicePhone}`} className="contacts__link">{relayServicePhone}</a>
               </div>
@@ -109,13 +111,13 @@ export const Contacts = ({
 
         {socialMedia && (
           <div className="contacts__section">
-            <h3 className="contacts__heading">Social Media</h3>
+            <h3 className="contacts__heading">{t('headings.socialMedia')}</h3>
             <div className="contacts__social-list">
               {facebook && (
                 <div className="contacts__item">
                   <div className="contacts__item-header">
                     <FontAwesomeIcon icon={faFacebook} className="contacts__icon" />
-                    <span className="contacts__label">Facebook</span>
+                    <span className="contacts__label">{t('social.facebook')}</span>
                   </div>
                   <a href={`https://facebook.com/${facebook}`} className="contacts__link" target="_blank" rel="noopener noreferrer">
                     {facebook}
@@ -126,7 +128,7 @@ export const Contacts = ({
                 <div className="contacts__item">
                   <div className="contacts__item-header">
                     <FontAwesomeIcon icon={faXTwitter} className="contacts__icon" />
-                    <span className="contacts__label">X (Twitter)</span>
+                    <span className="contacts__label">{t('social.twitter')}</span>
                   </div>
                   <a href={`https://twitter.com/${twitter}`} className="contacts__link" target="_blank" rel="noopener noreferrer">
                     {twitter}
@@ -137,7 +139,7 @@ export const Contacts = ({
                 <div className="contacts__item">
                   <div className="contacts__item-header">
                     <FontAwesomeIcon icon={faBluesky} className="contacts__icon" />
-                    <span className="contacts__label">Bluesky</span>
+                    <span className="contacts__label">{t('social.bluesky')}</span>
                   </div>
                   <a href={`https://bsky.app/profile/${bluesky}`} className="contacts__link" target="_blank" rel="noopener noreferrer">
                     {bluesky}
@@ -148,7 +150,7 @@ export const Contacts = ({
                 <div className="contacts__item">
                   <div className="contacts__item-header">
                     <FontAwesomeIcon icon={faInstagram} className="contacts__icon" />
-                    <span className="contacts__label">Instagram</span>
+                    <span className="contacts__label">{t('social.instagram')}</span>
                   </div>
                   <a href={`https://instagram.com/${instagram}`} className="contacts__link" target="_blank" rel="noopener noreferrer">
                     {instagram}
@@ -160,12 +162,12 @@ export const Contacts = ({
         )}
 
         <div className="contacts__section">
-          <h3 className="contacts__heading">Office</h3>
+          <h3 className="contacts__heading">{t('headings.office')}</h3>
           <div className="contacts__office-info">
             <div className="contacts__item">
               <div className="contacts__item-header">
                 <FontAwesomeIcon icon={faCompass} className="contacts__icon" />
-                <span className="contacts__label">Address</span>
+                <span className="contacts__label">{t('office.address')}</span>
               </div>
               <a href={`https://maps.google.com/?q=${address} ${city}, ${state} ${zip}`} className="contacts__link" target="_blank" rel="noopener noreferrer">
                 {address}<br />
@@ -177,7 +179,7 @@ export const Contacts = ({
               <div className="contacts__item">
                 <div className="contacts__item-header">
                   <FontAwesomeIcon icon={faClock} className="contacts__icon" />
-                  <span className="contacts__label">Hours</span>
+                  <span className="contacts__label">{t('office.hours')}</span>
                 </div>
                 <div className="contacts__hours-value">
                   <div>{days}</div>

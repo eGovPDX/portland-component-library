@@ -1,4 +1,5 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
+import React from 'react';
 import '../src/styles/index.scss'
 import './storybook.css'
 
@@ -19,8 +20,6 @@ const preview = {
         { name: 'PGOV Light', value: 'pgov', class: 'pgov-theme', color: '#2378c3' },
         { name: 'PGOV Dark', value: 'pgov-dark', class: 'pgov-theme pgov-dark-theme-applied', color: '#1b1b1b' },
         { name: 'USWDS Default', value: 'uswds-default', class: 'uswds-default-theme-applied', color: '#005ea2' },
-        { name: 'Project Theme Light', value: 'project-light', class: 'project-theme-light-applied', color: '#4a77b4' },
-        { name: 'Project Theme Dark', value: 'project-dark', class: 'project-theme-dark-applied', color: '#4a77b4' }
       ],
     },
 
@@ -30,6 +29,8 @@ const preview = {
       // 'off' - skip a11y checks entirely
       test: 'todo'
     }
+
+    // Temporarily removed i18n configuration
   },
   decorators: [
     withThemeByClassName({

@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { RadioButtons } from './RadioButtons';
 
 const options = [
@@ -10,12 +11,12 @@ const options = [
 
 describe('RadioButtons', () => {
   it('renders the radio button group with a legend', () => {
-    render(<RadioButtons name="test" legend="Test Title" options={options} onChange={() => {}} />);
+    renderWithI18n(<RadioButtons name="test" legend="Test Title" options={options} onChange={() => {}} />);
     expect(screen.getByText('Test Title')).toBeInTheDocument();
   });
 
   it('renders all options', () => {
-    render(<RadioButtons name="test" legend="Test Title" options={options} onChange={() => {}} />);
+    renderWithI18n(<RadioButtons name="test" legend="Test Title" options={options} onChange={() => {}} />);
     expect(screen.getByLabelText('Option 1')).toBeInTheDocument();
     expect(screen.getByLabelText('Option 2')).toBeInTheDocument();
     expect(screen.getByLabelText('Option 3')).toBeInTheDocument();
@@ -23,19 +24,19 @@ describe('RadioButtons', () => {
 
   it('handles selection changes', () => {
     const handleChange = jest.fn();
-    render(<RadioButtons name="test" legend="Test Title" options={options} onChange={handleChange} />);
+    renderWithI18n(<RadioButtons name="test" legend="Test Title" options={options} onChange={handleChange} />);
     
     fireEvent.click(screen.getByLabelText('Option 2'));
     expect(handleChange).toHaveBeenCalledWith('option2');
   });
 
   it('disables options correctly', () => {
-    render(<RadioButtons name="test" legend="Test Title" options={options} onChange={() => {}} />);
+    renderWithI18n(<RadioButtons name="test" legend="Test Title" options={options} onChange={() => {}} />);
     expect(screen.getByLabelText('Option 3')).toBeDisabled();
   });
 
   it('displays an error message when required and no option is selected', () => {
-    render(
+    renderWithI18n(
       <RadioButtons
         name="test"
         legend="Test Title"

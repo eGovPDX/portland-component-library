@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './Dropdown.css';
 
 /**
@@ -96,9 +97,13 @@ const Dropdown = ({
   className,
   selectedOptionValue,
   onSelect,
-  defaultOptionLabel = '- Select -',
+  defaultOptionLabel,
   forceCustom = false, // Allow forcing custom dropdown for testing
 }) => {
+  const { t } = useComponentTranslation('Dropdown');
+  
+  // Use i18n translations with fallbacks to props
+  const selectLabel = defaultOptionLabel || t('defaults.select');
   // Only check once on mount for device type
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -118,7 +123,7 @@ const Dropdown = ({
           <span className="usa-error-message" role="alert">{error}</span>
         )}
         {error && typeof error !== 'string' && (
-          <span className="usa-error-message" role="alert">This field is required.</span>
+          <span className="usa-error-message" role="alert">{t('defaults.required')}</span>
         )}
       </label>
     );
@@ -143,7 +148,7 @@ const Dropdown = ({
           aria-label={label}
           aria-invalid={!!error}
         >
-          <option value="" disabled>{defaultOptionLabel}</option>
+          <option value="" disabled>{selectLabel}</option>
           {options.map(option => (
             <option key={option.value} value={option.value}>{option.label}</option>
           ))}

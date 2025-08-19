@@ -1,0 +1,36 @@
+{
+  "Footer": {
+    "feedback": {
+      "improveText": "¿Ves algo que podríamos mejorar en esta página?",
+      "feedbackLink": "Dar retroalimentación del sitio web"
+    },
+    "accessibility": {
+      "requestServices": "Solicitar estos servicios",
+      "online": "en línea",
+      "or": "o",
+      "relayService": "Servicio de relevo:"
+    },
+    "translation": {
+      "translationText": "para asistencia de traducción"
+    },
+    "exploreServices": {
+      "exploreServicesText": "Explorar servicios"
+    },
+    "sections": {
+      "generalInformation": "Información General",
+      "termsAndPolicies": "Términos y Políticas",
+      "portlandGov": "Portland.Gov"
+    },
+    "defaults": {
+      "feedback": "Dar retroalimentación del sitio web",
+      "requestServices": "Solicitar estos servicios",
+      "online": "en línea",
+      "relayService": "Servicio de relevo:",
+      "translation": "para asistencia de traducción",
+      "exploreServices": "Explorar servicios",
+      "generalInformation": "Información General",
+      "termsAndPolicies": "Términos y Políticas",
+      "portlandGov": "Portland.Gov"
+    }
+  }
+}

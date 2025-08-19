@@ -1,0 +1,15 @@
+{
+  "Accordion": {
+    "accessibility": {
+      "accordion": "Accordion",
+      "expand": "Expand",
+      "collapse": "Collapse",
+      "section": "Section"
+    },
+    "defaults": {
+      "expand": "Expand",
+      "collapse": "Collapse",
+      "section": "Section"
+    }
+  }
+}

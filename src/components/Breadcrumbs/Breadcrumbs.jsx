@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './Breadcrumbs.css';
 
 /**
@@ -13,6 +14,7 @@ export const Breadcrumbs = ({
   className = '',
   customSeparator,
 }) => {
+  const { t } = useComponentTranslation('Breadcrumb');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -65,7 +67,7 @@ export const Breadcrumbs = ({
   return (
     <nav
       className={breadcrumbClasses}
-      aria-label="Breadcrumbs"
+      aria-label={t('accessibility.breadcrumb')}
     >
       <ol className="breadcrumb__list">
         {renderItems()}
