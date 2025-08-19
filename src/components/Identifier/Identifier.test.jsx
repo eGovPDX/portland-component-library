@@ -1,24 +1,25 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { Identifier } from './Identifier';
 
 describe('Identifier Component', () => {
   // Basic rendering tests
   describe('Basic Rendering', () => {
     it('renders without crashing', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       expect(screen.getByRole('region', { name: /agency identifier/i })).toBeInTheDocument();
     });
 
     it('applies the usa-identifier class', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       const identifier = screen.getByRole('region', { name: /agency identifier/i }).parentElement;
       expect(identifier).toHaveClass('usa-identifier');
     });
 
     it('applies custom className when provided', () => {
-      render(<Identifier className="custom-identifier" />);
+      renderWithI18n(<Identifier className="custom-identifier" />);
       const identifier = screen.getByRole('region', { name: /agency identifier/i }).parentElement;
       expect(identifier).toHaveClass('usa-identifier', 'custom-identifier');
     });
@@ -27,18 +28,18 @@ describe('Identifier Component', () => {
   // Domain and agency identity tests
   describe('Domain and Agency Identity', () => {
     it('displays the domain when provided', () => {
-      render(<Identifier domain="example.gov" />);
+      renderWithI18n(<Identifier domain="example.gov" />);
       expect(screen.getByText('example.gov')).toBeInTheDocument();
     });
 
     it('does not display domain when not provided', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       const domainElement = document.querySelector('.usa-identifier__identity-domain');
       expect(domainElement).not.toBeInTheDocument();
     });
 
     it('displays parent agency name as link when no agencies array provided', () => {
-      render(<Identifier parentAgency="Test Agency" />);
+      renderWithI18n(<Identifier parentAgency="Test Agency" />);
       expect(screen.getByRole('link', { name: 'Test Agency' })).toBeInTheDocument();
     });
   });
@@ -53,7 +54,7 @@ describe('Identifier Component', () => {
           logoAlt: 'Test Agency logo'
         }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       
       const logo = screen.getByRole('img', { name: 'Test Agency logo' });
       expect(logo).toBeInTheDocument();
@@ -73,14 +74,14 @@ describe('Identifier Component', () => {
           logoAlt: 'Agency Two logo'
         }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       
       expect(screen.getByRole('img', { name: 'Agency One logo' })).toBeInTheDocument();
       expect(screen.getByRole('img', { name: 'Agency Two logo' })).toBeInTheDocument();
     });
 
     it('does not render logos section when no agencies provided', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       const logosSection = document.querySelector('.usa-identifier__logos');
       expect(logosSection).not.toBeInTheDocument();
     });
@@ -92,7 +93,7 @@ describe('Identifier Component', () => {
           logoSrc: '/test-logo.svg'
         }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       
       expect(screen.getByRole('img', { name: 'Test Agency logo' })).toBeInTheDocument();
     });
@@ -102,7 +103,7 @@ describe('Identifier Component', () => {
   describe('Agency Text Building', () => {
     it('displays single agency name correctly', () => {
       const agencies = [{ name: 'Single Agency' }];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       expect(screen.getByRole('link', { name: 'Single Agency' })).toBeInTheDocument();
     });
 
@@ -111,7 +112,7 @@ describe('Identifier Component', () => {
         { name: 'First Agency' },
         { name: 'Second Agency' }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       expect(screen.getByText(/First Agency and the Second Agency/)).toBeInTheDocument();
     });
 
@@ -120,7 +121,7 @@ describe('Identifier Component', () => {
         { name: 'Primera Agencia' },
         { name: 'Segunda Agencia' }
       ];
-      render(<Identifier agencies={agencies} lang="es" />);
+      renderWithI18n(<Identifier agencies={agencies} lang="es" />);
       expect(screen.getByText(/Primera Agencia y Segunda Agencia/)).toBeInTheDocument();
     });
 
@@ -130,7 +131,7 @@ describe('Identifier Component', () => {
         { name: 'Second Agency' },
         { name: 'Third Agency' }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       expect(screen.getByText(/First Agency, Second Agency, and the Third Agency/)).toBeInTheDocument();
     });
   });
@@ -138,24 +139,24 @@ describe('Identifier Component', () => {
   // Language support tests
   describe('Language Support', () => {
     it('displays English text by default', () => {
-      render(<Identifier parentAgency="Test Agency" />);
+      renderWithI18n(<Identifier parentAgency="Test Agency" />);
       expect(screen.getByText(/An/)).toBeInTheDocument();
       expect(screen.getByText(/official website of the/)).toBeInTheDocument();
     });
 
     it('displays Spanish text when lang is "es"', () => {
-      render(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+      renderWithI18n(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
       expect(screen.getByText(/Un sitio web oficial de/)).toBeInTheDocument();
     });
 
     it('displays Spanish required links when lang is "es"', () => {
-      render(<Identifier lang="es" />);
+      renderWithI18n(<Identifier lang="es" />);
       expect(screen.getByRole('link', { name: 'Acerca de' })).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Declaración de accesibilidad' })).toBeInTheDocument();
     });
 
     it('displays Spanish USA.gov text when lang is "es"', () => {
-      render(<Identifier lang="es" />);
+      renderWithI18n(<Identifier lang="es" />);
       expect(screen.getByText(/¿Necesita información y servicios del Gobierno?/)).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Visite USAGov en Español' })).toBeInTheDocument();
     });
@@ -185,7 +186,7 @@ describe('Identifier Component', () => {
     });
 
     it('does not display taxpayer disclaimer when disabled', () => {
-      render(<Identifier parentAgency="Test Agency" taxpayerDisclaimer={false} />);
+      renderWithI18n(<Identifier parentAgency="Test Agency" taxpayerDisclaimer={false} />);
       expect(screen.queryByText(/taxpayer expense/)).not.toBeInTheDocument();
     });
   });
@@ -193,7 +194,7 @@ describe('Identifier Component', () => {
   // Required links tests
   describe('Required Links', () => {
     it('displays default required links when none provided', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Accessibility statement' })).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'FOIA requests' })).toBeInTheDocument();
@@ -204,7 +205,7 @@ describe('Identifier Component', () => {
         { text: 'Custom Link 1', href: '/custom1' },
         { text: 'Custom Link 2', href: '/custom2' }
       ];
-      render(<Identifier requiredLinks={customLinks} />);
+      renderWithI18n(<Identifier requiredLinks={customLinks} />);
       
       expect(screen.getByRole('link', { name: 'Custom Link 1' })).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Custom Link 2' })).toBeInTheDocument();
@@ -215,7 +216,7 @@ describe('Identifier Component', () => {
       const customLinks = [
         { text: 'Test Link', href: '/test-link' }
       ];
-      render(<Identifier requiredLinks={customLinks} />);
+      renderWithI18n(<Identifier requiredLinks={customLinks} />);
       
       const link = screen.getByRole('link', { name: 'Test Link' });
       expect(link).toHaveAttribute('href', '/test-link');
@@ -225,7 +226,7 @@ describe('Identifier Component', () => {
   // USA.gov section tests
   describe('USA.gov Section', () => {
     it('displays default USA.gov text and link', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       expect(screen.getByText(/Looking for U.S. government information and services?/)).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Visit USA.gov' })).toBeInTheDocument();
     });
@@ -236,7 +237,7 @@ describe('Identifier Component', () => {
         linkText: 'Custom link text',
         href: 'https://custom.gov'
       };
-      render(<Identifier usaGovText={customUSAGov} />);
+      renderWithI18n(<Identifier usaGovText={customUSAGov} />);
       
       expect(screen.getByText('Custom government text')).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Custom link text' })).toBeInTheDocument();
@@ -247,7 +248,7 @@ describe('Identifier Component', () => {
       const partialUSAGov = {
         linkText: 'Custom Link Only'
       };
-      render(<Identifier usaGovText={partialUSAGov} />);
+      renderWithI18n(<Identifier usaGovText={partialUSAGov} />);
       
       expect(screen.getByText(/Looking for U.S. government information and services?/)).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Custom Link Only' })).toBeInTheDocument();
@@ -257,7 +258,7 @@ describe('Identifier Component', () => {
   // Accessibility tests
   describe('Accessibility', () => {
     it('has proper ARIA labels for sections', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       
       expect(screen.getByRole('region', { name: /agency identifier/i })).toBeInTheDocument();
       expect(screen.getByRole('region', { name: /agency description/i })).toBeInTheDocument();
@@ -266,7 +267,7 @@ describe('Identifier Component', () => {
     });
 
     it('has proper ARIA labels in Spanish', () => {
-      render(<Identifier lang="es" />);
+      renderWithI18n(<Identifier lang="es" />);
       
       expect(screen.getByRole('region', { name: /identificador de agencia/i })).toBeInTheDocument();
       expect(screen.getByRole('region', { name: /descripción de agencia/i })).toBeInTheDocument();
@@ -274,14 +275,14 @@ describe('Identifier Component', () => {
     });
 
     it('has aria-hidden span for "An" in English', () => {
-      render(<Identifier parentAgency="Test Agency" />);
+      renderWithI18n(<Identifier parentAgency="Test Agency" />);
       const hiddenSpan = document.querySelector('span[aria-hidden="true"]');
       expect(hiddenSpan).toBeInTheDocument();
       expect(hiddenSpan).toHaveTextContent(/An\s*/);
     });
 
     it('does not have aria-hidden span in Spanish', () => {
-      render(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+      renderWithI18n(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
       const hiddenSpan = document.querySelector('span[aria-hidden="true"]');
       expect(hiddenSpan).not.toBeInTheDocument();
     });
@@ -294,7 +295,7 @@ describe('Identifier Component', () => {
           logoAlt: 'Test Agency logo'
         }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       
       const logo = screen.getByRole('img', { name: 'Test Agency logo' });
       expect(logo).toHaveAttribute('role', 'img');
@@ -304,18 +305,18 @@ describe('Identifier Component', () => {
   // Edge cases and error handling
   describe('Edge Cases', () => {
     it('handles empty agencies array', () => {
-      render(<Identifier agencies={[]} parentAgency="Fallback Agency" />);
+      renderWithI18n(<Identifier agencies={[]} parentAgency="Fallback Agency" />);
       expect(screen.getByRole('link', { name: 'Fallback Agency' })).toBeInTheDocument();
     });
 
     it('handles agencies without names', () => {
       const agencies = [{ logoSrc: '/logo.svg' }];
-      render(<Identifier agencies={agencies} parentAgency="Fallback Agency" />);
+      renderWithI18n(<Identifier agencies={agencies} parentAgency="Fallback Agency" />);
       expect(screen.getByRole('link', { name: 'Fallback Agency' })).toBeInTheDocument();
     });
 
     it('handles missing props gracefully', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       // Should not crash and should render basic structure
       expect(screen.getByRole('region', { name: /agency identifier/i })).toBeInTheDocument();
     });
@@ -327,7 +328,7 @@ describe('Identifier Component', () => {
           href: 'https://agency.gov'
         }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       
       const agencyLink = screen.getByRole('link', { name: 'Test Agency' });
       expect(agencyLink).toHaveAttribute('href', 'https://agency.gov');
@@ -339,7 +340,7 @@ describe('Identifier Component', () => {
           name: 'Test Agency'
         }
       ];
-      render(<Identifier agencies={agencies} />);
+      renderWithI18n(<Identifier agencies={agencies} />);
       
       const agencyLink = screen.getByRole('link', { name: 'Test Agency' });
       expect(agencyLink).toHaveAttribute('href', '#');
@@ -353,7 +354,7 @@ describe('Identifier Component', () => {
         { text: 'Internal Link', href: '/internal' },
         { text: 'External Link', href: 'https://external.com' }
       ];
-      render(<Identifier domain="test.gov" requiredLinks={externalLinks} />);
+      renderWithI18n(<Identifier domain="test.gov" requiredLinks={externalLinks} />);
       
       const internalLink = screen.getByRole('link', { name: 'Internal Link' });
       const externalLink = screen.getByRole('link', { name: 'External Link' });
@@ -367,7 +368,7 @@ describe('Identifier Component', () => {
         { text: 'Internal Link', href: '/internal' },
         { text: 'External Link', href: 'https://external.com' }
       ];
-      render(<Identifier domain="test.gov" requiredLinks={externalLinks} />);
+      renderWithI18n(<Identifier domain="test.gov" requiredLinks={externalLinks} />);
       
       const internalLink = screen.getByRole('link', { name: 'Internal Link' });
       const externalLink = screen.getByRole('link', { name: 'External Link' });
@@ -384,7 +385,7 @@ describe('Identifier Component', () => {
         linkText: 'USA.gov',
         href: 'https://www.usa.gov'
       };
-      render(<Identifier domain="test.gov" usaGovText={usaGovText} />);
+      renderWithI18n(<Identifier domain="test.gov" usaGovText={usaGovText} />);
       
       const usaGovLink = screen.getByRole('link', { name: 'USA.gov' });
       expect(usaGovLink.querySelector('svg')).toBeInTheDocument();
@@ -400,7 +401,7 @@ describe('Identifier Component', () => {
         { text: 'HTTPS Link', href: 'https://example.com' },
         { text: 'Protocol Relative', href: '//example.com' }
       ];
-      render(<Identifier domain="test.gov" requiredLinks={mixedLinks} />);
+      renderWithI18n(<Identifier domain="test.gov" requiredLinks={mixedLinks} />);
       
       const hashLink = screen.getByRole('link', { name: 'Hash Link' });
       const relativeLink = screen.getByRole('link', { name: 'Relative Link' });
@@ -422,7 +423,7 @@ describe('Identifier Component', () => {
         { text: 'Same Domain WWW', href: 'https://www.test.gov/page' },
         { text: 'Different Domain', href: 'https://external.com/page' }
       ];
-      render(<Identifier domain="test.gov" requiredLinks={samedomainLinks} />);
+      renderWithI18n(<Identifier domain="test.gov" requiredLinks={samedomainLinks} />);
       
       const sameDomainHttp = screen.getByRole('link', { name: 'Same Domain HTTP' });
       const sameDomainHttps = screen.getByRole('link', { name: 'Same Domain HTTPS' });
@@ -440,7 +441,7 @@ describe('Identifier Component', () => {
         { text: 'HTTP Link', href: 'http://example.com' },
         { text: 'HTTPS Link', href: 'https://example.com' }
       ];
-      render(<Identifier requiredLinks={links} />); // No domain prop
+      renderWithI18n(<Identifier requiredLinks={links} />); // No domain prop
       
       const httpLink = screen.getByRole('link', { name: 'HTTP Link' });
       const httpsLink = screen.getByRole('link', { name: 'HTTPS Link' });
@@ -453,7 +454,7 @@ describe('Identifier Component', () => {
       const invalidLinks = [
         { text: 'Invalid URL', href: 'https://[invalid' }
       ];
-      render(<Identifier domain="test.gov" requiredLinks={invalidLinks} />);
+      renderWithI18n(<Identifier domain="test.gov" requiredLinks={invalidLinks} />);
       
       const invalidLink = screen.getByRole('link', { name: 'Invalid URL' });
       expect(invalidLink.querySelector('svg')).toBeInTheDocument(); // Should default to external
@@ -464,7 +465,7 @@ describe('Identifier Component', () => {
         { text: 'Empty Href', href: '' },
         { text: 'Undefined Href', href: undefined }
       ];
-      render(<Identifier requiredLinks={edgeCaseLinks} />);
+      renderWithI18n(<Identifier requiredLinks={edgeCaseLinks} />);
       
       const emptyHref = screen.getByRole('link', { name: 'Empty Href' });
       const undefinedHref = screen.getByRole('link', { name: 'Undefined Href' });
@@ -477,7 +478,7 @@ describe('Identifier Component', () => {
   // CSS classes and structure tests
   describe('CSS Classes and Structure', () => {
     it('applies correct CSS classes to main sections', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       
       expect(document.querySelector('.usa-identifier__section--masthead')).toBeInTheDocument();
       expect(document.querySelector('.usa-identifier__section--required-links')).toBeInTheDocument();
@@ -485,14 +486,14 @@ describe('Identifier Component', () => {
     });
 
     it('applies correct CSS classes to containers', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       
       const containers = document.querySelectorAll('.usa-identifier__container');
       expect(containers).toHaveLength(3); // One for each section
     });
 
     it('applies correct CSS classes to identity elements', () => {
-      render(<Identifier domain="test.gov" />);
+      renderWithI18n(<Identifier domain="test.gov" />);
       
       expect(document.querySelector('.usa-identifier__identity')).toBeInTheDocument();
       expect(document.querySelector('.usa-identifier__identity-domain')).toBeInTheDocument();
@@ -500,7 +501,7 @@ describe('Identifier Component', () => {
     });
 
     it('applies usa-link class to all links', () => {
-      render(<Identifier />);
+      renderWithI18n(<Identifier />);
       
       const requiredLinks = document.querySelectorAll('.usa-identifier__required-link');
       requiredLinks.forEach(link => {

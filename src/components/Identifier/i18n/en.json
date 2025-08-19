@@ -1,0 +1,31 @@
+{
+  "accessibility": {
+    "agencyIdentifier": "Agency identifier,",
+    "agencyDescription": "Agency description,",
+    "importantLinks": "Important links,",
+    "usaGovSection": "U.S. government information and services,"
+  },
+  "disclaimer": {
+    "officialWebsitePrefix": "An",
+    "officialWebsiteText": "official website of the",
+    "taxpayerExpense": ". Produced and published at taxpayer expense."
+  },
+  "connectors": {
+    "and": " and the ",
+    "andComma": ", and the "
+  },
+  "defaultRequiredLinks": {
+    "about": "About",
+    "accessibilityStatement": "Accessibility statement",
+    "foiaRequests": "FOIA requests",
+    "noFearActData": "No FEAR Act data",
+    "inspectorGeneral": "Office of the Inspector General",
+    "performanceReports": "Performance reports",
+    "privacyPolicy": "Privacy policy"
+  },
+  "usaGov": {
+    "text": "Looking for U.S. government information and services?",
+    "linkText": "Visit USA.gov",
+    "href": "https://www.usa.gov/"
+  }
+}

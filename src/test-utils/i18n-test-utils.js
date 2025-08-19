@@ -67,7 +67,7 @@ const componentsWithTranslations = [
   'Alert', 'Card', 'Dropdown', 'Breadcrumbs', 'Checkbox', 
   'Radio', 'TextInput', 'TextArea', 'Select', 'LanguageSelector', 
   'Person', 'Contacts', 'SideNav', 'HeroGlobal', 'ButtonGroup', 
-  'PGOVHeader', 'Banner', 'Button', 'Link'
+  'PGOVHeader', 'Banner', 'Button', 'Link', 'Identifier'
 ];
 
 componentsWithTranslations.forEach(loadComponentTranslations);

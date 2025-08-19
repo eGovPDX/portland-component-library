@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ExternalLinkIcon } from '../ExternalLinkIcon';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './Identifier.css';
 
 /**
@@ -18,6 +19,7 @@ export const Identifier = ({
   lang = 'en',
   className = '',
 }) => {
+  const { t } = useComponentTranslation('Identifier');
   const identifierClasses = [
     'usa-identifier',
     className
@@ -56,22 +58,22 @@ export const Identifier = ({
 
   // Default required links if none provided
   const defaultRequiredLinks = [
-    { text: lang === 'es' ? 'Acerca de' : 'About', href: '#' },
-    { text: lang === 'es' ? 'Declaración de accesibilidad' : 'Accessibility statement', href: '#' },
-    { text: lang === 'es' ? 'Solicitud a través de FOIA' : 'FOIA requests', href: '#' },
-    { text: lang === 'es' ? 'Datos de la ley No FEAR' : 'No FEAR Act data', href: '#' },
-    { text: lang === 'es' ? 'Oficina del Inspector General' : 'Office of the Inspector General', href: '#' },
-    { text: lang === 'es' ? 'Informes de desempeño' : 'Performance reports', href: '#' },
-    { text: lang === 'es' ? 'Política de privacidad' : 'Privacy policy', href: '#' },
+    { text: t('defaultRequiredLinks.about'), href: '#' },
+    { text: t('defaultRequiredLinks.accessibilityStatement'), href: '#' },
+    { text: t('defaultRequiredLinks.foiaRequests'), href: '#' },
+    { text: t('defaultRequiredLinks.noFearActData'), href: '#' },
+    { text: t('defaultRequiredLinks.inspectorGeneral'), href: '#' },
+    { text: t('defaultRequiredLinks.performanceReports'), href: '#' },
+    { text: t('defaultRequiredLinks.privacyPolicy'), href: '#' },
   ];
 
   const linksToRender = requiredLinks.length > 0 ? requiredLinks : defaultRequiredLinks;
 
   // Default USA.gov text
   const defaultUsaGovText = {
-    text: lang === 'es' ? '¿Necesita información y servicios del Gobierno?' : 'Looking for U.S. government information and services?',
-    linkText: lang === 'es' ? 'Visite USAGov en Español' : 'Visit USA.gov',
-    href: lang === 'es' ? 'https://www.usa.gov/es/' : 'https://www.usa.gov/'
+    text: t('usaGov.text'),
+    linkText: t('usaGov.linkText'),
+    href: t('usaGov.href')
   };
 
   const usaGovContent = { ...defaultUsaGovText, ...usaGovText };
@@ -108,7 +110,7 @@ export const Identifier = ({
     }
 
     if (normalizedAgencies.length === 2) {
-      const connector = lang === 'es' ? ' y ' : ' and the ';
+      const connector = t('connectors.and');
       return (
         <>
           <a href={normalizedAgencies[0].href} className="usa-identifier__agency-link">{normalizedAgencies[0].name}</a>
@@ -119,7 +121,7 @@ export const Identifier = ({
     }
 
     // 3 or more
-    const connector = lang === 'es' ? ' y ' : ', and the ';
+    const connector = t('connectors.andComma');
     const lastAgency = normalizedAgencies[normalizedAgencies.length - 1];
     const others = normalizedAgencies.slice(0, -1);
     return (
@@ -146,10 +148,10 @@ export const Identifier = ({
       .filter(Boolean);
     if (names.length === 0) return parentAgency || '';
     if (names.length === 1) return names[0];
-    if (names.length === 2) return `${names[0]} ${lang === 'es' ? 'y' : 'and the'} ${names[1]}`;
+    if (names.length === 2) return `${names[0]}${t('connectors.and')}${names[1]}`;
     const others = names.slice(0, -1).join(', ');
     const last = names[names.length - 1];
-    return `${others}${lang === 'es' ? ' y ' : ', and the '} ${last}`;
+    return `${others}${t('connectors.andComma')}${last}`;
   };
 
   return (
@@ -157,7 +159,7 @@ export const Identifier = ({
       {/* Agency Identifier Section */}
       <section
         className="usa-identifier__section usa-identifier__section--masthead"
-        aria-label={lang === 'es' ? 'Identificador de agencia,' : 'Agency identifier,'}
+        aria-label={t('accessibility.agencyIdentifier')}
       >
         <div className="usa-identifier__container">
           {/* Agency Logos */}
@@ -183,19 +185,18 @@ export const Identifier = ({
           {/* Agency Identity */}
           <section
             className="usa-identifier__identity"
-            aria-label={lang === 'es' ? 'Descripción de agencia,' : 'Agency description,'}
+            aria-label={t('accessibility.agencyDescription')}
           >
             {domain && (
               <p className="usa-identifier__identity-domain">{domain}</p>
             )}
             <p className="usa-identifier__identity-disclaimer">
-              {lang === 'es' ? '' : <span aria-hidden="true">An{' '}</span>}
-              {lang === 'es' ? 'Un sitio web oficial de' : 'official website of the'}{' '}
+              {t('disclaimer.officialWebsitePrefix') && <span aria-hidden="true">{t('disclaimer.officialWebsitePrefix')}{' '}</span>}
+              {t('disclaimer.officialWebsiteText')}{' '}
               {/* Screen-reader only full text for testing/find-by-text, followed by visual links */}
               <span className="usa-sr-only">{buildAgencyTextString()}</span>
               {renderAgencyContent()}
-              {taxpayerDisclaimer && lang === 'es' && '. Producido y publicado con dinero de los contribuyentes de impuestos.'}
-              {taxpayerDisclaimer && lang !== 'es' && '. Produced and published at taxpayer expense.'}
+              {taxpayerDisclaimer && t('disclaimer.taxpayerExpense')}
             </p>
           </section>
         </div>
@@ -204,7 +205,7 @@ export const Identifier = ({
       {/* Required Links Section */}
       <nav
         className="usa-identifier__section usa-identifier__section--required-links"
-        aria-label={lang === 'es' ? 'Enlaces importantes,' : 'Important links,'}
+        aria-label={t('accessibility.importantLinks')}
       >
         <div className="usa-identifier__container">
           <ul className="usa-identifier__required-links-list">
@@ -231,7 +232,7 @@ export const Identifier = ({
       {/* USA.gov Section */}
       <section
         className="usa-identifier__section usa-identifier__section--usagov"
-        aria-label={lang === 'es' ? 'Enlace a USA.gov,' : 'U.S. government information and services,'}
+        aria-label={t('accessibility.usaGovSection')}
       >
         <div className="usa-identifier__container">
           <div className="usa-identifier__usagov-description">
