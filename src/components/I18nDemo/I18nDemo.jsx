@@ -51,53 +51,57 @@ export const I18nDemo = () => {
 
   return (
     <div className="i18n-demo" lang={selectedLanguage}>
-      <div className="i18n-demo__header">
-        <h1>{tCommon('language.language')} Demo</h1>
-        <p>{tCommon('language.selectLanguage')}</p>
-      </div>
       <div className='secondary-header'>
         <div className="i18n-demo__current-language">
-          <h3>{tCommon('language.currentLanguage')}</h3>
+          <h3>Current Language</h3>
           <p>
             <strong>{supportedLanguages[selectedLanguage]?.nativeName}</strong>
             {' '}({supportedLanguages[selectedLanguage]?.name})
           </p>
           <p>Language Code: <code>{selectedLanguage}</code></p>
-          <p>Direction: <code>{supportedLanguages[selectedLanguage]?.direction}</code></p>
-          
-          <div className="i18n-demo__language-selector-wrapper">
-            <h4>Change Language</h4>
-            <LanguageSelector
-              languages={[
-                { code: 'en', nativeName: 'English', englishName: 'English' },
-                { code: 'es', nativeName: 'Español', englishName: 'Spanish' }
-              ]}
-              selectedLanguage={selectedLanguage}
-              onLanguageChange={handleLanguageChange}
-              variant="two-languages"
-              showIcon={true}
-              buttonText="Select Language"
-            />
-          </div>
+          <p>Direction: <code>{supportedLanguages[selectedLanguage]?.direction}</code></p>  
         </div>
-
-        <div className="i18n-demo__component-example">
-          <h3>Component Example</h3>
-          <p>This Person component automatically adapts to the selected language:</p>
-          <div className="i18n-demo__person-wrapper">
-            <Person {...demoPerson} key={selectedLanguage} />
-            <div className="i18n-demo__language-info">
-              <small>
-                Language: <strong>{selectedLanguage}</strong> | 
-                Component re-renders when language changes
-              </small>
-            </div>
+        <div className="i18n-demo__language-selector-wrapper">
+          <h3>Change Language</h3>
+          <LanguageSelector
+            languages={[
+              { code: 'en', nativeName: 'English', englishName: 'English' },
+              { code: 'es', nativeName: 'Español', englishName: 'Spanish' },
+              { code: 'ar', nativeName: 'العربية', englishName: 'Arabic', disabled: true },
+              { code: 'chk', nativeName: 'Chuukese', englishName: 'Chuukese', disabled: true },
+              { code: 'ja', nativeName: '日本語', englishName: 'Japanese', disabled: true },
+              { code: 'km', nativeName: 'ខ្មែរ', englishName: 'Khmer', disabled: true },
+              { code: 'ko', nativeName: '한국어', englishName: 'Korean', disabled: true },
+              { code: 'lo', nativeName: 'ລາວ', englishName: 'Lao', disabled: true },
+              { code: 'ne', nativeName: 'नेपाली', englishName: 'Nepali', disabled: true },
+              { code: 'ro', nativeName: 'Română', englishName: 'Romanian', disabled: true },
+              { code: 'ru', nativeName: 'Русский', englishName: 'Russian', disabled: true },
+              { code: 'so', nativeName: 'Soomaali', englishName: 'Somali', disabled: true },
+              { code: 'tl', nativeName: 'Tagalog', englishName: 'Tagalog', disabled: true },
+              { code: 'uk', nativeName: 'Українська', englishName: 'Ukrainian', disabled: true },
+              { code: 'vi', nativeName: 'Tiếng Việt', englishName: 'Vietnamese', disabled: true },
+              { code: 'zh', nativeName: '简体字', englishName: 'Chinese - Simplified', disabled: true }
+            ]}
+            selectedLanguage={selectedLanguage}
+            onLanguageChange={handleLanguageChange}
+            variant="default"
+            showIcon={true}
+            buttonText="Select Language"
+          />
+        </div>
+      </div>
+      <div className="i18n-demo__component-example">
+        <h3>Component Example</h3>
+        <div className="i18n-demo__person-wrapper">
+          <Person {...demoPerson} key={selectedLanguage} />
+          <div className="i18n-demo__language-info">
+            <small>
+              Language: <strong>{selectedLanguage}</strong> | 
+              Component re-renders when language changes
+            </small>
           </div>
         </div>
       </div>
-
-
-
 
       <div className="i18n-demo__features">
         <h3>i18n Features</h3>
