@@ -94,6 +94,20 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      Search: {
+        labels: {
+          search: 'Search',
+          searchComponent: 'search component'
+        },
+        accessibility: {
+          searchLabel: 'Search',
+          searchComponent: 'search component'
+        },
+        defaults: {
+          search: 'Search',
+          searchComponent: 'search component'
+        }
+      },
       Footer: {
         feedback: {
           improveText: 'See something we could improve on this page?',
@@ -212,6 +226,20 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      Search: {
+        labels: {
+          search: 'Buscar',
+          searchComponent: 'componente de búsqueda'
+        },
+        accessibility: {
+          searchLabel: 'Buscar',
+          searchComponent: 'componente de búsqueda'
+        },
+        defaults: {
+          search: 'Buscar',
+          searchComponent: 'componente de búsqueda'
         }
       },
       Footer: {

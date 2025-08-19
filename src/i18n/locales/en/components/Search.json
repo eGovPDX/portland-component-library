@@ -1,0 +1,16 @@
+{
+  "Search": {
+    "labels": {
+      "search": "Search",
+      "searchComponent": "search component"
+    },
+    "accessibility": {
+      "searchLabel": "Search",
+      "searchComponent": "search component"
+    },
+    "defaults": {
+      "search": "Search",
+      "searchComponent": "search component"
+    }
+  }
+}
