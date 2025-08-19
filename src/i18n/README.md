@@ -77,6 +77,7 @@ src/i18n/locales/
 import { useComponentTranslation } from '../../hooks/useTranslation';
 
 export const MyComponent = () => {
+  // ✅ CORRECT: Use single namespace for component translations
   const { t, currentLanguage } = useComponentTranslation('MyComponent');
   
   return (
@@ -90,6 +91,8 @@ export const MyComponent = () => {
   );
 };
 ```
+
+**Important:** The `useComponentTranslation` hook automatically uses the `components.{ComponentName}` namespace format. Do not attempt to combine multiple namespaces in arrays as this can cause translation resolution failures.
 
 ### Translation Files
 
@@ -340,6 +343,12 @@ test('translates button text', () => {
 - Avoid hardcoded strings in components
 - Plan for scalability and maintenance
 
+### Namespace Configuration
+- **Use single namespaces** for component translations: `useTranslation('components.ComponentName')`
+- **Avoid namespace arrays** like `useTranslation(['common', 'components.ComponentName'])` as they can cause translation resolution failures
+- **Component-specific translations** should use the `components.{ComponentName}` namespace format
+- **Common translations** should be accessed separately if needed, not combined in arrays
+
 ### Content Organization
 - Group related translations logically
 - Use namespaces for component isolation
@@ -364,6 +373,13 @@ test('translates button text', () => {
 - Verify translation key spelling
 - Ensure namespace is properly loaded
 
+**Translation Keys Not Resolving (Raw Keys Displayed)**
+- **IMPORTANT**: Avoid using multiple namespaces in array format with `useTranslation`
+- ❌ **Problematic**: `useTranslation(['common', 'components.ComponentName'])`
+- ✅ **Recommended**: `useTranslation('components.ComponentName')`
+- This is a known react-i18next limitation where namespace arrays can cause translation resolution failures
+- If you see raw translation keys instead of translated text, check your namespace configuration
+
 **Language Not Changing**
 - Verify LanguageProvider is wrapping components
 - Check for errors in console
@@ -380,6 +396,33 @@ Enable debug mode in development:
 // Translation keys will be logged to console
 i18n.init({ debug: true });
 ```
+
+## Known Limitations
+
+### Namespace Array Issues
+The library has encountered and resolved a critical issue with react-i18next where using multiple namespaces in array format can cause translation resolution failures:
+
+**Problem:**
+```javascript
+// ❌ This can cause raw translation keys to be displayed instead of translated text
+const { t } = useTranslation(['common', 'components.ComponentName']);
+```
+
+**Solution:**
+```javascript
+// ✅ Use single namespace for component translations
+const { t } = useTranslation('components.ComponentName');
+```
+
+**Why This Happens:**
+- react-i18next sometimes fails to properly resolve translations when given an array of namespaces
+- The hook may return raw translation keys instead of translated strings
+- This is a known limitation in the react-i18next library
+
+**Current Status:**
+- ✅ **Fixed** in the Portland Component Library
+- ✅ **Documented** for future developers
+- ✅ **Tested** and verified working
 
 ## Future Enhancements
 
