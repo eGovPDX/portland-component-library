@@ -23,7 +23,7 @@ export const Identifier = ({
   lang = 'en',
   className = '',
 }) => {
-  const { t } = useComponentTranslation('Identifier');
+  const { t, ready } = useComponentTranslation('Identifier');
   const identifierClasses = [
     'usa-identifier',
     className

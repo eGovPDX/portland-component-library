@@ -8,13 +8,16 @@ import translationManager from '../utils/translationManager';
  * @returns {Object} Translation utilities and current language info
  */
 export const useComponentTranslation = (componentName) => {
-  const { t, i18n, ready } = useI18nTranslation(['common', `components.${componentName}`]);
+  const { t, i18n, ready } = useI18nTranslation(`components.${componentName}`);
   
   // Ensure component namespace is loaded
   useEffect(() => {
     if (ready && componentName) {
-      // Try to load from component's local i18n folder first
-      translationManager.loadComponentTranslations(componentName, i18n.language);
+      // Skip translationManager in test environment since translations are loaded directly
+      if (process.env.NODE_ENV !== 'test') {
+        // Try to load from component's local i18n folder first
+        translationManager.loadComponentTranslations(componentName, i18n.language);
+      }
     }
   }, [ready, componentName, i18n.language]);
   
