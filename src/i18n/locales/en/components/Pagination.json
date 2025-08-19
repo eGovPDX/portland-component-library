@@ -1,0 +1,27 @@
+{
+  "Pagination": {
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page",
+      "of": "of"
+    },
+    "accessibility": {
+      "pagination": "Pagination",
+      "previousPage": "Go to previous page",
+      "nextPage": "Go to next page",
+      "firstPage": "Go to first page",
+      "lastPage": "Go to last page",
+      "currentPage": "Current page",
+      "pageNumber": "Go to page {{page}}"
+    },
+    "defaults": {
+      "previous": "Previous",
+      "next": "Next",
+      "first": "First",
+      "last": "Last",
+      "page": "Page",
+      "of": "of"
+    }
+  }
+}

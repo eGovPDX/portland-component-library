@@ -94,6 +94,31 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      Pagination: {
+        navigation: {
+          previous: 'Previous',
+          next: 'Next',
+          page: 'Page',
+          of: 'of'
+        },
+        accessibility: {
+          pagination: 'Pagination',
+          previousPage: 'Go to previous page',
+          nextPage: 'Go to next page',
+          firstPage: 'Go to first page',
+          lastPage: 'Go to last page',
+          currentPage: 'Current page',
+          pageNumber: 'Go to page {{page}}'
+        },
+        defaults: {
+          previous: 'Previous',
+          next: 'Next',
+          first: 'First',
+          last: 'Last',
+          page: 'Page',
+          of: 'of'
+        }
+      },
       Table: {
         accessibility: {
           table: 'Table',
@@ -249,6 +274,31 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      Pagination: {
+        navigation: {
+          previous: 'Anterior',
+          next: 'Siguiente',
+          page: 'Página',
+          of: 'de'
+        },
+        accessibility: {
+          pagination: 'Paginación',
+          previousPage: 'Ir a la página anterior',
+          nextPage: 'Ir a la página siguiente',
+          firstPage: 'Ir a la primera página',
+          lastPage: 'Ir a la última página',
+          currentPage: 'Página actual',
+          pageNumber: 'Ir a la página {{page}}'
+        },
+        defaults: {
+          previous: 'Anterior',
+          next: 'Siguiente',
+          first: 'Primera',
+          last: 'Última',
+          page: 'Página',
+          of: 'de'
         }
       },
       Table: {

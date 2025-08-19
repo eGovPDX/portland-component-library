@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './Pagination.css';
 
 /**
@@ -218,12 +219,12 @@ export const Pagination = ({
   onPageChange,
   maxVisiblePages = 7,
   showEllipsis = true,
-  ariaLabel = 'Pagination',
-  previousButtonText = 'Back',
-  nextButtonText = 'Next',
+  ariaLabel,
+  previousButtonText,
+  nextButtonText,
   showFirstLast = true,
-  firstButtonText = 'First',
-  lastButtonText = 'Last',
+  firstButtonText,
+  lastButtonText,
   showStatus = true,
   resultsPerPage,
   totalResults,
@@ -232,6 +233,14 @@ export const Pagination = ({
   className,
   ...props
 }) => {
+  const { t } = useComponentTranslation('Pagination');
+  
+  // Use i18n translations with fallbacks to props
+  const paginationAriaLabel = ariaLabel || t('accessibility.pagination');
+  const prevButtonText = previousButtonText || t('defaults.previous');
+  const nextBtnText = nextButtonText || t('defaults.next');
+  const firstBtnText = firstButtonText || t('defaults.first');
+  const lastBtnText = lastButtonText || t('defaults.last');
   // Determine effective total pages from results if provided
   const hasResultCounts = typeof resultsPerPage === 'number' && typeof totalResults === 'number' && resultsPerPage > 0 && totalResults > 0;
   const effectiveTotalPages = hasResultCounts ? Math.max(1, Math.ceil(totalResults / resultsPerPage)) : totalPages;
@@ -401,7 +410,7 @@ export const Pagination = ({
 
   return (
     <nav
-      aria-label={ariaLabel}
+      aria-label={paginationAriaLabel}
       className={paginationClasses}
       ref={navRef}
       {...props}
@@ -418,7 +427,7 @@ export const Pagination = ({
             <button
               type="button"
               className={`usa-pagination__button usa-pagination__first-page`}
-              aria-label="First page"
+              aria-label={t('accessibility.firstPage')}
               onClick={handleFirstClick}
               aria-disabled={normalizedCurrentPage === 1}
               disabled={normalizedCurrentPage === 1}
@@ -428,7 +437,7 @@ export const Pagination = ({
                 className="usa-pagination__icon usa-pagination__icon--left"
                 aria-hidden="true"
               />
-              <span className="usa-pagination__link-text">{firstButtonText}</span>
+              <span className="usa-pagination__link-text">{firstBtnText}</span>
             </button>
           </li>
         )}
@@ -437,7 +446,7 @@ export const Pagination = ({
           <button
             type="button"
             className={`usa-pagination__button usa-pagination__previous-page`}
-            aria-label="Previous page"
+            aria-label={t('accessibility.previousPage')}
             onClick={handlePreviousClick}
             aria-disabled={!canGoPrevious}
             disabled={!canGoPrevious}
@@ -447,7 +456,7 @@ export const Pagination = ({
               className="usa-pagination__icon usa-pagination__icon--left"
               aria-hidden="true"
             />
-            <span className="usa-pagination__link-text">{previousButtonText}</span>
+            <span className="usa-pagination__link-text">{prevButtonText}</span>
           </button>
         </li>
 
@@ -470,7 +479,10 @@ export const Pagination = ({
               <button
                 type="button"
                 className={`usa-pagination__button ${item.isCurrent ? 'usa-pagination__button--current' : ''}`}
-                aria-label={`${item.isCurrent ? 'Current page, ' : ''}Page ${item.value}`}
+                aria-label={item.isCurrent ? 
+                  `${t('accessibility.currentPage')}, ${t('accessibility.pageNumber', { page: item.value })}` :
+                  t('accessibility.pageNumber', { page: item.value })
+                }
                 aria-current={item.isCurrent ? 'page' : undefined}
                  onClick={() => handlePageClick(item.value)}
                 disabled={item.isCurrent}
@@ -486,12 +498,12 @@ export const Pagination = ({
           <button
             type="button"
             className={`usa-pagination__button usa-pagination__next-page`}
-            aria-label="Next page"
+            aria-label={t('accessibility.nextPage')}
             onClick={handleNextClick}
             aria-disabled={!canGoNext}
             disabled={!canGoNext}
           >
-            <span className="usa-pagination__link-text">{nextButtonText}</span>
+            <span className="usa-pagination__link-text">{nextBtnText}</span>
             <FontAwesomeIcon 
               icon={faChevronRight} 
               className="usa-pagination__icon usa-pagination__icon--right"
@@ -504,12 +516,12 @@ export const Pagination = ({
             <button
               type="button"
               className={`usa-pagination__button usa-pagination__last-page`}
-              aria-label="Last page"
+              aria-label={t('accessibility.lastPage')}
               onClick={handleLastClick}
               aria-disabled={normalizedCurrentPage === effectiveTotalPages}
               disabled={normalizedCurrentPage === effectiveTotalPages}
             >
-              <span className="usa-pagination__link-text">{lastButtonText}</span>
+              <span className="usa-pagination__link-text">{lastBtnText}</span>
               <FontAwesomeIcon
                 icon={faAnglesRight}
                 className="usa-pagination__icon usa-pagination__icon--right"
