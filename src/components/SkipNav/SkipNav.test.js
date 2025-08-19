@@ -1,11 +1,12 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { SkipNav } from './SkipNav';
 
 describe('SkipNav', () => {
   test('renders with default props', () => {
-    render(<SkipNav />);
+    renderWithI18n(<SkipNav />);
     
     const skipNavLink = screen.getByRole('link', { name: /Skip to main content/i });
     expect(skipNavLink).toBeInTheDocument();
@@ -13,7 +14,7 @@ describe('SkipNav', () => {
   });
 
   test('renders with custom mainContentId', () => {
-    render(<SkipNav mainContentId="custom-id" />);
+    renderWithI18n(<SkipNav mainContentId="custom-id" />);
     
     const skipNavLink = screen.getByRole('link', { name: /Skip to main content/i });
     expect(skipNavLink).toHaveAttribute('href', '#custom-id');
@@ -21,14 +22,14 @@ describe('SkipNav', () => {
 
   test('renders with custom text', () => {
     const customText = 'Skip to content';
-    render(<SkipNav text={customText} />);
+    renderWithI18n(<SkipNav text={customText} />);
     
     const skipNavLink = screen.getByRole('link', { name: customText });
     expect(skipNavLink).toBeInTheDocument();
   });
 
   test('applies custom className', () => {
-    render(<SkipNav className="custom-class" />);
+    renderWithI18n(<SkipNav className="custom-class" />);
     
     const skipNavLink = screen.getByRole('link', { name: /Skip to main content/i });
     expect(skipNavLink).toHaveClass('skipnav');

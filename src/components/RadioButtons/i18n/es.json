@@ -1,0 +1,6 @@
+{
+  "accessibility": {
+    "required": "*",
+    "requiredIndicator": "Campo obligatorio"
+  }
+}

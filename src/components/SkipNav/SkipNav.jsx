@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './SkipNav.css';
 
 /**
@@ -6,10 +7,11 @@ import './SkipNav.css';
  * Provides a link to skip to the main content
  */
 export const SkipNav = ({
-  text = 'Skip to main content',
+  text,
   mainContentId = 'main-content',
   className = ''
 }) => {
+  const { t } = useComponentTranslation('SkipNav');
   const containerClassName = ['skipnav', className].filter(Boolean).join(' ');
   
   return (
@@ -18,7 +20,7 @@ export const SkipNav = ({
       className={containerClassName}
       data-testid="skip-nav"
     >
-      {text}
+      {text || t('defaults.skipToMainContent')}
     </a>
   );
 };
@@ -33,7 +35,7 @@ SkipNav.propTypes = {
 };
 
 SkipNav.defaultProps = {
-  text: 'Skip to main content',
+  text: undefined,
   mainContentId: 'main-content',
   className: ''
 }; 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './RadioButtons.css';
 
 /**
@@ -61,6 +62,7 @@ export const RadioButtons = ({
   errorMessage,
   className,
 }) => {
+  const { t } = useComponentTranslation('RadioButtons');
   // Determine if error styling should be applied
   const hasError = required && errorMessage;
 
@@ -76,7 +78,7 @@ export const RadioButtons = ({
     <fieldset className={groupClasses}>
       <legend className="radio-buttons-legend">
         {legend}
-        {required && <span className="required-asterisk">&nbsp;*</span>}
+        {required && <span className="required-asterisk" title={t('accessibility.requiredIndicator')}>&nbsp;{t('accessibility.required')}</span>}
       </legend>
       {description && <p className="radio-buttons-description">{description}</p>}
       {hasError && <p className="error-message">{errorMessage}</p>}
