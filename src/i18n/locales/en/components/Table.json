@@ -1,0 +1,16 @@
+{
+  "Table": {
+    "accessibility": {
+      "table": "Table",
+      "sortableColumn": "Sortable column",
+      "sortedAscending": "Sorted ascending",
+      "sortedDescending": "Sorted descending"
+    },
+    "defaults": {
+      "table": "Table",
+      "sortableColumn": "Sortable column",
+      "sortedAscending": "Sorted ascending",
+      "sortedDescending": "Sorted descending"
+    }
+  }
+}

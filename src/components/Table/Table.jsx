@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './Table.css';
 
 /**
@@ -54,6 +55,7 @@ export const Table = ({
   onSort = null,
   ...props
 }) => {
+  const { t } = useComponentTranslation('Table');
   const [isStackedView, setIsStackedView] = useState(false);
   const [stackedHeaders, setStackedHeaders] = useState([]);
 
@@ -118,7 +120,7 @@ export const Table = ({
   // Wrap in scrollable container if needed and not in stacked view
   if (scrollable && !isStackedView) {
     return (
-      <div className={`${baseClass}--scrollable`} tabIndex="0" role="region" aria-label="Scrollable table">
+      <div className={`${baseClass}--scrollable`} tabIndex="0" role="region" aria-label={t('accessibility.table')}>
         {tableContent}
       </div>
     );

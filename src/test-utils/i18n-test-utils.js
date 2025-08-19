@@ -94,6 +94,20 @@ const mockTranslations = {
           close: 'Close'
         }
       },
+      Table: {
+        accessibility: {
+          table: 'Table',
+          sortableColumn: 'Sortable column',
+          sortedAscending: 'Sorted ascending',
+          sortedDescending: 'Sorted descending'
+        },
+        defaults: {
+          table: 'Table',
+          sortableColumn: 'Sortable column',
+          sortedAscending: 'Sorted ascending',
+          sortedDescending: 'Sorted descending'
+        }
+      },
       Modal: {
         accessibility: {
           closeButton: 'Close this modal',
@@ -235,6 +249,20 @@ const mockTranslations = {
         defaults: {
           menu: 'Menú',
           close: 'Cerrar'
+        }
+      },
+      Table: {
+        accessibility: {
+          table: 'Tabla',
+          sortableColumn: 'Columna ordenable',
+          sortedAscending: 'Ordenado ascendente',
+          sortedDescending: 'Ordenado descendente'
+        },
+        defaults: {
+          table: 'Tabla',
+          sortableColumn: 'Columna ordenable',
+          sortedAscending: 'Ordenado ascendente',
+          sortedDescending: 'Ordenado descendente'
         }
       },
       Modal: {
