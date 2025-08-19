@@ -1,11 +1,12 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { Header } from './Header';
 
 describe('Header', () => {
   // Test default rendering
   test('renders with default props', () => {
-    render(<Header />);
+    renderWithI18n(<Header />);
     const header = screen.getByRole('banner');
     expect(header).toBeInTheDocument();
     expect(header).toHaveClass('usa-header');
@@ -13,7 +14,7 @@ describe('Header', () => {
 
   // Test with title
   test('renders with title', () => {
-    render(<Header title="Test Website" />);
+    renderWithI18n(<Header title="Test Website" />);
     const header = screen.getByRole('banner');
     expect(header).toBeInTheDocument();
     expect(screen.getByText('Test Website')).toBeInTheDocument();
@@ -22,27 +23,27 @@ describe('Header', () => {
 
   // Test with title and custom URL
   test('renders with custom title URL', () => {
-    render(<Header title="Test Website" titleUrl="/custom" />);
+    renderWithI18n(<Header title="Test Website" titleUrl="/custom" />);
     expect(screen.getByRole('link', { name: 'Test Website' })).toHaveAttribute('href', '/custom');
   });
 
   // Test with subtitle
   test('renders with subtitle', () => {
-    render(<Header title="Test Website" subtitle="Test Tagline" />);
+    renderWithI18n(<Header title="Test Website" subtitle="Test Tagline" />);
     expect(screen.getByText('Test Website')).toBeInTheDocument();
     expect(screen.getByText('Test Tagline')).toBeInTheDocument();
   });
 
   // Test extended variant
   test('renders extended variant correctly', () => {
-    render(<Header title="Test Website" extended />);
+    renderWithI18n(<Header title="Test Website" extended />);
     const header = screen.getByRole('banner');
     expect(header).toHaveClass('usa-header--extended');
   });
 
   // Test megamenu variant
   test('renders megamenu variant correctly', () => {
-    render(<Header title="Test Website" megamenu />);
+    renderWithI18n(<Header title="Test Website" megamenu />);
     const header = screen.getByRole('banner');
     expect(header).toHaveClass('usa-header--megamenu');
   });
@@ -54,7 +55,7 @@ describe('Header', () => {
       <a key="about" href="#about" className="usa-nav__link">About</a>
     ];
     
-    render(<Header title="Test Website" primaryNav={navItems} />);
+    renderWithI18n(<Header title="Test Website" primaryNav={navItems} />);
     
     expect(screen.getByRole('navigation', { name: 'Primary navigation' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
@@ -70,7 +71,7 @@ describe('Header', () => {
       </form>
     );
     
-    render(<Header title="Test Website" search={searchComponent} />);
+    renderWithI18n(<Header title="Test Website" search={searchComponent} />);
     
     expect(screen.getByTestId('search-form')).toBeInTheDocument();
     expect(screen.getByRole('search')).toBeInTheDocument();
@@ -83,7 +84,7 @@ describe('Header', () => {
       <a key="signup" href="#signup">Sign up</a>
     ];
     
-    render(
+    renderWithI18n(
       <Header 
         title="Test Website" 
         extended 
@@ -97,7 +98,7 @@ describe('Header', () => {
 
   // Test with custom mobile menu labels
   test('renders with custom mobile menu labels', () => {
-    render(
+    renderWithI18n(
       <Header 
         title="Test Website" 
         mobileMenuLabel="Open Menu" 
@@ -112,14 +113,14 @@ describe('Header', () => {
 
   // Test with additional className
   test('renders with additional className', () => {
-    render(<Header title="Test Website" className="custom-header" />);
+    renderWithI18n(<Header title="Test Website" className="custom-header" />);
     const header = screen.getByRole('banner');
     expect(header).toHaveClass('usa-header', 'custom-header');
   });
 
   // Test with children (secondary content)
   test('renders with children content', () => {
-    render(
+    renderWithI18n(
       <Header title="Test Website">
         <div data-testid="secondary-content">Secondary Content</div>
       </Header>
@@ -131,7 +132,7 @@ describe('Header', () => {
 
   // Test that navigation is hidden when no navigation props provided
   test('does not render navigation when no nav props provided', () => {
-    render(<Header title="Test Website" />);
+    renderWithI18n(<Header title="Test Website" />);
     expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
   });
 
@@ -141,7 +142,7 @@ describe('Header', () => {
       <a key="home" href="#home" className="usa-nav__link">Home</a>
     ];
     
-    render(<Header title="Test Website" primaryNav={navItems} />);
+    renderWithI18n(<Header title="Test Website" primaryNav={navItems} />);
     
     const banner = screen.getByRole('banner');
     const navigation = screen.getByRole('navigation');
@@ -152,7 +153,7 @@ describe('Header', () => {
 
   // Test mobile menu button accessibility
   test('mobile menu button has proper accessibility', () => {
-    render(<Header title="Test Website" primaryNav={[<a key="test" href="#test">Test</a>]} />);
+    renderWithI18n(<Header title="Test Website" primaryNav={[<a key="test" href="#test">Test</a>]} />);
     
     const menuButton = screen.getByText('Menu');
     expect(menuButton).toBeInTheDocument();
@@ -161,7 +162,7 @@ describe('Header', () => {
 
   // Test extended header structure
   test('extended header has proper structure', () => {
-    render(<Header title="Test Website" extended primaryNav={[<a key="test" href="#test">Test</a>]} />);
+    renderWithI18n(<Header title="Test Website" extended primaryNav={[<a key="test" href="#test">Test</a>]} />);
     
     const header = screen.getByRole('banner');
     expect(header).toHaveClass('usa-header--extended');
@@ -176,7 +177,7 @@ describe('Header', () => {
 
   // Test basic header structure
   test('basic header has proper structure', () => {
-    render(<Header title="Test Website" primaryNav={[<a key="test" href="#test">Test</a>]} />);
+    renderWithI18n(<Header title="Test Website" primaryNav={[<a key="test" href="#test">Test</a>]} />);
     
     const header = screen.getByRole('banner');
     expect(header).not.toHaveClass('usa-header--extended');
@@ -188,7 +189,7 @@ describe('Header', () => {
 
   // Test with multiple variants
   test('applies multiple CSS classes correctly', () => {
-    render(
+    renderWithI18n(
       <Header 
         title="Test Website" 
         extended 
@@ -206,7 +207,7 @@ describe('Header', () => {
 
   // Test logo accessibility
   test('logo link has proper accessibility attributes', () => {
-    render(<Header title="Test Website" />);
+    renderWithI18n(<Header title="Test Website" />);
     
     const logoLink = screen.getByRole('link', { name: 'Test Website' });
     expect(logoLink).toHaveAttribute('title', 'Test Website');
@@ -215,7 +216,7 @@ describe('Header', () => {
 
   // Test that additional props are passed through
   test('passes additional props to header element', () => {
-    render(<Header title="Test Website" data-testid="custom-header" id="main-header" />);
+    renderWithI18n(<Header title="Test Website" data-testid="custom-header" id="main-header" />);
     
     const header = screen.getByTestId('custom-header');
     expect(header).toHaveAttribute('id', 'main-header');

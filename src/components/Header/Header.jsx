@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useComponentTranslation } from '../../hooks/useTranslation';
 import './Header.css';
 
 /**
@@ -34,12 +35,17 @@ export const Header = ({
   primaryNav,
   secondaryNav,
   secondaryContent,
-  mobileMenuLabel = 'Menu',
-  mobileCloseLabel = 'Close',
+  mobileMenuLabel,
+  mobileCloseLabel,
   className,
   children,
   ...props
 }) => {
+  const { t } = useComponentTranslation('Header');
+  
+  // Use i18n translations with fallbacks to props
+  const menuLabel = mobileMenuLabel || t('defaults.menu');
+  const closeLabel = mobileCloseLabel || t('defaults.close');
   const baseClass = 'usa-header';
   const variantClass = variant !== 'basic' ? `${baseClass}--${variant}` : '';
   const extendedClass = extended ? `${baseClass}--extended` : '';
@@ -76,7 +82,7 @@ export const Header = ({
     if (!primaryNav && !search && !secondaryNav && !secondaryContent) return null;
 
     return (
-      <nav aria-label="Primary navigation" className="usa-nav">
+      <nav aria-label={t('navigation.primary')} className="usa-nav">
         {extended && (
           <div className="usa-nav__inner">
             {renderNavContent()}
@@ -93,7 +99,7 @@ export const Header = ({
                 )}
                 {secondaryContent}
                 {search && (
-                  <section aria-label="Search component">
+                  <section aria-label={t('navigation.search')}>
                     {search}
                   </section>
                 )}
@@ -112,7 +118,7 @@ export const Header = ({
         <img 
           src="/assets/img/usa-icons/close.svg" 
           role="img" 
-          alt={mobileCloseLabel} 
+          alt={closeLabel} 
         />
       </button>
       {primaryNav && (
@@ -125,7 +131,7 @@ export const Header = ({
         </ul>
       )}
       {!extended && search && (
-        <section aria-label="Search component">
+        <section aria-label={t('navigation.search')}>
           {search}
         </section>
       )}
@@ -138,7 +144,7 @@ export const Header = ({
         <div className="usa-navbar">
           {renderLogo()}
           <button type="button" className="usa-menu-btn">
-            {mobileMenuLabel}
+            {menuLabel}
           </button>
         </div>
         {renderNavigation()}
@@ -153,7 +159,7 @@ export const Header = ({
         <div className="usa-navbar">
           {renderLogo()}
           <button type="button" className="usa-menu-btn">
-            {mobileMenuLabel}
+            {menuLabel}
           </button>
         </div>
         {renderNavigation()}

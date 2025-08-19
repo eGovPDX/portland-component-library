@@ -75,6 +75,25 @@ const mockTranslations = {
           big: 'Big button'
         }
       },
+      Header: {
+        navigation: {
+          primary: 'Primary navigation',
+          search: 'Search component'
+        },
+        mobile: {
+          menu: 'Menu',
+          close: 'Close'
+        },
+        accessibility: {
+          logo: 'Logo',
+          title: 'Title',
+          subtitle: 'Subtitle'
+        },
+        defaults: {
+          menu: 'Menu',
+          close: 'Close'
+        }
+      },
       Alert: {
         types: {
           info: 'Information',
@@ -141,6 +160,25 @@ const mockTranslations = {
           avatarAltText: 'Retrato de {{name}}',
           avatarDecorative: 'Imagen decorativa del avatar'
         }
+      },
+      Header: {
+        navigation: {
+          primary: 'Navegación principal',
+          search: 'Componente de búsqueda'
+        },
+        mobile: {
+          menu: 'Menú',
+          close: 'Cerrar'
+        },
+        accessibility: {
+          logo: 'Logo',
+          title: 'Título',
+          subtitle: 'Subtítulo'
+        },
+        defaults: {
+          menu: 'Menú',
+          close: 'Cerrar'
+        }
       }
     }
   }
@@ -166,7 +204,14 @@ i18n
 // Add mock translations to i18n
 Object.entries(mockTranslations).forEach(([language, namespaces]) => {
   Object.entries(namespaces).forEach(([namespace, translations]) => {
-    i18n.addResourceBundle(language, namespace, translations, true, true);
+    if (namespace === 'components') {
+      // For components, we need to add each component as a separate namespace
+      Object.entries(translations).forEach(([componentName, componentTranslations]) => {
+        i18n.addResourceBundle(language, `components.${componentName}`, componentTranslations, true, true);
+      });
+    } else {
+      i18n.addResourceBundle(language, namespace, translations, true, true);
+    }
   });
 });
 
