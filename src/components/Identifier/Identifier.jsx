@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ExternalLinkIcon } from '../ExternalLinkIcon';
 import { useComponentTranslation } from '../../hooks/useTranslation';
@@ -23,7 +23,14 @@ export const Identifier = ({
   lang = 'en',
   className = '',
 }) => {
-  const { t, ready } = useComponentTranslation('Identifier');
+  const { t, ready, changeLanguage } = useComponentTranslation('Identifier');
+  
+  // Change language when lang prop changes
+  useEffect(() => {
+    if (ready && lang && lang !== 'en') {
+      changeLanguage(lang);
+    }
+  }, [ready, lang, changeLanguage]);
   const identifierClasses = [
     'usa-identifier',
     className

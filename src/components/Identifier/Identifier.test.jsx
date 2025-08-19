@@ -1,10 +1,15 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { renderWithI18n } from '../../test-utils/i18n-test-utils';
+import { renderWithI18n, changeLanguageInTest } from '../../test-utils/i18n-test-utils';
 import { Identifier } from './Identifier';
 
 describe('Identifier Component', () => {
+  // Reset language to English before each test
+  beforeEach(async () => {
+    await changeLanguageInTest('en');
+  });
+  
   // Basic rendering tests
   describe('Basic Rendering', () => {
     it('renders without crashing', () => {
@@ -116,12 +121,19 @@ describe('Identifier Component', () => {
       expect(screen.getByText(/First Agency and the Second Agency/)).toBeInTheDocument();
     });
 
-    it('displays two agencies with "y" connector in Spanish', () => {
+    it('displays two agencies with "y" connector in Spanish', async () => {
       const agencies = [
         { name: 'Primera Agencia' },
         { name: 'Segunda Agencia' }
       ];
-      renderWithI18n(<Identifier agencies={agencies} lang="es" />);
+      const { rerender } = renderWithI18n(<Identifier agencies={agencies} lang="es" />);
+      
+      // Change language to Spanish
+      await changeLanguageInTest('es');
+      
+      // Re-render to trigger language change
+      rerender(<Identifier agencies={agencies} lang="es" />);
+      
       expect(screen.getByText(/Primera Agencia y Segunda Agencia/)).toBeInTheDocument();
     });
 
@@ -144,19 +156,40 @@ describe('Identifier Component', () => {
       expect(screen.getByText(/official website of the/)).toBeInTheDocument();
     });
 
-    it('displays Spanish text when lang is "es"', () => {
-      renderWithI18n(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+    it('displays Spanish text when lang is "es"', async () => {
+      const { rerender } = renderWithI18n(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+      
+      // Change language to Spanish
+      await changeLanguageInTest('es');
+      
+      // Re-render to trigger language change
+      rerender(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+      
       expect(screen.getByText(/Un sitio web oficial de/)).toBeInTheDocument();
     });
 
-    it('displays Spanish required links when lang is "es"', () => {
-      renderWithI18n(<Identifier lang="es" />);
+    it('displays Spanish required links when lang is "es"', async () => {
+      const { rerender } = renderWithI18n(<Identifier lang="es" />);
+      
+      // Change language to Spanish
+      await changeLanguageInTest('es');
+      
+      // Re-render to trigger language change
+      rerender(<Identifier lang="es" />);
+      
       expect(screen.getByRole('link', { name: 'Acerca de' })).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Declaración de accesibilidad' })).toBeInTheDocument();
     });
 
-    it('displays Spanish USA.gov text when lang is "es"', () => {
-      renderWithI18n(<Identifier lang="es" />);
+    it('displays Spanish USA.gov text when lang is "es"', async () => {
+      const { rerender } = renderWithI18n(<Identifier lang="es" />);
+      
+      // Change language to Spanish
+      await changeLanguageInTest('es');
+      
+      // Re-render to trigger language change
+      rerender(<Identifier lang="es" />);
+      
       expect(screen.getByText(/¿Necesita información y servicios del Gobierno?/)).toBeInTheDocument();
       expect(screen.getByRole('link', { name: 'Visite USAGov en Español' })).toBeInTheDocument();
     });
@@ -164,24 +197,37 @@ describe('Identifier Component', () => {
 
   // Taxpayer disclaimer tests
   describe('Taxpayer Disclaimer', () => {
-    it('displays taxpayer disclaimer in English when enabled', () => {
-      render(
+        it('displays taxpayer disclaimer in English when enabled', () => {
+      renderWithI18n(
         <Identifier 
-          parentAgency="Test Agency" 
-          taxpayerDisclaimer={true} 
+          parentAgency="Test Agency"
+          taxpayerDisclaimer={true}
         />
       );
       expect(screen.getByText(/Produced and published at taxpayer expense/)).toBeInTheDocument();
     });
 
-    it('displays taxpayer disclaimer in Spanish when enabled and lang is "es"', () => {
-      render(
+        it('displays taxpayer disclaimer in Spanish when enabled and lang is "es"', async () => {
+      const { rerender } = renderWithI18n(
         <Identifier 
-          parentAgency="Agencia de Prueba" 
-          taxpayerDisclaimer={true} 
+          parentAgency="Agencia de Prueba"
+          taxpayerDisclaimer={true}
           lang="es"
         />
       );
+      
+      // Change language to Spanish
+      await changeLanguageInTest('es');
+      
+      // Re-render to trigger language change
+      rerender(
+        <Identifier 
+          parentAgency="Agencia de Prueba"
+          taxpayerDisclaimer={true}
+          lang="es"
+        />
+      );
+      
       expect(screen.getByText(/Producido y publicado con dinero de los contribuyentes de impuestos/)).toBeInTheDocument();
     });
 
@@ -266,8 +312,14 @@ describe('Identifier Component', () => {
       expect(screen.getByRole('region', { name: /u.s. government information/i })).toBeInTheDocument();
     });
 
-    it('has proper ARIA labels in Spanish', () => {
-      renderWithI18n(<Identifier lang="es" />);
+    it('has proper ARIA labels in Spanish', async () => {
+      const { rerender } = renderWithI18n(<Identifier lang="es" />);
+      
+      // Change language to Spanish
+      await changeLanguageInTest('es');
+      
+      // Re-render to trigger language change
+      rerender(<Identifier lang="es" />);
       
       expect(screen.getByRole('region', { name: /identificador de agencia/i })).toBeInTheDocument();
       expect(screen.getByRole('region', { name: /descripción de agencia/i })).toBeInTheDocument();
@@ -281,8 +333,15 @@ describe('Identifier Component', () => {
       expect(hiddenSpan).toHaveTextContent(/An\s*/);
     });
 
-    it('does not have aria-hidden span in Spanish', () => {
-      renderWithI18n(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+    it('does not have aria-hidden span in Spanish', async () => {
+      const { rerender } = renderWithI18n(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+      
+      // Change language to Spanish
+      await changeLanguageInTest('es');
+      
+      // Re-render to trigger language change
+      rerender(<Identifier parentAgency="Agencia de Prueba" lang="es" />);
+      
       const hiddenSpan = document.querySelector('span[aria-hidden="true"]');
       expect(hiddenSpan).not.toBeInTheDocument();
     });

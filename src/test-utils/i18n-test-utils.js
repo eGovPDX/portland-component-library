@@ -73,6 +73,16 @@ try {
   // No common translations found, which is fine
 }
 
+try {
+  const esCommon = require('../i18n/locales/es/common.json');
+  i18n.addResourceBundle('es', 'common', esCommon, true, true);
+  
+  // Mark as loaded in translation manager to prevent dynamic loading attempts
+  translationManager.loadedNamespaces.add('es:common');
+} catch (error) {
+  // No Spanish common translations found, which is fine
+}
+
 // Load component translations from their local i18n folders
 const loadComponentTranslations = (componentName) => {
   try {
@@ -103,6 +113,9 @@ const loadComponentTranslations = (componentName) => {
     // Mark as loaded in translation manager to prevent dynamic loading attempts
     translationManager.loadedNamespaces.add(`es:components.${componentName}`);
     translationManager.loadedNamespaces.add(`es:${componentName}`);
+    
+    // Also mark the general components namespace as loaded
+    translationManager.loadedNamespaces.add('es:components');
   } catch (error) {
     // Component doesn't have translations, which is fine
   }
