@@ -1,0 +1,12 @@
+{
+  "PGOVHeader": {
+    "defaults": {
+      "title": "Portland.gov",
+      "logoAlt": "Logo",
+      "mainHeading": "Información General",
+      "menuText": "Menú",
+      "openMenuAriaLabel": "Menú",
+      "closeMenuAriaLabel": "Cerrar menú"
+    }
+  }
+}

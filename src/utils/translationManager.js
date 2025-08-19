@@ -13,6 +13,42 @@ class TranslationManager {
   }
 
   /**
+   * Load component translations from the component's local i18n folder
+   * @param {string} componentName - Name of the component
+   * @param {string} language - Language code
+   * @returns {Promise} Promise that resolves when translations are loaded
+   */
+  async loadComponentTranslations(componentName, language) {
+    const namespace = `components.${componentName}`;
+    const key = `${language}:${namespace}`;
+    
+    // If already loaded, return immediately
+    if (this.loadedNamespaces.has(key)) {
+      return Promise.resolve();
+    }
+    
+    // If already loading, return the existing promise
+    if (this.loadingPromises.has(key)) {
+      return this.loadingPromises.get(key);
+    }
+    
+    // Load the component translations
+    const loadPromise = this._loadComponentTranslationsInternal(componentName, language);
+    this.loadingPromises.set(key, loadPromise);
+    
+    try {
+      await loadPromise;
+      this.loadedNamespaces.add(key);
+      this.loadingPromises.delete(key);
+    } catch (error) {
+      this.loadingPromises.delete(key);
+      throw error;
+    }
+    
+    return loadPromise;
+  }
+
+  /**
    * Load a namespace for a specific language
    * @param {string} language - Language code
    * @param {string} namespace - Namespace to load
@@ -45,6 +81,43 @@ class TranslationManager {
     }
     
     return loadPromise;
+  }
+
+  /**
+   * Internal method to load component translations from local i18n folder
+   * @param {string} componentName - Name of the component
+   * @param {string} language - Language code
+   * @returns {Promise} Promise that resolves when translations are loaded
+   */
+  async _loadComponentTranslationsInternal(componentName, language) {
+    try {
+      // Try to load from component's local i18n folder
+      const translationModule = await this._importComponentTranslation(componentName, language);
+      
+      if (translationModule && translationModule.default) {
+        // Add the translation to i18next
+        const namespace = `components.${componentName}`;
+        i18n.addResourceBundle(language, namespace, translationModule.default, true, true);
+        return true;
+      }
+      
+      // If no translation found, fall back to default language
+      if (language !== DEFAULT_LANGUAGE) {
+        console.warn(`Component translation not found for ${componentName} in ${language}, falling back to ${DEFAULT_LANGUAGE}`);
+        return this._loadComponentTranslationsInternal(componentName, DEFAULT_LANGUAGE);
+      }
+      
+      return false;
+    } catch (error) {
+      console.error(`Failed to load component translation for ${componentName} in ${language}:`, error);
+      
+      // Fall back to default language
+      if (language !== DEFAULT_LANGUAGE) {
+        return this._loadComponentTranslationsInternal(componentName, DEFAULT_LANGUAGE);
+      }
+      
+      throw error;
+    }
   }
 
   /**
@@ -83,6 +156,24 @@ class TranslationManager {
       }
       
       throw error;
+    }
+  }
+
+  /**
+   * Import component translation file from local i18n folder
+   * @param {string} componentName - Name of the component
+   * @param {string} language - Language code
+   * @returns {Promise} Promise that resolves to the translation module
+   */
+  async _importComponentTranslation(componentName, language) {
+    try {
+      // Try to load from component's local i18n folder
+      // This will look for: src/components/{ComponentName}/i18n/{language}.json
+      const translationModule = await import(`../components/${componentName}/i18n/${language}.json`);
+      return translationModule;
+    } catch (error) {
+      // If the file doesn't exist, return null
+      return null;
     }
   }
 

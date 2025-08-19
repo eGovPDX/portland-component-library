@@ -1,0 +1,14 @@
+{
+  "Link": {
+    "accessibility": {
+      "link": "Link",
+      "externalLink": "External link",
+      "opensInNewTab": "Opens in new tab"
+    },
+    "defaults": {
+      "link": "Link",
+      "externalLink": "External link",
+      "opensInNewTab": "Opens in new tab"
+    }
+  }
+}

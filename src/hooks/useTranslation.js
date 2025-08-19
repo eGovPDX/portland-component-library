@@ -13,7 +13,8 @@ export const useComponentTranslation = (componentName) => {
   // Ensure component namespace is loaded
   useEffect(() => {
     if (ready && componentName) {
-      translationManager.loadNamespace(i18n.language, `components.${componentName}`);
+      // Try to load from component's local i18n folder first
+      translationManager.loadComponentTranslations(componentName, i18n.language);
     }
   }, [ready, componentName, i18n.language]);
   
