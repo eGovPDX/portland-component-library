@@ -17,6 +17,7 @@ const config = {
     "@storybook/addon-themes",
     "@storybook/experimental-addon-test",
     "@whitespace/storybook-addon-html"
+    // Temporarily removed: "storybook-react-i18next"
   ],
 
   framework: {
@@ -26,7 +27,10 @@ const config = {
 
   docs: {
     autodocs: true
-  }
+  },
+
+  // Specify the preview file
+  preview: "./.storybook/preview.jsx"
 };
 
 export default config; 

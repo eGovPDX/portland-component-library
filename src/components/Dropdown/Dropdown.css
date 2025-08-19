@@ -114,6 +114,39 @@
   background-color: var(--dropdown-button-bg, #FFF);
 }
 
+/* Focus styles for the dropdown button */
+.usa-input.dropdown__button:focus {
+  outline: 2px solid #005ea2 !important;
+  outline-offset: 2px !important;
+  border-color: #005ea2 !important;
+  box-shadow: 0 0 0 2px rgba(0, 94, 162, 0.25) !important;
+}
+
+/* Alternative focus selector using button element */
+button.usa-input.dropdown__button:focus {
+  outline: 2px solid #005ea2 !important;
+  outline-offset: 2px !important;
+  border-color: #005ea2 !important;
+  box-shadow: 0 0 0 2px rgba(0, 94, 162, 0.25) !important;
+}
+
+/* Most specific selector to ensure it works */
+.dropdown__container button.usa-input.dropdown__button:focus {
+  outline: 2px solid #005ea2 !important;
+  outline-offset: 2px !important;
+  border-color: #005ea2 !important;
+  box-shadow: 0 0 0 2px rgba(0, 94, 162, 0.25) !important;
+}
+
+/* Professional focus style - clear and accessible */
+.dropdown__container button.usa-input.dropdown__button:focus {
+  outline: 2px solid #005ea2 !important;
+  outline-offset: 2px !important;
+  border: 2px solid #005ea2 !important;
+  box-shadow: 0 0 0 2px rgba(0, 94, 162, 0.25) !important;
+  background-color: #f0f8ff !important;
+}
+
 /* Disabled State - ensuring specificity */
 .usa-input.dropdown__button:disabled, 
 .usa-input.dropdown__button.usa-input--disabled {

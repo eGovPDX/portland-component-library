@@ -198,6 +198,7 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@chromatic-com/storybook": "^3.2.6",
+    "@esbuild/darwin-x64": "^0.25.9",
     "@storybook/addon-a11y": "^8.6.12",
     "@storybook/addon-actions": "^8.6.12",
     "@storybook/addon-controls": "^8.6.12",
@@ -231,6 +232,8 @@
     "playwright": "^1.51.0",
     "sass": "^1.85.1",
     "storybook": "^8.6.12",
+    "storybook-i18n": "^3.1.1",
+    "storybook-react-i18next": "^3.3.1",
     "vite": "^6.2.1",
     "vitest": "^3.0.8"
   },

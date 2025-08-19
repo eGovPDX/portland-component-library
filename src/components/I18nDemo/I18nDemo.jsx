@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Person } from '../Person';
+import { Button } from '../Button';
+import { Alert } from '../Alert';
+import { Card } from '../Card';
 import { LanguageSelector } from '../LanguageSelector';
 import { SUPPORTED_LANGUAGES, LANGUAGE_CODES } from '../../i18n';
 import './I18nDemo.css';
@@ -12,6 +15,7 @@ import './I18nDemo.css';
 export const I18nDemo = () => {
   const { i18n, t: tCommon } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+  const [selectedComponent, setSelectedComponent] = useState('person');
   const supportedLanguages = SUPPORTED_LANGUAGES;
   const languageCodes = LANGUAGE_CODES;
 
@@ -27,6 +31,18 @@ export const I18nDemo = () => {
   // Update selectedLanguage when i18n language changes
   useEffect(() => {
     setSelectedLanguage(i18n.language);
+    
+    // Listen for language changes from external sources (like Storybook)
+    const handleLanguageChanged = (lng) => {
+      setSelectedLanguage(lng);
+    };
+    
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    // Cleanup listener
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
   }, [i18n.language]);
 
   // Create demo person data that updates with language
@@ -49,6 +65,84 @@ export const I18nDemo = () => {
       : ['Policy', 'Transportation', 'Public Service']
   }), [selectedLanguage]);
 
+  // Create demo data for other components
+  const demoButton = React.useMemo(() => ({
+    children: selectedLanguage === 'es' ? 'Hacer Clic' : 'Click Me',
+    variant: 'primary',
+    size: 'default'
+  }), [selectedLanguage]);
+
+  const demoAlert = React.useMemo(() => ({
+    type: 'info',
+    title: selectedLanguage === 'es' ? 'Información Importante' : 'Important Information',
+    children: selectedLanguage === 'es' 
+      ? 'Este es un mensaje de alerta de ejemplo que demuestra la internacionalización.'
+      : 'This is an example alert message demonstrating internationalization.'
+  }), [selectedLanguage]);
+
+  const demoCard = React.useMemo(() => ({
+    title: selectedLanguage === 'es' ? 'Tarjeta de Ejemplo' : 'Example Card',
+    children: selectedLanguage === 'es'
+      ? 'Esta es una tarjeta de ejemplo que muestra contenido internacionalizado.'
+      : 'This is an example card showing internationalized content.'
+  }), [selectedLanguage]);
+
+  // Function to render the selected component
+  const renderSelectedComponent = () => {
+    switch (selectedComponent) {
+      case 'person':
+        return (
+          <div className="i18n-demo__person-wrapper">
+            <Person {...demoPerson} key={selectedLanguage} />
+            <div className="i18n-demo__language-info">
+              <small>
+                Language: <strong>{selectedLanguage}</strong> | 
+                Component re-renders when language changes
+              </small>
+            </div>
+          </div>
+        );
+      case 'button':
+        return (
+          <div className="i18n-demo__button-wrapper">
+            <Button {...demoButton} />
+            <div className="i18n-demo__language-info">
+              <small>
+                Language: <strong>{selectedLanguage}</strong> | 
+                Button text changes with language
+              </small>
+            </div>
+          </div>
+        );
+      case 'alert':
+        return (
+          <div className="i18n-demo__alert-wrapper">
+            <Alert {...demoAlert} />
+            <div className="i18n-demo__language-info">
+              <small>
+                Language: <strong>{selectedLanguage}</strong> | 
+                Alert content changes with language
+              </small>
+            </div>
+          </div>
+        );
+      case 'card':
+        return (
+          <div className="i18n-demo__card-wrapper">
+            <Card {...demoCard} />
+            <div className="i18n-demo__language-info">
+              <small>
+                Language: <strong>{selectedLanguage}</strong> | 
+                Card content changes with language
+              </small>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="i18n-demo" lang={selectedLanguage}>
       <div className='secondary-header'>
@@ -70,17 +164,6 @@ export const I18nDemo = () => {
               { code: 'ar', nativeName: 'العربية', englishName: 'Arabic', disabled: true },
               { code: 'chk', nativeName: 'Chuukese', englishName: 'Chuukese', disabled: true },
               { code: 'ja', nativeName: '日本語', englishName: 'Japanese', disabled: true },
-              { code: 'km', nativeName: 'ខ្មែរ', englishName: 'Khmer', disabled: true },
-              { code: 'ko', nativeName: '한국어', englishName: 'Korean', disabled: true },
-              { code: 'lo', nativeName: 'ລາວ', englishName: 'Lao', disabled: true },
-              { code: 'ne', nativeName: 'नेपाली', englishName: 'Nepali', disabled: true },
-              { code: 'ro', nativeName: 'Română', englishName: 'Romanian', disabled: true },
-              { code: 'ru', nativeName: 'Русский', englishName: 'Russian', disabled: true },
-              { code: 'so', nativeName: 'Soomaali', englishName: 'Somali', disabled: true },
-              { code: 'tl', nativeName: 'Tagalog', englishName: 'Tagalog', disabled: true },
-              { code: 'uk', nativeName: 'Українська', englishName: 'Ukrainian', disabled: true },
-              { code: 'vi', nativeName: 'Tiếng Việt', englishName: 'Vietnamese', disabled: true },
-              { code: 'zh', nativeName: '简体字', englishName: 'Chinese - Simplified', disabled: true }
             ]}
             selectedLanguage={selectedLanguage}
             onLanguageChange={handleLanguageChange}
@@ -91,16 +174,25 @@ export const I18nDemo = () => {
         </div>
       </div>
       <div className="i18n-demo__component-example">
-        <h3>Component Example</h3>
-        <div className="i18n-demo__person-wrapper">
-          <Person {...demoPerson} key={selectedLanguage} />
-          <div className="i18n-demo__language-info">
-            <small>
-              Language: <strong>{selectedLanguage}</strong> | 
-              Component re-renders when language changes
-            </small>
+        <div className="secondary-header">
+          <h3>Component Example</h3>
+          <div className="i18n-demo__component-selector">
+            <select 
+              value={selectedComponent}
+              placeholder="Select a component"
+              onChange={(e) => {
+                setSelectedComponent(e.target.value);
+              }}
+              className="usa-select"
+            >
+              <option value="person">Person Component</option>
+              <option value="button">Button Component</option>
+              <option value="alert">Alert Component</option>
+              <option value="card">Card Component</option>
+            </select>
           </div>
         </div>
+        {renderSelectedComponent()}
       </div>
 
       <div className="i18n-demo__features">
