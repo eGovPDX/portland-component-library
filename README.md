@@ -78,6 +78,46 @@ const ThemeToggleButton = ({ theme, setTheme }) => {
 };
 ```
 
+## Internationalization (i18n)
+
+The library includes comprehensive internationalization support for multiple languages, with a focus on accessibility and government compliance.
+
+### Supported Languages
+
+- **English (en)** - Default language
+- **Spanish (es)** - Full support with government compliance text
+- **Vietnamese (vi)** - Basic support
+- **Additional languages** - Framework ready for expansion
+
+### Key Features
+
+- **Co-located translations** - Translation files stored alongside components
+- **Government compliance** - Pre-translated required links and disclaimers
+- **Accessibility support** - ARIA labels and screen reader text in multiple languages
+- **Automatic language detection** - Components automatically adapt to user's language
+- **Fallback support** - Graceful degradation when translations are missing
+
+### Quick Start
+
+```jsx
+import { useComponentTranslation } from '@cityofportland/component-library/hooks/useTranslation';
+
+export const MyComponent = () => {
+  const { t, currentLanguage } = useComponentTranslation('MyComponent');
+  
+  return (
+    <div lang={currentLanguage}>
+      <h1>{t('title')}</h1>
+      <button aria-label={t('buttonAriaLabel')}>
+        {t('buttonText')}
+      </button>
+    </div>
+  );
+};
+```
+
+For detailed i18n documentation, see [src/i18n/README.md](src/i18n/README.md).
+
 ## Contributing to the Library
 
 ### Quick Start

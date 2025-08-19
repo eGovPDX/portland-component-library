@@ -8,6 +8,10 @@ import './Identifier.css';
  * Identifier component based on USWDS Identifier
  * Communicates a site's parent agency and displays agency links required by federal laws and policies.
  * This is a core component that should be used on most government sites along with the Banner component.
+ * 
+ * @i18n This component is fully internationalized and supports English (en) and Spanish (es) languages.
+ * All text content including accessibility labels, default links, and government disclaimers are translated.
+ * The component automatically loads translations from its co-located i18n folder.
  */
 export const Identifier = ({
   domain,

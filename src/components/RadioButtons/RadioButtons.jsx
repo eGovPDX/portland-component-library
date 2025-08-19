@@ -10,6 +10,11 @@ import './RadioButtons.css';
  * error handling, and styling options. The component uses semantic HTML with fieldset and legend
  * for proper form structure and screen reader support.
  * 
+ * @i18n This component is internationalized and supports accessibility features in multiple languages.
+ * The required field indicator (*) and its tooltip are translated. The component automatically loads
+ * translations from its co-located i18n folder.
+ */
+ * 
  * @component
  * @example
  * ```jsx

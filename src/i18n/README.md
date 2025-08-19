@@ -36,21 +36,36 @@ Based on Portland.gov's Factor 1 analysis, the library supports the following la
 - `src/contexts/LanguageContext.jsx` - Language state management
 
 ### Translation Structure
+
+The library uses a **co-located translation architecture** where translation files are stored alongside their components for better maintainability.
+
+#### Co-located Component Translations
+```
+src/components/
+├── Button/
+│   ├── Button.jsx
+│   ├── Button.css
+│   ├── Button.test.jsx
+│   └── i18n/              # Component-specific translations
+│       ├── en.json
+│       └── es.json
+├── Header/
+│   ├── Header.jsx
+│   ├── Header.css
+│   ├── Header.test.jsx
+│   └── i18n/
+│       ├── en.json
+│       └── es.json
+└── ...
+```
+
+#### Common Translations
 ```
 src/i18n/locales/
-├── en/                    # English (default)
-│   ├── common.json       # Common translations
-│   └── components/       # Component-specific translations
-│       ├── Person.json
-│       ├── Button.json
-│       ├── Alert.json
-│       └── ...
-├── es/                    # Spanish
-│   ├── common.json
-│   └── components/
-├── vi/                    # Vietnamese
-│   ├── common.json
-│   └── components/
+├── en/
+│   └── common.json       # Shared translations across components
+├── es/
+│   └── common.json
 └── ...                    # Other languages
 ```
 
@@ -217,10 +232,46 @@ function App() {
 
 ### Adding New Components
 
-1. Create translation files for each supported language
-2. Use `useComponentTranslation('ComponentName')` in your component
-3. Add `lang={currentLanguage}` attribute to root element
-4. Replace hardcoded strings with translation keys
+1. **Create co-located translation files:**
+   ```
+   src/components/YourComponent/
+   ├── YourComponent.jsx
+   ├── YourComponent.css
+   └── i18n/
+       ├── en.json
+       └── es.json
+   ```
+
+2. **Use the translation hook:**
+   ```jsx
+   import { useComponentTranslation } from '../../hooks/useTranslation';
+   
+   export const YourComponent = () => {
+     const { t } = useComponentTranslation('YourComponent');
+     // ... component logic
+   };
+   ```
+
+3. **Add language attribute to root element:**
+   ```jsx
+   return (
+     <div lang={currentLanguage}>
+       {/* component content */}
+     </div>
+   );
+   ```
+
+4. **Replace hardcoded strings with translation keys:**
+   ```jsx
+   // Before
+   <button>Submit</button>
+   
+   // After
+   <button>{t('actions.submit')}</button>
+   ```
+
+5. **Update test utilities:**
+   Add your component to the `componentsWithTranslations` array in `src/test-utils/i18n-test-utils.js`
 
 ### Translation Key Naming Convention
 

@@ -8,7 +8,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Identifier component based on USWDS Identifier. Communicates a site\'s parent agency and displays agency links required by federal laws and policies. This is a core component that should be used on most government sites along with the Banner component.',
+        component: 'Identifier component based on USWDS Identifier. Communicates a site\'s parent agency and displays agency links required by federal laws and policies. This is a core component that should be used on most government sites along with the Banner component. **Fully internationalized with support for English and Spanish.**',
       },
     },
     layout: 'fullscreen',
@@ -312,5 +312,24 @@ export const KitchenSink = {
       href: 'https://www.usa.gov/'
     },
     className: 'custom-identifier'
+  }
+};
+
+// Spanish language demonstration
+export const Spanish = {
+  args: {
+    domain: 'dominio.gov',
+    parentAgency: 'Agencia Padre',
+    agencies: [
+      {
+        name: 'Agencia Padre',
+        shortname: 'AP',
+        logoSrc: pgovLogo,
+        logoAlt: 'Logo de Agencia Padre',
+        href: '#'
+      }
+    ],
+    lang: 'es',
+    taxpayerDisclaimer: true
   }
 }; 

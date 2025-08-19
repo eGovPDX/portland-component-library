@@ -187,6 +187,7 @@
     "build:lib": "node build-all.js",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:i18n": "jest --testPathPattern=i18n",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
