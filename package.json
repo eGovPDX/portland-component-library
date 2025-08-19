@@ -107,6 +107,10 @@
       "import": "./dist/components/Pagination/index.js"
     },
     "./components/Pagination/style.css": "./dist/components/Pagination/style.css",
+    "./components/Person": {
+      "import": "./dist/components/Person/index.js"
+    },
+    "./components/Person/style.css": "./dist/components/Person/style.css",
     "./components/PopoverWithCard": {
       "import": "./dist/components/PopoverWithCard/index.js"
     },

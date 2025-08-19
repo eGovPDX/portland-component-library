@@ -38,7 +38,7 @@ export const PGOVHeader = ({
             <div className="header-text-container">
               <span className="header-title">{title}</span>
               {tagline && (
-                <span className="header-tagline">{tagline}</span>
+                <span className="header-tagline" data-testid="tagline">{tagline}</span>
               )}
             </div>
           <div className={`header-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>

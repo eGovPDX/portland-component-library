@@ -2,6 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Header.css';
 
+/**
+ * USWDS Header wrapper with optional extended layout and navigation slots.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} [props.title] - Title text for the header logo link
+ * @param {string} [props.subtitle] - Subtitle/tagline below the title
+ * @param {string} [props.titleUrl='/'] - URL for the title link
+ * @param {('basic')} [props.variant='basic'] - Header variant (limited here to 'basic')
+ * @param {boolean} [props.extended=false] - Use extended header layout
+ * @param {boolean} [props.megamenu=false] - Enable megamenu support
+ * @param {React.ReactNode} [props.search] - Search component to render
+ * @param {React.ReactNode} [props.primaryNav] - Primary navigation items
+ * @param {React.ReactNode} [props.secondaryNav] - Secondary navigation items (extended only)
+ * @param {React.ReactNode} [props.secondaryContent] - Additional content for the secondary nav area
+ * @param {string} [props.mobileMenuLabel='Menu'] - Label for mobile menu button
+ * @param {string} [props.mobileCloseLabel='Close'] - Label for mobile close button
+ * @param {string} [props.className] - Additional CSS class names
+ * @param {React.ReactNode} [props.children] - Optional content rendered after nav
+ * @returns {JSX.Element} Header element
+ */
 export const Header = ({
   title,
   subtitle,

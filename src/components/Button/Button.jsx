@@ -2,6 +2,26 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Button.css';
 
+/**
+ * Button component based on USWDS Button.
+ *
+ * Renders a styled button with optional start/end icons and variant/size options.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactNode} props.children - Button content
+ * @param {('default'|'secondary'|'accent-cool'|'accent-warm'|'base'|'outline'|'outline-inverse')} [props.variant='default'] - Visual style variant
+ * @param {('default'|'big')} [props.size='default'] - Size variant
+ * @param {boolean} [props.disabled=false] - Native disabled attribute
+ * @param {boolean} [props.ariaDisabled=false] - ARIA disabled state (non-interactive styling)
+ * @param {boolean} [props.unstyled=false] - Use unstyled variant
+ * @param {function} [props.onClick] - Click handler
+ * @param {('button'|'submit'|'reset')} [props.type='button'] - Button type attribute
+ * @param {import('@fortawesome/fontawesome-svg-core').IconProp} [props.startIcon] - Icon shown before content
+ * @param {import('@fortawesome/fontawesome-svg-core').IconProp} [props.endIcon] - Icon shown after content
+ * @param {string} [props.className] - Additional CSS class names
+ * @returns {JSX.Element} Button element
+ */
 export const Button = ({
   children,
   variant = 'default',

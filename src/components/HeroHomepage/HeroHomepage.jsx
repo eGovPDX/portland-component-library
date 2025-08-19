@@ -2,6 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './HeroHomepage.css';
 
+/**
+ * Homepage hero with title, optional subtitle, search component, and quick links.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {string} props.title - Main hero title
+ * @param {string} [props.subtitle] - Optional subtitle displayed above links
+ * @param {React.ReactNode} props.searchComponent - Search component to render prominently
+ * @param {Array<{text: string, href: string, props?: Object}>} [props.links=[]] - Quick links below search
+ * @param {string} [props.className] - Additional CSS class names
+ * @returns {JSX.Element} Homepage hero section
+ */
 export const HeroHomepage = ({
   title,
   subtitle,

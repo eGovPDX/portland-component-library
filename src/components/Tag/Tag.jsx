@@ -2,6 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Tag.css';
 
+/**
+ * Small label badge with optional big variant.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {('default'|'big')} [props.variant='default'] - Visual size variant
+ * @param {React.ReactNode} props.children - Tag content
+ * @param {string} [props.className] - Additional CSS class names
+ * @returns {JSX.Element} Tag element
+ */
 export const Tag = ({ variant = 'default', children, className, ...props }) => {
   const baseClassName = 'usa-tag';
   const variantClassName = variant === 'big' ? 'usa-tag--big' : '';

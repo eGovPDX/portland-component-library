@@ -34,13 +34,13 @@ You can import a specific theme to style your application. Choose one of the fol
 
 ```jsx
 // PGOV Theme (Default)
-import '@cityofportland/component-library/themes/pgov.css';
+import '@cityofportland/component-library/themes/pgov';
 
 // PGOV Dark Theme
-import '@cityofportland/component-library/themes/pgov-dark.css';
+import '@cityofportland/component-library/themes/pgov-dark';
 
 // USWDS Default Theme
-import '@cityofportland/component-library/themes/uswds-default.css';
+import '@cityofportland/component-library/themes/uswds-default';
 ```
 
 ### Using Design Tokens
@@ -128,14 +128,17 @@ portland-component-library/
 │   │   ├── Button/     # Button components
 │   │   ├── ColorSwatch/# Color display and documentation
 │   │   ├── Contacts/   # Contact information display
-│   │   ├── Footer/     # Site footer
-│   │   ├── PGOVHeader/ # Portland.gov navigation header
-│   │   ├── HeroGlobal/ # Global hero section
+│   │   ├── Footer/     # Site footer with accessibility information
+│   │   ├── Header/     # Generic USWDS Header wrapper with optional extended layout
+│   │   ├── HeroGlobal/ # Global hero section with image and call-to-action
 │   │   ├── HeroHomepage/# Homepage hero section
 │   │   ├── Identifier/ # Agency identifier component
+│   │   ├── LanguageSelector/ # Language selection dropdown component
 │   │   ├── Modal/      # Modal dialog component
 │   │   ├── PageTemplate/# Page template
 │   │   ├── Pagination/ # USWDS-compliant pagination component
+│   │   ├── Person/     # Profile block for individuals with avatar, name, role, and contact info
+│   │   ├── PGOVHeader/ # Portland.gov navigation header
 │   │   ├── ProcessSteps/# Process step indicators
 │   │   ├── Search/     # Search input component
 │   │   ├── SideNav/    # Side navigation
@@ -157,7 +160,6 @@ portland-component-library/
 │   │   ├── TextArea/   # Text area component for multi-line text input
 │   │   ├── TextInput/  # Text input component with validation and states
 │   │   └── Checkbox/   # Checkbox component allowing multiple selections from a list
-│   │   └── LanguageSelector/ # Language selection dropdown component
 │   ├── images/         # Image assets
 │   └── styles/         # SCSS styles and themes
 ├── .storybook/         # Storybook configuration
@@ -171,6 +173,7 @@ The library includes a comprehensive set of components for building Portland.gov
 
 ### Navigation Components
 - **Banner** - Official government website banner
+- **Header** - Generic USWDS Header wrapper with optional extended layout and navigation slots
 - **PGOVHeader** - Portland.gov navigation component based on USWDS Header
 - **Footer** - Site footer with accessibility information
 - **Identifier** - Agency identifier component displaying parent agency and required policy links
@@ -208,6 +211,7 @@ The library includes a comprehensive set of components for building Portland.gov
 - **Typography** - Text components and styles
 - **Alert** - Alert messages and notifications
 - **Contacts** - Contact information display
+- **Person** - Profile block for individuals with avatar, name, role, department, contact actions, meta, and tags
 - **ProcessSteps** - Process step indicators
 - **StepIndicator** - Horizontal step indicator for multi-step processes
 - **Tooltip** - Tooltip component

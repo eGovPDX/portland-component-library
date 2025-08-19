@@ -17,6 +17,23 @@ import {
 } from '@floating-ui/react';
 import './Tooltip.css';
 
+/**
+ * Tooltip component built with Floating UI.
+ *
+ * Wraps a single child element and shows a tooltip on hover/focus or click.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactElement} props.children - Trigger element to wrap
+ * @param {React.ReactNode} props.content - Tooltip content
+ * @param {('top'|'right'|'bottom'|'left')} [props.position='top'] - Preferred placement
+ * @param {('dark'|'light')} [props.theme='dark'] - Visual theme
+ * @param {boolean} [props.showArrow=true] - Whether to render an arrow
+ * @param {string} [props.className=''] - Additional CSS class names for the tooltip panel
+ * @param {boolean} [props.isPopup=false] - Allow pointer events on the tooltip (acts like a popup)
+ * @param {boolean} [props.triggerOnClick=false] - Trigger tooltip on click instead of hover/focus
+ * @returns {JSX.Element} Tooltip wrapper and floating content
+ */
 export const Tooltip = ({
   children,
   content,

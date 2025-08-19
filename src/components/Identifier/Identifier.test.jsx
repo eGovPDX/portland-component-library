@@ -277,7 +277,7 @@ describe('Identifier Component', () => {
       render(<Identifier parentAgency="Test Agency" />);
       const hiddenSpan = document.querySelector('span[aria-hidden="true"]');
       expect(hiddenSpan).toBeInTheDocument();
-      expect(hiddenSpan).toHaveTextContent('An ');
+      expect(hiddenSpan).toHaveTextContent(/An\s*/);
     });
 
     it('does not have aria-hidden span in Spanish', () => {

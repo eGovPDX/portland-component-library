@@ -1,7 +1,14 @@
 import { useState } from 'react';
 
 /**
- * Navigation component for the Header
+ * Navigation list with optional nested submenus for PGOV header.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {Array<{label: string, href?: string, current?: boolean, children?: Array<{label: string, href: string, current?: boolean}>}>} props.navItems - Menu items
+ * @param {boolean} [props.isMobile=false] - Apply mobile styling and close behavior
+ * @param {function} [props.onCloseMenu] - Called when a link is activated in mobile mode
+ * @returns {JSX.Element} Navigation element
  */
 export const HeaderNav = ({
   navItems,

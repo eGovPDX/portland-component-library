@@ -16,6 +16,17 @@ import {
 import { Card } from '../Card/Card';
 import './PopoverWithCard.css';
 
+/**
+ * Hover/focus popover that renders a `Card` with the provided props.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {React.ReactElement} props.children - Trigger element to wrap
+ * @param {Object} props.cardProps - Props forwarded to the inner `Card`
+ * @param {('top'|'right'|'bottom'|'left')} [props.position='top'] - Preferred placement
+ * @param {string} [props.className=''] - Additional CSS class names
+ * @returns {JSX.Element} Popover wrapper and floating card
+ */
 export const PopoverWithCard = ({
   children,
   cardProps,

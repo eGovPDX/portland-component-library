@@ -1,0 +1,184 @@
+/* Root container */
+.person {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--person-gap, 16px);
+}
+
+/* Layout modifiers */
+.person--row {
+  flex-direction: row;
+}
+
+.person--column {
+  flex-direction: column;
+}
+
+/* Avatar horizontal position (row layout) */
+.person--avatar-right {
+  flex-direction: row-reverse;
+}
+
+/* Alignment modifiers */
+.person--align-top {
+  align-items: flex-start;
+}
+
+.person--align-center {
+  align-items: center;
+}
+
+/* When vertical (column) and centered, center all content */
+.person--column.person--align-center .person__body {
+  align-items: center;
+  text-align: center;
+}
+.person--column.person--align-center .person__actions,
+.person--column.person--align-center .person__tags {
+  justify-content: center;
+}
+
+/* Size modifiers */
+.person--sm .person__avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.person--md .person__avatar {
+  width: 64px;
+  height: 64px;
+}
+
+.person--lg .person__avatar {
+  width: 133px;
+  height: 133px;
+}
+
+/* Responsive avatar sizes for medium variant */
+@media (min-width: 640px) {
+  .person--md .person__avatar {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .person--md .person__avatar {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+/* Bordered/card-like */
+.person--bordered {
+  border: 1px solid var(--person-border-color, #D0D0D0);
+  border-radius: var(--person-border-radius, 8px);
+  padding: var(--person-padding, 16px);
+}
+
+.person__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.person__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1000px;
+  background: var(--person-avatar-bg, #E6E6E6);
+  color: var(--person-avatar-fg, #1B1B1B);
+  font: var(--person-avatar-font, 600 16px/1.2 "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.person__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--person-body-gap, 0px);
+  min-width: 0;
+}
+
+.person__children {
+  margin-top: var(--person-children-margin-top, 16px);
+}
+
+.person__name {
+  margin: 0;
+  color: var(--person-name-color, #1B1B1B);
+  font-family: var(--person-name-font-family, "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
+  font-weight: var(--person-name-font-weight, 700);
+  line-height: var(--person-name-line-height, 130%);
+}
+
+.person__name a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-offset: 2px;
+}
+
+.person__title {
+  color: var(--person-title-color, var(--person-name-color, #1B1B1B));
+  font-family: var(--person-name-font-family, "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
+  font-size: var(--person-title-font-size, 16px);
+  font-weight: var(--person-title-font-weight, 400);
+  line-height: var(--person-name-line-height, 130%);
+}
+
+.person__department {
+  color: var(--person-dept-color, var(--person-title-color, #3D3D3D));
+  font-family: var(--person-name-font-family, "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
+  font-size: var(--person-title-font-size, 16px);
+  font-weight: var(--person-title-font-weight, 400);
+  line-height: var(--person-name-line-height, 130%);
+}
+
+.person__meta {
+  display: flex;
+  gap: var(--person-meta-gap, 8px);
+  flex-wrap: wrap;
+  color: var(--person-meta-color, #3D3D3D);
+  font-family: var(--person-name-font-family, "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
+  font-size: var(--person-meta-font-size, 14px);
+  font-weight: var(--person-meta-font-weight, 400);
+  line-height: var(--person-meta-line-height, 140%);
+}
+
+.person__actions {
+  display: flex;
+  gap: var(--person-actions-gap, 12px);
+  flex-wrap: wrap;
+}
+
+.person__action-link {
+  color: var(--person-action-color, var(--color-foundation-link, #005EA2));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.person__tags {
+  display: flex;
+  gap: var(--person-tags-gap, 8px);
+  flex-wrap: wrap;
+  margin-top: var(--person-tags-margin-top, 8px);
+}
+
+.person__tag {
+  display: inline-flex;
+  align-items: center;
+  height: var(--person-tag-height, 24px);
+  padding: 0 var(--person-tag-pad-x, 10px);
+  border-radius: var(--person-tag-radius, 999px);
+  background: var(--person-tag-bg, #F0F0F0);
+  color: var(--person-tag-fg, #1B1B1B);
+  font: var(--person-tag-font, 600 12px/1 "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
+}
+
+.person__tag-wrapper {
+  display: inline-flex;
+}
+
+
