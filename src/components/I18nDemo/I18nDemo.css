@@ -38,10 +38,10 @@
   margin-bottom: 3rem;
 }
 
-.i18n-demo__language-selector h2 {
-  margin: 0 0 1.5rem 0;
+.i18n-demo__language-selector-wrapper h3 {
+  margin: 0 0 1rem 0;
   color: var(--color-text, #1a1a1a);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
@@ -76,6 +76,10 @@
   color: #495057;
 }
 
+button.usa-input.dropdown__button {
+  background-color: #80aed3;
+}
+
 /* High contrast mode support for disabled buttons */
 @media (prefers-contrast: high) {
   .i18n-demo__language-button:disabled {
@@ -93,7 +97,7 @@
 
 .i18n-demo__current-language {
   background: #f8f9fa;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
   border-radius: 8px;
   margin-bottom: 3rem;
 }
@@ -164,8 +168,8 @@
 }
 
 .i18n-demo__language-selector-wrapper {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  /* margin-top: 1.5rem; */
+  padding-top: 4px;
   border-top: 1px solid #dee2e6;
 }
 
