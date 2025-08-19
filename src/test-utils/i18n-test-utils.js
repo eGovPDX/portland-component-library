@@ -285,6 +285,11 @@ const mockTranslations = {
           accessibility: {
             sectionNavigation: 'Section Navigation'
           }
+        },
+        HeroGlobal: {
+          accessibility: {
+            contentCategories: 'Content categories'
+          }
         }
     }
   },
@@ -545,6 +550,11 @@ const mockTranslations = {
          SideNav: {
            accessibility: {
              sectionNavigation: 'Navegación de Sección'
+           }
+         },
+         HeroGlobal: {
+           accessibility: {
+             contentCategories: 'Categorías de contenido'
            }
          }
       }

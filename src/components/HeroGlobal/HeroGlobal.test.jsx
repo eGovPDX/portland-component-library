@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { HeroGlobal } from './HeroGlobal';
 import { Button } from '../Button/Button';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +23,7 @@ describe('HeroGlobal', () => {
   };
 
   it('renders all components when all props are provided', () => {
-    render(<HeroGlobal {...mockProps} />);
+    renderWithI18n(<HeroGlobal {...mockProps} />);
     
     expect(screen.getByText('Test Title')).toBeInTheDocument();
     expect(screen.getByText('Test Description')).toBeInTheDocument();
@@ -34,7 +35,7 @@ describe('HeroGlobal', () => {
 
   it('renders without description', () => {
     const { description, ...propsWithoutDescription } = mockProps;
-    render(<HeroGlobal {...propsWithoutDescription} />);
+    renderWithI18n(<HeroGlobal {...propsWithoutDescription} />);
     
     expect(screen.getByText('Test Title')).toBeInTheDocument();
     expect(screen.queryByText('Test Description')).not.toBeInTheDocument();
@@ -42,7 +43,7 @@ describe('HeroGlobal', () => {
 
   it('renders without tags', () => {
     const { tags, ...propsWithoutTags } = mockProps;
-    render(<HeroGlobal {...propsWithoutTags} />);
+    renderWithI18n(<HeroGlobal {...propsWithoutTags} />);
     
     expect(screen.getByText('Test Title')).toBeInTheDocument();
     expect(screen.queryByText('Tag 1')).not.toBeInTheDocument();
@@ -50,7 +51,7 @@ describe('HeroGlobal', () => {
 
   it('renders without image', () => {
     const { image, ...propsWithoutImage } = mockProps;
-    render(<HeroGlobal {...propsWithoutImage} />);
+    renderWithI18n(<HeroGlobal {...propsWithoutImage} />);
     
     expect(screen.getByText('Test Title')).toBeInTheDocument();
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
@@ -58,27 +59,27 @@ describe('HeroGlobal', () => {
 
   it('renders without action button', () => {
     const { actionButton, ...propsWithoutButton } = mockProps;
-    render(<HeroGlobal {...propsWithoutButton} />);
+    renderWithI18n(<HeroGlobal {...propsWithoutButton} />);
     
     expect(screen.getByText('Test Title')).toBeInTheDocument();
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
   });
 
   it('applies custom className', () => {
-    render(<HeroGlobal {...mockProps} className="custom-class" />);
+    renderWithI18n(<HeroGlobal {...mockProps} className="custom-class" />);
     
     const container = screen.getByText('Test Title').closest('.hero-global');
     expect(container).toHaveClass('custom-class');
   });
 
   it('renders with additional props spread to container', () => {
-    render(<HeroGlobal {...mockProps} data-testid="hero-test" />);
+    renderWithI18n(<HeroGlobal {...mockProps} data-testid="hero-test" />);
     
     expect(screen.getByTestId('hero-test')).toBeInTheDocument();
   });
 
   it('handles image loading error', () => {
-    render(<HeroGlobal {...mockProps} />);
+    renderWithI18n(<HeroGlobal {...mockProps} />);
     
     const image = screen.getByRole('img');
     fireEvent.error(image);
