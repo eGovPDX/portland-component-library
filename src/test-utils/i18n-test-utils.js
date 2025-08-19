@@ -254,6 +254,32 @@ const mockTranslations = {
           warning: 'Warning',
           error: 'Error'
         }
+      },
+      Contacts: {
+        headings: {
+          contact: 'Contact',
+          socialMedia: 'Social Media',
+          office: 'Office'
+        },
+        actions: {
+          contactThis: 'Contact this {{title}}',
+          contactViaEmail: 'Contact {{title}} via email'
+        },
+        phone: {
+          office: 'Phone: Office',
+          information: 'Phone: Information',
+          relayService: 'Phone: Oregon Relay Service'
+        },
+        social: {
+          facebook: 'Facebook',
+          twitter: 'X (Twitter)',
+          bluesky: 'Bluesky',
+          instagram: 'Instagram'
+        },
+        office: {
+          address: 'Address',
+          hours: 'Hours'
+        }
       }
     }
   },
@@ -484,6 +510,32 @@ const mockTranslations = {
           generalInformation: 'Información General',
           termsAndPolicies: 'Términos y Políticas',
           portlandGov: 'Portland.Gov'
+        },
+        Contacts: {
+          headings: {
+            contact: 'Contacto',
+            socialMedia: 'Redes Sociales',
+            office: 'Oficina'
+          },
+          actions: {
+            contactThis: 'Contactar a este {{title}}',
+            contactViaEmail: 'Contactar a {{title}} por correo electrónico'
+          },
+          phone: {
+            office: 'Teléfono: Oficina',
+            information: 'Teléfono: Información',
+            relayService: 'Teléfono: Servicio de Retransmisión de Oregón'
+          },
+          social: {
+            facebook: 'Facebook',
+            twitter: 'X (Twitter)',
+            bluesky: 'Bluesky',
+            instagram: 'Instagram'
+          },
+          office: {
+            address: 'Dirección',
+            hours: 'Horario'
+          }
         }
       }
     }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { Contacts } from './Contacts';
 
 const mockProps = {
@@ -26,7 +27,7 @@ const mockProps = {
 
 describe('Contacts', () => {
   it('renders all contact information when provided', () => {
-    render(<Contacts {...mockProps} />);
+    renderWithI18n(<Contacts {...mockProps} />);
 
     // Check headings
     const contactHeadings = screen.getAllByText(/contact/i);
@@ -76,7 +77,7 @@ describe('Contacts', () => {
   });
 
   it('renders minimal information when only required props are provided', () => {
-    render(
+    renderWithI18n(
       <Contacts
         title="Councilor"
         emailAddress="councilor@portland.gov"
@@ -106,7 +107,7 @@ describe('Contacts', () => {
   });
 
   it('renders with no social media when socialMedia prop is not provided', () => {
-    render(
+    renderWithI18n(
       <Contacts
         title="Councilor"
         emailAddress="councilor@portland.gov"
@@ -137,7 +138,7 @@ describe('Contacts', () => {
       },
     };
 
-    render(<Contacts {...propsWithoutHours} />);
+    renderWithI18n(<Contacts {...propsWithoutHours} />);
 
     expect(screen.queryByText('Hours')).not.toBeInTheDocument();
     expect(screen.queryByText('Monday - Friday')).not.toBeInTheDocument();
