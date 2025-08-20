@@ -316,7 +316,7 @@ export const KitchenSink = {
 };
 
 // Spanish language demonstration
-export const Spanish = {
+export const SpanishDemo = {
   args: {
     domain: 'dominio.gov',
     parentAgency: 'Agencia Padre',
