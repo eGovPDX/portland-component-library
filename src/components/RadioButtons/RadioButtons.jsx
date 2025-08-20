@@ -13,9 +13,8 @@ import './RadioButtons.css';
  * @i18n This component is internationalized and supports accessibility features in multiple languages.
  * The required field indicator (*) and its tooltip are translated. The component automatically loads
  * translations from its co-located i18n folder.
- */
+ *
  * 
- * @component
  * @example
  * ```jsx
  * const options = [
@@ -52,9 +51,9 @@ import './RadioButtons.css';
  * @param {boolean} [props.required=false] - Whether the radio button group is required
  * @param {string} [props.errorMessage] - Error message to display when required and no option is selected
  * @param {string} [props.className] - Additional CSS classes for the component
- * 
  * @returns {JSX.Element} A fieldset containing the radio button group with proper accessibility attributes
  */
+
 export const RadioButtons = ({
   name,
   legend,
