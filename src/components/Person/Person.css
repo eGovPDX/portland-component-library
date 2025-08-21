@@ -3,6 +3,11 @@
   display: flex;
   align-items: flex-start;
   gap: var(--person-gap, 16px);
+  box-sizing: border-box;
+  /* Reserve space for border to prevent layout shifts */
+  border: 1px solid transparent;
+  border-radius: var(--person-border-radius, 8px);
+  padding: var(--person-padding, 16px);
 }
 
 /* Layout modifiers */
@@ -71,9 +76,7 @@
 
 /* Bordered/card-like */
 .person--bordered {
-  border: 1px solid var(--person-border-color, #D0D0D0);
-  border-radius: var(--person-border-radius, 8px);
-  padding: var(--person-padding, 16px);
+  border-color: var(--person-border-color, #D0D0D0);
 }
 
 .person__media {
