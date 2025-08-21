@@ -80,14 +80,45 @@ export default {
     layout: 'centered'
   },
   argTypes: {
-    layout: { control: 'radio', options: ['row', 'column'] },
-    imageAlign: { control: 'radio', options: ['top', 'center'] },
-    avatarUrl: { control: 'text', description: 'URL for the avatar image', defaultValue: '' },
-    avatarAlt: { control: 'text', description: 'Alt text for the avatar image' },
-    avatarPosition: { control: 'radio', options: ['left', 'right'] },
-    avatarSize: { control: 'radio', options: ['sm', 'md', 'lg'] },
-    bordered: { control: 'boolean' },
-    headingLevel: { control: 'number', options: [2,3,4,5,6] },
+    layout: { 
+      control: 'radio', 
+      options: ['row', 'column'],
+      description: 'Layout direction for the Person component. Row displays avatar and content side-by-side, column stacks them vertically.'
+    },
+    imageAlign: { 
+      control: 'radio', 
+      options: ['top', 'center'],
+      description: 'Avatar alignment relative to content. Top aligns avatar to the top, center centers it vertically.'
+    },
+    avatarUrl: { 
+      control: 'text', 
+      description: 'URL for the avatar image. Leave empty to show initials fallback.',
+      defaultValue: '' 
+    },
+    avatarAlt: { 
+      control: 'text', 
+      description: 'Alt text for the avatar image. Use descriptive text for accessibility, or empty string if decorative.',
+      placeholder: 'e.g., Portrait of Jane Doe'
+    },
+    avatarPosition: { 
+      control: 'radio', 
+      options: ['left', 'right'],
+      description: 'Horizontal position of avatar in row layout. Left places avatar before content, right places it after.'
+    },
+    avatarSize: { 
+      control: 'radio', 
+      options: ['sm', 'md', 'lg'],
+      description: 'Size variant for the avatar. Small (40px), medium (64px), or large (133px).'
+    },
+    bordered: { 
+      control: 'boolean',
+      description: 'Adds a border and padding for card-like appearance. When true, component has visible border and internal spacing.'
+    },
+    headingLevel: { 
+      control: 'number', 
+      options: [2,3,4,5,6],
+      description: 'Heading level used for the person\'s name. Controls the semantic HTML heading tag (h2-h6).'
+    },
     children: {
       description: 'React node for custom content (e.g., action buttons)',
       control: { disable: true }
@@ -95,7 +126,7 @@ export default {
     language: {
       control: 'select',
       options: ['en', 'es', 'vi', 'zh', 'ru', 'so', 'uk', 'ro', 'ne', 'chk', 'ja', 'ko', 'tl', 'lo', 'ar', 'km'],
-      description: 'Language for the component',
+      description: 'Language for the component. Affects accessibility attributes and internationalization.',
       defaultValue: 'en'
     }
   },
