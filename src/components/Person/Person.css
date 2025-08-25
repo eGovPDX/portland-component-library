@@ -3,6 +3,11 @@
   display: flex;
   align-items: flex-start;
   gap: var(--person-gap, 16px);
+  box-sizing: border-box;
+  /* Reserve space for border to prevent layout shifts */
+  border: 1px solid transparent;
+  border-radius: var(--person-border-radius, 8px);
+  padding: var(--person-padding, 16px);
 }
 
 /* Layout modifiers */
@@ -71,15 +76,15 @@
 
 /* Bordered/card-like */
 .person--bordered {
-  border: 1px solid var(--person-border-color, #D0D0D0);
-  border-radius: var(--person-border-radius, 8px);
-  padding: var(--person-padding, 16px);
+  border-color: var(--person-border-color, #D0D0D0);
 }
 
+/* Prevent avatar from being squished on mobile */
 .person__media {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* Prevent avatar from shrinking */
 }
 
 .person__avatar {
@@ -94,23 +99,28 @@
   overflow: hidden;
 }
 
+/* Ensure content body can wrap and shrink as needed */
 .person__body {
   display: flex;
   flex-direction: column;
   gap: var(--person-body-gap, 0px);
-  min-width: 0;
+  min-width: 0; /* Allow content to shrink below its natural width */
+  flex: 1; /* Take up remaining space */
 }
 
 .person__children {
   margin-top: var(--person-children-margin-top, 16px);
 }
 
+/* Ensure names break on word boundaries */
 .person__name {
   margin: 0;
   color: var(--person-name-color, #1B1B1B);
   font-family: var(--person-name-font-family, "Public Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji");
   font-weight: var(--person-name-font-weight, 700);
   line-height: var(--person-name-line-height, 130%);
+  word-break: break-word; /* Break long names on word boundaries */
+  hyphens: auto; /* Enable automatic hyphenation if needed */
 }
 
 .person__name a {
@@ -179,6 +189,34 @@
 
 .person__tag-wrapper {
   display: inline-flex;
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 640px) {
+  .person--row {
+    /* On mobile, ensure avatar maintains size and content wraps */
+    gap: var(--person-gap-mobile, 12px);
+  }
+  
+  .person__body {
+    /* Ensure content can wrap properly on small screens */
+    min-width: 0;
+    word-wrap: break-word;
+  }
+  
+  .person__name {
+    /* Ensure names break properly on mobile */
+    word-break: break-word;
+    hyphens: auto;
+    line-height: 1.2; /* Tighter line height on mobile */
+  }
+  
+  .person__title,
+  .person__department {
+    /* Ensure titles and departments wrap properly */
+    word-break: break-word;
+    hyphens: auto;
+  }
 }
 
 

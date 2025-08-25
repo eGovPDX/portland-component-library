@@ -851,6 +851,8 @@
   --person-tag-pad-x: calc(var(--spacing-sm) * 1px);
   --person-tag-height: calc(var(--spacing-md) * 1px);
   --person-tag-font: 600 12px/1 var(--font-family-open-sans);
+  --person-actions-gap: calc(var(--spacing-sm) * 1px);
+  --person-avatar-font: var(--font-open-sans-weight-bold) var(--font-abstraction-open-sans-body-sm) var(--font-family-open-sans);
 
   /* ProcessSteps component variables */
   --process-steps-gap: calc(var(--spacing-xs) * 1px);
