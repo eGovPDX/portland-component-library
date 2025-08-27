@@ -67,6 +67,8 @@
   color: #1a1a1a;
   font-size: 1.5rem;
   font-weight: 600;
+  text-align: center;
+  width: 100%;
 }
 
 /* Component wrappers */
@@ -122,6 +124,26 @@
   margin-bottom: 0.5rem;
 }
 
+/* Tablet layout */
+@media (max-width: 1024px) {
+  .secondary-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .i18n-demo__features,
+  .i18n-demo__language-selector-wrapper {
+    width: 100%;
+  }
+
+  /* Slightly larger tap targets and spacing on tablet */
+  .i18n-demo__person-wrapper {
+    padding: 1.75rem;
+  }
+}
+
+/* Mobile layout */
 @media (max-width: 768px) {
   .i18n-demo {
     padding: 1rem;
@@ -129,6 +151,54 @@
 
   .i18n-demo__person-wrapper {
     padding: 1.5rem;
+  }
+
+  .secondary-header {
+    gap: 1rem;
+  }
+
+  .i18n-demo__button-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Ensure interactive controls are full width */
+  .i18n-demo__language-selector-wrapper select,
+  .i18n-demo__language-selector-wrapper button,
+  .i18n-demo__language-selector-wrapper .dropdown__container,
+  .i18n-demo__language-selector-wrapper .usa-language-selector,
+  .i18n-demo__language-selector-wrapper .usa-language-selector__dropdown,
+  .i18n-demo__language-selector-wrapper .usa-language-selector__native-select {
+    width: 100%;
+  }
+
+  /* Center the language selector area */
+  .i18n-demo__language-selector-wrapper,
+  .i18n-demo__language-selector-wrapper .usa-language-selector,
+  .i18n-demo__language-selector-wrapper .dropdown__container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Flex-center the dropdown control and cap width */
+  .i18n-demo__language-selector-wrapper .dropdown__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .i18n-demo__language-selector-wrapper .dropdown__native-select,
+  .i18n-demo__language-selector-wrapper button.usa-input.dropdown__button {
+    max-width: 285px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center the Selected Component heading - now handled globally */
+
+  .i18n-demo__current-language h3,
+  .i18n-demo__features h3,
+  .i18n-demo__component-example h3 {
+    font-size: 1.25rem;
   }
 }
 
