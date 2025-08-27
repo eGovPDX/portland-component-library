@@ -1,3 +1,4 @@
+/* Base layout */
 .i18n-demo {
   max-width: 1200px;
   margin: 0 auto;
@@ -5,27 +6,7 @@
   font-family: var(--font-family-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
 }
 
-.i18n-demo__header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: var(--color-background, #f8f9fa);
-  border-radius: 8px;
-}
-
-.i18n-demo__header h1 {
-  margin: 0 0 1rem 0;
-  color: var(--color-text, #1a1a1a);
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.i18n-demo__header p {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--color-text-secondary, #666);
-}
-
+/* Secondary header layout */
 .secondary-header {
   display: flex;
   flex-direction: row;
@@ -34,10 +15,7 @@
   gap: 2rem;
 }
 
-.i18n-demo__language-selector {
-  width: 100%;
-}
-
+/* Language selector wrapper */
 .i18n-demo__language-selector-wrapper h3 {
   margin: 0.5rem 0;
   color: var(--color-text, #1a1a1a);
@@ -45,56 +23,12 @@
   font-weight: 600;
 }
 
-.i18n-demo__language-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.i18n-demo__language-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-  min-height: 80px;
-  justify-content: center;
-}
-
-.i18n-demo__language-button:disabled {
-  opacity: 1;
-  cursor: not-allowed;
-  background-color: #f8f9fa;
-  color: #495057;
-  border-color: #6c757d;
-  border-width: 2px;
-}
-
-.i18n-demo__language-button:disabled .i18n-demo__language-english {
-  opacity: 0.8;
-  color: #495057;
-}
-
-button.usa-input.dropdown__button {
+/* Dropdown override within demo */
+.i18n-demo button.usa-input.dropdown__button {
   background-color: #80aed3;
 }
 
-/* High contrast mode support for disabled buttons */
-@media (prefers-contrast: high) {
-  .i18n-demo__language-button:disabled {
-    border: 3px solid #000000;
-    background-color: #ffffff;
-    color: #000000;
-  }
-}
-
-.i18n-demo__language-english {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 0.25rem;
-}
-
+/* Current language panel */
 .i18n-demo__current-language {
   background: #f8f9fa;
   text-align: center;
@@ -123,6 +57,7 @@ button.usa-input.dropdown__button {
   color: #1a1a1a;
 }
 
+/* Component example area */
 .i18n-demo__component-example {
   margin: 1rem 0;
 }
@@ -134,12 +69,7 @@ button.usa-input.dropdown__button {
   font-weight: 600;
 }
 
-.i18n-demo__component-example p {
-  margin: 0 0 1.5rem 0;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
+/* Component wrappers */
 .i18n-demo__button-wrapper {
   display: flex;
   flex-direction: row;
@@ -166,13 +96,7 @@ button.usa-input.dropdown__button {
   border-top: 1px solid #dee2e6;
 }
 
-.i18n-demo__language-selector-wrapper h4 {
-  margin: 0 0 1rem 0;
-  color: #1a1a1a;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
+/* Features panel */
 .i18n-demo__features {
   background: #f8f9fa;
   padding: 0 1rem 1rem 1rem;
@@ -203,43 +127,13 @@ button.usa-input.dropdown__button {
     padding: 1rem;
   }
 
-  .i18n-demo__header {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .i18n-demo__header h1 {
-    font-size: 2rem;
-  }
-
-  .i18n-demo__language-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 0.75rem;
-  }
-
-  .i18n-demo__language-button {
-    min-height: 70px;
-    padding: 0.75rem;
-  }
-
   .i18n-demo__person-wrapper {
     padding: 1.5rem;
   }
 }
 
-/* RTL support for Arabic */
-.i18n-demo[dir="rtl"] {
-  text-align: right;
-}
-
-.i18n-demo[dir="rtl"] .i18n-demo__features ul {
-  padding-left: 0;
-  padding-right: 1.5rem;
-}
-
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .i18n-demo__header,
   .i18n-demo__current-language,
   .i18n-demo__features {
     border: 2px solid var(--color-text, #1a1a1a);
@@ -247,12 +141,5 @@ button.usa-input.dropdown__button {
 
   .i18n-demo__person-wrapper {
     border: 2px solid var(--color-text, #1a1a1a);
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .i18n-demo__language-button {
-    transition: none;
   }
 }
