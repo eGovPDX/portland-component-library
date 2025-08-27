@@ -94,48 +94,24 @@ export const I18nDemo = () => {
         return (
           <div className="i18n-demo__person-wrapper">
             <Person {...demoPerson} key={selectedLanguage} />
-            <div className="i18n-demo__language-info">
-              <small>
-                Language: <strong>{selectedLanguage}</strong> | 
-                Component re-renders when language changes
-              </small>
-            </div>
           </div>
         );
       case 'button':
         return (
           <div className="i18n-demo__button-wrapper">
             <Button {...demoButton} />
-            <div className="i18n-demo__language-info">
-              <small>
-                Language: <strong>{selectedLanguage}</strong> | 
-                Button text changes with language
-              </small>
-            </div>
           </div>
         );
       case 'alert':
         return (
           <div className="i18n-demo__alert-wrapper">
             <Alert {...demoAlert} />
-            <div className="i18n-demo__language-info">
-              <small>
-                Language: <strong>{selectedLanguage}</strong> | 
-                Alert content changes with language
-              </small>
-            </div>
           </div>
         );
       case 'card':
         return (
           <div className="i18n-demo__card-wrapper">
             <Card {...demoCard} />
-            <div className="i18n-demo__language-info">
-              <small>
-                Language: <strong>{selectedLanguage}</strong> | 
-                Card content changes with language
-              </small>
-            </div>
           </div>
         );
       default:
@@ -145,38 +121,47 @@ export const I18nDemo = () => {
 
   return (
     <div className="i18n-demo" lang={selectedLanguage}>
-      <div className='secondary-header'>
-        <div className="i18n-demo__current-language">
-          <h3>Current Language</h3>
-          <p>
-            <strong>{supportedLanguages[selectedLanguage]?.nativeName}</strong>
-            {' '}({supportedLanguages[selectedLanguage]?.name})
-          </p>
-          <p>Language Code: <code>{selectedLanguage}</code></p>
-          <p>Direction: <code>{supportedLanguages[selectedLanguage]?.direction}</code></p>  
+      <div className='secondary-header'>      
+        <div className="i18n-demo__features">
+          <h3>Features</h3>
+          <ul>
+            <li>Automatic language detection</li>
+            <li>Component-specific translations</li>
+            <li>Accessibility support with proper lang attributes</li>
+            <li>Fallback to default language</li>
+            <li>Namespace organization</li>
+            <li>Type-safe translation keys</li>
+          </ul>
         </div>
         <div className="i18n-demo__language-selector-wrapper">
-          <h3>Change Language</h3>
-          <LanguageSelector
-            languages={[
-              { code: 'en', nativeName: 'English', englishName: 'English' },
-              { code: 'es', nativeName: 'Español', englishName: 'Spanish' },
-              { code: 'ar', nativeName: 'العربية', englishName: 'Arabic', disabled: true },
-              { code: 'chk', nativeName: 'Chuukese', englishName: 'Chuukese', disabled: true },
-              { code: 'ja', nativeName: '日本語', englishName: 'Japanese', disabled: true },
-            ]}
-            selectedLanguage={selectedLanguage}
-            onLanguageChange={handleLanguageChange}
-            variant="default"
-            showIcon={true}
-            buttonText="Select Language"
-          />
-        </div>
-      </div>
-      <div className="i18n-demo__component-example">
-        <div className="secondary-header">
-          <h3>Component Example</h3>
+          <div className="i18n-demo__current-language">
+            <h3>Current Language</h3>
+            <p>
+              <strong>{supportedLanguages[selectedLanguage]?.nativeName}</strong>
+              {' '}({supportedLanguages[selectedLanguage]?.name})
+            </p>
+            <p>Language Code: <code>{selectedLanguage}</code></p>
+            <p>Direction: <code>{supportedLanguages[selectedLanguage]?.direction}</code></p>  
+          </div>
+          <div className="i18n-demo__language-selector-wrapper">
+            <h3>Change Language</h3>
+            <LanguageSelector
+              languages={[
+                { code: 'en', nativeName: 'English', englishName: 'English' },
+                { code: 'es', nativeName: 'Español', englishName: 'Spanish' },
+                { code: 'ar', nativeName: 'العربية', englishName: 'Arabic', disabled: true },
+                { code: 'chk', nativeName: 'Chuukese', englishName: 'Chuukese', disabled: true },
+                { code: 'ja', nativeName: '日本語', englishName: 'Japanese', disabled: true },
+              ]}
+              selectedLanguage={selectedLanguage}
+              onLanguageChange={handleLanguageChange}
+              variant="default"
+              showIcon={true}
+              buttonText="Select Language"
+            />
+          </div>
           <div className="i18n-demo__component-selector">
+            <h3>Select a component</h3>
             <select 
               value={selectedComponent}
               placeholder="Select a component"
@@ -192,19 +177,14 @@ export const I18nDemo = () => {
             </select>
           </div>
         </div>
-        {renderSelectedComponent()}
       </div>
-
-      <div className="i18n-demo__features">
-        <h3>i18n Features</h3>
-        <ul>
-          <li>Automatic language detection</li>
-          <li>Component-specific translations</li>
-          <li>Accessibility support with proper lang attributes</li>
-          <li>Fallback to default language</li>
-          <li>Namespace organization</li>
-          <li>Type-safe translation keys</li>
-        </ul>
+      <div className="i18n-demo__component-example">
+        <div className="secondary-header">
+          <h3>Selected Component</h3>
+        </div>
+        <div className="i18n-demo__component-example">
+          {renderSelectedComponent()}
+        </div>
       </div>
     </div>
   );

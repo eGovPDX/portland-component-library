@@ -150,7 +150,7 @@ const Dropdown = ({
         >
           <option value="" disabled>{selectLabel}</option>
           {options.map(option => (
-            <option key={option.value} value={option.value}>{option.label}</option>
+            <option key={option.value} value={option.value} disabled={option.disabled}>{option.label}</option>
           ))}
         </select>
         {error && typeof error === 'string' && !label && (
@@ -225,6 +225,7 @@ const Dropdown = ({
    * @param {number} idx - Index of the selected option
    */
   const handleOptionClick = (option, idx) => {
+    if (option.disabled) return;
     setSelectedItem(option);
     setIsOpen(false);
     setActiveIndex(idx);
@@ -255,7 +256,10 @@ const Dropdown = ({
         e.preventDefault();
       } else if (e.key === 'Enter' || e.key === ' ') {
         if (activeIndex >= 0 && activeIndex < options.length) {
-          handleOptionClick(options[activeIndex], activeIndex);
+          const opt = options[activeIndex];
+          if (!opt.disabled) {
+            handleOptionClick(opt, activeIndex);
+          }
         }
         e.preventDefault();
       } else if (e.key === 'Escape') {
@@ -282,7 +286,10 @@ const Dropdown = ({
       e.preventDefault();
     } else if (e.key === 'Enter' || e.key === ' ') {
       if (activeIndex >= 0 && activeIndex < options.length) {
-        handleOptionClick(options[activeIndex], activeIndex);
+        const opt = options[activeIndex];
+        if (!opt.disabled) {
+          handleOptionClick(opt, activeIndex);
+        }
       }
       e.preventDefault();
     } else if (e.key === 'Escape') {
@@ -369,10 +376,12 @@ const Dropdown = ({
             className={classNames('dropdown__item', {
               'dropdown__item--selected': selectedItem && selectedItem.value === option.value,
               'dropdown__item--active': activeIndex === idx,
+              'dropdown__item--disabled': option.disabled,
             })}
-            onClick={() => handleOptionClick(option, idx)}
+            onClick={() => !option.disabled && handleOptionClick(option, idx)}
             role="option"
             aria-selected={selectedItem && selectedItem.value === option.value}
+            aria-disabled={option.disabled}
             tabIndex={-1}
             data-footer={option.isFooter ? "true" : undefined}
           >
