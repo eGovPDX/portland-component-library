@@ -138,11 +138,12 @@ Storybook will open in your default browser at [http://localhost:6006](http://lo
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Node.js](https://nodejs.org/) via nvm (use Node 20.15)
 - [pnpm](https://pnpm.io/) (v8 or higher)
 
-To install pnpm:
+Set Node version with nvm and install pnpm:
 ```bash
+nvm use 20.15
 npm install -g pnpm
 ```
 
