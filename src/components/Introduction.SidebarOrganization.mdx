@@ -1,0 +1,81 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Organizing the Sidebar" />
+
+## Organizing the Storybook Sidebar
+
+This project uses title paths to structure the sidebar. A file's `title` determines where it appears. Nesting is created with `/` in the `title`.
+
+### MDX docs
+
+```mdx
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Organizing the Sidebar" />
+
+# Page Heading (shown in Docs panel)
+```
+
+### CSF stories
+
+```js
+// Button.stories.jsx
+import Button from './Button';
+
+export default {
+  title: 'Components/Button',
+  component: Button,
+};
+
+export const Default = { args: { children: 'Click me' } };
+```
+
+### Recommended hierarchy
+
+- **Introduction**: Overview, usage, contributing, guidelines
+- **Components**: All reusable UI components
+- **Templates**: Page-level compositions
+- **Design Tokens**: Colors, typography, spacing
+
+Use Title Case for group names and singular nouns for categories.
+
+### Ordering items
+
+You can control global sort order via a preview parameter.
+
+```js
+// .storybook/preview.js (or preview.ts)
+export const parameters = {
+  options: {
+    storySort: {
+      order: [
+        'Introduction',
+        ['Organizing the Sidebar', 'Customizing Storybook UI', 'More to Leverage'],
+        'Components',
+        'Templates',
+        'Design Tokens',
+      ],
+    },
+  },
+};
+```
+
+Within a folder, alphanumeric sorting is the default. Use the `order` array above to pin specific pages ahead of others.
+
+### Doc-only pages vs component stories
+
+- MDX pages are doc-only and appear as one entry under their `title`.
+- CSF files produce a group (folder) and individual stories inside.
+
+### Hiding or moving items
+
+- To hide a story or page from the sidebar, set `tags: ['hidden']` on the default export (CSF) or add `<Meta tags={['hidden']} />` in MDX.
+- To move an item, change its `title` path and rebuild the docs.
+
+### Tips
+
+- Keep path depth to 2–3 levels for scannability.
+- Prefer stable, human-readable names over implementation terms.
+- Co-locate MDX with components if it aids maintenance; the `title` path controls sidebar placement, not the file path.
+
+

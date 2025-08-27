@@ -138,9 +138,6 @@ const ThemeToggleButton = ({ theme, setTheme }) => {
 - [ColorSwatch](/docs/components-colorswatch--docs): Color display and documentation
 - [Spacing](/docs/components-spacing--docs): Spacing utilities and documentation
 
-### Icons
-- [ExternalLinkIcon](/docs/components-externallinkicon--docs): External link icon component
-
 ## Page Templates
 
 - [PageTemplate](/docs/templates-pagetemplate--docs): Complete page template with Banner, PGOVHeader, Footer, and SkipNav components
@@ -186,3 +183,43 @@ The PGOV theme includes a comprehensive color system with various palettes:
 - **Color Scales**: Complete color scales for Orange, Red, Gold, Yellow, Green, Mint, Cyan, Blue, Indigo, Violet, Magenta, Black, and White
 
 You can view all color tokens in the [Design Tokens/Colors](/docs/design-tokens-colors--docs) section. 
+
+## Internationalization (i18n)
+
+The library includes comprehensive internationalization support for multiple languages, with a focus on accessibility and government compliance.
+
+### Supported Languages
+
+- **English (en)** - Default language
+- **Spanish (es)** - Full support with government compliance text
+- **Vietnamese (vi)** - Basic support
+- **Additional languages** - Framework ready for expansion
+
+### Key Features
+
+- **Co-located translations** - Translation files stored alongside components
+- **Government compliance** - Pre-translated required links and disclaimers
+- **Accessibility support** - ARIA labels and screen reader text in multiple languages
+- **Automatic language detection** - Components automatically adapt to user's language
+- **Fallback support** - Graceful degradation when translations are missing
+
+### Quick Start
+
+```jsx
+import { useComponentTranslation } from '@cityofportland/component-library/hooks/useTranslation';
+
+export const MyComponent = () => {
+  const { t, currentLanguage } = useComponentTranslation('MyComponent');
+  
+  return (
+    <div lang={currentLanguage}>
+      <h1>{t('title')}</h1>
+      <button aria-label={t('buttonAriaLabel')}>
+        {t('buttonText')}
+      </button>
+    </div>
+  );
+};
+```
+
+For more details, see the i18n docs in `src/i18n/README.md`.

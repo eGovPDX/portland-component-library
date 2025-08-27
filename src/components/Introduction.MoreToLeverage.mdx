@@ -1,0 +1,94 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/More to Leverage in Storybook" />
+
+## Beyond the Basics: What else can we leverage?
+
+Storybook offers powerful capabilities that go beyond our current usage. Consider adopting the following to improve UX, coverage, and developer experience.
+
+### Interaction Testing (play function)
+
+Write test-like interactions directly in stories to validate behavior.
+
+```js
+// Example.stories.jsx
+import { userEvent, within } from '@storybook/testing-library';
+
+export const SubmitsForm = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await userEvent.type(canvas.getByLabelText('Email'), 'user@example.com');
+    await userEvent.click(canvas.getByRole('button', { name: /submit/i }));
+  },
+};
+```
+
+### Test runner and CI checks
+
+Run interaction tests in CI to prevent regressions.
+
+```bash
+pnpm dlx storybook@latest test --watch
+```
+
+Integrate with your CI workflow to fail on broken interactions.
+
+### Visual regression testing (Chromatic or Storybook test runner + capture)
+
+- Use Chromatic for hosted snapshots, review, and per-PR baselines.
+- Or self-host visual tests via Playwright and the test runner.
+
+### Accessibility testing (a11y addon)
+
+Automatically scan stories for a11y issues.
+
+```bash
+pnpm add -D @storybook/addon-a11y
+```
+
+```js
+// .storybook/main.js
+module.exports = { addons: ['@storybook/addon-a11y'] };
+```
+
+### Controls and Args for robust permutations
+
+Adopt args for components so consumers can try variants without writing new stories.
+
+```js
+// Button.stories.jsx
+export default {
+  title: 'Components/Button',
+  argTypes: {
+    variant: { control: 'select', options: ['primary', 'secondary', 'accent'] },
+    disabled: { control: 'boolean' },
+  },
+};
+```
+
+### Docs composition and MDX embedding
+
+Compose docs across packages and embed MDX into stories for richer guides.
+
+### Storybook Autodocs
+
+Autogenerate prop tables and descriptions from JSDoc/TS using Autodocs.
+
+```js
+// .storybook/main.js
+module.exports = { docs: { autodocs: true } };
+```
+
+### Performance measures
+
+Leverage the interactions panel timings or integrate with performance addons to spot slow renders.
+
+### Theming via tokens
+
+Showcase how design tokens drive theming by wiring global toolbar theme selection to the `themeLoader` in this library for live switching.
+
+### Composition of Storybooks
+
+Consume external Storybooks (e.g., tokens or icons library) into this one to centralize docs.
+
+

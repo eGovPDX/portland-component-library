@@ -14,5 +14,6 @@ const theme = create({
 addons.setConfig({
   theme,
   panelPosition: 'right',
-  // The i18n addon will automatically add its panel
+  showRoots: true,
+  collapsedRoots: ['components', 'templates', 'internationalization']
 });
