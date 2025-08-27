@@ -4,6 +4,7 @@
   background-color: var(--banner-bg, #f0f7ff);
   font-family: var(--banner-font-family);
   font-size: var(--banner-font-size);
+  width: 100%;
 }
 
 .banner-content {
