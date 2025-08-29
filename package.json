@@ -236,7 +236,8 @@
     "storybook-i18n": "^3.1.1",
     "storybook-react-i18next": "^3.3.1",
     "vite": "^6.2.1",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.8",
+    "@rollup/rollup-darwin-x64": "4.49.0"
   },
   "dependencies": {
     "@cityofportland/design-tokens": "^1.1.0",

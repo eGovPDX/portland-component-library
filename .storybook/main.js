@@ -1,36 +1,23 @@
-const config = {
-  stories: [
-    "../src/components/**/*.mdx",
-    "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-  ],
-
-  addons: [
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-a11y",
-    "@storybook/addon-designs",
-    "@storybook/addon-actions",
-    "@storybook/addon-storysource",
-    "@storybook/addon-controls",
-    "@storybook/addon-docs",
-    "@storybook/addon-viewport",
-    "@storybook/addon-themes",
-    "@storybook/experimental-addon-test",
-    "@whitespace/storybook-addon-html"
-    // Temporarily removed: "storybook-react-i18next"
-  ],
-
+export default {
   framework: {
-    name: "@storybook/react-vite",
-    options: {}
+    name: '@storybook/react-vite',
+    options: {},
   },
-
-  docs: {
-    autodocs: true
-  },
-
-  // Specify the preview file
-  preview: "./.storybook/preview.jsx"
+  stories: [
+    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../src/**/*.docs.mdx',
+    '../src/docs/**/*.mdx',
+  ],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@storybook/addon-viewport',
+    '@storybook/addon-storysource',
+    '@storybook/addon-themes',
+    '@chromatic-com/storybook',
+    '@storybook/experimental-addon-test',
+    '@whitespace/storybook-addon-html',
+    '@storybook/addon-designs',
+  ],
+  docs: { autodocs: true },
 };
-
-export default config; 
