@@ -1,0 +1,31 @@
+import { Meta, Description, Primary, Stories, Subtitle } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories.jsx';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+<Subtitle>Action trigger for forms and interactions</Subtitle>
+
+<Description>
+The `Button` component draws attention to key actions with accessible markup and consistent styling. Use variants and sizes to match hierarchy and context.
+</Description>
+
+## Usage
+
+```jsx
+import { Button } from '@cityofportland/component-library/components/Button';
+import '@cityofportland/component-library/components/Button/style.css';
+
+export function Example() {
+  return <Button variant="secondary">Submit</Button>;
+}
+```
+
+## Examples
+
+<Primary />
+
+<Stories />
+
+

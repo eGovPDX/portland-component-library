@@ -1,0 +1,226 @@
+import { Meta } from '@storybook/blocks';
+import { ExternalLinkIcon } from '../../components/ExternalLinkIcon';
+
+<Meta title="Introduction/Overview" />
+
+# Portland Component Library
+
+Welcome to the Portland Component Library, a collection of React components using design tokens from Figma.
+
+## Getting Started
+
+Browse components in the sidebar to see examples and documentation.
+
+## Features
+
+- **Accessible**: Built with accessibility in mind
+- **Responsive**: Components work across different screen sizes
+- **Customizable**: Components can be customized via props
+
+## Usage
+
+### Component-Level Imports (Recommended)
+
+This approach provides optimal tree shaking by allowing you to import only the components and styles you need, resulting in the smallest possible bundle size.
+
+1.  **Import the component:**
+
+    ```jsx
+    import { Button } from '@cityofportland/component-library/components/Button';
+    ```
+
+2.  **Import the component's stylesheet:**
+
+    ```jsx
+    import '@cityofportland/component-library/components/Button/style.css';
+    ```
+
+### Selective Theme Loading
+
+You can import a specific theme to style your application. Choose one of the following:
+
+```jsx
+// PGOV Theme (Default)
+import '@cityofportland/component-library/themes/pgov';
+
+// PGOV Dark Theme
+import '@cityofportland/component-library/themes/pgov-dark';
+
+// USWDS Default Theme
+import '@cityofportland/component-library/themes/uswds-default';
+```
+
+### Using Design Tokens
+
+You can import the design tokens as a JavaScript object to use in your own custom components and styling.
+
+```jsx
+import { designTokens } from '@cityofportland/component-library/tokens';
+
+const MyCustomComponent = () => (
+  <div style={{
+    backgroundColor: designTokens.color.primary.medium,
+    padding: designTokens.spacing.md,
+  }}>
+    Hello, World!
+  </div>
+);
+```
+
+### Dynamic Theme Loading
+
+For applications that need to switch themes on the fly (e.g., a light/dark mode toggle), you can use the `themeLoader`.
+
+```jsx
+import { loadTheme } from '@cityofportland/component-library/themeLoader';
+
+const ThemeToggleButton = ({ theme, setTheme }) => {
+  const toggleTheme = async () => {
+    const newTheme = theme === 'pgov' ? 'pgov-dark' : 'pgov';
+    await loadTheme(newTheme);
+    setTheme(newTheme);
+  };
+
+  return <button onClick={toggleTheme}>Toggle Theme</button>;
+};
+```
+
+## Available Components
+
+### Navigation Components
+- [Banner](/docs/components-banner--docs): Official government website banner component
+- [Header](/docs/components-header--docs): Generic USWDS Header wrapper with optional extended layout and navigation slots
+- [PGOVHeader](/docs/components-pgovheader--docs): Portland.gov navigation component based on USWDS Header
+- [Footer](/docs/components-footer--docs): Site footer with accessibility information and links
+- [Identifier](/docs/components-identifier--docs): Agency identifier component displaying parent agency and required policy links
+- [SkipNav](/docs/components-skipnav--docs): Accessibility component for keyboard users
+- [SideNav](/docs/components-sidenav--docs): Side navigation component
+- [Breadcrumbs](/docs/components-breadcrumbs--docs): Navigation breadcrumbs component
+- [Pagination](/docs/components-pagination--docs): USWDS-compliant pagination component for navigating paginated content with intelligent ellipsis placement
+
+### Interactive Components
+- [Accordion](/docs/components-accordion--docs): Expandable content sections with single-select or multi-select variants
+- [Button](/docs/components-button--docs): Button components
+- [ButtonGroup](/docs/components-buttongroup--docs): Group of related buttons, with default and segmented variants
+- [Dropdown](/docs/components-dropdown--docs): Accessible custom dropdown/select component with keyboard and ARIA support
+- [Modal](/docs/components-modal--docs): Accessible modal dialog component for displaying critical information or actions
+- [Tag](/docs/components-tag--docs): Tag component for labeling and categorization
+
+### Layout Components
+- [PageTemplate](/docs/templates-pagetemplate--docs): Complete page template with Banner, PGOVHeader, Footer, and SkipNav components
+- [HeroGlobal](/docs/components-heroglobal--docs): Global hero section with image and call-to-action
+- [HeroHomepage](/docs/components-herohomepage--docs): Homepage hero section with search and popular links
+- [SummaryBox](/docs/components-summarybox--docs): Summary information display
+- [Card](/docs/components-card--docs): Card component for displaying content in a styled container
+- [CardFlag](/docs/components-cardflag--docs): Card component with media and content layout, supporting both left and right media positioning
+- [CardGrid](/docs/components-cardgrid--docs): Grid layout for Card components
+
+### Form Components
+- [Search](/docs/components-search--docs): Search input component with variants
+- [TextInput](/docs/components-textinput--docs): Text input component with validation, states, and customizable prefix/suffix content
+- [TextArea](/docs/components-textarea--docs): Text area component for multi-line text input with validation and states
+- [RadioButtons](/docs/components-radiobuttons--docs): Accessible radio button component with multiple variants
+- [Checkbox](/docs/components-checkbox--docs): Checkbox component allowing users to select one or more options from a list, with tiled variant support
+- [LanguageSelector](/docs/components-languageselector--docs): Language selection dropdown for switching site language, with accessibility and theme support
+
+### Content Components
+- [Typography](/docs/components-typography--docs): Text components and styles
+- [Alert](/docs/components-alert--docs): Alert messages and notifications
+- [Contacts](/docs/components-contacts--docs): Contact information display
+- [Person](/docs/components-person--docs): Profile block for individuals with avatar, name, role, department, contact actions, meta, and tags
+- [ProcessSteps](/docs/components-processsteps--docs): Process step indicators
+- [StepIndicator](/docs/components-stepindicator--docs): Horizontal step indicator for multi-step processes
+- [Tooltip](/docs/components-tooltip--docs): Tooltip component
+- [PopoverWithCard](/docs/components-popoverwithcard--docs): Popover component for displaying interactive Card content on hover or click, with accessibility and focus management.
+- [Table](/docs/components-table--docs): Table component for displaying tabular data with support for sorting, striping, sticky headers, scrollable and stacked (responsive) layouts.
+
+### Design System Components
+- [ColorSwatch](/docs/components-colorswatch--docs): Color display and documentation
+- [Spacing](/docs/components-spacing--docs): Spacing utilities and documentation
+
+## Page Templates
+
+- [PageTemplate](/docs/templates-pagetemplate--docs): Complete page template with Banner, PGOVHeader, Footer, and SkipNav components
+
+## Theme Support
+
+This component library uses the PGOV theme based on the Portland.gov design system. The theme includes both light and dark mode variants through the [@pgov/design-tokens](https://github.com/eGovPDX/design-tokens) package.
+
+Dark mode support is determined by the user's system preferences or browser settings using the `prefers-color-scheme` media query. The design tokens automatically adjust to provide appropriate colors, contrasts, and other visual properties for both light and dark modes.
+
+## Design Tokens
+
+The PGOV theme uses design tokens from the following Figma sources:
+
+- [Typography Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=161-4230&t=xJOdl0Cp5dzE6Zt7-1) <ExternalLinkIcon />
+- [Color Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=165-2532&t=xJOdl0Cp5dzE6Zt7-1) <ExternalLinkIcon />
+- [Color Scale Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=346-2740&m=dev) <ExternalLinkIcon />
+- [Spacing Tokens](https://www.figma.com/design/tIoZZeEbUXEbSeYUuQ7Nnr/PGOV-Design-System-(USWDS)?node-id=351-581&t=xJOdl0Cp5dzE6Zt7-1) <ExternalLinkIcon />
+
+You can view the design tokens in the following sections:
+- [Typography](/docs/design-tokens-typography--docs): Font families, sizes, weights, line heights, and letter spacing
+- [Colors](/docs/design-tokens-colors--docs): Color palettes for all design tokens
+- [Spacing](/docs/design-tokens-spacing--docs): Spacing scale and border radius tokens for consistent UI spacing
+
+## Token Synchronization
+
+Design tokens are managed in a separate project at [github.com/eGovPDX/design-tokens](https://github.com/eGovPDX/design-tokens). When design tokens are updated in Figma, follow these steps:
+
+1. Update the design-tokens project following its documentation
+2. Run `pnpm update @pgov/design-tokens` in this project to get the latest tokens
+3. Run `pnpm run build` to rebuild the component library with the updated tokens
+4. Run `pnpm run storybook` to verify that the components reflect the updated tokens
+5. Update component documentation if necessary to reflect any visual changes
+
+## Color System
+
+The PGOV theme includes a comprehensive color system with various palettes:
+
+- **Primary Colors**: Blue-based palette for primary actions and branding
+- **Secondary Colors**: Red-based palette for secondary actions
+- **Accent Colors**: Cool and warm accent palettes
+- **Neutral Colors**: Grayscale palette for text, backgrounds, and borders
+- **Color Scales**: Complete color scales for Orange, Red, Gold, Yellow, Green, Mint, Cyan, Blue, Indigo, Violet, Magenta, Black, and White
+
+You can view all color tokens in the [Design Tokens/Colors](/docs/design-tokens-colors--docs) section. 
+
+## Internationalization (i18n)
+
+The library includes comprehensive internationalization support for multiple languages, with a focus on accessibility and government compliance.
+
+### Supported Languages
+
+- **English (en)** - Default language
+- **Spanish (es)** - Full support with government compliance text
+- **Vietnamese (vi)** - Basic support
+- **Additional languages** - Framework ready for expansion
+
+### Key Features
+
+- **Co-located translations** - Translation files stored alongside components
+- **Government compliance** - Pre-translated required links and disclaimers
+- **Accessibility support** - ARIA labels and screen reader text in multiple languages
+- **Automatic language detection** - Components automatically adapt to user's language
+- **Fallback support** - Graceful degradation when translations are missing
+
+### Quick Start
+
+```jsx
+import { useComponentTranslation } from '@cityofportland/component-library/hooks/useTranslation';
+
+export const MyComponent = () => {
+  const { t, currentLanguage } = useComponentTranslation('MyComponent');
+  
+  return (
+    <div lang={currentLanguage}>
+      <h1>{t('title')}</h1>
+      <button aria-label={t('buttonAriaLabel')}>
+        {t('buttonText')}
+      </button>
+    </div>
+  );
+};
+```
+
+For more details, see the i18n docs in `src/i18n/README.md`.
+

@@ -1,0 +1,146 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Customizing Storybook UI" />
+
+## Recipes: Customizing the Storybook UI
+
+Practical examples to tailor the Storybook interface to your needs.
+
+### Change theme (light/dark, brand colors)
+
+```js
+// .storybook/manager.js (or manager.ts)
+import { addons } from '@storybook/manager-api';
+import { create } from '@storybook/theming/create';
+
+addons.setConfig({
+  theme: create({
+    base: 'light', // 'dark'
+    brandTitle: 'Portland Component Library',
+    brandUrl: 'https://www.portland.gov',
+    brandImage: '/favicon.svg',
+  }),
+});
+```
+
+### Add global toolbar controls
+
+```js
+// .storybook/preview.js (or preview.ts)
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Switch themes',
+    defaultValue: 'pgov',
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'pgov', title: 'PGOV' },
+        { value: 'pgov-dark', title: 'PGOV Dark' },
+        { value: 'uswds-default', title: 'USWDS Default' },
+      ],
+    },
+  },
+};
+
+export const decorators = [
+  (Story, context) => {
+    // Optionally load themes dynamically here using themeLoader
+    return <Story />;
+  },
+];
+```
+
+### Configure backgrounds and viewport presets
+
+```js
+// .storybook/preview.js
+export const parameters = {
+  backgrounds: {
+    default: 'canvas',
+    values: [
+      { name: 'canvas', value: '#ffffff' },
+      { name: 'gray-50', value: '#f9fafb' },
+      { name: 'dark', value: '#111827' },
+    ],
+  },
+  viewport: {
+    viewports: {
+      mobile: { name: 'Mobile', styles: { width: '360px', height: '640px' } },
+      tablet: { name: 'Tablet', styles: { width: '768px', height: '1024px' } },
+      desktop: { name: 'Desktop', styles: { width: '1280px', height: '800px' } },
+    },
+  },
+};
+```
+
+### Rebrand docs pages
+
+```js
+// .storybook/preview.js
+import { themes } from '@storybook/theming';
+
+export const parameters = {
+  docs: {
+    theme: themes.light, // Or a custom theme created with create
+    toc: { title: 'On this page' },
+  },
+};
+```
+
+### Add custom CSS to the manager or preview frames
+
+```js
+// .storybook/manager-head.html
+<style>
+  /* Manager UI (left nav, top bar) */
+  :root {
+    --sidebar-bg: #0b3d91;
+  }
+  .sidebar-container {
+    background: var(--sidebar-bg);
+  }
+}</style>
+
+// .storybook/preview-head.html
+<style>
+  /* Docs/Canvas frame */
+  .sbdocs-content h1 { letter-spacing: 0.2px; }
+  .docs-story { padding: 24px; }
+}</style>
+```
+
+### Hide specific stories from the sidebar
+
+```js
+// In a CSF file
+export default {
+  title: 'Components/Experimental',
+  tags: ['hidden'],
+};
+```
+
+### Add design assets panel (addon-designs)
+
+```bash
+pnpm add -D storybook-addon-designs
+```
+
+```js
+// .storybook/main.js
+module.exports = {
+  addons: ['storybook-addon-designs'],
+};
+
+// In a story
+export const Default = {
+  parameters: {
+    designs: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/…',
+    },
+  },
+};
+```
+
+
