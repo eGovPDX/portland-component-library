@@ -50,7 +50,7 @@ describe('RadioButtons', () => {
   });
 
   it('applies the tiled class when the tiled prop is true', () => {
-    const { container } = render(
+    const { container } = renderWithI18n(
       <RadioButtons name="test" legend="Test Title" options={options} tiled onChange={() => {}} />
     );
     expect(container.firstChild).toHaveClass('tiled');

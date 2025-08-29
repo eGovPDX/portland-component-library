@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { StepIndicator } from './StepIndicator';
 
 // Mock FontAwesome component
@@ -18,14 +19,15 @@ describe('StepIndicator', () => {
 
   // Test basic rendering
   test('renders with default props', () => {
-    render(<StepIndicator steps={defaultSteps} currentStep={3} title="Supporting documents" />);
+    renderWithI18n(<StepIndicator steps={defaultSteps} currentStep={3} title="Supporting documents" />);
     
     // Check segments
     expect(screen.getAllByRole('listitem')).toHaveLength(5);
     
     // Check current step indicator
     expect(screen.getByText('3')).toBeInTheDocument();
-    expect(screen.getByText('of 5')).toBeInTheDocument();
+    // Total steps text is translated; assert the combined text exists
+    expect(screen.getByText(/of 5/i)).toBeInTheDocument();
     
     // Check counter container
     expect(screen.getByText('3').closest('div')).toHaveClass('usa-step-indicator__counter-container');
@@ -38,7 +40,7 @@ describe('StepIndicator', () => {
 
   // Test complete, current, and not-complete segments
   test('renders correct segment statuses', () => {
-    render(<StepIndicator steps={defaultSteps} currentStep={3} />);
+    renderWithI18n(<StepIndicator steps={defaultSteps} currentStep={3} />);
     
     const segments = screen.getAllByRole('listitem');
     
@@ -57,32 +59,32 @@ describe('StepIndicator', () => {
 
   // Test no-labels variant
   test('renders without labels when showLabels is false', () => {
-    render(<StepIndicator steps={defaultSteps} currentStep={3} showLabels={false} />);
+    renderWithI18n(<StepIndicator steps={defaultSteps} currentStep={3} showLabels={false} />);
     expect(screen.getByRole('list')).toHaveClass('usa-step-indicator__segments');
     expect(screen.getByRole('list').parentElement).toHaveClass('usa-step-indicator--no-labels');
   });
 
   // Test centered variant
   test('renders centered when centered is true', () => {
-    render(<StepIndicator steps={defaultSteps} currentStep={3} centered={true} />);
+    renderWithI18n(<StepIndicator steps={defaultSteps} currentStep={3} centered={true} />);
     expect(screen.getByRole('list').parentElement).toHaveClass('usa-step-indicator--center');
   });
 
   // Test counters variant
   test('renders with counters when showCounters is true', () => {
-    render(<StepIndicator steps={defaultSteps} currentStep={3} showCounters={true} />);
+    renderWithI18n(<StepIndicator steps={defaultSteps} currentStep={3} showCounters={true} />);
     expect(screen.getByRole('list').parentElement).toHaveClass('usa-step-indicator--counters');
   });
 
   // Test small counters variant
   test('renders with small counters when smallCounters is true', () => {
-    render(<StepIndicator steps={defaultSteps} currentStep={3} showCounters={true} smallCounters={true} />);
+    renderWithI18n(<StepIndicator steps={defaultSteps} currentStep={3} showCounters={true} smallCounters={true} />);
     expect(screen.getByRole('list').parentElement).toHaveClass('usa-step-indicator--counters-sm');
   });
 
   // Test with icon
   test('renders with icon in heading', () => {
-    render(<StepIndicator steps={defaultSteps} currentStep={3} title="Supporting documents" />);
+    renderWithI18n(<StepIndicator steps={defaultSteps} currentStep={3} title="Supporting documents" />);
     expect(screen.getByTestId('mock-icon')).toBeInTheDocument();
   });
 }); 

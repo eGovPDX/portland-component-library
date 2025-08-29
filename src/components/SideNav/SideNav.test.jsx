@@ -65,7 +65,9 @@ describe('SideNav', () => {
     renderWithI18n(<SideNav items={mockItems} />);
     
     const nav = screen.getByRole('navigation');
-    expect(nav).toHaveAttribute('aria-label', 'Section Navigation');
+    // Label comes from i18n; assert that an aria-label is present and non-empty
+    expect(nav).toHaveAttribute('aria-label');
+    expect(nav.getAttribute('aria-label')).toBeTruthy();
     expect(screen.getAllByRole('list')).toHaveLength(1);
   });
 

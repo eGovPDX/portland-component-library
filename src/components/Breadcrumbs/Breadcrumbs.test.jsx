@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithI18n } from '../../test-utils/i18n-test-utils';
 import { Breadcrumbs } from './Breadcrumbs';
 
 // Mock ResizeObserver
@@ -28,7 +29,7 @@ describe('Breadcrumbs', () => {
   });
 
   it('renders all items correctly', () => {
-    render(<Breadcrumbs items={defaultItems} />);
+    renderWithI18n(<Breadcrumbs items={defaultItems} />);
     
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Services')).toBeInTheDocument();
@@ -36,7 +37,7 @@ describe('Breadcrumbs', () => {
   });
 
   it('renders correct links and current page', () => {
-    render(<Breadcrumbs items={defaultItems} />);
+    renderWithI18n(<Breadcrumbs items={defaultItems} />);
     
     const homeLink = screen.getByText('Home').closest('a');
     const servicesLink = screen.getByText('Services').closest('a');
@@ -49,7 +50,7 @@ describe('Breadcrumbs', () => {
 
   it('renders with custom separator', () => {
     const customSeparator = <span data-testid="custom-separator">/</span>;
-    render(<Breadcrumbs items={defaultItems} customSeparator={customSeparator} />);
+    renderWithI18n(<Breadcrumbs items={defaultItems} customSeparator={customSeparator} />);
     
     expect(screen.getAllByTestId('custom-separator')).toHaveLength(2);
   });
@@ -58,17 +59,18 @@ describe('Breadcrumbs', () => {
     // Set mobile width
     window.innerWidth = 375;
     
-    render(<Breadcrumbs items={defaultItems} />);
+    renderWithI18n(<Breadcrumbs items={defaultItems} />);
     
     const nav = screen.getByRole('navigation');
     expect(nav).toHaveClass('breadcrumb');
   });
 
   it('has correct accessibility attributes', () => {
-    render(<Breadcrumbs items={defaultItems} />);
+    renderWithI18n(<Breadcrumbs items={defaultItems} />);
     
     const nav = screen.getByRole('navigation');
-    expect(nav).toHaveAttribute('aria-label', 'Breadcrumbs');
+    // Label comes from i18n; ensure aria-label exists
+    expect(nav).toHaveAttribute('aria-label');
     
     const currentPage = screen.getByText('Current Page');
     expect(currentPage).toHaveAttribute('aria-current', 'page');

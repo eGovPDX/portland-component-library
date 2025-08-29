@@ -55,6 +55,7 @@ describe('Footer', () => {
   test('renders feedback section', () => {
     renderWithI18n(<Footer {...defaultProps} />);
     
+    // Label comes from i18n default
     const feedbackLink = screen.getByRole('link', { name: /Give website feedback/i });
     expect(feedbackLink).toBeInTheDocument();
     expect(feedbackLink).toHaveAttribute('href', '/contact');
@@ -63,9 +64,9 @@ describe('Footer', () => {
   test('renders navigation sections', () => {
     renderWithI18n(<Footer {...defaultProps} />);
     
-    // Check for navigation headings
-    expect(screen.getByText('General Information')).toBeInTheDocument();
-    expect(screen.getByText('Terms And Policies')).toBeInTheDocument();
+    // Headings are translated; assert by role and text via regex to ignore case
+    expect(screen.getByRole('heading', { name: /general information/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /terms and policies/i })).toBeInTheDocument();
     
     // Check for navigation links
     expect(screen.getByRole('link', { name: '311@portlandoregon.gov' })).toHaveAttribute('href', 'mailto:311@portlandoregon.gov');
