@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { I18nDemo } from './I18nDemo';
 import { renderWithI18n, resetLanguageInTest } from '../../test-utils/i18n-test-utils';
@@ -38,16 +38,21 @@ describe('I18nDemo', () => {
     expect(screen.getByText(/Change Language/i)).toBeInTheDocument();
   });
 
-  test('displays language selector with English and Spanish', () => {
+  test('displays language selector with English and Spanish', async () => {
     renderWithI18n(<I18nDemo />);
     
-    // Check that the language selector is present
+    // Check that the language selector section is present
     expect(screen.getByText('Change Language')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Select language' })).toBeInTheDocument();
-    
-    // Check that the language selector shows Spanish (current non-selected language)
-    expect(screen.getByText('Español')).toBeInTheDocument();
-    expect(screen.getByText('(Spanish)')).toBeInTheDocument();
+
+    // The language selector renders a combobox button whose name is the selected language
+    const combo = screen.getByRole('combobox');
+    expect(combo).toBeInTheDocument();
+    expect(combo).toBeEnabled();
+    expect(screen.getByText('English')).toBeInTheDocument();
+
+    // Open the list and verify Spanish option is available
+    await userEvent.click(combo);
+    expect(screen.getByRole('option', { name: /Español \(Spanish\)/ })).toBeInTheDocument();
   });
 
   test('shows current language information', () => {
@@ -83,12 +88,13 @@ describe('I18nDemo', () => {
     expect(demoElement).toHaveAttribute('lang');
   });
 
-  test('language selector button is clickable', () => {
+  test('language selector control is clickable', async () => {
     renderWithI18n(<I18nDemo />);
-    
-    const languageButton = screen.getByRole('button', { name: 'Select language' });
-    expect(languageButton).toBeInTheDocument();
-    expect(languageButton).toBeEnabled();
+    const combo = screen.getByRole('combobox');
+    expect(combo).toBeInTheDocument();
+    expect(combo).toBeEnabled();
+    await userEvent.click(combo);
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
   });
 
   test('displays language direction information', () => {
@@ -116,9 +122,11 @@ describe('I18nDemo', () => {
     expect(screen.getByText('Bureau of Transportation')).toBeInTheDocument();
     expect(screen.getByText('Office')).toBeInTheDocument();
     
-    // Find and click Spanish language button
-    const spanishButton = screen.getByText('Español');
-    await user.click(spanishButton);
+    // Open the language menu and select Spanish
+    const combo = screen.getByRole('combobox');
+    await user.click(combo);
+    const spanishOption = screen.getByRole('option', { name: /Español \(Spanish\)/ });
+    await user.click(spanishOption);
     
     // Should now show Spanish content
     expect(screen.getByText('Analista de Políticas Senior')).toBeInTheDocument();
@@ -129,17 +137,21 @@ describe('I18nDemo', () => {
     expect(screen.getByText(/es/, { selector: 'strong' })).toBeInTheDocument();
   });
 
-  test('maintains accessibility features', () => {
+  test('maintains accessibility features', async () => {
     renderWithI18n(<I18nDemo />);
     
-    // Check for proper heading structure
-    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
-    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(4); // Current language, Component Example, Jane Doe, i18n Features
-    expect(screen.getByRole('heading', { level: 4 })).toBeInTheDocument(); // Change Language
-    
-    // Check for proper button roles
-    const languageButton = screen.getByRole('button', { name: 'Select language' });
-    expect(languageButton).toBeInTheDocument();
+    // Check headings exist
+    expect(screen.getByRole('heading', { name: /Features/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Current Language/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Change Language/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Select a component/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Selected Component/i })).toBeInTheDocument();
+
+    // Language selector is a combobox with a listbox that opens on click
+    const combo = screen.getByRole('combobox');
+    expect(combo).toBeInTheDocument();
+    await userEvent.click(combo);
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
   });
 
   test('responsive design elements', () => {

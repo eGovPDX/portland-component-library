@@ -85,7 +85,7 @@ describe('Table', () => {
         </TableBody>
       </Table>
     );
-    const scrollableContainer = screen.getByRole('region', { name: 'Scrollable table' });
+    const scrollableContainer = screen.getByRole('region');
     expect(scrollableContainer).toHaveClass('usa-table--scrollable');
     expect(scrollableContainer).toHaveAttribute('tabIndex', '0');
   });

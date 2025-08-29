@@ -88,32 +88,27 @@ const loadComponentTranslations = (componentName) => {
   try {
     // Try to load English translations
     const enTranslations = require(`../components/${componentName}/i18n/en.json`);
-    
-    // Try both namespace formats to see which one works
-    i18n.addResourceBundle('en', `components.${componentName}`, enTranslations, true, true);
-    i18n.addResourceBundle('en', componentName, enTranslations, true, true);
-    
+    const enContent = enTranslations[componentName] || enTranslations;
+
+    // Register under the library's component namespace convention
+    i18n.addResourceBundle('en', `components.${componentName}`, enContent, true, true);
+
     // Mark as loaded in translation manager to prevent dynamic loading attempts
     translationManager.loadedNamespaces.add(`en:components.${componentName}`);
-    translationManager.loadedNamespaces.add(`en:${componentName}`);
-    
-
   } catch (error) {
     // Component doesn't have translations, which is fine
   }
-  
+
   try {
     // Try to load Spanish translations
     const esTranslations = require(`../components/${componentName}/i18n/es.json`);
-    
-    // Try both namespace formats
-    i18n.addResourceBundle('es', `components.${componentName}`, esTranslations, true, true);
-    i18n.addResourceBundle('es', componentName, esTranslations, true, true);
-    
+    const esContent = esTranslations[componentName] || esTranslations;
+
+    // Register under the library's component namespace convention
+    i18n.addResourceBundle('es', `components.${componentName}`, esContent, true, true);
+
     // Mark as loaded in translation manager to prevent dynamic loading attempts
     translationManager.loadedNamespaces.add(`es:components.${componentName}`);
-    translationManager.loadedNamespaces.add(`es:${componentName}`);
-    
     // Also mark the general components namespace as loaded
     translationManager.loadedNamespaces.add('es:components');
   } catch (error) {

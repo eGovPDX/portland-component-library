@@ -24,7 +24,8 @@ describe('Person', () => {
 
   test('wraps name with link when profileUrl provided', () => {
     renderWithI18n(<Person {...baseProps} profileUrl="/profile/jane" />);
-    const link = screen.getByRole('link', { name: 'accessibility.profileLinkAriaLabel' });
+    // Assert by visible label text rather than translation key
+    const link = screen.getByRole('link', { name: /view profile/i });
     expect(link).toHaveAttribute('href', '/profile/jane');
   });
 
@@ -82,11 +83,11 @@ describe('Person', () => {
         phones={[{ label: 'Office', value: '503-555-1234' }, { label: 'Mobile', value: '503-555-9876' }]}
       />
     );
-    const emailLink = screen.getByRole('link', { name: 'accessibility.emailAriaLabel' });
+    const emailLink = screen.getByRole('link', { name: /email/i });
     expect(emailLink).toHaveAttribute('href', 'mailto:jane@example.com');
     
     // Get all phone links and check them individually
-    const phoneLinks = screen.getAllByRole('link', { name: 'accessibility.phoneAriaLabel' });
+    const phoneLinks = screen.getAllByRole('link', { name: /call/i });
     expect(phoneLinks).toHaveLength(2);
     
     const phoneLink1 = phoneLinks[0];
@@ -123,10 +124,10 @@ describe('Person', () => {
         />
       );
       
-      const emailLink = screen.getByRole('link', { name: 'accessibility.emailAriaLabel' });
+      const emailLink = screen.getByRole('link', { name: /email/i });
       expect(emailLink).toBeInTheDocument();
       
-      const phoneLink = screen.getByRole('link', { name: 'accessibility.phoneAriaLabel' });
+      const phoneLink = screen.getByRole('link', { name: /call/i });
       expect(phoneLink).toBeInTheDocument();
     });
 
@@ -135,7 +136,7 @@ describe('Person', () => {
         <Person {...baseProps} profileUrl="/profile/jane" />
       );
       
-      const profileLink = screen.getByRole('link', { name: 'accessibility.profileLinkAriaLabel' });
+      const profileLink = screen.getByRole('link', { name: /view profile/i });
       expect(profileLink).toBeInTheDocument();
     });
   });

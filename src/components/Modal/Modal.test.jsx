@@ -41,7 +41,10 @@ describe('Modal', () => {
         <p>Modal content</p>
       </Modal>
     );
-    fireEvent.click(screen.getByLabelText('Close this modal'));
+    // i18n changes aria-label; match by role and class instead
+    const closeButton = document.querySelector('.usa-modal__close');
+    expect(closeButton).toBeTruthy();
+    fireEvent.click(closeButton);
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 
