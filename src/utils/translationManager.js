@@ -95,9 +95,11 @@ class TranslationManager {
       const translationModule = await this._importComponentTranslation(componentName, language);
       
       if (translationModule && translationModule.default) {
-        // Add the translation to i18next
+        // Add the translation to i18next. Accept both flattened and wrapped shapes.
+        // Wrapped shape example: { [componentName]: { ...keys } }
         const namespace = `components.${componentName}`;
-        i18n.addResourceBundle(language, namespace, translationModule.default, true, true);
+        const content = translationModule.default[componentName] || translationModule.default;
+        i18n.addResourceBundle(language, namespace, content, true, true);
         return true;
       }
       
