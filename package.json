@@ -1,6 +1,6 @@
 {
   "name": "@cityofportland/component-library",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Portland Component Library using design tokens from Figma",
   "keywords": [
     "react",
