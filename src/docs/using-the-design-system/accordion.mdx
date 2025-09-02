@@ -1,0 +1,28 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as AccordionStories from '../../components/Accordion/Accordion.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Accordion" />
+
+# Accordion
+An accordion is a list of headers that expand or collapse to show more content. It helps people find what they need without feeling overwhelmed. 
+
+<Canvas of={AccordionStories.Default} />
+
+## When to use the Accordion component 
+- Use it when people only need a few key pieces of information on a page. 
+- Use it when space is limited but the page still needs to hold a lot of content. 
+
+## When to use something else 
+- If most people need to see all the information, don’t hide it—use clear text on the page instead. 
+- If there isn’t enough content to justify hiding it, avoid the accordion. It can add extra clicks and decisions for users. 
+
+## General guidance 
+- Make the entire header clickable, so it’s easy for anyone to open or close. 
+- Give enough space around interactive elements so people don’t accidentally collapse or expand content. 
+
+## Principles 
+- Focus on People: avoids making users work harder than needed. 
+- Solve Root Causes: encourages clarity when people need to see all information. 
+- Avoid Local Optimization: reminds that just because it saves space for staff, it might burden residents. 
+- Prototype and Test: easy to try with users to see if they prefer hidden or visible content. 
