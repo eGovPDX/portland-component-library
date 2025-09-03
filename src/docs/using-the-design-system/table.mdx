@@ -1,0 +1,38 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as TableStories from '../../components/Table/Table.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Table" />
+
+# Table
+A table organizes information into rows and columns. Tables make it easier to compare details, scan data, and find specific information quickly. They’re especially useful for structured or repeated content like statistics, directories, or records. 
+
+<Canvas of={TableStories.Default} />
+
+## When to use the Table component 
+- To display data in a structured format (like statistics or comparisons). 
+- To display directories or lists of resources with consistent fields (like names, addresses, or services). 
+
+## When to use something else 
+- For non-tabular data, use lists instead (definition or bulleted lists). 
+- For complex relationships or trends, use charts or visualizations. 
+- For page layouts, don’t misuse tables, use grids or other layout tools. 
+- For long paragraphs, keep text outside tables. Tables should stay scannable. 
+- For items without a consistent structure, use lists or cards. 
+
+## General guidance 
+- Keep it simple: Minimal styling makes tables easier to scan. 
+- Always use a header row: Label each column clearly in plain language. 
+- Be consistent: Use the same units and formatting within columns. 
+- Align numbers to the right for easy comparison. 
+- Use monospace fonts for dense numerical data (like percentages or currency). 
+- Include a caption if the table comes from a source or changes often, list the source or last updated date. 
+- Plan for mobile: Use scrollable or stacked layouts so tables remain usable on small screens. 
+- Limit the number of columns: Narrow, tall tables are easier to scan than wide ones. 
+- Add sorting where useful, but avoid sorting with merged or stacked cells (it breaks consistency). 
+
+## Principles 
+- **Focus on People:** Tables make large amounts of information easier to scan, compare, and understand. 
+- **Solve Root Causes:** Keep content consistent and structured, mixed formats make tables harder to use. 
+- **Avoid Local Optimization:** Don’t cram unrelated or long, form text into tables, they’re for structured data. 
+- **Prototype and Test:** Test tables on mobile devices to ensure people can still scan and compare easily. 

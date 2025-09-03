@@ -1,0 +1,33 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as IdentifierStories from '../../components/Identifier/Identifier.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Identifier" />
+
+# Identifier 
+The identifier shows which parent agency is responsible for a site. It also displays required agency links, helping visitors know they are on an official government website. 
+
+<Canvas of={IdentifierStories.Default} />
+
+## When to use the Identifier component 
+- To identify the highest-level agency that owns or oversees the site. 
+- As a complement to the USWDS banner, making the site’s authority and ownership clear. 
+- Even if your agency is the top-level owner, you can still use the identifier to show it officially. 
+
+## When to use something else 
+- Don’t use it if it would be misleading, such as on test or non-official sites. 
+- Avoid duplicating content. If the footer already has required links, replace them with the identifier instead of repeating them. 
+
+## General guidance 
+- Use the identifier for required links and remove duplicates from your footer so visitors see links in a consistent place across sites. 
+- Treat the “parent agency” as the highest-level authority for the site or service. If your site doesn’t have a parent, use your own agency name. Example: [agency.gov] An official website of [Agency]. 
+- Show the parent agency logo, not a program or product logo. Program logos should stay in the footer, not in the identifier. 
+- If there are multiple parent agencies, list them in order from highest to lowest level (e.g., “An official website of [Grandparent Department] and [Parent Agency]”). 
+- Keep it simple. The identifier should appear on every page without distracting from the main content. Use background colors that fit your site design. 
+- Keep the text current, always use the latest version. 
+
+## Principles 
+- **Focus on People:** Identifiers make it clear who is responsible for the website or service, which builds trust. 
+- **Solve Root Causes:** Don’t bury official ownership in fine print. People should see immediately which agency or department runs the site. 
+- **Avoid Local Optimization:** Don’t add duplicate or redundant identifiers. Overlap with the footer or banner can confuse more than clarify. 
+- **Prototype and Test:** Ask users if they know who runs the site after looking at the identifier. If not, revise the text or placement. 

@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as LanguageSelectorStories from '../../components/LanguageSelector/LanguageSelector.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/LanguageSelector" />
+
+# Language Selector
+The language selector helps people find and use content in the language they are most comfortable with. Consistent placement and design make it easy to locate and use. 
+
+<Canvas of={LanguageSelectorStories.Default} />
+
+## Two Languages 
+
+### When to use the Language Selector component 
+- When your site offers the same content in two languages, so people can easily switch to their preferred one. 
+
+### When to use something else 
+- If most content isn’t translated, a selector may mislead people. Use it only when full, equivalent translations are available. 
+
+## Three Or More Languages 
+
+### When to use the Language Selector component 
+- When your site provides the same content in three or more languages. 
+
+### When to use something else 
+- If translations are incomplete or inconsistent, don’t use the selector until the majority of content is available in all listed languages. 
+
+### Principles 
+- **Focus on People:** Language selectors ensure equal access for people who prefer or need another language. 
+- **Solve Root Causes:** Don’t offer language options if most content isn’t translated. Partial translation creates frustration and broken trust. 
+- **Avoid Local Optimization:** Don’t just add a dropdown, make sure translated content is equivalent and accurate. 
+- **Prototype and Test:** Test if users can find the selector quickly and if the translations meet their needs. 

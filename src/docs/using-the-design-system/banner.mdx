@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as BannerStories from '../../components/Banner/Banner.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Banner" />
+
+# Banner
+A banner shows that a website is official and secure. It builds trust by letting visitors know they are on a real government site. 
+
+<Canvas of={BannerStories.Default} />
+
+## When to use the Banner component 
+- To identify your site as an official government website. 
+- Federal sites use the standard banner. State and local sites should adjust the text to reflect their level of government. 
+
+## When to use something else 
+- If your site doesn’t use a .gov or .mil domain and HTTPS, don’t use this banner. These are the key signals people recognize as official. 
+- Never use the banner on test sites or places where it would be misleading. The goal is to reduce confusion, not create it. 
+
+## General guidance 
+- Use the standard text provided. Don’t rewrite or customize it, consistency helps people quickly recognize official sites. 
+- Match the banner text to your domain (e.g., use the .mil version for military sites). 
+- Show the banner on every page. If it’s only on some pages, visitors may get confused or doubt the site’s legitimacy. 
+- Keep the design simple. Use background colors that fit your site’s theme without drawing unnecessary attention to the banner. 
+- Keep the text current. Always use the latest version. 
+- Provide Spanish-language versions where needed so all residents understand the message. 
+
+## Principles 
+- **Focus on People:** Banners give people confidence that they are on an official, secure website. This reassurance builds trust. 
+- **Solve Root Causes:** Avoid jargon. The banner should state plainly what makes the site official and why it matters for safety or trust. 
+- **Avoid Local Optimization:** Don’t add a banner just because it’s standard. Use it only when it genuinely helps people identify the site. 
+- **Prototype and Test:** Test whether users notice and understand the banner’s purpose. If it doesn’t build trust, revise the wording. 

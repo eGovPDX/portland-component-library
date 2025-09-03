@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ButtonStories from '../../components/Button/Button.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Button" />
+
+# Button
+A button highlights the most important actions people can take. It stands out on the page so users know where to click. 
+
+<Canvas of={ButtonStories.Default} />
+
+## When to use the Button component 
+- For the main actions you want people to take, like Download, Sign up, or Log out. 
+- When you want to clearly guide people to the next step. 
+
+## When to use something else 
+- Use regular links for simple navigation between pages. 
+- If the action is minor or rarely used, style it as a link instead of a button. 
+
+## General guidance 
+- Use standard buttons for actions that move people forward. 
+- Use outline buttons for actions that stay on the same page (like expand or collapse). 
+- Make the most important action stand out with a distinct color or size. Don’t make every button look the same. 
+- Ensure buttons look clickable, use clear color changes for hover and active states. 
+- Don’t overload a page with too many buttons; it creates confusion. 
+- Keep button text short and clear. Start with a verb, like File a complaint or Download report. 
+- Use sentence case (capitalize only the first word). 
+- Icons can help signal meaning (like a download arrow), but don’t rely only on them. Always use text too. 
+
+## Principles 
+- **Focus on People:** Buttons should make the most important actions obvious and easy to take. Clear labeling reduces hesitation. 
+- **Solve Root Causes:** Don’t just label a button “Submit” or “Click here.” Use language that tells users what will happen, like “Pay now” or “Get updates.” 
+- **Avoid Local Optimization:** Don’t overload a page with buttons for every possible action. Too many choices dilute focus. 
+- **Prototype and Test:** Test button clarity with real users. If they hesitate before clicking, revise the text, style, or placement. 

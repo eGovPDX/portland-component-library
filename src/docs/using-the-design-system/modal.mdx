@@ -1,0 +1,36 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ModalStories from '../../components/Modal/Modal.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Modal" />
+
+# Modal
+A modal is a pop-up window that takes over the page to focus attention on a single task or message. It prevents people from interacting with the rest of the page until they respond. Because modals interrupt workflow, they should be used sparingly and only when full attention is required. 
+
+<Canvas of={ModalStories.Default} />
+
+## When to use the Modal component 
+- Confirmation: When a decision must be made before continuing, such as saving work or canceling an action. 
+  - Example: “Your work isn’t saved. Do you want to continue?” 
+- Acknowledgement: When people must confirm or agree to something before moving forward, such as a privacy policy or timeout warning. 
+  - Example: “Your session is about to expire. Do you need more time?” 
+- Explanatory content: To give helpful context without taking people away from a task, such as showing a privacy policy while signing up. 
+
+## When to use something else 
+- Almost always, modals should be a last resort. First, ask if the message could be shown on the page instead. 
+- For multi, step processes, use a dedicated page rather than forcing the flow into a modal. 
+- For error, success, or warning messages, place them on the page (next to the form field or at the top) instead of in a modal. 
+
+## General guidance 
+- User-triggered: Modals should only appear after an action, not unexpectedly. Exceptions are session timeouts or first-visit notices. 
+- Be clear: Use a short headline and clear button text. Buttons should state the action (e.g., “Yes, cancel” / “No, go back”). 
+- Keep it simple: Avoid complex interactions inside a modal. Don’t use Modals, long forms, or scrolling content. 
+- Think mobile: Ensure buttons and text are easy to use on small screens. 
+- Respect flow: When the modal closes, the page beneath it should remain as it was. Don’t reload or redirect. 
+- Avoid roadblocks: Don’t trap external links inside a modal. Let users follow links directly. 
+
+## Principles 
+- **Focus on People:** Use modals only when full attention is required, so people aren’t interrupted unnecessarily. 
+- **Solve Root Causes:** Don’t hide critical information in modals, place it directly in the main flow when possible. 
+- **Avoid Local Optimization:** Don’t use modals just to save space or speed up development, they can disrupt the user journey. 
+- **Prototype and Test:** Watch whether users feel stuck or lost in modals. If they do, move that content into the main page. 

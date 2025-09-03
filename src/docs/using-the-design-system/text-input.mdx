@@ -1,0 +1,30 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as TextInputStories from '../../components/TextInput/TextInput.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/TextInput" />
+
+# Text Input
+A text input lets people type letters, numbers, or symbols into a box. Inputs can be single-line or multi-line, depending on the response needed. 
+
+<Canvas of={TextInputStories.Default} />
+
+## When to use the Text Input component 
+- For open-ended responses where answers vary and can’t be predicted. 
+- When typing is simpler than other inputs, such as entering a birthday instead of selecting from a calendar. 
+- When people need to paste in text (like copying from another document). 
+
+## When to use something else 
+- If there are set choices, use radio buttons, checkboxes, or select menus instead. 
+
+## General guidance 
+- Match the input size to the response expected. Use single-line inputs for short answers, text areas for longer ones. 
+- Consider mobile users, typing is harder on phones than on desktops, so keep text input fields as simple as possible. 
+- Validate only after users interact with the field, don’t show errors before they’ve typed. 
+- Avoid placeholder text that disappears once typing begins. Use clear labels outside the field so users always know what’s required. This is especially important for accessibility. 
+
+## Principles 
+- **Focus on People:** Text inputs allow freedom to answer in their own words, giving flexibility where options can’t be predefined. 
+- **Solve Root Causes:** Always label clearly so users know what to type. Avoid placeholders that disappear. 
+- **Avoid Local Optimization:** Don’t use text input when a checkbox or dropdown is simpler, it only adds work. 
+- **Prototype and Test:** Test inputs on mobile, typing is harder on small screens, so clarity and brevity matter most. 

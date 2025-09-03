@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as BreadcrumbsStories from '../../components/Breadcrumbs/Breadcrumbs.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Breadcrumbs" />
+
+# Breadcrumb
+Breadcrumbs help people know where they are on a website and how to get back to broader sections. They support orientation and reduce confusion. 
+
+<Canvas of={BreadcrumbsStories.Default} />
+
+## When to use the Breadcrumb component 
+- When people may land deep in your site from search or an outside link. Breadcrumbs help them see the bigger picture. 
+- On complex sites with many layers of information. Breadcrumbs make it easier to move around and reinforce your site’s structure. 
+
+## When to use something else 
+- On simple sites where the main navigation already makes the page’s location clear. 
+- On homepages or section landing pages where breadcrumbs don’t add value. 
+- When side navigation already shows structure, breadcrumbs may be redundant. 
+- In step-by-step processes, use clear step indicators instead of breadcrumbs 
+
+## General guidance 
+- Keep text readable. Don’t wrap or cut off titles in ways that confuse people, shorten page titles if needed. 
+- Use the full-page title in the breadcrumb to keep labels clear and consistent. 
+- Start with the word “Home,” not an icon, so people know exactly where it leads. 
+- Make sure breadcrumbs are easy to tap on small screens; don’t shrink the text too much. 
+- Keep breadcrumbs consistent across your site. If you use them, show them on all relevant pages. 
+- Optimize for search engines by marking up breadcrumbs properly so they also improve search results. 
+
+## Principles 
+- **Focus on People:** Breadcrumbs help users understand where they are in a site and how to get back without starting over. 
+- **Solve Root Causes:** Place breadcrumbs where navigation is complex, so users don’t get lost. Avoid using them just for design consistency. 
+- **Avoid Local Optimization:** Don’t repeat navigation for the sake of it. Use breadcrumbs only when they provide extra clarity. 
+- **Prototype and Test:** Watch if users rely on breadcrumbs to move around. If they ignore them, consider whether the site structure itself needs work. 

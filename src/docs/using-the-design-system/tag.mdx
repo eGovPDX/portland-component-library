@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as TagStories from '../../components/Tag/Tag.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Tag" />
+
+# Tag
+A tag highlights important or categorized content. Tags help people notice key updates, filter information, or see counts of new items. 
+
+<Canvas of={TagStories.Default} />
+
+## When to use the Tag component 
+- To draw attention to important or new content that might otherwise be missed. 
+- To filter results, allowing users to narrow content with one or more tags. 
+- To show a count of new or unread items, like the number of messages or alerts. 
+
+## When to use something else 
+- If tags might be confused with buttons, avoid placing them in the same area. 
+- To call attention to new or updated content, sometimes a simple background or text change is more effective. 
+- On sites where content is always changing (like breaking news), it may be enough to just show the newest content at the top. 
+
+## General guidance 
+- Test carefully, people often mistake tags for buttons. 
+- If a tag isn’t clickable, make sure it doesn’t look interactive (no hover or focus effects). 
+- Be consistent, don’t mix interactive and non, interactive tags on the same page. 
+- Use tags sparingly, if everything is tagged, nothing stands out. 
+
+## Principle 
+- **Focus on People:** Tags help people notice what’s new or filter to what matters most. 
+- **Solve Root Causes:** Don’t tag everything, too many tags create clutter and reduce usefulness. 
+- **Avoid Local Optimization:** Don’t use tags inconsistently across pages. Users expect tags to behave the same everywhere. 
+- **Prototype and Test:** Confirm whether users recognize tags as filters, labels, or alerts. If not, refine their design or placement. 

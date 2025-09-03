@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as DropdownStories from '../../components/Dropdown/Dropdown.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Dropdown" />
+
+# Dropdown
+A Dropdown menu lets people choose one option from a list that drops down. 
+
+<Canvas of={DropdownStories.Default} />
+
+## When to use the Dropdown component 
+- Only when space is limited and there are about 7 to 15 options. 
+- Best used when showing all options at once would clutter the page. 
+
+## When to use something else 
+- If there are fewer than 7 options → use radio buttons. 
+- If there are more than 15 options → consider a combo box or other pattern. 
+- If people need to dropdown more than one option → use checkboxes. 
+- For site navigation → use navigation menus, not dropdowns. 
+
+## General guidance 
+- Test with users: Dropdown menus can be confusing. Make sure your audience can use them easily. 
+- Avoid dependent menus: Don’t make one dropdown change another, it’s often unclear to people how choices are linked. 
+- Provide a good default: If most people will choose the same option, pre-dropdown it to save time (but only if supported by data). 
+- Don’t auto-submit: Avoid forms that submit as soon as an option is chosen. Instead, use a clear Submit button so people can confirm their choice. 
+
+## Principles 
+- **Focus on People:** Dropdown menus save space but should remain simple and easy to use. 
+- **Solve Root Causes:** Don’t overload dropdown with too many or too few options, choose inputs that match the decision. 
+- **Avoid Local Optimization:** Don’t use dropdown just for convenience. They can slow people down compared to buttons or checkboxes. 
+- **Prototype and Test:** Confirm that users understand how to open, choose, and confirm without confusion. 

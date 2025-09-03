@@ -1,0 +1,29 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as SideNavStories from '../../components/SideNav/SideNav.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/SideNav" />
+
+# Side Navigation
+Side navigation is a vertical menu that shows the structure of a site section. It helps people understand where they are and quickly move between related pages. 
+
+<Canvas of={SideNavStories.Default} />
+
+## When to use the Side Navigation component 
+- To show a clear hierarchy with one to three levels of pages. 
+- To display “sub-navigation” within a section of the site. 
+
+## When to use something else 
+- On small sites with fewer than five pages, hierarchy isn’t needed. 
+- If your site already uses both top and side navigation, simplify instead of duplicating. 
+
+## General guidance 
+- Always show which page the user is on. Use an active state (highlight) so people know where they are in the menu. 
+- Keep link text short and clear, page titles can often be shortened. 
+- Test your navigation depth. If menus go too deep, people may miss pages hidden at the bottom or buried under too many clicks. Find the right balance between breadth (more top-level links) and depth (nested links). 
+
+## Principles 
+- **Focus on People:** Side navigation helps users stay oriented in complex sites by showing structure at a glance. 
+- **Solve Root Causes:** Keep labels short and clear so users don’t get lost. Long or unclear navigation adds friction. 
+- **Avoid Local Optimization:** Don’t add multiple overlapping navigation systems, it only creates clutter. 
+- **Prototype and Test:** Check if users can find what they need within three clicks. If not, restructure. 

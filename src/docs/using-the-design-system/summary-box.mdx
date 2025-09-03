@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as SummaryBoxStories from '../../components/SummaryBox/SummaryBox.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/SummaryBox" />
+
+# Summary Box
+A summary box highlights the most important points from a long page or shows quick next steps. It helps people scan and act without reading everything.
+
+<Canvas of={SummaryBoxStories.WithContent} />
+
+## When to use the Summary Box component 
+- To summarize dense content: pull out 3–5 key details people shouldn’t miss. 
+- To highlight a short checklist or steps: keep it to five bullet points or fewer. 
+
+## When to use something else 
+- For navigation: don’t use a summary box as a table of contents, use jump links or side navigation. 
+- On short pages: a recap isn’t needed if all content fits easily. 
+- For longer or detailed lists: if there are more than five points, or if points are long or require images/buttons, use another component like a process list or graphic list. 
+- For alerts or new info: if you’re highlighting something new or time-sensitive, use an alert instead. 
+
+## General guidance 
+- Prioritize what matters most. Select the key details, split them into logical parts, and order them so they make sense at a glance. 
+- Link to more details if needed. Make sure links are clear about where they go. 
+- Use smooth scrolling if linking within the same page, but ensure users don’t lose their place. 
+- Provide a quick way back up, such as a “Back to top” link or sticky navigation. 
+
+## Principles 
+- **Focus on People:** Summary boxes help people scan and act on key details without reading a full page. 
+- **Solve Root Causes:** Use them to surface only the most essential information, not to repeat everything. 
+- **Avoid Local Optimization:** Don’t add summary boxes just to fill space, they should genuinely reduce effort. 
+- **Prototype and Test:** Check if users rely on the box to get the gist. If they ignore it, rethink the content. 

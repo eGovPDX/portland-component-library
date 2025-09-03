@@ -1,0 +1,31 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ButtonGroupStories from '../../components/ButtonGroup/ButtonGroup.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/ButtonGroup" />
+
+# Button Group
+A button group collects actions that are related to each other. It helps people make choices without getting lost or confused. 
+
+<Canvas of={ButtonGroupStories.Default} />
+<Canvas of={ButtonGroupStories.Segmented} />
+
+## When to use the Button Group component 
+- When actions are connected. For example, show Submit and Save as draft together so it’s clear they are alternatives. 
+- When moving through a process. Use button groups for navigation-like Back, Next, Skip, or Cancel. 
+
+## When to use something else 
+- If actions aren’t related. Placing them together can cause confusion. 
+- Don’t mix destructive and safe actions in the same group (like Delete next to Save), it increases the risk of mistakes. 
+- Don’t use button groups when a simple text link makes more sense. For example, “Next” and “Previous” are fine as buttons, but a “Read more” link is clearer as text. 
+
+## General guidance 
+- Keep choices simple. Too many buttons overwhelm people and slow them down. 
+- Place the primary action first and make it stand out. 
+- Use clear, plain text so people know exactly what each button does. 
+
+## Principles 
+- **Focus on People:** Grouped buttons help people make choices quickly by presenting related actions together. 
+- **Solve Root Causes:** Avoid mixing unrelated or conflicting actions in one group. This reduces mistakes and frustration. 
+- **Avoid Local Optimization:** Don’t group buttons just to save space. Ensure the grouping makes sense from the user’s perspective. 
+- **Prototype and Test:** Observe whether people choose the right button the first time. If they hesitate, rethink the grouping or labels. 

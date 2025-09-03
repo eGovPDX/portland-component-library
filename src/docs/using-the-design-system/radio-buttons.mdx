@@ -1,0 +1,33 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as RadioButtonsStories from '../../components/RadioButtons/RadioButtons.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/RadioButtons" />
+
+# Radio Buttons
+Radio buttons let people pick exactly one option from a list. They’re best when choices are clear and mutually exclusive (only one can be true at a time). 
+
+<Canvas of={RadioButtonsStories.Default} />
+
+## When to use the Radio Buttons component 
+- When only one choice is allowed from a set of options. 
+- When it’s important that the choice is visible right on the page, rather than hidden in a dropdown. 
+
+## When to use something else 
+- If people may select more than one option, use checkboxes instead. 
+- If space is limited and you have many options, use a select dropdown. 
+- If people should be able to select none, or change their mind, use checkboxes instead. Another option is to include a “none of the above” radio button. 
+
+## General guidance 
+- Make the label clickable so users can select by clicking the text or the button. 
+- List options vertically. Horizontal layouts make it harder to match labels with buttons. 
+- Ensure enough space for easy selection, especially on touch screens. 
+- Avoid setting a default unless there’s data to support it, it can bias users. 
+- Pick one style (default or tile) and use it consistently. Don’t mix styles. 
+- Organize options logically (alphabetical or most-to-least common) so users can quickly find the right choice. 
+
+## Principles 
+- **Focus on People:** Radio buttons make it clear when only one choice is possible. This avoids mistakes and second-guessing. 
+- **Solve Root Causes:** Always label options clearly. People should know what they’re choosing and what happens next. 
+- **Avoid Local Optimization:** Don’t use radio buttons when multiple answers are valid, it forces users into wrong choices. 
+- **Prototype and Test:** Confirm that users select confidently without asking “Can I pick more than one?” 

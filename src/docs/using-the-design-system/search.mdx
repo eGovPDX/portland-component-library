@@ -1,0 +1,31 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as SearchStories from '../../components/Search/Search.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Search" />
+
+# Search
+Search helps people find specific content when they can’t locate it through menus or navigation. 
+
+<Canvas of={SearchStories.Default} />
+
+## When to use the Search component 
+- On most sites, some people will always prefer to search rather than browse. 
+
+## When to use something else 
+- On very small or single-page sites where everything is visible without a search bar. 
+
+## General guidance 
+- Make the search box wide enough (at least 27 characters) so people can see what they typed, even with longer queries. 
+- Use the magnifying glass icon, it’s universally recognized. Pair it with the word “Search” for accessibility. 
+- Keep search terms visible in the results page so users can check or edit them. 
+- Place a full search box on your homepage, not just a link to search. 
+- Keep it simple. Most people use one or two words. Don’t make advanced search the default. 
+- Always include a label (even if hidden) for screen readers. 
+- Make the search button a submit button to reduce keystrokes and improve usability. 
+
+## Principles 
+- **Focus on People:** Search gives control to users who can’t find what they need in menus. It reduces frustration and saves time. 
+- **Solve Root Causes:** Keep search visible and results relevant. Don’t make users guess where to start. 
+- **Avoid Local Optimization:** Don’t rely only on navigation or only on search, different people look for content in different ways. 
+- **Prototype and Test:** Watch if users actually find what they need through search. If not, improve results and labeling. 

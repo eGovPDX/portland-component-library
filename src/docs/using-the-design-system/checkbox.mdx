@@ -1,0 +1,33 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as CheckboxStories from '../../components/Checkbox/Checkbox.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Checkbox" />
+
+# Checkbox
+A checkbox lets people select one or more options from a list. It’s a simple way to show choices and to let people easily see and change what they’ve selected. 
+
+<Canvas of={CheckboxStories.Default} />
+
+## When to use the Checkbox component 
+- When people can select more than one option from a list. 
+- When people need to confirm or accept something, like agreeing to terms. 
+- When people need to switch between two states, like “yes/no” or “on/off.” 
+
+## When to use something else 
+- If only one option can be selected from a list, use radio buttons instead. 
+
+## General guidance 
+- Make labels clickable. People should be able to select either the text or the checkbox. 
+- List options vertically to avoid confusion about which label belongs to which box. 
+- Use positive, clear language. For example, say “I want to receive updates” instead of “I don’t want to stop receiving updates.” 
+- Use logical labels so both states (checked and unchecked) are easy to understand. If that’s not possible, use radio buttons instead. 
+- Ensure checkboxes are large enough to tap easily on touch screens. 
+- Pick one style and use it consistently (don’t mix tile and standard checkboxes). 
+- Organize options in a clear order, such as alphabetical or most common to least common, so people can quickly find what they need. 
+
+## Principles 
+- **Focus on People:** Checkboxes give flexibility when more than one option may apply. They help people feel in control of their choices. 
+- **Solve Root Causes:** Use clear, positive labels so people know exactly what selecting or unselecting means. 
+- **Avoid Local Optimization:** Don’t use checkboxes where only one option makes sense, that creates confusion. 
+- **Prototype and Test:** Confirm that users understand they can select multiple options. If not, consider a different input. 

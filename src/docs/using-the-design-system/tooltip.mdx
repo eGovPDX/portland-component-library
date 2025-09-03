@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as TooltipStories from '../../components/Tooltip/Tooltip.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Tooltip" />
+
+# Tooltip
+A tooltip is a short message that appears when someone hovers over or focuses on an element. Tooltips give quick hints without cluttering the page. 
+
+<Canvas of={TooltipStories.Default} />
+
+## When to use the Tooltip component 
+- To provide helpful, non-critical information that supports what’s already visible. 
+- To increase confidence by clarifying an action (e.g., what a button will do). 
+- For short explanations or definitions. 
+- As a last resort when space is tight and text can’t fit on the page. 
+
+## When to use something else 
+- For critical information needed to complete a task, don’t hide it behind a tooltip. 
+- For long explanations, tooltips should be brief. 
+- For repeated or obvious content, don’t use tooltips just to restate what’s clear. 
+- When there’s enough space to show content directly on the page. 
+
+## General guidance 
+- Make tooltips easy to discover by attaching them to interactive elements like buttons or links. 
+- Keep them brief and scannable. 
+- Use them consistently across your site. 
+- Position tooltips carefully so they don’t block important page content. 
+
+## Principles 
+- **Focus on People:** Tooltips provide quick clarity without cluttering the page. They should reduce, not add, confusion. 
+- **Solve Root Causes:** Never hide critical instructions in tooltips. Keep them for extra guidance only. 
+- **Avoid Local Optimization:** Don’t overuse tooltips as a substitute for clear design. If everything needs a tooltip, the base design isn’t clear enough. 
+- **Prototype and Test:** Watch if users notice and use tooltips. If they don’t, rethink placement or content. 

@@ -1,0 +1,34 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as PaginationStories from '../../components/Pagination/Pagination.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Pagination" />
+
+# Pagination
+Pagination splits large sets of content into smaller pages. It helps people move through search results, articles, or records without being overwhelmed. 
+
+<Canvas of={PaginationStories.FirstPage} />
+
+## When to use the Pagination component 
+- Search results: When results are too long for a single page. Pagination helps people browse in manageable chunks. 
+- Large collections: When you have a lot of related items, like articles, case files, or archived records. 
+
+## When to use something else 
+- If content is grouped meaningfully by topic or theme, use navigation like side menus instead. 
+- If showing progress through steps (like onboarding or applications), use a step indicator. 
+- If the collection is short (3–4 screen lengths), just display all items instead of paginating. 
+
+## General guidance 
+- Show people where they are. Indicate the total number of pages or results when possible. 
+- Always include first, previous, and next navigation so users don’t get stuck. 
+- Keep pagination in a single line, multiple lines are harder to scan and use. 
+- Use simple, clear markers (like an ellipsis “…”) to show when pages are skipped. 
+- Don’t overload with too many page links, keep it focused and usable. 
+- Make page numbers big enough to tap on mobile without errors. 
+- Optimize entries per page. Balance performance with user needs, and consider letting people choose how many items to display. 
+
+## Principles 
+- **Focus on People:** Pagination makes large sets of information manageable by breaking them into smaller, scannable pages. 
+- **Solve Root Causes:** Always show people where they are in the sequence, so they don’t feel lost in endless results. 
+- **Avoid Local Optimization:** Don’t show dozens of page numbers. Prioritize navigation that helps users, not what looks “complete.” 
+- **Prototype and Test:** Check if people can move forward and back easily. If not, adjust labels, layout, or page size. 
