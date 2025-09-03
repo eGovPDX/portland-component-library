@@ -1,0 +1,37 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ProcessStepsStories from '../../components/ProcessSteps/ProcessSteps.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/ProcessSteps" />
+
+# Process List
+A process list shows the main steps or stages of an important task. It helps people see the order of steps at a glance. 
+
+<Canvas of={ProcessStepsStories.Default} />
+
+## When to use the Process List component 
+- To display high-level, sequential steps. 
+- To give people a clear roadmap through a process, making it easier to follow each stage. 
+
+## When to use something else 
+- For multi, page forms or wizards, use a step indicator instead. 
+- To show current status or progress in a process, use a step indicator. 
+- For in, page navigation, use side navigation. 
+- For non, sequential content, use unordered lists, icons, or other list formats. 
+- To break up long sentences or paragraphs, use standard ordered or unordered lists. 
+
+## General guidance 
+- Keep lists manageable. Aim for 3–10 steps so the process feels clear, not overwhelming. 
+- Use consistent headings. Each step should follow the same pattern (e.g., start with a verb). 
+- Add supporting content if needed, like images, links, or tables, to clarify each step. 
+- Use step numbers (counters) when reinforcing sequence is important; omit them if they add clutter. 
+- Keep step labels short, clear, and action-oriented. 
+- Style steps consistently so people can scan easily, avoid unnecessary decoration. 
+- Use color carefully. Colors should support clarity (like showing pending vs. current steps), not distract. 
+- Make sure spacing is consistent, avoid wide gaps that break the flow. 
+
+## Principles 
+- **Focus on People:** Process lists give users a clear roadmap, reducing stress when completing multi-step tasks. 
+- **Solve Root Causes:** Break processes into simple, logical steps. Avoid jargon or long sentences that hide what needs to be done. 
+- **Avoid Local Optimization:** Don’t add steps just to mirror internal processes. Show only what users truly need. 
+- **Prototype and Test:** Ask users if they can follow the list without extra explanation. If not, simplify. 

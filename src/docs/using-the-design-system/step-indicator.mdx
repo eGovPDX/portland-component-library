@@ -1,0 +1,32 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as StepIndicatorStories from '../../components/StepIndicator/StepIndicator.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/StepIndicator" />
+
+# Step Indicator
+A step indicator shows people their progress through a multi-step process. It helps reduce uncertainty and makes long processes easier to follow. 
+
+<Canvas of={StepIndicatorStories.Default} />
+
+## When to use the Step Indicator component 
+- For processes that span multiple screens or pages (three or more). It helps people see where they are and what’s left. 
+- For linear sequences, where steps must be completed in order. 
+
+## When to use something else 
+- For forms with conditional logic, where steps may change based on answers. 
+- For processes that can be done in any order (nonlinear). 
+- For very short forms with fewer than three steps, a step indicator isn’t needed. 
+
+## General guidance 
+- Always show the current step clearly, using distinct color and text. Completed steps should look different from pending steps. 
+- Use short labels, one or two words if possible. 
+- Provide separate navigation (like “Back” and “Next” buttons). The indicator itself is not navigation. 
+- Place a heading below each step indicator to explain the step in plain language. 
+- Show both the step number and total steps (e.g., “Step 2 of 5”) to reinforce progress. 
+
+## Principles 
+- **Focus on People:** Step indicators reduce uncertainty by showing progress through a long process. 
+- **Solve Root Causes:** Don’t use them for short or nonlinear flows, they’ll only confuse people. 
+- **Avoid Local Optimization:** Don’t add steps just because they exist internally. Show only the steps that matter to the user. 
+- **Prototype and Test:** Ask users if they feel reassured by the indicator. If not, revise the labels or format. 

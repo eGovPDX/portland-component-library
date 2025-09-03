@@ -1,0 +1,33 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as AlertStories from '../../components/Alert/Alert.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Alert" />
+
+# Alert
+An alert tells people about important or time-sensitive changes. It helps them stay informed and know what to do next. 
+
+<Canvas of={AlertStories.Emergency} />
+
+## When to use the Alert component 
+- To show system updates, like errors, warnings, or general notices. 
+- To confirm or correct actions, like letting someone know a payment went through or a form needs fixing. 
+
+## When to use something else 
+- On long forms, use in-line messages next to the field, not just at the top. 
+- For destructive actions (like deleting an account), use a stronger pattern such as a confirmation box. 
+
+## General guidance 
+- Guide next steps: If action is needed, clearly say what to do and make it easy. 
+- Be respectful: Use plain, polite language. Never blame the person. 
+- Make alerts helpful: Include useful info, not just “something went wrong.” 
+- Don’t overload: Too many alerts frustrate people and get ignored. 
+- Give control: Let people dismiss alerts when appropriate. 
+- Stay relevant: Show alerts that match the person’s goal in that moment. 
+- Keep them visible: Don’t hide alerts in ways that confuse screen readers or assistive technology. 
+
+## Principle 
+- **Focus on People:** Alerts should guide people calmly and clearly, especially during stressful situations like errors or deadlines. 
+- **Solve Root Causes:** Write alerts that explain what went wrong, why it matters, and what to do next. Avoid vague or technical language. 
+- **Avoid Local Optimization:** Don’t overload people with too many alerts. Prioritize the most important information so users aren’t trained to ignore them. 
+- **Prototype and Test:** Check if users understand alerts without extra help. If they hesitate or misinterpret, refine the wording and placement. 

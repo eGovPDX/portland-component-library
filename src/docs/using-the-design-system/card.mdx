@@ -1,0 +1,35 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as CardStories from '../../components/Card/Card.stories.jsx'; // ← adjust path if needed
+import * as CardFlagStories from '../../components/CardFlag/CardFlag.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Card" />
+
+# Card
+A card groups content and actions about a single subject. It gives a short summary and acts as an entry point to more detailed information. Cards often include text, images, and links, and are usually shown as part of a set. 
+
+<Canvas of={CardStories.WithMedia} />
+<Canvas of={CardFlagStories.MediaLeft} />
+
+## When to use the Card component 
+- To show collections of related content, like articles, services, or resources. 
+- To make information easier to scan and compare at a glance. 
+
+## When to use something else 
+- For tabular data, use a table, not cards. 
+- For single, important actions, use a button. 
+- For standalone information, use an aside or simple page content instead. 
+- For long, continuous text, use regular headings and paragraphs, not cards. 
+
+## General guidance 
+- Make cards actionable. Each card should link to more detail or a clear next step. 
+- Don’t use cards just for decoration. They should organize or highlight useful content. 
+- Avoid repetition. Don’t reuse the same image or text across every card in a set. 
+- Use images that work well at any size, since cards often resize on different devices. 
+- Keep styling simple. Avoid effects like shadows, folds, or textures that distract from the content. 
+
+## Principles 
+- **Focus on People:** Cards break down complex information into digestible chunks, helping people scan and compare options. 
+- **Solve Root Causes:** Don’t fill cards with repeated or decorative content. Each card should add unique value. 
+- **Avoid Local Optimization:** Avoid over-styling cards just for visual interest. The design should make content easier, not harder, to scan. 
+- **Prototype and Test:** Check if users can find the right card quickly. If they have to open multiple cards to find what they need, rethink labels and organization. 
