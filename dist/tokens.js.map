@@ -1,0 +1,1 @@
+{"version":3,"file":"tokens.js","sources":["../src/tokens.js"],"sourcesContent":["import tokens from '@cityofportland/design-tokens/output/design_tokens.json';\n\nexport const designTokens = tokens; "],"names":["designTokens","tokens"],"mappings":";;;;;;;;GAEaA,IAAeC;"}
