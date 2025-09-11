@@ -1,4 +1,5 @@
-node_modules
-storybook-static
+.pnpm-store/
+node_modules/
+storybook-static/
 /.cursor
 .DS_Store
