@@ -1,0 +1,31 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as PopoverWithCardStories from '../../components/PopoverWithCard/PopoverWithCard.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/PopoverWithCard" />
+
+# Popover With Card
+The Popover with Card component is for specific scenarios where you need to share more information than a standard tooltip can provide. Think of it as similar to Wikipedia’s page preview tooltip, offering a quick look without overwhelming users or pulling them away from the page. 
+
+<Canvas of={PopoverWithCardStories.Default} />
+
+## When to use the Popover With Card component 
+- Use this when you need to share 1–2 short sentences that give users added context. 
+- Use this when you want to pair a short description with a supporting image. 
+- Use this when you need to connect a short description with a single call to action. 
+
+## When to use something else 
+- When you only need to display a few words, use a tooltip instead. 
+- When you have a full paragraph or more of text, place the content on the page itself. 
+- When you need to display multiple images or multiple calls to action, use a card or section layout.
+
+## General guidance 
+- This component is designed for a very specific purpose: giving quick access to short definitions or supporting details that help reduce page length and increase clarity. 
+- Avoid hiding critical information inside this component. Popovers should only provide supplementary context, not essential instructions or requirements. 
+- If you think you have a use case that falls outside of these purposes, check with the digital services team before implementing.
+
+## Principles 
+- **Focus on People:** Popovers should make content easier to understand at a glance, not harder to access. 
+- **Solve Root Causes:** Use them to reduce page length and surface just enough context where users need it most. 
+- **Avoid Local Optimization:** Don’t overload popovers with too much content or too many interactions, they are not a replacement for clear on-page information. 
+- **Prototype and Test:** Try popovers with real users to confirm they clarify rather than confuse. 

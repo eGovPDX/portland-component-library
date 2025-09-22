@@ -1,0 +1,27 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as PersonStories from '../../components/Person/Person.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Person" />
+
+# Person
+The Person component is used to display information about a city employee. It can function as a simple way to share basic details about a person, or as a lead-in to more extensive content such as a biography or profile page. 
+
+<Canvas of={PersonStories.Default} />
+
+## When to use the Person component 
+- Use this component when you need to share information about a city employee. 
+- Use this component to display multiple people side by side in a grid-style layout. 
+- Use this component when you want to provide a lead-in to more information about a person (for example, linking to their bio).
+
+## When to use something else 
+- If you’re simply referencing someone within regular content, just type their name into the text or link their name to their bio instead of using the Person component.
+
+## General guidance 
+- Think of this component as powering something like a directory. A good use case would be to list all elected officials in one place, with each entry linking to their respective pages.
+
+## Principles 
+- **Focus on People:** This component is designed to make individuals visible and accessible, giving community members a direct way to connect with the right person. 
+- **Solve Root Causes:** Use it to reduce confusion about who to contact or where to find more information about a city employee. 
+- **Avoid Local Optimization:** Don’t create multiple, inconsistent versions of staff details across different pages, centralize them with this component. 
+- **Prototype and Test:** Test layouts when displaying many people in a grid or directory to ensure the design remains easy to scan and navigate. 
