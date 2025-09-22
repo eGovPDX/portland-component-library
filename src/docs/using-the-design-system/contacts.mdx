@@ -1,0 +1,27 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ContactsStories from '../../components/Contacts/Contacts.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Contacts" />
+
+# Contacts
+The Contacts component is meant to house a bureau, program, project, advisory group, or person’s contact information. It gives community members a direct line to the people responsible for a service or activity. 
+
+<Canvas of={ContactsStories.Default} />
+
+## When to use the Contacts component 
+- Use it when you need to share contact information clearly and consistently. 
+
+## When to use something else 
+- If you need to provide multiple contacts at once. This component is designed to give people a single, clear path to action. Listing too many options can leave users unsure of where to start. 
+
+## General guidance 
+- Include the Contacts component on every bureau, program, project, advisory group, or individual page so community members don’t need to hunt for the right place to find that information. 
+- Use an email button that opens a webform rather than exposing raw email addresses. This helps prevent spam and ensures correspondence is directed through the right channels.
+- Limit the number of social platforms you advertise. Focus on the platforms where the majority of your community is active, so people have fewer, clearer choices and can get faster responses.
+
+## Principles 
+- **Focus on People:** Make it easy for community members to know exactly who to contact without needing to search across multiple pages. 
+- **Solve Root Causes:** Reduce confusion and spam by guiding users through consistent paths like webforms instead of exposing raw email addresses. 
+- **Avoid Local Optimization:** Don’t scatter contact details in different places. Apply the component consistently across bureaus, programs, and projects so users know what to expect. 
+- **Prototype and Test:** Test the placement, language, and channel options with real users to confirm they can easily reach the right contact. 

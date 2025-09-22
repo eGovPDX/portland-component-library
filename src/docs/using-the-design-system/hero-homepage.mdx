@@ -1,0 +1,26 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as HeroHomepageStories from '../../components/HeroHomepage/HeroHomepage.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/HeroHomepage" />
+
+# Hero Homepage
+The Hero Homepage component is a specific component with one use case: it serves as the hero section for Portland.gov. Positioned just below the navigation header, it highlights search and provides quick links to frequently used items. 
+
+<Canvas of={HeroHomepageStories.Default} />
+
+## When to use the Hero Homepage component 
+- Use this component only on the homepage of Portland.gov. 
+
+## When to use something else 
+- Don’t use this component if you’re designing something other than the Portland.gov homepage.
+
+## General guidance 
+- This is a component with a single purpose. Any changes or variants should be handled collaboratively across teams, with Digital Services leading the work. 
+- If you have insights or recommendations for improvement, share them with the Digital Services team.
+
+## Principles 
+- **Focus on People:** Make the homepage hero easy to scan and act on, helping community members quickly find what they need. 
+- **Solve Root Causes:** Use this component to reduce confusion on the homepage by surfacing the most common entry points. 
+- **Avoid Local Optimization:** Don’t repurpose or modify the homepage hero for other pages, it’s designed to serve a single, site-wide function. 
+- **Prototype and Test:** Test changes with real users to ensure updates improve clarity and support the community’s top tasks. 

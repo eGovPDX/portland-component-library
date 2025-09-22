@@ -1,0 +1,29 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as HeroGlobalStories from '../../components/HeroGlobal/HeroGlobal.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/HeroGlobal" />
+
+# Hero Global
+The Hero Global component is meant to introduce the page. It contains the page title, optional image, tags, description, and a call-to-action button. It helps set the context and gives people a clear sense of what the page is about. 
+
+<Canvas of={HeroGlobalStories.Default} />
+
+## When to use the Hero Global component 
+- Use this when you need to set the context for a page. 
+- Use this when you need to introduce people to a new idea, concept, or resource. 
+
+## When to use something else 
+- If you need to provide a large amount of additional content or explanation. The Hero Global is designed to be brief and to clearly signal the purpose of the page without overwhelming users.
+
+## General guidance 
+- Always use a plain-language title and description. These help people quickly understand what the page is about. 
+- Keep the page title short and specific, ideally just a few words in plain language. 
+- Include an image only if it supports the purpose of the page. Images should reinforce context, not distract. 
+- Use only one call-to-action button and make it clear and specific.
+
+## Principles 
+- **Focus on People:** Provide a simple, welcoming introduction that helps users understand what they will find on the page. 
+- **Solve Root Causes:** Eliminate confusion at the start by presenting the clearest possible signal about the page’s purpose. 
+- **Avoid Local Optimization:** Ensure the Hero Global is applied consistently across pages so users always know where to look for orientation. 
+- **Prototype and Test:** Try different combinations of text, images, and buttons with users to confirm what works best for clarity and engagement. 

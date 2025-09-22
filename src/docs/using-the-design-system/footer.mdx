@@ -1,0 +1,26 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as FooterStories from '../../components/Footer/Footer.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/Footer" />
+
+# Footer
+The footer component is the default Portland.gov footer. It contains legal disclaimers and links to accessible information for services, as well as general contact information for the city. 
+
+<Canvas of={FooterStories.Default} />
+
+## When to use the Footer component 
+- Use the footer component whenever you are building a page for Portland.gov. It must be present on every page.
+
+## When to use something else 
+- If you are building an application or site that is not part of Portland.gov and doesn’t require the Portland.gov footer.
+
+## General guidance 
+- In most cases, you won’t need to manually add or configure the footer, since it is a global component managed by the Portland.gov team. 
+- If you do need to work with the footer, make sure its content remains consistent across all pages. This consistency helps users trust that they are still within the official Portland.gov site.
+
+## Principles 
+- **Focus on People:** Ensure users always have access to key information and official links without needing to search. A consistent footer builds confidence and trust. 
+- **Solve Root Causes:** Provide universal access to legal disclaimers and contact information in a single, predictable place instead of scattering them across multiple pages. 
+- **Avoid Local Optimization:** Treat the footer as a shared, citywide component. Don’t customize it per page, since doing so can break consistency and confuse users.  
+- **Prototype and Test:** Even though the footer is standardized, test its placement and content with users periodically to confirm it continues to meet accessibility and usability needs.

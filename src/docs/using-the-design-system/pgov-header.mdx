@@ -1,0 +1,26 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as PGOVHeaderStories from '../../components/PGOVHeader/PGOVHeader.stories.jsx'; // ← adjust path if needed
+
+
+<Meta title="Using the Design System/PGOVHeader" />
+
+# PGOV Header
+The PGOV Header component is a specific component with one use case: it serves as the header and navigation for Portland.gov. 
+
+<Canvas of={PGOVHeaderStories.Default} />
+
+## When to use the PGOV Header component 
+- Use this component when you’re building a page on Portland.gov. 
+
+## When to use something else 
+- Don’t use this component if you’re not building a page on Portland.gov. 
+
+## General guidance 
+- This is a global component with a single purpose. Any changes or variants should come through collaboration across teams, with Digital Services leading the work. 
+- If you have insights or recommendations for improvement, share them with the Digital Services team.
+
+## Principles 
+- **Focus on People:** Ensure the header consistently helps visitors navigate Portland.gov without confusion. 
+- **Solve Root Causes:** Use the global header to avoid fragmented or inconsistent navigation patterns across different parts of the site. 
+- **Avoid Local Optimization:** Don’t modify or fork this component for local needs, keep it unified so all users experience the same structure. 
+- **Prototype and Test:** Work with Digital Services to test any potential changes to the header so updates support all users. 
