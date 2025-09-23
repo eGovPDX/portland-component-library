@@ -33,6 +33,7 @@
   padding: var(--search-button-padding, 8px);
   min-width: auto;
   height: var(--search-button-height, 2rem);
+  text-wrap: nowrap;
 }
 
 .usa-search .usa-search__submit-icon {

@@ -16,6 +16,7 @@ import './Search.css';
  * @param {string} props.id - Input id attribute
  * @param {string} [props.name='search'] - Input name attribute
  * @param {string} [props.placeholder] - Placeholder text
+ * @param {string} [props.ariaLabel] - aria-label text
  * @param {function} [props.onSubmit] - Submit handler (receives form submit event)
  * @returns {JSX.Element} Search form
  */
@@ -26,6 +27,7 @@ export const Search = ({
   id,
   name = 'search',
   placeholder,
+  ariaLabel,
   onSubmit,
   ...props 
 }) => {
@@ -46,32 +48,27 @@ export const Search = ({
   };
 
   return (
-    <section aria-label={`${variant} ${t('labels.searchComponent')}`}>
-      <form className={classes} role="search" onSubmit={handleSubmit}>
-        <label className="usa-sr-only" htmlFor={id}>
-          {searchButtonText}
-        </label>
-        <input
-          className="usa-input"
-          id={id}
-          type="search"
-          name={name}
-          placeholder={placeholder}
-          {...props}
+    <form className={classes} role="search" aria-label={ariaLabel} onSubmit={handleSubmit}>
+      <label className="usa-sr-only" htmlFor={id}>
+        {searchButtonText}
+      </label>
+      <input
+        className="usa-input"
+        id={id}
+        type="search"
+        name={name}
+        placeholder={placeholder}
+        {...props}
+      />
+      <button className="usa-button" type="submit">
+        <FontAwesomeIcon 
+          icon={faSearch} 
+          className="usa-search__submit-icon"
+          aria-hidden="true"
         />
-        <button className="usa-button" type="submit">
-          {variant === 'small' ? (
-            <FontAwesomeIcon 
-              icon={faSearch} 
-              className="usa-search__submit-icon"
-              aria-hidden="true"
-            />
-          ) : (
-            <span className="usa-search__submit-text">{searchButtonText}</span>
-          )}
-        </button>
-      </form>
-    </section>
+        <span className="usa-search__submit-text">{searchButtonText}</span>
+      </button>
+    </form>
   );
 };
 
@@ -88,6 +85,8 @@ Search.propTypes = {
   name: PropTypes.string,
   /** The placeholder text for the search input */
   placeholder: PropTypes.string,
+  /** The aria-label text for the search landmark */
+  ariaLabel: PropTypes.string,
   /** Function to call when the form is submitted */
   onSubmit: PropTypes.func,
 }; 
