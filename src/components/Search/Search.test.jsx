@@ -25,6 +25,8 @@ describe('Search', () => {
     render(<Search id="test-search" variant="small" />);
     const buttonText = screen.queryByText('Search', { selector: '.usa-search__submit-text' });
     expect(buttonText).not.toBeInTheDocument();
+    const svgicon = document.querySelector('button svg.svg-inline--fa');
+    expect(svgicon).toBeInTheDocument();
   });
 
   it('applies custom button text', () => {
