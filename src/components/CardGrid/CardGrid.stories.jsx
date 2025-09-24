@@ -6,11 +6,25 @@ export default {
   title: 'Components/CardGrid',
   component: CardGrid,
   parameters: {
+    docs: {
+      source: {
+        // https://github.com/storybookjs/storybook/issues/12747
+        type: 'code',
+      },
+    },
     layout: 'fullscreen',
   },
 };
 
-const Template = (args) => <CardGrid {...args} />;
+const Template = ({ cards, ...args }) => (
+  <CardGrid
+    {...args}
+    cards={cards.map(({ actionButtonText, ...card }) => ({
+      ...card,
+      actionButton: <Button>{actionButtonText}</Button>,
+    }))}
+  />
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -39,37 +53,37 @@ WithMedia.args = {
       heading: 'Service 1',
       text: 'Description of service 1',
       media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
-      actionButton: <Button>Learn More</Button>,
+      actionButtonText: 'Learn More',
     },
     {
       heading: 'Service 2',
       text: 'Description of service 2',
       media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
-      actionButton: <Button>Learn More</Button>,
+      actionButtonText: 'Learn More',
     },
     {
       heading: 'Service 3',
       text: 'Description of service 3',
       media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
-      actionButton: <Button>Learn More</Button>,
+      actionButtonText: 'Learn More',
     },
     {
       heading: 'Service 4',
       text: 'Description of service 4',
       media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
-      actionButton: <Button>Learn More</Button>,
+      actionButtonText: 'Learn More',
     },
     {
       heading: 'Service 5',
       text: 'Description of service 5',
       media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
-      actionButton: <Button>Learn More</Button>,
+      actionButtonText: 'Learn More',
     },
     {
       heading: 'Service 6',
       text: 'Description of service 6',
       media: 'https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg',
-      actionButton: <Button>Learn More</Button>,
+      actionButtonText: 'Learn More',
     },
   ],
-}; 
+};
