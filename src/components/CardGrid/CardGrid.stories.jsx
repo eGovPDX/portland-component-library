@@ -21,7 +21,7 @@ const Template = ({ cards, ...args }) => (
     {...args}
     cards={cards.map(({ actionButtonText, ...card }) => ({
       ...card,
-      actionButton: <Button>{actionButtonText}</Button>,
+      actionButton: actionButtonText && <Button>{actionButtonText}</Button>,
     }))}
   />
 );
