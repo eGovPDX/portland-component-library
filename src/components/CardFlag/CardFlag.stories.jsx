@@ -4,7 +4,7 @@ import { CardFlag } from './CardFlag';
 const DemoMedia = (props) => (
   <img
     src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
-    alt="A placeholder image"
+    alt=""
     className="pdx-card-flag__media-element"
     {...props}
   />
@@ -21,7 +21,6 @@ export default {
       options: ['left', 'right'],
     },
     mediaInset: { control: 'boolean' },
-    mediaAlt: { control: 'text' },
     actionButton: { control: false },
     className: { control: 'text' },
   },
@@ -37,10 +36,9 @@ MediaLeft.args = {
   heading: 'CardFlag Media Left',
   text: 'This is the card body text.',
   media: <DemoMedia />,
-  mediaAlt: 'A placeholder image',
   mediaPosition: 'left',
   mediaInset: false,
-  actionButton: <button style={{ padding: '12px 32px', background: '#205493', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700 }}>{'{text}'}</button>,
+  actionButton: <button style={{ padding: '12px 32px', background: '#205493', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700 }}>Learn More</button>,
 };
 
 export const MediaRight = Template.bind({});
