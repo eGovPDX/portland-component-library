@@ -45,18 +45,6 @@ describe('CardFlag', () => {
     expect(media.className).toMatch(/media--inset/);
   });
 
-  test('applies alt text to media', () => {
-    render(
-      <CardFlag
-        heading="Test Heading"
-        text="Test text content"
-        media={<DemoMedia />}
-        mediaAlt="Alt text!"
-      />
-    );
-    expect(screen.getByAltText('Alt text!')).toBeInTheDocument();
-  });
-
   test('renders action button if provided', () => {
     render(
       <CardFlag

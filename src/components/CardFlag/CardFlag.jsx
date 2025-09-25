@@ -9,7 +9,6 @@ import './CardFlag.css';
  * - heading: string (required)
  * - text: string (required)
  * - media: React node (required)
- * - mediaAlt: string (optional, default: 'Card media')
  * - mediaPosition: 'left' | 'right' (default: 'left')
  * - mediaInset: boolean (default: false)
  * - actionButton: React node (optional)
@@ -19,7 +18,6 @@ export function CardFlag({
   heading,
   text,
   media,
-  mediaAlt = 'Card media',
   mediaPosition = 'left',
   mediaInset = false,
   actionButton,
@@ -41,7 +39,7 @@ export function CardFlag({
     >
       <div className={mediaClass} data-testid="card-flag-media">
         {React.isValidElement(media)
-          ? React.cloneElement(media, { alt: mediaAlt, className: 'pdx-card-flag__media-element' })
+          ? React.cloneElement(media, { className: 'pdx-card-flag__media-element' })
           : media}
       </div>
       <div className="pdx-card-flag__content">
@@ -61,7 +59,6 @@ CardFlag.propTypes = {
   heading: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   media: PropTypes.node.isRequired,
-  mediaAlt: PropTypes.string,
   mediaPosition: PropTypes.oneOf(['left', 'right']),
   mediaInset: PropTypes.bool,
   actionButton: PropTypes.node,
