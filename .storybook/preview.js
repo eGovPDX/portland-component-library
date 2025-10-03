@@ -5,6 +5,7 @@ import './storybook.css';
 const preview = {
   parameters: {
     layout: 'centered',
+
     controls: {
       expanded: true,
       matchers: {
@@ -12,6 +13,7 @@ const preview = {
         date: /Date$/i,
       },
     },
+
     options: {
       storySort: {
         order: [
@@ -26,6 +28,7 @@ const preview = {
         ],
       },
     },
+
     themes: {
       default: 'pgov',
       list: [
@@ -34,10 +37,16 @@ const preview = {
         { name: 'USWDS Default', value: 'uswds-default', class: 'uswds-default-theme-applied', color: '#005ea2' },
       ],
     },
+
     a11y: {
       test: 'todo',
     },
+
+    docs: {
+      codePanel: true
+    }
   },
+
   decorators: [
     withThemeByClassName({
       themes: {
@@ -48,6 +57,8 @@ const preview = {
       defaultTheme: 'pgov',
     }),
   ],
+
+  tags: ['autodocs']
 };
 
 export default preview;

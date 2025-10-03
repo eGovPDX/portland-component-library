@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/blocks';
+import { Meta } from '@storybook/addon-docs/blocks';
 
 <Meta title="Introduction/Customizing Storybook UI" />
 
@@ -10,8 +10,8 @@ Practical examples to tailor the Storybook interface to your needs.
 
 ```js
 // .storybook/manager.js (or manager.ts)
-import { addons } from '@storybook/manager-api';
-import { create } from '@storybook/theming/create';
+import { addons } from 'storybook/manager-api';
+import { create } from 'storybook/theming/create';
 
 addons.setConfig({
   theme: create({
@@ -78,7 +78,7 @@ export const parameters = {
 
 ```js
 // .storybook/preview.js
-import { themes } from '@storybook/theming';
+import { themes } from 'storybook/theming';
 
 export const parameters = {
   docs: {
