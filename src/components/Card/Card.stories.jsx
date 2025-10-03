@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 import { Button } from '../Button';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export default {
   title: 'Components/Card',
